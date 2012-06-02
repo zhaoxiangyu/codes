@@ -1,0 +1,34 @@
+<launch4jConfig>
+  <dontWrapJar>false</dontWrapJar>
+  <headerType>gui</headerType>
+  <jar>E:\xp\codes\projects\console\run\my2.jar</jar>
+  <outfile>E:\xp\codes\projects\console\run\LanguageHelper.exe</outfile>
+  <errTitle></errTitle>
+  <cmdLine></cmdLine>
+  <chdir></chdir>
+  <priority>normal</priority>
+  <downloadUrl>http://www.oracle.com/technetwork/java/javase/downloads/java-se-jre-7-download-432155.html</downloadUrl>
+  <supportUrl></supportUrl>
+  <customProcName>false</customProcName>
+  <stayAlive>false</stayAlive>
+  <manifest></manifest>
+  <icon></icon>
+  <jre>
+    <path></path>
+    <minVersion>1.1.0_03</minVersion>
+    <maxVersion>1.2.0</maxVersion>
+    <jdkPreference>preferJre</jdkPreference>
+  </jre>
+  <versionInfo>
+    <fileVersion>1.0.0.0</fileVersion>
+    <txtFileVersion>RC1</txtFileVersion>
+    <fileDescription>language helper description</fileDescription>
+    <copyright>SharpX copyright</copyright>
+    <productVersion>1.0.0.0</productVersion>
+    <txtProductVersion>RC</txtProductVersion>
+    <productName>Language Helper</productName>
+    <companyName>SharpX</companyName>
+    <internalName>LH1ARC-IN</internalName>
+    <originalFilename>LH1ARC-OF.exe</originalFilename>
+  </versionInfo>
+</launch4jConfig>

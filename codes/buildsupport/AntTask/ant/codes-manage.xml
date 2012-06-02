@@ -1,0 +1,108 @@
+<project name="codes-manage" basedir="..">
+	<import file="${basedir}/../AntTask/ant/env-setting.xml" />
+	<import file="${basedir}/../AntTask/ant/common-tools.xml" />
+
+	<property name="codes.dir" value="${user.home}/codes/ubuntu"/>
+
+	<property name="sf.svn.url" value="https://natviewer.svn.sourceforge.net/svnroot/natviewer"/>
+	<property name="sf.git.url" value="ssh://blueocci@natviewer.git.sourceforge.net/gitroot/natviewer/natviewer"/>
+	<property name="sf.un" value="blueocci"/>
+	<property name="sf.pw" value="hlongh"/>
+	
+	<property name="sae.svn.url" value="https://svn.sinaapp.com/wd4web/"/>
+	<property name="sae.un" value="blueocci"/>
+	<property name="sae.pw" value="hlongh"/>
+	
+	<property name="excludes" value="**/*.class,**/*.o,**/local-settings.properties"/>
+	
+	<target name="cvs-export">
+		<code-exp todir="${prj.myddriver.dir}">
+			<fss>
+				<fileset dir="${user.home}/ws/c/ubuntu/myddriver/" 
+					includes="**"
+					excludes="${excludes}">
+				</fileset>
+			</fss>
+		</code-exp>
+		<code-exp todir="${prj.swing.dir}">
+			<fss>
+				<fileset dir="${VMSHARE.DIR}/xp/codes/console" 
+					includes="**"
+					excludes="${excludes}">
+					<exclude name="run/**"/>
+					<exclude name="lib/jars/**"/>
+					<exclude name="build/**"/>
+				</fileset>
+			</fss>
+		</code-exp>
+	</target>
+	
+	<target name="git-export">
+		<code-exp todir="${prj.anttask.dir}">
+			<fss>
+				<fileset dir="${user.home}/sw/android/Indigo-SR1+ADT+CDT+DLTK+ANTLR/codes/natviewer/android/AntTask" 
+					includes="**" excludes="${excludes},tools/**"/>
+			</fss>
+		</code-exp>
+		<code-exp todir="${prj.android.dir}">
+			<fss>
+				<fileset dir="${user.home}/sw/android/Indigo-SR1+ADT+CDT+DLTK+ANTLR/codes/natviewer/android" 
+					includes="**" excludes="${excludes}">
+					<exclude name="useNdk/jni/jace/rt-gen/**"/>
+					<exclude name="useNdk/jni/src/hw_ja.h"/>
+					<exclude name="useNdk/test/zinnia-tomoe/**"/>
+					<exclude name="useNdk/test/handwriting-ja.model"/>
+					<exclude name="useNdk/obj/**"/>
+					<exclude name="antlr/src/*.java"/>
+					<exclude name="antlr/src/*.tokens"/>
+					<exclude name="AntTask/**"/>
+				</fileset>
+			</fss>
+		</code-exp>
+		<code-exp todir="${prj.rhc-jws.dir}">
+			<fss>
+				<fileset dir="${user.home}/sw/android/Indigo-SR1+ADT+CDT+DLTK+ANTLR/codes/rhc-jws/" 
+					includes="**"
+					excludes="${excludes}"/>
+			</fss>
+		</code-exp>
+	</target>
+	
+	<target name="oldsvn-export">
+		<code-exp todir="${prj.wd4web.dir}">
+			<fss>
+				<fileset dir="${user.home}/sw/eclipse-php-helios-SR2-linux-gtk/codes/wd4web/" 
+					includes="**"
+					excludes="${excludes}"/>
+			</fss>
+		</code-exp>
+		<code-exp todir="${prj.wxWi.dir}">
+			<fss>
+				<fileset dir="${user.home}/ws/c/ubuntu/wxWi/" includes="**"
+					excludes="${excludes},**/bin/**,**/obj/**"/>
+			</fss>
+		</code-exp>
+	</target>
+	
+	<target name="ws-export">
+	</target>
+	
+	<target name="export-prj">
+		<defaultexcludes echo="true"/>
+		<antcall target="cvs-export"/>	
+		<antcall target="git-export"/>	
+		<antcall target="oldsvn-export"/>	
+	</target>
+	
+	<target name="import-prj">
+		<code-exp todir="${user.home}/sw/android/Indigo-SR1+ADT+CDT+DLTK+ANTLR/codes/natviewer/swing">
+			<fss>
+				<fileset dir="${prj.swing.dir}" 
+					includes="**"
+					excludes="${excludes}">
+				</fileset>
+			</fss>
+		</code-exp>
+	</target>
+	
+</project>

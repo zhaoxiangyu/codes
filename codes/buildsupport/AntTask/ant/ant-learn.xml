@@ -1,0 +1,202 @@
+<project name="learn" basedir=".">
+	<target name="sample">
+	</target>
+	
+	<target name="sample-java">
+		<javac destdir="bin/ant/classes"
+			listfiles="Yes" deprecation="Yes" 
+			classpath="${ant-ext-jars.dir}/antlr-3.3-complete.jar">
+			<compilerarg value="-Xlint:unchecked"/>
+			<src path="antlr/gen"></src>
+			<src path="antlr/src"></src>
+		</javac>
+	    <java classname="test.Main">
+	      <arg value="-h"/>
+	      <classpath>
+	        <pathelement location="dist/test.jar"/>
+	        <pathelement path="${java.class.path}"/>
+	      </classpath>
+	    </java>	
+	</target>
+	
+	<target name="sample-propertyregex">
+	    
+	    <propertyregex property="pack.name"
+	              input="package.ABC.name"
+	              regexp="package\.([^\.]*)\.name"
+	              select="\1"
+	              casesensitive="false" />
+	    <echo message="${pack.name}"/>
+	    <propertyregex property="pack.name2"
+	              input="package.ABC.name"
+	              regexp="(package)\.[^\.]*\.(name)"
+	              replace="\1.DEF.\2"/>
+	    <echo message="${pack.name2}"/>
+	</target>
+	
+	<target name="sample-var">
+	    <var name="x" value="6"/>
+	    <echo>x = ${x}</echo>   <!-- print: 6 -->
+	    <var name="x" value="12"/>
+	    <echo>x = ${x}</echo>   <!-- print: 12 -->
+	    <var name="x" value="6 + ${x}"/>
+	    <echo>x = ${x}</echo>   <!-- print: 6 + 12 -->
+
+	    <var name="str" value="I "/>
+	    <var name="str" value="${str} am "/>
+	    <var name="str" value="${str} a "/>
+	    <var name="str" value="${str} string."/>
+	    <echo>${str}</echo>     <!-- print: I am a string. -->
+
+	    <var name="x" value="6"/>
+	    <echo>x = ${x}</echo>   <!-- print: 6 -->
+	    <property name="x" value="12"/>
+	    <echo>x = ${x}</echo>   <!-- print: 6 (property can't override) -->
+
+	    <var name="x" value="blue"/>
+	    <tstamp>
+	        <format property="x" pattern="EEEE"/>
+	    </tstamp>
+	    <echo>Today is ${x}.</echo> <!-- print: Today is blue. -->
+
+	    <var name="x" value="" unset="true"/>
+	    <tstamp>
+	        <format property="x" pattern="EEEE"/>
+	    </tstamp>
+	    <echo>Today is ${x}.</echo> <!-- print: Today is Friday. -->
+	</target>
+
+	<target name="sample-limit">
+		<limit minutes="3" property="limit_reached">
+		   <sleep minutes="10"/>
+		   <echo>This won't happen...</echo>
+		   <fail>This won't happen either...</fail>
+		</limit>
+		<echo>limit_reached = ${limit_reached)</echo>
+	</target>
+	
+	<presetdef name="my.javac">
+	   <javac debug="${debug}" deprecation="${deprecation}"
+	          srcdir="${src.dir}" destdir="${classes.dir}">
+	      <src path="${gen.dir}"/>
+	   </javac>
+	</presetdef>
+	
+	<target name="defineandcall">
+	   <presetdef name="showmessage">
+	      <echo>message is '${message}'</echo>
+	   </presetdef>
+	   <showmessage/>
+	   <property name="message" value="Message 1"/>
+	   <showmessage/>
+	   <antcall target="called">
+	      <param name="message" value="Message 2"/>
+	   </antcall>
+	</target>
+	<target name="called">
+	   <showmessage/>
+	</target>
+	
+    <target name="testCallback" description="Test CallBack" depends="-testcb">
+        <echo>a = ${a}</echo>
+        <echo>b = ${b}</echo>
+    </target>
+    <target name="-testcb">
+        <property name="a" value="A"/>
+        <property name="b" value="B"/>
+    </target>
+	
+	<target name="sample-simple">
+		<echoproperties/>
+		<symlink link="${dir.top}/foo" resource="${dir.top}/subdir/bar.foo"/>
+		<retry retrycount="3">
+			<get src="http://www.unreliable-server.com/unreliable.tar.gz" 
+		       dest="/home/retry/unreliable.tar.gz" />
+		</retry>
+		<stopwatch name="timer1"/>
+		<!-- do some tasks here... -->
+		<stopwatch name="timer1" action="elapsed"/> 
+		<!-- print the elapsed time -->
+		<!-- do some more tasks here... -->
+		<stopwatch name="timer1" action="total"/>
+		<!-- print out the total time -->
+		
+	    <property name="test.val" value="here's my test value"/>
+	    <property name="test.val2" value="second test value"/>
+	    <post to="http://wwwj.cs.unc.edu:8888/tang/servlet/tangGetPostServlet"
+	        verbose="true">
+	        <prop name="prop1" value="val1 ${test.val}"/>
+	        <prop name="prop2" value="val1 value 2"/>
+	        <prop name="prop3" value="val got some spaces %funky ^$* chars"/>
+	        <prop name="prop4" value="&amp; do an ampersand like this &amp;amp; or
+	        Ant will whine"/>
+	        <prop name="thanks" value="dude, thanks for the echo server!"/>
+	        <prop name="test.val"/>
+	        ${test.val2}
+	    </post>
+	</target>
+	
+	<target name="sample-post">
+	    <property name="test.val" value="here's my test value"/>
+	    <property name="test.val2" value="second test value"/>
+	    <post to="http://wwwj.cs.unc.edu:8888/tang/servlet/tangGetPostServlet"
+	        verbose="true">
+	        <prop name="prop1" value="val1 ${test.val}"/>
+	        <prop name="prop2" value="val1 value 2"/>
+	        <prop name="prop3" value="val got some spaces %funky ^$* chars"/>
+	        <prop name="prop4" value="&amp; do an ampersand like this &amp;amp; or
+	        Ant will whine"/>
+	        <prop name="thanks" value="dude, thanks for the echo server!"/>
+	        <prop name="test.val"/>
+	        ${test.val2}
+	    </post>
+	</target>
+	
+	<target name="sample-whichresource">
+		<whichresource resource="manifest.xml" property="manifest.url" classpath="xxx"/>
+		<echo message="${manifest.url}"/>
+	</target>
+
+	<target name="antlr_classpath">
+		<whichresource property="antlr.in.classpath" class="org.antlr.Tool" />
+		<fail message="ANTLR3 not found via CLASSPATH ${java.class.path}">
+			<condition>
+				<not>
+					<isset property="antlr.in.classpath"/>
+				</not>
+			</condition>
+		</fail>
+		<echo>ANTLR3 found via CLASSPATH</echo>
+	</target>
+	
+	<target name="sample-resourcecount">
+		<property name="file" value="${ant.file}"/>
+		<resourcecount property="file.lines">
+		<tokens>
+		  <concat>
+		    <filterchain>
+		      <tokenfilter>
+		        <linetokenizer/>
+		      </tokenfilter>
+		    </filterchain>
+		    <fileset file="${file}"/>
+		  </concat>
+		</tokens>
+		</resourcecount>
+		<echo>The file '${file}' has ${file.lines} lines.</echo>
+	</target>
+ 
+	<target name="main">
+		<echo>main running</echo>
+		<antcall target="proc1"></antcall>
+		<property name="run.proc2" value="yes"></property>
+		<antcall target="proc2"></antcall>
+	</target>
+	
+	<target name="proc1" unless="proc1.f">
+		<echo>proc1 running</echo>
+	</target>
+	<target name="proc2" if="run.proc2">
+		<echo>proc2 running</echo>
+	</target>
+</project>

@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<project basedir="../..">
+    <property name="yguard.ant.jar" value="lib/yguard.jar"/>
+	<taskdef name="yguard"
+		classname="com.yworks.yguard.YGuardTask"
+		classpath="${yguard.ant.jar}"/>
+	<property name="keep.sourcefile" value="keep"/>
+	<property name="keep.linenumbertable" value="keep"/>
+	
+    <target name="yguard">
+    	<echo message="mainclass:${mainclass}"/>
+    	<echo message="output file:${yguard.out.jar}"/>
+    	<echo message="keep.sourcefile:${keep.sourcefile}"/>
+    	<echo message="keep.linenumbertable:${keep.linenumbertable}"/>
+    	<pathconvert property="ex.path" refid="artifact.jars.path"/>
+    	<echo message="externalclasses:${ex.path}"/>
+		<yguard>
+			<inoutpair in="${yguard.in.jar}" out="${yguard.out.jar}"/>
+			<!-- <shrink/> -->
+		    <externalclasses>
+		    	<path refid="artifact.jars.path"/>
+		    	<!-- <pathelement location="build/my-scala.jar"/> -->
+		    </externalclasses>
+		    <attribute name="SourceFile, LineNumberTable, LocalVariableTable">
+		      <patternset>
+		        <include name="org.sharp.**"/>
+		      </patternset>
+		    </attribute>
+    		
+    		<rename mainclass="${mainclass}">
+				<!-- <property name="error-checking" value="pedantic"/> -->
+				<keep sourcefile="${keep.sourcefile}" 
+					linenumbertable="${keep.linenumbertable}">
+					<class implements="${yguard.rename.keep.implements}"/>
+					<!-- <class>
+						<patternset refid="rename.excludes"/>
+					</class> -->
+				    <!-- <package>
+				      <patternset>
+				        <include name="**.res"/>
+				      </patternset>
+				    </package> -->
+				</keep>
+			</rename>
+		</yguard>
+    	<echo message="yguard finished."/>
+    </target>
+</project>

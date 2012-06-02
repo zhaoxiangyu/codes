@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<project basedir="../..">
+	<property name="ant-googlecode.dist.dir" value="lib" />
+	<property name="ant-googlecode.version" value="0.0.2" />
+	<property name="ant-googlecode.ant.jar"
+		value="${ant-googlecode.dist.dir}/ant-googlecode-${ant-googlecode.version}.jar" />
+	<taskdef classname="net.bluecow.googlecode.ant.GoogleCodeUploadTask"
+		classpath="${ant-googlecode.ant.jar}" name="gcupload" />
+
+	<target name="gcupload" description="upload artifacts to google codes">
+		<gcupload username="longm.he" password="hlongh"
+			projectname="web-word-list" 
+			filename="local file path" 
+			targetfilename="version_0_file.name"
+			summary="jpword files" />
+	</target>
+</project>

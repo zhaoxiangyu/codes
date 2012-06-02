@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string name="toast_cancel_download">取消下载</string>
+    <string name="dlg_title_downloading">正在下载，请稍后</string>
+    <string name="toast_download_finished">下载完成</string>
+    <string name="toast_download_canceled">下载已取消</string>
+    <string name="toast_cancel_unzip">取消解压</string>
+    <string name="dlg_title_unzipping">正在解压文件，请稍后</string>
+    <string name="toast_unzip_finished">解压完成</string>
+    <string name="toast_unzip_canceled">解压已取消</string>
+    <string name="toast_unzip_error">解压出错</string>
+    <string name="dlg_msg_prompt_waiting">请稍候</string>
+    <string name="dlg_button_close">关闭</string>
+</resources>

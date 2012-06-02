@@ -1,0 +1,36 @@
+<project name="build-legacy-utils" xmlns:artifact="urn:maven-artifact-ant" 
+	basedir="../../..">
+	
+	<!-- m.jar.loc -->
+	<!-- src.dir,build.classes -->
+	<!-- <echo message="src.dir:${src.dir}"/> -->
+	<property file="build.properties" />
+    <fileset id="3rd.jars" dir="${3rd.jars}" includes="**/*.jar"/>
+	<path id="build.classpath">
+		<fileset refid="3rd.jars"></fileset>
+	</path>
+
+	<target name="jar">
+		<fileset id="resource.fileset" dir="${src.dir}">
+			<include name="**/utils/legacy/*.*"/>
+			<exclude name="**/utils/legacy/*.java"/>
+		</fileset>
+		<fileset id="jar.class.fileset" dir="${build.classes}/legacy-utils"
+			includes="**/utils/legacy/*">
+		</fileset>
+		<patternset id="src.pattern">
+			<include name="**/utils/legacy/*.java"/>
+		</patternset>
+		<ant target="deploy" antfile="lib/modules/build-module.xml" inheritAll="false">
+			<reference torefid="p.build.classpath" refid="build.classpath"></reference>
+			<reference refid="resource.fileset"></reference>
+			<reference refid="jar.class.fileset"></reference>
+			<property name="module.pom.file" location="lib/modules/legacy-utils/pom.xml"/>
+			<property name="build.class.dir" value="${build.classes}/legacy-utils"/>
+			<property name="src.dir" value="${src.dir}"/>
+			<reference refid="src.pattern"/>
+			<property name="out.jar.file" value="${m.jar.loc}"/>
+		</ant>
+	</target>
+	
+</project>

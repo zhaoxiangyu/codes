@@ -1,0 +1,124 @@
+<project name="use-android-sdk" basedir="..">
+
+    <dirname property="antfile.dir" file="${ant.file.use-android-sdk}"/>
+	<property name="i.basedir" value="${antfile.dir}/.."/>
+	<import file="${i.basedir}/ant/android-tools.xml" />
+
+	<property file="${basedir}/ant.properties"/>
+	<property name="android.xml" location="${basedir}/build.xml"/>
+
+	<target name="build-help">
+		<ant antfile="${android.xml}" target="help"/>
+    </target>
+
+	<target name="build-release">
+		<echo message="build file:${android.xml}"/>
+		<ant antfile="${android.xml}" target="release"/>
+    </target>
+	
+	<target name="build-debug">
+		<echo message="build file:${android.xml}"/>
+		<ant antfile="${android.xml}" target="debug"/>
+    </target>
+	
+	<target name="build-uninstall">
+		<ant antfile="${android.xml}" target="uninstall"/>
+	</target>
+	
+	<target name="build-clean" unless="${uptodate.ant-release-apk}">
+		<!--
+		<ant antfile="${basedir}/../my-library/build.xml" target="clean" inheritall="false"/>
+		<ant antfile="${basedir}/../ad-library/build.xml" target="clean" inheritall="false"/>
+		<ant antfile="${basedir}/../umeng-library/build.xml" target="clean" inheritall="false"/>
+		-->
+		<ant antfile="${android.xml}" target="clean"/>
+    </target>
+	
+	<target name="adb-help">
+		<exec executable="${ADB}" dir="${basedir}">
+			<arg line="help"/>
+		</exec>
+		<echo message="-------------adb shell help-----------------"/>
+		<exec executable="${ADB}" dir="${basedir}">
+			<arg line="shell ls /system/bin"/>
+		</exec>
+		<echo message="-------------adb shell getprop-----------------"/>
+		<exec executable="${ADB}" dir="${basedir}">
+			<arg line="shell getprop"/>
+		</exec>
+		<echo message="-------------adb shell am help-----------------"/>
+		<exec executable="${ADB}" dir="${basedir}">
+			<arg line="shell am"/>
+		</exec>
+		<echo message="-------------emulator help-----------------"/>
+		<exec executable="${EMULATOR}" dir="${basedir}">
+			<arg line="-help"/>
+		</exec>
+    </target>
+
+	<target name="adb-set-dns">
+		<adb-shell cmd="stop"/>
+		<adb-shell cmd="setprop net.dns1 58.30.131.33"/>
+		<adb-shell cmd="setprop log.redirect-stdio true"/>
+		<adb-shell cmd="start"/>
+    </target>
+	
+	<target name="adb-logcatx">
+		<exec executable="${CMD}" dir="${basedir}">
+			<arg line="${OPT} ${ADB} logcat -v time > ${basedir}\bin\log.txt"/>
+		</exec>
+		<exec executable="${CMD}" dir="${basedir}">
+			<arg line="${OPT} ${sdk.dir}/tools/proguard/bin/retrace${SCRIPT_EXTNAME} -verbose ${basedir}/bin/proguard/mapping.txt ${basedir}/bin/log.txt"/>
+		</exec>
+	</target>
+
+	<target name="start-adbshell">
+		<console wd="${sdk.dir}/platform-tools"/>
+	</target>	
+	
+	<target name="android-avd-target-list">
+		<exec executable="${CMD}" dir="${basedir}">
+			<arg line="${OPT} ${sdk.dir}/tools/android${SCRIPT_EXTNAME} list targets"/>
+		</exec>
+		<echo message="-------------aids--------------------"/>
+		<exec executable="${CMD}" dir="${basedir}">
+			<arg line="${OPT} ${sdk.dir}/tools/android${SCRIPT_EXTNAME} list avds"/>
+		</exec>
+	</target>
+	
+	<target name="android-avd-android2.1-create">
+		<exec executable="${CMD}" dir="${basedir}">
+			<arg line="${OPT} ${sdk.dir}/tools/android${SCRIPT_EXTNAME} create avd -n android2.1m-qvga -t 1 -p test/avds"/>
+		</exec>
+	</target>
+	
+	<target name="emulator-start-android2.1">
+		<emulator-start avd-name="android2.1b"/>
+    </target>
+	
+	<target name="emulator-start-android2.2">
+		<echo>starting android 2.2</echo>
+		<emulator-start avd-name="Android2.2"/>
+    </target>
+	
+	<target name="emulator-start-android4.0.3">
+		<echo>starting android 4.0.3</echo>
+		<emulator-start avd-name="android4.0.3"/>
+    </target>
+	
+	<target name="emulator-all-kill">
+		<exec executable="${BASH}" dir="${basedir}">
+			<env key="Path" path="${sdk.dir}/platform-tools:${env.Path}"/>
+			<!-- command ntsd.exe can also be used to force kill a process like this: ntsd -c q -p 123 -->
+			<arg line="-l -c &quot;tasklist | grep emulator-arm | awk '{print $2}' | xargs tskill &quot;"/>
+		</exec>
+	</target>
+	
+	<target name="emulator-telnet-gsm-call-136">
+		<emulator-telnet-gsm-call phone-number="13641338053"/>
+	</target>
+	
+	<target name="emulator-telnet-kill">
+		<emulator-kill port="5554"/>
+	</target>
+</project>

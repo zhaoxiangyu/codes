@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="dlg_title_set_show_versionupgrade_dialog">设置自动更新提示</string>
+    <string name="dlg_msg_show_versionupgrade_dialog">提示更新</string>
+    <string name="dlg_msg_not_show_versionupgrade_dialog">不提示更新</string>
+    <string name="menu_set_show_versionupgrade_dialog">自动更新设置</string>
+    <string name="menu_feedback">使用反馈</string>
+</resources>

@@ -1,0 +1,18 @@
+<project name="ides-setup" basedir="..">
+	<import file="${basedir}/../AntTask/ant/env-setting.xml" />
+	<import file="${basedir}/../AntTask/ant/common-tools.xml" />
+
+	<!-- ================================= 
+          target: idea              
+         ================================= -->
+    <target name="idea">
+        
+    </target>
+	
+	<!-- ================================= 
+          target: netbeans              
+         ================================= -->
+    <target name="netbeans">
+        
+    </target>
+</project>

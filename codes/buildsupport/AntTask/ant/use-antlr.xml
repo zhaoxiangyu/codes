@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="use-antlr" basedir=".." 
+	xmlns:ivy="antlib:org.apache.ivy.ant" default="run">
+
+	<dirname property="antfile.dir" file="${ant.file.use-antlr}"/>
+	<property name="i.basedir" value="${antfile.dir}/.."/>
+	<import file="${i.basedir}/ant/env-setting.xml" />
+	<import file="${i.basedir}/ant/common-tools.xml" />
+		
+	<!-- ================================= 
+          target: run              
+         ================================= -->
+    <target name="run">
+    	<!--
+ 		<antcall target="runtimec-install"/>
+    	-->
+    	
+    </target>
+
+	<target name="runtimec-install">
+		<make dir="script/make" makefile="antlr-install.mk" 
+			target="install"/>
+	</target>
+
+</project>

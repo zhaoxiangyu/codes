@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="wxWi" />
+		<Option makefile="wxWi.mak" />
+		<Option makefile_is_custom="1" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<MakeCommands>
+			<Build command="$make -f $makefile $target" />
+			<CompileFile command="$make -f $makefile $file" />
+			<Clean command="$make -f $makefile clean_$target" />
+			<DistClean command="$make -f $makefile distclean$target" />
+			<AskRebuildNeeded command="$make -q -f $makefile $target" />
+			<SilentBuild command="$make -s -f $makefile $target" />
+		</MakeCommands>
+		<Build>
+			<Target title="WinRelease">
+				<Option output="bin/WinRelease/wxWi.exe" prefix_auto="1" extension_auto="0" />
+				<Option object_output="obj/WinRelease/" />
+				<Option type="0" />
+				<Option compiler="gnu_gcc_compiler_for_mingw" />
+				<Option projectLinkerOptionsRelation="2" />
+				<Compiler>
+					<Add option="-O2" />
+					<Add option="`wx-config --prefix=/usr/i586-mingw32msvc --host=i586-mingw32msvc --static --cflags`" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+					<Add option="`wx-config --prefix=/usr/i586-mingw32msvc --host=i586-mingw32msvc --static --libs`" />
+				</Linker>
+				<ExtraCommands>
+					<Add after="gunzip -c /usr/share/doc/mingw32-runtime/mingwm10.dll.gz &gt; bin/WinRelease/mingwm10.dll" />
+				</ExtraCommands>
+				<MakeCommands>
+					<Build command="$make -f $makefile $target" />
+					<CompileFile command="$make -f $makefile $file" />
+					<Clean command="$make -f $makefile clean_$target" />
+					<DistClean command="$make -f $makefile distclean$target" />
+					<AskRebuildNeeded command="$make -q -f $makefile $target" />
+					<SilentBuild command="$make -s -f $makefile $target" />
+				</MakeCommands>
+			</Target>
+			<Target title="Debug">
+				<Option output="bin/Debug/wxWi" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Debug/" />
+				<Option type="0" />
+				<Option compiler="gcc" />
+				<Option projectLinkerOptionsRelation="2" />
+				<Compiler>
+					<Add option="-g" />
+					<Add option="`wx-config --cflags`" />
+				</Compiler>
+				<Linker>
+					<Add option="`wx-config --libs`" />
+				</Linker>
+				<MakeCommands>
+					<Build command="$make -f $makefile $target" />
+					<CompileFile command="$make -f $makefile $file" />
+					<Clean command="$make -f $makefile clean_$target" />
+					<DistClean command="$make -f $makefile distclean$target" />
+					<AskRebuildNeeded command="$make -q -f $makefile $target" />
+					<SilentBuild command="$make -s -f $makefile $target" />
+				</MakeCommands>
+			</Target>
+			<Target title="Release">
+				<Option output="bin/Release/wxWi" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Release/" />
+				<Option type="0" />
+				<Option compiler="gcc" />
+				<Option projectLinkerOptionsRelation="2" />
+				<Compiler>
+					<Add option="-O2" />
+					<Add option="`wx-config --cflags`" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+					<Add option="`wx-config --libs`" />
+				</Linker>
+				<MakeCommands>
+					<Build command="$make -f $makefile $target" />
+					<CompileFile command="$make -f $makefile $file" />
+					<Clean command="$make -f $makefile clean_$target" />
+					<DistClean command="$make -f $makefile distclean$target" />
+					<AskRebuildNeeded command="$make -q -f $makefile $target" />
+					<SilentBuild command="$make -s -f $makefile $target" />
+				</MakeCommands>
+			</Target>
+			<Target title="All">
+				<Option output="wxWi" prefix_auto="1" extension_auto="1" />
+				<Option type="0" />
+				<Option compiler="gcc" />
+				<MakeCommands>
+					<Build command="$make -f $makefile all" />
+					<CompileFile command="$make -f $makefile $file" />
+					<Clean command="$make -f $makefile clean" />
+					<DistClean command="$make -f $makefile distclean$target" />
+					<AskRebuildNeeded command="$make -q -f $makefile clean all" />
+					<SilentBuild command="$make -s -f $makefile all" />
+				</MakeCommands>
+			</Target>
+			<Target title="TEST">
+				<Option output="bin/TEST/wxWi" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Debug/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Option use_console_runner="0" />
+				<Option projectLinkerOptionsRelation="2" />
+				<Compiler>
+					<Add option="-g" />
+					<Add option="`wx-config --cflags`" />
+				</Compiler>
+				<Linker>
+					<Add option="`wx-config --libs`" />
+				</Linker>
+				<MakeCommands>
+					<Build command="$make -f $makefile $target" />
+					<CompileFile command="$make -f $makefile $file" />
+					<Clean command="$make -f $makefile clean_$target" />
+					<DistClean command="$make -f $makefile distclean$target" />
+					<AskRebuildNeeded command="$make -q -f $makefile $target" />
+					<SilentBuild command="$make -s -f $makefile $target" />
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-Wall" />
+		</Compiler>
+		<Unit filename="common-vars.mak" />
+		<Unit filename="cpp-unit.mak" />
+		<Unit filename="open-shell.script" />
+		<Unit filename="src/boost/boostMain.cpp" />
+		<Unit filename="src/boost/boostMain.h" />
+		<Unit filename="src/cppunit/utils/DataUtilsTest.cpp" />
+		<Unit filename="src/cppunit/utils/DataUtilsTest.h" />
+		<Unit filename="src/cppunit/utils/IOUtilsTest.cpp" />
+		<Unit filename="src/cppunit/utils/IOUtilsTest.h" />
+		<Unit filename="src/data/sample.h" />
+		<Unit filename="src/helper/DataHelper.cpp" />
+		<Unit filename="src/helper/DataHelper.h" />
+		<Unit filename="src/helper/RTTISensitive.cpp" />
+		<Unit filename="src/helper/RTTISensitive.h" />
+		<Unit filename="src/intf/Serializable.h" />
+		<Unit filename="src/jpwordReader/JpwordReader.cpp" />
+		<Unit filename="src/jpwordReader/JpwordReader.h" />
+		<Unit filename="src/jpwordReader/cppunit/JpwordReaderTest.cpp" />
+		<Unit filename="src/jpwordReader/cppunit/JpwordReaderTest.h" />
+		<Unit filename="src/jpwordReader/cppunit/TestStarter.cpp" />
+		<Unit filename="src/jpwordReader/cppunit/TestStarter.h" />
+		<Unit filename="src/jpwordReader/cppunit/data/AudioInfoTest.cpp" />
+		<Unit filename="src/jpwordReader/cppunit/data/AudioInfoTest.h" />
+		<Unit filename="src/jpwordReader/cppunit/data/CourseTest.cpp" />
+		<Unit filename="src/jpwordReader/cppunit/data/CourseTest.h" />
+		<Unit filename="src/jpwordReader/data/AudioInfo.cpp" />
+		<Unit filename="src/jpwordReader/data/AudioInfo.h" />
+		<Unit filename="src/jpwordReader/data/Course.cpp" />
+		<Unit filename="src/jpwordReader/data/Course.h" />
+		<Unit filename="src/jpwordReader/data/UrlSetting.cpp" />
+		<Unit filename="src/jpwordReader/data/UrlSetting.h" />
+		<Unit filename="src/jpwordReader/listener/DownloadEventListener.cpp" />
+		<Unit filename="src/jpwordReader/listener/DownloadEventListener.h" />
+		<Unit filename="src/jpwordReader/listener/ReaderEventListener.cpp" />
+		<Unit filename="src/jpwordReader/listener/ReaderEventListener.h" />
+		<Unit filename="src/jpwordReader/listener/UnzipEventListener.cpp" />
+		<Unit filename="src/jpwordReader/listener/UnzipEventListener.h" />
+		<Unit filename="src/jpwordReader/runtime/Constants" />
+		<Unit filename="src/jpwordReader/runtime/LevelsInfo.cpp" />
+		<Unit filename="src/jpwordReader/runtime/LevelsInfo.h" />
+		<Unit filename="src/jpwordReader/runtime/State.cpp" />
+		<Unit filename="src/jpwordReader/runtime/State.h" />
+		<Unit filename="src/jpwordReader/support/Constants.h" />
+		<Unit filename="src/jpwordReader/support/CourseUtils.cpp" />
+		<Unit filename="src/jpwordReader/support/CourseUtils.h" />
+		<Unit filename="src/jpwordReader/support/NetworkSupport.cpp" />
+		<Unit filename="src/jpwordReader/support/NetworkSupport.h" />
+		<Unit filename="src/jpwordReader/support/UnitUtils.cpp" />
+		<Unit filename="src/jpwordReader/support/UnitUtils.h" />
+		<Unit filename="src/sample/main.cpp" />
+		<Unit filename="src/stl/core.cpp">
+			<Option target="WinRelease" />
+			<Option target="Debug" />
+			<Option target="Release" />
+			<Option target="TEST" />
+		</Unit>
+		<Unit filename="src/translator/Article.cpp" />
+		<Unit filename="src/translator/Article.h" />
+		<Unit filename="src/translator/Config.cpp" />
+		<Unit filename="src/translator/Config.h" />
+		<Unit filename="src/translator/EventListener.cpp" />
+		<Unit filename="src/translator/EventListener.h" />
+		<Unit filename="src/translator/Translator.cpp" />
+		<Unit filename="src/translator/Translator.h" />
+		<Unit filename="src/translator/TranslatorEventListener.h" />
+		<Unit filename="src/ui/TransFrame.cpp" />
+		<Unit filename="src/ui/TransFrame.h" />
+		<Unit filename="src/ui/wxWiApp.cpp">
+			<Option target="WinRelease" />
+			<Option target="Debug" />
+			<Option target="Release" />
+			<Option target="TEST" />
+		</Unit>
+		<Unit filename="src/ui/wxWiApp.h">
+			<Option target="WinRelease" />
+			<Option target="Debug" />
+			<Option target="Release" />
+			<Option target="TEST" />
+		</Unit>
+		<Unit filename="src/ui/wxWiMain.cpp">
+			<Option target="WinRelease" />
+			<Option target="Debug" />
+			<Option target="Release" />
+			<Option target="TEST" />
+		</Unit>
+		<Unit filename="src/ui/wxWiMain.h">
+			<Option target="WinRelease" />
+			<Option target="Debug" />
+			<Option target="Release" />
+			<Option target="TEST" />
+		</Unit>
+		<Unit filename="src/utils/DataUtils.cpp" />
+		<Unit filename="src/utils/DataUtils.h" />
+		<Unit filename="src/utils/IOUtils.cpp" />
+		<Unit filename="src/utils/IOUtils.h" />
+		<Unit filename="src/utils/OsSupport.cpp" />
+		<Unit filename="src/utils/OsSupport.h" />
+		<Unit filename="src/utils/my_stl.h" />
+		<Unit filename="src/utils/my_type.h" />
+		<Unit filename="src/utils/my_wx.h" />
+		<Unit filename="use-boost.mak" />
+		<Unit filename="wxWi-Debug.mak">
+			<Option target="WinRelease" />
+			<Option target="Debug" />
+			<Option target="Release" />
+			<Option target="TEST" />
+		</Unit>
+		<Unit filename="wxWi-Release.mak">
+			<Option target="WinRelease" />
+			<Option target="Debug" />
+			<Option target="Release" />
+			<Option target="TEST" />
+		</Unit>
+		<Unit filename="wxWi-Sample.mak" />
+		<Unit filename="wxWi-TEST.mak" />
+		<Unit filename="wxWi-WinRelease.mak">
+			<Option target="WinRelease" />
+			<Option target="Debug" />
+			<Option target="Release" />
+			<Option target="TEST" />
+		</Unit>
+		<Unit filename="wxWi.mak">
+			<Option target="WinRelease" />
+			<Option target="Debug" />
+			<Option target="Release" />
+			<Option target="TEST" />
+		</Unit>
+		<Unit filename="wxsmith/TransFrame.wxs" />
+		<Unit filename="wxsmith/wxWiframe.wxs" />
+		<Extensions>
+			<code_completion />
+			<envvars />
+			<debugger />
+			<wxsmith version="1">
+				<gui name="wxWidgets" src="src/ui/wxWiApp.cpp" main="wxWiFrame" init_handlers="necessary" language="CPP" />
+				<resources>
+					<wxFrame wxs="wxsmith/wxWiframe.wxs" src="src/ui/wxWiMain.cpp" hdr="src/ui/wxWiMain.h" name="wxWiFrame" language="CPP" />
+					<wxFrame wxs="wxsmith/TransFrame.wxs" src="src/ui/TransFrame.cpp" hdr="src/ui/TransFrame.h" name="TransFrame" language="CPP" />
+				</resources>
+			</wxsmith>
+			<lib_finder disable_auto="1" />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>

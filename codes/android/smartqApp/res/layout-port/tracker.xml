@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:stretchColumns="0,1,2,3,4,5,6">
+	<TextView android:layout_weight="0.10" android:id="@+id/info"
+	    android:text=""
+	    android:layout_width="fill_parent"
+	    android:padding="3dip"/>
+    <TableRow android:layout_weight="0.01">
+        <Button android:id="@+id/start"
+            android:text="start"
+            android:layout_column="0"
+            android:layout_width="fill_parent"
+            android:padding="1dip" />
+        <Button android:id="@+id/pause"
+            android:text="pause"
+            android:layout_column="1"
+            android:layout_width="fill_parent"
+            android:padding="1dip" />
+        <Button android:id="@+id/new_landmark"
+            android:text="new_landmark"
+            android:layout_column="2"
+            android:layout_width="fill_parent"
+            android:padding="1dip" />
+    </TableRow>
+</TableLayout>

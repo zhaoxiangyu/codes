@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="useRobotium" basedir="..">
+	<property file="${basedir}/local.properties"/>
+
+	<property name="apk.basename" value="${ant.project.name}"/>
+	<property name="apk.filename" value="${apk.basename}-ant-release.apk"/>
+	<import file="${basedir}/../smartqApp/ant/build.xml" />
+	
+	<target name="test-project-help">
+		<antcall target="adb-help"/>
+	</target>
+	
+	<target name="update-project">
+		<exec executable="cmd.exe" dir="${basedir}">
+			<arg line="/c ${sdk.dir}/tools/android.bat update project --target 1 --path ."/>
+		</exec>
+    </target>
+	
+	<target name="adb-launch-blackbox-test">
+		<antcall target="emulator-start"/>
+		<ant antfile="${tested.dir}/ant/build.xml" target="adb-release-install" 
+			dir="${tested.dir}" inheritall="false"/>
+		<adb-input-keyevent keycode="82"/>
+		<antcall target="adb-run-blackbox-test"/>
+	</target>
+	
+	<target name="adb-run-blackbox-test">
+		<antcall target="adb-release-install"/>
+		<beep/>
+		<exec executable="${sdk.dir}/platform-tools/adb.exe" dir="${basedir}">
+			<arg line="shell am instrument -w smartqApp.robotiumTest/android.test.InstrumentationTestRunner"/>
+		</exec>
+	</target>
+
+	<target name="adb-run-blackbox-test-new-installed">
+		<antcall target="adb-release-install"/>
+		<beep/>
+		<exec executable="${sdk.dir}/platform-tools/adb.exe" dir="${basedir}">
+			<arg value="shell am instrument"/>
+			<arg value="-w smartqApp.robotiumTest/android.test.InstrumentationTestRunner"/>
+			<arg value="-e class smartq.test.JpvocReaderTest"/>
+		</exec>
+	</target>
+
+	<target name="build-clean-all">
+		<ant antfile="${tested.dir}/ant/build.xml" target="build-clean" 
+			dir="${tested.dir}" inheritall="false"/>
+		<antcall target="build-clean"/>
+	</target>
+
+	<target name="test-beep">
+		<beep/>
+	</target>
+	<taskdef name="beep" classname="org.sharpx.BeepTask" 
+		classpath="${basedir}/../AntTask/bin/ant-beep.jar"/>
+
+</project>

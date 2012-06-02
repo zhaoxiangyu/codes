@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">标日初级词汇</string>
+    <string name="version_name">{{version_name}}</string>
+    <string name="app_description">标准日本语初级词汇</string>
+    <string name="dlg_title_choose_course">选择课程</string>
+    <string name="menu_choose_course">选择标日课程</string>
+    <string name="view_reader_no_mp3">单词不存在</string>
+    <string name="view_reader_error_current">错误位置</string>
+    <string name="view_reader_error_levellist_empty">难度%1$d的列表没有单词</string>
+    <string name="view_reader_error_state_not_loaded">状态未加载</string>
+	<string name="view_reader_current_info">%1$d单元第%2$d课 %3$d/%4$d 难度%5$d</string>
+	<string name="view_vocreader_la">全</string>
+	<string name="view_vocreader_l0">一</string>
+	<string name="view_vocreader_l1">二</string>
+	<string name="view_vocreader_l2">三</string>
+	<string name="view_vocreader_l3">四</string>
+	<string name="view_vocreader_l4">五</string>
+    <string name="dlg_msg_course">课程%1$d</string>
+    <string name="dlg_msg_course_sizeinfo">%1$dK字节</string>
+    <string name="dlg_msg_open_course">打开</string>
+    <string name="dlg_msg_download_course">下载</string>
+    <string name="dlg_title_app_loading">正在启动中</string>
+    <string name="text_app_loading">%1$s\n版本%2$s\n正在启动中，请稍侯</string>
+    <string name="dlg_title_app_hint">提示</string>
+    <string name="dlg_msg_app_exit">退出应用吗？</string>
+    <string name="dlg_button_ok">退出</string>
+    <string name="dlg_button_cancel">取消</string>
+    <string name="toast_backkey_again_to_quit">再按一次退出键退出应用</string>
+    <string name="toast_network_not_available_downloading_canceld">网络不可用，下载取消</string>
+    <string name="toast_course_manifest_not_available">课程详细不存在</string>
+    <string name="menu_about">关于</string>
+    <string name="menu_send_sms_to_friends">短信推荐好友</string>
+    <string name="menu_pay_by_sms">短信支付</string>
+    <string name="menu_test">测试</string>
+    <string name="dlg_title_about">关于</string>
+    <string name="dlg_msg_about_version">版本：%1$s</string>
+    <string name="dlg_msg_about_author">作者：和大一</string>
+    <string name="dlg_msg_about_email">邮箱：2384945483@qq.com</string>
+
+    <string name="gpstracker">GpsTracker</string>
+    <string name="logfileview">LogFileViewer</string>
+</resources>

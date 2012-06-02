@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- <!DOCTYPE project [
+    <!ENTITY properties SYSTEM "file:../../../build.xml">
+    <!ENTITY targets SYSTEM "file:../../../build.xml">
+]> -->
+<project name="console_dev" default="create_run_jar" basedir="../../.." xmlns:artifact="urn:maven-artifact-ant">
+	<import file="../../../build.xml"/>
+	
+	<target name="prop">
+		<property name="modules.filename" value="modules.all.properties"/>
+	</target>
+</project>

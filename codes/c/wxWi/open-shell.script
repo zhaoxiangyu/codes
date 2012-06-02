@@ -1,0 +1,3 @@
+Log(_T("open-shell.script is about to run..."));
+IO.Execute(_T("nautilus"));
+IO.Execute(_T("gnome-terminal"));

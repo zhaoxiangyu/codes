@@ -1,0 +1,5 @@
+<root>
+<lib-project>my-library</lib-project>
+<lib-project>ad-library</lib-project>
+<lib-project>umeng-library</lib-project>
+</root>

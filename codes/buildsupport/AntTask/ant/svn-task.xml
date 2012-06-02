@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="svn-task" basedir=".." xmlns:ivy="antlib:org.apache.ivy.ant">
+
+	<dirname property="antfile.dir" file="${ant.file.svn-task}"/>
+	<property name="i.basedir" value="${antfile.dir}/.."/>
+	<import file="${i.basedir}/ant/env-setting.xml" />
+		
+	<macrodef name="svn-help">
+		<sequential>
+			<cmd2 executable="svn" line="help"/> 
+		</sequential>
+	</macrodef>
+	
+</project>

@@ -1,0 +1,15 @@
+<project name="rhc" basedir="..">
+	<property file="${basedir}/build/rhc.properties"/>
+	<import file="${AntTask.dir}/ant/env-setting.xml"/>
+	<import file="${AntTask.dir}/ant/common-tools.xml"/>
+
+	<dirname property="antfile.dir" file="${ant.file.rhc}"/>
+	<property name="i.basedir" value="${antfile.dir}/.."/>
+	
+	<property name="makefile" value="build/rhc.mak"/>
+
+	<target name="setup">
+		<make makefile="${makefile}" target="setup"/>
+	</target>
+
+</project>

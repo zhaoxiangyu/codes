@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="smartqApp" basedir="..">
+	<property environment="env"/>
+	
+	<import file="${basedir}/../AntTask/ant/common-tools.xml" />
+	<import file="${basedir}/../AntTask/ant/use-android-tools.xml" />
+
+	<property file="${basedir}/ant.properties"/>
+
+	<property name="apk.basename" value="${ant.project.name}"/>
+	<property name="apk.filename" value="${apk.basename}-ant-release.apk"/>
+	<property name="apk.package" value="sharpx.vocreader"/>
+	<property name="version.code" value="4"/>
+	
+	<target name="i-apk-sign-4appchina">
+		<exec executable="${JARSIGNER}" dir="${basedir}">
+			<arg line="-verbose -keystore keystore/he.keystore  -storepass 123qwe
+				-keypass 123qwe -signedjar test/appChina/VerifyApk-signed.apk
+				test/appChina/VerifyApk.apk he@android"/>
+		</exec>
+		<exec executable="${JARSIGNER}" dir="${basedir}">
+			<arg line="-verify -verbose -certs test/appChina/VerifyApk-signed.apk"/>
+		</exec>
+	</target>
+	
+	<target name="adb-release-install">
+		<adb-install package-name="${apk.package}" apk-file="bin/${apk.filename}"/>
+	</target>
+	
+	<target name="adb-run-vocreader">
+		<adb-run-app activity="sharpx.vocreader/org.sharp.vocreader.view.SplashActi"/>
+	</target>
+
+	<target name="adb-kill-vocreader">
+		<adb-kill-app package-name="sharpx.vocreader"/>
+	</target>
+	
+	<target name="adb-remove-appdata">
+		<adb-rmdir dir="/sdcard/jpwordsReader"/>
+    </target>
+	
+	<target name="adb-view-vocreader-appdata">
+		<adb-cat-file file="/sdcard/jpWordsReader/br/chuji/courseList.json"/>
+		<adb-cat-file file="/sdcard/jpWordsReader/br/chuji/unit1/1/course.json"/>
+		<adb-cat-file file="/data/local.prop"/>
+    </target>
+	
+	<target name="i-apk-sign">
+		<copy file="bin/${apk.basename}-release-unsigned.apk" tofile="bin/${apk.basename}-ant-unsigned.apk"/>
+		<delete file="bin/${apk.filename}"/>
+		<signjar jar="bin/${apk.basename}-ant-unsigned.apk"
+			signedjar="bin/${apk.basename}-ant-signed.apk"
+			keystore="${key.store}"
+			storepass="${key.store.password}"
+			alias="${key.alias}"
+			keypass="${key.alias.password}"
+			verbose="true" />
+		<exec executable="${ZIPALIGN}" dir="${basedir}">
+			<arg line="-v 4 bin/${apk.basename}-ant-signed.apk bin/${apk.filename}"/>
+		</exec>
+	</target>
+	
+	<target name="android-update-project">
+		<android-update-project target="1" path="../smartqApp"/>
+		<android-update-project target="1" path="../my-library"/>
+		<android-update-project target="1" path="../ad-library"/>
+		<android-update-project target="1" path="../umeng-library"/>
+		<android-update-project target="1" path="../useNdk"/>
+		<android-update-project target="1" path="../gfan-library"/>
+		<android-update-project target="1" path="../alipay-library"/>
+    </target>
+
+	<target name="aapt-features-list">
+		<exec executable="${AAPT}" dir="${basedir}">
+			<arg line="dump badging bin/${apk.filename}"/>
+		</exec>
+	</target>
+	
+	<target name="check-update">
+		<echo message="check apk bin/${apk.filename}"/>
+		<uptodate property="uptodate.ant-release-apk" targetfile="bin/${apk.filename}" >
+		    <srcfiles dir= "${basedir}" includes="src/**/*.java,res/**,*" excludes="bin/**,ant/**"/>
+		    <srcfiles dir= "${basedir}/../ad-library" includes="src/**/*.java,res/**" excludes="bin/**,ant/**"/>
+	    	<srcfiles dir= "${basedir}/../my-library" includes="src/**/*.java,res/**" excludes="bin/**,ant/**"/>
+		    <srcfiles dir= "${basedir}/../umeng-library" includes="src/**/*.java,res/**" excludes="bin/**,ant/**"/>
+		    <srcfiles dir= "${basedir}/../alipay-library" includes="src/**/*.java,res/**" excludes="bin/**,ant/**"/>
+		</uptodate>
+		<echo message="uptodate.ant-release-apk: ${uptodate.ant-release-apk}"></echo>
+		<echo message="check apk bin/${apk.basename}-debug.apk"/>
+		<uptodate property="uptodate.debug-apk" targetfile="bin/${apk.basename}-debug.apk" >
+		    <srcfiles dir= "${basedir}" includes="src/**/*.java,res/**,*" excludes="bin/**,ant/**"/>
+		    <srcfiles dir= "${basedir}/../ad-library" includes="src/**/*.java,res/**" excludes="bin/**,ant/**"/>
+	    	<srcfiles dir= "${basedir}/../my-library" includes="src/**/*.java,res/**" excludes="bin/**,ant/**"/>
+		    <srcfiles dir= "${basedir}/../umeng-library" includes="src/**/*.java,res/**" excludes="bin/**,ant/**"/>
+		    <srcfiles dir= "${basedir}/../alipay-library" includes="src/**/*.java,res/**" excludes="bin/**,ant/**"/>
+		</uptodate>
+		<echo message="uptodate.debug-apk: ${uptodate.debug-apk}"></echo>
+	</target>
+	
+
+	<target name="i-dex2jar">
+		<delete dir="bin/smartqApp-release" failonerror="false"/>
+		<dex2jar apkdir="bin" apkbasename="smartqApp-release" 
+			outputdir="bin/smartqApp-release"/>
+	</target>
+	
+	<target name="i-dex2jar-3rdapp">
+		<dex2jar apkdir="F:/java/android/apks" apkbasename="jp-comic100" 
+			outputdir="F:/java/android/apks/jp-comic100"/>
+	</target>
+	
+	<target name="i-deploy-win7">
+		<copy todir="F:/win7" file="bin/${apk.filename}"/>
+    </target>
+	
+	<target name="i-run">
+		<parallel>
+			<sequential>
+				<!--
+				<antcall target="emulator-telnet-kill"/>
+				-->
+				<antcall target="emulator-start-android2.1"/>
+			</sequential>
+			<sequential>
+				<antcall target="i-ant-release-build"/>
+				<antcall target="adb-release-install"/>
+				<adb-input-keyevent keycode="82"/>
+				<beep/>
+				<antcall target="adb-run-vocreader"/>
+			</sequential>				
+		</parallel>
+    </target>
+	
+	<target name="i-run-debug">
+		<parallel>
+			<sequential>
+				<!--
+				<antcall target="emulator-telnet-kill"/>
+				-->
+				<antcall target="emulator-start-android2.1"/>
+			</sequential>
+			<sequential>
+				<antcall target="i-ant-debug-build"/>
+				<adb-install package-name="${apk.package}" apk-file="bin/${apk.basename}-debug.apk"/>
+				<adb-input-keyevent keycode="82"/>
+				<beep/>
+				<!-- 
+				<antcall target="adb-run-vocreader"/>
+				 -->
+			</sequential>				
+		</parallel>
+    </target>
+
+	<target name="i-restart-app">
+		<antcall target="adb-kill-vocreader"/>
+		<antcall target="adb-remove-appdata"/>
+		<antcall target="adb-run-vocreader"/>
+	</target>
+	
+	<target name="i-ant-release-build" unless="${uptodate.ant-release-apk}" depends="check-update">
+		<antcall target="build-clean"/>
+		<antcall target="build-release"/>
+		<antcall target="i-apk-sign"/>
+    </target>
+	
+	<target name="i-ant-debug-build" unless="${uptodate.debug-apk}" depends="check-update">
+		<antcall target="build-clean"/>
+		<antcall target="build-debug"/>
+    </target>
+	
+	<target name="-channel-release-build" depends="check-update">
+		<tstamp/>
+		<!-- 
+		<copy file="AndroidManifest-template.xml" tofile="AndroidManifest.xml" overwrite="true"/>
+		<replace file="AndroidManifest.xml" token="{{channel_name}}" value="${channel.name}"/>
+		<replace file="AndroidManifest.xml" token="{{version_code}}" value="${version.code}"/>
+		<replace file="AndroidManifest.xml" token="{{version_name}}" 
+			value="1.0.${version.code}_${channel.name}${DSTAMP}"/>
+		-->
+		<xmltask source="AndroidManifest.xml" dest="AndroidManifest.xml">
+			<replace path="manifest/@android:versionCode" withText="${version.code}"/>
+			<replace path="manifest/@android:versionName" withText="1.0.${version.code}_${channel.name}${DSTAMP}"/>
+			<replace path="manifest/application/meta-data[@android:name='UMENG_CHANNEL']/@android:value" withText="${channel.name}"/>
+		</xmltask>
+		
+		<copy todir="${basedir}/res" overwrite="true">
+			<fileset dir="${basedir}/res-template" includes="**/strings.xml"/>
+		</copy>
+		<replace token="{{version_name}}" 
+			value="1.0.${version.code}_${channel.name}${DSTAMP}"
+			dir="${basedir}/res" includes="**/strings.xml">
+		</replace>
+		
+		<antcall target="build-clean"/>
+		<antcall target="i-ant-release-build"/>
+		<mkdir dir="${apk-backup-dir}"/>
+		<copy file="bin/${apk.filename}" 
+			tofile="${apk-backup-dir}/${apk.basename}-${channel.name}-${DSTAMP}.apk"/>
+		<copy file="bin/proguard/mapping.txt" 
+			tofile="${apk-backup-dir}/mapping-${channel.name}-${DSTAMP}.txt"/>
+		<beep/>
+    </target>
+	
+	<target name="i-channels-release-build">
+		<!--
+		<antcall target="-channel-release-build" inheritall="false">
+			<param name="uptodate.ant-release-apk" value="false"/>
+			<param name="channel.name" value="gfan"/>
+		</antcall>
+		<antcall target="-channel-release-build" inheritall="false">
+			<param name="uptodate.ant-release-apk" value="false"/>
+			<param name="channel.name" value="appChina"/>
+		</antcall>
+		<antcall target="-channel-release-build" inheritall="false">
+			<param name="uptodate.ant-release-apk" value="false"/>
+			<param name="channel.name" value="hiapk"/>
+		</antcall>
+		-->
+		<antcall target="-channel-release-build" inheritall="false">
+			<param name="uptodate.ant-release-apk" value="false"/>
+			<param name="channel.name" value="testing"/>
+		</antcall>
+	</target>
+	
+	<target name="src-gbk2utf8">
+		<!--
+		<native2ascii encoding="GBK" src="src" dest="src2" reverse="yes"
+		   includes="**/*.java"/>
+		-->
+		<copy todir="src2" encoding="GBK" outputencoding="UTF-8">
+			<fileset dir="src" includes="**/*.java"/>
+		</copy>
+	</target>
+	
+
+</project>

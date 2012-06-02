@@ -1,0 +1,50 @@
+<project name="jni-test" basedir="..">
+	<import file="${basedir}/../AntTask/ant/env-setting.xml" />
+	<import file="${basedir}/../AntTask/ant/common-tools.xml" />
+	<import file="${basedir}/../AntTask/ant/jace-tools.xml" />
+	<import file="${basedir}/../AntTask/ant/j2c-tools.xml" />
+
+	<property name="java.src.dir" location="src"/>
+	<property name="javac.out.dir" location="bin/ant/classes"/>
+	<property name="jar.out.file" location="bin/ant/classes.jar"/>
+	<property name="javah.out.dir" location="jni/javah/header"/>
+	<property name="gcjh.out.dir" location="jni/gcj/src"/>
+	<property name="jace.out.dir" location="jni/jace"/>
+	
+	<target name="prepareProxy">
+		<mkdir dir="${javac.out.dir}"/>
+		<javac srcdir="${java.src.dir}" destdir="${javac.out.dir}"/>
+		<jar destfile="${jar.out.file}" basedir="${javac.out.dir}"/>
+
+		<gcjh2 destdir="${gcjh.out.dir}" class="sharpx.jni.Test" 
+			classpath="${javac.out.dir}" verbose="yes"/>
+
+		<!--
+		<proxy-generator2
+			classfile="${javac.out.dir}/sharpx/jni/Bean.class"
+			todir="${jace.out.dir}"/>
+		-->
+		<batch-generator jarfile="${jar.out.file}" headerdir="${jace.out.dir}"
+			sourcedir="${jace.out.dir}"/>
+		<peer-generator 
+			classfile="${javac.out.dir}/sharpx/jni/Bean.class"
+			libname="beans" headerdir="${jace.out.dir}"
+			sourcedir="${jace.out.dir}"
+		/>
+	</target>
+	
+	<target name="javah">
+		<delete dir="${javah.out.dir}"/>
+		<mkdir dir="${javah.out.dir}"/>
+		
+		<javah destdir="${javah.out.dir}"
+			classpath="${javac.out.dir}" verbose="yes">
+			<class name="sharpx.jni.Test"/>
+			<class name="sharpx.jni.Bean"/>
+			<class name="sharpx.jni.Main"/>
+			<class name="sharpx.jni.Test2Int"/>
+			<class name="sharpx.jni.Test2Impl1"/>
+			<class name="sharpx.jni.Test2JniImpl"/>
+		</javah>
+	</target>
+</project>

@@ -1,0 +1,1 @@
+cmd_/home/he/ws/c/ubuntu/myddriver/hello.ko := ld -r -m elf_i386 -T /usr/src/linux-headers-2.6.35-22-generic/scripts/module-common.lds --build-id -o /home/he/ws/c/ubuntu/myddriver/hello.ko /home/he/ws/c/ubuntu/myddriver/hello.o /home/he/ws/c/ubuntu/myddriver/hello.mod.o

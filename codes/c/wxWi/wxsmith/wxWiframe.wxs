@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<wxsmith>
+	<object class="wxFrame" name="wxWiFrame">
+		<title>An WxWidget Application</title>
+		<pos>50,0</pos>
+		<size>271,129</size>
+		<id_arg>0</id_arg>
+		<object class="wxPanel" name="ID_PANEL_MAIN" variable="pMain" member="yes">
+			<pos>96,96</pos>
+			<size>271,120</size>
+			<handler function="OnpMainPaint" entry="EVT_PAINT" />
+			<object class="wxButton" name="ID_BUTTON1" variable="btAbout" member="yes">
+				<label>About</label>
+				<pos>96,24</pos>
+				<handler function="OnButton1Click" entry="EVT_BUTTON" />
+			</object>
+		</object>
+		<object class="wxMenuBar" variable="mbMain" member="no">
+			<object class="wxMenu" variable="mFile" member="no">
+				<label>&amp;File</label>
+				<object class="wxMenuItem" name="idMenuQuit" variable="MenuItem1" member="no">
+					<label>Quit</label>
+					<accel>Alt-F4</accel>
+					<help>Quit the application</help>
+					<handler function="OnQuit" entry="EVT_MENU" />
+				</object>
+			</object>
+			<object class="wxMenu" variable="Menu2" member="no">
+				<label>Help</label>
+				<object class="wxMenuItem" name="idMenuAbout" variable="MenuItem2" member="no">
+					<label>About</label>
+					<accel>F1</accel>
+					<help>Show info about this application</help>
+					<handler function="OnAbout" entry="EVT_MENU" />
+				</object>
+			</object>
+		</object>
+		<object class="wxStatusBar" name="ID_STATUSBAR" variable="statusBar" member="yes">
+			<fields>1</fields>
+			<widths>-1</widths>
+			<styles>wxSB_NORMAL</styles>
+		</object>
+	</object>
+</wxsmith>

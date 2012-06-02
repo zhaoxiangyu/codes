@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:id="@+id/layout_root"
+              android:orientation="horizontal"
+              android:layout_width="fill_parent"
+              android:layout_height="fill_parent"
+              android:padding="10dp"
+              >
+    <TextView android:id="@+id/course_name"
+		android:layout_width="50dp"
+		android:layout_height="fill_parent"
+		android:layout_gravity="left"
+		android:gravity="center_vertical|left"
+		android:text="course_name"
+		/>
+    <TextView android:id="@+id/zip_size"
+    	android:layout_width="100dp"
+		android:layout_height="fill_parent"
+		android:layout_gravity="center"
+		android:gravity="center_vertical|center"
+		android:text="zip_size"
+		/>
+    <TextView android:text="course_op" 
+    	android:layout_width="50dp" 
+    	android:layout_gravity="right" 
+    	android:id="@+id/course_op" 
+    	android:layout_height="fill_parent" android:gravity="center_vertical|right"/>
+</LinearLayout>

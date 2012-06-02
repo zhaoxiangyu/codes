@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="common-tools" basedir=".." xmlns:ivy="antlib:org.apache.ivy.ant"
+	default="default">
+
+	<dirname property="antfile.dir" file="${ant.file.common-tools}"/>
+	<property name="i.basedir" value="${antfile.dir}/.."/>
+	<import file="${i.basedir}/ant/env-setting.xml" />
+	
+	<target name="default">
+		<!--
+		<gcc modulename="smartq" src="my/c" objs="a.o b.o c.o" target="echo_vars"/>
+		-->
+		
+		<copy file="${jdepend.loc}/lib/jdepend-2.9.1.jar" 
+			todir="${user.home}/.ant/lib"/>
+	</target>
+	
+	<macrodef name="gcc">
+		<attribute name="modulename"/>
+        <attribute name="target" default="exe" 
+        	description="exe,lib,compile,echo_vars"/>
+		<attribute name="src" default="src"/>
+		<attribute name="objs" default=""/>
+		<attribute name="incpaths" default=""/>
+		<attribute name="libpaths" default=""/>
+		<attribute name="libnames" default=""/>
+        <sequential>
+    		<make makefile="${prj.android.dir}/AntTask/script/make/toolchain-gcc.mk" 
+    			target="@{target}">
+    			<vars>
+    				<env key="SRC_DIR" value="@{src}"/>
+    				<env key="MODULE_NAME" value="@{modulename}"/>
+    				<env key="OBJS" value="@{objs}"/>
+    			</vars>
+        	</make>
+        </sequential>
+    </macrodef>
+	
+    <macrodef name="swig">
+        <attribute name="modulefile"/>
+    	<attribute name="jpackage" default=""/>
+    	<attribute name="coutfile" default=""/>
+    	<attribute name="joutdir" default=""/>
+        <sequential>
+        	<if><equals arg1="@{jpackage}" arg2=""/><then>
+        		<property name="opt.package" value=""></property>
+        	</then><else>
+    			<property name="opt.package">-package @{jpackage}</property>
+        	</else></if>
+        	<if><equals arg1="@{coutfile}" arg2=""/><then>
+            	<property name="opt.coutfile" value=""></property>
+        	</then><else>
+            	<property name="opt.coutfile">-o @{coutfile}</property>
+        	</else></if>
+        	<if><equals arg1="@{joutdir}" arg2=""/><then>
+            	<property name="opt.joutdir" value=""></property>
+        	</then><else>
+            	<property name="opt.joutdir">-outdir @{joutdir}</property>
+        	</else></if>
+        	<echo message="swig -java -c++ ${opt.package} ${opt.coutfile} ${opt.joutdir} @{modulefile}"/>
+            <dirname file="@{coutfile}" property="coutdir"/>
+        	<mkdir dir="${coutdir}"></mkdir>
+            <mkdir dir="@{joutdir}"/>
+        	<cmd2 executable="swig" 
+            	line="-java -c++ ${opt.package} ${opt.coutfile} ${opt.joutdir} @{modulefile}"/>
+        </sequential>
+    </macrodef>
+		
+	<macrodef name="code-exp2">
+		<attribute name="todir"/>
+		<element name="fss" optional="yes"/>
+		<sequential>
+			<mkdir dir="@{todir}"/>
+			<copy todir="@{todir}" preservelastmodified="yes" verbose="yes">
+				<fss/>
+			</copy>
+		</sequential>
+	</macrodef>
+	
+	<macrodef name="code-exp">
+		<attribute name="todir"/>
+		<element name="fss" optional="yes"/>
+		<sequential>
+			<mkdir dir="@{todir}"/>
+			<sync todir="@{todir}" includeemptydirs="yes" verbose="yes">
+				<fss/>
+			</sync>
+		</sequential>
+	</macrodef>
+	
+	<macrodef name="batch-rename">
+		<attribute name="from"/>		
+		<attribute name="to"/>
+		<attribute name="dir"/>		
+		<attribute name="todir"/>
+		<attribute name="nomatchcopy" default="true"/>
+		<sequential>
+			<echo message="batch-rename dir=@{dir} todir=@{todir} from=@{from} to=@{to}"/>
+			<mkdir dir="@{todir}"/>
+			<if>
+				<equals arg1="@{nomatchcopy}" arg2="true"/>
+				<then>
+					<copy todir="@{todir}">
+						<fileset dir="@{dir}">
+						</fileset>
+						<firstmatchmapper>
+							<regexpmapper from="@{from}" to="@{to}" casesensitive="yes"/>
+							<identitymapper/>
+						</firstmatchmapper>
+					</copy>
+				</then>
+				<else>
+					<copy todir="@{todir}">
+						<fileset dir="@{dir}">
+						</fileset>
+						<regexpmapper from="@{from}" to="@{to}" casesensitive="yes"/>
+					</copy>
+				</else>
+			</if>
+			
+		</sequential>
+	</macrodef>
+
+	<property name="antlr34-jarname">antlr-3.4-complete.jar</property>
+	<property name="antlr33-jarname">antlr-3.3-complete.jar</property>
+
+	<path id="atlr3.classpath">
+		<pathelement location="${antlr.dir}/${antlr34-jarname}"/>
+	</path>
+	
+	<macrodef name="antlr3">
+		<attribute name="target"/>
+		<attribute name="outputdirectory" default="."/>
+		<attribute name="libdirectory" default="."/>
+		<sequential>
+			<mkdir dir="@{outputdirectory}"/>
+			<java classname="org.antlr.Tool" fork="true" failonerror="true"
+				classpathref="atlr3.classpath">
+				<arg value="-o"/>
+				<arg path="@{outputdirectory}"/>
+				<arg value="-lib"/>
+				<arg path="@{libdirectory}"/>
+				<arg value="-verbose"/>
+				<arg value="-Xmultithreaded"/>
+				<arg value="-make"/>
+				<arg path="@{target}"/>
+			</java>
+		</sequential>
+	</macrodef>
+	
+	<taskdef resource="cpptasks.tasks" classpath="${ant-ext-jars.dir}/cpptasks.jar"/>
+	<typedef resource="cpptasks.types" classpath="${ant-ext-jars.dir}/cpptasks.jar"/>
+	
+	<taskdef resource="org/eclipse/jgit/ant/ant-tasks.properties">
+       <classpath>
+         <pathelement location="${ant-ext-jars.dir}/jgit/org.eclipse.jgit.ant-1.0.99.0.6-UNOFFICIAL-ROBERTO-RELEASE.jar"/>
+         <pathelement location="${ant-ext-jars.dir}/jgit/org.eclipse.jgit-1.3.0.201202151440-r.jar"/>
+         <pathelement location="${ant-ext-jars.dir}/jgit/jsch-0.1.46.jar"/>
+       </classpath>
+   </taskdef>
+	
+	<taskdef name="xmltask" classname="com.oopsconsultancy.xmltask.ant.XmlTask">
+		<classpath>
+			<pathelement location="${ant-ext-jars.dir}/xmltask.jar"/>
+		</classpath>
+	</taskdef>
+
+	<property name="jaranalyzer12.loc" location="${java-tools.dir}/JarAnalyzer-1.2"></property>
+	<path id="jaranalyzer.classpath">
+	   <pathelement path="${jaranalyzer12.loc}/jaranalyzer-1.2.jar"/>
+	   <pathelement path="${jaranalyzer12.loc}/lib/bcel-5.2.jar"/>
+	   <pathelement path="${jaranalyzer12.loc}/lib/jakarta-regexp-1.3.jar"/>
+	   <pathelement path="${jaranalyzer12.loc}/lib"/>
+	</path>
+	<taskdef name="jaranalyzer" classpathref="jaranalyzer.classpath"
+		classname="com.kirkk.analyzer.textui.JarAnalyzerTask">
+	</taskdef>
+	
+	<property name="jdepend.loc" location="${java-tools.dir}/jdepend-2.9.1">
+	</property>
+	
+	<target name="install-ant-contrib">
+		<copy file="${ant-contrib.dir}/ant-contrib-1.0b3.jar" 
+			todir="${ant-ext-jars.dir}"/>
+	</target>
+</project>

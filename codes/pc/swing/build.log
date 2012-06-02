@@ -1,0 +1,204 @@
+Buildfile: E:\xp\codes\projects\console\build.xml
+parsing buildfile E:\xp\codes\projects\console\build.xml with URI = file:/E:/xp/codes/projects/console/build.xml
+Project base dir set to: E:\xp\codes\projects\console
+parsing buildfile jar:file:/E:/xp/SW/apache-ant-1.8.2/lib/ant.jar!/org/apache/tools/ant/antlib.xml with URI = jar:file:/E:/xp/SW/apache-ant-1.8.2/lib/ant.jar!/org/apache/tools/ant/antlib.xml from a zip file
+Importing file E:\xp\codes\projects\console\lib\ant\ant-contrib.xml from E:\xp\codes\projects\console\build.xml
+Overriding previous definition of reference to ant.projectHelper
+parsing buildfile E:\xp\codes\projects\console\lib\ant\ant-contrib.xml with URI = file:/E:/xp/codes/projects/console/lib/ant/ant-contrib.xml
+Overriding previous definition of reference to ant.projectHelper
+Importing file E:\xp\codes\projects\console\lib\ant\one-jar-ant-task.xml from E:\xp\codes\projects\console\build.xml
+Overriding previous definition of reference to ant.projectHelper
+parsing buildfile E:\xp\codes\projects\console\lib\ant\one-jar-ant-task.xml with URI = file:/E:/xp/codes/projects/console/lib/ant/one-jar-ant-task.xml
+Overriding previous definition of reference to ant.projectHelper
+Importing file E:\xp\codes\projects\console\lib\ant\build-initMaven.xml from E:\xp\codes\projects\console\build.xml
+Overriding previous definition of reference to ant.projectHelper
+parsing buildfile E:\xp\codes\projects\console\lib\ant\build-initMaven.xml with URI = file:/E:/xp/codes/projects/console/lib/ant/build-initMaven.xml
+Override ignored for property "i.basedir"
+ [property] Loading E:\xp\codes\projects\console\build.properties
+parsing buildfile jar:file:/E:/xp/codes/projects/console/lib/maven-ant-tasks-2.1.1.jar!/org/apache/maven/artifact/ant/antlib.xml with URI = jar:file:/E:/xp/codes/projects/console/lib/maven-ant-tasks-2.1.1.jar!/org/apache/maven/artifact/ant/antlib.xml from a zip file
+     [echo] p.pom.file:E:\xp\codes\projects\console\pom.xml
+[artifact:pom] Maven Ant Tasks version: 2.1.1
+[artifact:pom] Loading Maven settings file: C:\Documents and Settings\he\.m2\settings.xml
+Overriding previous definition of reference to ant.projectHelper
+ [property] Loading E:\xp\codes\projects\console\build.properties
+Override ignored for property "dependencyfinder.home"
+Override ignored for property "a.release.dir.elearn"
+Override ignored for property "ant.build.javac.source"
+Override ignored for property "maven_repo.dir"
+Override ignored for property "jboss.home"
+Override ignored for property "3rd.jars"
+Override ignored for property "launch4j.dir"
+Override ignored for property "scala.home"
+Override ignored for property "ant.build.javac.target"
+ [uptodate] org\sharp\annotation\Log.java omitted as E:\xp\codes\projects\console\run\my2\my2.jar is up to date.
+ [uptodate] org\sharp\console\cube\Cube.java omitted as E:\xp\codes\projects\console\run\my2\my2.jar is up to date.
+ [uptodate] org\sharp\console\gtk\CuteSounder.java omitted as E:\xp\codes\projects\console\run\my2\my2.jar is up to date.
+ [uptodate] org\sharp\console\jni\Win32.java omitted as E:\xp\codes\projects\console\run\my2\my2.jar is up to date.
+ [uptodate] org\sharp\db\DB.java omitted as E:\xp\codes\projects\console\run\my2\my2.jar is up to date.
+ [uptodate] org\sharp\db\OrientDB.java omitted as E:\xp\codes\projects\console\run\my2\my2.jar is up to date.
+ [uptodate] org\sharp\intf\AppContext.java omitted as E:\xp\codes\projects\console\run\my2\my2.jar is up to date.
+ [uptodate] org\sharp\intf\AudioPlayer.java omitted as E:\xp\codes\projects\console\run\my2\my2.jar is up to date.
+ [uptodate] org\sharp\intf\ContentParser.java omitted as E:\xp\codes\projects\console\run\my2\my2.jar is up to date.
+ [uptodate] org\sharp\intf\Converter.java omitted as E:\xp\codes\projects\console\run\my2\my2.jar is up to date.
+ [uptodate] org\sharp\intf\Equivalent.java omitted as E:\xp\codes\projects\console\run\my2\my2.jar is up to date.
+ [uptodate] org\sharp\intf\FileHandler.java omitted as E:\xp\codes\projects\console\run\my2\my2.jar is up to date.
+ [uptodate] org\sharp\intf\ItemSelected.java omitted as E:\xp\codes\projects\console\run\my2\my2.jar is up to date.
+ [uptodate] org\sharp\intf\Pluggable.java omitted as E:\xp\codes\projects\console\run\my2\my2.jar is up to date.
+ [uptodate] org\sharp\intf\PluggableSupport.java omitted as E:\xp\codes\projects\console\run\my2\my2.jar is up to date.
+ [uptodate] org\sharp\intf\UI.java omitted as E:\xp\codes\projects\console\run\my2\my2.jar is up to date.
+ [uptodate] org\sharp\jdk\test\Editable.java omitted as E:\xp\codes\projects\console\run\my2\my2.jar is up to date.
+ [uptodate] org\sharp\jdk\test\InterfaceTest.java omitted as E:\xp\codes\projects\console\run\my2\my2.jar is up to date.
+ [uptodate] org\sharp\jdkex\FjUtils.java omitted as E:\xp\codes\projects\console\run\my2\my2.jar is up to date.
+ [uptodate] org\sharp\jdkex\JdkUtils.java omitted as E:\xp\codes\projects\console\run\my2\my2.jar is up to date.
+ [uptodate] org\sharp\jdkex\LangUtils.java omitted as E:\xp\codes\projects\console\run\my2\my2.jar is up to date.
+ [uptodate] org\sharp\jdkex\SecurityUtils.java omitted as E:\xp\codes\projects\console\run\my2\my2.jar is up to date.
+ [uptodate] org\sharp\jdkex\TextAreaAppender.java omitted as E:\xp\codes\projects\console\run\my2\my2.jar is up to date.
+ [uptodate] org\sharp\jdkex\Utils.java omitted as E:\xp\codes\projects\console\run\my2\my2.jar is up to date.
+ [uptodate] org\sharp\res\Compass-icon.png omitted as E:\xp\codes\projects\console\run\my2\my2.jar is up to date.
+ [uptodate] org\sharp\swing\Console.java omitted as E:\xp\codes\projects\console\run\my2\my2.jar is up to date.
+ [uptodate] org\sharp\swing\apps\bean2ui\BeanUi.java omitted as E:\xp\codes\projects\console\run\my2\my2.jar is up to date.
+ [uptodate] org\sharp\swing\apps\bean2ui\ClassUi.java omitted as E:\xp\codes\projects\console\run\my2\my2.jar is up to date.
+ [uptodate] org\sharp\swing\apps\bean2ui\ClassUi2.java omitted as E:\xp\codes\projects\console\run\my2\my2.jar is up to date.
+ [uptodate] org\sharp\swing\apps\bean2ui\ClassUi2_1.java omitted as E:\xp\codes\projects\console\run\my2\my2.jar is up to date.
+ [uptodate] org\sharp\swing\apps\bean2ui\VMUI.java omitted as E:\xp\codes\projects\console\run\my2\my2.jar is up to date.
+ [uptodate] org\sharp\swing\apps\bean2ui\sample\SampleBean.java omitted as E:\xp\codes\projects\console\run\my2\my2.jar is up to date.
+ [uptodate] org\sharp\swing\apps\beans\Config.java omitted as E:\xp\codes\projects\console\run\my2\my2.jar is up to date.
+ [uptodate] org\sharp\swing\apps\beans\Constants.java omitted as E:\xp\codes\projects\console\run\my2\my2.jar is up to date.
+ [uptodate] org\sharp\swing\apps\beans\RecentItems.java omitted as E:\xp\codes\projects\console\run\my2\my2.jar is up to date.
+ [uptodate] org\sharp\swing\apps\beans\ReviewInfo.java omitted as E:\xp\codes\projects\console\run\my2\my2.jar is up to date.
+ [uptodate] org\sharp\swing\apps\beans\UserInfo.java omitted as E:\xp\codes\projects\console\run\my2\my2.jar is up to date.
+ [uptodate] org\sharp\swing\apps\crossword\CrosswordUi.java omitted as E:\xp\codes\projects\console\run\my2\my2.jar is up to date.
+ [uptodate] org\sharp\swing\apps\crossword\PuzzleDisplay.java omitted as E:\xp\codes\projects\console\run\my2\my2.jar is up to date.
+ [uptodate] org\sharp\swing\apps\cslideingblock\ChineseSlidingBlock.java omitted as E:\xp\codes\projects\console\run\my2\my2.jar is up to date.
+ [uptodate] org\sharp\swing\apps\dirSnaps\DirSnapsApp.java omitted as E:\xp\codes\projects\console\run\my2\my2.jar is up to date.
+ [uptodate] org\sharp\swing\apps\el\DocReaderApp.java omitted as E:\xp\codes\projects\console\run\my2\my2.jar is up to date.
+ [uptodate] org\sharp\swing\apps\el\OxfordA7WebDict.java omitted as E:\xp\codes\projects\console\run\my2\my2.jar is up to date.
+ [uptodate] org\sharp\swing\apps\el\WebDict.java omitted as E:\xp\codes\projects\console\run\my2\my2.jar is up to date.
+ [uptodate] org\sharp\swing\apps\el\beans\Article.java omitted as E:\xp\codes\projects\console\run\my2\my2.jar is up to date.
+ [uptodate] org\sharp\swing\apps\el\beans\Config.java omitted as E:\xp\codes\projects\console\run\my2\my2.jar is up to date.
+ [uptodate] org\sharp\swing\apps\el\beans\NewWord.java omitted as E:\xp\codes\projects\console\run\my2\my2.jar is up to date.
+ [uptodate] org\sharp\swing\apps\el\beans\Phrase.java omitted as E:\xp\codes\projects\console\run\my2\my2.jar is up to date.
+ [uptodate] org\sharp\swing\apps\el\beans\Tag.java omitted as E:\xp\codes\projects\console\run\my2\my2.jar is up to date.
+ [uptodate] org\sharp\swing\apps\el\beans\term\beans\Meaning.java omitted as E:\xp\codes\projects\console\run\my2\my2.jar is up to date.
+ [uptodate] org\sharp\swing\apps\el\beans\term\beans\PartOfSpeech.java omitted as E:\xp\codes\projects\console\run\my2\my2.jar is up to date.
+ [uptodate] org\sharp\swing\apps\el\beans\term\beans\Term.java omitted as E:\xp\codes\projects\console\run\my2\my2.jar is up to date.
+ [uptodate] org\sharp\swing\apps\el\intf\ArticleOpener.java omitted as E:\xp\codes\projects\console\run\my2\my2.jar is up to date.
+ [uptodate] org\sharp\swing\apps\el\intf\ArticlePersistHandler.java omitted as E:\xp\codes\projects\console\run\my2\my2.jar is up to date.
+ [uptodate] org\sharp\swing\apps\el\intf\LuceneSearch.java omitted as E:\xp\codes\projects\console\run\my2\my2.jar is up to date.
+ [uptodate] org\sharp\swing\apps\el\intf\NewWordHandler.java omitted as E:\xp\codes\projects\console\run\my2\my2.jar is up to date.
+ [uptodate] org\sharp\swing\apps\el\intf\RecentFilePathsFetcher.java omitted as E:\xp\codes\projects\console\run\my2\my2.jar is up to date.
+ [uptodate] org\sharp\swing\apps\el\intf\TagHandler.java omitted as E:\xp\codes\projects\console\run\my2\my2.jar is up to date.
+ [uptodate] org\sharp\swing\apps\el\intf\VoicePronouncer.java omitted as E:\xp\codes\projects\console\run\my2\my2.jar is up to date.
+ [uptodate] org\sharp\swing\apps\el\res\bout.html omitted as E:\xp\codes\projects\console\run\my2\my2.jar is up to date.
+ [uptodate] org\sharp\swing\apps\el\res\intermediate.html omitted as E:\xp\codes\projects\console\run\my2\my2.jar is up to date.
+ [uptodate] org\sharp\swing\apps\el\res\take.html omitted as E:\xp\codes\projects\console\run\my2\my2.jar is up to date.
+ [uptodate] org\sharp\swing\apps\el\ui\BasePanel.java omitted as E:\xp\codes\projects\console\run\my2\my2.jar is up to date.
+ [uptodate] org\sharp\swing\apps\el\ui\ConfigPanel.java omitted as E:\xp\codes\projects\console\run\my2\my2.jar is up to date.
+ [uptodate] org\sharp\swing\apps\el\ui\DocNewWordsPanel.java omitted as E:\xp\codes\projects\console\run\my2\my2.jar is up to date.
+ [uptodate] org\sharp\swing\apps\el\ui\DocPhrasesPanel.java omitted as E:\xp\codes\projects\console\run\my2\my2.jar is up to date.
+ [uptodate] org\sharp\swing\apps\el\ui\DocSearchPanel.java omitted as E:\xp\codes\projects\console\run\my2\my2.jar is up to date.
+ [uptodate] org\sharp\swing\apps\el\ui\FileChoosePanel.java omitted as E:\xp\codes\projects\console\run\my2\my2.jar is up to date.
+ [uptodate] org\sharp\swing\apps\el\ui\HtmlArticlePanel.java omitted as E:\xp\codes\projects\console\run\my2\my2.jar is up to date.
+ [uptodate] org\sharp\swing\apps\el\ui\HtmlDictPanel.java omitted as E:\xp\codes\projects\console\run\my2\my2.jar is up to date.
+ [uptodate] org\sharp\swing\apps\el\ui\OxfordA7Panel.java omitted as E:\xp\codes\projects\console\run\my2\my2.jar is up to date.
+ [uptodate] org\sharp\swing\apps\el\ui\OxfordA7Web2Dict.java omitted as E:\xp\codes\projects\console\run\my2\my2.jar is up to date.
+ [uptodate] org\sharp\swing\apps\el\ui\WordTagsPanel.java omitted as E:\xp\codes\projects\console\run\my2\my2.jar is up to date.
+ [uptodate] org\sharp\swing\apps\el\ui\widget\ArticleListPanel.java omitted as E:\xp\codes\projects\console\run\my2\my2.jar is up to date.
+ [uptodate] org\sharp\swing\apps\el\ui\widget\FileListPanel.java omitted as E:\xp\codes\projects\console\run\my2\my2.jar is up to date.
+ [uptodate] org\sharp\swing\apps\el\ui\widget\HtmlPanel.java omitted as E:\xp\codes\projects\console\run\my2\my2.jar is up to date.
+ [uptodate] org\sharp\swing\apps\el\ui\widget\TagListPanel.java omitted as E:\xp\codes\projects\console\run\my2\my2.jar is up to date.
+ [uptodate] org\sharp\swing\apps\el\ui\widget\TermNavPanel.java omitted as E:\xp\codes\projects\console\run\my2\my2.jar is up to date.
+ [uptodate] org\sharp\swing\apps\el\ui\widget\WordInfoPanel.java omitted as E:\xp\codes\projects\console\run\my2\my2.jar is up to date.
+ [uptodate] org\sharp\swing\apps\el\ui\widget\WordInputPanel.java omitted as E:\xp\codes\projects\console\run\my2\my2.jar is up to date.
+ [uptodate] org\sharp\swing\apps\el\utils\ArticleUtils.java omitted as E:\xp\codes\projects\console\run\my2\my2.jar is up to date.
+ [uptodate] org\sharp\swing\apps\el\utils\NewWordsUtils.java omitted as E:\xp\codes\projects\console\run\my2\my2.jar is up to date.
+ [uptodate] org\sharp\swing\apps\el\utils\PhrasesUtils.java omitted as E:\xp\codes\projects\console\run\my2\my2.jar is up to date.
+ [uptodate] org\sharp\swing\apps\el\utils\TagUtils.java omitted as E:\xp\codes\projects\console\run\my2\my2.jar is up to date.
+ [uptodate] org\sharp\swing\apps\el\utils\TermUtils.java omitted as E:\xp\codes\projects\console\run\my2\my2.jar is up to date.
+ [uptodate] org\sharp\swing\apps\graph\Sample.java omitted as E:\xp\codes\projects\console\run\my2\my2.jar is up to date.
+ [uptodate] org\sharp\swing\apps\jpwords\Deployer.java omitted as E:\xp\codes\projects\console\run\my2\my2.jar is up to date.
+ [uptodate] org\sharp\swing\apps\jpwords\JpTerm.java omitted as E:\xp\codes\projects\console\run\my2\my2.jar is up to date.
+ [uptodate] org\sharp\swing\apps\jpwords\JpwordsUi.java omitted as E:\xp\codes\projects\console\run\my2\my2.jar is up to date.
+ [uptodate] org\sharp\swing\apps\jpwords\UserData.java omitted as E:\xp\codes\projects\console\run\my2\my2.jar is up to date.
+ [uptodate] org\sharp\swing\apps\jpwords\beans\Config.java omitted as E:\xp\codes\projects\console\run\my2\my2.jar is up to date.
+ [uptodate] org\sharp\swing\apps\jpwords\dict.cn.html omitted as E:\xp\codes\projects\console\run\my2\my2.jar is up to date.
+ [uptodate] org\sharp\swing\apps\jpwords\iciba.html omitted as E:\xp\codes\projects\console\run\my2\my2.jar is up to date.
+ [uptodate] org\sharp\swing\apps\jpwords\longman.html omitted as E:\xp\codes\projects\console\run\my2\my2.jar is up to date.
+ [uptodate] org\sharp\swing\apps\jpwords\mw.html omitted as E:\xp\codes\projects\console\run\my2\my2.jar is up to date.
+ [uptodate] org\sharp\swing\apps\jpwords\oxford-2.html omitted as E:\xp\codes\projects\console\run\my2\my2.jar is up to date.
+ [uptodate] org\sharp\swing\apps\jpwords\oxford.html omitted as E:\xp\codes\projects\console\run\my2\my2.jar is up to date.
+ [uptodate] org\sharp\swing\apps\txt2lrc\LrcUi.java omitted as E:\xp\codes\projects\console\run\my2\my2.jar is up to date.
+ [uptodate] org\sharp\swing\apps\txt2lrc\TextDoc.java omitted as E:\xp\codes\projects\console\run\my2\my2.jar is up to date.
+ [uptodate] org\sharp\swing\apps\txt2lrc\res\tale.txt omitted as E:\xp\codes\projects\console\run\my2\my2.jar is up to date.
+ [uptodate] org\sharp\swing\apps\video\VideoUi.java omitted as E:\xp\codes\projects\console\run\my2\my2.jar is up to date.
+ [uptodate] org\sharp\swing\apps\webdict2\OxfordUrlTerm.java omitted as E:\xp\codes\projects\console\run\my2\my2.jar is up to date.
+ [uptodate] org\sharp\swing\apps\webdict2\UserData.java omitted as E:\xp\codes\projects\console\run\my2\my2.jar is up to date.
+ [uptodate] org\sharp\swing\apps\webdict2\WebDictApp.java omitted as E:\xp\codes\projects\console\run\my2\my2.jar is up to date.
+ [uptodate] org\sharp\swing\apps\webdict2\beans\Config.java omitted as E:\xp\codes\projects\console\run\my2\my2.jar is up to date.
+ [uptodate] org\sharp\swing\apps\webdict2\beans\Meaning.java omitted as E:\xp\codes\projects\console\run\my2\my2.jar is up to date.
+ [uptodate] org\sharp\swing\apps\webdict2\beans\PartOfSpeech.java omitted as E:\xp\codes\projects\console\run\my2\my2.jar is up to date.
+ [uptodate] org\sharp\swing\apps\webdict2\beans\Term.java omitted as E:\xp\codes\projects\console\run\my2\my2.jar is up to date.
+ [uptodate] org\sharp\swing\apps\webdict2\beans\TermExtra.java omitted as E:\xp\codes\projects\console\run\my2\my2.jar is up to date.
+ [uptodate] org\sharp\swing\apps\webdict2\beans\WebDict.java omitted as E:\xp\codes\projects\console\run\my2\my2.jar is up to date.
+ [uptodate] org\sharp\swing\apps\webdict2\oxford-sentence.htm omitted as E:\xp\codes\projects\console\run\my2\my2.jar is up to date.
+ [uptodate] org\sharp\swing\apps\webdict2\utils\OxfordWebDict.java omitted as E:\xp\codes\projects\console\run\my2\my2.jar is up to date.
+ [uptodate] org\sharp\swing\apps\webdict2\utils\VocChecker.java omitted as E:\xp\codes\projects\console\run\my2\my2.jar is up to date.
+ [uptodate] org\sharp\swing\apps\webdict\Expl.java omitted as E:\xp\codes\projects\console\run\my2\my2.jar is up to date.
+ [uptodate] org\sharp\swing\apps\webdict\LookupUi.java omitted as E:\xp\codes\projects\console\run\my2\my2.jar is up to date.
+ [uptodate] org\sharp\swing\apps\webdict\OxfordUrlTerm.java omitted as E:\xp\codes\projects\console\run\my2\my2.jar is up to date.
+ [uptodate] org\sharp\swing\apps\webdict\UserData.java omitted as E:\xp\codes\projects\console\run\my2\my2.jar is up to date.
+ [uptodate] org\sharp\swing\apps\webdict\beans\Config.java omitted as E:\xp\codes\projects\console\run\my2\my2.jar is up to date.
+ [uptodate] org\sharp\swing\apps\webdict\dict.cn.html omitted as E:\xp\codes\projects\console\run\my2\my2.jar is up to date.
+ [uptodate] org\sharp\swing\apps\webdict\iciba.html omitted as E:\xp\codes\projects\console\run\my2\my2.jar is up to date.
+ [uptodate] org\sharp\swing\apps\webdict\longman.html omitted as E:\xp\codes\projects\console\run\my2\my2.jar is up to date.
+ [uptodate] org\sharp\swing\apps\webdict\mw.html omitted as E:\xp\codes\projects\console\run\my2\my2.jar is up to date.
+ [uptodate] org\sharp\swing\apps\webdict\oxford-2.html omitted as E:\xp\codes\projects\console\run\my2\my2.jar is up to date.
+ [uptodate] org\sharp\swing\apps\webdict\oxford.html omitted as E:\xp\codes\projects\console\run\my2\my2.jar is up to date.
+ [uptodate] org\sharp\swing\apps\webdict\oxforde-make.html omitted as E:\xp\codes\projects\console\run\my2\my2.jar is up to date.
+ [uptodate] org\sharp\swing\apps\webdict\oxforde.html omitted as E:\xp\codes\projects\console\run\my2\my2.jar is up to date.
+ [uptodate] org\sharp\swing\apps\win\dcom\LnkUi.java omitted as E:\xp\codes\projects\console\run\my2\my2.jar is up to date.
+ [uptodate] org\sharp\swing\utils\BeanUiUtils.java omitted as E:\xp\codes\projects\console\run\my2\my2.jar is up to date.
+ [uptodate] org\sharp\swing\utils\ClosableTab.java omitted as E:\xp\codes\projects\console\run\my2\my2.jar is up to date.
+ [uptodate] org\sharp\swing\utils\LogUi.java omitted as E:\xp\codes\projects\console\run\my2\my2.jar is up to date.
+ [uptodate] org\sharp\swing\utils\SwingUtils.java omitted as E:\xp\codes\projects\console\run\my2\my2.jar is up to date.
+ [uptodate] org\sharp\swing\utils\TrayUtils.java omitted as E:\xp\codes\projects\console\run\my2\my2.jar is up to date.
+ [uptodate] org\sharp\utils\AesCypher.java omitted as E:\xp\codes\projects\console\run\my2\my2.jar is up to date.
+ [uptodate] org\sharp\utils\AntUtils.java omitted as E:\xp\codes\projects\console\run\my2\my2.jar is up to date.
+ [uptodate] org\sharp\utils\AsmUtils.java omitted as E:\xp\codes\projects\console\run\my2\my2.jar is up to date.
+ [uptodate] org\sharp\utils\FsUtils.java omitted as E:\xp\codes\projects\console\run\my2\my2.jar is up to date.
+ [uptodate] org\sharp\utils\HtmlUtils.java omitted as E:\xp\codes\projects\console\run\my2\my2.jar is up to date.
+ [uptodate] org\sharp\utils\HttpCli.java omitted as E:\xp\codes\projects\console\run\my2\my2.jar is up to date.
+ [uptodate] org\sharp\utils\Jdk7Utils.java omitted as E:\xp\codes\projects\console\run\my2\my2.jar is up to date.
+ [uptodate] org\sharp\utils\Lucene.java omitted as E:\xp\codes\projects\console\run\my2\my2.jar is up to date.
+ [uptodate] org\sharp\utils\PdfBox.java omitted as E:\xp\codes\projects\console\run\my2\my2.jar is up to date.
+ [uptodate] org\sharp\utils\PoiUtils.java omitted as E:\xp\codes\projects\console\run\my2\my2.jar is up to date.
+ [uptodate] org\sharp\utils\Proxies.java omitted as E:\xp\codes\projects\console\run\my2\my2.jar is up to date.
+ [uptodate] org\sharp\utils\SdbUtils.java omitted as E:\xp\codes\projects\console\run\my2\my2.jar is up to date.
+ [uptodate] org\sharp\utils\SocketSer.java omitted as E:\xp\codes\projects\console\run\my2\my2.jar is up to date.
+ [uptodate] org\sharp\utils\TelnetCli.java omitted as E:\xp\codes\projects\console\run\my2\my2.jar is up to date.
+ [uptodate] org\sharp\utils\XmlUtils.java omitted as E:\xp\codes\projects\console\run\my2\my2.jar is up to date.
+ [uptodate] org\sharp\utils\beans\DirSnap.java omitted as E:\xp\codes\projects\console\run\my2\my2.jar is up to date.
+ [uptodate] org\sharp\utils\beans\FileInfo.java omitted as E:\xp\codes\projects\console\run\my2\my2.jar is up to date.
+ [uptodate] org\sharp\utils\beans\modules.properties omitted as E:\xp\codes\projects\console\run\my2\my2.jar is up to date.
+ [uptodate] org\sharp\utils\legacy\JGraphUtils.java omitted as E:\xp\codes\projects\console\run\my2\my2.jar is up to date.
+ [uptodate] org\sharp\utils\legacy\Mp3Player.java omitted as E:\xp\codes\projects\console\run\my2\my2.jar is up to date.
+ [uptodate] File "E:\xp\codes\projects\console\run\my2\my2.jar" is up-to-date.
+Build sequence for target(s) `release' is [release]
+Complete build sequence is [release, prop, initMaven, compile, create_run_jar, debug, jni, run, onejar, ant-contrib.onejar, ant-maven.initMaven, junit, gen_deliverable, clean, import-data, obscure, ]
+
+release:
+[available] Found: run\my2\my2.jar
+     [echo] E:\xp\codes\projects\console\run\my2/my2.jar update
+     [move] Moving 2 files to f:\win7\my2
+     [move] Attempting to rename: f:\win7\my2\my2.bat to f:\win7\my2\my2.bat.20111014.bak
+     [move] Attempting to rename: f:\win7\my2\my2.jar to f:\win7\my2\my2.jar.20111014.bak
+     [copy] my2.bat added as my2.bat doesn't exist.
+     [copy] my2.jar added as my2.jar doesn't exist.
+     [copy] No sources found.
+     [copy] Copying 2 files to f:\win7\my2
+     [copy] Copying E:\xp\codes\projects\console\run\my2\my2.bat to f:\win7\my2\my2.bat
+     [copy] Copying E:\xp\codes\projects\console\run\my2\my2.jar to f:\win7\my2\my2.jar
+BUILD SUCCESSFUL
+
+BUILD SUCCESSFUL
+Total time: 2 seconds

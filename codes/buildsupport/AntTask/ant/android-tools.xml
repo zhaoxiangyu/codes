@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="android-tools" basedir="..">
+    <dirname property="antfile.dir" file="${ant.file.android-tools}"/>
+	<property name="i.basedir" value="${antfile.dir}/.."/>
+	<import file="${i.basedir}/ant/env-setting.xml" />
+	
+	<property file="env-${os.name}.properties"/>
+	<property name="sdk.dir" value="/home/he/sw/android/android-sdk_r15-linux"/>
+	<property name="ndk.dir" value="/home/he/sw/android/android-ndk-r7"/>
+	<!--
+	<property file="${basedir}/local.properties" />
+	-->
+	<property name="ADB" value="${sdk.dir}/platform-tools/adb${EXE_EXTNAME}"/>
+	<property name="EMULATOR" value="${sdk.dir}/tools/emulator${EXE_EXTNAME}"/>
+	<property name="ZIPALIGN" value="${sdk.dir}/tools/zipalign${EXE_EXTNAME}"/>
+	<property name="JARSIGNER" value="${java-home}/bin/jarsigner${EXE_EXTNAME}"/>
+	<property name="AAPT" value="${sdk.dir}/platform-tools/aapt${EXE_EXTNAME}"/>
+
+	<condition property="dex2jar-dir" value="F:/java/android/tools/dex-translator-0.0.9.3" 
+		else="/media/sf_VMshare/java/android/tools/dex-translator-0.0.9.3">
+		<os family="windows" />
+	</condition>
+	<condition property="JAD" value="jad.exe" else="/media/sf_VMshare/ubuntu/java/tools/jad158e.linux.static/jad">
+		<os family="windows" />
+	</condition>
+
+	<macrodef name="dex2jar">
+		<attribute name="outputdir"/>
+		<attribute name="apkdir"/>
+		<attribute name="apkbasename"/>
+		<sequential>
+			<mkdir dir="@{outputdir}/@{apkbasename}"/>
+			<echo>${CMD} ${OPT} ${dex2jar-dir}/dex2jar.${SCRIPT_EXTNAME} @{apkdir}/@{apkbasename}.apk</echo>
+			<cmd line="${dex2jar-dir}/dex2jar.${SCRIPT_EXTNAME} @{apkdir}/@{apkbasename}.apk"/>
+			<move file="@{apkdir}/@{apkbasename}_dex2jar.jar" todir="@{outputdir}/@{apkbasename}"/>
+			<unjar src="@{outputdir}/@{apkbasename}/@{apkbasename}_dex2jar.jar" dest="@{outputdir}/@{apkbasename}/dex2jar"/>
+			<unjar src="@{apkdir}/@{apkbasename}.apk" dest="@{outputdir}/@{apkbasename}/@{apkbasename}"/>
+			<jad classesdir="@{outputdir}/@{apkbasename}/dex2jar" outdir="@{outputdir}/@{apkbasename}/java-codes"/>
+			<cmd2 executable="/home/he/tools/jd/jd-gui" line="@{outputdir}/@{apkbasename}/@{apkbasename}_dex2jar.jar"/>
+		</sequential>
+	</macrodef>
+
+	<macrodef name="adb-install">
+		<attribute name="package-name"/>
+		<attribute name="apk-file"/>
+		<sequential>
+			<exec executable="${ADB}" dir="${basedir}">
+				<arg line="wait-for-device uninstall @{package-name}"/>
+			</exec>
+			<exec executable="${ADB}" dir="${basedir}">
+				<arg line="wait-for-device install -r @{apk-file}"/>
+			</exec>
+		</sequential>
+	</macrodef>
+	
+	<macrodef name="adb-kill-app">
+		<attribute name="package-name"/>
+		<sequential>
+			<exec executable="${BASH}" dir="${basedir}">
+				<env key="Path" path="${sdk.dir}/platform-tools:${env.Path}"/>
+				<arg line="-l -c &quot;adb shell ps | grep @{package-name} | awk '{print $2}' | xargs adb shell kill &quot;"/>
+			</exec>
+		</sequential>
+	</macrodef>
+	
+	<macrodef name="adb-input-keyevent">
+		<attribute name="keycode"/>
+		<sequential>
+			<echo message="sending keyevent: keycode=@{keycode}"/>
+			<exec executable="${ADB}" dir="${basedir}">
+				<arg line="shell input keyevent @{keycode}"/>
+			</exec>
+		</sequential>
+	</macrodef>
+
+	<macrodef name="adb-run-app">
+		<attribute name="activity"/>
+		<sequential>
+			<exec executable="${ADB}" dir="${basedir}">
+				<arg line="wait-for-device shell am start -n @{activity}"/>
+			</exec>
+		</sequential>
+	</macrodef>
+	
+	<macrodef name="adb-run-testcases">
+		<attribute name="testpackage"/>
+		<attribute name="runnerclass" default="android.test.InstrumentationTestRunner"/>
+		<attribute name="testoptions" default=""/>
+		<sequential>
+			<if>
+				<equals arg1="@{testoptions}" arg2=""/>
+			<then>
+				<exec executable="${ADB}" dir="${basedir}">
+					<arg line="wait-for-device shell am instrument -w @{testpackage}/@{runnerclass}"/>
+				</exec>
+			</then>
+			<else>
+				<exec executable="${ADB}" dir="${basedir}">
+					<arg line="wait-for-device shell am instrument -w -e @{testoptions} @{testpackage}/@{runnerclass}"/>
+				</exec>
+			</else>
+			</if>
+		</sequential>
+	</macrodef>
+	
+	<macrodef name="adb-push">
+		<attribute name="file"/>
+		<attribute name="to"/>
+		<sequential>
+			<exec executable="${sdk.dir}/platform-tools/adb${EXE_EXTNAME}" dir="${basedir}">
+				<arg line="wait-for-device push @{file} @{to}"/>
+			</exec>
+		</sequential>
+	</macrodef>
+
+	<macrodef name="adb-shell">
+		<attribute name="cmd"/>
+		<sequential>
+			<echo message="@{cmd}"/>
+			<exec executable="${sdk.dir}/platform-tools/adb${EXE_EXTNAME}" dir="${basedir}">
+				<arg line="wait-for-device shell @{cmd}"/>
+			</exec>
+		</sequential>
+	</macrodef>
+	
+	<macrodef name="ndk-build">
+		<attribute name="prjdir"/>
+		<sequential>
+			<cmd line="${ndk.dir}/ndk-build -C @{prjdir}"/>
+		</sequential>
+	</macrodef>
+
+	<macrodef name="adb-ndk-stack">
+		<attribute name="prjdir"/>
+		<sequential>
+			<cmd line="${sdk.dir}/platform-tools/adb${EXE_EXTNAME} wait-for-device logcat | tee ${user.home}/a.txt | ${ndk.dir}/ndk-stack -sym @{prjdir}/obj/local/armeabi"/>
+		</sequential>
+	</macrodef>
+
+	<macrodef name="adb-ndk-stackdump">
+		<attribute name="prjdir"/>
+		<attribute name="logfile"/>
+		<sequential>
+			<cmd line="${ndk.dir}/ndk-stack -sym @{prjdir}/obj/local/armeabi -dump @{logfile}"/>
+		</sequential>
+	</macrodef>
+
+	<macrodef name="adb-logcat">
+		<attribute name="logfile" default="${basedir}/bin/log.txt"/>
+		<sequential>
+			<cmd line="${ADB} wait-for-device logcat |tee @{logfile}"/>
+		</sequential>
+	</macrodef>
+
+	<macrodef name="adb-pull">
+		<attribute name="file"/>
+		<attribute name="tofile"/>
+		<sequential>
+			<exec executable="${sdk.dir}/platform-tools/adb${EXE_EXTNAME}" dir="${basedir}">
+				<arg line="pull @{file} @{tofile}"/>
+			</exec>
+		</sequential>
+	</macrodef>
+
+	<macrodef name="adb-cat-file">
+		<attribute name="file"/>
+		<sequential>
+			<adb-shell cmd="cat @{file}"/>
+		</sequential>
+	</macrodef>
+	
+	<macrodef name="adb-rmdir">
+		<attribute name="dir"/>
+		<sequential>
+			<adb-shell cmd="rm -r @{dir}"/>
+		</sequential>
+	</macrodef>
+	
+	<macrodef name="emulator-start">
+		<attribute name="avd-name"/>
+		<sequential>
+			<echo>${sdk.dir}/tools/emulator${EXE_EXTNAME} -avd @{avd-name}</echo>
+			<exec executable="${sdk.dir}/tools/emulator${EXE_EXTNAME}" 
+				dir="${basedir}" spawn="true">
+				<arg line="-avd @{avd-name}"/>
+			</exec>
+		</sequential>
+	</macrodef>
+	
+	<macrodef name="emulator-kill">
+		<attribute name="port"/>
+		<sequential>
+			<telnet server="localhost" port="@{port}">
+				<read>OK</read>
+				<write>kill</write>
+				<read>OK</read>
+				<write>exit</write>
+			</telnet>
+		</sequential>
+	</macrodef>
+	
+	<macrodef name="emulator-telnet-gsm-call">
+		<attribute name="phone-number"/>
+		<sequential>
+			<telnet server="localhost" port="5554">
+				<read>OK</read>
+				<write>gsm call @{phone-number}</write>
+				<read>OK</read>
+				<write>exit</write>
+			</telnet>
+		</sequential>
+	</macrodef>
+	
+	<macrodef name="emulator-show-gprs">
+		<sequential>
+			<telnet server="localhost" port="5554">
+				<read>OK</read>
+				<write>network status</write>
+				<read>OK</read>
+				<write>network speed gprs</write>
+				<read>OK</read>
+				<write>network delay gprs</write>
+				<read>OK</read>
+				<write>exit</write>
+			</telnet>
+		</sequential>
+	</macrodef>
+	
+	<macrodef name="android-update-project">
+		<attribute name="target"/>
+		<attribute name="path"/>
+		<sequential>
+			<cmd line="${sdk.dir}/tools/android update project --target @{target} --path @{path}"/>
+		</sequential>
+	</macrodef>
+	
+	<dirname property="android-tools.basedir" file="${ant.file.android-tools}"/>
+	
+	<taskdef name="beep" classname="org.sharpx.BeepTask" 
+		classpath="${android-tools.basedir}/ant-beep.jar"/>	
+</project>

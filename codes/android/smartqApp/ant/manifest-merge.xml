@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="merge" basedir="..">
+    <property file="local.properties" />
+	
+	<target name="merge-android-manifest-">
+		<xslt in="AndroidManifest.xml" out="A-gen.xml" style="ant/merger.xslt">
+			<param name="lib-projects" expression="'my-library,ad-library,umeng-library'"/>	
+		</xslt>
+	</target>
+	
+	<target name="merge-android-manifest">
+		<xslt in="AndroidManifest.xml" out="test/merged.xml" style="ant/merger.xslt">
+			<param name="libproject-list" expression="libproject-list.xml"/>	
+		</xslt>
+	</target>
+	
+	<target name="add-files">
+	</target>
+</project>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="dlg_title_insufficient_points">推荐应用</string>
+    <string name="dlg_msg_prompt_make_points">使用开发者推荐的应用，就能下载全部的词汇</string>
+    <string name="dlg_button_earn_now">现在开始</string>
+    <string name="dlg_button_earn_later">以后再说</string>
+    <string name="menu_earn_points">推荐应用</string>
+    <string name="toast_make_points_to_play_sound">赚积分以后，能听到单词发声</string>
+</resources>

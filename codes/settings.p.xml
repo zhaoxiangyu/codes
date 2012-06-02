@@ -1,0 +1,21 @@
+<project name="env-setting.p" basedir="..">
+	<!-- this file should be put under codes root directory 
+		like /media/sf_VMshare/codes -->
+	<condition property="VMSHARE.DIR" value="" 
+		else="/media/sf_VMshare">
+		<os family="windows" />
+	</condition>
+
+	<property name="ivy-repo.dir" value="${VMSHARE.DIR}/java/ivy-repo"/>
+
+	<property name="java-tools.dir" value="${VMSHARE.DIR}/java/tools"/>
+	<property name="ivy.dir" value="${java-tools.dir}/apache-ivy-2.2.0-bin-with-deps/apache-ivy-2.2.0"/>
+	<property name="ant-bin.dir" value="${java-tools.dir}/ant/apache-ant-1.8.2"/>
+	<property name="ant-ext-jars.dir" value="${java-tools.dir}/ant/apache-ant-1.8.2-ext-tasks"/>
+	<property name="ant-contrib.dir" value="${java-tools.dir}/ant/ant-contrib-1.0b3-bin"/>
+
+	<property name="codes.dir" value="${VMSHARE.DIR}/codes"/>
+	<property name="codes-rep.dir" value="${VMSHARE.DIR}/codes-rep"/>
+	<property name="git-rep.dir" value="${codes-rep.dir}/git-rep"/>
+	
+</project>

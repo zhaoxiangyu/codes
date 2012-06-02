@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="smartqAppTest" basedir="..">
+	<property name="tested.dir" value="${basedir}/../smartqApp"/>
+	<property name="tested.buildfile" value="${tested.dir}/ant/build.xml"/>
+
+	<property name="apk.basename" value="${ant.project.name}"/>
+	<property name="apk.filename" value="${apk.basename}-ant-release.apk"/>
+	<import file="${tested.buildfile}" />
+	
+	<target name="test-project-help">
+		<antcall target="adb-help"/>
+	</target>
+	
+	<target name="update-test-project">
+		<exec executable="cmd.exe" dir="${basedir}">
+			<arg line="/c ${sdk.dir}/tools/android.bat update test-project -m ../smartqApp -p ../smartqAppTest"/>
+		</exec>
+    </target>
+	
+	<target name="adb-run-test-4release">
+		<antcall target="emulator-start"/>
+		<ant antfile="${tested.dir}/ant/build.xml" target="adb-release-install" 
+			dir="${tested.dir}" inheritall="false"/>
+		<ant antfile="build.xml" target="release"/>
+		<ant antfile="build.xml" target="installr"/>
+		<adb-input-keyevent keycode="82"/>
+		<exec executable="${sdk.dir}/platform-tools/adb.exe" dir="${basedir}">
+			<arg line="shell am instrument -w sharpx.vocreader.test/android.test.InstrumentationTestRunner"/>
+		</exec>
+	</target>
+
+	<target name="adb-run-test-4debug">
+		<antcall target="emulator-start"/>
+		<ant antfile="build.xml" target="debug"/>
+		<ant antfile="${tested.buildfile}" target="build-uninstall" 
+					dir="${tested.dir}" inheritall="false"/>
+		<ant antfile="build.xml" target="installt"/>
+		<adb-input-keyevent keycode="82"/>
+		<ant antfile="build.xml" target="test"/>
+	</target>
+
+	<target name="adb-run-test-alone">
+		<ant antfile="build.xml" target="test"/>
+	</target>
+
+	<target name="adb-monkey">
+		<exec executable="${sdk.dir}/platform-tools/adb.exe" dir="${basedir}">
+			<arg line="shell monkey -p sharpx.vocreader -v 500"/>
+		</exec>
+	</target>
+</project>

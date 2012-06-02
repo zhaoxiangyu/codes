@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string name="toast_cancel_download">cancel download</string>
+    <string name="dlg_title_downloading">downloading, please wait...</string>
+    <string name="toast_download_finished">finish downloading</string>
+    <string name="toast_download_canceled">download canceled</string>
+    <string name="toast_cancel_unzip">cancel unzip</string>
+    <string name="dlg_title_unzipping">unzipping file，please wait...</string>
+    <string name="toast_unzip_finished">finish unzipping</string>
+    <string name="toast_unzip_canceled">unzip canceled</string>
+    <string name="toast_unzip_error">error when unzipping</string>
+    <string name="dlg_msg_prompt_waiting">please wait</string>
+    <string name="dlg_button_close">close</string>
+    
+</resources>

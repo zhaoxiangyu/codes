@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="dlg_title_set_show_versionupgrade_dialog">setting version auto-upgrade</string>
+    <string name="dlg_msg_show_versionupgrade_dialog">prompt to upgrade to new version</string>
+    <string name="dlg_msg_not_show_versionupgrade_dialog">not prompt</string>
+    <string name="menu_set_show_versionupgrade_dialog">setting version auto-upgrade</string>
+    <string name="menu_feedback">user feedback</string>
+</resources>

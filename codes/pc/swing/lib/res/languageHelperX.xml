@@ -1,0 +1,34 @@
+<launch4jConfig>
+  <dontWrapJar>false</dontWrapJar>
+  <headerType>gui</headerType>
+  <jar>E:\xp\codes\projects\console\run\my2.jar</jar>
+  <outfile>E:\xp\codes\projects\console\run\LanguageHelper.exe</outfile>
+  <errTitle></errTitle>
+  <cmdLine></cmdLine>
+  <chdir></chdir>
+  <priority>normal</priority>
+  <downloadUrl>http://java.com/download</downloadUrl>
+  <supportUrl></supportUrl>
+  <customProcName>false</customProcName>
+  <stayAlive>false</stayAlive>
+  <manifest></manifest>
+  <icon></icon>
+  <jre>
+    <path>jre7</path>
+    <minVersion>1.4.0</minVersion>
+    <maxVersion>1.4.1</maxVersion>
+    <jdkPreference>preferJre</jdkPreference>
+  </jre>
+  <versionInfo>
+    <fileVersion>1.0.0.0</fileVersion>
+    <txtFileVersion>RC1</txtFileVersion>
+    <fileDescription>language helper description</fileDescription>
+    <copyright>SharpX copyright</copyright>
+    <productVersion>1.0.0.0</productVersion>
+    <txtProductVersion>RC</txtProductVersion>
+    <productName>Language Helper</productName>
+    <companyName>SharpX</companyName>
+    <internalName>LH1ARC-IN</internalName>
+    <originalFilename>LH1ARC-OF.exe</originalFilename>
+  </versionInfo>
+</launch4jConfig>

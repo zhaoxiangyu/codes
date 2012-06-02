@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="sbcl-tools" basedir="..">
+
+	<dirname property="antfile.dir" file="${ant.file.sbcl-tools}"/>
+	<property name="i.basedir" value="${antfile.dir}/.."/>
+	
+	<import file="${i.basedir}/ant/env-setting.xml" />
+	<import file="${i.basedir}/ant/common-tools.xml"/>
+	
+	<property file="${i.basedir}/local.properties"/>
+	<property name="sbcl.install.dir" location="${i.basedir}/tools/sbcl"/>
+	<property name="sbcl.bz2" location="${userdata.dir}/ubuntu/lisp/sbcl-1.0.54-x86-linux-binary.tar.bz2"/>
+	
+	<target name="unzip">
+		<mkdir dir="${sbcl.install.dir}"/>
+		<bunzip2 src="${sbcl.bz2}" 
+			dest="${sbcl.install.dir}/sbcl-1.0.54-x86-linux-binary.tar"/>
+		<untar src="${sbcl.install.dir}/sbcl-1.0.54-x86-linux-binary.tar" 
+			dest="${sbcl.install.dir}/sbcl-1.0.54"/>
+	</target>
+	
+	<target name="install">
+		<cmd basedir="${sbcl.install.dir}/sbcl-1.0.54/sbcl-1.0.54-x86-linux"
+			line="chmod 755 install.sh"/>
+		<cmd basedir="${sbcl.install.dir}/sbcl-1.0.54/sbcl-1.0.54-x86-linux"
+			line="echo 123qwe | sudo -S chmod 755 /usr/local/bin/sbcl"/>
+		<cmd basedir="${sbcl.install.dir}/sbcl-1.0.54/sbcl-1.0.54-x86-linux"
+			line="echo 123qwe | sudo -S ./install.sh"/>
+	</target>
+
+	<target name="explore">
+		<parallel>
+			<console wd="${sbcl.install.dir}/sbcl-1.0.54"/>
+			<explorer dir="${sbcl.install.dir}/sbcl-1.0.54"/>
+		</parallel>
+	</target>
+	
+	<target name="debug">
+		<cmd line="-c &quot;cat ${proxygenerator.script}&quot;"/>
+		<cmd line="-c &quot;cat ${batchgenerator.script}&quot;"/>
+	</target>
+	
+</project>

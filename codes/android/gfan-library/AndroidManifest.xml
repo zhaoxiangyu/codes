@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="gfan.library"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk android:minSdkVersion="7" />
+
+    <application android:icon="@drawable/ic_launcher" android:label="app-name" >
+		<!-- gfan -->
+		<activity android:name="com.gfan.sdk.payment.PaymentsActivity" 
+			android:configChanges="orientation|keyboardHidden" /> 
+		<activity android:name="com.gfan.sdk.charge.ChargeActivity" 
+			android:configChanges="orientation|keyboardHidden" /> 
+		<activity android:name="com.gfan.sdk.account.LoginActivity" 
+			android:configChanges="orientation|keyboardHidden" /> 
+              
+        <meta-data android:name="gfan_pay_appkey" android:value="313358155" /> 
+		<meta-data android:name="gfan_type" android:value="paysdk" /> 
+		<meta-data android:name="gfan_cpid" android:value="" />
+		
+		<!-- waps -->
+		<activity android:name="com.waps.OffersWebView" android:configChanges="keyboardHidden|orientation" />
+		<meta-data android:name="WAPS_ID" android:value="163a83f97fafbbdd11a47555765249cf" />
+		<meta-data android:name="WAPS_PID" android:value="WAPS" />
+    </application>
+    
+	<uses-permission android:name="android.permission.INTERNET"/> 
+	<uses-permission  android:name="android.permission.READ_PHONE_STATE"/> 
+
+	<!--  gfan: to add to Main Manifest file -->
+	<uses-permission android:name="android.permission.SEND_SMS"/> 
+	<uses-permission android:name="android.permission.RECEIVE_SMS" /> 
+	<uses-permission android:name="android.permission.READ_SMS" /> 
+	<uses-permission android:name="android.permission.WRITE_SMS" /> 
+	
+	<!-- waps -->
+	<uses-permission android:name="android.permission.INTERNET" />
+	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+	<uses-permission android:name="android.permission.READ_PHONE_STATE" />
+	<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+	<uses-permission android:name="android.permission.GET_TASKS" />
+
+	<uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+	<uses-permission android:name="com.android.launcher.permission.INSTALL_SHORTCUT" />	
+    <uses-sdk android:minSdkVersion="7" android:targetSdkVersion="7" 
+          android:maxSdkVersion="9"/>
+</manifest>

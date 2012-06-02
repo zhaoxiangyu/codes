@@ -1,0 +1,8 @@
+<project name="ant-contrib">
+    <dirname property="i.basedir" file="${ant.file.ant-contrib}"/>
+	<taskdef resource="net/sf/antcontrib/antcontrib.properties">
+	  <classpath>
+	    <pathelement location="${i.basedir}/../ant-contrib-1.0b3.jar"/>
+	  </classpath>
+	</taskdef>
+</project>

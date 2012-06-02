@@ -1,0 +1,16 @@
+g++ -Wall  -O2 -I/usr/local/lib/wx/include/gtk2-ansi-release-2.8
+	-I/usr/local/include/wx-2.8 -D_FILE_OFFSET_BITS=64
+	-D_LARGE_FILES -D__WXGTK__ -pthread
+	-c /home/he/ws/c/ubuntu/wxWi/wxWiApp.cpp
+	-o obj/Release/wxWiApp.o
+g++ -Wall  -O2 -I/usr/local/lib/wx/include/gtk2-ansi-release-2.8
+	-I/usr/local/include/wx-2.8
+	-D_FILE_OFFSET_BITS=64 -D_LARGE_FILES -D__WXGTK__ -pthread
+	-c /home/he/ws/c/ubuntu/wxWi/wxWiMain.cpp
+	-o obj/Release/wxWiMain.o
+g++  -o bin/Release/wxWi
+	obj/Release/wxWiApp.o obj/Release/wxWiMain.o
+	-s -L/usr/local/lib -pthread
+	-lwx_gtk2_richtext-2.8 -lwx_gtk2_aui-2.8 -lwx_gtk2_xrc-2.8 -lwx_gtk2_qa-2.8
+	-lwx_gtk2_html-2.8 -lwx_gtk2_adv-2.8 -lwx_gtk2_core-2.8 -lwx_base_xml-2.8
+	-lwx_base_net-2.8 -lwx_base-2.8

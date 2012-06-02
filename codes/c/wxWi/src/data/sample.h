@@ -1,0 +1,4 @@
+
+struct sample {
+	int id;
+};

@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<project basedir="../..">
+    <property name="one-jar.dist.dir" value="lib"/>   
+    <property name="one-jar.version" value="0.97"/>
+    <property name="one-jar.ant.jar" value="${one-jar.dist.dir}/one-jar-ant-task-${one-jar.version}.jar"/>
+    <taskdef name="one-jar" classname="com.simontuffs.onejar.ant.OneJarTask" 
+        classpath="${one-jar.ant.jar}" onerror="report"/>
+
+	<target name="onejar">
+    	<copy todir="${cr.build.classes.dir}">
+    		<fileset dir="${cr.src.dir}" includes="**/**" excludes="**/*.java"/>
+    	</copy>
+    	<one-jar destfile="${cr.out.jar.file}">
+    		<manifest>
+    			<attribute name="One-Jar-Main-Class" value="${cr.mainclass}"/>
+    		</manifest>
+            <main>
+            </main>
+            <lib>
+                <fileset refid="cr.artifact.jars"/>
+        		<fileset refid="cr.maven.fileset"/>
+                <fileset refid="cr.3rd.jars"/>
+            </lib>
+    	</one-jar>
+    </target>
+</project>

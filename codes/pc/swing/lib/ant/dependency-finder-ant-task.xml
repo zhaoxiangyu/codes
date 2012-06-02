@@ -1,0 +1,18 @@
+<project basedir="../..">
+    <!-- Replace "value" with your installation's directory -->
+    <path id="df-classpath">
+        <pathelement location="${dependencyfinder.home}/classes"/>
+        <pathelement location="${dependencyfinder.home}/lib/DependencyFinder.jar"/>
+        <pathelement location="${dependencyfinder.home}/lib/guava.jar"/>
+        <pathelement location="${dependencyfinder.home}/lib/jakarta-oro.jar"/>
+        <pathelement location="${dependencyfinder.home}/lib/jsr305.jar"/>
+        <pathelement location="${dependencyfinder.home}/lib/log4j.jar"/>
+    </path>
+
+    <taskdef resource="dependencyfindertasks.properties">
+        <classpath refid="df-classpath"/>
+    </taskdef>
+
+	<target name="df">
+	</target>
+</project>

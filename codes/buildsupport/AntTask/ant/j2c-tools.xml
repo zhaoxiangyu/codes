@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="j2c-tools" basedir="..">
+
+	<dirname property="antfile.dir" file="${ant.file.j2c-tools}"/>
+	<property name="i.basedir" value="${antfile.dir}/.."/>
+	
+	<import file="${antfile.dir}/env-setting.xml" />
+
+	<macrodef name="gcjh2">
+		<attribute name="destdir"/>
+		<attribute name="class"/>
+		<attribute name="classpath"/>
+		<attribute name="verbose"/>
+		<sequential>
+			<condition property="verbose-opt" value="-verbose" else="">
+				<istrue value="@{verbose}"/>
+			</condition>
+			<mkdir dir="@{destdir}"/>
+			<cmd2 executable="gcjh" line="-d @{destdir} ${verbose-opt} -classpath @{classpath}
+				@{class}"/>
+		</sequential>
+	</macrodef>
+	
+	<macrodef name="gcjh">
+		<attribute name="destdir"/>
+		<attribute name="class"/>
+		<attribute name="classpath"/>
+		<attribute name="verbose"/>
+		<sequential>
+			<condition property="verbose-opt" value="-verbose" else="">
+				<istrue value="@{verbose}"/>
+			</condition>
+			<mkdir dir="@{destdir}"/>
+			<cmd line="gcjh -d @{destdir} ${verbose-opt} -classpath @{classpath}
+				@{class}"/>
+		</sequential>
+	</macrodef>
+	
+	<target name="install">
+	</target>
+	
+	<target name="test">
+	</target>
+	
+	<target name="debug">
+	</target>
+	
+</project>

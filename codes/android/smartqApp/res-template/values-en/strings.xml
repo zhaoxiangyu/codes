@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Japanese Vocabulary</string>
+    <string name="version_name">{{version_name}}</string>
+    <string name="app_description">Japanese vocabulary</string>
+    <string name="dlg_title_choose_course">Choose Course</string>
+    <string name="menu_choose_course">Choose Course</string>
+    <string name="view_reader_no_mp3">word not exists</string>
+    <string name="view_reader_error_current">wrong location</string>
+    <string name="view_reader_error_levellist_empty">empty word list</string>
+    <string name="view_reader_error_state_not_loaded">state not loaded</string>
+	<string name="view_reader_current_info">unit %1$d course %2$d %3$d/%4$d difficulty%5$d</string>
+	<string name="view_vocreader_la">LA</string>
+	<string name="view_vocreader_l0">L1</string>
+	<string name="view_vocreader_l1">L2</string>
+	<string name="view_vocreader_l2">L3</string>
+	<string name="view_vocreader_l3">L4</string>
+	<string name="view_vocreader_l4">L5</string>
+    <string name="dlg_msg_course">course%1$d</string>
+    <string name="dlg_msg_course_sizeinfo">%1$dKbytes</string>
+    <string name="dlg_msg_open_course">open</string>
+    <string name="dlg_msg_download_course">download</string>
+    <string name="dlg_title_app_loading">starting</string>
+    <string name="text_app_loading">%1$s\nVersion%2$s\nis starting,please wait</string>
+    <string name="dlg_title_app_hint">hint</string>
+    <string name="dlg_msg_app_exit">want to quit？</string>
+    <string name="dlg_button_ok">quit</string>
+    <string name="dlg_button_cancel">cancel</string>
+    <string name="toast_backkey_again_to_quit">press back key again to quit</string>
+    <string name="toast_network_not_available_downloading_canceld">network not available,downloading cancled</string>
+    <string name="toast_course_manifest_not_available">courses manifest not available</string>
+    <string name="menu_about">about</string>
+    <string name="menu_send_sms_to_friends">short message to friends</string>
+    <string name="menu_pay_by_sms">SMS pay</string>
+    <string name="menu_test">test</string>
+    <string name="dlg_title_about">about</string>
+    <string name="dlg_msg_about_version">version:%1$s</string>
+    <string name="dlg_msg_about_author">author:HeDaYi</string>
+    <string name="dlg_msg_about_email">email:2384945483@qq.com</string>
+	
+    <string name="gpstracker">GpsTracker</string>
+    <string name="logfileview">LogFileViewer</string>
+</resources>

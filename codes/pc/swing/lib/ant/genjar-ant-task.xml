@@ -1,0 +1,18 @@
+<project basedir="../..">
+	<!-- Replace "value" with your installation's directory -->
+	<path id="genjar-classpath">
+		<pathelement location="lib/genjar-1.0.2.jar" />
+	</path>
+
+	<taskdef resource="genjar.properties">
+		<classpath refid="genjar-classpath" />
+	</taskdef>
+
+	<target name="gen-jar">
+		<genjar jarfile="${gen-jar.jar}">
+			<class>
+				<fileset refid="${gen-jar.fileset}"/>
+			</class>
+		</genjar>
+	</target>
+</project>

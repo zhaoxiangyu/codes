@@ -1,0 +1,32 @@
+<project name="build-utils" xmlns:artifact="urn:maven-artifact-ant" 
+	basedir="../../..">
+	
+	<!-- m.jar.loc -->
+	<!-- src.dir,build.classes -->
+	<!-- <echo message="src.dir:${src.dir}"/> -->
+	<target name="jar">
+		<fileset id="resource.fileset" dir="${src.dir}">
+			<include name="**/utils/*.*"/>
+			<exclude name="**/*.java"/>
+		</fileset>
+		<fileset id="jar.class.fileset" dir="${build.classes}/utils"
+			includes="**/utils/*">
+		</fileset>
+		<patternset id="src.pattern">
+			<include name="**/utils/*.java"/>
+			<!-- <exclude name="**/swing/utils/*.java"/> -->
+		</patternset>
+		<path id="p.build.classpath"/>
+		<ant target="deploy" antfile="lib/modules/build-module.xml" inheritAll="false">
+			<reference refid="resource.fileset"></reference>
+			<reference refid="jar.class.fileset"></reference>
+			<reference refid="p.build.classpath"></reference>
+			<property name="module.pom.file" location="lib/modules/utils/pom.xml"/>
+			<property name="build.class.dir" value="${build.classes}/utils"/>
+			<property name="src.dir" value="${src.dir}"/>
+			<reference refid="src.pattern"/>
+			<property name="out.jar.file" value="${m.jar.loc}"/>
+		</ant>
+	</target>
+	
+</project>
