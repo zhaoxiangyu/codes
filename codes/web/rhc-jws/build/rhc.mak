@@ -22,9 +22,9 @@ create-jws:
 	;$(RHC) app create -a jws -t jbossas-7.0 $(RHC_OPTION_L)
 	
 push-jws:
-	cd ..\jws \
+	cd ../jws \
 	;git add . \
-	;git commit -m 'test committing' \
+	;git commit -m "committing @ `date`" \
 	;git push
 
 destroy-jws:

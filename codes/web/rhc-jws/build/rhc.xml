@@ -12,4 +12,8 @@
 		<make makefile="${makefile}" target="setup"/>
 	</target>
 
+	<target name="deploy">
+		<make dir="build" makefile="${makefile}" target="push-jws"/>
+	</target>
+
 </project>
