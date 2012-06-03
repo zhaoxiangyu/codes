@@ -2,7 +2,9 @@
 	<import file="${basedir}/../AntTask/ant/env-setting.xml" />
 	<import file="${basedir}/../AntTask/ant/common-tools.xml" />
 
+	<!--
 	<property name="codes.dir" value="${user.home}/codes/ubuntu"/>
+	-->
 
 	<property name="sf.svn.url" value="https://natviewer.svn.sourceforge.net/svnroot/natviewer"/>
 	<property name="sf.git.url" value="ssh://blueocci@natviewer.git.sourceforge.net/gitroot/natviewer/natviewer"/>
@@ -13,7 +15,7 @@
 	<property name="sae.un" value="blueocci"/>
 	<property name="sae.pw" value="hlongh"/>
 	
-	<property name="excludes" value="**/*.class,**/*.o,**/local-settings.properties"/>
+	<property name="excludes" value="**/*.class,**/*.o,**/*.lo,**/local-settings.properties"/>
 	
 	<target name="cvs-export">
 		<code-exp todir="${prj.myddriver.dir}">
@@ -48,27 +50,32 @@
 			<fss>
 				<fileset dir="${user.home}/sw/android/Indigo-SR1+ADT+CDT+DLTK+ANTLR/codes/natviewer/android" 
 					includes="**" excludes="${excludes}">
-					<exclude name="useNdk/jni/jace/rt-gen/**"/>
-					<exclude name="useNdk/jni/src/hw_ja.h"/>
-					<exclude name="useNdk/test/zinnia-tomoe/**"/>
-					<exclude name="useNdk/test/handwriting-ja.model"/>
+					<exclude name="smartqApp/obj/**"/>
+					<exclude name="smartqApp/libs/armeabi/**"/>
+					<exclude name="smartqApp/jni/jpVocParser/antlr-gen/**"/>
+
+					<exclude name="useNdk/jni/gen/**"/>
+					<exclude name="useNdk/jni/3rd/**"/>
+					<exclude name="useNdk/test/**"/>
+					<exclude name="useNdk/antlr/gen/**"/>
+					<exclude name="useNdk/antlr/src/*.tokens"/>
 					<exclude name="useNdk/obj/**"/>
-					<exclude name="antlr/src/*.java"/>
-					<exclude name="antlr/src/*.tokens"/>
+					<exclude name="useNdk/libs/**"/>
+					
 					<exclude name="AntTask/**"/>
 				</fileset>
-			</fss>
-		</code-exp>
-		<code-exp todir="${prj.rhc-jws.dir}">
-			<fss>
-				<fileset dir="${user.home}/sw/android/Indigo-SR1+ADT+CDT+DLTK+ANTLR/codes/rhc-jws/" 
-					includes="**"
-					excludes="${excludes}"/>
 			</fss>
 		</code-exp>
 	</target>
 	
 	<target name="oldsvn-export">
+		<code-exp todir="${prj.rhc-jws.dir}">
+			<fss>
+				<fileset dir="${user.home}/sw/eclipse-jee-indigo-SR2-linux-gtk/codes/rhc-jws" 
+					includes="**"
+					excludes="${excludes}"/>
+			</fss>
+		</code-exp>
 		<code-exp todir="${prj.wd4web.dir}">
 			<fss>
 				<fileset dir="${user.home}/sw/eclipse-php-helios-SR2-linux-gtk/codes/wd4web/" 
@@ -84,10 +91,7 @@
 		</code-exp>
 	</target>
 	
-	<target name="ws-export">
-	</target>
-	
-	<target name="export-prj">
+	<target name="all-export">
 		<defaultexcludes echo="true"/>
 		<antcall target="cvs-export"/>	
 		<antcall target="git-export"/>	
