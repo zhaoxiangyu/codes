@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"> 
+	<ImageButton android:id="@+id/play_head"
+        android:src="@android:drawable/ic_media_previous"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="1dip" />
+    <ImageButton android:id="@+id/play_tail"
+        android:src="@android:drawable/ic_media_next"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="1dip" />
+</merge>

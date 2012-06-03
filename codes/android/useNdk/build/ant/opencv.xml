@@ -1,0 +1,22 @@
+<project name="opencv" basedir="../.." default="default" 
+	xmlns:ivy="antlib:org.apache.ivy.ant">
+	<import file="${basedir}/../AntTask/ant/env-setting.xml" />
+	<import file="${basedir}/../AntTask/ant/common-tools.xml" />
+	<import file="${basedir}/../AntTask/ant/ivy-tools.xml"/>
+	<import file="${basedir}/../AntTask/ant/use-android-tools.xml"/>
+	
+	<property name="opencv.install.dir" location="${user.home}/opencv"/>
+	<property name="opencv.bz2" location="${VMSHARE.DIR}/ubuntu/c&amp;c++/OpenCV-2.3.1-android-bin.tar.bz2"/>
+
+	<target name="default">
+		<antcall target="install"></antcall>
+	</target>
+	
+	<target name="install">
+		<mkdir dir="${opencv.install.dir}"/>
+		<bunzip2 src="${opencv.bz2}" 
+			dest="${opencv.install.dir}/OpenCV-2.3.1-android-bin.tar"/>
+		<untar src="${opencv.install.dir}/OpenCV-2.3.1-android-bin.tar" 
+			dest="${opencv.install.dir}/OpenCV-2.3.1-android-bin"/>
+	</target>
+</project>

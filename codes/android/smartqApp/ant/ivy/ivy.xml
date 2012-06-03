@@ -1,0 +1,14 @@
+<ivy-module version="2.0">
+	<info organisation="org.sharp" module="jpVocReaer"/>
+    <configurations>
+    	<conf name="android"  description=""/>
+    	<conf name="test" extends="android" visibility="private" description="for testing our framework"/>
+    </configurations>
+    <publications>
+    </publications>
+    <dependencies>
+    	<!-- 
+    	<dependency name="jpVocParser" rev="1.0"/>
+    	 -->
+    </dependencies>
+</ivy-module>

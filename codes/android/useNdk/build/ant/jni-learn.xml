@@ -1,0 +1,60 @@
+<project name="jni-learn" basedir="../.." default="default">
+	<import file="${basedir}/../AntTask/ant/env-setting.xml" />
+	<import file="${basedir}/../AntTask/ant/common-tools.xml" />
+
+	<property name="java.src.dir" location="src"/>
+	<property name="javac.out.dir" location="bin/ant/classes"/>
+	<property name="jar.out.file" location="bin/ant/classes.jar"/>
+	<property name="javah.out.dir" location="jni/javah/header"/>
+	
+	<!-- ================================= 
+          target: default target              
+         ================================= -->
+    <target name="default">
+		<!--
+        <antcall target="javah"></antcall>
+        <antcall target="jni-learn.mk"></antcall>
+    	<java classname="sharpx.jni.ubuntu.Main" 
+    		classpath="${javac.out.dir}" fork="true">
+    		<jvmarg value="-Djava.library.path=${javac.out.dir}"/>
+    	</java>
+		-->
+        <antcall target="javah"></antcall>
+        <antcall target="build-ndk2"></antcall>
+        <antcall target="jnilearn-ndkjni-install2"></antcall>
+    </target>
+	
+	<target name="jnilearn-ndkjni-install2">
+		<jar destfile="bin/ant/jniLearnJni.jar">
+			<fileset dir="bin/ant/classes" includes="sharpx/jni/ubuntu/**"></fileset>
+		</jar>
+		<copy todir="${prj.android.dir}/smartqApp/libs" file="bin/ant/jniLearnJni.jar"/>
+		<mkdir dir="${prj.android.dir}/smartqApp/libs/armeabi"/>
+		<copy todir="${prj.android.dir}/smartqApp/libs/armeabi" file="libs/armeabi/libjnilearn.so"/>
+	</target>
+
+	<target name="build-ndk2">
+		<make makefile="build/make/jni-learn-ndk2.mk" target="ndk_build"/>
+	</target>
+	
+	<target name="jni-learn.mk">
+		<make makefile="build/make/jni-learn.mk" target="all"/>
+	</target>
+	
+	<target name="javah">
+		<mkdir dir="${javac.out.dir}"/>
+		<javac srcdir="${java.src.dir}" destdir="${javac.out.dir}"/>
+		<jar destfile="${jar.out.file}" basedir="${javac.out.dir}"/>
+
+		<delete dir="${javah.out.dir}"/>
+		<mkdir dir="${javah.out.dir}"/>
+		<javah destdir="${javah.out.dir}"
+			classpath="${javac.out.dir}" verbose="yes">
+			<class name="sharpx.jni.ubuntu.Main"/>
+			<class name="sharpx.jni.ubuntu.Test2Intf"/>
+			<class name="sharpx.jni.ubuntu.Test2Impl1"/>
+			<class name="sharpx.jni.ubuntu.Test2JniImpl"/>
+			<class name="sharpx.jni.ubuntu.Test2CallBackIntf"/>
+		</javah>
+	</target>
+</project>

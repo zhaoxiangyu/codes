@@ -1,0 +1,15 @@
+<project xmlns:ivy="antlib:org.apache.ivy.ant" name="kernel" basedir="..">
+	<import file="${basedir}/../../AntTask/ant/use-android-tools.xml" />
+	<import file="${basedir}/ant/env-directory.xml" />
+
+	<property file="build/build.properties"/>
+	<property environment="env"/>
+	
+	<target name="adb-help">
+		<adb-shell cmd="uname -a"/>
+	</target>
+	
+	<target name="adb-install-busybox">
+		<adb-install apk-file="${busybox-apk}"/>
+	</target>
+</project>
