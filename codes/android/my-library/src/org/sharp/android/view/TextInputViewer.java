@@ -36,9 +36,9 @@ public class TextInputViewer implements ContentViewer {
 		return et.getText().toString();
 	}
 
-	@Override
+	/*@Override
 	public HintsSource hintsSource() {
 		// TODO HELONG
 		return null;
-	}
+	}*/
 }

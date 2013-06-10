@@ -30,12 +30,6 @@ public class ViewUtils {
 				eMailV.setText(ctx.getString(R.string.dlg_msg_about_email));
 				return layout;
 			}
-
-			@Override
-			public HintsSource hintsSource() {
-				// TODO HELONG
-				return null;
-			}
 			
 		};
 	}

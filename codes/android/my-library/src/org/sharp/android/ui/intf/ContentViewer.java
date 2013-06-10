@@ -6,5 +6,5 @@ import android.view.View;
 
 public interface ContentViewer {
 	View contentView();
-	HintsSource hintsSource();
+	//HintsSource hintsSource();
 }

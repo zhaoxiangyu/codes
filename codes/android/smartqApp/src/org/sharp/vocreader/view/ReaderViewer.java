@@ -6,6 +6,7 @@ import org.sharp.android.view.BaseViewer;
 import org.sharp.android.view.ViewUtils;
 import org.sharp.android.widget.SingleLineGridView;
 import org.sharp.android.widget.SingleLineGridView.ClickListener;
+import org.sharp.intf.PointsSupport;
 import org.sharp.vocreader.core.JpWordsReader;
 import org.sharp.vocreader.core.JpWordsReader.Info;
 import org.sharp.vocreader.intf.Constants;
@@ -28,7 +29,7 @@ public class ReaderViewer extends BaseViewer implements JpWordsReader.EventListe
 	ImageButton playPrevious;
 	ImageButton playNext;
 	
-	public ReaderViewer(Context ctx, final JpWordsReader mp3Reader){
+	public ReaderViewer(Context ctx, final JpWordsReader mp3Reader,PointsSupport ps){
 		super(ctx);
 		mp3Reader.listener = this;
 		this.mp3Reader = mp3Reader;

@@ -11,7 +11,10 @@ public final class R {
     public static final class attr {
     }
     public static final class drawable {
-        public static int ic_launcher=0x7f020000;
+        public static int button_bg=0x7f020000;
+        public static int button_bg_focus=0x7f020001;
+        public static int button_bg_nofocus=0x7f020002;
+        public static int ic_launcher=0x7f020003;
     }
     public static final class id {
         public static int file_content=0x7f050000;
@@ -32,7 +35,8 @@ public final class R {
         public static int dlg_msg_prompt_waiting=0x7f040009;
         public static int dlg_title_downloading=0x7f040001;
         public static int dlg_title_unzipping=0x7f040005;
-        public static int menu_app_offers=0x7f04000b;
+        public static int menu_app_offers=0x7f04000c;
+        public static int toast_backkey_again_to_quit=0x7f04000b;
         public static int toast_cancel_download=0x7f040000;
         public static int toast_cancel_unzip=0x7f040004;
         public static int toast_download_canceled=0x7f040003;

@@ -63,7 +63,7 @@ public class PluggableUtils {
 	
 	//umeng_analyse_download_notification.xml,umeng_analyse_strings.xml
 	public static Plugin newUmengVersionUpgrade(final Activity acti,
-			final TextConsumer tc) {
+			final TextConsumer tc,boolean version_upgrade_enable) {
 		return new BasePlugin(){
 			final private String KEY_SHOW_VERSIONUPGRADE_DIALOG = "show_versionupgrade_dialog";
 			private final int MENU_SET_SHOW_DIALOG = Utils.uniqueInt();

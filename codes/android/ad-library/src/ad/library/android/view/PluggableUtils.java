@@ -204,7 +204,7 @@ public class PluggableUtils {
 		return youmiAppOffers(act);
 	}
 
-	public static PointsSupport pointsSupport(final Activity act) {
+	public static PointsSupport youmiAppOfferPS(final Activity act) {
 		return youmiAppOffers(act);
 	}
 }

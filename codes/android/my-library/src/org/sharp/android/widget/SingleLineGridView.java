@@ -17,7 +17,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.GridView;
 
-public class SingleLineRadioTexts extends GridView {
+public class SingleLineGridView extends GridView {
 	
 	public static interface ClickListener {
 		void OnClick(View v, int pos);
@@ -26,7 +26,7 @@ public class SingleLineRadioTexts extends GridView {
 	List<CheckableViewlet> tbList = new ArrayList<CheckableViewlet>();
 	ArrayAdapter<String> adapter;
 
-	public SingleLineRadioTexts(final Context ctx,
+	public SingleLineGridView(final Context ctx,
 			final String[] labels, final int defSel, final ClickListener cl) {
 		super(ctx);
 		

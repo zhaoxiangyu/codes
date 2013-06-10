@@ -40,7 +40,7 @@ public class OsSupporter implements OsSupport, Logger {
 		AIOUtils.copyAssetFile(mCtx, srcFileName, storagePath(targetFilePath));
 	}
 
-	public OsSupporter(SharedPreferences sp,TextConsumer tc, Context ctx){
+	public OsSupporter(SharedPreferences sp,TextConsumer tc, Context ctx, String dbPath){
 		mSP = sp;
 		mTC = tc;
 		mCtx = ctx;

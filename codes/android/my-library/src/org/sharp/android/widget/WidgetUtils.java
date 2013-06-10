@@ -210,7 +210,7 @@ public class WidgetUtils {
 		
 	}
 
-	public static void setup(SingleLineRadioTexts singleLineRadioTexts,
+	public static void setup(SingleLineGridView singleLineRadioTexts,
 			int center, int length, int stretchColumnWidth) {
 		// TODO HELONG
 		

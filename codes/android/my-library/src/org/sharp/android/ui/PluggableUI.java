@@ -177,8 +177,8 @@ public abstract class PluggableUI extends Activity {
 					);
 			setContentView(ll);*/
 			if(contentView!=null){
-				if(hintsDisplayer != null)
-					hintsDisplayer.attachHintsSource(contentViewProvider.hintsSource());
+				/*if(hintsDisplayer != null)
+					hintsDisplayer.attachHintsSource(contentViewProvider.hintsSource());*/
 
 				for(ViewFragment vf:viewFragments){
 					vf.initView(contentView);

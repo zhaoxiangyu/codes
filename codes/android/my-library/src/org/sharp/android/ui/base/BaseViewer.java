@@ -33,8 +33,8 @@ public abstract class BaseViewer implements ContentViewer {
 	protected void freshView(){
 	}
 
-	@Override
+	/*@Override
 	public HintsSource hintsSource() {
 		return null;
-	}
+	}*/
 }

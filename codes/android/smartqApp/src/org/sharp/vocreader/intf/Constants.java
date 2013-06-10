@@ -13,6 +13,6 @@ public class Constants {
 	public final static int COURSE_STATUS_NOTEXIST_NOINFO = 3;
 	public static final int MAX_COURSE_NO = 48;
 	public static final int MAX_LEVEL = 4;
-	public static Object dbPath;
+	public static String dbPath;
 	
 }

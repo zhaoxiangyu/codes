@@ -96,36 +96,35 @@ public class VocReaderActi extends PluggableUI {
 		addPlugin(helpPlugin);
 		
 		PointsSupport ps =  
-				ad.library.android.view.PluggableUtils.youmiAppOfferPS(this,
+				ad.library.android.view.PluggableUtils.youmiAppOfferPS(this/*,
 				sharpx.vocreader.R.id.pointsFrame,
-				setting.force_fee);
+				setting.force_fee*/);
 		
 		jpReaderWrapper = new JpWordsReaderWrapper(osSupporter, ps, null);
 		JpWordsReader jpWordsReader = jpReaderWrapper.jpWordsReader();
 		vp = new ReaderViewer(this, jpWordsReader, ps);
 
 		if(NetWorkSupport.AD_ADMOB.equals(setting.use_ad)){
-			Plugin adModAd = ad.library.android.view.PluggableUtils.newAdModAd(
+			/*Plugin adModAd = ad.library.android.view.PluggableUtils.newAdModAd(
 					this,
+					null, //TODO HELONG
 					sharpx.vocreader.R.id.adFrame);
-			addPlugin(adModAd);
+			addPlugin(adModAd);*/
 		}/*else if(NetWorkSupport.AD_YOUMI.equals(setting.use_ad)){
 			Plugin plugin = ad.library.android.view.PluggableUtils.youmiPlugin(this,sharpx.vocreader.R.id.adFrame);
 			addPlugin(plugin);
 			PointsSupport pointsSupport = ad.library.android.view.PluggableUtils.pointsSupport(this, sharpx.vocreader.R.id.adFrame);
 			jpWordsReader.data.setPointsSupport(pointsSupport);
 		}*/else if(NetWorkSupport.AD_YOUMI_POINTS.equals(setting.use_ad)){
-			Plugin plugin = ad.library.android.view.PluggableUtils.youmiAppOffer(this,
+			Plugin plugin = ad.library.android.view.PluggableUtils.youmiAppOffersPlugin(this/*,
 					sharpx.vocreader.R.id.pointsFrame,
-					setting.force_fee/*,
-					jpWordsReader.data*/);
+					setting.force_fee*/);
 			addPlugin(plugin);
 			PointsSupport pointsSupport = 
-					ad.library.android.view.PluggableUtils.youmiAppOfferPS(this, 
+					ad.library.android.view.PluggableUtils.youmiAppOfferPS(this/*, 
 					sharpx.vocreader.R.id.pointsFrame,
-					setting.force_fee/*,
-					jpWordsReader.data*/);
-			jpWordsReader.data.setPointsSupport(pointsSupport);
+					setting.force_fee*/);
+			jpWordsReader.setPointsSupport(pointsSupport);
 		}
 		
 		//addPlugin(WapsPluginUtils.wapsAdPlugin(this,R.id.adFrame));
