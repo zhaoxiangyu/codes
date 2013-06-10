@@ -1,1 +1,0 @@
-1. remove /new-appuse.php after new version apk being released
