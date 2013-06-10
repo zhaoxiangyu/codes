@@ -4,7 +4,6 @@
 	<classpathentry kind="src" path="test/src"/>
 	<classpathentry kind="src" path="gen"/>
 	<classpathentry kind="con" path="com.android.ide.eclipse.adt.ANDROID_FRAMEWORK"/>
-	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/my-library"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/umeng-library"/>
 	<classpathentry kind="con" path="com.android.ide.eclipse.adt.LIBRARIES"/>
@@ -15,5 +14,6 @@
 	<classpathentry kind="lib" path="libs/youmi-appoffer_2011-8-29.jar"/>
 	<classpathentry kind="lib" path="libs/GoogleAdMobAdsSdk-4.3.1.jar"/>
 	<classpathentry kind="lib" path="libs/AppOffer_1.5.3.jar"/>
+	<classpathentry exported="true" kind="con" path="com.android.ide.eclipse.adt.DEPENDENCIES"/>
 	<classpathentry kind="output" path="bin/classes"/>
 </classpath>
