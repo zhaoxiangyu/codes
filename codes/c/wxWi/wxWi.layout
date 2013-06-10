@@ -1,58 +1,58 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <CodeBlocks_layout_file>
 	<ActiveTarget name="TEST" />
-	<File name="common-vars.mak" open="1" top="0" tabpos="25">
+	<File name="common-vars.mak" open="0" top="0" tabpos="25">
 		<Cursor position="98" topLine="0" />
 	</File>
-	<File name="cpp-unit.mak" open="1" top="0" tabpos="24">
+	<File name="cpp-unit.mak" open="0" top="0" tabpos="24">
 		<Cursor position="397" topLine="0" />
 	</File>
-	<File name="open-shell.script" open="1" top="0" tabpos="27">
+	<File name="open-shell.script" open="0" top="0" tabpos="27">
 		<Cursor position="111" topLine="0" />
 	</File>
-	<File name="src/cppunit/utils/DataUtilsTest.cpp" open="1" top="0" tabpos="16">
-		<Cursor position="1251" topLine="22" />
+	<File name="src/cppunit/utils/DataUtilsTest.cpp" open="0" top="0" tabpos="16">
+		<Cursor position="1251" topLine="16" />
 	</File>
-	<File name="src/cppunit/utils/DataUtilsTest.h" open="1" top="0" tabpos="15">
-		<Cursor position="633" topLine="6" />
+	<File name="src/cppunit/utils/DataUtilsTest.h" open="0" top="0" tabpos="15">
+		<Cursor position="633" topLine="0" />
 	</File>
-	<File name="src/cppunit/utils/IOUtilsTest.cpp" open="1" top="0" tabpos="28">
+	<File name="src/cppunit/utils/IOUtilsTest.cpp" open="0" top="0" tabpos="28">
 		<Cursor position="761" topLine="25" />
 	</File>
 	<File name="src/data/sample.h" open="0" top="0" tabpos="3">
 		<Cursor position="29" topLine="0" />
 	</File>
-	<File name="src/helper/DataHelper.cpp" open="1" top="0" tabpos="21">
+	<File name="src/helper/DataHelper.cpp" open="0" top="0" tabpos="21">
 		<Cursor position="101" topLine="0" />
 	</File>
-	<File name="src/helper/DataHelper.h" open="1" top="0" tabpos="23">
+	<File name="src/helper/DataHelper.h" open="0" top="0" tabpos="23">
 		<Cursor position="143" topLine="0" />
 	</File>
-	<File name="src/helper/RTTISensitive.cpp" open="1" top="0" tabpos="20">
+	<File name="src/helper/RTTISensitive.cpp" open="0" top="0" tabpos="20">
 		<Cursor position="124" topLine="0" />
 	</File>
-	<File name="src/helper/RTTISensitive.h" open="1" top="0" tabpos="19">
+	<File name="src/helper/RTTISensitive.h" open="0" top="0" tabpos="19">
 		<Cursor position="178" topLine="0" />
 	</File>
-	<File name="src/jpwordReader/JpwordReader.cpp" open="1" top="0" tabpos="1">
-		<Cursor position="226" topLine="180" />
+	<File name="src/jpwordReader/JpwordReader.cpp" open="0" top="0" tabpos="1">
+		<Cursor position="226" topLine="166" />
 	</File>
 	<File name="src/jpwordReader/JpwordReader.h" open="0" top="0" tabpos="2">
 		<Cursor position="336" topLine="4" />
 	</File>
-	<File name="src/jpwordReader/cppunit/TestStarter.cpp" open="1" top="0" tabpos="18">
+	<File name="src/jpwordReader/cppunit/TestStarter.cpp" open="0" top="0" tabpos="18">
 		<Cursor position="195" topLine="0" />
 	</File>
-	<File name="src/jpwordReader/cppunit/data/AudioInfoTest.cpp" open="1" top="0" tabpos="7">
-		<Cursor position="500" topLine="18" />
+	<File name="src/jpwordReader/cppunit/data/AudioInfoTest.cpp" open="0" top="0" tabpos="7">
+		<Cursor position="500" topLine="15" />
 	</File>
-	<File name="src/jpwordReader/cppunit/data/AudioInfoTest.h" open="1" top="0" tabpos="17">
+	<File name="src/jpwordReader/cppunit/data/AudioInfoTest.h" open="0" top="0" tabpos="17">
 		<Cursor position="254" topLine="0" />
 	</File>
-	<File name="src/jpwordReader/data/AudioInfo.cpp" open="1" top="0" tabpos="8">
+	<File name="src/jpwordReader/data/AudioInfo.cpp" open="0" top="0" tabpos="8">
 		<Cursor position="255" topLine="6" />
 	</File>
-	<File name="src/jpwordReader/data/AudioInfo.h" open="1" top="0" tabpos="9">
+	<File name="src/jpwordReader/data/AudioInfo.h" open="0" top="0" tabpos="9">
 		<Cursor position="483" topLine="3" />
 	</File>
 	<File name="src/jpwordReader/data/Course.cpp" open="0" top="0" tabpos="0">
@@ -85,65 +85,62 @@
 	<File name="src/jpwordReader/listener/UnzipEventListener.h" open="0" top="0" tabpos="29">
 		<Cursor position="177" topLine="0" />
 	</File>
-	<File name="src/sample/main.c" open="1" top="0" tabpos="34">
-		<Cursor position="0" topLine="0" />
-	</File>
-	<File name="src/sample/main.cpp" open="1" top="1" tabpos="35">
+	<File name="src/sample/main.cpp" open="0" top="0" tabpos="35">
 		<Cursor position="0" topLine="0" />
 	</File>
 	<File name="src/stl/core.cpp" open="0" top="0" tabpos="9">
 		<Cursor position="281" topLine="0" />
 	</File>
-	<File name="src/translator/Article.cpp" open="1" top="0" tabpos="10">
+	<File name="src/translator/Article.cpp" open="0" top="0" tabpos="10">
 		<Cursor position="85" topLine="0" />
 	</File>
 	<File name="src/translator/Article.h" open="0" top="0" tabpos="5">
 		<Cursor position="81" topLine="0" />
 	</File>
-	<File name="src/translator/Config.cpp" open="1" top="0" tabpos="11">
+	<File name="src/translator/Config.cpp" open="0" top="0" tabpos="11">
 		<Cursor position="242" topLine="0" />
 	</File>
 	<File name="src/translator/Config.h" open="0" top="0" tabpos="7">
 		<Cursor position="169" topLine="0" />
 	</File>
-	<File name="src/translator/EventListener.cpp" open="1" top="0" tabpos="12">
+	<File name="src/translator/EventListener.cpp" open="0" top="0" tabpos="12">
 		<Cursor position="113" topLine="0" />
 	</File>
-	<File name="src/translator/Translator.cpp" open="1" top="0" tabpos="13">
-		<Cursor position="185" topLine="4" />
+	<File name="src/translator/Translator.cpp" open="0" top="0" tabpos="13">
+		<Cursor position="185" topLine="0" />
 	</File>
 	<File name="src/translator/Translator.h" open="0" top="0" tabpos="6">
 		<Cursor position="141" topLine="0" />
 	</File>
-	<File name="src/ui/TransFrame.cpp" open="1" top="0" tabpos="31">
-		<Cursor position="141" topLine="71" />
+	<File name="src/ui/TransFrame.cpp" open="0" top="0" tabpos="31">
+		<Cursor position="141" topLine="57" />
 	</File>
 	<File name="src/ui/TransFrame.h" open="0" top="0" tabpos="2">
 		<Cursor position="299" topLine="0" />
 	</File>
-	<File name="src/ui/wxWiApp.cpp" open="1" top="0" tabpos="29">
+	<File name="src/ui/wxWiApp.cpp" open="0" top="0" tabpos="29">
 		<Cursor position="322" topLine="3" />
 	</File>
 	<File name="src/ui/wxWiApp.h" open="0" top="0" tabpos="2">
 		<Cursor position="368" topLine="0" />
 	</File>
-	<File name="src/ui/wxWiMain.cpp" open="1" top="0" tabpos="30">
+	<File name="src/ui/wxWiMain.cpp" open="0" top="0" tabpos="30">
 		<Cursor position="638" topLine="14" />
 	</File>
 	<File name="src/ui/wxWiMain.h" open="0" top="0" tabpos="7">
 		<Cursor position="707" topLine="4" />
 	</File>
-	<File name="src/utils/DataUtils.cpp" open="1" top="0" tabpos="14">
-		<Cursor position="670" topLine="11" />
+	<File name="src/utils/DataUtils.cpp" open="0" top="0" tabpos="14">
+		<Cursor position="670" topLine="5" />
 	</File>
-	<File name="src/utils/DataUtils.h" open="1" top="0" tabpos="3">
+	<File name="src/utils/DataUtils.h" open="0" top="0" tabpos="3">
 		<Cursor position="150" topLine="0" />
 	</File>
-	<File name="src/utils/IOUtils.cpp" open="1" top="0" tabpos="2">
+	<File name="src/utils/IOUtils.cpp" open="0" top="0" tabpos="2">
 		<Cursor position="1813" topLine="81" />
 	</File>
-	<File name="src/utils/IOUtils.h" open="1" top="0" tabpos="4">
-		<Cursor position="333" topLine="6" />
+	<File name="src/utils/IOUtils.h" open="0" top="0" tabpos="4">
+		<Cursor position="333" topLine="1" />
 	</File>
 	<File name="src/utils/OsSupport.cpp" open="0" top="0" tabpos="17">
 		<Cursor position="116" topLine="2" />
@@ -151,7 +148,7 @@
 	<File name="src/utils/OsSupport.h" open="0" top="0" tabpos="18">
 		<Cursor position="116" topLine="0" />
 	</File>
-	<File name="src/utils/my_stl.h" open="1" top="0" tabpos="22">
+	<File name="src/utils/my_stl.h" open="0" top="0" tabpos="22">
 		<Cursor position="132" topLine="0" />
 	</File>
 	<File name="src/utils/my_type.h" open="0" top="0" tabpos="0">
@@ -160,25 +157,25 @@
 	<File name="src/utils/my_wx.h" open="0" top="0" tabpos="0">
 		<Cursor position="210" topLine="0" />
 	</File>
-	<File name="use-boost.mak" open="1" top="0" tabpos="26">
+	<File name="use-boost.mak" open="0" top="0" tabpos="26">
 		<Cursor position="257" topLine="0" />
 	</File>
-	<File name="wxWi-Debug.mak" open="1" top="0" tabpos="32">
-		<Cursor position="522" topLine="39" />
+	<File name="wxWi-Debug.mak" open="0" top="0" tabpos="32">
+		<Cursor position="522" topLine="34" />
 	</File>
 	<File name="wxWi-Release.mak" open="0" top="0" tabpos="0">
 		<Cursor position="972" topLine="18" />
 	</File>
-	<File name="wxWi-Sample.mak" open="1" top="0" tabpos="33">
+	<File name="wxWi-Sample.mak" open="0" top="0" tabpos="33">
 		<Cursor position="252" topLine="0" />
 	</File>
-	<File name="wxWi-TEST.mak" open="1" top="0" tabpos="6">
-		<Cursor position="1602" topLine="42" />
+	<File name="wxWi-TEST.mak" open="0" top="0" tabpos="6">
+		<Cursor position="1602" topLine="32" />
 	</File>
 	<File name="wxWi-WinRelease.mak" open="0" top="0" tabpos="0">
 		<Cursor position="1077" topLine="19" />
 	</File>
-	<File name="wxWi.mak" open="1" top="0" tabpos="5">
+	<File name="wxWi.mak" open="0" top="0" tabpos="5">
 		<Cursor position="116" topLine="0" />
 	</File>
 	<File name="wxsmith/TransFrame.wxs" open="0" top="0" tabpos="0">
