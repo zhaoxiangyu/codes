@@ -1,13 +1,13 @@
 package umeng.library.android.view;
 
 import org.sharp.android.autils.AUtils;
-import org.sharp.android.base.BaseActiveSensor;
-import org.sharp.android.base.BasePlugin;
-import org.sharp.android.intf.ActiveSensor;
-import org.sharp.android.intf.ForeGroundSensor;
-import org.sharp.android.intf.LogPlugin;
-import org.sharp.android.intf.MenuOperation;
-import org.sharp.android.intf.Plugin;
+import org.sharp.android.ui.base.BaseActiveSensor;
+import org.sharp.android.ui.base.BasePlugin;
+import org.sharp.android.ui.intf.ActiveSensor;
+import org.sharp.android.ui.intf.ForeGroundSensor;
+import org.sharp.android.ui.intf.LogPlugin;
+import org.sharp.android.ui.intf.MenuOperation;
+import org.sharp.android.ui.intf.Plugin;
 import org.sharp.intf.TextConsumer;
 import org.sharp.utils.SocketClient;
 import org.sharp.utils.Utils;

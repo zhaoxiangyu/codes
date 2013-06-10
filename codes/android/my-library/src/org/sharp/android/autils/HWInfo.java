@@ -8,6 +8,7 @@ import java.util.List;
 import org.sharp.intf.TextConsumer;
 
 import android.content.Context;
+import android.graphics.Point;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
@@ -388,6 +389,11 @@ public class HWInfo {
 		sb.append("resolution:"+sensor.getResolution());
 		sb.append("}");
 		return sb.toString();
+	}
+
+	public static Point screenMetrics(Context context) {
+		// TODO HELONG
+		return null;
 	}
 
 }

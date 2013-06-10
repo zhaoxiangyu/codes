@@ -11,5 +11,6 @@
     <string name="toast_unzip_error">error when unzipping</string>
     <string name="dlg_msg_prompt_waiting">please wait</string>
     <string name="dlg_button_close">close</string>
+    <string name="toast_backkey_again_to_quit">key in back twice to quit</string>
     
 </resources>

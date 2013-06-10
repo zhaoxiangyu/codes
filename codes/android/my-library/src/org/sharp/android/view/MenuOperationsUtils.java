@@ -1,8 +1,8 @@
 package org.sharp.android.view;
 
 import org.sharp.android.autils.APhoneUtils;
-import org.sharp.android.base.BaseMenuOperation;
-import org.sharp.android.intf.MenuOperation;
+import org.sharp.android.ui.base.BaseMenuOperation;
+import org.sharp.android.ui.intf.MenuOperation;
 
 import android.app.Activity;
 import android.content.Context;

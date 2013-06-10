@@ -6,7 +6,7 @@ import org.sharp.intf.Response.StatusCode;
 import org.sharp.utils.IOUtils;
 import org.sharp.utils.Option;
 import org.sharp.vocreader.beans.Course;
-import org.sharp.vocreader.beans.ItemInfo;
+import org.sharp.beans.ItemInfo;
 import org.sharp.vocreader.beans.UrlSetting;
 import org.sharp.vocreader.intf.Constants;
 import org.sharp.vocreader.intf.OsSupport;

@@ -1,7 +1,8 @@
 package org.sharp.android.view;
 
 
-import org.sharp.android.intf.ContentViewer;
+import org.sharp.android.ui.intf.ContentViewer;
+import org.sharp.android.viewlet.intf.HintsSource;
 
 import my.library.R;
 import android.content.Context;
@@ -33,5 +34,11 @@ public class TextInputViewer implements ContentViewer {
 	
 	public String inputtedText(){
 		return et.getText().toString();
+	}
+
+	@Override
+	public HintsSource hintsSource() {
+		// TODO HELONG
+		return null;
 	}
 }

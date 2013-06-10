@@ -1,6 +1,6 @@
 package org.sharp.vocreader.view;
 
-import org.sharp.android.base.BaseMenuOperation;
+import org.sharp.android.ui.base.BaseMenuOperation;
 import org.sharp.android.view.ViewUtils;
 
 import android.content.Context;

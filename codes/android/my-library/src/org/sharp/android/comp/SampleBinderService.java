@@ -1,6 +1,6 @@
 package org.sharp.android.comp;
 
-import org.sharp.android.intf.ContentViewer;
+import org.sharp.android.ui.intf.ContentViewer;
 
 import android.os.IBinder;
 

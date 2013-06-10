@@ -32,20 +32,24 @@ public final class R {
         public static int youmi_ad=0x7f030004;
     }
     public static final class string {
+        public static int btn_make_points=0x7f040013;
+        public static int btn_remove_banner=0x7f040014;
         public static int dlg_button_close=0x7f04000a;
-        public static int dlg_button_earn_later=0x7f04000e;
-        public static int dlg_button_earn_now=0x7f04000d;
-        public static int dlg_msg_prompt_make_points=0x7f04000c;
+        public static int dlg_button_earn_later=0x7f04000f;
+        public static int dlg_button_earn_now=0x7f04000e;
+        public static int dlg_msg_prompt_make_points=0x7f04000d;
         public static int dlg_msg_prompt_waiting=0x7f040009;
         public static int dlg_title_downloading=0x7f040001;
-        public static int dlg_title_insufficient_points=0x7f04000b;
+        public static int dlg_title_insufficient_points=0x7f04000c;
         public static int dlg_title_unzipping=0x7f040005;
-        public static int menu_earn_points=0x7f04000f;
+        public static int menu_earn_points=0x7f040010;
+        public static int text_current_points=0x7f040012;
+        public static int toast_backkey_again_to_quit=0x7f04000b;
         public static int toast_cancel_download=0x7f040000;
         public static int toast_cancel_unzip=0x7f040004;
         public static int toast_download_canceled=0x7f040003;
         public static int toast_download_finished=0x7f040002;
-        public static int toast_make_points_to_play_sound=0x7f040010;
+        public static int toast_make_points_to_play_sound=0x7f040011;
         public static int toast_unzip_canceled=0x7f040007;
         public static int toast_unzip_error=0x7f040008;
         public static int toast_unzip_finished=0x7f040006;

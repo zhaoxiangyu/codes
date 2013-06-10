@@ -3,7 +3,7 @@ package org.sharp.samples;
 import org.sharp.android.autils.AUtils;
 import org.sharp.android.view.TabbedUI;
 import org.sharp.beans.TabItem;
-import org.sharp.vocreader.view.VocReaderActi;
+import org.sharp.vocreader.comp.VocReaderActi;
 
 import android.content.Intent;
 

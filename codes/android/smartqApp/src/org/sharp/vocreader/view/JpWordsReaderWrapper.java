@@ -1,6 +1,6 @@
 package org.sharp.vocreader.view;
 
-import org.sharp.android.intf.ActiveSensor;
+import org.sharp.android.ui.intf.ActiveSensor;
 import org.sharp.intf.PaySupport;
 import org.sharp.intf.PointsSupport;
 import org.sharp.vocreader.core.JpWordsReader;

@@ -4,11 +4,11 @@ package ad.library.android.view;
 import net.youmi.android.appoffers.AppOffersManager;
 
 import org.sharp.android.autils.AIOUtils;
-import org.sharp.android.base.BaseActiveSensor;
-import org.sharp.android.base.BasePlugin;
-import org.sharp.android.intf.ActiveSensor;
-import org.sharp.android.intf.MenuOperation;
-import org.sharp.android.intf.Plugin;
+import org.sharp.android.ui.base.BaseActiveSensor;
+import org.sharp.android.ui.base.BasePlugin;
+import org.sharp.android.ui.intf.ActiveSensor;
+import org.sharp.android.ui.intf.MenuOperation;
+import org.sharp.android.ui.intf.Plugin;
 import org.sharp.android.view.ViewUtils;
 import org.sharp.intf.PointsSupport;
 import org.sharp.utils.Utils;

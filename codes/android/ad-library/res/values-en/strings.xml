@@ -6,4 +6,7 @@
     <string name="dlg_button_earn_later">not now</string>
     <string name="menu_earn_points">make points</string>
     <string name="toast_make_points_to_play_sound">make points to hear sound</string>
+    <string name="text_current_points">current points</string>
+    <string name="btn_make_points">make points</string>
+    <string name="btn_remove_banner">remove banner</string>
 </resources>

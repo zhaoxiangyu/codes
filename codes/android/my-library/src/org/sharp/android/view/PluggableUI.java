@@ -5,16 +5,16 @@ import java.util.Arrays;
 
 import org.sharp.android.autils.AIOUtils;
 import org.sharp.android.autils.AUtils;
-import org.sharp.android.intf.ActivityLauncher;
-import org.sharp.android.intf.ActiveSensor;
-import org.sharp.android.intf.ContentViewer;
-import org.sharp.android.intf.DestroySensor;
-import org.sharp.android.intf.ForeGroundSensor;
-import org.sharp.android.intf.LogPlugin;
-import org.sharp.android.intf.MenuOperation;
-import org.sharp.android.intf.Plugin;
-import org.sharp.android.intf.PostCreator;
-import org.sharp.android.intf.ActivityLauncher.ResultHandler;
+import org.sharp.android.ui.intf.ActivityLauncher;
+import org.sharp.android.ui.intf.ActiveSensor;
+import org.sharp.android.ui.intf.ContentViewer;
+import org.sharp.android.ui.intf.DestroySensor;
+import org.sharp.android.ui.intf.ForeGroundSensor;
+import org.sharp.android.ui.intf.LogPlugin;
+import org.sharp.android.ui.intf.MenuOperation;
+import org.sharp.android.ui.intf.Plugin;
+import org.sharp.android.ui.intf.PostCreator;
+import org.sharp.android.ui.intf.ActivityLauncher.ResultHandler;
 
 import android.app.Activity;
 import android.content.Intent;

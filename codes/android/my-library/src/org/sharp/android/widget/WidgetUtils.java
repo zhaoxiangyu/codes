@@ -3,13 +3,14 @@ package org.sharp.android.widget;
 import my.library.R;
 
 import org.sharp.android.view.ViewUtils;
-import org.sharp.android.widget.SingleLineGridView.ClickListener;
 import org.sharp.beans.TabItem;
 import org.sharp.beans.TabItem2;
 
+import android.app.Activity;
 import android.app.LocalActivityManager;
 import android.content.Context;
 import android.content.res.Resources;
+import android.graphics.Color;
 import android.graphics.Path.FillType;
 import android.view.Gravity;
 import android.view.View;
@@ -111,7 +112,21 @@ public class WidgetUtils {
 		return gv;
 	}
 	
+	public static TextView newTextViewBGCClickable(Context ctx, 
+			String text,
+			int color, 
+			OnClickListener listener){
+		//TODO HELONG
+		return null;
+	}
+	
 	public static TextView newTextView(Context ctx, String text){
+		TextView tv = new TextView(ctx);
+		tv.setText(text);
+		return tv;
+	}
+	
+	public static TextView newTextView(Context ctx, String text, int gravity){
 		TextView tv = new TextView(ctx);
 		tv.setText(text);
 		return tv;
@@ -166,6 +181,39 @@ public class WidgetUtils {
 		if(ocl != null)
 			rb.setOnClickListener(ocl);
 		return rb;
+	}
+
+	public static LinearLayout newLinearLayout(Context mCtx, boolean b,
+			View[] views) {
+		// TODO HELONG
+		return null;
+	}
+
+	public static void attachColorFrame(Context mCtx, View value, int i,
+			int yellow) {
+		// TODO HELONG
+		
+	}
+
+	public static void showHintView(Context mCtx, View value, String adhesion) {
+		// TODO HELONG
+		
+	}
+
+	public static void detachColorFrame(Context mCtx, View value) {
+		// TODO HELONG
+		
+	}
+
+	public static void hideHintView(Context mCtx, View value) {
+		// TODO HELONG
+		
+	}
+
+	public static void setup(SingleLineRadioTexts singleLineRadioTexts,
+			int center, int length, int stretchColumnWidth) {
+		// TODO HELONG
+		
 	}
 	
 }

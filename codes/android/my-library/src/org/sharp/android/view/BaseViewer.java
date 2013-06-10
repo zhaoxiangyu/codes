@@ -1,6 +1,6 @@
 package org.sharp.android.view;
 
-import org.sharp.android.intf.ContentViewer;
+import org.sharp.android.ui.intf.ContentViewer;
 
 import android.content.Context;
 import android.view.View;

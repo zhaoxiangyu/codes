@@ -1,6 +1,7 @@
 package org.sharp.vocreader.view;
 
-import org.sharp.android.intf.ContentViewer;
+import org.sharp.android.ui.intf.ContentViewer;
+import org.sharp.android.viewlet.intf.HintsSource;
 
 import sharpx.vocreader.R;
 import android.content.Context;
@@ -28,6 +29,12 @@ public class ViewUtils {
 				TextView eMailV = (TextView) layout.findViewById(R.id.about_email);
 				eMailV.setText(ctx.getString(R.string.dlg_msg_about_email));
 				return layout;
+			}
+
+			@Override
+			public HintsSource hintsSource() {
+				// TODO HELONG
+				return null;
 			}
 			
 		};

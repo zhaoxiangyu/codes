@@ -2,10 +2,12 @@ package org.sharp.vocreader.intf;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.List;
 
 import org.sharp.intf.DownloadEventListener;
 import org.sharp.intf.Response;
 import org.sharp.intf.UnzipEventListener;
+import org.sharp.vocreader.beans.AudioInfoV2;
 import org.sharp.vocreader.beans.State;
 
 import android.content.Context;
@@ -32,5 +34,10 @@ public interface OsSupport {
 	String relativePath(String fullPath, String base);
 	boolean pathExists(String path);
 	void copyAssetFile(String srcFileName, String targetFilePath);
+	void removeFile(String cacheFilePath);
+	AudioInfoV2[] loadAudioInfos(int courseNo);
+	void saveAudioInfos(List<AudioInfoV2> infoList);
+	String readAssetResource(String string);
+	AudioInfoV2 loadAudioInfo(String name);
 	
 }

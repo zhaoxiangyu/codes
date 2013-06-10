@@ -3,12 +3,12 @@ package org.sharp.android.view;
 import my.library.R;
 
 import org.sharp.android.autils.AUtils;
-import org.sharp.android.base.BasePlugin;
-import org.sharp.android.intf.ActiveSensor;
-import org.sharp.android.intf.ForeGroundSensor;
-import org.sharp.android.intf.LogPlugin;
-import org.sharp.android.intf.MenuOperation;
-import org.sharp.android.intf.Plugin;
+import org.sharp.android.ui.base.BasePlugin;
+import org.sharp.android.ui.intf.ActiveSensor;
+import org.sharp.android.ui.intf.ForeGroundSensor;
+import org.sharp.android.ui.intf.LogPlugin;
+import org.sharp.android.ui.intf.MenuOperation;
+import org.sharp.android.ui.intf.Plugin;
 import org.sharp.intf.TextConsumer;
 import org.sharp.utils.SocketClient;
 import org.sharp.utils.Utils;
@@ -198,7 +198,7 @@ public class PluggableUtils {
 	}
 
 	public static AlertDialog newTextInputDialog(Context mContext,
-			String title, TextInputViewProvider tivp,
+			String title, TextInputViewer tivp,
 			DialogInterface.OnClickListener ocl) {
 		AlertDialog.Builder builder;
 	

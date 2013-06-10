@@ -20,8 +20,6 @@ import org.sharp.intf.PointsSupport;
 import org.sharp.utils.Decorator;
 import org.sharp.utils.Utils;
 
-import sun.security.action.GetBooleanAction;
-
 import ad.library.R;
 import android.app.Activity;
 import android.content.DialogInterface;

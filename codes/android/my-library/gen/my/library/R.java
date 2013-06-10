@@ -34,6 +34,7 @@ public final class R {
         public static int dlg_msg_prompt_waiting=0x7f040009;
         public static int dlg_title_downloading=0x7f040001;
         public static int dlg_title_unzipping=0x7f040005;
+        public static int toast_backkey_again_to_quit=0x7f04000b;
         public static int toast_cancel_download=0x7f040000;
         public static int toast_cancel_unzip=0x7f040004;
         public static int toast_download_canceled=0x7f040003;

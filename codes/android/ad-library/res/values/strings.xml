@@ -6,4 +6,7 @@
     <string name="dlg_button_earn_later">以后再说</string>
     <string name="menu_earn_points">推荐应用</string>
     <string name="toast_make_points_to_play_sound">赚积分以后，能听到单词发声</string>
+    <string name="text_current_points">当前积分</string>
+    <string name="btn_make_points">赚取积分</string>
+    <string name="btn_remove_banner">移除广告条</string>
 </resources>

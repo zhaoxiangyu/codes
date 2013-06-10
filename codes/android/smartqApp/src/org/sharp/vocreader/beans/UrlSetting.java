@@ -6,4 +6,6 @@ public class UrlSetting {
 	public String use_ad;
 	public int bonus_offer;
 	public int course_points;
+	public boolean version_upgrade_enable;
+	public boolean force_fee;
 }

@@ -98,6 +98,11 @@ public class Utils {
 		}
 		return "";
 	}
+
+	public static int maxDistance(int x, int right, int left) {
+		//TODO HELONG
+		return 0;
+	}
 	
 }
 

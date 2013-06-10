@@ -22,4 +22,10 @@ public class BaseActivityLauncher implements ActivityLauncher {
 		return mRequestCode;
 	}
 
+	@Override
+	public ResultHandler resultHandler() {
+		// TODO HELONG
+		return null;
+	}
+
 }

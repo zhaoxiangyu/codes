@@ -3,6 +3,7 @@ package org.sharp.vocreader.android;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.util.List;
 
 import org.sharp.android.autils.AIOUtils;
 import org.sharp.android.autils.APhoneUtils;
@@ -15,6 +16,7 @@ import org.sharp.intf.Response;
 import org.sharp.intf.TextConsumer;
 import org.sharp.intf.UnzipEventListener;
 import org.sharp.utils.IOUtils;
+import org.sharp.vocreader.beans.AudioInfoV2;
 import org.sharp.vocreader.beans.State;
 import org.sharp.vocreader.intf.Constants;
 import org.sharp.vocreader.intf.OsSupport;
@@ -207,6 +209,36 @@ public class OsSupporter implements OsSupport, Logger {
 		
 		File file = new File(fullPath);
 		return file.exists();
+	}
+
+	@Override
+	public void removeFile(String cacheFilePath) {
+		// TODO HELONG
+		
+	}
+
+	@Override
+	public AudioInfoV2[] loadAudioInfos(int courseNo) {
+		// TODO HELONG
+		return null;
+	}
+
+	@Override
+	public void saveAudioInfos(List<AudioInfoV2> infoList) {
+		// TODO HELONG
+		
+	}
+
+	@Override
+	public String readAssetResource(String string) {
+		// TODO HELONG
+		return null;
+	}
+
+	@Override
+	public AudioInfoV2 loadAudioInfo(String name) {
+		// TODO HELONG
+		return null;
 	}
 
 }
