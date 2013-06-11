@@ -22,7 +22,6 @@ import android.widget.TextView;
 
 public class ReaderViewer extends BaseViewer implements JpWordsReader.EventListenr{
 
-	Context ctx;
 	JpWordsReader mp3Reader;
 	TextView text;
 	TextView infoMessage;

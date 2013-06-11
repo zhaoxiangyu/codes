@@ -7,7 +7,7 @@ import android.view.View;
 
 public abstract class BaseViewer implements ContentViewer {
 
-	private Context ctx;
+	protected Context ctx;
 	
 	public BaseViewer(Context ctx){
 		this.ctx = ctx;
