@@ -1,0 +1,60 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 9.00
+# Visual Studio 2005
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "nmv", "app2\app2.vcproj", "{1FE9BB50-66CD-4799-8EBC-9202C8C14EC1}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Setup", "Setup\Setup.vdproj", "{1396F46E-3BC3-4981-973E-6586CF515ABE}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "test", "test\test.vcproj", "{6B55BD19-F506-44C4-B5DA-C9BCD41EE929}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ieplugin", "ieplugin\ieplugin.vcproj", "{70DF4BB2-1015-4159-B7BE-389896E1AE9D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		console-debug|Win32 = console-debug|Win32
+		console-release|Win32 = console-release|Win32
+		Debug|Win32 = Debug|Win32
+		dll-debug|Win32 = dll-debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1FE9BB50-66CD-4799-8EBC-9202C8C14EC1}.console-debug|Win32.ActiveCfg = console-debug|Win32
+		{1FE9BB50-66CD-4799-8EBC-9202C8C14EC1}.console-debug|Win32.Build.0 = console-debug|Win32
+		{1FE9BB50-66CD-4799-8EBC-9202C8C14EC1}.console-release|Win32.ActiveCfg = console-release|Win32
+		{1FE9BB50-66CD-4799-8EBC-9202C8C14EC1}.console-release|Win32.Build.0 = console-release|Win32
+		{1FE9BB50-66CD-4799-8EBC-9202C8C14EC1}.Debug|Win32.ActiveCfg = Debug|Win32
+		{1FE9BB50-66CD-4799-8EBC-9202C8C14EC1}.Debug|Win32.Build.0 = Debug|Win32
+		{1FE9BB50-66CD-4799-8EBC-9202C8C14EC1}.dll-debug|Win32.ActiveCfg = dll-debug|Win32
+		{1FE9BB50-66CD-4799-8EBC-9202C8C14EC1}.dll-debug|Win32.Build.0 = dll-debug|Win32
+		{1FE9BB50-66CD-4799-8EBC-9202C8C14EC1}.Release|Win32.ActiveCfg = Release|Win32
+		{1FE9BB50-66CD-4799-8EBC-9202C8C14EC1}.Release|Win32.Build.0 = Release|Win32
+		{1396F46E-3BC3-4981-973E-6586CF515ABE}.console-debug|Win32.ActiveCfg = console-debug
+		{1396F46E-3BC3-4981-973E-6586CF515ABE}.console-release|Win32.ActiveCfg = console-release
+		{1396F46E-3BC3-4981-973E-6586CF515ABE}.console-release|Win32.Build.0 = console-release
+		{1396F46E-3BC3-4981-973E-6586CF515ABE}.Debug|Win32.ActiveCfg = Debug
+		{1396F46E-3BC3-4981-973E-6586CF515ABE}.dll-debug|Win32.ActiveCfg = Debug
+		{1396F46E-3BC3-4981-973E-6586CF515ABE}.Release|Win32.ActiveCfg = Release
+		{1396F46E-3BC3-4981-973E-6586CF515ABE}.Release|Win32.Build.0 = Release
+		{6B55BD19-F506-44C4-B5DA-C9BCD41EE929}.console-debug|Win32.ActiveCfg = console-debug|Win32
+		{6B55BD19-F506-44C4-B5DA-C9BCD41EE929}.console-debug|Win32.Build.0 = console-debug|Win32
+		{6B55BD19-F506-44C4-B5DA-C9BCD41EE929}.console-release|Win32.ActiveCfg = console-release|Win32
+		{6B55BD19-F506-44C4-B5DA-C9BCD41EE929}.Debug|Win32.ActiveCfg = Debug|Win32
+		{6B55BD19-F506-44C4-B5DA-C9BCD41EE929}.Debug|Win32.Build.0 = Debug|Win32
+		{6B55BD19-F506-44C4-B5DA-C9BCD41EE929}.dll-debug|Win32.ActiveCfg = Debug|Win32
+		{6B55BD19-F506-44C4-B5DA-C9BCD41EE929}.dll-debug|Win32.Build.0 = Debug|Win32
+		{6B55BD19-F506-44C4-B5DA-C9BCD41EE929}.Release|Win32.ActiveCfg = Release|Win32
+		{70DF4BB2-1015-4159-B7BE-389896E1AE9D}.console-debug|Win32.ActiveCfg = console-debug|Win32
+		{70DF4BB2-1015-4159-B7BE-389896E1AE9D}.console-debug|Win32.Build.0 = console-debug|Win32
+		{70DF4BB2-1015-4159-B7BE-389896E1AE9D}.console-release|Win32.ActiveCfg = console-release|Win32
+		{70DF4BB2-1015-4159-B7BE-389896E1AE9D}.console-release|Win32.Build.0 = console-release|Win32
+		{70DF4BB2-1015-4159-B7BE-389896E1AE9D}.Debug|Win32.ActiveCfg = Debug|Win32
+		{70DF4BB2-1015-4159-B7BE-389896E1AE9D}.Debug|Win32.Build.0 = Debug|Win32
+		{70DF4BB2-1015-4159-B7BE-389896E1AE9D}.dll-debug|Win32.ActiveCfg = Debug|Win32
+		{70DF4BB2-1015-4159-B7BE-389896E1AE9D}.dll-debug|Win32.Build.0 = Debug|Win32
+		{70DF4BB2-1015-4159-B7BE-389896E1AE9D}.Release|Win32.ActiveCfg = Release|Win32
+		{70DF4BB2-1015-4159-B7BE-389896E1AE9D}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
