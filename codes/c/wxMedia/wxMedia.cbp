@@ -46,14 +46,10 @@
 		<Unit filename="make/CMakeLists.txt" />
 		<Unit filename="make/wxMedia-Debug.mak" />
 		<Unit filename="make/wxMedia.mak" />
-		<Unit filename="wxMediaApp.cpp" />
-		<Unit filename="wxMediaApp.h" />
-		<Unit filename="wxMediaMain.cpp" />
-		<Unit filename="wxMediaMain.h" />
-		<Unit filename="wx_pch.h">
-			<Option compile="1" />
-			<Option weight="0" />
-		</Unit>
+		<Unit filename="src/ui/wxMediaApp.cpp" />
+		<Unit filename="src/ui/wxMediaApp.h" />
+		<Unit filename="src/ui/wxMediaMain.cpp" />
+		<Unit filename="src/ui/wxMediaMain.h" />
 		<Unit filename="wxsmith/wxMediaframe.wxs" />
 		<Extensions>
 			<envvars />
@@ -61,9 +57,9 @@
 			<lib_finder disable_auto="1" />
 			<debugger />
 			<wxsmith version="1">
-				<gui name="wxWidgets" src="wxMediaApp.cpp" main="wxMediaFrame" init_handlers="necessary" language="CPP" />
+				<gui name="wxWidgets" src="src/ui/wxMediaApp.cpp" main="-- None --" init_handlers="necessary" language="CPP" />
 				<resources>
-					<wxFrame wxs="wxsmith/wxMediaframe.wxs" src="wxMediaMain.cpp" hdr="wxMediaMain.h" name="wxMediaFrame" language="CPP" />
+					<wxFrame wxs="wxsmith/wxMediaframe.wxs" src="src/ui/wxMediaMain.cpp" hdr="src/ui/wxMediaMain.h" name="wxMediaFrame" language="CPP" />
 				</resources>
 			</wxsmith>
 		</Extensions>
