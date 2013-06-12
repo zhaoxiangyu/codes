@@ -84,6 +84,29 @@ find_library( AVFORMAT_LIBRARY
 include_directories( ${AVFORMAT_INCLUDE_DIR} )
 target_link_libraries(myFfmpeg ${AVFORMAT_LIBRARY})
 
+find_path( SWSCALE_INCLUDE_DIR
+    NAMES libswscale/swscale.h
+    PATH_SUFFIXES include
+    PATHS
+    /usr/local/include
+    /usr/include
+    /opt/local/include
+    /opt/include
+)
+
+find_library( SWSCALE_LIBRARY
+    NAMES swscale
+    PATH_SUFFIXES lib64 lib bin
+    PATHS
+    /usr/local
+    /usr
+    /opt/local
+    /opt
+)
+
+include_directories( ${SWSCALE_INCLUDE_DIR} )
+target_link_libraries(myFfmpeg ${SWSCALE_LIBRARY})
+
 ##############################################################################################
 
 # include_directories(${EXAMPLE_MARKERLESS_AR_SOURCE_DIR}/src)
