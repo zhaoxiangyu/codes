@@ -17,8 +17,10 @@
 //*)
 
 //helper functions
-enum wxbuildinfoformat {
-    short_f, long_f };
+enum wxbuildinfoformat
+{
+    short_f, long_f
+};
 
 wxString wxbuildinfo(wxbuildinfoformat format)
 {
@@ -62,7 +64,7 @@ wxMediaFrame::wxMediaFrame(wxWindow* parent,wxWindowID id)
     wxMenu* Menu1;
     wxMenuBar* MenuBar1;
     wxMenu* Menu2;
-    
+
     Create(parent, id, wxEmptyString, wxDefaultPosition, wxDefaultSize, wxDEFAULT_FRAME_STYLE, _T("id"));
     MenuBar1 = new wxMenuBar();
     Menu1 = new wxMenu();
@@ -82,7 +84,7 @@ wxMediaFrame::wxMediaFrame(wxWindow* parent,wxWindowID id)
     StatusBar1->SetFieldsCount(1,__wxStatusBarWidths_1);
     StatusBar1->SetStatusStyles(1,__wxStatusBarStyles_1);
     SetStatusBar(StatusBar1);
-    
+
     Connect(idMenuOpen,wxEVT_COMMAND_MENU_SELECTED,(wxObjectEventFunction)&wxMediaFrame::OnMenuFileOpenSelected);
     Connect(idMenuQuit,wxEVT_COMMAND_MENU_SELECTED,(wxObjectEventFunction)&wxMediaFrame::OnQuit);
     Connect(idMenuAbout,wxEVT_COMMAND_MENU_SELECTED,(wxObjectEventFunction)&wxMediaFrame::OnAbout);
@@ -110,7 +112,8 @@ void wxMediaFrame::OnMenuFileOpenSelected(wxCommandEvent& event)
 {
     wxFileDialog fileOpenDialog(this);
     int result = fileOpenDialog.ShowModal();
-    if(result == wxID_OK){
+    if(result == wxID_OK)
+    {
         wxString filePath = fileOpenDialog.GetPath();
         //wxMessageBox(filePath, _("File selected"));
     }

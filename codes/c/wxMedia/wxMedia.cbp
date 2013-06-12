@@ -47,6 +47,9 @@
 		<Unit filename="make/Findavcodec.cmake" />
 		<Unit filename="make/wxMedia-Debug.mak" />
 		<Unit filename="make/wxMedia.mak" />
+		<Unit filename="src/core/sdlPlayer.c">
+			<Option compilerVar="CC" />
+		</Unit>
 		<Unit filename="src/core/useFfmpeg.c">
 			<Option compilerVar="CC" />
 		</Unit>

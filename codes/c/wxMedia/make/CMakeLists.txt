@@ -35,8 +35,16 @@ ENDIF(SDL_FOUND)
 
 ###################################################### ffmpeg APP ##############################
 
-set(FFM_SRCS ../src/core/useFfmpeg.c)
+#set(FFM_SRCS ../src/core/useFfmpeg.c)
+set(FFM_SRCS ../src/core/sdlPlayer.c)
 add_executable(myFfmpeg ${FFM_SRCS})
+
+IF(SDL_FOUND)
+	INCLUDE_DIRECTORIES(${SDL_INCLUDE_DIR})
+	target_link_libraries(myFfmpeg ${SDL_LIBRARY})
+ELSE(SDL_FOUND)
+    MESSAGE("SDL not found")
+ENDIF(SDL_FOUND)
 
 find_path( AVCODEC_INCLUDE_DIR
     NAMES libavcodec/avcodec.h

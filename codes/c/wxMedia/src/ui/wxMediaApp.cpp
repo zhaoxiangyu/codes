@@ -23,9 +23,9 @@ bool wxMediaApp::OnInit()
     wxInitAllImageHandlers();
     if ( wxsOK )
     {
-    wxMediaFrame* Frame = new wxMediaFrame(0);
-    Frame->Show();
-    SetTopWindow(Frame);
+        wxMediaFrame* Frame = new wxMediaFrame(0);
+        Frame->Show();
+        SetTopWindow(Frame);
     }
     //*)
     return wxsOK;
