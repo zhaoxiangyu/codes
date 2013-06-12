@@ -3,6 +3,9 @@
 	<FileVersion major="1" minor="6" />
 	<Project>
 		<Option title="wxMedia" />
+		<Option makefile="wxMedia.mak" />
+		<Option makefile_is_custom="1" />
+		<Option execution_dir="make" />
 		<Option pch_mode="0" />
 		<Option compiler="gcc" />
 		<Build>
