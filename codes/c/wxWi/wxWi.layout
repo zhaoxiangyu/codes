@@ -160,8 +160,8 @@
 	<File name="use-boost.mak" open="0" top="0" tabpos="26">
 		<Cursor position="257" topLine="0" />
 	</File>
-	<File name="wxWi-Debug.mak" open="0" top="0" tabpos="32">
-		<Cursor position="522" topLine="34" />
+	<File name="wxWi-Debug.mak" open="1" top="0" tabpos="7">
+		<Cursor position="1651" topLine="23" />
 	</File>
 	<File name="wxWi-Release.mak" open="0" top="0" tabpos="0">
 		<Cursor position="972" topLine="18" />
@@ -175,8 +175,8 @@
 	<File name="wxWi-WinRelease.mak" open="0" top="0" tabpos="0">
 		<Cursor position="1077" topLine="19" />
 	</File>
-	<File name="wxWi.mak" open="0" top="0" tabpos="5">
-		<Cursor position="116" topLine="0" />
+	<File name="wxWi.mak" open="1" top="0" tabpos="8">
+		<Cursor position="626" topLine="0" />
 	</File>
 	<File name="wxsmith/TransFrame.wxs" open="0" top="0" tabpos="0">
 		<Cursor position="2869" topLine="72" />

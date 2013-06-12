@@ -7,6 +7,8 @@
  * License:
  **************************************************************/
 
+#include <SDL.h>
+
 #include "wxMediaApp.h"
 
 //(*AppHeaders
@@ -23,11 +25,39 @@ bool wxMediaApp::OnInit()
     wxInitAllImageHandlers();
     if ( wxsOK )
     {
-        wxMediaFrame* Frame = new wxMediaFrame(0);
-        Frame->Show();
-        SetTopWindow(Frame);
+        frame = new wxMediaFrame(0);
+        frame->Show();
+        SetTopWindow(frame);
     }
     //*)
     return wxsOK;
 
+}
+
+int wxMediaApp::OnRun()
+{
+    // initialize SDL
+    if (SDL_Init(SDL_INIT_VIDEO) < 0)
+    {
+        std::cerr << "unable to init SDL: " << SDL_GetError() << '\n';
+
+        return -1;
+    }
+
+    // generate an initial idle event to start things
+    wxIdleEvent event;
+    event.SetEventObject(&frame->getPanel());
+    frame->getPanel().AddPendingEvent(event);
+
+    // start the main loop
+    return wxApp::OnRun();
+}
+
+int wxMediaApp::OnExit()
+{
+    // cleanup SDL
+    SDL_Quit();
+
+    // return the standard exit code
+    return wxApp::OnExit();
 }

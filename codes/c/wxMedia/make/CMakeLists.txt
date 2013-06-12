@@ -1,20 +1,31 @@
 cmake_minimum_required(VERSION 2.8.7)
 project(wxMedia)
 
+##################################################### libs #################################
+
+find_package(wxWidgets COMPONENTS net gl core base REQUIRED)
+INCLUDE(FindSDL)
+# find_package(OpenCV REQUIRED )
+
 ##################################################### wxMedia APP ##########################
 
-set(SRCS ../src/ui/wxMediaApp.cpp ../src/ui/wxMediaMain.cpp)
+set(SRCS ../src/ui/wxMediaApp.cpp ../src/ui/wxMediaMain.cpp ../src/ui/wxSDLPanel.cpp)
 add_executable(wxMedia ${SRCS})
 
-# find_package(OpenCV REQUIRED )
 # include_directories(${OpenCV_INCLUDE_DIR})
 # link_directories(${OpenCV_LIBRARY_DIR})
 
-find_package(wxWidgets COMPONENTS net gl core base REQUIRED)
 IF(wxWidgets_FOUND)
 	include( "${wxWidgets_USE_FILE}" )
 	target_link_libraries(wxMedia ${wxWidgets_LIBRARIES})
 ENDIF(wxWidgets_FOUND)
+
+IF(SDL_FOUND)
+	INCLUDE_DIRECTORIES(${SDL_INCLUDE_DIR})
+	target_link_libraries(wxMedia ${SDL_LIBRARY})
+ELSE(SDL_FOUND)
+    MESSAGE("SDL not found")
+ENDIF(SDL_FOUND)
 
 ###################################################### SDL APP ##############################
 

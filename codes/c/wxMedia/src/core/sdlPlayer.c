@@ -42,7 +42,7 @@ int main(int argc, char *argv[])
     AVDictionary    *optionsDict = NULL;
     struct SwsContext *sws_ctx = NULL;
 
-    SDL_Overlay     *bmp = NULL;
+    SDL_Overlay     *overlay = NULL;
     SDL_Surface     *screen = NULL;
     SDL_Rect        rect;
     SDL_Event       event;
@@ -114,7 +114,7 @@ int main(int argc, char *argv[])
     }
 
     // Allocate a place to put our YUV image on that screen
-    bmp = SDL_CreateYUVOverlay(pCodecCtx->width,
+    overlay = SDL_CreateYUVOverlay(pCodecCtx->width,
                                pCodecCtx->height,
                                SDL_YV12_OVERLAY,
                                screen);
@@ -134,6 +134,7 @@ int main(int argc, char *argv[])
             NULL
         );
 
+
     // Read frames and save first five frames to disk
     i=0;
     while(av_read_frame(pFormatCtx, &packet)>=0)
@@ -148,16 +149,16 @@ int main(int argc, char *argv[])
             // Did we get a video frame?
             if(frameFinished)
             {
-                SDL_LockYUVOverlay(bmp);
+                SDL_LockYUVOverlay(overlay);
 
                 AVPicture pict;
-                pict.data[0] = bmp->pixels[0];
-                pict.data[1] = bmp->pixels[2];
-                pict.data[2] = bmp->pixels[1];
+                pict.data[0] = overlay->pixels[0];
+                pict.data[1] = overlay->pixels[2];
+                pict.data[2] = overlay->pixels[1];
 
-                pict.linesize[0] = bmp->pitches[0];
-                pict.linesize[1] = bmp->pitches[2];
-                pict.linesize[2] = bmp->pitches[1];
+                pict.linesize[0] = overlay->pitches[0];
+                pict.linesize[1] = overlay->pitches[2];
+                pict.linesize[2] = overlay->pitches[1];
 
                 // Convert the image into YUV format that SDL uses
                 sws_scale
@@ -171,13 +172,14 @@ int main(int argc, char *argv[])
                     pict.linesize
                 );
 
-                SDL_UnlockYUVOverlay(bmp);
+
+                SDL_UnlockYUVOverlay(overlay);
 
                 rect.x = 0;
                 rect.y = 0;
                 rect.w = pCodecCtx->width;
                 rect.h = pCodecCtx->height;
-                SDL_DisplayYUVOverlay(bmp, &rect);
+                SDL_DisplayYUVOverlay(overlay, &rect);
 
             }
         }

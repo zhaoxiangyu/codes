@@ -16,6 +16,8 @@
 #include <wx/statusbr.h>
 //*)
 
+#include "wxSDLPanel.h"
+
 class wxMediaFrame: public wxFrame
 {
     public:
@@ -23,7 +25,9 @@ class wxMediaFrame: public wxFrame
         wxMediaFrame(wxWindow* parent,wxWindowID id = -1);
         virtual ~wxMediaFrame();
 
+    	SDLPanel &getPanel();
     private:
+    	SDLPanel *panel;
 
         //(*Handlers(wxMediaFrame)
         void OnQuit(wxCommandEvent& event);
@@ -45,5 +49,10 @@ class wxMediaFrame: public wxFrame
 
         DECLARE_EVENT_TABLE()
 };
+
+inline SDLPanel &wxMediaFrame::getPanel()
+{
+    return *panel;
+}
 
 #endif // WXMEDIAMAIN_H

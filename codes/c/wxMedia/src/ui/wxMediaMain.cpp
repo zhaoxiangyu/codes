@@ -8,6 +8,7 @@
  **************************************************************/
 
 #include "wxMediaMain.h"
+
 #include <wx/msgdlg.h>
 #include <wx/filedlg.h>
 
@@ -89,6 +90,10 @@ wxMediaFrame::wxMediaFrame(wxWindow* parent,wxWindowID id)
     Connect(idMenuQuit,wxEVT_COMMAND_MENU_SELECTED,(wxObjectEventFunction)&wxMediaFrame::OnQuit);
     Connect(idMenuAbout,wxEVT_COMMAND_MENU_SELECTED,(wxObjectEventFunction)&wxMediaFrame::OnAbout);
     //*)
+
+    // create the SDLPanel
+    panel = new SDLPanel(this);
+
 }
 
 wxMediaFrame::~wxMediaFrame()

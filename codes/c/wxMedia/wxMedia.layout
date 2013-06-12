@@ -1,4 +1,25 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <CodeBlocks_layout_file>
 	<ActiveTarget name="Debug" />
+	<File name="make/CMakeLists.txt" open="1" top="0" tabpos="1">
+		<Cursor position="1231" topLine="30" />
+	</File>
+	<File name="make/wxMedia.mak" open="1" top="1" tabpos="7">
+		<Cursor position="164" topLine="0" />
+	</File>
+	<File name="src/core/sdlPlayer.c" open="1" top="0" tabpos="2">
+		<Cursor position="587" topLine="128" />
+	</File>
+	<File name="src/core/useFfmpeg.c" open="1" top="0" tabpos="3">
+		<Cursor position="4320" topLine="132" />
+	</File>
+	<File name="src/ui/wxMediaApp.cpp" open="1" top="0" tabpos="4">
+		<Cursor position="388" topLine="0" />
+	</File>
+	<File name="src/ui/wxMediaMain.cpp" open="1" top="0" tabpos="5">
+		<Cursor position="0" topLine="0" />
+	</File>
+	<File name="src/ui/wxSDLApp.cpp" open="1" top="0" tabpos="6">
+		<Cursor position="3648" topLine="75" />
+	</File>
 </CodeBlocks_layout_file>

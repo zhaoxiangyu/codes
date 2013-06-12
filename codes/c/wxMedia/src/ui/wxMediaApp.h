@@ -12,10 +12,17 @@
 
 #include <wx/app.h>
 
+#include "wxMediaMain.h"
+
 class wxMediaApp : public wxApp
 {
+	private:
+		wxMediaFrame *frame;
+
     public:
         virtual bool OnInit();
+		int OnRun();
+		int OnExit();
 };
 
 #endif // WXMEDIAAPP_H
