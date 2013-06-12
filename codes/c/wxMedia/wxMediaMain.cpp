@@ -10,6 +10,7 @@
 #include "wx_pch.h"
 #include "wxMediaMain.h"
 #include <wx/msgdlg.h>
+#include <wx/filedlg.h>
 
 //(*InternalHeaders(wxMediaFrame)
 #include <wx/intl.h>
@@ -43,6 +44,7 @@ wxString wxbuildinfo(wxbuildinfoformat format)
 }
 
 //(*IdInit(wxMediaFrame)
+const long wxMediaFrame::idMenuOpen = wxNewId();
 const long wxMediaFrame::idMenuQuit = wxNewId();
 const long wxMediaFrame::idMenuAbout = wxNewId();
 const long wxMediaFrame::ID_STATUSBAR1 = wxNewId();
@@ -61,10 +63,12 @@ wxMediaFrame::wxMediaFrame(wxWindow* parent,wxWindowID id)
     wxMenu* Menu1;
     wxMenuBar* MenuBar1;
     wxMenu* Menu2;
-    
+
     Create(parent, id, wxEmptyString, wxDefaultPosition, wxDefaultSize, wxDEFAULT_FRAME_STYLE, _T("id"));
     MenuBar1 = new wxMenuBar();
     Menu1 = new wxMenu();
+    MenuItem3 = new wxMenuItem(Menu1, idMenuOpen, _("Open"), _("open video file"), wxITEM_NORMAL);
+    Menu1->Append(MenuItem3);
     MenuItem1 = new wxMenuItem(Menu1, idMenuQuit, _("Quit\tAlt-F4"), _("Quit the application"), wxITEM_NORMAL);
     Menu1->Append(MenuItem1);
     MenuBar1->Append(Menu1, _("&File"));
@@ -79,7 +83,8 @@ wxMediaFrame::wxMediaFrame(wxWindow* parent,wxWindowID id)
     StatusBar1->SetFieldsCount(1,__wxStatusBarWidths_1);
     StatusBar1->SetStatusStyles(1,__wxStatusBarStyles_1);
     SetStatusBar(StatusBar1);
-    
+
+    Connect(idMenuOpen,wxEVT_COMMAND_MENU_SELECTED,(wxObjectEventFunction)&wxMediaFrame::OnMenuFileOpenSelected);
     Connect(idMenuQuit,wxEVT_COMMAND_MENU_SELECTED,(wxObjectEventFunction)&wxMediaFrame::OnQuit);
     Connect(idMenuAbout,wxEVT_COMMAND_MENU_SELECTED,(wxObjectEventFunction)&wxMediaFrame::OnAbout);
     //*)
@@ -100,4 +105,14 @@ void wxMediaFrame::OnAbout(wxCommandEvent& event)
 {
     wxString msg = wxbuildinfo(long_f);
     wxMessageBox(msg, _("Welcome to..."));
+}
+
+void wxMediaFrame::OnMenuFileOpenSelected(wxCommandEvent& event)
+{
+    wxFileDialog fileOpenDialog(this);
+    int result = fileOpenDialog.ShowModal();
+    if(result == wxID_OK){
+        wxString filePath = fileOpenDialog.GetPath();
+        //wxMessageBox(filePath, _("File selected"));
+    }
 }

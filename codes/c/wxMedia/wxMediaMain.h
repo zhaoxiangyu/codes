@@ -28,15 +28,18 @@ class wxMediaFrame: public wxFrame
         //(*Handlers(wxMediaFrame)
         void OnQuit(wxCommandEvent& event);
         void OnAbout(wxCommandEvent& event);
+        void OnMenuFileOpenSelected(wxCommandEvent& event);
         //*)
 
         //(*Identifiers(wxMediaFrame)
+        static const long idMenuOpen;
         static const long idMenuQuit;
         static const long idMenuAbout;
         static const long ID_STATUSBAR1;
         //*)
 
         //(*Declarations(wxMediaFrame)
+        wxMenuItem* MenuItem3;
         wxStatusBar* StatusBar1;
         //*)
 
