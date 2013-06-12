@@ -44,13 +44,17 @@
 			<Add option="`wx-config --libs`" />
 		</Linker>
 		<Unit filename="make/CMakeLists.txt" />
+		<Unit filename="make/Findavcodec.cmake" />
 		<Unit filename="make/wxMedia-Debug.mak" />
 		<Unit filename="make/wxMedia.mak" />
+		<Unit filename="src/core/useFfmpeg.c">
+			<Option compilerVar="CC" />
+		</Unit>
 		<Unit filename="src/ui/wxMediaApp.cpp" />
 		<Unit filename="src/ui/wxMediaApp.h" />
 		<Unit filename="src/ui/wxMediaMain.cpp" />
 		<Unit filename="src/ui/wxMediaMain.h" />
-		<Unit filename="src/ui/wxSDLPanel.cpp" />
+		<Unit filename="src/ui/wxSDLApp.cpp" />
 		<Unit filename="wxsmith/wxMediaframe.wxs" />
 		<Extensions>
 			<envvars />

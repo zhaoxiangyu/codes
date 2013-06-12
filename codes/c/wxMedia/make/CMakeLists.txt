@@ -18,7 +18,7 @@ ENDIF(wxWidgets_FOUND)
 
 ###################################################### SDL APP ##############################
 
-set(SDL_SRCS ../src/ui/wxSDLPanel.cpp)
+set(SDL_SRCS ../src/ui/wxSDLApp.cpp)
 add_executable(wxSDL ${SDL_SRCS})
 
 IF(wxWidgets_FOUND)
@@ -32,6 +32,57 @@ IF(SDL_FOUND)
 ELSE(SDL_FOUND)
     MESSAGE("SDL not found")
 ENDIF(SDL_FOUND)
+
+###################################################### ffmpeg APP ##############################
+
+set(FFM_SRCS ../src/core/useFfmpeg.c)
+add_executable(myFfmpeg ${FFM_SRCS})
+
+find_path( AVCODEC_INCLUDE_DIR
+    NAMES libavcodec/avcodec.h
+    PATH_SUFFIXES include
+    PATHS
+    /usr/local/include
+    /usr/include
+    /opt/local/include
+    /opt/include
+)
+
+find_library( AVCODEC_LIBRARY
+    NAMES avcodec
+    PATH_SUFFIXES lib64 lib bin
+    PATHS
+    /usr/local
+    /usr
+    /opt/local
+    /opt
+)
+
+include_directories( ${AVCODEC_INCLUDE_DIR} )
+target_link_libraries(myFfmpeg ${AVCODEC_LIBRARY})
+
+find_path( AVFORMAT_INCLUDE_DIR
+    NAMES libavformat/avformat.h
+    PATH_SUFFIXES include
+    PATHS
+    /usr/local/include
+    /usr/include
+    /opt/local/include
+    /opt/include
+)
+
+find_library( AVFORMAT_LIBRARY
+    NAMES avformat
+    PATH_SUFFIXES lib64 lib bin
+    PATHS
+    /usr/local
+    /usr
+    /opt/local
+    /opt
+)
+
+include_directories( ${AVFORMAT_INCLUDE_DIR} )
+target_link_libraries(myFfmpeg ${AVFORMAT_LIBRARY})
 
 ##############################################################################################
 
