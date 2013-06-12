@@ -41,6 +41,8 @@
 			<Add option="`wx-config --libs`" />
 		</Linker>
 		<Unit filename="make/CMakeLists.txt" />
+		<Unit filename="make/wxMedia-Debug.mak" />
+		<Unit filename="make/wxMedia.mak" />
 		<Unit filename="wxMediaApp.cpp" />
 		<Unit filename="wxMediaApp.h" />
 		<Unit filename="wxMediaMain.cpp" />
