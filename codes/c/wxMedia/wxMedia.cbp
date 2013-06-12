@@ -50,6 +50,7 @@
 		<Unit filename="src/ui/wxMediaApp.h" />
 		<Unit filename="src/ui/wxMediaMain.cpp" />
 		<Unit filename="src/ui/wxMediaMain.h" />
+		<Unit filename="src/ui/wxSDLPanel.cpp" />
 		<Unit filename="wxsmith/wxMediaframe.wxs" />
 		<Extensions>
 			<envvars />
