@@ -29,7 +29,10 @@ END_EVENT_TABLE()
 SDLPanel::SDLPanel(wxWindow *parent) : wxPanel(parent, IDP_PANEL), screen(0)
 {
     // ensure the size of the wxPanel
-    wxSize size(640, 480);
+    int width = 640, height = 480;
+    parent->GetSize(&width,&height);
+    wxSize size(width, height);
+    //wxSize size = parent->GetSize();
 
     SetMinSize(size);
     SetMaxSize(size);
@@ -91,9 +94,10 @@ void SDLPanel::onIdle(wxIdleEvent &)
     // Ask SDL for the time in milliseconds
     int tick = SDL_GetTicks();
 
-    for (int y = 0; y < 480; y++)
+	wxSize size = GetSize();
+    for (int y = 0; y < size.GetHeight(); y++)
     {
-        for (int x = 0; x < 640; x++)
+        for (int x = 0; x < size.GetWidth(); x++)
         {
             wxUint32 color = (y * y) + (x * x) + tick;
             wxUint8 *pixels = static_cast<wxUint8 *>(screen->pixels) +
