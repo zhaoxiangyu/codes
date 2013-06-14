@@ -50,7 +50,16 @@
 		<Unit filename="src/core/sdlPlayer.c">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="src/core/spawnThread.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/core/syncVideo.c">
+			<Option compilerVar="CC" />
+		</Unit>
 		<Unit filename="src/core/useFfmpeg.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/core/withAudio.c">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="src/ui/wxMediaApp.cpp" />

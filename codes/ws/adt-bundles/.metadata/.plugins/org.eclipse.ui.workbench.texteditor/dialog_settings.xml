@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
+		<item value="vp" key="selection"/>
+		<list key="findhistory">
+			<item value="vp"/>
+			<item value="loadAudioInfos"/>
+			<item value="resultHandler"/>
+			<item value="ResultHandler"/>
+			<item value="BaseGestureListener"/>
+			<item value="ActiveSensor"/>
+			<item value="activeSensor"/>
+			<item value="ClickListener"/>
+		</list>
+	</section>
+</section>

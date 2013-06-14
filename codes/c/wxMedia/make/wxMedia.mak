@@ -19,4 +19,5 @@ vsplit:
 
 myFfmpeg:
 	cd ../bin/Debug/ && ./myFfmpeg /media/sf_ubuntu/projects/ffmpeg-merge/data/AVSEQ04-1.mpeg
+	#cd ../bin/Debug/ && ./myFfmpeg /media/sf_ubuntu/projects/ffmpeg-merge/data/AVSEQ04.mpeg
 

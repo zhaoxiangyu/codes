@@ -1,25 +1,40 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <CodeBlocks_layout_file>
 	<ActiveTarget name="Debug" />
-	<File name="make/CMakeLists.txt" open="1" top="0" tabpos="1">
-		<Cursor position="1231" topLine="30" />
+	<File name="make/CMakeLists.txt" open="1" top="0" tabpos="7">
+		<Cursor position="1557" topLine="42" />
 	</File>
-	<File name="make/wxMedia.mak" open="1" top="1" tabpos="7">
-		<Cursor position="164" topLine="0" />
+	<File name="make/wxMedia-Debug.mak" open="0" top="0" tabpos="0">
+		<Cursor position="85" topLine="0" />
+	</File>
+	<File name="make/wxMedia.mak" open="1" top="1" tabpos="10">
+		<Cursor position="643" topLine="0" />
 	</File>
 	<File name="src/core/sdlPlayer.c" open="1" top="0" tabpos="2">
-		<Cursor position="587" topLine="128" />
+		<Cursor position="2729" topLine="79" />
 	</File>
-	<File name="src/core/useFfmpeg.c" open="1" top="0" tabpos="3">
-		<Cursor position="4320" topLine="132" />
+	<File name="src/core/useFfmpeg.c" open="1" top="0" tabpos="1">
+		<Cursor position="4804" topLine="153" />
 	</File>
-	<File name="src/ui/wxMediaApp.cpp" open="1" top="0" tabpos="4">
-		<Cursor position="388" topLine="0" />
+	<File name="src/core/withAudio.c" open="1" top="0" tabpos="9">
+		<Cursor position="9633" topLine="394" />
 	</File>
-	<File name="src/ui/wxMediaMain.cpp" open="1" top="0" tabpos="5">
-		<Cursor position="0" topLine="0" />
+	<File name="src/ui/wxMediaApp.cpp" open="1" top="0" tabpos="3">
+		<Cursor position="435" topLine="31" />
 	</File>
-	<File name="src/ui/wxSDLApp.cpp" open="1" top="0" tabpos="6">
-		<Cursor position="3648" topLine="75" />
+	<File name="src/ui/wxMediaApp.h" open="1" top="0" tabpos="6">
+		<Cursor position="465" topLine="0" />
+	</File>
+	<File name="src/ui/wxMediaMain.cpp" open="1" top="0" tabpos="4">
+		<Cursor position="1406" topLine="64" />
+	</File>
+	<File name="src/ui/wxMediaMain.h" open="1" top="0" tabpos="8">
+		<Cursor position="517" topLine="0" />
+	</File>
+	<File name="src/ui/wxSDLApp.cpp" open="0" top="0" tabpos="6">
+		<Cursor position="4206" topLine="18" />
+	</File>
+	<File name="src/ui/wxSDLPanel.cpp" open="1" top="0" tabpos="5">
+		<Cursor position="1954" topLine="14" />
 	</File>
 </CodeBlocks_layout_file>
