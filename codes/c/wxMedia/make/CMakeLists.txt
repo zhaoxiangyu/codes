@@ -46,11 +46,11 @@ ENDIF(SDL_FOUND)
 
 ###################################################### ffmpeg APP ##############################
 
-#set(FFM_SRCS ../src/core/useFfmpeg.c)
-#set(FFM_SRCS ../src/core/sdlPlayer.c)
-#set(FFM_SRCS ../src/core/withAudio.c)
-#set(FFM_SRCS ../src/core/spawnThread.c)
-set(FFM_SRCS ../src/core/syncVideo.c)
+#set(FFM_SRCS ../src/core/ffmpeg/useFfmpeg.c)
+#set(FFM_SRCS ../src/core/ffmpeg/sdlPlayer.c)
+#set(FFM_SRCS ../src/core/ffmpeg/withAudio.c)
+#set(FFM_SRCS ../src/core/ffmpeg/spawnThread.c)
+set(FFM_SRCS ../src/core/ffmpeg/syncVideo.c)
 add_executable(myFfmpeg ${FFM_SRCS})
 
 IF(SDL_FOUND)

@@ -11,7 +11,9 @@
 #define WXMEDIAMAIN_H
 
 //(*Headers(wxMediaFrame)
+#include <wx/sizer.h>
 #include <wx/menu.h>
+#include <wx/panel.h>
 #include <wx/frame.h>
 #include <wx/statusbr.h>
 //*)
@@ -36,6 +38,10 @@ class wxMediaFrame: public wxFrame
         //*)
 
         //(*Identifiers(wxMediaFrame)
+        static const long ID_PANEL2;
+        static const long ID_PANEL3;
+        static const long ID_PANEL4;
+        static const long ID_PANEL1;
         static const long idMenuOpen;
         static const long idMenuQuit;
         static const long idMenuAbout;
@@ -43,6 +49,10 @@ class wxMediaFrame: public wxFrame
         //*)
 
         //(*Declarations(wxMediaFrame)
+        wxPanel* mainPanel;
+        wxPanel* footerPanel;
+        wxPanel* headerPanel;
+        wxPanel* videoPanel;
         wxMenuItem* MenuItem3;
         wxStatusBar* StatusBar1;
         //*)
