@@ -56,6 +56,7 @@ static void realize_cb (GtkWidget *widget, CustomData *data)
 /* This function is called when the PLAY button is clicked */
 static void play_cb (GtkButton *button, CustomData *data)
 {
+   	//	g_object_set (data->playbin2, "uri", "file:///media/sf_ubuntu/projects/ffmpeg-merge/data/AVSEQ04-1.mpeg", NULL);
     gst_element_set_state (data->playbin2, GST_STATE_PLAYING);
 }
 
@@ -162,8 +163,6 @@ static void create_ui (CustomData *data)
     gtk_window_set_default_size (GTK_WINDOW (main_window), 640, 480);
 
     gtk_widget_show_all (main_window);
-
-    //gtk_widget_realize (video_window);
 }
 
 /* This function is called periodically to refresh the GUI */
@@ -387,10 +386,11 @@ int main(int argc, char *argv[])
         return -1;
     }
 
-    /* Set the URI to play */
-    g_object_set (data.playbin2, "uri", "file:///media/sf_ubuntu/projects/ffmpeg-merge/data/AVSEQ04-1.mpeg", NULL);
-    data.video_sink = gst_element_factory_make ("xvimagesink", NULL);
+	data.video_sink = gst_element_factory_make ("xvimagesink", NULL);
     g_object_set (data.playbin2, "video-sink", data.video_sink, NULL);
+
+   /* Set the URI to play */
+    g_object_set (data.playbin2, "uri", "file:///media/sf_ubuntu/projects/ffmpeg-merge/data/AVSEQ04-1.mpeg", NULL);
 
     /* Connect to interesting signals in playbin2 */
     g_signal_connect (G_OBJECT (data.playbin2), "video-tags-changed", (GCallback) tags_cb, &data);
