@@ -82,7 +82,7 @@ find_library( VLC_LIBRARY
     /opt
 )
 
-# find_package(OpenCV REQUIRED )
+find_package(OpenCV REQUIRED )
 
 ##################################################### wxMedia APP ##########################
 

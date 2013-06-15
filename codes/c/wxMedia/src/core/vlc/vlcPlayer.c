@@ -74,6 +74,8 @@ int main(int argc, char *argv[])
     {
         "--no-audio", /* skip any audio track */
         "--no-xlib", /* tell VLC to not use Xlib */
+        "--no-video-on-top",
+        "--no-video-title-show",
     };
     int vlc_argc = sizeof(vlc_argv) / sizeof(*vlc_argv);
 
