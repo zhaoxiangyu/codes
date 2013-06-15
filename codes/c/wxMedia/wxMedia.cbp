@@ -67,6 +67,9 @@
 		<Unit filename="src/core/vlc/vlcPlayer.c">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="src/ui/gtk+/gstPlayer.c">
+			<Option compilerVar="CC" />
+		</Unit>
 		<Unit filename="src/ui/wxMediaApp.cpp" />
 		<Unit filename="src/ui/wxMediaApp.h" />
 		<Unit filename="src/ui/wxMediaMain.cpp" />

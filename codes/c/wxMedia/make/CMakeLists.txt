@@ -1,10 +1,10 @@
 cmake_minimum_required(VERSION 2.8.7)
 project(wxMedia)
-
+INCLUDE( FindPkgConfig )
 ##################################################### libs #################################
 
-find_package(wxWidgets COMPONENTS net gl core base REQUIRED)
-INCLUDE(FindSDL)
+find_package( wxWidgets COMPONENTS net gl core base REQUIRED )
+INCLUDE( FindSDL )
 
 find_path( AVCODEC_INCLUDE_DIR
     NAMES libavcodec/avcodec.h
@@ -82,7 +82,7 @@ find_library( VLC_LIBRARY
     /opt
 )
 
-find_package(OpenCV REQUIRED )
+# find_package(OpenCV REQUIRED )
 
 ##################################################### wxMedia APP ##########################
 
@@ -93,7 +93,7 @@ add_executable(wxMedia ${SRCS})
 # link_directories(${OpenCV_LIBRARY_DIR})
 
 IF(wxWidgets_FOUND)
-	include( "${wxWidgets_USE_FILE}" )
+	include( ${wxWidgets_USE_FILE} )
 	target_link_libraries(wxMedia ${wxWidgets_LIBRARIES})
 ENDIF(wxWidgets_FOUND)
 
@@ -110,8 +110,8 @@ ENDIF(SDL_FOUND)
 #set(FFM_SRCS ../src/core/ffmpeg/sdlPlayer.c)
 #set(FFM_SRCS ../src/core/ffmpeg/withAudio.c)
 #set(FFM_SRCS ../src/core/ffmpeg/spawnThread.c)
-#set(FFM_SRCS ../src/core/ffmpeg/syncVideo.c)
-set(FFM_SRCS ../src/core/vlc/vlcPlayer.c)
+set(FFM_SRCS ../src/core/ffmpeg/syncVideo.c)
+#set(FFM_SRCS ../src/core/vlc/vlcPlayer.c)
 add_executable(testLib ${FFM_SRCS})
 
 IF(SDL_FOUND)
@@ -122,6 +122,7 @@ ELSE(SDL_FOUND)
 ENDIF(SDL_FOUND)
 
 include_directories( ${AVCODEC_INCLUDE_DIR} )
+MESSAGE("testLib: ${AVCODEC_INCLUDE_DIR}")
 target_link_libraries(testLib ${AVCODEC_LIBRARY})
 
 include_directories( ${AVFORMAT_INCLUDE_DIR} )
@@ -132,6 +133,35 @@ target_link_libraries(testLib ${SWSCALE_LIBRARY})
 
 include_directories( ${VLC_INCLUDE_DIR} )
 target_link_libraries(testLib ${VLC_LIBRARY})
+
+#################################### gtk gstreamer player ####################################
+find_package( GTK2 2.8 COMPONENTS gtk )
+pkg_check_modules( GST REQUIRED gstreamer-0.10)
+pkg_check_modules( GST_INTF REQUIRED gstreamer-interfaces-0.10)
+
+set(GTK_GST_SRCS ../src/ui/gtk+/gstPlayer.c)
+add_executable(gtkGstPlayer ${GTK_GST_SRCS})
+
+IF(GTK2_FOUND)
+	INCLUDE_DIRECTORIES(${GTK2_INCLUDE_DIRS})
+	target_link_libraries(gtkGstPlayer ${GTK2_LIBRARIES})
+ELSE(GTK2_FOUND)
+    MESSAGE("GTK not found")
+ENDIF(GTK2_FOUND)
+
+IF(GST_FOUND)
+	INCLUDE_DIRECTORIES(${GST_INCLUDE_DIRS})
+	target_link_libraries(gtkGstPlayer ${GST_LIBRARIES})
+ELSE(GST_FOUND)
+    MESSAGE("GST not found")
+ENDIF(GST_FOUND)
+
+IF(GST_INTF_FOUND)
+	INCLUDE_DIRECTORIES(${GST_INTF_INCLUDE_DIRS})
+	target_link_libraries(gtkGstPlayer ${GST_INTF_LIBRARIES})
+ELSE(GST_INTF_FOUND)
+    MESSAGE("GST_INTF not found")
+ENDIF(GST_INTF_FOUND)
 
 ##############################################################################################
 
