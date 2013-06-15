@@ -40,6 +40,7 @@ static void unlock(void *data, void *id, void *const *p_pixels)
     struct ctx *ctx = data;
 
     /* VLC just rendered the video, but we can also render stuff */
+    /*
     uint16_t *pixels = *p_pixels;
     int x, y;
 
@@ -49,6 +50,7 @@ static void unlock(void *data, void *id, void *const *p_pixels)
                 pixels[y * VIDEOWIDTH + x] = 0xffff;
             else
                 pixels[y * VIDEOWIDTH + x] = 0x0;
+	*/
 
     SDL_UnlockSurface(ctx->surf);
     SDL_UnlockMutex(ctx->mutex);
@@ -163,8 +165,10 @@ int main(int argc, char *argv[])
             break;
         }
 
-        rect.x = (int)((1. + .5 * sin(0.03 * n)) * (WIDTH - VIDEOWIDTH) / 2);
-        rect.y = (int)((1. + .5 * cos(0.03 * n)) * (HEIGHT - VIDEOHEIGHT) / 2);
+        //rect.x = (int)((1. + .5 * sin(0.03 * n)) * (WIDTH - VIDEOWIDTH) / 2);
+        //rect.y = (int)((1. + .5 * cos(0.03 * n)) * (HEIGHT - VIDEOHEIGHT) / 2);
+        rect.x = (int)(WIDTH - VIDEOWIDTH) / 2;
+        rect.y = (int)(HEIGHT - VIDEOHEIGHT) / 2;
 
         if(!pause)
             n++;
