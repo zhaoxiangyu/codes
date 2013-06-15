@@ -1,3 +1,4 @@
-#Tue Jun 11 01:02:27 CST 2013
+#Sat Jun 15 00:47:25 CST 2013
 eclipse.preferences.version=1
+preferredTargets=org.eclipse.php.debug.ui.PHPtoggleTargetFactory\:org.eclipse.php.debug.ui.PHPtoggleTargetFactory|
 org.eclipse.debug.ui.PREF_LAUNCH_PERSPECTIVES=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?>\n<launchPerspectives/>\n

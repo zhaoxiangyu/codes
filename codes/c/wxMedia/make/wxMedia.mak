@@ -17,7 +17,7 @@ vsplit:
 	@echo splitting video files
 	ffmpeg -i /media/sf_ubuntu/projects/ffmpeg-merge/data/AVSEQ04.mpeg -sameq -ss 00:05:00 -t 00:00:10 /media/sf_ubuntu/projects/ffmpeg-merge/data/AVSEQ04-1.mpeg
 
-myFfmpeg:
-	cd ../bin/Debug/ && ./myFfmpeg /media/sf_ubuntu/projects/ffmpeg-merge/data/AVSEQ04-1.mpeg
-	#cd ../bin/Debug/ && ./myFfmpeg /media/sf_ubuntu/projects/ffmpeg-merge/data/AVSEQ04.mpeg
+testLib:
+	cd ../bin/Debug/ && ./testLib /media/sf_ubuntu/projects/ffmpeg-merge/data/AVSEQ04-1.mpeg
+	#cd ../bin/Debug/ && ./testLib /media/sf_ubuntu/projects/ffmpeg-merge/data/AVSEQ04.mpeg
 

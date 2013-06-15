@@ -1,0 +1,14 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>test content goes here!</title>
+</head>
+<body>
+	VLC player playing video from my code.google.com site!
+	<embed id="vlc" type="application/x-vlc-plugin" pluginspage="http://www.videolan.org"
+	     width="640" height="480" target="http://web-word-list.googlecode.com/files/AVSEQ04-1.mpeg" />    
+	<object classid="clsid:9BE31822-FDAD-461B-AD51-BE1D1C159921" 
+		codebase="http://download.videolan.org/pub/videolan/vlc/last/win32/axvlc.cab"></object>
+</body>
+</html>

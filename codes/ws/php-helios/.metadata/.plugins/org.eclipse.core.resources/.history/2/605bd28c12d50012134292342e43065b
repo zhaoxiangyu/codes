@@ -1,0 +1,28 @@
+<?php
+include 'fragments/head.php';
+
+echo "<a href='ui/jpword-userlist.php?cond=latest100'>jpword user statistics</a>";
+echo "<br/><a href='ui/test.php'>test</a>";
+echo "<br/><a href='ui/a.php'>mini templator sample</a>";
+echo "<br/><a href='ui/cbpay.php'>标日单词背诵网银支付2</a>";
+echo "<br/><a href='3rd-payment/cbpay-android.html'>android支付测试页面</a>";
+
+echo "<br/><a href='data/jpword-setting.php'>jpword-setting</a>";
+echo "<br/><a href='ws/jpword-httpquery.php'>jpword-setting-query</a>";
+echo "<br/><a href='new-appuse.php?appname=abc&userid=abcuser'/>add app use</a>";
+echo "<br/><a href='ws/new-appuse2.php?appname=abc&mdn=xxxx&imei=yyy'/>add app use2</a>";
+echo "<br/><a href='ws/packet1.php?appname=abc&mdn=xxxx&imei=yyy'/>packet1</a>";
+
+echo "<br/><a href='http://wd4web-jpwordsj.stor.sinaapp.com/1.zip'/>1.zip</a>";
+echo "<br/><a href='ws/jpword-httpquery.php?q=jp-course&courseNo=1'/>1.zip url</a>";
+echo "<br/><a href='ws/jpword-httpquery.php?q=jp-courses-manifest'/>jpwords manifest</a>";
+echo "<br/><a href='ws/jpword-httpquery.php?q=payInfo&userid=123&appname=testapp&amount=10'/>pay info(enough)</a>";
+echo "<br/><a href='ws/jpword-httpquery.php?q=payInfo&userid=123&appname=testapp&amount=50'/>pay info(not enough)</a>";
+echo "<br/><a href='ws/jpword-httpquery.php?q=payInfo&userid=1234444444&appname=testapp&amount=10'/>pay info(no payment history)</a>";
+echo "<br/><a href='ws/jpword-httpquery.php?q=payInfo&userid=123&appname=unkownapp&amount=10'/>pay info(appname not exists)</a>";
+echo "<br/><a href='ws/jpword-httpquery.php?q=payed&userid=123&appname=testapp&amount=10'>pay</a>";
+echo "<br/><a href='http://pay3.chinabank.com.cn/Payto?v_mid=22357785&v_id=152558&v_url=http://wd4web.sinaapp.com/jpword-httpquery.php?q=payInfo&mdn=&imei=&amount=3&prdesc=标准日本语词汇背诵&quantity=1&v_amount=3&productname=标准日本语单词'>标日单词背诵网银支付</a>";
+
+echo "<br/><a href='http://wd4web-jpwordsj.stor.sinaapp.com/1.zip'/>1.zip</a>";
+include 'fragments/foot.php';
+?>

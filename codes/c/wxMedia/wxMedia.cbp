@@ -64,13 +64,17 @@
 		</Unit>
 		<Unit filename="src/core/opencv/videoprocessing.cpp" />
 		<Unit filename="src/core/opencv/videoprocessor.h" />
+		<Unit filename="src/core/vlc/vlcPlayer.c">
+			<Option compilerVar="CC" />
+		</Unit>
 		<Unit filename="src/ui/wxMediaApp.cpp" />
 		<Unit filename="src/ui/wxMediaApp.h" />
 		<Unit filename="src/ui/wxMediaMain.cpp" />
 		<Unit filename="src/ui/wxMediaMain.h" />
-		<Unit filename="src/ui/wxSDLApp.cpp" />
 		<Unit filename="src/ui/wxSDLPanel.cpp" />
 		<Unit filename="src/ui/wxSDLPanel.h" />
+		<Unit filename="src/ui/wxSDLSurfacePanel.cpp" />
+		<Unit filename="src/ui/wxSDLSurfacePanel.h" />
 		<Unit filename="wxsmith/wxMediaframe.wxs" />
 		<Extensions>
 			<envvars />
