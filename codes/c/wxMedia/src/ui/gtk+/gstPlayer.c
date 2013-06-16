@@ -30,35 +30,6 @@ typedef struct _CustomData
     gint64 duration;                /* Duration of the clip, in nanoseconds */
 } CustomData;
 
-/* This function is called when the GUI toolkit creates the physical window that will hold the video.
- * At this point we can retrieve its handler (which has a different meaning depending on the windowing system)
- * and pass it to GStreamer through the XOverlay interface. */
-static void realize_cb (GtkWidget *widget, CustomData *data)
-{
-    GdkWindow *window = gtk_widget_get_window (widget);
-    guintptr window_handle;
-
-    if (!gdk_window_ensure_native (window))
-        g_error ("Couldn't create native window needed for GstXOverlay!");
-
-    /* Retrieve window handler from GDK */
-#if defined (GDK_WINDOWING_WIN32)
-    window_handle = (guintptr)GDK_WINDOW_HWND (window);
-    g_message("GDK_WINDOWING_WIN32");
-#elif defined (GDK_WINDOWING_QUARTZ)
-    window_handle = gdk_quartz_window_get_nsview (window);
-    g_message("GDK_WINDOWING_QUARTZ");
-#elif defined (GDK_WINDOWING_X11)
-    window_handle = GDK_WINDOW_XID (window);
-    g_message("GDK_WINDOWING_X11");
-#endif
-    /* Pass it to playbin2, which implements XOverlay and will forward it to the video sink */
-#if defined (XOVERLAY)
-    //gst_x_overlay_set_window_handle (GST_X_OVERLAY (data->video_sink), window_handle);
-#endif
-    g_message("gst_x_overlay_set_window_handle OK");
-}
-
 /* This function is called when the PLAY button is clicked */
 static void play_cb (GtkButton *button, CustomData *data)
 {
@@ -134,7 +105,6 @@ static void create_ui (CustomData *data)
     video_window = gtk_drawing_area_new ();
     data->video_window = video_window;
     gtk_widget_set_double_buffered (video_window, FALSE);
-    g_signal_connect (video_window, "realize", G_CALLBACK (realize_cb), data);
     g_signal_connect (video_window, "expose_event", G_CALLBACK (expose_cb), data);
 
     play_button = gtk_button_new_from_stock (GTK_STOCK_MEDIA_PLAY);
@@ -211,16 +181,6 @@ static gboolean refresh_ui (CustomData *data)
     return TRUE;
 }
 
-/* This function is called when new metadata is discovered in the stream */
-static void tags_cb (GstElement *playbin2, gint stream, CustomData *data)
-{
-    /* We are possibly in a GStreamer working thread, so we notify the main
-     * thread of this event through a message in the bus */
-    gst_element_post_message (playbin2,
-                              gst_message_new_application (GST_OBJECT (playbin2),
-                                      gst_structure_new ("tags-changed", NULL)));
-}
-
 /* This function is called when an error message is posted on the bus */
 static void error_cb (GstBus *bus, GstMessage *msg, CustomData *data)
 {
@@ -262,6 +222,16 @@ static void state_changed_cb (GstBus *bus, GstMessage *msg, CustomData *data)
             refresh_ui (data);
         }
     }
+}
+
+/* This function is called when new metadata is discovered in the stream */
+static void tags_cb (GstElement *playbin2, gint stream, CustomData *data)
+{
+    /* We are possibly in a GStreamer working thread, so we notify the main
+     * thread of this event through a message in the bus */
+    gst_element_post_message (playbin2,
+                              gst_message_new_application (GST_OBJECT (playbin2),
+                                      gst_structure_new ("tags-changed", NULL)));
 }
 
 /* Extract metadata from all the streams and write it to the text widget in the GUI */
@@ -358,18 +328,6 @@ static void analyze_streams (CustomData *data)
     }
 }
 
-/* This function is called when an "application" message is posted on the bus.
- * Here we retrieve the message posted by the tags_cb callback */
-static void application_cb (GstBus *bus, GstMessage *msg, CustomData *data)
-{
-    if (g_strcmp0 (gst_structure_get_name (msg->structure), "tags-changed") == 0)
-    {
-        /* If the message is the "tags-changed" (only one we are currently issuing), update
-         * the stream info GUI */
-        analyze_streams (data);
-    }
-}
-
 static gboolean my_bus_callback (GstBus *bus, GstMessage *message, gpointer data)
 {
 	CustomData* datax = (CustomData*)data;
@@ -405,6 +363,19 @@ static gboolean my_bus_callback (GstBus *bus, GstMessage *message, gpointer data
 			GdkWindow *window = gtk_widget_get_window (datax->video_window);
 			gst_x_overlay_set_window_handle(GST_X_OVERLAY(GST_MESSAGE_SRC (message)), GDK_WINDOW_XID (window));
 		}
+		break;
+	case GST_MESSAGE_APPLICATION:
+		/* called when an "application" message is posted on the bus.
+		Here we retrieve the message posted by the tags_cb callback */
+		if (g_strcmp0 (gst_structure_get_name (message->structure), "tags-changed") == 0)
+		{
+			/* If the message is the "tags-changed" (only one we are currently issuing), update
+			 * the stream info GUI */
+			analyze_streams (datax);
+		}
+		break;
+	case GST_MESSAGE_STATE_CHANGED:
+		state_changed_cb(bus, message, datax);
 		break;
     default:
         /* unhandled message */
@@ -471,11 +442,8 @@ int main(int argc, char *argv[])
 
 	/*
     gst_bus_add_signal_watch (bus);
-    g_signal_connect (G_OBJECT (bus), "message::error", (GCallback)error_cb, &data);
-    g_signal_connect (G_OBJECT (bus), "message::eos", (GCallback)eos_cb, &data);
     g_signal_connect (G_OBJECT (bus), "message::state-changed", (GCallback)state_changed_cb, &data);
-    g_signal_connect (G_OBJECT (bus), "message::application", (GCallback)application_cb, &data);
-    */
+     */
 
     gst_object_unref (bus);
 
