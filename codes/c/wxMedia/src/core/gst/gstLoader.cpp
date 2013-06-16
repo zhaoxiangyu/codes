@@ -1,6 +1,10 @@
 #include "gstLoader.h"
 
 GstLoader::GstLoader(GstListener& listener) {
+    /* Initialize our data structure */
+    data = new CustomData();
+    data->duration = GST_CLOCK_TIME_NONE;
+
     data->eventListener = listener;
 }
 
@@ -70,12 +74,9 @@ int GstLoader::startup(int argc, char *argv[]) {
     /* Initialize GStreamer */
     gst_init (&argc, &argv);
 
-    /* Initialize our data structure */
-    memset (data, 0, sizeof (data));
-    data->duration = GST_CLOCK_TIME_NONE;
-
     /* Create the elements */
     data->playbin2 = gst_element_factory_make ("playbin2", "playbin2");
+    g_print("playbin2 created OK");
 
     if (!data->playbin2) {
         g_printerr ("Not all elements could be created.\n");
@@ -150,7 +151,7 @@ void GstLoader::stop () {
  * new position here. */
 void GstLoader::seek(gdouble value) {
 	//TODO HELONG
-//    gst_element_seek_simple (data->playbin2, GST_FORMAT_TIME, GST_SEEK_FLAG_FLUSH | GST_SEEK_FLAG_KEY_UNIT,
+//    gst_element_seek_simple(data->playbin2, GST_FORMAT_TIME, GST_SEEK_FLAG_FLUSH | GST_SEEK_FLAG_KEY_UNIT,
 //                             (gint64)(value * GST_SECOND));
 }
 
@@ -223,6 +224,8 @@ void GstLoader::updateMetaData (CustomData *data) {
     guint rate;
     gint n_video, n_audio, n_text;
 
+	data->eventListener.resetMetaText();
+	
     /* Read some properties */
     g_object_get (data->playbin2, "n-video", &n_video, NULL);
     g_object_get (data->playbin2, "n-audio", &n_audio, NULL);

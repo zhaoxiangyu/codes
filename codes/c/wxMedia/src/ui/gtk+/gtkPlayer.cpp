@@ -13,7 +13,7 @@
 
 #include "../../core/gst/gstLoader.h"
 
-GtkWidget *video_window; /* The drawing area where the video will be shown */
+static GtkWidget *video_window; /* The drawing area where the video will be shown */
 static GtkWidget *slider, *streams_list;
 static gulong slider_update_signal_id;
 
@@ -34,10 +34,14 @@ void GstListener::newPositionGot(gdouble current){
 	g_signal_handler_unblock (slider, slider_update_signal_id);
 }
 
-void GstListener::appendMetaText(gchar *str){
+void GstListener::resetMetaText() {
     // Clean current contents of the widget 
     GtkTextBuffer *text = gtk_text_view_get_buffer (GTK_TEXT_VIEW (streams_list));
-    //gtk_text_buffer_set_text (text, "", -1);
+    gtk_text_buffer_set_text (text, "", -1);
+}
+
+void GstListener::appendMetaText(gchar *str){
+    GtkTextBuffer *text = gtk_text_view_get_buffer (GTK_TEXT_VIEW (streams_list));
 	gtk_text_buffer_insert_at_cursor (text, str, -1);
 }
 
@@ -135,6 +139,7 @@ int main(int argc, char *argv[]) {
     /* Initialize GTK */
     gtk_init (&argc, &argv);
 
+	gstLoader->startup(argc, argv);
     /* Create the GUI */
     create_ui (gstLoader);
 

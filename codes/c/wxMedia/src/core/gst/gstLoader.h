@@ -9,6 +9,7 @@ public :
     guintptr videoWindowHandler();
     void durationGot(gdouble);
     void newPositionGot(gdouble);
+    void resetMetaText();
     void appendMetaText(gchar *str);
 };
 
