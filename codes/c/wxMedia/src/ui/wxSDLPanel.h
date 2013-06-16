@@ -11,8 +11,7 @@
  * Global Declarations
 *******************************************************************************/
 
-enum
-{
+enum {
     IDF_FRAME = wxID_HIGHEST + 1,
     IDP_PANEL
 };
@@ -21,8 +20,7 @@ enum
  * SDLPanel Class
 *******************************************************************************/
 
-class SDLPanel : public wxPanel
-{
+class SDLPanel : public wxPanel {
     DECLARE_CLASS(SDLPanel)
     DECLARE_EVENT_TABLE()
 

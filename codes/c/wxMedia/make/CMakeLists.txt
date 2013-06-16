@@ -86,7 +86,7 @@ find_library( VLC_LIBRARY
 
 ##################################################### wxMedia APP ##########################
 
-set(SRCS ../src/ui/wxMediaApp.cpp ../src/ui/wxMediaMain.cpp ../src/ui/wxSDLPanel.cpp ../src/ui/wxSDLSurfacePanel.cpp)
+set(SRCS ../src/ui/wxMediaApp.cpp ../src/ui/wxMediaMain.cpp ../src/ui/wxSDLPanel.cpp ../src/ui/sdl/wxSDLSurfacePanel.cpp)
 add_executable(wxMedia ${SRCS})
 
 # include_directories(${OpenCV_INCLUDE_DIR})
@@ -139,7 +139,8 @@ find_package( GTK2 2.8 COMPONENTS gtk )
 pkg_check_modules( GST REQUIRED gstreamer-0.10)
 pkg_check_modules( GST_INTF REQUIRED gstreamer-interfaces-0.10)
 
-set(GTK_GST_SRCS ../src/ui/gtk+/gstPlayer.c)
+#set(GTK_GST_SRCS ../src/ui/gtk+/gstPlayer.c)
+set(GTK_GST_SRCS ../src/core/gst/gstLoader.cpp ../src/ui/gtk+/gtkPlayer.cpp)
 add_executable(gtkGstPlayer ${GTK_GST_SRCS})
 
 IF(GTK2_FOUND)

@@ -14,15 +14,14 @@
 
 #include "wxMediaMain.h"
 
-class wxMediaApp : public wxApp
-{
-	private:
-		wxMediaFrame *frame;
+class wxMediaApp : public wxApp {
+private:
+    wxMediaFrame *frame;
 
-    public:
-        virtual bool OnInit();
-		int OnRun();
-		int OnExit();
+public:
+    virtual bool OnInit();
+    int OnRun();
+    int OnExit();
 };
 
 #endif // WXMEDIAAPP_H

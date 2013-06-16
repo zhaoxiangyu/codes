@@ -23,8 +23,7 @@
 
 #include <stdio.h>
 
-void SaveFrame(AVFrame *pFrame, int width, int height, int iFrame)
-{
+void SaveFrame(AVFrame *pFrame, int width, int height, int iFrame) {
     FILE *pFile;
     char szFilename[32];
     int  y;
@@ -46,8 +45,7 @@ void SaveFrame(AVFrame *pFrame, int width, int height, int iFrame)
     fclose(pFile);
 }
 
-int main(int argc, char *argv[])
-{
+int main(int argc, char *argv[]) {
     AVFormatContext *pFormatCtx = NULL;
     int             i, videoStream;
     AVCodecContext  *pCodecCtx = NULL;
@@ -62,8 +60,7 @@ int main(int argc, char *argv[])
     AVDictionary    *optionsDict = NULL;
     struct SwsContext      *sws_ctx = NULL;
 
-    if(argc < 2)
-    {
+    if(argc < 2) {
         printf("Please provide a movie file\n");
         return -1;
     }
@@ -84,8 +81,7 @@ int main(int argc, char *argv[])
     // Find the first video stream
     videoStream=-1;
     for(i=0; i<pFormatCtx->nb_streams; i++)
-        if(pFormatCtx->streams[i]->codec->codec_type==AVMEDIA_TYPE_VIDEO)
-        {
+        if(pFormatCtx->streams[i]->codec->codec_type==AVMEDIA_TYPE_VIDEO) {
             videoStream=i;
             break;
         }
@@ -97,8 +93,7 @@ int main(int argc, char *argv[])
 
     // Find the decoder for the video stream
     pCodec=avcodec_find_decoder(pCodecCtx->codec_id);
-    if(pCodec==NULL)
-    {
+    if(pCodec==NULL) {
         fprintf(stderr, "Unsupported codec!\n");
         return -1; // Codec not found
     }
@@ -142,18 +137,15 @@ int main(int argc, char *argv[])
 
     // Read frames and save first five frames to disk
     i=0;
-    while(av_read_frame(pFormatCtx, &packet)>=0)
-    {
+    while(av_read_frame(pFormatCtx, &packet)>=0) {
         // Is this a packet from the video stream?
-        if(packet.stream_index==videoStream)
-        {
+        if(packet.stream_index==videoStream) {
             // Decode video frame
             avcodec_decode_video2(pCodecCtx, pFrame, &frameFinished,
                                   &packet);
 
             // Did we get a video frame?
-            if(frameFinished)
-            {
+            if(frameFinished) {
                 // Convert the image from its native format to RGB
                 sws_scale
                 (

@@ -20,48 +20,46 @@
 
 #include "wxSDLPanel.h"
 
-class wxMediaFrame: public wxFrame
-{
-    public:
+class wxMediaFrame: public wxFrame {
+public:
 
-        wxMediaFrame(wxWindow* parent,wxWindowID id = -1);
-        virtual ~wxMediaFrame();
+    wxMediaFrame(wxWindow* parent,wxWindowID id = -1);
+    virtual ~wxMediaFrame();
 
-    	SDLPanel &getPanel();
-    private:
-    	SDLPanel *panel;
+    SDLPanel &getPanel();
+private:
+    SDLPanel *panel;
 
-        //(*Handlers(wxMediaFrame)
-        void OnQuit(wxCommandEvent& event);
-        void OnAbout(wxCommandEvent& event);
-        void OnMenuFileOpenSelected(wxCommandEvent& event);
-        //*)
+    //(*Handlers(wxMediaFrame)
+    void OnQuit(wxCommandEvent& event);
+    void OnAbout(wxCommandEvent& event);
+    void OnMenuFileOpenSelected(wxCommandEvent& event);
+    //*)
 
-        //(*Identifiers(wxMediaFrame)
-        static const long ID_PANEL2;
-        static const long ID_PANEL3;
-        static const long ID_PANEL4;
-        static const long ID_PANEL1;
-        static const long idMenuOpen;
-        static const long idMenuQuit;
-        static const long idMenuAbout;
-        static const long ID_STATUSBAR1;
-        //*)
+    //(*Identifiers(wxMediaFrame)
+    static const long ID_PANEL2;
+    static const long ID_PANEL3;
+    static const long ID_PANEL4;
+    static const long ID_PANEL1;
+    static const long idMenuOpen;
+    static const long idMenuQuit;
+    static const long idMenuAbout;
+    static const long ID_STATUSBAR1;
+    //*)
 
-        //(*Declarations(wxMediaFrame)
-        wxPanel* mainPanel;
-        wxPanel* footerPanel;
-        wxPanel* headerPanel;
-        wxPanel* videoPanel;
-        wxMenuItem* MenuItem3;
-        wxStatusBar* StatusBar1;
-        //*)
+    //(*Declarations(wxMediaFrame)
+    wxPanel* mainPanel;
+    wxPanel* footerPanel;
+    wxPanel* headerPanel;
+    wxPanel* videoPanel;
+    wxMenuItem* MenuItem3;
+    wxStatusBar* StatusBar1;
+    //*)
 
-        DECLARE_EVENT_TABLE()
+    DECLARE_EVENT_TABLE()
 };
 
-inline SDLPanel &wxMediaFrame::getPanel()
-{
+inline SDLPanel &wxMediaFrame::getPanel() {
     return *panel;
 }
 

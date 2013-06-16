@@ -18,13 +18,11 @@
 
 IMPLEMENT_APP(wxMediaApp);
 
-bool wxMediaApp::OnInit()
-{
+bool wxMediaApp::OnInit() {
     //(*AppInitialize
     bool wxsOK = true;
     wxInitAllImageHandlers();
-    if ( wxsOK )
-    {
+    if ( wxsOK ) {
         frame = new wxMediaFrame(0);
         frame->Show();
         SetTopWindow(frame);
@@ -34,11 +32,9 @@ bool wxMediaApp::OnInit()
 
 }
 
-int wxMediaApp::OnRun()
-{
+int wxMediaApp::OnRun() {
     // initialize SDL
-    if (SDL_Init(SDL_INIT_VIDEO) < 0)
-    {
+    if (SDL_Init(SDL_INIT_VIDEO) < 0) {
         std::cerr << "unable to init SDL: " << SDL_GetError() << '\n';
 
         return -1;
@@ -53,8 +49,7 @@ int wxMediaApp::OnRun()
     return wxApp::OnRun();
 }
 
-int wxMediaApp::OnExit()
-{
+int wxMediaApp::OnExit() {
     // cleanup SDL
     SDL_Quit();
 

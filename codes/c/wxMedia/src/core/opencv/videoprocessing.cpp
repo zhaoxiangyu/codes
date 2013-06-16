@@ -22,15 +22,13 @@
 
 #include "videoprocessor.h"
 
-void draw(cv::Mat& img, cv::Mat& out)
-{
+void draw(cv::Mat& img, cv::Mat& out) {
 
     img.copyTo(out);
     cv::circle(out, cv::Point(100,100),5,cv::Scalar(255,0,0),2);
 }
 
-void canny(cv::Mat& img, cv::Mat& out)
-{
+void canny(cv::Mat& img, cv::Mat& out) {
 
     // Convert to gray
     cv::cvtColor(img,out,CV_BGR2GRAY);
@@ -40,10 +38,10 @@ void canny(cv::Mat& img, cv::Mat& out)
     cv::threshold(out,out,128,255,cv::THRESH_BINARY_INV);
 }
 
-void showFrames(){
+void showFrames() {
 }
 
-void others(){
+void others() {
     // Now using the VideoProcessor class
 
     // Create instance
@@ -103,15 +101,13 @@ void others(){
     cv::waitKey();
 }
 
-int main(int argc, char *argv[])
-{
-    if(argc < 2)
-    {
+int main(int argc, char *argv[]) {
+    if(argc < 2) {
         printf("Please provide a movie file\n");
         return -1;
     }
-	char* filePath = argv[1];
-	//filePath = "../bike.avi";
+    char* filePath = argv[1];
+    //filePath = "../bike.avi";
 
     // Open the video file
     cv::VideoCapture capture(filePath);
@@ -131,8 +127,7 @@ int main(int argc, char *argv[])
     int delay= 1000/rate;
 
     // for all frames in video
-    while (!stop)
-    {
+    while (!stop) {
 
         // read next frame if any
         if (!capture.read(frame))

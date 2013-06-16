@@ -13,8 +13,7 @@
  * SDLPanel Class
 *******************************************************************************/
 
-inline void SDLPanel::onEraseBackground(wxEraseEvent &)
-{
+inline void SDLPanel::onEraseBackground(wxEraseEvent &) {
     /* do nothing */
 }
 
@@ -26,8 +25,7 @@ BEGIN_EVENT_TABLE(SDLPanel, wxPanel)
     EVT_IDLE(SDLPanel::onIdle)
 END_EVENT_TABLE()
 
-SDLPanel::SDLPanel(wxWindow *parent) : wxPanel(parent, IDP_PANEL), screen(0)
-{
+SDLPanel::SDLPanel(wxWindow *parent) : wxPanel(parent, IDP_PANEL), screen(0) {
     // ensure the size of the wxPanel
     int width = 640, height = 480;
     parent->GetSize(&width,&height);
@@ -38,27 +36,21 @@ SDLPanel::SDLPanel(wxWindow *parent) : wxPanel(parent, IDP_PANEL), screen(0)
     SetMaxSize(size);
 }
 
-SDLPanel::~SDLPanel()
-{
-    if (screen)
-    {
+SDLPanel::~SDLPanel() {
+    if (screen) {
         SDL_FreeSurface(screen);
     }
 }
 
-void SDLPanel::onPaint(wxPaintEvent &)
-{
+void SDLPanel::onPaint(wxPaintEvent &) {
     // can't draw if the screen doesn't exist yet
-    if (!screen)
-    {
+    if (!screen) {
         return;
     }
 
     // lock the surface if necessary
-    if (SDL_MUSTLOCK(screen))
-    {
-        if (SDL_LockSurface(screen) < 0)
-        {
+    if (SDL_MUSTLOCK(screen)) {
+        if (SDL_LockSurface(screen) < 0) {
             return;
         }
     }
@@ -68,8 +60,7 @@ void SDLPanel::onPaint(wxPaintEvent &)
                          static_cast<unsigned char *>(screen->pixels), true));
 
     // unlock the screen
-    if (SDL_MUSTLOCK(screen))
-    {
+    if (SDL_MUSTLOCK(screen)) {
         SDL_UnlockSurface(screen);
     }
 
@@ -77,16 +68,13 @@ void SDLPanel::onPaint(wxPaintEvent &)
     wxBufferedPaintDC dc(this, bmp);
 }
 
-void SDLPanel::onIdle(wxIdleEvent &)
-{
+void SDLPanel::onIdle(wxIdleEvent &) {
     // create the SDL_Surface
     createScreen();
 
     // Lock surface if needed
-    if (SDL_MUSTLOCK(screen))
-    {
-        if (SDL_LockSurface(screen) < 0)
-        {
+    if (SDL_MUSTLOCK(screen)) {
+        if (SDL_LockSurface(screen) < 0) {
             return;
         }
     }
@@ -94,11 +82,9 @@ void SDLPanel::onIdle(wxIdleEvent &)
     // Ask SDL for the time in milliseconds
     int tick = SDL_GetTicks();
 
-	wxSize size = GetSize();
-    for (int y = 0; y < size.GetHeight(); y++)
-    {
-        for (int x = 0; x < size.GetWidth(); x++)
-        {
+    wxSize size = GetSize();
+    for (int y = 0; y < size.GetHeight(); y++) {
+        for (int x = 0; x < size.GetWidth(); x++) {
             wxUint32 color = (y * y) + (x * x) + tick;
             wxUint8 *pixels = static_cast<wxUint8 *>(screen->pixels) +
                               (y * screen->pitch) +
@@ -117,8 +103,7 @@ void SDLPanel::onIdle(wxIdleEvent &)
     }
 
     // Unlock if needed
-    if (SDL_MUSTLOCK(screen))
-    {
+    if (SDL_MUSTLOCK(screen)) {
         SDL_UnlockSurface(screen);
     }
 
@@ -129,10 +114,8 @@ void SDLPanel::onIdle(wxIdleEvent &)
     wxMilliSleep(33);
 }
 
-void SDLPanel::createScreen()
-{
-    if (!screen)
-    {
+void SDLPanel::createScreen() {
+    if (!screen) {
         int width, height;
         GetSize(&width, &height);
 

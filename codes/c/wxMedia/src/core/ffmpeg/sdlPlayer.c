@@ -28,8 +28,7 @@
 
 #include <stdio.h>
 
-int main(int argc, char *argv[])
-{
+int main(int argc, char *argv[]) {
     AVFormatContext *pFormatCtx = NULL;
     int             i, videoStream;
     AVCodecContext  *pCodecCtx = NULL;
@@ -47,16 +46,14 @@ int main(int argc, char *argv[])
     SDL_Rect        rect;
     SDL_Event       event;
 
-    if(argc < 2)
-    {
+    if(argc < 2) {
         fprintf(stderr, "Usage: test <file>\n");
         exit(1);
     }
     // Register all formats and codecs
     av_register_all();
 
-    if(SDL_Init(SDL_INIT_VIDEO | SDL_INIT_AUDIO | SDL_INIT_TIMER))
-    {
+    if(SDL_Init(SDL_INIT_VIDEO | SDL_INIT_AUDIO | SDL_INIT_TIMER)) {
         fprintf(stderr, "Could not initialize SDL - %s\n", SDL_GetError());
         exit(1);
     }
@@ -75,8 +72,7 @@ int main(int argc, char *argv[])
     // Find the first video stream
     videoStream=-1;
     for(i=0; i<pFormatCtx->nb_streams; i++)
-        if(pFormatCtx->streams[i]->codec->codec_type==AVMEDIA_TYPE_VIDEO)
-        {
+        if(pFormatCtx->streams[i]->codec->codec_type==AVMEDIA_TYPE_VIDEO) {
             videoStream=i;
             break;
         }
@@ -88,8 +84,7 @@ int main(int argc, char *argv[])
 
     // Find the decoder for the video stream
     pCodec=avcodec_find_decoder(pCodecCtx->codec_id);
-    if(pCodec==NULL)
-    {
+    if(pCodec==NULL) {
         fprintf(stderr, "Unsupported codec!\n");
         return -1; // Codec not found
     }
@@ -107,17 +102,16 @@ int main(int argc, char *argv[])
 #else
     screen = SDL_SetVideoMode(pCodecCtx->width, pCodecCtx->height, 24, 0);
 #endif
-    if(!screen)
-    {
+    if(!screen) {
         fprintf(stderr, "SDL: could not set video mode - exiting\n");
         exit(1);
     }
 
     // Allocate a place to put our YUV image on that screen
     overlay = SDL_CreateYUVOverlay(pCodecCtx->width,
-                               pCodecCtx->height,
-                               SDL_YV12_OVERLAY,
-                               screen);
+                                   pCodecCtx->height,
+                                   SDL_YV12_OVERLAY,
+                                   screen);
 
     sws_ctx =
         sws_getContext
@@ -137,18 +131,15 @@ int main(int argc, char *argv[])
 
     // Read frames and save first five frames to disk
     i=0;
-    while(av_read_frame(pFormatCtx, &packet)>=0)
-    {
+    while(av_read_frame(pFormatCtx, &packet)>=0) {
         // Is this a packet from the video stream?
-        if(packet.stream_index==videoStream)
-        {
+        if(packet.stream_index==videoStream) {
             // Decode video frame
             avcodec_decode_video2(pCodecCtx, pFrame, &frameFinished,
                                   &packet);
 
             // Did we get a video frame?
-            if(frameFinished)
-            {
+            if(frameFinished) {
                 SDL_LockYUVOverlay(overlay);
 
                 AVPicture pict;
@@ -187,8 +178,7 @@ int main(int argc, char *argv[])
         // Free the packet that was allocated by av_read_frame
         av_free_packet(&packet);
         SDL_PollEvent(&event);
-        switch(event.type)
-        {
+        switch(event.type) {
         case SDL_QUIT:
             SDL_Quit();
             exit(0);

@@ -18,17 +18,14 @@
 //*)
 
 //helper functions
-enum wxbuildinfoformat
-{
+enum wxbuildinfoformat {
     short_f, long_f
 };
 
-wxString wxbuildinfo(wxbuildinfoformat format)
-{
+wxString wxbuildinfo(wxbuildinfoformat format) {
     wxString wxbuild(wxVERSION_STRING);
 
-    if (format == long_f )
-    {
+    if (format == long_f ) {
 #if defined(__WXMSW__)
         wxbuild << _T("-Windows");
 #elif defined(__UNIX__)
@@ -61,8 +58,7 @@ BEGIN_EVENT_TABLE(wxMediaFrame,wxFrame)
     //*)
 END_EVENT_TABLE()
 
-wxMediaFrame::wxMediaFrame(wxWindow* parent,wxWindowID id)
-{
+wxMediaFrame::wxMediaFrame(wxWindow* parent,wxWindowID id) {
     //(*Initialize(wxMediaFrame)
     wxMenuItem* MenuItem2;
     wxMenuItem* MenuItem1;
@@ -119,29 +115,24 @@ wxMediaFrame::wxMediaFrame(wxWindow* parent,wxWindowID id)
 
 }
 
-wxMediaFrame::~wxMediaFrame()
-{
+wxMediaFrame::~wxMediaFrame() {
     //(*Destroy(wxMediaFrame)
     //*)
 }
 
-void wxMediaFrame::OnQuit(wxCommandEvent& event)
-{
+void wxMediaFrame::OnQuit(wxCommandEvent& event) {
     Close();
 }
 
-void wxMediaFrame::OnAbout(wxCommandEvent& event)
-{
+void wxMediaFrame::OnAbout(wxCommandEvent& event) {
     wxString msg = wxbuildinfo(long_f);
     wxMessageBox(msg, _("Welcome to..."));
 }
 
-void wxMediaFrame::OnMenuFileOpenSelected(wxCommandEvent& event)
-{
+void wxMediaFrame::OnMenuFileOpenSelected(wxCommandEvent& event) {
     wxFileDialog fileOpenDialog(this);
     int result = fileOpenDialog.ShowModal();
-    if(result == wxID_OK)
-    {
+    if(result == wxID_OK) {
         wxString filePath = fileOpenDialog.GetPath();
         //wxMessageBox(filePath, _("File selected"));
     }

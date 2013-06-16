@@ -19,14 +19,12 @@
 #define VIDEOWIDTH 320
 #define VIDEOHEIGHT 240
 
-struct ctx
-{
+struct ctx {
     SDL_Surface *surf;
     SDL_mutex *mutex;
 };
 
-static void *lock(void *data, void **p_pixels)
-{
+static void *lock(void *data, void **p_pixels) {
     struct ctx *ctx = data;
 
     SDL_LockMutex(ctx->mutex);
@@ -35,8 +33,7 @@ static void *lock(void *data, void **p_pixels)
     return NULL; /* picture identifier, not needed here */
 }
 
-static void unlock(void *data, void *id, void *const *p_pixels)
-{
+static void unlock(void *data, void *id, void *const *p_pixels) {
     struct ctx *ctx = data;
 
     /* VLC just rendered the video, but we can also render stuff */
@@ -50,7 +47,7 @@ static void unlock(void *data, void *id, void *const *p_pixels)
                 pixels[y * VIDEOWIDTH + x] = 0xffff;
             else
                 pixels[y * VIDEOWIDTH + x] = 0x0;
-	*/
+    */
 
     SDL_UnlockSurface(ctx->surf);
     SDL_UnlockMutex(ctx->mutex);
@@ -58,20 +55,17 @@ static void unlock(void *data, void *id, void *const *p_pixels)
     assert(id == NULL); /* picture identifier, not needed here */
 }
 
-static void display(void *data, void *id)
-{
+static void display(void *data, void *id) {
     /* VLC wants to display the video */
     (void) data;
     assert(id == NULL);
 }
 
-int main(int argc, char *argv[])
-{
+int main(int argc, char *argv[]) {
     libvlc_instance_t *libvlc;
     libvlc_media_t *m;
     libvlc_media_player_t *mp;
-    char const *vlc_argv[] =
-    {
+    char const *vlc_argv[] = {
         "--no-audio", /* skip any audio track */
         "--no-xlib", /* tell VLC to not use Xlib */
         "--no-video-on-top",
@@ -86,8 +80,7 @@ int main(int argc, char *argv[])
 
     struct ctx ctx;
 
-    if(argc < 2)
-    {
+    if(argc < 2) {
         printf("Usage: %s <filename>\n", argv[0]);
         return EXIT_FAILURE;
     }
@@ -95,8 +88,7 @@ int main(int argc, char *argv[])
     /*
      *  Initialise libSDL
      */
-    if(SDL_Init(SDL_INIT_VIDEO | SDL_INIT_EVENTTHREAD) == -1)
-    {
+    if(SDL_Init(SDL_INIT_VIDEO | SDL_INIT_EVENTTHREAD) == -1) {
         printf("cannot initialize SDL\n");
         return EXIT_FAILURE;
     }
@@ -111,8 +103,7 @@ int main(int argc, char *argv[])
     int options = SDL_ANYFORMAT | SDL_HWSURFACE | SDL_DOUBLEBUF;
 
     screen = SDL_SetVideoMode(WIDTH, HEIGHT, 0, options);
-    if(!screen)
-    {
+    if(!screen) {
         printf("cannot set video mode\n");
         return EXIT_FAILURE;
     }
@@ -135,15 +126,12 @@ int main(int argc, char *argv[])
     rect.w = 0;
     rect.h = 0;
 
-    while(!done)
-    {
+    while(!done) {
         action = 0;
 
         /* Keys: enter (fullscreen), space (pause), escape (quit) */
-        while( SDL_PollEvent( &event ) )
-        {
-            switch(event.type)
-            {
+        while( SDL_PollEvent( &event ) ) {
+            switch(event.type) {
             case SDL_QUIT:
                 done = 1;
                 break;
@@ -153,8 +141,7 @@ int main(int argc, char *argv[])
             }
         }
 
-        switch(action)
-        {
+        switch(action) {
         case SDLK_ESCAPE:
             done = 1;
             break;
