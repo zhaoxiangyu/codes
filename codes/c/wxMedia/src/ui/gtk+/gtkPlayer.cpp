@@ -13,16 +13,32 @@
 
 #include "../../core/gst/gstLoader.h"
 
+GtkWidget *video_window; /* The drawing area where the video will be shown */
+static GtkWidget *slider, *streams_list;
+static gulong slider_update_signal_id;
+
 guintptr GstListener::videoWindowHandler(){
-	return 0;
+	GdkWindow *window = gtk_widget_get_window (video_window);
+	return GDK_WINDOW_XID (window);
 }
 
-void GstListener::durationGot(gdouble){
-
+void GstListener::durationGot(gdouble duration){
+    g_signal_handler_block (slider, slider_update_signal_id);
+	gtk_range_set_range (GTK_RANGE (slider), 0, (gdouble)duration / GST_SECOND);
+	g_signal_handler_unblock (slider, slider_update_signal_id);
 }
 
-void GstListener::newPositionGot(gdouble){
+void GstListener::newPositionGot(gdouble current){
+    g_signal_handler_block (slider, slider_update_signal_id);
+	gtk_range_set_value (GTK_RANGE (slider), (gdouble)current / GST_SECOND);
+	g_signal_handler_unblock (slider, slider_update_signal_id);
+}
 
+void GstListener::appendMetaText(gchar *str){
+    // Clean current contents of the widget 
+    GtkTextBuffer *text = gtk_text_view_get_buffer (GTK_TEXT_VIEW (streams_list));
+    //gtk_text_buffer_set_text (text, "", -1);
+	gtk_text_buffer_insert_at_cursor (text, str, -1);
 }
 
 /* This function is called when the PLAY button is clicked */
@@ -57,20 +73,17 @@ static gboolean expose_cb (GtkWidget *widget, GdkEventExpose *event, GstLoader* 
 /* This function is called when the slider changes its position. We perform a seek to the
  * new position here. */
 static void slider_cb (GtkRange *range, GstLoader* data) {
-    //gdouble value = gtk_range_get_value (GTK_RANGE (data->slider));
-    gdouble value = 0.0;
+    gdouble value = gtk_range_get_value (GTK_RANGE (slider));
     data->seek(value);
 }
 
 /* This creates all the GTK+ widgets that compose our application, and registers the callbacks */
 static void create_ui (GstLoader* data) {
     GtkWidget *main_window;  /* The uppermost window, containing all other windows */
-    GtkWidget *video_window; /* The drawing area where the video will be shown */
     GtkWidget *main_box;     /* VBox to hold main_hbox and the controls */
     GtkWidget *main_hbox;    /* HBox to hold the video_window and the stream info text widget */
     GtkWidget *controls;     /* HBox to hold the buttons and the slider */
     GtkWidget *play_button, *pause_button, *stop_button; /* Buttons */
-    GtkWidget *slider, *streams_list;
 
     main_window = gtk_window_new (GTK_WINDOW_TOPLEVEL);
     g_signal_connect (G_OBJECT (main_window), "delete-event", G_CALLBACK (delete_event_cb), data);
@@ -90,7 +103,7 @@ static void create_ui (GstLoader* data) {
 
     slider = gtk_hscale_new_with_range (0, 100, 1);
     gtk_scale_set_draw_value (GTK_SCALE (slider), 0);
-    int slider_update_signal_id = g_signal_connect (G_OBJECT (slider), "value-changed", G_CALLBACK (slider_cb), data);
+    slider_update_signal_id = g_signal_connect (G_OBJECT (slider), "value-changed", G_CALLBACK (slider_cb), data);
 
     streams_list = gtk_text_view_new ();
     gtk_text_view_set_editable (GTK_TEXT_VIEW (streams_list), FALSE);

@@ -36,9 +36,6 @@ gboolean GstLoader::busListener(GstBus *bus, GstMessage *message, gpointer data)
     case GST_MESSAGE_ELEMENT:
         if (gst_structure_has_name (message->structure, "prepare-xwindow-id")) {
             g_print ("prepare-xwindow-id.\n");
-            //TODO HELONG
-            //GdkWindow *window = gtk_widget_get_window (datax->video_window);
-            //gst_x_overlay_set_window_handle(GST_X_OVERLAY(GST_MESSAGE_SRC (message)), GDK_WINDOW_XID (window));
             gst_x_overlay_set_window_handle(GST_X_OVERLAY(GST_MESSAGE_SRC (message)), datax->eventListener.videoWindowHandler());
         }
         break;
@@ -152,9 +149,9 @@ void GstLoader::stop () {
 /* This function is called when the slider changes its position. We perform a seek to the
  * new position here. */
 void GstLoader::seek(gdouble value) {
-    //TODO HELONG
-    //gst_element_seek_simple (data->playbin2, GST_FORMAT_TIME, GST_SEEK_FLAG_FLUSH | GST_SEEK_FLAG_KEY_UNIT,
-    //                         (gint64)(value * GST_SECOND));
+	//TODO HELONG
+//    gst_element_seek_simple (data->playbin2, GST_FORMAT_TIME, GST_SEEK_FLAG_FLUSH | GST_SEEK_FLAG_KEY_UNIT,
+//                             (gint64)(value * GST_SECOND));
 }
 
 /* This function is called periodically to refresh the GUI */
@@ -174,22 +171,14 @@ gboolean GstLoader::freshUI (CustomData *data) {
             g_printerr ("Could not query current duration.\n");
         } else {
             /* Set the range of the slider to the clip duration, in SECONDS */
-            //TODO HELONG
             data->eventListener.durationGot(data->duration / GST_SECOND);
-            //gtk_range_set_range (GTK_RANGE (data->slider), 0, (gdouble)data->duration / GST_SECOND);
         }
     }
 
     if (gst_element_query_position (data->playbin2, &fmt, &current)) {
         /* Block the "value-changed" signal, so the slider_cb function is not called
          * (which would trigger a seek the user has not requested) */
-        //g_signal_handler_block (data->slider, data->slider_update_signal_id);
-        /* Set the position of the slider to the current pipeline positoin, in SECONDS */
-        //TODO HELONG
         data->eventListener.newPositionGot(current / GST_SECOND);
-        //gtk_range_set_value (GTK_RANGE (data->slider), (gdouble)current / GST_SECOND);
-        /* Re-enable the signal */
-        //g_signal_handler_unblock (data->slider, data->slider_update_signal_id);
 
     }
     return TRUE;
@@ -233,11 +222,6 @@ void GstLoader::updateMetaData (CustomData *data) {
     gchar *str, *total_str;
     guint rate;
     gint n_video, n_audio, n_text;
-    //GtkTextBuffer *text;
-
-    /* Clean current contents of the widget */
-    //text = gtk_text_view_get_buffer (GTK_TEXT_VIEW (data->streams_list));
-    //gtk_text_buffer_set_text (text, "", -1);
 
     /* Read some properties */
     g_object_get (data->playbin2, "n-video", &n_video, NULL);
@@ -250,11 +234,11 @@ void GstLoader::updateMetaData (CustomData *data) {
         g_signal_emit_by_name (data->playbin2, "get-video-tags", i, &tags);
         if (tags) {
             total_str = g_strdup_printf ("video stream %d:\n", i);
-            //gtk_text_buffer_insert_at_cursor (text, total_str, -1);
+            data->eventListener.appendMetaText( total_str);
             g_free (total_str);
             gst_tag_list_get_string (tags, GST_TAG_VIDEO_CODEC, &str);
             total_str = g_strdup_printf ("  codec: %s\n", str ? str : "unknown");
-            //gtk_text_buffer_insert_at_cursor (text, total_str, -1);
+            data->eventListener.appendMetaText( total_str);
             g_free (total_str);
             g_free (str);
             gst_tag_list_free (tags);
@@ -267,23 +251,23 @@ void GstLoader::updateMetaData (CustomData *data) {
         g_signal_emit_by_name (data->playbin2, "get-audio-tags", i, &tags);
         if (tags) {
             total_str = g_strdup_printf ("\naudio stream %d:\n", i);
-            //gtk_text_buffer_insert_at_cursor (text, total_str, -1);
+            data->eventListener.appendMetaText( total_str);
             g_free (total_str);
             if (gst_tag_list_get_string (tags, GST_TAG_AUDIO_CODEC, &str)) {
                 total_str = g_strdup_printf ("  codec: %s\n", str);
-                //gtk_text_buffer_insert_at_cursor (text, total_str, -1);
+                data->eventListener.appendMetaText( total_str);
                 g_free (total_str);
                 g_free (str);
             }
             if (gst_tag_list_get_string (tags, GST_TAG_LANGUAGE_CODE, &str)) {
                 total_str = g_strdup_printf ("  language: %s\n", str);
-                //gtk_text_buffer_insert_at_cursor (text, total_str, -1);
+               data->eventListener.appendMetaText( total_str);
                 g_free (total_str);
                 g_free (str);
             }
             if (gst_tag_list_get_uint (tags, GST_TAG_BITRATE, &rate)) {
                 total_str = g_strdup_printf ("  bitrate: %d\n", rate);
-                //gtk_text_buffer_insert_at_cursor (text, total_str, -1);
+                data->eventListener.appendMetaText( total_str);
                 g_free (total_str);
             }
             gst_tag_list_free (tags);
@@ -296,11 +280,11 @@ void GstLoader::updateMetaData (CustomData *data) {
         g_signal_emit_by_name (data->playbin2, "get-text-tags", i, &tags);
         if (tags) {
             total_str = g_strdup_printf ("\nsubtitle stream %d:\n", i);
-            //gtk_text_buffer_insert_at_cursor (text, total_str, -1);
+            data->eventListener.appendMetaText( total_str);
             g_free (total_str);
             if (gst_tag_list_get_string (tags, GST_TAG_LANGUAGE_CODE, &str)) {
                 total_str = g_strdup_printf ("  language: %s\n", str);
-                //gtk_text_buffer_insert_at_cursor (text, total_str, -1);
+                data->eventListener.appendMetaText( total_str);
                 g_free (total_str);
                 g_free (str);
             }
