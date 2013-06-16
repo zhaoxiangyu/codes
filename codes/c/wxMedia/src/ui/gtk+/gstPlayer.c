@@ -435,7 +435,6 @@ int main(int argc, char *argv[])
     data.duration = GST_CLOCK_TIME_NONE;
 
     /* Create the elements */
-    /*
     data.playbin2 = gst_element_factory_make ("playbin2", "playbin2");
 
     if (!data.playbin2)
@@ -443,15 +442,10 @@ int main(int argc, char *argv[])
         g_printerr ("Not all elements could be created.\n");
         return -1;
     }
-    */
- 	data.playbin2 = gst_pipeline_new ("sample-pipeline");
-	GstElement *src = gst_element_factory_make ("videotestsrc", NULL);
-
 
 #if defined (XOVERLAY)
     data.video_sink = gst_element_factory_make ("ximagesink", "gtk-video-window");
-	gst_bin_add_many (GST_BIN (data.playbin2), src, data.video_sink, NULL);
-	gst_element_link (src, data.video_sink);
+    g_object_set (data.playbin2, "video-sink", data.video_sink, NULL);
 #endif
 
     /* Set the URI to play,
@@ -460,14 +454,12 @@ int main(int argc, char *argv[])
 		http://docs.gstreamer.com/media/sintel_trailer-480p.webm
 	*/
 
-    //g_object_set (data.playbin2, "uri", "http://docs.gstreamer.com/media/sintel_trailer-480p.webm", NULL);
+    g_object_set (data.playbin2, "uri", "file:///media/sf_ubuntu/projects/ffmpeg-merge/data/dribble practice.avi", NULL);
 
     /* Connect to interesting signals in playbin2 */
-    /*
     g_signal_connect (G_OBJECT (data.playbin2), "video-tags-changed", (GCallback) tags_cb, &data);
     g_signal_connect (G_OBJECT (data.playbin2), "audio-tags-changed", (GCallback) tags_cb, &data);
     g_signal_connect (G_OBJECT (data.playbin2), "text-tags-changed", (GCallback) tags_cb, &data);
-    */
 
     /* Create the GUI */
     create_ui (&data);
@@ -475,7 +467,6 @@ int main(int argc, char *argv[])
     /* Instruct the bus to emit signals for each received message, and connect to the interesting signals */
     bus = gst_element_get_bus (data.playbin2);
 
-	/*  */
     gst_bus_add_watch (bus, my_bus_callback, &data);
 
 	/*
