@@ -24,13 +24,13 @@ guintptr GstListener::videoWindowHandler(){
 
 void GstListener::durationGot(gdouble duration){
     g_signal_handler_block (slider, slider_update_signal_id);
-	gtk_range_set_range (GTK_RANGE (slider), 0, (gdouble)duration / GST_SECOND);
+	gtk_range_set_range (GTK_RANGE (slider), 0, (gdouble)duration);
 	g_signal_handler_unblock (slider, slider_update_signal_id);
 }
 
 void GstListener::newPositionGot(gdouble current){
     g_signal_handler_block (slider, slider_update_signal_id);
-	gtk_range_set_value (GTK_RANGE (slider), (gdouble)current / GST_SECOND);
+	gtk_range_set_value (GTK_RANGE (slider), (gdouble)current);
 	g_signal_handler_unblock (slider, slider_update_signal_id);
 }
 
@@ -139,9 +139,13 @@ int main(int argc, char *argv[]) {
     /* Initialize GTK */
     gtk_init (&argc, &argv);
 
-	gstLoader->startup(argc, argv);
+
+	if(gstLoader->setup(argc, argv) < 0)
+		return -1;
     /* Create the GUI */
     create_ui (gstLoader);
+
+	gstLoader->startup();
 
     /* Start the GTK main loop. We will not regain control until gtk_main_quit is called. */
     gtk_main ();

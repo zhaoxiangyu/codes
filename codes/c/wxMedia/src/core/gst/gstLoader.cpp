@@ -3,12 +3,73 @@
 GstLoader::GstLoader(GstListener& listener) {
     /* Initialize our data structure */
     data = new CustomData();
+    //memset (data, 0, sizeof (data));
     data->duration = GST_CLOCK_TIME_NONE;
 
     data->eventListener = listener;
 }
 
 GstLoader::~GstLoader() {
+}
+
+int GstLoader::setup(int argc, char *argv[]){
+    /* Initialize GStreamer */
+    gst_init (&argc, &argv);
+
+    /* Create the elements */
+    data->playbin2 = gst_element_factory_make ("playbin2", "playbin2");
+    g_print("playbin2 created OK");
+
+    if (!data->playbin2) {
+        g_printerr ("Not all elements could be created.\n");
+        return -1;
+    }
+
+    data->video_sink = gst_element_factory_make ("ximagesink", "gtk-video-window");
+    g_object_set (data->playbin2, "video-sink", data->video_sink, NULL);
+
+    /* Set the URI to play,
+    	file:///media/sf_ubuntu/projects/ffmpeg-merge/data/dribble practice.avi
+    	file:///usr/share/codeblocks/templates/sdl-cb.bmp
+    	http://docs.gstreamer.com/media/sintel_trailer-480p.webm
+    */
+
+    g_object_set (data->playbin2, "uri", "file:///media/sf_ubuntu/projects/ffmpeg-merge/data/dribble practice.avi", NULL);
+
+    /* Connect to interesting signals in playbin2 */
+    g_signal_connect (G_OBJECT (data->playbin2), "video-tags-changed", (GCallback) onTagsChanged, data);
+    g_signal_connect (G_OBJECT (data->playbin2), "audio-tags-changed", (GCallback) onTagsChanged, data);
+    g_signal_connect (G_OBJECT (data->playbin2), "text-tags-changed", (GCallback) onTagsChanged, data);
+}
+
+int GstLoader::startup() {
+    GstStateChangeReturn ret;
+    GstBus *bus;
+
+    /* Instruct the bus to emit signals for each received message, and connect to the interesting signals */
+    bus = gst_element_get_bus (data->playbin2);
+
+    gst_bus_add_watch (bus, busListener, data);
+
+    /*
+    gst_bus_add_signal_watch (bus);
+    g_signal_connect (G_OBJECT (bus), "message::state-changed", (GCallback)state_changed_cb, &data);
+     */
+
+    gst_object_unref (bus);
+
+    /* Start playing */
+    ret = gst_element_set_state (data->playbin2, GST_STATE_PLAYING);
+    if (ret == GST_STATE_CHANGE_FAILURE) {
+        g_printerr ("Unable to set the pipeline to the playing state.\n");
+        gst_object_unref (data->playbin2);
+        return -1;
+    }
+
+    /* Register a function that GLib will call every second */
+    g_timeout_add_seconds (1, (GSourceFunc)freshUI, data);
+
+    return 0;
 }
 
 gboolean GstLoader::busListener(GstBus *bus, GstMessage *message, gpointer data) {
@@ -35,7 +96,6 @@ gboolean GstLoader::busListener(GstBus *bus, GstMessage *message, gpointer data)
         /* end-of-stream */
         g_print ("End-Of-Stream reached.\n");
         onEos(bus, message, datax);
-        gst_element_set_state (datax->playbin2, GST_STATE_READY);
         break;
     case GST_MESSAGE_ELEMENT:
         if (gst_structure_has_name (message->structure, "prepare-xwindow-id")) {
@@ -67,64 +127,6 @@ gboolean GstLoader::busListener(GstBus *bus, GstMessage *message, gpointer data)
     return TRUE;
 }
 
-int GstLoader::startup(int argc, char *argv[]) {
-    GstStateChangeReturn ret;
-    GstBus *bus;
-
-    /* Initialize GStreamer */
-    gst_init (&argc, &argv);
-
-    /* Create the elements */
-    data->playbin2 = gst_element_factory_make ("playbin2", "playbin2");
-    g_print("playbin2 created OK");
-
-    if (!data->playbin2) {
-        g_printerr ("Not all elements could be created.\n");
-        return -1;
-    }
-
-    data->video_sink = gst_element_factory_make ("ximagesink", "gtk-video-window");
-    g_object_set (data->playbin2, "video-sink", data->video_sink, NULL);
-
-    /* Set the URI to play,
-    	file:///media/sf_ubuntu/projects/ffmpeg-merge/data/dribble practice.avi
-    	file:///usr/share/codeblocks/templates/sdl-cb.bmp
-    	http://docs.gstreamer.com/media/sintel_trailer-480p.webm
-    */
-
-    g_object_set (data->playbin2, "uri", "file:///media/sf_ubuntu/projects/ffmpeg-merge/data/dribble practice.avi", NULL);
-
-    /* Connect to interesting signals in playbin2 */
-    g_signal_connect (G_OBJECT (data->playbin2), "video-tags-changed", (GCallback) onTagsChanged, data);
-    g_signal_connect (G_OBJECT (data->playbin2), "audio-tags-changed", (GCallback) onTagsChanged, data);
-    g_signal_connect (G_OBJECT (data->playbin2), "text-tags-changed", (GCallback) onTagsChanged, data);
-
-    /* Instruct the bus to emit signals for each received message, and connect to the interesting signals */
-    bus = gst_element_get_bus (data->playbin2);
-
-    gst_bus_add_watch (bus, busListener, data);
-
-    /*
-    gst_bus_add_signal_watch (bus);
-    g_signal_connect (G_OBJECT (bus), "message::state-changed", (GCallback)state_changed_cb, &data);
-     */
-
-    gst_object_unref (bus);
-
-    /* Start playing */
-    ret = gst_element_set_state (data->playbin2, GST_STATE_PLAYING);
-    if (ret == GST_STATE_CHANGE_FAILURE) {
-        g_printerr ("Unable to set the pipeline to the playing state.\n");
-        gst_object_unref (data->playbin2);
-        return -1;
-    }
-
-    /* Register a function that GLib will call every second */
-    g_timeout_add_seconds (1, (GSourceFunc)freshUI, &data);
-
-    return 0;
-}
-
 void GstLoader::shutdown() {
     /* Free resources */
     gst_element_set_state (data->playbin2, GST_STATE_NULL);
@@ -150,9 +152,10 @@ void GstLoader::stop () {
 /* This function is called when the slider changes its position. We perform a seek to the
  * new position here. */
 void GstLoader::seek(gdouble value) {
-	//TODO HELONG
-//    gst_element_seek_simple(data->playbin2, GST_FORMAT_TIME, GST_SEEK_FLAG_FLUSH | GST_SEEK_FLAG_KEY_UNIT,
-//                             (gint64)(value * GST_SECOND));
+	g_print("about to seek to %f", value);
+	gst_element_seek_simple(data->playbin2, GST_FORMAT_TIME, 
+			GstSeekFlags(GST_SEEK_FLAG_FLUSH | GST_SEEK_FLAG_KEY_UNIT),// GST_SEEK_FLAG_KEY_UNIT, 
+			(gint64)(value * GST_SECOND));
 }
 
 /* This function is called periodically to refresh the GUI */
@@ -180,7 +183,8 @@ gboolean GstLoader::freshUI (CustomData *data) {
         /* Block the "value-changed" signal, so the slider_cb function is not called
          * (which would trigger a seek the user has not requested) */
         data->eventListener.newPositionGot(current / GST_SECOND);
-
+    } else {
+    	g_printerr ("Could not query current position.\n");
     }
     return TRUE;
 }

@@ -34,7 +34,8 @@ public :
     void stop();
     void seek(gdouble value);
 
-    int startup(int argc, char *argv[]);
+	int setup(int argc, char *argv[]);
+    int startup();
     void shutdown();
 
 protected :
