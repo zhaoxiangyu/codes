@@ -22,7 +22,8 @@ testLib:
 	#cd ../bin/Debug/ && ./testLib /media/sf_ubuntu/projects/ffmpeg-merge/data/AVSEQ04.mpeg
 
 gst:
-	gst-launch playbin2 uri=file:///media/sf_ubuntu/projects/ffmpeg-merge/data/AVSEQ04-1.mpeg
+	gst-launch playbin2 video-sink=xvimagesink uri=file:///media/sf_ubuntu/projects/ffmpeg-merge/data/AVSEQ04-1.mpeg
+	#gst-launch playbin2 uri=file:///media/sf_ubuntu/projects/ffmpeg-merge/data/AVSEQ04-1.mpeg
 
 gtkPlayer:
 	cd ../bin/Debug/ && ./gtkGstPlayer

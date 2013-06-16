@@ -13,14 +13,17 @@
 #include <gdk/gdkquartz.h>
 #endif
 
+#define XOVERLAY
+
 /* Structure to contain all our information, so we can pass it around */
 typedef struct _CustomData
 {
     GstElement *playbin2;           /* Our one and only pipeline */
-	GstElement *video_sink;
+    GstElement *video_sink;
 
     GtkWidget *slider;              /* Slider widget to keep track of current position */
     GtkWidget *streams_list;        /* Text widget to display info about the streams */
+    GtkWidget *video_window;
     gulong slider_update_signal_id; /* Signal ID for the slider update signal */
 
     GstState state;                 /* Current state of the pipeline */
@@ -50,13 +53,16 @@ static void realize_cb (GtkWidget *widget, CustomData *data)
     g_message("GDK_WINDOWING_X11");
 #endif
     /* Pass it to playbin2, which implements XOverlay and will forward it to the video sink */
-    gst_x_overlay_set_window_handle (GST_X_OVERLAY (data->video_sink), window_handle);
+#if defined (XOVERLAY)
+    //gst_x_overlay_set_window_handle (GST_X_OVERLAY (data->video_sink), window_handle);
+#endif
+    g_message("gst_x_overlay_set_window_handle OK");
 }
 
 /* This function is called when the PLAY button is clicked */
 static void play_cb (GtkButton *button, CustomData *data)
 {
-   	//	g_object_set (data->playbin2, "uri", "file:///media/sf_ubuntu/projects/ffmpeg-merge/data/AVSEQ04-1.mpeg", NULL);
+    //	g_object_set (data->playbin2, "uri", "file:///media/sf_ubuntu/projects/ffmpeg-merge/data/AVSEQ04-1.mpeg", NULL);
     gst_element_set_state (data->playbin2, GST_STATE_PLAYING);
 }
 
@@ -126,6 +132,7 @@ static void create_ui (CustomData *data)
     g_signal_connect (G_OBJECT (main_window), "delete-event", G_CALLBACK (delete_event_cb), data);
 
     video_window = gtk_drawing_area_new ();
+    data->video_window = video_window;
     gtk_widget_set_double_buffered (video_window, FALSE);
     g_signal_connect (video_window, "realize", G_CALLBACK (realize_cb), data);
     g_signal_connect (video_window, "expose_event", G_CALLBACK (expose_cb), data);
@@ -168,6 +175,8 @@ static void create_ui (CustomData *data)
 /* This function is called periodically to refresh the GUI */
 static gboolean refresh_ui (CustomData *data)
 {
+	g_print("fresh_ui ...");
+
     GstFormat fmt = GST_FORMAT_TIME;
     gint64 current = -1;
 
@@ -361,6 +370,54 @@ static void application_cb (GstBus *bus, GstMessage *msg, CustomData *data)
     }
 }
 
+static gboolean my_bus_callback (GstBus *bus, GstMessage *message, gpointer data)
+{
+	CustomData* datax = (CustomData*)data;
+    g_print ("Got %s message\n", GST_MESSAGE_TYPE_NAME (message));
+
+    switch (GST_MESSAGE_TYPE (message))
+    {
+    case GST_MESSAGE_ERROR:
+    {
+        GError *err;
+        gchar *debug_info;
+
+        /* Print error details on the screen */
+        gst_message_parse_error (message, &err, &debug_info);
+        g_printerr ("Error received from element %s: %s\n", GST_OBJECT_NAME (message->src), err->message);
+        g_printerr ("Debugging information: %s\n", debug_info ? debug_info : "none");
+        g_clear_error (&err);
+        g_free (debug_info);
+
+        /* Set the pipeline to READY (which stops playback) */
+        //gst_element_set_state (data->playbin2, GST_STATE_READY);
+        break;
+    }
+    case GST_MESSAGE_EOS:
+        /* end-of-stream */
+		g_print ("End-Of-Stream reached.\n");
+		//gst_element_set_state (data->playbin2, GST_STATE_READY);
+        break;
+	case GST_MESSAGE_ELEMENT:
+		if (gst_structure_has_name (message->structure, "prepare-xwindow-id"))
+		{
+			g_print ("prepare-xwindow-id.\n");
+			GdkWindow *window = gtk_widget_get_window (datax->video_window);
+			gst_x_overlay_set_window_handle(GST_X_OVERLAY(GST_MESSAGE_SRC (message)), GDK_WINDOW_XID (window));
+		}
+		break;
+    default:
+        /* unhandled message */
+        break;
+    }
+
+    /* we want to be notified again the next time there is a message
+     * on the bus, so returning TRUE (FALSE means we want to stop watching
+     * for messages on the bus and our callback should not be called again)
+     */
+    return TRUE;
+}
+
 int main(int argc, char *argv[])
 {
     CustomData data;
@@ -378,6 +435,7 @@ int main(int argc, char *argv[])
     data.duration = GST_CLOCK_TIME_NONE;
 
     /* Create the elements */
+    /*
     data.playbin2 = gst_element_factory_make ("playbin2", "playbin2");
 
     if (!data.playbin2)
@@ -385,28 +443,49 @@ int main(int argc, char *argv[])
         g_printerr ("Not all elements could be created.\n");
         return -1;
     }
+    */
+ 	data.playbin2 = gst_pipeline_new ("sample-pipeline");
+	GstElement *src = gst_element_factory_make ("videotestsrc", NULL);
 
-	data.video_sink = gst_element_factory_make ("xvimagesink", NULL);
-    g_object_set (data.playbin2, "video-sink", data.video_sink, NULL);
 
-   /* Set the URI to play */
-    g_object_set (data.playbin2, "uri", "file:///media/sf_ubuntu/projects/ffmpeg-merge/data/AVSEQ04-1.mpeg", NULL);
+#if defined (XOVERLAY)
+    data.video_sink = gst_element_factory_make ("ximagesink", "gtk-video-window");
+	gst_bin_add_many (GST_BIN (data.playbin2), src, data.video_sink, NULL);
+	gst_element_link (src, data.video_sink);
+#endif
+
+    /* Set the URI to play,
+		file:///media/sf_ubuntu/projects/ffmpeg-merge/data/dribble practice.avi
+		file:///usr/share/codeblocks/templates/sdl-cb.bmp
+		http://docs.gstreamer.com/media/sintel_trailer-480p.webm
+	*/
+
+    //g_object_set (data.playbin2, "uri", "http://docs.gstreamer.com/media/sintel_trailer-480p.webm", NULL);
 
     /* Connect to interesting signals in playbin2 */
+    /*
     g_signal_connect (G_OBJECT (data.playbin2), "video-tags-changed", (GCallback) tags_cb, &data);
     g_signal_connect (G_OBJECT (data.playbin2), "audio-tags-changed", (GCallback) tags_cb, &data);
     g_signal_connect (G_OBJECT (data.playbin2), "text-tags-changed", (GCallback) tags_cb, &data);
+    */
 
     /* Create the GUI */
     create_ui (&data);
 
     /* Instruct the bus to emit signals for each received message, and connect to the interesting signals */
     bus = gst_element_get_bus (data.playbin2);
+
+	/*  */
+    gst_bus_add_watch (bus, my_bus_callback, &data);
+
+	/*
     gst_bus_add_signal_watch (bus);
     g_signal_connect (G_OBJECT (bus), "message::error", (GCallback)error_cb, &data);
     g_signal_connect (G_OBJECT (bus), "message::eos", (GCallback)eos_cb, &data);
     g_signal_connect (G_OBJECT (bus), "message::state-changed", (GCallback)state_changed_cb, &data);
     g_signal_connect (G_OBJECT (bus), "message::application", (GCallback)application_cb, &data);
+    */
+
     gst_object_unref (bus);
 
     /* Start playing */
