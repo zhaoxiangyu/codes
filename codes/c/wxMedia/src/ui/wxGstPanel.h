@@ -9,6 +9,8 @@
 #include <wx/button.h>
 //*)
 
+#include "../core/gst/gstLoader.h"
+
 class wxGstPanel: public wxPanel {
 public:
 

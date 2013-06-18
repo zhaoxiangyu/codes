@@ -15,11 +15,9 @@ const long wxGstPanel::ID_SLIDER_VIDEO = wxNewId();
 //*)
 
 #include <glib.h>
-#include "../core/gst/gstLoader.h"
 
 guintptr GstListener::videoWindowHandler() {
-    GdkWindow *window = gtk_widget_get_window (video_window);
-    return GDK_WINDOW_XID (window);
+	return NULL;
 }
 
 void GstListener::durationGot(gdouble duration) {

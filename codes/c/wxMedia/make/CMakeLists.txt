@@ -6,6 +6,10 @@ INCLUDE( FindPkgConfig )
 find_package( wxWidgets COMPONENTS net gl core base REQUIRED )
 INCLUDE( FindSDL )
 
+find_package( GTK2 2.8 COMPONENTS gtk )
+pkg_check_modules( GST REQUIRED gstreamer-1.0)
+pkg_check_modules( GST_INTF REQUIRED gstreamer-interfaces-0.10)
+
 find_path( AVCODEC_INCLUDE_DIR
     NAMES libavcodec/avcodec.h
     PATH_SUFFIXES include
@@ -86,7 +90,7 @@ find_library( VLC_LIBRARY
 
 ##################################################### wxMedia APP ##########################
 
-set(SRCS ../src/ui/wxMediaApp.cpp ../src/ui/wxMediaMain.cpp ../src/ui/wxSDLPanel.cpp ../src/ui/sdl/wxSDLSurfacePanel.cpp)
+set(SRCS ../src/ui/wxMediaApp.cpp ../src/ui/wxMediaMain.cpp ../src/ui/wxSDLPanel.cpp ../src/ui/sdl/wxSDLSurfacePanel.cpp ../src/ui/wxGstPanel.cpp ../src/core/gst/gstLoader.cpp)
 add_executable(wxMedia ${SRCS})
 
 # include_directories(${OpenCV_INCLUDE_DIR})
@@ -103,6 +107,20 @@ IF(SDL_FOUND)
 ELSE(SDL_FOUND)
     MESSAGE("SDL not found")
 ENDIF(SDL_FOUND)
+
+IF(GST_FOUND)
+	INCLUDE_DIRECTORIES(${GST_INCLUDE_DIRS})
+	target_link_libraries(wxMedia ${GST_LIBRARIES})
+ELSE(GST_FOUND)
+    MESSAGE("GST not found")
+ENDIF(GST_FOUND)
+
+IF(GST_INTF_FOUND)
+	INCLUDE_DIRECTORIES(${GST_INTF_INCLUDE_DIRS})
+	target_link_libraries(wxMedia ${GST_INTF_LIBRARIES})
+ELSE(GST_INTF_FOUND)
+    MESSAGE("GST_INTF not found")
+ENDIF(GST_INTF_FOUND)
 
 ###################################################### testLib APP ##############################
 
@@ -135,9 +153,6 @@ include_directories( ${VLC_INCLUDE_DIR} )
 target_link_libraries(testLib ${VLC_LIBRARY})
 
 #################################### gtk gstreamer player ####################################
-find_package( GTK2 2.8 COMPONENTS gtk )
-pkg_check_modules( GST REQUIRED gstreamer-1.0)
-pkg_check_modules( GST_INTF REQUIRED gstreamer-interfaces-0.10)
 
 #set(GTK_GST_SRCS ../src/ui/gtk+/gstPlayer.c)
 set(GTK_GST_SRCS ../src/core/gst/gstLoader.cpp ../src/ui/gtk+/gtkPlayer.cpp)
