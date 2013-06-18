@@ -92,6 +92,7 @@
 				<gui name="wxWidgets" src="src/ui/wxMediaApp.cpp" main="-- None --" init_handlers="necessary" language="CPP" />
 				<resources>
 					<wxFrame wxs="wxsmith/wxMediaframe.wxs" src="src/ui/wxMediaMain.cpp" hdr="src/ui/wxMediaMain.h" name="wxMediaFrame" language="CPP" />
+					<wxPanel wxs="wxsmith/wxGstPanel.wxs" src="src/ui/wxGstPanel.cpp" hdr="src/ui/wxGstPanel.h" name="wxGstPanel" language="CPP" />
 				</resources>
 			</wxsmith>
 		</Extensions>

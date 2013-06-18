@@ -1,44 +1,44 @@
-#include <iostream>
+#ifndef WXGSTPANEL_H
+#define WXGSTPANEL_H
 
-#include <wx/wx.h>
+//(*Headers(wxGstPanel)
+#include <wx/sizer.h>
+#include <wx/slider.h>
+#include <wx/panel.h>
+#include <wx/button.h>
+//*)
 
-#include <wx/dcbuffer.h>
-#include <wx/image.h>
+class wxGstPanel: public wxPanel
+{
+	public:
 
-/*******************************************************************************
- * Global Declarations
-*******************************************************************************/
+		wxGstPanel(wxWindow* parent,wxWindowID id=wxID_ANY);
+		virtual ~wxGstPanel();
 
-enum {
-    IDF_FRAME = wxID_HIGHEST + 1,
-    IDP_PANEL
+		//(*Declarations(wxGstPanel)
+		wxButton* btnStop;
+		wxPanel* videoPanel;
+		wxButton* btnPause;
+		wxSlider* videoSlider;
+		wxButton* btnPlay;
+		//*)
+
+	protected:
+
+		//(*Identifiers(wxGstPanel)
+		static const long ID_PANEL1;
+		static const long ID_BUTTON_PLAY;
+		static const long ID_BUTTON_PAUSE;
+		static const long ID_BUTTON_STOP;
+		static const long ID_SLIDER_VIDEO;
+		//*)
+
+	private:
+
+		//(*Handlers(wxGstPanel)
+		//*)
+
+		DECLARE_EVENT_TABLE()
 };
 
-/*******************************************************************************
- * SDLPanel Class
-*******************************************************************************/
-
-class wxGstPanel : public wxPanel {
-    DECLARE_CLASS(wxGstPanel)
-    DECLARE_EVENT_TABLE()
-
-private:
-
-    /**
-     * Called to paint the panel.
-     */
-    void onPaint(wxPaintEvent &);
-
-public:
-    /**
-     * Creates a new SDLPanel.
-     *
-     * @param parent The wxWindow parent.
-     */
-    SDLPanel(wxWindow *parent);
-
-    /**
-     * Destructor for the SDLPanel.
-     */
-    ~SDLPanel();
-};
+#endif
