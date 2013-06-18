@@ -17,32 +17,32 @@ static GtkWidget *video_window; /* The drawing area where the video will be show
 static GtkWidget *slider, *streams_list;
 static gulong slider_update_signal_id;
 
-guintptr GstListener::videoWindowHandler(){
-	GdkWindow *window = gtk_widget_get_window (video_window);
-	return GDK_WINDOW_XID (window);
+guintptr GstListener::videoWindowHandler() {
+    GdkWindow *window = gtk_widget_get_window (video_window);
+    return GDK_WINDOW_XID (window);
 }
 
-void GstListener::durationGot(gdouble duration){
+void GstListener::durationGot(gdouble duration) {
     g_signal_handler_block (slider, slider_update_signal_id);
-	gtk_range_set_range (GTK_RANGE (slider), 0, (gdouble)duration);
-	g_signal_handler_unblock (slider, slider_update_signal_id);
+    gtk_range_set_range (GTK_RANGE (slider), 0, (gdouble)duration);
+    g_signal_handler_unblock (slider, slider_update_signal_id);
 }
 
-void GstListener::newPositionGot(gdouble current){
+void GstListener::newPositionGot(gdouble current) {
     g_signal_handler_block (slider, slider_update_signal_id);
-	gtk_range_set_value (GTK_RANGE (slider), (gdouble)current);
-	g_signal_handler_unblock (slider, slider_update_signal_id);
+    gtk_range_set_value (GTK_RANGE (slider), (gdouble)current);
+    g_signal_handler_unblock (slider, slider_update_signal_id);
 }
 
 void GstListener::resetMetaText() {
-    // Clean current contents of the widget 
+    // Clean current contents of the widget
     GtkTextBuffer *text = gtk_text_view_get_buffer (GTK_TEXT_VIEW (streams_list));
     gtk_text_buffer_set_text (text, "", -1);
 }
 
-void GstListener::appendMetaText(gchar *str){
+void GstListener::appendMetaText(gchar *str) {
     GtkTextBuffer *text = gtk_text_view_get_buffer (GTK_TEXT_VIEW (streams_list));
-	gtk_text_buffer_insert_at_cursor (text, str, -1);
+    gtk_text_buffer_insert_at_cursor (text, str, -1);
 }
 
 /* This function is called when the PLAY button is clicked */
@@ -58,7 +58,7 @@ static void pause_cb (GtkButton *button, GstLoader* data) {
 
 /* This function is called when the STOP button is clicked */
 static void stop_cb (GtkButton *button, GstLoader* data) {
-   data->stop();
+    data->stop();
 }
 
 /* This function is called when the main window is closed */
@@ -133,19 +133,19 @@ static void create_ui (GstLoader* data) {
 
 int main(int argc, char *argv[]) {
 
-	GstListener* listener = new GstListener();
-	GstLoader* gstLoader =  new GstLoader(*listener);
+    GstListener* listener = new GstListener();
+    GstLoader* gstLoader =  new GstLoader(*listener);
 
     /* Initialize GTK */
     gtk_init (&argc, &argv);
 
 
-	if(gstLoader->setup(argc, argv) < 0)
-		return -1;
+    if(gstLoader->setup(argc, argv) < 0)
+        return -1;
     /* Create the GUI */
     create_ui (gstLoader);
 
-	gstLoader->startup();
+    gstLoader->startup();
 
     /* Start the GTK main loop. We will not regain control until gtk_main_quit is called. */
     gtk_main ();
