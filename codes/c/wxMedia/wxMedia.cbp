@@ -74,6 +74,8 @@
 		</Unit>
 		<Unit filename="src/ui/gtk+/gtkPlayer.cpp" />
 		<Unit filename="src/ui/sdl/wxSDLSurfacePanel.cpp" />
+		<Unit filename="src/ui/wxGstPanel.cpp" />
+		<Unit filename="src/ui/wxGstPanel.h" />
 		<Unit filename="src/ui/wxMediaApp.cpp" />
 		<Unit filename="src/ui/wxMediaApp.h" />
 		<Unit filename="src/ui/wxMediaMain.cpp" />

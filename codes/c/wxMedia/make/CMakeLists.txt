@@ -136,7 +136,7 @@ target_link_libraries(testLib ${VLC_LIBRARY})
 
 #################################### gtk gstreamer player ####################################
 find_package( GTK2 2.8 COMPONENTS gtk )
-pkg_check_modules( GST REQUIRED gstreamer-0.10)
+pkg_check_modules( GST REQUIRED gstreamer-1.0)
 pkg_check_modules( GST_INTF REQUIRED gstreamer-interfaces-0.10)
 
 #set(GTK_GST_SRCS ../src/ui/gtk+/gstPlayer.c)

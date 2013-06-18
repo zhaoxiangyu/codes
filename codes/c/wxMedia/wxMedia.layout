@@ -7,7 +7,7 @@
 	<File name="make/wxMedia-Debug.mak" open="0" top="0" tabpos="0">
 		<Cursor position="120" topLine="0" />
 	</File>
-	<File name="make/wxMedia.mak" open="0" top="0" tabpos="6">
+	<File name="make/wxMedia.mak" open="1" top="0" tabpos="6">
 		<Cursor position="758" topLine="0" />
 	</File>
 	<File name="src/core/ffmpeg/sdlPlayer.c" open="0" top="0" tabpos="3">
@@ -43,10 +43,16 @@
 	<File name="src/ui/gtk+/gstPlayer.c" open="1" top="0" tabpos="3">
 		<Cursor position="1862" topLine="40" />
 	</File>
-	<File name="src/ui/gtk+/gtkPlayer.cpp" open="1" top="1" tabpos="0">
+	<File name="src/ui/gtk+/gtkPlayer.cpp" open="1" top="0" tabpos="0">
 		<Cursor position="0" topLine="0" />
 	</File>
 	<File name="src/ui/sdl/wxSDLSurfacePanel.cpp" open="0" top="0" tabpos="15">
+		<Cursor position="0" topLine="0" />
+	</File>
+	<File name="src/ui/wxGstPanel.cpp" open="1" top="1" tabpos="0">
+		<Cursor position="0" topLine="0" />
+	</File>
+	<File name="src/ui/wxGstPanel.h" open="1" top="0" tabpos="0">
 		<Cursor position="0" topLine="0" />
 	</File>
 	<File name="src/ui/wxMediaApp.cpp" open="0" top="0" tabpos="1">
@@ -61,7 +67,7 @@
 	<File name="src/ui/wxMediaMain.h" open="0" top="0" tabpos="7">
 		<Cursor position="561" topLine="0" />
 	</File>
-	<File name="src/ui/wxSDLPanel.cpp" open="0" top="0" tabpos="16">
+	<File name="src/ui/wxSDLPanel.cpp" open="1" top="0" tabpos="16">
 		<Cursor position="864" topLine="13" />
 	</File>
 	<File name="src/ui/wxSDLPanel.h" open="0" top="0" tabpos="17">
