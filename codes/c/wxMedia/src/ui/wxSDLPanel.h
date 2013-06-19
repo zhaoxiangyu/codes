@@ -59,4 +59,7 @@ public:
      * Destructor for the SDLPanel.
      */
     ~SDLPanel();
+
+    int OnAppRun();
+    void OnAppExit();
 };

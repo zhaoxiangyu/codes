@@ -42,6 +42,27 @@ SDLPanel::~SDLPanel() {
     }
 }
 
+int SDLPanel::OnAppRun() {
+    // initialize SDL
+    if (SDL_Init(SDL_INIT_VIDEO) < 0) {
+        std::cerr << "unable to init SDL: " << SDL_GetError() << '\n';
+
+        return -1;
+    }
+
+    // generate an initial idle event to start things
+    wxIdleEvent event;
+    event.SetEventObject(this);
+    AddPendingEvent(event);
+
+    return 0;
+}
+
+void SDLPanel::OnAppExit() {
+    // cleanup SDL
+    SDL_Quit();
+}
+
 void SDLPanel::onPaint(wxPaintEvent &) {
     // can't draw if the screen doesn't exist yet
     if (!screen) {

@@ -135,23 +135,13 @@ wxMediaFrame::~wxMediaFrame() {
 
 int wxMediaFrame::OnAppRun() {
     // initialize SDL
-    if (SDL_Init(SDL_INIT_VIDEO) < 0) {
-        std::cerr << "unable to init SDL: " << SDL_GetError() << '\n';
+    return ((SDLPanel*)&getPanel())->OnAppRun();
 
-        return -1;
-    }
-
-    // generate an initial idle event to start things
-    wxIdleEvent event;
-    event.SetEventObject(&getPanel());
-    getPanel().AddPendingEvent(event);
-
-    return 0;
 }
 
 void wxMediaFrame::OnAppExit() {
     // cleanup SDL
-    SDL_Quit();
+    ((SDLPanel*)&getPanel())->OnAppExit();
 }
 
 void wxMediaFrame::OnQuit(wxCommandEvent& event) {
