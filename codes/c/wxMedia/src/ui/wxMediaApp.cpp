@@ -7,14 +7,14 @@
  * License:
  **************************************************************/
 
-#include <SDL.h>
-
 #include "wxMediaApp.h"
 
 //(*AppHeaders
 #include "wxMediaMain.h"
 #include <wx/image.h>
 //*)
+
+#include <iostream>
 
 IMPLEMENT_APP(wxMediaApp);
 
@@ -34,25 +34,16 @@ bool wxMediaApp::OnInit() {
 
 int wxMediaApp::OnRun() {
     // initialize SDL
-    if (SDL_Init(SDL_INIT_VIDEO) < 0) {
-        std::cerr << "unable to init SDL: " << SDL_GetError() << '\n';
-
-        return -1;
+    if(frame->OnAppRun() == -1){
+    	return -1;
     }
-
-    // generate an initial idle event to start things
-    wxIdleEvent event;
-    event.SetEventObject(&frame->getPanel());
-    frame->getPanel().AddPendingEvent(event);
 
     // start the main loop
     return wxApp::OnRun();
 }
 
 int wxMediaApp::OnExit() {
-    // cleanup SDL
-    SDL_Quit();
-
+	frame->OnAppExit() ;
     // return the standard exit code
     return wxApp::OnExit();
 }

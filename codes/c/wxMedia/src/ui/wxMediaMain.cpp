@@ -17,6 +17,11 @@
 #include <wx/string.h>
 //*)
 
+#include "wxSDLPanel.h"
+#include "wxGstPanel.h"
+#include <SDL.h>
+//#include <wx/event.h>
+
 //helper functions
 enum wxbuildinfoformat {
     short_f, long_f
@@ -112,12 +117,33 @@ wxMediaFrame::wxMediaFrame(wxWindow* parent,wxWindowID id) {
 
     // create the SDLPanel
     panel = new SDLPanel(videoPanel);
-
+    //panel = new wxGstPanel(this);
 }
 
 wxMediaFrame::~wxMediaFrame() {
     //(*Destroy(wxMediaFrame)
     //*)
+}
+
+int wxMediaFrame::OnAppRun() {
+    // initialize SDL
+    if (SDL_Init(SDL_INIT_VIDEO) < 0) {
+        std::cerr << "unable to init SDL: " << SDL_GetError() << '\n';
+
+        return -1;
+    }
+
+    // generate an initial idle event to start things
+    wxIdleEvent event;
+    event.SetEventObject(&getPanel());
+    getPanel().AddPendingEvent(event);
+
+    return 0;
+}
+
+void wxMediaFrame::OnAppExit() {
+    // cleanup SDL
+    SDL_Quit();
 }
 
 void wxMediaFrame::OnQuit(wxCommandEvent& event) {

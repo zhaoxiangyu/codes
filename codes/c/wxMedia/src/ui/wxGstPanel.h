@@ -14,7 +14,7 @@
 class wxGstPanel: public wxPanel {
 public:
 
-    wxGstPanel(wxWindow* parent,wxWindowID id=wxID_ANY);
+    wxGstPanel(wxWindow* parent);
     virtual ~wxGstPanel();
 
     //(*Declarations(wxGstPanel)

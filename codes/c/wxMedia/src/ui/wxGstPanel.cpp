@@ -37,7 +37,7 @@ BEGIN_EVENT_TABLE(wxGstPanel,wxPanel)
     //*)
 END_EVENT_TABLE()
 
-wxGstPanel::wxGstPanel(wxWindow* parent,wxWindowID id) {
+wxGstPanel::wxGstPanel(wxWindow* parent) {
     GstListener* listener = new GstListener();
     gstLoader =  new GstLoader(*listener);
 
@@ -46,7 +46,7 @@ wxGstPanel::wxGstPanel(wxWindow* parent,wxWindowID id) {
     wxBoxSizer* controlSizer;
     wxBoxSizer* VideoSizer;
 
-    Create(parent, wxID_ANY, wxDefaultPosition, wxSize(681,355), wxTAB_TRAVERSAL, _T("wxID_ANY"));
+    Create(parent, wxID_ANY, wxDefaultPosition, wxDefaultSize, wxTAB_TRAVERSAL, _T("wxID_ANY"));
     gstTopSizer = new wxBoxSizer(wxVERTICAL);
     VideoSizer = new wxBoxSizer(wxHORIZONTAL);
     videoPanel = new wxPanel(this, ID_PANEL1, wxDefaultPosition, wxSize(790,412), wxTAB_TRAVERSAL, _T("ID_PANEL1"));
@@ -65,6 +65,7 @@ wxGstPanel::wxGstPanel(wxWindow* parent,wxWindowID id) {
     controlSizer->Add(videoSlider, 5, wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL, 5);
     gstTopSizer->Add(controlSizer, 1, wxALL|wxEXPAND|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL, 5);
     SetSizer(gstTopSizer);
+    gstTopSizer->Fit(this);
     gstTopSizer->SetSizeHints(this);
 
     Connect(ID_BUTTON_PLAY,wxEVT_COMMAND_BUTTON_CLICKED,(wxObjectEventFunction)&wxGstPanel::OnbtnPlayClick);

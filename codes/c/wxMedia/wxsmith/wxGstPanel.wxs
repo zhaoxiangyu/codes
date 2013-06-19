@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <wxsmith>
 	<object class="wxPanel" name="wxGstPanel">
-		<size>681,355</size>
 		<id_arg>0</id_arg>
 		<object class="wxBoxSizer" variable="gstTopSizer" member="no">
 			<orient>wxVERTICAL</orient>

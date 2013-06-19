@@ -18,17 +18,20 @@
 #include <wx/statusbr.h>
 //*)
 
-#include "wxSDLPanel.h"
-
 class wxMediaFrame: public wxFrame {
 public:
 
     wxMediaFrame(wxWindow* parent,wxWindowID id = -1);
     virtual ~wxMediaFrame();
 
-    SDLPanel &getPanel();
+    int OnAppRun();
+    void OnAppExit();
+
+protected:
+    wxPanel &getPanel();
+
 private:
-    SDLPanel *panel;
+    wxPanel *panel;
 
     //(*Handlers(wxMediaFrame)
     void OnQuit(wxCommandEvent& event);
@@ -59,7 +62,7 @@ private:
     DECLARE_EVENT_TABLE()
 };
 
-inline SDLPanel &wxMediaFrame::getPanel() {
+inline wxPanel &wxMediaFrame::getPanel() {
     return *panel;
 }
 
