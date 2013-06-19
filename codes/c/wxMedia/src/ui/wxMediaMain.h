@@ -40,23 +40,28 @@ private:
     //*)
 
     //(*Identifiers(wxMediaFrame)
-    static const long ID_PANEL2;
-    static const long ID_PANEL3;
-    static const long ID_PANEL4;
-    static const long ID_PANEL1;
+    static const long ID_PANEL_HEADER;
+    static const long ID_PANEL_VIDEO;
+    static const long ID_PANEL_FOOTER;
+    static const long ID_PANEL_MAIN;
     static const long idMenuOpen;
     static const long idMenuQuit;
+    static const long idMenuPlayer;
+    static const long idMenuEditor;
     static const long idMenuAbout;
-    static const long ID_STATUSBAR1;
+    static const long ID_STATUSBAR_MEDIA;
     //*)
 
     //(*Declarations(wxMediaFrame)
     wxPanel* mainPanel;
     wxPanel* footerPanel;
+    wxMenuItem* MenuItemPlayer;
     wxPanel* headerPanel;
+    wxMenuItem* MenuItemEditor;
     wxPanel* videoPanel;
-    wxMenuItem* MenuItem3;
-    wxStatusBar* StatusBar1;
+    wxStatusBar* statusBarMedia;
+    wxMenuItem* MenuItemOpen;
+    wxMenu* MenuView;
     //*)
 
     DECLARE_EVENT_TABLE()

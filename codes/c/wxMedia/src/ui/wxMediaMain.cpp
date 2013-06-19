@@ -48,14 +48,16 @@ wxString wxbuildinfo(wxbuildinfoformat format) {
 }
 
 //(*IdInit(wxMediaFrame)
-const long wxMediaFrame::ID_PANEL2 = wxNewId();
-const long wxMediaFrame::ID_PANEL3 = wxNewId();
-const long wxMediaFrame::ID_PANEL4 = wxNewId();
-const long wxMediaFrame::ID_PANEL1 = wxNewId();
+const long wxMediaFrame::ID_PANEL_HEADER = wxNewId();
+const long wxMediaFrame::ID_PANEL_VIDEO = wxNewId();
+const long wxMediaFrame::ID_PANEL_FOOTER = wxNewId();
+const long wxMediaFrame::ID_PANEL_MAIN = wxNewId();
 const long wxMediaFrame::idMenuOpen = wxNewId();
 const long wxMediaFrame::idMenuQuit = wxNewId();
+const long wxMediaFrame::idMenuPlayer = wxNewId();
+const long wxMediaFrame::idMenuEditor = wxNewId();
 const long wxMediaFrame::idMenuAbout = wxNewId();
-const long wxMediaFrame::ID_STATUSBAR1 = wxNewId();
+const long wxMediaFrame::ID_STATUSBAR_MEDIA = wxNewId();
 //*)
 
 BEGIN_EVENT_TABLE(wxMediaFrame,wxFrame)
@@ -65,11 +67,11 @@ END_EVENT_TABLE()
 
 wxMediaFrame::wxMediaFrame(wxWindow* parent,wxWindowID id) {
     //(*Initialize(wxMediaFrame)
-    wxMenuItem* MenuItem2;
-    wxMenuItem* MenuItem1;
-    wxMenu* Menu1;
-    wxMenuBar* MenuBar1;
-    wxMenu* Menu2;
+    wxMenu* MenuHelp;
+    wxMenuItem* MenuItemAbout;
+    wxMenuBar* menuBarMedia;
+    wxMenuItem* MenuItemQuit;
+    wxMenu* MenuFile;
     wxStaticBoxSizer* videoBox;
     wxBoxSizer* mainSizer;
 
@@ -78,37 +80,43 @@ wxMediaFrame::wxMediaFrame(wxWindow* parent,wxWindowID id) {
     Move(wxPoint(-1,-1));
     SetMinSize(wxSize(800,600));
     SetMaxSize(wxSize(800,600));
-    mainPanel = new wxPanel(this, ID_PANEL1, wxPoint(112,216), wxDefaultSize, wxTAB_TRAVERSAL, _T("ID_PANEL1"));
+    mainPanel = new wxPanel(this, ID_PANEL_MAIN, wxPoint(112,216), wxDefaultSize, wxTAB_TRAVERSAL, _T("ID_PANEL_MAIN"));
     mainSizer = new wxBoxSizer(wxVERTICAL);
-    headerPanel = new wxPanel(mainPanel, ID_PANEL2, wxDefaultPosition, wxDefaultSize, wxTAB_TRAVERSAL, _T("ID_PANEL2"));
+    headerPanel = new wxPanel(mainPanel, ID_PANEL_HEADER, wxDefaultPosition, wxDefaultSize, wxTAB_TRAVERSAL, _T("ID_PANEL_HEADER"));
     mainSizer->Add(headerPanel, 1, wxALL|wxEXPAND|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL, 5);
     videoBox = new wxStaticBoxSizer(wxHORIZONTAL, mainPanel, _("video window"));
-    videoPanel = new wxPanel(mainPanel, ID_PANEL3, wxDefaultPosition, wxDefaultSize, wxTAB_TRAVERSAL, _T("ID_PANEL3"));
+    videoPanel = new wxPanel(mainPanel, ID_PANEL_VIDEO, wxDefaultPosition, wxDefaultSize, wxTAB_TRAVERSAL, _T("ID_PANEL_VIDEO"));
     videoBox->Add(videoPanel, 1, wxALL|wxEXPAND|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL, 5);
     mainSizer->Add(videoBox, 4, wxALL|wxEXPAND|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL, 5);
-    footerPanel = new wxPanel(mainPanel, ID_PANEL4, wxDefaultPosition, wxDefaultSize, wxTAB_TRAVERSAL, _T("ID_PANEL4"));
+    footerPanel = new wxPanel(mainPanel, ID_PANEL_FOOTER, wxDefaultPosition, wxDefaultSize, wxTAB_TRAVERSAL, _T("ID_PANEL_FOOTER"));
     mainSizer->Add(footerPanel, 1, wxALL|wxEXPAND|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL, 5);
     mainPanel->SetSizer(mainSizer);
     mainSizer->Fit(mainPanel);
     mainSizer->SetSizeHints(mainPanel);
-    MenuBar1 = new wxMenuBar();
-    Menu1 = new wxMenu();
-    MenuItem3 = new wxMenuItem(Menu1, idMenuOpen, _("Open"), _("open video file"), wxITEM_NORMAL);
-    Menu1->Append(MenuItem3);
-    MenuItem1 = new wxMenuItem(Menu1, idMenuQuit, _("Quit\tAlt-F4"), _("Quit the application"), wxITEM_NORMAL);
-    Menu1->Append(MenuItem1);
-    MenuBar1->Append(Menu1, _("&File"));
-    Menu2 = new wxMenu();
-    MenuItem2 = new wxMenuItem(Menu2, idMenuAbout, _("About\tF1"), _("Show info about this application"), wxITEM_NORMAL);
-    Menu2->Append(MenuItem2);
-    MenuBar1->Append(Menu2, _("Help"));
-    SetMenuBar(MenuBar1);
-    StatusBar1 = new wxStatusBar(this, ID_STATUSBAR1, 0, _T("ID_STATUSBAR1"));
+    menuBarMedia = new wxMenuBar();
+    MenuFile = new wxMenu();
+    MenuItemOpen = new wxMenuItem(MenuFile, idMenuOpen, _("Open"), _("open video file"), wxITEM_NORMAL);
+    MenuFile->Append(MenuItemOpen);
+    MenuItemQuit = new wxMenuItem(MenuFile, idMenuQuit, _("Quit\tAlt-F4"), _("Quit the application"), wxITEM_NORMAL);
+    MenuFile->Append(MenuItemQuit);
+    menuBarMedia->Append(MenuFile, _("&File"));
+    MenuView = new wxMenu();
+    MenuItemPlayer = new wxMenuItem(MenuView, idMenuPlayer, _("Player"), wxEmptyString, wxITEM_NORMAL);
+    MenuView->Append(MenuItemPlayer);
+    MenuItemEditor = new wxMenuItem(MenuView, idMenuEditor, _("Editor"), wxEmptyString, wxITEM_NORMAL);
+    MenuView->Append(MenuItemEditor);
+    menuBarMedia->Append(MenuView, _("&View"));
+    MenuHelp = new wxMenu();
+    MenuItemAbout = new wxMenuItem(MenuHelp, idMenuAbout, _("About\tF1"), _("Show info about this application"), wxITEM_NORMAL);
+    MenuHelp->Append(MenuItemAbout);
+    menuBarMedia->Append(MenuHelp, _("Help"));
+    SetMenuBar(menuBarMedia);
+    statusBarMedia = new wxStatusBar(this, ID_STATUSBAR_MEDIA, 0, _T("ID_STATUSBAR_MEDIA"));
     int __wxStatusBarWidths_1[1] = { -1 };
     int __wxStatusBarStyles_1[1] = { wxSB_NORMAL };
-    StatusBar1->SetFieldsCount(1,__wxStatusBarWidths_1);
-    StatusBar1->SetStatusStyles(1,__wxStatusBarStyles_1);
-    SetStatusBar(StatusBar1);
+    statusBarMedia->SetFieldsCount(1,__wxStatusBarWidths_1);
+    statusBarMedia->SetStatusStyles(1,__wxStatusBarStyles_1);
+    SetStatusBar(statusBarMedia);
 
     Connect(idMenuOpen,wxEVT_COMMAND_MENU_SELECTED,(wxObjectEventFunction)&wxMediaFrame::OnMenuFileOpenSelected);
     Connect(idMenuQuit,wxEVT_COMMAND_MENU_SELECTED,(wxObjectEventFunction)&wxMediaFrame::OnQuit);
