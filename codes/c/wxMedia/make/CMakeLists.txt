@@ -90,7 +90,8 @@ find_library( VLC_LIBRARY
 
 ##################################################### wxMedia APP ##########################
 
-set(SRCS ../src/ui/wxMediaApp.cpp ../src/ui/wxMediaMain.cpp ../src/ui/wxSDLPanel.cpp ../src/ui/sdl/wxSDLSurfacePanel.cpp ../src/ui/wxGstPanel.cpp ../src/core/gst/gstLoader.cpp)
+set(SRCS ../src/ui/wxMediaApp.cpp ../src/ui/wxMediaMain.cpp ../src/ui/wxSDLPanel.cpp ../src/ui/sdl/wxSDLSurfacePanel.cpp ../src/ui/wxGstPanel.cpp ../src/core/gst/gstLoader.cpp
+	../src/ui/wxCVPanel.cpp)
 add_executable(wxMedia ${SRCS})
 
 # include_directories(${OpenCV_INCLUDE_DIR})

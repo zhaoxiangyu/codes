@@ -45,7 +45,7 @@ wxGstPanel::wxGstPanel(wxWindow* parent) {
     wxBoxSizer* gstTopSizer;
     wxBoxSizer* controlSizer;
     wxBoxSizer* VideoSizer;
-
+    
     Create(parent, wxID_ANY, wxDefaultPosition, wxDefaultSize, wxTAB_TRAVERSAL, _T("wxID_ANY"));
     gstTopSizer = new wxBoxSizer(wxVERTICAL);
     VideoSizer = new wxBoxSizer(wxHORIZONTAL);
@@ -67,7 +67,7 @@ wxGstPanel::wxGstPanel(wxWindow* parent) {
     SetSizer(gstTopSizer);
     gstTopSizer->Fit(this);
     gstTopSizer->SetSizeHints(this);
-
+    
     Connect(ID_BUTTON_PLAY,wxEVT_COMMAND_BUTTON_CLICKED,(wxObjectEventFunction)&wxGstPanel::OnbtnPlayClick);
     Connect(ID_BUTTON_PAUSE,wxEVT_COMMAND_BUTTON_CLICKED,(wxObjectEventFunction)&wxGstPanel::OnbtnPauseClick);
     Connect(ID_BUTTON_STOP,wxEVT_COMMAND_BUTTON_CLICKED,(wxObjectEventFunction)&wxGstPanel::OnbtnStopClick);

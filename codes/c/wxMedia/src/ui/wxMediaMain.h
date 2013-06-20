@@ -11,12 +11,12 @@
 #define WXMEDIAMAIN_H
 
 //(*Headers(wxMediaFrame)
-#include <wx/sizer.h>
 #include <wx/menu.h>
-#include <wx/panel.h>
 #include <wx/frame.h>
 #include <wx/statusbr.h>
 //*)
+
+#include <wx/panel.h>
 
 class wxMediaFrame: public wxFrame {
 public:
@@ -28,7 +28,6 @@ public:
     void OnAppExit();
 
 protected:
-    wxPanel &getPanel();
 
 private:
     wxPanel *panel;
@@ -40,10 +39,6 @@ private:
     //*)
 
     //(*Identifiers(wxMediaFrame)
-    static const long ID_PANEL_HEADER;
-    static const long ID_PANEL_VIDEO;
-    static const long ID_PANEL_FOOTER;
-    static const long ID_PANEL_MAIN;
     static const long idMenuOpen;
     static const long idMenuQuit;
     static const long idMenuPlayer;
@@ -53,12 +48,8 @@ private:
     //*)
 
     //(*Declarations(wxMediaFrame)
-    wxPanel* mainPanel;
-    wxPanel* footerPanel;
     wxMenuItem* MenuItemPlayer;
-    wxPanel* headerPanel;
     wxMenuItem* MenuItemEditor;
-    wxPanel* videoPanel;
     wxStatusBar* statusBarMedia;
     wxMenuItem* MenuItemOpen;
     wxMenu* MenuView;
@@ -66,9 +57,5 @@ private:
 
     DECLARE_EVENT_TABLE()
 };
-
-inline wxPanel &wxMediaFrame::getPanel() {
-    return *panel;
-}
 
 #endif // WXMEDIAMAIN_H

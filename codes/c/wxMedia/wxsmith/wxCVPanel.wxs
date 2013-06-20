@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <wxsmith>
 	<object class="wxPanel" name="wxCVPanel">
-		<size>800,400</size>
-		<maxsize>800,500</maxsize>
 		<id_arg>0</id_arg>
 		<object class="wxBoxSizer" variable="BoxSizerTop" member="no">
 			<orient>wxVERTICAL</orient>
@@ -25,7 +23,7 @@
 						<size>912,29</size>
 					</object>
 				</object>
-				<flag>wxALL|wxEXPAND|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
+				<flag>wxEXPAND|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
 				<border>5</border>
 				<option>1</option>
 			</object>
@@ -34,20 +32,6 @@
 					<object class="sizeritem">
 						<object class="wxBoxSizer" variable="BoxSizerLeft" member="no">
 							<orient>wxVERTICAL</orient>
-							<object class="sizeritem">
-								<object class="wxBoxSizer" variable="BoxSizerOriHD" member="no" />
-								<flag>wxALL|wxEXPAND|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
-								<border>5</border>
-								<option>1</option>
-							</object>
-							<object class="sizeritem">
-								<object class="wxPanel" name="ID_PANEL_ORI" variable="PanelOri" member="yes">
-									<size>487,118</size>
-								</object>
-								<flag>wxALL|wxEXPAND|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
-								<border>5</border>
-								<option>5</option>
-							</object>
 							<object class="sizeritem">
 								<object class="wxBoxSizer" variable="BoxSizerOriFT" member="no">
 									<object class="sizeritem">
@@ -105,8 +89,20 @@
 								<border>5</border>
 								<option>1</option>
 							</object>
+							<object class="sizeritem">
+								<object class="wxPanel" name="ID_PANEL_ORI" variable="PanelOri" member="yes" />
+								<flag>wxALL|wxEXPAND|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
+								<border>6</border>
+								<option>5</option>
+							</object>
+							<object class="sizeritem">
+								<object class="wxBoxSizer" variable="BoxSizerOriHD" member="no" />
+								<flag>wxALL|wxEXPAND|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
+								<border>5</border>
+								<option>1</option>
+							</object>
 						</object>
-						<flag>wxALL|wxEXPAND|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
+						<flag>wxEXPAND|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
 						<border>5</border>
 						<option>1</option>
 					</object>
@@ -120,9 +116,7 @@
 								<option>1</option>
 							</object>
 							<object class="sizeritem">
-								<object class="wxPanel" name="ID_PANEL_MATCHED" variable="PanelMatched" member="yes">
-									<size>487,137</size>
-								</object>
+								<object class="wxPanel" name="ID_PANEL_MATCHED" variable="PanelMatched" member="yes" />
 								<flag>wxALL|wxEXPAND|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
 								<border>5</border>
 								<option>5</option>
@@ -185,7 +179,7 @@
 						<option>1</option>
 					</object>
 				</object>
-				<flag>wxALL|wxEXPAND|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
+				<flag>wxEXPAND|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
 				<border>5</border>
 				<option>8</option>
 			</object>

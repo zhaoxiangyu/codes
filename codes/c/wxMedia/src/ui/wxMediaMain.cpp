@@ -20,6 +20,8 @@
 #include "wxSDLPanel.h"
 #include "wxGstPanel.h"
 
+#include "wxCVPanel.h"
+
 //helper functions
 enum wxbuildinfoformat {
     short_f, long_f
@@ -46,10 +48,6 @@ wxString wxbuildinfo(wxbuildinfoformat format) {
 }
 
 //(*IdInit(wxMediaFrame)
-const long wxMediaFrame::ID_PANEL_HEADER = wxNewId();
-const long wxMediaFrame::ID_PANEL_VIDEO = wxNewId();
-const long wxMediaFrame::ID_PANEL_FOOTER = wxNewId();
-const long wxMediaFrame::ID_PANEL_MAIN = wxNewId();
 const long wxMediaFrame::idMenuOpen = wxNewId();
 const long wxMediaFrame::idMenuQuit = wxNewId();
 const long wxMediaFrame::idMenuPlayer = wxNewId();
@@ -70,27 +68,12 @@ wxMediaFrame::wxMediaFrame(wxWindow* parent,wxWindowID id) {
     wxMenuBar* menuBarMedia;
     wxMenuItem* MenuItemQuit;
     wxMenu* MenuFile;
-    wxStaticBoxSizer* videoBox;
-    wxBoxSizer* mainSizer;
 
     Create(parent, id, _("Media Gadgets"), wxDefaultPosition, wxDefaultSize, wxDEFAULT_FRAME_STYLE, _T("id"));
-    SetClientSize(wxSize(800,600));
+    SetClientSize(wxSize(1200,800));
     Move(wxPoint(-1,-1));
-    SetMinSize(wxSize(800,600));
-    SetMaxSize(wxSize(800,600));
-    mainPanel = new wxPanel(this, ID_PANEL_MAIN, wxPoint(112,216), wxDefaultSize, wxTAB_TRAVERSAL, _T("ID_PANEL_MAIN"));
-    mainSizer = new wxBoxSizer(wxVERTICAL);
-    headerPanel = new wxPanel(mainPanel, ID_PANEL_HEADER, wxDefaultPosition, wxDefaultSize, wxTAB_TRAVERSAL, _T("ID_PANEL_HEADER"));
-    mainSizer->Add(headerPanel, 1, wxALL|wxEXPAND|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL, 5);
-    videoBox = new wxStaticBoxSizer(wxHORIZONTAL, mainPanel, _("video window"));
-    videoPanel = new wxPanel(mainPanel, ID_PANEL_VIDEO, wxDefaultPosition, wxDefaultSize, wxTAB_TRAVERSAL, _T("ID_PANEL_VIDEO"));
-    videoBox->Add(videoPanel, 1, wxALL|wxEXPAND|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL, 5);
-    mainSizer->Add(videoBox, 4, wxALL|wxEXPAND|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL, 5);
-    footerPanel = new wxPanel(mainPanel, ID_PANEL_FOOTER, wxDefaultPosition, wxDefaultSize, wxTAB_TRAVERSAL, _T("ID_PANEL_FOOTER"));
-    mainSizer->Add(footerPanel, 1, wxALL|wxEXPAND|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL, 5);
-    mainPanel->SetSizer(mainSizer);
-    mainSizer->Fit(mainPanel);
-    mainSizer->SetSizeHints(mainPanel);
+    SetMinSize(wxSize(640,480));
+    SetMaxSize(wxSize(1600,900));
     menuBarMedia = new wxMenuBar();
     MenuFile = new wxMenu();
     MenuItemOpen = new wxMenuItem(MenuFile, idMenuOpen, _("Open"), _("open video file"), wxITEM_NORMAL);
@@ -121,8 +104,7 @@ wxMediaFrame::wxMediaFrame(wxWindow* parent,wxWindowID id) {
     Connect(idMenuAbout,wxEVT_COMMAND_MENU_SELECTED,(wxObjectEventFunction)&wxMediaFrame::OnAbout);
     //*)
 
-    // create the SDLPanel
-    panel = new SDLPanel(videoPanel);
+    panel = new wxCVPanel(this);
     //panel = new wxGstPanel(this);
 }
 
@@ -133,13 +115,14 @@ wxMediaFrame::~wxMediaFrame() {
 
 int wxMediaFrame::OnAppRun() {
     // initialize SDL
-    return ((SDLPanel*)&getPanel())->OnAppRun();
+    //return ((SDLPanel*)&getPanel())->OnAppRun();
+    return 0;
 
 }
 
 void wxMediaFrame::OnAppExit() {
     // cleanup SDL
-    ((SDLPanel*)&getPanel())->OnAppExit();
+    //((SDLPanel*)&getPanel())->OnAppExit();
 }
 
 void wxMediaFrame::OnQuit(wxCommandEvent& event) {

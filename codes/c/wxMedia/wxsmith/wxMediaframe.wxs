@@ -6,38 +6,6 @@
 		<size>800,600</size>
 		<minsize>800,600</minsize>
 		<maxsize>800,600</maxsize>
-		<object class="wxPanel" name="ID_PANEL_MAIN" variable="mainPanel" member="yes">
-			<pos>112,216</pos>
-			<object class="wxBoxSizer" variable="mainSizer" member="no">
-				<orient>wxVERTICAL</orient>
-				<object class="sizeritem">
-					<object class="wxPanel" name="ID_PANEL_HEADER" variable="headerPanel" member="yes" />
-					<flag>wxALL|wxEXPAND|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
-					<border>5</border>
-					<option>1</option>
-				</object>
-				<object class="sizeritem">
-					<object class="wxStaticBoxSizer" variable="videoBox" member="no">
-						<label>video window</label>
-						<object class="sizeritem">
-							<object class="wxPanel" name="ID_PANEL_VIDEO" variable="videoPanel" member="yes" />
-							<flag>wxALL|wxEXPAND|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
-							<border>5</border>
-							<option>1</option>
-						</object>
-					</object>
-					<flag>wxALL|wxEXPAND|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
-					<border>5</border>
-					<option>4</option>
-				</object>
-				<object class="sizeritem">
-					<object class="wxPanel" name="ID_PANEL_FOOTER" variable="footerPanel" member="yes" />
-					<flag>wxALL|wxEXPAND|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
-					<border>5</border>
-					<option>1</option>
-				</object>
-			</object>
-		</object>
 		<object class="wxMenuBar" variable="menuBarMedia" member="no">
 			<object class="wxMenu" variable="MenuFile" member="no">
 				<label>&amp;File</label>

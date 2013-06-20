@@ -34,13 +34,13 @@ class wxCVPanel: public wxPanel
 
 		//(*Identifiers(wxCVPanel)
 		static const long ID_BUTTON_OPEN_FILE;
-		static const long ID_PANEL_ORI;
 		static const long ID_BUTTON_ORI_BEGIN;
 		static const long ID_BUTTON_ORI_PRE;
 		static const long ID_BUTTON_ORI_PALY;
 		static const long ID_BUTTON_ORI_PAUSE;
 		static const long ID_BUTTON_ORI_NEXT;
 		static const long ID_BUTTON_ORI_END;
+		static const long ID_PANEL_ORI;
 		static const long ID_PANEL_MATCHED;
 		static const long ID_BUTTON_MTCH_BEGIN;
 		static const long ID_BUTTON_MTCH_PRE;
