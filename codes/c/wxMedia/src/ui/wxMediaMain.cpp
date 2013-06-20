@@ -19,8 +19,6 @@
 
 #include "wxSDLPanel.h"
 #include "wxGstPanel.h"
-#include <SDL.h>
-//#include <wx/event.h>
 
 //helper functions
 enum wxbuildinfoformat {

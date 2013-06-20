@@ -41,7 +41,7 @@ void canny(cv::Mat& img, cv::Mat& out) {
 void showFrames() {
 }
 
-void others() {
+void runCanny() {
     // Now using the VideoProcessor class
 
     // Create instance
@@ -58,7 +58,11 @@ void others() {
     // Start the process
     processor.run();
     cv::waitKey();
+}
 
+void runOther(){
+    // Create instance
+    VideoProcessor processor;
     // Second test
     // Create instance
     //	VideoProcessor processor;

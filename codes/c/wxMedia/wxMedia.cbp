@@ -74,6 +74,8 @@
 		</Unit>
 		<Unit filename="src/ui/gtk+/gtkPlayer.cpp" />
 		<Unit filename="src/ui/sdl/wxSDLSurfacePanel.cpp" />
+		<Unit filename="src/ui/wxCVPanel.cpp" />
+		<Unit filename="src/ui/wxCVPanel.h" />
 		<Unit filename="src/ui/wxGstPanel.cpp" />
 		<Unit filename="src/ui/wxGstPanel.h" />
 		<Unit filename="src/ui/wxMediaApp.cpp" />
@@ -82,6 +84,8 @@
 		<Unit filename="src/ui/wxMediaMain.h" />
 		<Unit filename="src/ui/wxSDLPanel.cpp" />
 		<Unit filename="src/ui/wxSDLPanel.h" />
+		<Unit filename="wxsmith/wxCVPanel.wxs" />
+		<Unit filename="wxsmith/wxGstPanel.wxs" />
 		<Unit filename="wxsmith/wxMediaframe.wxs" />
 		<Extensions>
 			<envvars />
@@ -93,6 +97,7 @@
 				<resources>
 					<wxFrame wxs="wxsmith/wxMediaframe.wxs" src="src/ui/wxMediaMain.cpp" hdr="src/ui/wxMediaMain.h" name="wxMediaFrame" language="CPP" />
 					<wxPanel wxs="wxsmith/wxGstPanel.wxs" src="src/ui/wxGstPanel.cpp" hdr="src/ui/wxGstPanel.h" name="wxGstPanel" language="CPP" />
+					<wxPanel wxs="wxsmith/wxCVPanel.wxs" src="src/ui/wxCVPanel.cpp" hdr="src/ui/wxCVPanel.h" name="wxCVPanel" language="CPP" />
 				</resources>
 			</wxsmith>
 		</Extensions>
