@@ -18,6 +18,8 @@ class wxCVPanel: public wxPanel
 		wxPanel* PanelMatched;
 		wxButton* BtOpenFile;
 		wxButton* BtMtchEnd;
+		wxButton* BtOriPause;
+		wxButton* BtOriPlay;
 		wxButton* BtMtchBeginning;
 		wxButton* BtOriBeginning;
 		wxButton* BtMtchPre;
@@ -35,6 +37,8 @@ class wxCVPanel: public wxPanel
 		static const long ID_PANEL_ORI;
 		static const long ID_BUTTON_ORI_BEGIN;
 		static const long ID_BUTTON_ORI_PRE;
+		static const long ID_BUTTON_ORI_PALY;
+		static const long ID_BUTTON_ORI_PAUSE;
 		static const long ID_BUTTON_ORI_NEXT;
 		static const long ID_BUTTON_ORI_END;
 		static const long ID_PANEL_MATCHED;
@@ -47,6 +51,7 @@ class wxCVPanel: public wxPanel
 	private:
 
 		//(*Handlers(wxCVPanel)
+		void OnBtOpenFileClick(wxCommandEvent& event);
 		//*)
 
 		DECLARE_EVENT_TABLE()

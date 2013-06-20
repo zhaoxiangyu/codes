@@ -12,6 +12,7 @@
 						<object class="wxButton" name="ID_BUTTON_OPEN_FILE" variable="BtOpenFile" member="yes">
 							<label>Open</label>
 							<size>56,29</size>
+							<handler function="OnBtOpenFileClick" entry="EVT_BUTTON" />
 						</object>
 						<flag>wxALL|wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL</flag>
 						<border>5</border>
@@ -43,7 +44,7 @@
 								<object class="wxPanel" name="ID_PANEL_ORI" variable="PanelOri" member="yes">
 									<size>487,118</size>
 								</object>
-								<flag>wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
+								<flag>wxALL|wxEXPAND|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
 								<border>5</border>
 								<option>5</option>
 							</object>
@@ -66,11 +67,21 @@
 										<border>5</border>
 										<option>1</option>
 									</object>
-									<object class="spacer">
+									<object class="sizeritem">
+										<object class="wxButton" name="ID_BUTTON_ORI_PALY" variable="BtOriPlay" member="yes">
+											<label>Play</label>
+										</object>
 										<flag>wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
 										<border>5</border>
 										<option>1</option>
-										<size>85,25</size>
+									</object>
+									<object class="sizeritem">
+										<object class="wxButton" name="ID_BUTTON_ORI_PAUSE" variable="BtOriPause" member="yes">
+											<label>Pause</label>
+										</object>
+										<flag>wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
+										<border>5</border>
+										<option>1</option>
 									</object>
 									<object class="sizeritem">
 										<object class="wxButton" name="ID_BUTTON_ORI_NEXT" variable="BtOriNext" member="yes">
@@ -112,7 +123,7 @@
 								<object class="wxPanel" name="ID_PANEL_MATCHED" variable="PanelMatched" member="yes">
 									<size>487,137</size>
 								</object>
-								<flag>wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
+								<flag>wxALL|wxEXPAND|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
 								<border>5</border>
 								<option>5</option>
 							</object>

@@ -79,8 +79,8 @@
 	<File name="src/ui/wxSDLPanel.h" open="1" top="0" tabpos="17">
 		<Cursor position="654" topLine="12" />
 	</File>
-	<File name="wxsmith/wxCVPanel.wxs" open="1" top="0" tabpos="0">
-		<Cursor position="0" topLine="0" />
+	<File name="wxsmith/wxCVPanel.wxs" open="0" top="0" tabpos="0">
+		<Cursor position="836" topLine="0" />
 	</File>
 	<File name="wxsmith/wxMediaframe.wxs" open="1" top="0" tabpos="0">
 		<Cursor position="0" topLine="0" />

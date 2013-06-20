@@ -10,6 +10,8 @@ const long wxCVPanel::ID_BUTTON_OPEN_FILE = wxNewId();
 const long wxCVPanel::ID_PANEL_ORI = wxNewId();
 const long wxCVPanel::ID_BUTTON_ORI_BEGIN = wxNewId();
 const long wxCVPanel::ID_BUTTON_ORI_PRE = wxNewId();
+const long wxCVPanel::ID_BUTTON_ORI_PALY = wxNewId();
+const long wxCVPanel::ID_BUTTON_ORI_PAUSE = wxNewId();
 const long wxCVPanel::ID_BUTTON_ORI_NEXT = wxNewId();
 const long wxCVPanel::ID_BUTTON_ORI_END = wxNewId();
 const long wxCVPanel::ID_PANEL_MATCHED = wxNewId();
@@ -50,13 +52,16 @@ wxCVPanel::wxCVPanel(wxWindow* parent,wxWindowID id,const wxPoint& pos,const wxS
 	BoxSizerOriHD = new wxBoxSizer(wxHORIZONTAL);
 	BoxSizerLeft->Add(BoxSizerOriHD, 1, wxALL|wxEXPAND|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL, 5);
 	PanelOri = new wxPanel(this, ID_PANEL_ORI, wxDefaultPosition, wxSize(487,118), wxTAB_TRAVERSAL, _T("ID_PANEL_ORI"));
-	BoxSizerLeft->Add(PanelOri, 5, wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL, 5);
+	BoxSizerLeft->Add(PanelOri, 5, wxALL|wxEXPAND|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL, 5);
 	BoxSizerOriFT = new wxBoxSizer(wxHORIZONTAL);
 	BtOriBeginning = new wxButton(this, ID_BUTTON_ORI_BEGIN, _("Beginning"), wxDefaultPosition, wxSize(41,29), 0, wxDefaultValidator, _T("ID_BUTTON_ORI_BEGIN"));
 	BoxSizerOriFT->Add(BtOriBeginning, 1, wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL, 5);
 	BtOriPre = new wxButton(this, ID_BUTTON_ORI_PRE, _("Pre"), wxDefaultPosition, wxDefaultSize, 0, wxDefaultValidator, _T("ID_BUTTON_ORI_PRE"));
 	BoxSizerOriFT->Add(BtOriPre, 1, wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL, 5);
-	BoxSizerOriFT->Add(85,25,1, wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL, 5);
+	BtOriPlay = new wxButton(this, ID_BUTTON_ORI_PALY, _("Play"), wxDefaultPosition, wxDefaultSize, 0, wxDefaultValidator, _T("ID_BUTTON_ORI_PALY"));
+	BoxSizerOriFT->Add(BtOriPlay, 1, wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL, 5);
+	BtOriPause = new wxButton(this, ID_BUTTON_ORI_PAUSE, _("Pause"), wxDefaultPosition, wxDefaultSize, 0, wxDefaultValidator, _T("ID_BUTTON_ORI_PAUSE"));
+	BoxSizerOriFT->Add(BtOriPause, 1, wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL, 5);
 	BtOriNext = new wxButton(this, ID_BUTTON_ORI_NEXT, _("Next"), wxDefaultPosition, wxSize(28,29), 0, wxDefaultValidator, _T("ID_BUTTON_ORI_NEXT"));
 	BoxSizerOriFT->Add(BtOriNext, 1, wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL, 5);
 	BtOriEnd = new wxButton(this, ID_BUTTON_ORI_END, _("End"), wxDefaultPosition, wxDefaultSize, 0, wxDefaultValidator, _T("ID_BUTTON_ORI_END"));
@@ -67,7 +72,7 @@ wxCVPanel::wxCVPanel(wxWindow* parent,wxWindowID id,const wxPoint& pos,const wxS
 	BoxSizerMatchedHD = new wxBoxSizer(wxHORIZONTAL);
 	BoxSizerRight->Add(BoxSizerMatchedHD, 1, wxALL|wxEXPAND|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL, 5);
 	PanelMatched = new wxPanel(this, ID_PANEL_MATCHED, wxDefaultPosition, wxSize(487,137), wxTAB_TRAVERSAL, _T("ID_PANEL_MATCHED"));
-	BoxSizerRight->Add(PanelMatched, 5, wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL, 5);
+	BoxSizerRight->Add(PanelMatched, 5, wxALL|wxEXPAND|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL, 5);
 	FlexGridSizerMatchedFT = new wxFlexGridSizer(1, 5, 0, 0);
 	FlexGridSizerMatchedFT->AddGrowableCol(2);
 	BtMtchBeginning = new wxButton(this, ID_BUTTON_MTCH_BEGIN, _("Beginning"), wxDefaultPosition, wxSize(85,40), 0, wxDefaultValidator, _T("ID_BUTTON_MTCH_BEGIN"));
@@ -84,6 +89,8 @@ wxCVPanel::wxCVPanel(wxWindow* parent,wxWindowID id,const wxPoint& pos,const wxS
 	BoxSizerTop->Add(BoxSizerMain, 8, wxALL|wxEXPAND|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL, 5);
 	SetSizer(BoxSizerTop);
 	BoxSizerTop->SetSizeHints(this);
+
+	Connect(ID_BUTTON_OPEN_FILE,wxEVT_COMMAND_BUTTON_CLICKED,(wxObjectEventFunction)&wxCVPanel::OnBtOpenFileClick);
 	//*)
 }
 
@@ -93,3 +100,7 @@ wxCVPanel::~wxCVPanel()
 	//*)
 }
 
+
+void wxCVPanel::OnBtOpenFileClick(wxCommandEvent& event)
+{
+}
