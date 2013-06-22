@@ -3,9 +3,9 @@
 	<object class="wxFrame" name="wxMediaFrame">
 		<title>Media Gadgets</title>
 		<pos>-1,-1</pos>
-		<size>800,600</size>
+		<size>1200,600</size>
 		<minsize>800,600</minsize>
-		<maxsize>800,600</maxsize>
+		<maxsize>1200,600</maxsize>
 		<object class="wxMenuBar" variable="menuBarMedia" member="no">
 			<object class="wxMenu" variable="MenuFile" member="no">
 				<label>&amp;File</label>

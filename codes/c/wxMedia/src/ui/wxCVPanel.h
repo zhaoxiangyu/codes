@@ -7,6 +7,8 @@
 #include <wx/button.h>
 //*)
 
+#include "../core/opencv/videoProcessor.h"
+
 class wxCVPanel: public wxPanel
 {
 	public:
@@ -52,6 +54,7 @@ class wxCVPanel: public wxPanel
 
 		//(*Handlers(wxCVPanel)
 		void OnBtOpenFileClick(wxCommandEvent& event);
+		void OnPanelOriPaint(wxPaintEvent& event);
 		//*)
 
 		DECLARE_EVENT_TABLE()

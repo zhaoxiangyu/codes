@@ -70,10 +70,10 @@ wxMediaFrame::wxMediaFrame(wxWindow* parent,wxWindowID id) {
     wxMenu* MenuFile;
 
     Create(parent, id, _("Media Gadgets"), wxDefaultPosition, wxDefaultSize, wxDEFAULT_FRAME_STYLE, _T("id"));
-    SetClientSize(wxSize(1200,800));
+    SetClientSize(wxSize(1200,600));
     Move(wxPoint(-1,-1));
-    SetMinSize(wxSize(640,480));
-    SetMaxSize(wxSize(1600,900));
+    SetMinSize(wxSize(800,600));
+    SetMaxSize(wxSize(1200,600));
     menuBarMedia = new wxMenuBar();
     MenuFile = new wxMenu();
     MenuItemOpen = new wxMenuItem(MenuFile, idMenuOpen, _("Open"), _("open video file"), wxITEM_NORMAL);

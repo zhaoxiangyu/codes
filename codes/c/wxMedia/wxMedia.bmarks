@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <BrowseTracker_layout_file>
 	<ActiveTarget name="Debug" />
-	<File name="make/CMakeLists.txt" open="0" top="0" tabpos="1">
-		<Cursor position="255" topLine="0" />
+	<File name="make/CMakeLists.txt" open="1" top="0" tabpos="13">
+		<Cursor position="2005" topLine="76" />
 	</File>
 	<File name="make/wxMedia-Debug.mak" open="0" top="0" tabpos="0">
 		<Cursor position="120" topLine="0" />
 	</File>
-	<File name="make/wxMedia.mak" open="0" top="0" tabpos="6">
+	<File name="make/wxMedia.mak" open="1" top="0" tabpos="5">
 		<Cursor position="758" topLine="0" />
 	</File>
 	<File name="src/core/ffmpeg/sdlPlayer.c" open="1" top="0" tabpos="3">
-		<Cursor position="1639" topLine="44" />
+		<Cursor position="1970" topLine="51" />
 	</File>
 	<File name="src/core/ffmpeg/spawnThread.c" open="0" top="0" tabpos="9">
 		<Cursor position="2343" topLine="56" />
@@ -19,46 +19,72 @@
 	<File name="src/core/ffmpeg/syncVideo.c" open="0" top="0" tabpos="10">
 		<Cursor position="617" topLine="0" />
 	</File>
-	<File name="src/core/ffmpeg/useFfmpeg.c" open="0" top="0" tabpos="11">
+	<File name="src/core/ffmpeg/useFfmpeg.c" open="1" top="0" tabpos="7">
 		<Cursor position="1712" topLine="33" />
 	</File>
 	<File name="src/core/ffmpeg/withAudio.c" open="0" top="0" tabpos="12">
 		<Cursor position="0" topLine="0" />
 	</File>
 	<File name="src/core/gst/gstLoader.cpp" open="1" top="0" tabpos="4">
-		<Cursor position="2945" topLine="73" />
+		<Cursor position="6861" topLine="168" />
 	</File>
-	<File name="src/core/opencv/videoprocessing.cpp" open="1" top="0" tabpos="1">
-		<Cursor position="3169" topLine="70" />
+	<File name="src/core/gst/gstLoader.h" open="0" top="0" tabpos="0">
+		<Cursor position="349" topLine="21" />
 	</File>
-	<File name="src/core/opencv/videoprocessor.h" open="0" top="0" tabpos="14">
-		<Cursor position="12224" topLine="424" />
+	<File name="src/core/opencv/videoProcessor.h" open="1" top="1" tabpos="16">
+		<Cursor position="227" topLine="0" />
+		<BrowseMarks positions="" />
+		<Book_Marks positions="" />
 	</File>
-	<File name="src/core/vlc/vlcPlayer.c" open="0" top="0" tabpos="2">
+	<File name="src/core/opencv/videoprocessing.cpp" open="1" top="0" tabpos="14">
+		<Cursor position="1085" topLine="0" />
+	</File>
+	<File name="src/core/opencv/videoprocessor.h" open="1" top="0" tabpos="8">
+		<Cursor position="1267" topLine="0" />
+	</File>
+	<File name="src/core/vlc/vlcPlayer.c" open="1" top="0" tabpos="2">
 		<Cursor position="1470" topLine="33" />
 	</File>
-	<File name="src/ui/gtk+/gstPlayer.c" open="0" top="0" tabpos="3">
-		<Cursor position="307" topLine="0" />
+	<File name="src/ui/gtk+/gstPlayer.c" open="1" top="0" tabpos="3">
+		<Cursor position="1862" topLine="40" />
 	</File>
-	<File name="src/ui/sdl/wxSDLSurfacePanel.cpp" open="0" top="0" tabpos="15">
+	<File name="src/ui/gtk+/gtkPlayer.cpp" open="1" top="0" tabpos="0">
 		<Cursor position="0" topLine="0" />
 	</File>
-	<File name="src/ui/wxMediaApp.cpp" open="0" top="0" tabpos="1">
+	<File name="src/ui/sdl/wxSDLSurfacePanel.cpp" open="1" top="0" tabpos="9">
+		<Cursor position="0" topLine="0" />
+	</File>
+	<File name="src/ui/wxCVPanel.cpp" open="1" top="0" tabpos="15">
+		<Cursor position="2275" topLine="29" />
+	</File>
+	<File name="src/ui/wxCVPanel.h" open="1" top="0" tabpos="12">
+		<Cursor position="165" topLine="0" />
+	</File>
+	<File name="src/ui/wxGstPanel.cpp" open="1" top="0" tabpos="0">
+		<Cursor position="0" topLine="0" />
+	</File>
+	<File name="src/ui/wxGstPanel.h" open="1" top="0" tabpos="0">
+		<Cursor position="0" topLine="0" />
+	</File>
+	<File name="src/ui/wxMediaApp.cpp" open="1" top="0" tabpos="1">
 		<Cursor position="432" topLine="0" />
 	</File>
-	<File name="src/ui/wxMediaApp.h" open="0" top="0" tabpos="2">
+	<File name="src/ui/wxMediaApp.h" open="1" top="0" tabpos="2">
 		<Cursor position="450" topLine="0" />
 	</File>
-	<File name="src/ui/wxMediaMain.cpp" open="1" top="1" tabpos="2">
-		<Cursor position="3008" topLine="71" />
+	<File name="src/ui/wxMediaMain.cpp" open="1" top="0" tabpos="2">
+		<Cursor position="1532" topLine="48" />
 	</File>
-	<File name="src/ui/wxMediaMain.h" open="0" top="0" tabpos="7">
-		<Cursor position="561" topLine="0" />
+	<File name="src/ui/wxMediaMain.h" open="1" top="0" tabpos="6">
+		<Cursor position="464" topLine="0" />
 	</File>
-	<File name="src/ui/wxSDLPanel.cpp" open="0" top="0" tabpos="16">
-		<Cursor position="864" topLine="13" />
+	<File name="src/ui/wxSDLPanel.cpp" open="1" top="0" tabpos="10">
+		<Cursor position="1780" topLine="38" />
 	</File>
-	<File name="src/ui/wxSDLPanel.h" open="0" top="0" tabpos="17">
-		<Cursor position="654" topLine="12" />
+	<File name="src/ui/wxSDLPanel.h" open="1" top="0" tabpos="11">
+		<Cursor position="299" topLine="0" />
+	</File>
+	<File name="wxsmith/wxCVPanel.wxs" open="0" top="0" tabpos="0">
+		<Cursor position="836" topLine="0" />
 	</File>
 </BrowseTracker_layout_file>
