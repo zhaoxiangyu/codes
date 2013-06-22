@@ -117,7 +117,8 @@ void wxCVPanel::OnBtOpenFileClick(wxCommandEvent& event) {
 	}
 }
 
-static void frameObservor(){
+void wxCVPanel::frameGot(cv:: Mat &frame){
+
 }
 
 void wxCVPanel::OnPanelOriPaint(wxPaintEvent& event){

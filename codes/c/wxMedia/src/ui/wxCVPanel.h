@@ -8,8 +8,9 @@
 //*)
 
 #include "../core/opencv/videoProcessor.h"
+#include "../core/opencv/frameVisitor.h"
 
-class wxCVPanel: public wxPanel
+class wxCVPanel: public wxPanel, public FrameVistor
 {
 	public:
 
@@ -33,6 +34,8 @@ class wxCVPanel: public wxPanel
 		//*)
 
 	protected:
+
+     	void frameGot(cv:: Mat &frame);
 
 		//(*Identifiers(wxCVPanel)
 		static const long ID_BUTTON_OPEN_FILE;
