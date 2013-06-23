@@ -99,6 +99,7 @@ wxCVPanel::wxCVPanel(wxWindow* parent,wxWindowID id,const wxPoint& pos,const wxS
     //*)
 
     cvProcessor = new videoProcessor();
+    cvProcessor->setFrameVisitor(*this);
 }
 
 wxCVPanel::~wxCVPanel() {
@@ -108,27 +109,28 @@ wxCVPanel::~wxCVPanel() {
 
 
 void wxCVPanel::OnBtOpenFileClick(wxCommandEvent& event) {
-	wxString caption = wxT("Choose a Video file");
-	wxString wildcard = wxT("Mpeg files(*.mpeg)|*.mpeg|Avi files(*.avi)|*.avi");
-	wxString defaultDir = wxT("c:\\temp");
-	wxString defaultFilename = wxEmptyString;
-	wxFileDialog dialog(this, caption, defaultDir, defaultFilename, wildcard, wxOPEN);
-	if (dialog.ShowModal() == wxID_OK){
-		wxString path = dialog.GetPath();
-		int filterIndex = dialog.GetFilterIndex();
-		std::string videoPath(path.mb_str());
-		cvProcessor->setInput(videoPath);
-	}
+    wxString caption = wxT("Choose a Video file");
+    wxString wildcard = wxT("Mpeg files(*.mpeg)|*.mpeg|Avi files(*.avi)|*.avi");
+    wxString defaultDir = wxT("/media/sf_ubuntu/projects/ffmpeg-merge/data");
+    wxString defaultFilename = wxEmptyString;
+    wxFileDialog dialog(this, caption, defaultDir, defaultFilename, wildcard, wxOPEN);
+    if (dialog.ShowModal() == wxID_OK) {
+        wxString path = dialog.GetPath();
+        int filterIndex = dialog.GetFilterIndex();
+        std::string videoPath(path.mb_str());
+        cvProcessor->setInput(videoPath);
+    	cvProcessor->run();
+    }
 }
 
-void wxCVPanel::frameGot(unsigned char* frame, int width, int height){
-	frameData = frame;
-	frameWidth = width;
-	frameHeight = height;
-	Refresh(false);
+void wxCVPanel::frameGot(unsigned char* frame, int width, int height) {
+    frameData = frame;
+    frameWidth = width;
+    frameHeight = height;
+    PanelOri->Refresh(false);
 }
 
-void wxCVPanel::OnPanelOriPaint(wxPaintEvent& event){
+void wxCVPanel::OnPanelOriPaint(wxPaintEvent& event) {
     // create a bitmap from our pixel data
     int width = 0, height = 0;
     GetSize(&width, &height);
@@ -138,5 +140,5 @@ void wxCVPanel::OnPanelOriPaint(wxPaintEvent& event){
     wxBitmap bmp(image);
 
     // paint the screen
-    wxBufferedPaintDC dc(this, bmp);
+    wxBufferedPaintDC dc(PanelOri, bmp);
 }
