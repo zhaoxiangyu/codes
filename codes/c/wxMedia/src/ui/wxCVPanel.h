@@ -35,7 +35,7 @@ class wxCVPanel: public wxPanel, public FrameVistor
 
 	protected:
 
-     	void frameGot(cv:: Mat &frame);
+     	void frameGot(unsigned char* frameData, int width, int height);
 
 		//(*Identifiers(wxCVPanel)
 		static const long ID_BUTTON_OPEN_FILE;
@@ -54,6 +54,10 @@ class wxCVPanel: public wxPanel, public FrameVistor
 		//*)
 
 	private:
+		videoProcessor* cvProcessor;
+		unsigned char* frameData;
+		int frameWidth;
+		int frameHeight;
 
 		//(*Handlers(wxCVPanel)
 		void OnBtOpenFileClick(wxCommandEvent& event);

@@ -4,11 +4,17 @@ INCLUDE( FindPkgConfig )
 ##################################################### libs #################################
 
 find_package( wxWidgets COMPONENTS net gl core base REQUIRED )
-INCLUDE( FindSDL )
+#INCLUDE( FindSDL )
+find_package( SDL REQUIRED )
 
 find_package( GTK2 2.8 COMPONENTS gtk )
-pkg_check_modules( GST REQUIRED gstreamer-1.0)
+
+# pkg-config --modversion gstreamer-1.0
+pkg_check_modules( GST REQUIRED gstreamer-1.0>=1.0.6)
 pkg_check_modules( GST_INTF REQUIRED gstreamer-interfaces-0.10)
+
+# find_package(OpenCV REQUIRED )
+pkg_check_modules( OPENCV REQUIRED opencv>=2.3.1)
 
 find_path( AVCODEC_INCLUDE_DIR
     NAMES libavcodec/avcodec.h
@@ -86,7 +92,6 @@ find_library( VLC_LIBRARY
     /opt
 )
 
-# find_package(OpenCV REQUIRED )
 
 ##################################################### wxMedia APP ##########################
 
@@ -122,6 +127,13 @@ IF(GST_INTF_FOUND)
 ELSE(GST_INTF_FOUND)
     MESSAGE("GST_INTF not found")
 ENDIF(GST_INTF_FOUND)
+
+IF(OPENCV_FOUND)
+	INCLUDE_DIRECTORIES(${OPENCV_INCLUDE_DIRS})
+	target_link_libraries(wxMedia ${OPENCV_LIBRARIES})
+ELSE(OPENCV_FOUND)
+    MESSAGE("OPENCV not found")
+ENDIF(OPENCV_FOUND)
 
 ###################################################### testLib APP ##############################
 

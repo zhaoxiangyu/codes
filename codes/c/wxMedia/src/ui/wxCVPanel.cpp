@@ -97,6 +97,8 @@ wxCVPanel::wxCVPanel(wxWindow* parent,wxWindowID id,const wxPoint& pos,const wxS
     Connect(ID_BUTTON_OPEN_FILE,wxEVT_COMMAND_BUTTON_CLICKED,(wxObjectEventFunction)&wxCVPanel::OnBtOpenFileClick);
     PanelOri->Connect(wxEVT_PAINT,(wxObjectEventFunction)&wxCVPanel::OnPanelOriPaint,0,this);
     //*)
+
+    cvProcessor = new videoProcessor();
 }
 
 wxCVPanel::~wxCVPanel() {
@@ -114,11 +116,16 @@ void wxCVPanel::OnBtOpenFileClick(wxCommandEvent& event) {
 	if (dialog.ShowModal() == wxID_OK){
 		wxString path = dialog.GetPath();
 		int filterIndex = dialog.GetFilterIndex();
+		std::string videoPath(path.mb_str());
+		cvProcessor->setInput(videoPath);
 	}
 }
 
-void wxCVPanel::frameGot(cv:: Mat &frame){
-
+void wxCVPanel::frameGot(unsigned char* frame, int width, int height){
+	frameData = frame;
+	frameWidth = width;
+	frameHeight = height;
+	Refresh(false);
 }
 
 void wxCVPanel::OnPanelOriPaint(wxPaintEvent& event){
@@ -127,7 +134,7 @@ void wxCVPanel::OnPanelOriPaint(wxPaintEvent& event){
     GetSize(&width, &height);
     //wxImage image(width, height,
     //                     static_cast<unsigned char *>(NULL), true);
-    wxImage image(width, height, NULL, true);
+    wxImage image(frameWidth, frameHeight, frameData, true);
     wxBitmap bmp(image);
 
     // paint the screen

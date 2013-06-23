@@ -11,6 +11,6 @@ class FrameVistor {
 
 public:
     // processing method
-    virtual void frameGot(cv:: Mat &frame)= 0;
+    virtual void frameGot(unsigned char* frameData, int width, int height)= 0;
 };
 
