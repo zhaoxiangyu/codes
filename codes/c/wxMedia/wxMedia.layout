@@ -31,8 +31,8 @@
 	<File name="src/core/gst/gstLoader.h" open="0" top="0" tabpos="0">
 		<Cursor position="842" topLine="16" />
 	</File>
-	<File name="src/core/opencv/frameVisitor.h" open="1" top="0" tabpos="0">
-		<Cursor position="340" topLine="0" />
+	<File name="src/core/opencv/frameVisitor.h" open="0" top="0" tabpos="0">
+		<Cursor position="45" topLine="0" />
 	</File>
 	<File name="src/core/opencv/videoProcessor.h" open="1" top="1" tabpos="17">
 		<Cursor position="2899" topLine="94" />
@@ -40,8 +40,8 @@
 	<File name="src/core/opencv/videoprocessing.cpp" open="0" top="0" tabpos="15">
 		<Cursor position="1085" topLine="53" />
 	</File>
-	<File name="src/core/opencv/videoprocessor.h" open="1" top="0" tabpos="9">
-		<Cursor position="4250" topLine="120" />
+	<File name="src/core/opencv/videoprocessor.h" open="0" top="0" tabpos="9">
+		<Cursor position="9080" topLine="289" />
 	</File>
 	<File name="src/core/vlc/vlcPlayer.c" open="1" top="0" tabpos="2">
 		<Cursor position="1470" topLine="33" />

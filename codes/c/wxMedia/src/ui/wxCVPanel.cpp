@@ -143,6 +143,7 @@ void wxCVPanel::OnPanelOriPaint(wxPaintEvent& event) {
     wxImage image(frameWidth, frameHeight, frameData, true);
     wxBitmap bmp(image);
 
+	cout << "PanelOri repainted" << endl;
     // paint the screen
     wxBufferedPaintDC dc(PanelOri, bmp);
 }
@@ -158,6 +159,7 @@ void wxCVPanel::OnBtOriPreClick(wxCommandEvent& event)
 
 void wxCVPanel::OnBtOriNextClick(wxCommandEvent& event)
 {
+	cout << "button next clicked" << endl;
    	cvProcessor->nextFrame();
 }
 
