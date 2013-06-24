@@ -61,6 +61,11 @@ private:
     //(*Handlers(wxCVPanel)
     void OnBtOpenFileClick(wxCommandEvent& event);
     void OnPanelOriPaint(wxPaintEvent& event);
+    void OnBtOriPlayClick(wxCommandEvent& event);
+    void OnBtOriPreClick(wxCommandEvent& event);
+    void OnBtOriNextClick(wxCommandEvent& event);
+    void OnBtOriBeginningClick(wxCommandEvent& event);
+    void OnBtOriEndClick(wxCommandEvent& event);
     //*)
 
     DECLARE_EVENT_TABLE()

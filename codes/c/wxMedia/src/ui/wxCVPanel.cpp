@@ -95,6 +95,11 @@ wxCVPanel::wxCVPanel(wxWindow* parent,wxWindowID id,const wxPoint& pos,const wxS
     BoxSizerTop->SetSizeHints(this);
 
     Connect(ID_BUTTON_OPEN_FILE,wxEVT_COMMAND_BUTTON_CLICKED,(wxObjectEventFunction)&wxCVPanel::OnBtOpenFileClick);
+    Connect(ID_BUTTON_ORI_BEGIN,wxEVT_COMMAND_BUTTON_CLICKED,(wxObjectEventFunction)&wxCVPanel::OnBtOriBeginningClick);
+    Connect(ID_BUTTON_ORI_PRE,wxEVT_COMMAND_BUTTON_CLICKED,(wxObjectEventFunction)&wxCVPanel::OnBtOriPreClick);
+    Connect(ID_BUTTON_ORI_PALY,wxEVT_COMMAND_BUTTON_CLICKED,(wxObjectEventFunction)&wxCVPanel::OnBtOriPlayClick);
+    Connect(ID_BUTTON_ORI_NEXT,wxEVT_COMMAND_BUTTON_CLICKED,(wxObjectEventFunction)&wxCVPanel::OnBtOriNextClick);
+    Connect(ID_BUTTON_ORI_END,wxEVT_COMMAND_BUTTON_CLICKED,(wxObjectEventFunction)&wxCVPanel::OnBtOriEndClick);
     PanelOri->Connect(wxEVT_PAINT,(wxObjectEventFunction)&wxCVPanel::OnPanelOriPaint,0,this);
     //*)
 
@@ -119,7 +124,6 @@ void wxCVPanel::OnBtOpenFileClick(wxCommandEvent& event) {
         int filterIndex = dialog.GetFilterIndex();
         std::string videoPath(path.mb_str());
         cvProcessor->setInput(videoPath);
-    	cvProcessor->run();
     }
 }
 
@@ -141,4 +145,26 @@ void wxCVPanel::OnPanelOriPaint(wxPaintEvent& event) {
 
     // paint the screen
     wxBufferedPaintDC dc(PanelOri, bmp);
+}
+
+void wxCVPanel::OnBtOriPlayClick(wxCommandEvent& event){
+   	cvProcessor->run();
+}
+
+void wxCVPanel::OnBtOriPreClick(wxCommandEvent& event)
+{
+   	cvProcessor->prevFrame();
+}
+
+void wxCVPanel::OnBtOriNextClick(wxCommandEvent& event)
+{
+   	cvProcessor->nextFrame();
+}
+
+void wxCVPanel::OnBtOriBeginningClick(wxCommandEvent& event){
+	cvProcessor->beginning();
+}
+
+void wxCVPanel::OnBtOriEndClick(wxCommandEvent& event){
+	cvProcessor->end();
 }

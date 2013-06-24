@@ -37,6 +37,7 @@
 										<object class="wxButton" name="ID_BUTTON_ORI_BEGIN" variable="BtOriBeginning" member="yes">
 											<label>Beginning</label>
 											<size>41,29</size>
+											<handler function="OnBtOriBeginningClick" entry="EVT_BUTTON" />
 										</object>
 										<flag>wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
 										<border>5</border>
@@ -45,6 +46,7 @@
 									<object class="sizeritem">
 										<object class="wxButton" name="ID_BUTTON_ORI_PRE" variable="BtOriPre" member="yes">
 											<label>Pre</label>
+											<handler function="OnBtOriPreClick" entry="EVT_BUTTON" />
 										</object>
 										<flag>wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
 										<border>5</border>
@@ -53,6 +55,7 @@
 									<object class="sizeritem">
 										<object class="wxButton" name="ID_BUTTON_ORI_PALY" variable="BtOriPlay" member="yes">
 											<label>Play</label>
+											<handler function="OnBtOriPlayClick" entry="EVT_BUTTON" />
 										</object>
 										<flag>wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
 										<border>5</border>
@@ -70,6 +73,7 @@
 										<object class="wxButton" name="ID_BUTTON_ORI_NEXT" variable="BtOriNext" member="yes">
 											<label>Next</label>
 											<size>28,29</size>
+											<handler function="OnBtOriNextClick" entry="EVT_BUTTON" />
 										</object>
 										<flag>wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
 										<border>5</border>
@@ -78,6 +82,7 @@
 									<object class="sizeritem">
 										<object class="wxButton" name="ID_BUTTON_ORI_END" variable="BtOriEnd" member="yes">
 											<label>End</label>
+											<handler function="OnBtOriEndClick" entry="EVT_BUTTON" />
 										</object>
 										<flag>wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
 										<border>5</border>
