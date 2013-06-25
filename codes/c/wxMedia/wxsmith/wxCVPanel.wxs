@@ -186,6 +186,29 @@
 				<flag>wxEXPAND|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
 				<border>5</border>
 			</object>
+			<object class="sizeritem">
+				<object class="wxNotebook" name="ID_NOTEBOOK_STATUS" variable="NotebookStatus" member="yes">
+					<object class="notebookpage">
+						<object class="wxListBox" name="ID_LISTBOX_LOG" variable="ListBoxLog" member="yes">
+							<default>-1</default>
+							<pos>-44,34</pos>
+						</object>
+						<label>log</label>
+						<selected>1</selected>
+					</object>
+					<object class="notebookpage">
+						<object class="wxTextCtrl" name="ID_TEXTCTRL_MESSAGE" variable="TextCtrlMessage" member="yes">
+							<value>Text</value>
+							<pos>127,39</pos>
+							<style>wxTE_MULTILINE</style>
+						</object>
+						<label>message</label>
+					</object>
+				</object>
+				<flag>wxALL|wxEXPAND|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
+				<border>5</border>
+				<option>1</option>
+			</object>
 		</object>
 	</object>
 </wxsmith>

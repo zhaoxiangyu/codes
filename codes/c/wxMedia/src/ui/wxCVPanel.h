@@ -2,7 +2,10 @@
 #define WXCVPANEL_H
 
 //(*Headers(wxCVPanel)
+#include <wx/notebook.h>
 #include <wx/sizer.h>
+#include <wx/textctrl.h>
+#include <wx/listbox.h>
 #include <wx/panel.h>
 #include <wx/button.h>
 //*)
@@ -23,10 +26,13 @@ public:
     wxButton* BtOriPause;
     wxButton* BtOriPlay;
     wxButton* BtMtchBeginning;
+    wxNotebook* NotebookStatus;
     wxButton* BtOriBeginning;
     wxButton* BtMtchPre;
+    wxListBox* ListBoxLog;
     wxButton* BtOriEnd;
     wxPanel* PanelOri;
+    wxTextCtrl* TextCtrlMessage;
     wxButton* BtMtchNext;
     wxButton* BtOriPre;
     wxButton* BtOriNext;
@@ -50,6 +56,9 @@ protected:
     static const long ID_BUTTON_MTCH_PRE;
     static const long ID_BUTTON_MTCH_NEXT;
     static const long ID_BUTTON_MTCH_END;
+    static const long ID_LISTBOX_LOG;
+    static const long ID_TEXTCTRL_MESSAGE;
+    static const long ID_NOTEBOOK_STATUS;
     //*)
 
 private:

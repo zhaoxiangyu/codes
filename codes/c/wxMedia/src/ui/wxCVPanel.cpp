@@ -24,6 +24,9 @@ const long wxCVPanel::ID_BUTTON_MTCH_BEGIN = wxNewId();
 const long wxCVPanel::ID_BUTTON_MTCH_PRE = wxNewId();
 const long wxCVPanel::ID_BUTTON_MTCH_NEXT = wxNewId();
 const long wxCVPanel::ID_BUTTON_MTCH_END = wxNewId();
+const long wxCVPanel::ID_LISTBOX_LOG = wxNewId();
+const long wxCVPanel::ID_TEXTCTRL_MESSAGE = wxNewId();
+const long wxCVPanel::ID_NOTEBOOK_STATUS = wxNewId();
 //*)
 
 BEGIN_EVENT_TABLE(wxCVPanel,wxPanel)
@@ -90,6 +93,12 @@ wxCVPanel::wxCVPanel(wxWindow* parent,wxWindowID id,const wxPoint& pos,const wxS
     BoxSizerRight->Add(FlexGridSizerMatchedFT, 0, wxTOP|wxLEFT|wxRIGHT|wxEXPAND|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL, 5);
     BoxSizerMain->Add(BoxSizerRight, 0, wxLEFT|wxRIGHT|wxEXPAND|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL, 5);
     BoxSizerTop->Add(BoxSizerMain, 0, wxEXPAND|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL, 5);
+    NotebookStatus = new wxNotebook(this, ID_NOTEBOOK_STATUS, wxDefaultPosition, wxDefaultSize, 0, _T("ID_NOTEBOOK_STATUS"));
+    ListBoxLog = new wxListBox(NotebookStatus, ID_LISTBOX_LOG, wxPoint(-44,34), wxDefaultSize, 0, 0, 0, wxDefaultValidator, _T("ID_LISTBOX_LOG"));
+    TextCtrlMessage = new wxTextCtrl(NotebookStatus, ID_TEXTCTRL_MESSAGE, _("Text"), wxPoint(127,39), wxDefaultSize, wxTE_MULTILINE, wxDefaultValidator, _T("ID_TEXTCTRL_MESSAGE"));
+    NotebookStatus->AddPage(ListBoxLog, _("log"), true);
+    NotebookStatus->AddPage(TextCtrlMessage, _("message"), false);
+    BoxSizerTop->Add(NotebookStatus, 1, wxALL|wxEXPAND|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL, 5);
     SetSizer(BoxSizerTop);
     BoxSizerTop->Fit(this);
     BoxSizerTop->SetSizeHints(this);
