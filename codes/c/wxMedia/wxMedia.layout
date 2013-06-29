@@ -28,6 +28,9 @@
 	<File name="src/core/ffmpeg/withAudio.c" open="0" top="0" tabpos="12">
 		<Cursor position="0" topLine="0" />
 	</File>
+	<File name="src/core/frameVisitor.h" open="0" top="0" tabpos="0">
+		<Cursor position="316" topLine="0" />
+	</File>
 	<File name="src/core/gst/gstLoader.cpp" open="0" top="0" tabpos="5">
 		<Cursor position="5012" topLine="121" />
 	</File>
@@ -58,8 +61,8 @@
 	<File name="src/ui/wxCVPanel.cpp" open="0" top="0" tabpos="16">
 		<Cursor position="1339" topLine="12" />
 	</File>
-	<File name="src/ui/wxCVPanel.h" open="1" top="0" tabpos="13">
-		<Cursor position="256" topLine="0" />
+	<File name="src/ui/wxCVPanel.h" open="0" top="0" tabpos="13">
+		<Cursor position="1883" topLine="50" />
 	</File>
 	<File name="src/ui/wxGstPanel.h" open="0" top="0" tabpos="1">
 		<Cursor position="0" topLine="0" />

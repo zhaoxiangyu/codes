@@ -1,6 +1,10 @@
 #ifndef FFMPGVIDEOPROCESSOR_H
 #define FFMPGVIDEOPROCESSOR_H
 
+#ifndef UINT64_C
+	#define UINT64_C(value) __CONCAT(value,ULL)
+#endif
+
 #include <libavcodec/avcodec.h>
 #include <libavformat/avformat.h>
 #include <libswscale/swscale.h>
@@ -18,7 +22,7 @@
 
 using namespace std;
 
-class FfmpgVideoProcessor {
+class videoProcessor {
 
 private:
 
@@ -39,41 +43,42 @@ private:
     // output filename
     string outputFile;
 
-	AVFormatContext *pFormatCtx = NULL;
-	AVCodecContext  *pCodecCtx = NULL;
+	AVFormatContext *pFormatCtx;
+	AVCodecContext  *pCodecCtx;
 	AVPacket        packet;
-	AVFrame         *pFrame = NULL;
-	AVFrame         *pFrameRGB = NULL;
-	uint8_t         *buffer = NULL;
+	AVFrame         *pFrame;
+	AVFrame         *pFrameRGB;
+	uint8_t         *buffer;
 	int             videoStream;
-	struct SwsContext	*sws_ctx = NULL;
+	struct SwsContext	*sws_ctx;
+	int frameFinished;
 
     // to get the next frame
     // could be: video file; camera; vector of images
     bool readNextFrame(cv::Mat& frame) {
-
-        return capture.read(frame);
+        //TODO HELONG
+        return true;
 
     }
 
     // to write the output frame
     // could be: video file or images
     void writeNextFrame(cv::Mat& frame) {
-
-        writer.write(frame);
+		//TOOD HELONG
+        //writer.write(frame);
     }
 
 public:
 
     // Constructor setting the default values
-    FfmpgVideoProcessor() : delay(-1),
+    videoProcessor() : delay(-1),
         fnumber(0), stop(false), frameToStop(-1),
         process(0), frameVisitor(0) {
 		// Register all formats and codecs
 		av_register_all();
     }
 
-    ~FfmpgVideoProcessor() {
+    ~videoProcessor() {
         //dtor
     }
 
@@ -299,7 +304,7 @@ public:
 				}
 
 				if(frameVisitor){
-					frameVisitor->frameGot(pFrameRGB.data, pCodecCtx->width, pCodecCtx->height);
+					frameVisitor->frameGot(pFrameRGB->data, pCodecCtx->width, pCodecCtx->height);
 				}
 
 				return true;
@@ -341,7 +346,6 @@ public:
     // to grab (and process) the frames of the sequence
     void run() {
 
-		int frameFinished;
 		while(av_read_frame(pFormatCtx, &packet)>=0) {
 			// Is this a packet from the video stream?
 			if(packet.stream_index==videoStream) {
@@ -365,7 +369,7 @@ public:
 				}
 
 				if(frameVisitor){
-					frameVisitor->frameGot(pFrameRGB.data, pCodecCtx->width, pCodecCtx->height);
+					frameVisitor->frameGot(pFrameRGB->data, pCodecCtx->width, pCodecCtx->height);
 				}
 
 				fnumber++;
