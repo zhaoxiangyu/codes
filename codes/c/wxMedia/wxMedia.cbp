@@ -59,12 +59,13 @@
 		<Unit filename="src/core/ffmpeg/useFfmpeg.c">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="src/core/ffmpeg/videoProcessor.h" />
 		<Unit filename="src/core/ffmpeg/withAudio.c">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="src/core/frameVisitor.h" />
 		<Unit filename="src/core/gst/gstLoader.cpp" />
 		<Unit filename="src/core/gst/gstLoader.h" />
-		<Unit filename="src/core/opencv/frameVisitor.h" />
 		<Unit filename="src/core/opencv/videoProcessor.h" />
 		<Unit filename="src/core/opencv/videoprocessing.cpp" />
 		<Unit filename="src/core/opencv/videoprocessor.h" />

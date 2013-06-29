@@ -10,8 +10,9 @@
 #include <wx/button.h>
 //*)
 
-#include "../core/opencv/videoProcessor.h"
-#include "../core/opencv/frameVisitor.h"
+//#include "../core/opencv/videoProcessor.h"
+#include "../core/ffmpeg/videoProcessor.h"
+#include "../core/frameVisitor.h"
 
 class wxCVPanel: public wxPanel, public FrameVisitor {
 public:

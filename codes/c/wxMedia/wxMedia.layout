@@ -10,8 +10,8 @@
 	<File name="make/wxMedia.mak" open="0" top="0" tabpos="6">
 		<Cursor position="57" topLine="0" />
 	</File>
-	<File name="src/core/ffmpeg/sdlPlayer.c" open="1" top="0" tabpos="3">
-		<Cursor position="1970" topLine="51" />
+	<File name="src/core/ffmpeg/sdlPlayer.c" open="0" top="0" tabpos="3">
+		<Cursor position="1970" topLine="100" />
 	</File>
 	<File name="src/core/ffmpeg/spawnThread.c" open="0" top="0" tabpos="9">
 		<Cursor position="2343" topLine="56" />
@@ -19,8 +19,11 @@
 	<File name="src/core/ffmpeg/syncVideo.c" open="0" top="0" tabpos="10">
 		<Cursor position="617" topLine="0" />
 	</File>
-	<File name="src/core/ffmpeg/useFfmpeg.c" open="0" top="0" tabpos="8">
+	<File name="src/core/ffmpeg/useFfmpeg.c" open="1" top="0" tabpos="8">
 		<Cursor position="1712" topLine="33" />
+	</File>
+	<File name="src/core/ffmpeg/videoProcessor.h" open="1" top="1" tabpos="0">
+		<Cursor position="0" topLine="0" />
 	</File>
 	<File name="src/core/ffmpeg/withAudio.c" open="0" top="0" tabpos="12">
 		<Cursor position="0" topLine="0" />
@@ -31,11 +34,8 @@
 	<File name="src/core/gst/gstLoader.h" open="0" top="0" tabpos="0">
 		<Cursor position="842" topLine="16" />
 	</File>
-	<File name="src/core/opencv/frameVisitor.h" open="0" top="0" tabpos="0">
-		<Cursor position="45" topLine="0" />
-	</File>
-	<File name="src/core/opencv/videoProcessor.h" open="1" top="0" tabpos="17">
-		<Cursor position="2899" topLine="94" />
+	<File name="src/core/opencv/videoProcessor.h" open="0" top="0" tabpos="17">
+		<Cursor position="0" topLine="0" />
 	</File>
 	<File name="src/core/opencv/videoprocessing.cpp" open="0" top="0" tabpos="15">
 		<Cursor position="1085" topLine="53" />
@@ -55,8 +55,8 @@
 	<File name="src/ui/sdl/wxSDLSurfacePanel.cpp" open="0" top="0" tabpos="10">
 		<Cursor position="0" topLine="0" />
 	</File>
-	<File name="src/ui/wxCVPanel.cpp" open="1" top="0" tabpos="16">
-		<Cursor position="2275" topLine="29" />
+	<File name="src/ui/wxCVPanel.cpp" open="0" top="0" tabpos="16">
+		<Cursor position="1339" topLine="12" />
 	</File>
 	<File name="src/ui/wxCVPanel.h" open="1" top="0" tabpos="13">
 		<Cursor position="256" topLine="0" />
@@ -64,7 +64,7 @@
 	<File name="src/ui/wxGstPanel.h" open="0" top="0" tabpos="1">
 		<Cursor position="0" topLine="0" />
 	</File>
-	<File name="src/ui/wxMediaApp.cpp" open="1" top="0" tabpos="2">
+	<File name="src/ui/wxMediaApp.cpp" open="0" top="0" tabpos="2">
 		<Cursor position="432" topLine="0" />
 	</File>
 	<File name="src/ui/wxMediaApp.h" open="0" top="0" tabpos="2">
