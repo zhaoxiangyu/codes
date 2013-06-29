@@ -22,10 +22,10 @@
 	<File name="src/core/ffmpeg/useFfmpeg.c" open="0" top="0" tabpos="8">
 		<Cursor position="238" topLine="21" />
 	</File>
-	<File name="src/core/ffmpeg/videoProcessor.cpp" open="1" top="0" tabpos="0">
+	<File name="src/core/ffmpeg/videoProcessor.cpp" open="1" top="1" tabpos="0">
 		<Cursor position="0" topLine="0" />
 	</File>
-	<File name="src/core/ffmpeg/videoProcessor.h" open="1" top="1" tabpos="0">
+	<File name="src/core/ffmpeg/videoProcessor.h" open="1" top="0" tabpos="0">
 		<Cursor position="0" topLine="0" />
 	</File>
 	<File name="src/core/ffmpeg/withAudio.c" open="0" top="0" tabpos="12">

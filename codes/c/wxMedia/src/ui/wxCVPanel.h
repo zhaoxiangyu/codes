@@ -81,4 +81,17 @@ private:
     DECLARE_EVENT_TABLE()
 };
 
+class VideoPlayer: public wxThread {
+
+public:
+    VideoPlayer(videoProcessor* processor){
+    	cvProcessor = processor;
+    }
+    virtual void *Entry(){
+		cvProcessor->run();
+    };
+
+private:
+	videoProcessor* cvProcessor;
+};
 #endif

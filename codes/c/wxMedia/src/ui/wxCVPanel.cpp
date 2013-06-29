@@ -152,30 +152,33 @@ void wxCVPanel::OnPanelOriPaint(wxPaintEvent& event) {
     wxImage image(frameWidth, frameHeight, frameData, true);
     wxBitmap bmp(image);
 
-	cout << "PanelOri repainted" << endl;
+    cout << "PanelOri repainted" << endl;
     // paint the screen
     wxBufferedPaintDC dc(PanelOri, bmp);
 }
 
-void wxCVPanel::OnBtOriPlayClick(wxCommandEvent& event){
-   	cvProcessor->run();
+void wxCVPanel::OnBtOriPlayClick(wxCommandEvent& event) {
+    VideoPlayer *thread = new VideoPlayer(cvProcessor);
+    if ( thread->Create() != wxTHREAD_NO_ERROR ) {
+        cout << "Can’t create thread!" << endl;
+    } else {
+        thread->Run();
+    }
 }
 
-void wxCVPanel::OnBtOriPreClick(wxCommandEvent& event)
-{
-   	cvProcessor->prevFrame();
+void wxCVPanel::OnBtOriPreClick(wxCommandEvent& event) {
+    cvProcessor->prevFrame();
 }
 
-void wxCVPanel::OnBtOriNextClick(wxCommandEvent& event)
-{
-	cout << "button next clicked" << endl;
-   	cvProcessor->nextFrame();
+void wxCVPanel::OnBtOriNextClick(wxCommandEvent& event) {
+    cout << "button next clicked" << endl;
+    cvProcessor->nextFrame();
 }
 
-void wxCVPanel::OnBtOriBeginningClick(wxCommandEvent& event){
-	cvProcessor->beginning();
+void wxCVPanel::OnBtOriBeginningClick(wxCommandEvent& event) {
+    cvProcessor->beginning();
 }
 
-void wxCVPanel::OnBtOriEndClick(wxCommandEvent& event){
-	cvProcessor->end();
+void wxCVPanel::OnBtOriEndClick(wxCommandEvent& event) {
+    cvProcessor->end();
 }

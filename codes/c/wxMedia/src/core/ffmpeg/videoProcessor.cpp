@@ -304,6 +304,7 @@ void videoProcessor::run() {
                 frameVisitor->frameGot(*pFrameRGB->data, pCodecCtx->width, pCodecCtx->height);
             }
 
+			usleep(1000*40);
             fnumber++;
         }
 
