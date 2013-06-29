@@ -304,7 +304,7 @@ public:
 				}
 
 				if(frameVisitor){
-					frameVisitor->frameGot(pFrameRGB->data, pCodecCtx->width, pCodecCtx->height);
+					frameVisitor->frameGot(*pFrameRGB->data, pCodecCtx->width, pCodecCtx->height);
 				}
 
 				return true;
@@ -369,7 +369,7 @@ public:
 				}
 
 				if(frameVisitor){
-					frameVisitor->frameGot(pFrameRGB->data, pCodecCtx->width, pCodecCtx->height);
+					frameVisitor->frameGot(*pFrameRGB->data, pCodecCtx->width, pCodecCtx->height);
 				}
 
 				fnumber++;

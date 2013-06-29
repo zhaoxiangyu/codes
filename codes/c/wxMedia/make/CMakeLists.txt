@@ -135,6 +135,16 @@ ELSE(OPENCV_FOUND)
     MESSAGE("OPENCV not found")
 ENDIF(OPENCV_FOUND)
 
+include_directories( ${AVCODEC_INCLUDE_DIR} )
+MESSAGE("wxMedia: ${AVCODEC_LIBRARY}")
+target_link_libraries(wxMedia ${AVCODEC_LIBRARY})
+
+include_directories( ${AVFORMAT_INCLUDE_DIR} )
+target_link_libraries(wxMedia ${AVFORMAT_LIBRARY})
+
+include_directories( ${SWSCALE_INCLUDE_DIR} )
+target_link_libraries(wxMedia ${SWSCALE_LIBRARY})
+
 ###################################################### testLib APP ##############################
 
 #set(FFM_SRCS ../src/core/ffmpeg/useFfmpeg.c)
@@ -153,7 +163,7 @@ ELSE(SDL_FOUND)
 ENDIF(SDL_FOUND)
 
 include_directories( ${AVCODEC_INCLUDE_DIR} )
-MESSAGE("testLib: ${AVCODEC_INCLUDE_DIR}")
+#MESSAGE("testLib: ${AVCODEC_INCLUDE_DIR}")
 target_link_libraries(testLib ${AVCODEC_LIBRARY})
 
 include_directories( ${AVFORMAT_INCLUDE_DIR} )
