@@ -1,3 +1,10 @@
+#ifndef UINT64_C
+	#define UINT64_C(value) __CONCAT(value,ULL)
+#endif
+extern "C"
+{
+#include <libavutil/mathematics.h>
+}
 #include "videoProcessor.h"
 
 using namespace std;
@@ -163,6 +170,9 @@ double videoProcessor::getPositionMS() {
 
 // return the frame rate
 double videoProcessor::getFrameRate() {
+    if(videoStream>=0) {
+		return av_q2d(pFormatCtx->streams[videoStream]->time_base);
+    }
     return 0.0;
 }
 
@@ -179,7 +189,18 @@ int videoProcessor::getCodec(char codec[4]) {
 
 // go to this frame number
 bool videoProcessor::setFrameNumber(long pos) {
-    return true;
+    int seekFlags = pos < fnumber ? AVSEEK_FLAG_BACKWARD : 0;
+    fnumber = pos;
+    if(videoStream == -1){
+        cerr << "no video stream found." << endl;
+    }
+    if(av_seek_frame(pFormatCtx, videoStream, fnumber, seekFlags) < 0) {
+        fprintf(stderr, "%s: error while seeking\n",
+                pFormatCtx->filename);
+        return false;
+    } else {
+        return true;
+    }
 }
 
 bool videoProcessor::nextFrame() {
@@ -247,8 +268,19 @@ bool videoProcessor::showFrame() {
 
 // go to this position
 bool videoProcessor::setPositionMS(double pos) {
-
-    return true;
+    int64_t seek_target = (int64_t)(pos * AV_TIME_BASE);
+    int seekFlags = seek_target < fnumber ? AVSEEK_FLAG_BACKWARD : 0;
+    if(videoStream>=0) {
+        seek_target= av_rescale_q(seek_target, AV_TIME_BASE_Q,
+                                  pFormatCtx->streams[videoStream]->time_base);
+    }
+    if(av_seek_frame(pFormatCtx, videoStream, seek_target, seekFlags) < 0) {
+        fprintf(stderr, "%s: error while seeking\n",
+                pFormatCtx->filename);
+        return false;
+    } else {
+        return true;
+    }
 }
 
 // go to this position expressed in fraction of total film length
@@ -304,7 +336,7 @@ void videoProcessor::run() {
                 frameVisitor->frameGot(*pFrameRGB->data, pCodecCtx->width, pCodecCtx->height);
             }
 
-			usleep(1000*40);
+            usleep(1000*1000/getFrameRate());
             fnumber++;
         }
 
