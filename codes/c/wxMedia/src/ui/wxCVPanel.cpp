@@ -124,7 +124,7 @@ wxCVPanel::~wxCVPanel() {
 
 void wxCVPanel::OnBtOpenFileClick(wxCommandEvent& event) {
     wxString caption = wxT("Choose a Video file");
-    wxString wildcard = wxT("Mpeg files(*.mpeg)|*.mpeg|Avi files(*.avi)|*.avi");
+    wxString wildcard = wxT("Avi files(*.avi)|*.avi|Mpeg files(*.mpeg)|*.mpeg");
     wxString defaultDir = wxT("/media/sf_ubuntu/projects/ffmpeg-merge/data");
     wxString defaultFilename = wxEmptyString;
     wxFileDialog dialog(this, caption, defaultDir, defaultFilename, wildcard, wxOPEN);
@@ -152,7 +152,7 @@ void wxCVPanel::OnPanelOriPaint(wxPaintEvent& event) {
     wxImage image(frameWidth, frameHeight, frameData, true);
     wxBitmap bmp(image);
 
-    cout << "PanelOri repainted" << endl;
+    //cout << "PanelOri repainted" << endl;
     // paint the screen
     wxBufferedPaintDC dc(PanelOri, bmp);
 }

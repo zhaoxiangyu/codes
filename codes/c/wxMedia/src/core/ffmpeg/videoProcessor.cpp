@@ -64,6 +64,9 @@ bool videoProcessor::setInput(std::string filename) {
     if(avcodec_open2(pCodecCtx, pCodec, &optionsDict)<0)
         return false; // Could not open codec
 
+    cout << "framecount:" << getTotalFrameCount() << endl;
+    cout << "framerate:" << getFrameRate() << endl;
+
     // Allocate video frame
     pFrame=avcodec_alloc_frame();
 
@@ -171,13 +174,17 @@ double videoProcessor::getPositionMS() {
 // return the frame rate
 double videoProcessor::getFrameRate() {
     if(videoStream>=0) {
-		return av_q2d(pFormatCtx->streams[videoStream]->time_base);
+		return av_q2d( pFormatCtx->streams[videoStream]->r_frame_rate );
+		//return 1.0/av_q2d( pFormatCtx->streams[videoStream]->time_base );
     }
     return 0.0;
 }
 
 // return the number of frames in video
 long videoProcessor::getTotalFrameCount() {
+    if(videoStream>=0) {
+		return pFormatCtx->streams[videoStream]->nb_frames;
+    }
     return 0;
 }
 
@@ -204,7 +211,14 @@ bool videoProcessor::setFrameNumber(long pos) {
 }
 
 bool videoProcessor::nextFrame() {
-    return true;
+    if(fnumber + 1 < getTotalFrameCount()) {
+        if(setPositionMS(fnumber + 1)) {
+        	fnumber ++ ;
+            showFrame();
+        }
+        return true;
+    } else
+        return false;
 }
 
 bool videoProcessor::beginning() {
@@ -267,8 +281,8 @@ bool videoProcessor::showFrame() {
 }
 
 // go to this position
-bool videoProcessor::setPositionMS(double pos) {
-    int64_t seek_target = (int64_t)(pos * AV_TIME_BASE);
+bool videoProcessor::setPositionMS(double seconds) {
+    int64_t seek_target = (int64_t)(seconds * AV_TIME_BASE);
     int seekFlags = seek_target < fnumber ? AVSEEK_FLAG_BACKWARD : 0;
     if(videoStream>=0) {
         seek_target= av_rescale_q(seek_target, AV_TIME_BASE_Q,
@@ -309,7 +323,6 @@ bool videoProcessor::isOpened() {
 
 // to grab (and process) the frames of the sequence
 void videoProcessor::run() {
-
     while(av_read_frame(pFormatCtx, &packet)>=0) {
         // Is this a packet from the video stream?
         if(packet.stream_index==videoStream) {
@@ -337,6 +350,7 @@ void videoProcessor::run() {
             }
 
             usleep(1000*1000/getFrameRate());
+            cout << "fnumber:" << fnumber << endl;
             fnumber++;
         }
 

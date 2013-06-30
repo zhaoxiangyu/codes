@@ -147,11 +147,11 @@ target_link_libraries(wxMedia ${SWSCALE_LIBRARY})
 
 ###################################################### testLib APP ##############################
 
-#set(FFM_SRCS ../src/core/ffmpeg/useFfmpeg.c)
-#set(FFM_SRCS ../src/core/ffmpeg/sdlPlayer.c)
-#set(FFM_SRCS ../src/core/ffmpeg/withAudio.c)
-#set(FFM_SRCS ../src/core/ffmpeg/spawnThread.c)
-set(FFM_SRCS ../src/core/ffmpeg/syncVideo.c)
+#set(FFM_SRCS ../src/core/ffmpeg/1-useFfmpeg.c)
+#set(FFM_SRCS ../src/core/ffmpeg/2-sdlPlayer.c)
+#set(FFM_SRCS ../src/core/ffmpeg/3-withAudio.c)
+#set(FFM_SRCS ../src/core/ffmpeg/4-spawnThread.c)
+set(FFM_SRCS ../src/core/ffmpeg/5-syncVideo.c)
 #set(FFM_SRCS ../src/core/vlc/vlcPlayer.c)
 add_executable(testLib ${FFM_SRCS})
 

@@ -47,23 +47,23 @@
 		<Unit filename="make/Findavcodec.cmake" />
 		<Unit filename="make/wxMedia-Debug.mak" />
 		<Unit filename="make/wxMedia.mak" />
-		<Unit filename="src/core/ffmpeg/sdlPlayer.c">
+		<Unit filename="src/core/ffmpeg/1-useFfmpeg.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="src/core/ffmpeg/spawnThread.c">
+		<Unit filename="src/core/ffmpeg/2-sdlPlayer.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="src/core/ffmpeg/syncVideo.c">
+		<Unit filename="src/core/ffmpeg/3-withAudio.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="src/core/ffmpeg/useFfmpeg.c">
+		<Unit filename="src/core/ffmpeg/4-spawnThread.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/core/ffmpeg/5-syncVideo.c">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="src/core/ffmpeg/videoProcessor.cpp" />
 		<Unit filename="src/core/ffmpeg/videoProcessor.h" />
-		<Unit filename="src/core/ffmpeg/withAudio.c">
-			<Option compilerVar="CC" />
-		</Unit>
 		<Unit filename="src/core/frameVisitor.h" />
 		<Unit filename="src/core/gst/gstLoader.cpp" />
 		<Unit filename="src/core/gst/gstLoader.h" />
