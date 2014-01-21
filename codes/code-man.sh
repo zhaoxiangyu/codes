@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# github user account: blueocci
+
 help(){
 	echo running help ...
 }
@@ -20,6 +22,8 @@ gui)
 	;;
 pub)
 	echo publish to github ...
+	git add .
+	git commit -m "publish on `date --rfc-3339=seconds`"
 	git push
 	;;
 *)
