@@ -2,8 +2,8 @@
 <project name="smartqApp" basedir="..">
 	<property environment="env"/>
 	
-	<import file="${basedir}/../AntTask/ant/common-tools.xml" />
-	<import file="${basedir}/../AntTask/ant/use-android-tools.xml" />
+	<import file="${basedir}/../../buildsupport/AntTask/ant/common-tools.xml" />
+	<import file="${basedir}/../../buildsupport/AntTask/ant/use-android-tools.xml" />
 
 	<property file="${basedir}/ant.properties"/>
 

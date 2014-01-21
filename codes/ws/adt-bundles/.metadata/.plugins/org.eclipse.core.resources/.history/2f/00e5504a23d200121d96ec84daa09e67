@@ -1,5 +1,0 @@
-package org.sharp.android.comp;
-
-public class BootBroadcastReceiver {
-
-}

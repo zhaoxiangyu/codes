@@ -12,8 +12,8 @@
 
 	<property name="ivy-repo.dir" value="${VMSHARE.DIR}/java/ivy-repo"/>
 	<property name="download.dir" value="${VMSHARE.DIR}/tools/download"/>
-
 	<property name="java-tools.dir" value="${VMSHARE.DIR}/java/tools"/>
+	
 	<property name="ivy.dir" value="${JAVA-TOOLS.DIR}/apache-ivy-2.2.0-bin-with-deps/apache-ivy-2.2.0"/>
 	<property name="ant-bin.dir" value="${JAVA-TOOLS.DIR}/ant/apache-ant-1.8.2"/>
 	<property name="ant-ext-jars.dir" value="${JAVA-TOOLS.DIR}/ant/apache-ant-1.8.2-ext-tasks"/>
