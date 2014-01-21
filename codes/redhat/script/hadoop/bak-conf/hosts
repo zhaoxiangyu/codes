@@ -1,0 +1,10 @@
+# Do not remove the following line, or various programs
+# that require network functionality will fail.
+127.0.0.1	localhost
+#::1		localhost6.localdomain6 localhost6
+10.9.91.143 datanode3
+10.9.91.143 timeserver
+10.9.91.138 datanode2
+10.9.91.139 namenode
+10.9.91.142 datanode4
+

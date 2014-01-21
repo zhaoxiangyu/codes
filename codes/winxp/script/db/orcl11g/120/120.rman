@@ -1,0 +1,4 @@
+connect target sys/Admin116@orcl
+list failure;
+advise failure;
+repair failure;

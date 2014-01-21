@@ -1,0 +1,12 @@
+10.9.113.123		rs1.116.bj.cn rs1
+10.9.113.124            rs2.116.bj.cn rs2
+10.9.113.125            rs3.116.bj.cn rs3
+10.9.113.126            rs4.116.bj.cn rs4
+10.9.113.127            rs1-vip.116.bj.cn rs1-vip
+10.9.113.128            rs2-vip.116.bj.cn rs2-vip
+10.9.113.129            rs3-vip.116.bj.cn rs3-vip
+10.9.113.132            rs4-vip.116.bj.cn rs4-vip
+192.168.1.123   	rs1-priv
+192.168.1.124           rs2-priv
+192.168.1.125           rs3-priv
+192.168.1.126           rs4-priv

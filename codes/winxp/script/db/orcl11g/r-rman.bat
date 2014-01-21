@@ -1,0 +1,2 @@
+call setpath
+rman target /

@@ -1,0 +1,3 @@
+create database link WLW122
+  connect to WLW116122 identified by Wlw116122
+  using '(DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(HOST=10.9.113.122)(PORT=1521)))(CONNECT_DATA=(SERVICE_NAME=orcl122)))';

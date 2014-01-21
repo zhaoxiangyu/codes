@@ -1,0 +1,14 @@
+#!/bin/bash
+set -x
+
+WRK_DIR=/home/hadoop/i
+HADOOP_CONF_DIR=$HADOOP_HOME/conf
+HADOOP_CONF_BKUP_DIR=$WRK_DIR/bak-hadoop-conf
+
+test -d $HADOOP_CONF_BKUP_DIR || mkdir -p $HADOOP_CONF_BKUP_DIR
+cp $HADOOP_CONF_DIR/hadoop-env.sh $HADOOP_CONF_BKUP_DIR
+cp $HADOOP_CONF_DIR/core-site.xml $HADOOP_CONF_BKUP_DIR
+cp $HADOOP_CONF_DIR/hdfs-site.xml $HADOOP_CONF_BKUP_DIR
+cp $HADOOP_CONF_DIR/mapred-site.xml $HADOOP_CONF_BKUP_DIR
+cp $HADOOP_CONF_DIR/masters $HADOOP_CONF_BKUP_DIR
+cp $HADOOP_CONF_DIR/slaves $HADOOP_CONF_BKUP_DIR

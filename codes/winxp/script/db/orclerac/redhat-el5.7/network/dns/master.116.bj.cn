@@ -1,0 +1,20 @@
+$TTL    86400 
+@               IN SOA   dns1.116.bj.cn. root.localhost ( 
+2010063000 ; serial  
+28800  ; refresh 
+14400  ; retry 
+3600000  ; expiry 
+86400 )  ; minimum 
+@               IN NS  dns1.116.bj.cn. 
+localhost       IN A            127.0.0.1 
+dns1            IN A            10.9.113.123 
+rs1        	IN A            10.9.113.123 
+rs2         	IN A            10.9.113.124 
+rs3        	IN A            10.9.113.125 
+rs4         	IN A            10.9.113.126 
+rs1-vip     	IN A            10.9.113.127 
+rs2-vip     	IN A            10.9.113.128 
+rs3-vip     	IN A            10.9.113.129 
+rs4-vip     	IN A            10.9.113.132 
+clstr-scan   	IN A            10.9.113.133 
+                IN A            10.9.113.134 

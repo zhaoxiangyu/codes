@@ -1,0 +1,1 @@
+select * from gps_trace_20121121;

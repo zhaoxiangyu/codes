@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+
+<?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
+
+<!-- Put site-specific property overrides in this file. -->
+
+<configuration>
+<property>
+<name>mapred.job.tracker</name>
+<value>namenode:9001</value>
+</property>
+
+<property>
+<name>mapred.map.child.log.level</name>
+<value>INFO</value>
+</property>
+
+<property>
+<name>mapred.reduce.child.log.level</name>
+<value>INFO</value>
+</property>
+
+<property>
+<name>mapred.userlog.retain.hours</name>
+<value>24</value>
+</property>
+
+<property>
+<name>mapred.userlog.limit.kb</name>
+<value>102400</value>
+</property>
+
+<property>
+<name>mapred.tasktracker.map.tasks.maximum</name>
+<value>3</value>
+</property>
+
+<property>
+<name>mapred.tasktracker.reduce.tasks.maximum</name>
+<value>1</value>
+</property>
+</configuration>

@@ -1,0 +1,8 @@
+
+SQL*Loader: Release 11.2.0.1.0 - Production on 星期五 11月 16 13:03:12 2012
+
+Copyright (c) 1982, 2009, Oracle and/or its affiliates.  All rights reserved.
+
+SQL*Loader-704:  内部错误: ulconnect: OCIServerAttach [0]
+ORA-12541: TNS: 无监听程序
+

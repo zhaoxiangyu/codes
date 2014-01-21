@@ -1,0 +1,27 @@
+
+连接到: Oracle Database 10g Enterprise Edition Release 10.2.0.1.0 - Production
+With the Partitioning, OLAP and Data Mining options
+
+经由常规路径由 EXPORT:V10.02.01 创建的导出文件
+已经完成 ZHS16GBK 字符集和 AL16UTF16 NCHAR 字符集中的导入
+. . 正在导入表                 "BASE_DIC_TYPE"导入了           5 行
+. . 正在导入表                "BASE_DIC_VALUE"导入了          16 行
+. . 正在导入表                     "BASE_MENU"导入了          19 行
+. . 正在导入表                "BASE_ORGANIZES"导入了          66 行
+. . 正在导入表                    "BASE_ROLES"导入了           5 行
+. . 正在导入表               "BASE_ROLES_MENU"导入了          50 行
+. . 正在导入表              "BASE_ROLES_USERS"导入了           3 行
+. . 正在导入表                  "BASE_SYS_LOG"导入了      134726 行
+. . 正在导入表                    "BASE_USERS"导入了           2 行
+. . 正在导入表          "BDYTAB20120605133905"导入了      200000 行
+. . 正在导入表          "BDYTAB20120605152249"导入了      200000 行
+. . 正在导入表                "COMPARE_COLUMN"导入了          58 行
+. . 正在导入表                 "COMPARE_TABLE"导入了          12 行
+. . 正在导入表                  "COMPARE_TASK"导入了          12 行
+. . 正在导入表                 "CONFIG_COLUMN"导入了          38 行
+. . 正在导入表             "CONFIG_DATASOURCE"导入了           4 行
+. . 正在导入表                  "CONFIG_TABLE"导入了           0 行
+. . 正在导入表                   "CONFIG_TASK"导入了           6 行
+. . 正在导入表                  "PAGE_INFO_IP"导入了          16 行
+. . 正在导入表               "STATISTICS_INFO"导入了           5 行
+成功终止导入, 没有出现警告。

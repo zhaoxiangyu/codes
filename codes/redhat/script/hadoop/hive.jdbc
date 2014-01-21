@@ -1,0 +1,2 @@
+org.apache.hadoop.hive.jdbc.HiveDriver
+jdbc:hive://10.9.91.139:port/dbname

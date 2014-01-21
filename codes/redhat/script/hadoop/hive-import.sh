@@ -1,0 +1,12 @@
+CONNECTURL=jdbc:oracle:thin:@10.9.91.124:1521:GJ116124
+ORACLENAME=wlw116124
+ORACLEPASSWORD=_116
+oracleTableName=GPS_TRACE1
+columns=REGCODE,GPSTIME,LONGTITUDE,LATITUDE,SPEED,DIRECTION,EFF,STATE,TRACEID,ENTERTIME,V_PROVIDER
+hdfsPath=/home/hadoop/dir/
+hbaseTableName=gps_trace
+hbaseID=REGCODE
+#hbaseColumns=GPSTIME,LONGTITUDE,LATITUDE,SPEED,DIRECTION,EFF,STATE,TRACEID,ENTERTIME,V_PROVIDE
+hbaseColumns=gps_info
+cd $HIVE_HOME
+$SQOOP_HOME/bin/sqoop import --connect jdbc:oracle:thin:@10.9.91.124:1521:GJ116124 --table $oracleTableName --username $ORACLENAME --password $ORACLEPASSWORD -m 1 --hive-import

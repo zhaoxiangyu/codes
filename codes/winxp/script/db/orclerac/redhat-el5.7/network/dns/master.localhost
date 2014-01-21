@@ -1,0 +1,9 @@
+$TTL    86400 
+@               IN SOA  @       root ( 
+2010063000 ; serial  
+28800  ; refresh 
+14400  ; retry 
+3600000  ; expiry 
+86400 )  ; minimum 
+IN NS           @ 
+IN A            127.0.0.1 

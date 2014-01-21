@@ -1,0 +1,179 @@
+SQL> select count(*) from gps_trace_20121022;
+
+  COUNT(*)                                                                      
+----------                                                                      
+  38452159                                                                      
+
+
+执行计划
+----------------------------------------------------------                      
+Plan hash value: 4214643296                                                     
+                                                                                
+--------------------------------------------------------------------------------
+-------------------                                                             
+                                                                                
+| Id  | Operation            | Name               | Rows  | Cost (%CPU)| Time   
+  | Pstart| Pstop |                                                             
+                                                                                
+--------------------------------------------------------------------------------
+-------------------                                                             
+                                                                                
+|   0 | SELECT STATEMENT     |                    |     1 | 84068   (1)| 00:16:4
+9 |       |       |                                                             
+                                                                                
+|   1 |  SORT AGGREGATE      |                    |     1 |            |        
+  |       |       |                                                             
+                                                                                
+|   2 |   PARTITION RANGE ALL|                    |    38M| 84068   (1)| 00:16:4
+9 |     1 |    25 |                                                             
+                                                                                
+|   3 |    TABLE ACCESS FULL | GPS_TRACE_20121022 |    38M| 84068   (1)| 00:16:4
+9 |     1 |    25 |                                                             
+                                                                                
+--------------------------------------------------------------------------------
+-------------------                                                             
+                                                                                
+
+SQL> help set
+
+ SET
+ ---
+
+ Sets a system variable to alter the SQL*Plus environment settings
+ for your current session. For example, to:
+     -   set the display width for data
+     -   customize HTML formatting
+     -   enable or disable printing of column headings
+     -   set the number of lines per page
+
+ SET system_variable value
+
+ where system_variable and value represent one of the following clauses:
+
+   APPI[NFO]{OFF|ON|text}                   NEWP[AGE] {1|n|NONE}
+   ARRAY[SIZE] {15|n}                       NULL text
+   AUTO[COMMIT] {OFF|ON|IMM[EDIATE]|n}      NUMF[ORMAT] format
+   AUTOP[RINT] {OFF|ON}                     NUM[WIDTH] {10|n}
+   AUTORECOVERY {OFF|ON}                    PAGES[IZE] {14|n}
+   AUTOT[RACE] {OFF|ON|TRACE[ONLY]}         PAU[SE] {OFF|ON|text}
+     [EXP[LAIN]] [STAT[ISTICS]]             RECSEP {WR[APPED]|EA[CH]|OFF}
+   BLO[CKTERMINATOR] {.|c|ON|OFF}           RECSEPCHAR {_|c}
+   CMDS[EP] {;|c|OFF|ON}                    SERVEROUT[PUT] {ON|OFF}
+   COLSEP {_|text}                            [SIZE {n | UNLIMITED}]
+   CON[CAT] {.|c|ON|OFF}                      [FOR[MAT]  {WRA[PPED] |
+   COPYC[OMMIT] {0|n}                          WOR[D_WRAPPED] |
+   COPYTYPECHECK {ON|OFF}                      TRU[NCATED]}]
+   DEF[INE] {&|c|ON|OFF}                    SHIFT[INOUT] {VIS[IBLE] |
+   DESCRIBE [DEPTH {1|n|ALL}]                 INV[ISIBLE]}
+     [LINENUM {OFF|ON}] [INDENT {OFF|ON}]   SHOW[MODE] {OFF|ON}
+   ECHO {OFF|ON}                            SQLBL[ANKLINES] {OFF|ON}
+   EDITF[ILE] file_name[.ext]               SQLC[ASE] {MIX[ED] |
+   EMB[EDDED] {OFF|ON}                        LO[WER] | UP[PER]}
+   ERRORL[OGGING] {ON|OFF}                  SQLCO[NTINUE] {> | text}
+     [TABLE [schema.]tablename]             SQLN[UMBER] {ON|OFF}
+     [TRUNCATE] [IDENTIFIER identifier]     SQLPLUSCOMPAT[IBILITY] {x.y[.z]}
+   ESC[APE] {\|c|OFF|ON}                    SQLPRE[FIX] {#|c}
+   ESCCHAR {@|?|%|$|OFF}                    SQLP[ROMPT] {SQL>|text}
+   EXITC[OMMIT] {ON|OFF}                    SQLT[ERMINATOR] {;|c|ON|OFF}
+   FEED[BACK] {6|n|ON|OFF}                  SUF[FIX] {SQL|text}
+   FLAGGER {OFF|ENTRY|INTERMED[IATE]|FULL}  TAB {ON|OFF}
+   FLU[SH] {ON|OFF}                         TERM[OUT] {ON|OFF}
+   HEA[DING] {ON|OFF}                       TI[ME] {OFF|ON}
+   HEADS[EP] {||c|ON|OFF}                   TIMI[NG] {OFF|ON}
+   INSTANCE [instance_path|LOCAL]           TRIM[OUT] {ON|OFF}
+   LIN[ESIZE] {80|n}                        TRIMS[POOL] {OFF|ON}
+   LOBOF[FSET] {1|n}                        UND[ERLINE] {-|c|ON|OFF}
+   LOGSOURCE [pathname]                     VER[IFY] {ON|OFF}
+   LONG {80|n}                              WRA[P] {ON|OFF}
+   LONGC[HUNKSIZE] {80|n}                   XQUERY {BASEURI text|
+   MARK[UP] HTML [OFF|ON]                     ORDERING{UNORDERED|
+     [HEAD text] [BODY text] [TABLE text]              ORDERED|DEFAULT}|
+     [ENTMAP {ON|OFF}]                        NODE{BYVALUE|BYREFERENCE|
+     [SPOOL {OFF|ON}]                              DEFAULT}|
+     [PRE[FORMAT] {OFF|ON}]                   CONTEXT text}
+
+
+SQL> 
+SQL> quit
+SQL> select count(*) from gps_trace_20121022;
+
+  COUNT(*)                                                                      
+----------                                                                      
+  38452159                                                                      
+
+
+统计信息
+----------------------------------------------------------                      
+          0  recursive calls                                                    
+          0  db block gets                                                      
+     303022  consistent gets                                                    
+     301372  physical reads                                                     
+          0  redo size                                                          
+        433  bytes sent via SQL*Net to client                                   
+        420  bytes received via SQL*Net from client                             
+          2  SQL*Net roundtrips to/from client                                  
+          0  sorts (memory)                                                     
+          0  sorts (disk)                                                       
+          1  rows processed                                                     
+
+SQL> quit
+SQL> help set
+
+ SET
+ ---
+
+ Sets a system variable to alter the SQL*Plus environment settings
+ for your current session. For example, to:
+     -   set the display width for data
+     -   customize HTML formatting
+     -   enable or disable printing of column headings
+     -   set the number of lines per page
+
+ SET system_variable value
+
+ where system_variable and value represent one of the following clauses:
+
+   APPI[NFO]{OFF|ON|text}                   NEWP[AGE] {1|n|NONE}
+   ARRAY[SIZE] {15|n}                       NULL text
+   AUTO[COMMIT] {OFF|ON|IMM[EDIATE]|n}      NUMF[ORMAT] format
+   AUTOP[RINT] {OFF|ON}                     NUM[WIDTH] {10|n}
+   AUTORECOVERY {OFF|ON}                    PAGES[IZE] {14|n}
+   AUTOT[RACE] {OFF|ON|TRACE[ONLY]}         PAU[SE] {OFF|ON|text}
+     [EXP[LAIN]] [STAT[ISTICS]]             RECSEP {WR[APPED]|EA[CH]|OFF}
+   BLO[CKTERMINATOR] {.|c|ON|OFF}           RECSEPCHAR {_|c}
+   CMDS[EP] {;|c|OFF|ON}                    SERVEROUT[PUT] {ON|OFF}
+   COLSEP {_|text}                            [SIZE {n | UNLIMITED}]
+   CON[CAT] {.|c|ON|OFF}                      [FOR[MAT]  {WRA[PPED] |
+   COPYC[OMMIT] {0|n}                          WOR[D_WRAPPED] |
+   COPYTYPECHECK {ON|OFF}                      TRU[NCATED]}]
+   DEF[INE] {&|c|ON|OFF}                    SHIFT[INOUT] {VIS[IBLE] |
+   DESCRIBE [DEPTH {1|n|ALL}]                 INV[ISIBLE]}
+     [LINENUM {OFF|ON}] [INDENT {OFF|ON}]   SHOW[MODE] {OFF|ON}
+   ECHO {OFF|ON}                            SQLBL[ANKLINES] {OFF|ON}
+   EDITF[ILE] file_name[.ext]               SQLC[ASE] {MIX[ED] |
+   EMB[EDDED] {OFF|ON}                        LO[WER] | UP[PER]}
+   ERRORL[OGGING] {ON|OFF}                  SQLCO[NTINUE] {> | text}
+     [TABLE [schema.]tablename]             SQLN[UMBER] {ON|OFF}
+     [TRUNCATE] [IDENTIFIER identifier]     SQLPLUSCOMPAT[IBILITY] {x.y[.z]}
+   ESC[APE] {\|c|OFF|ON}                    SQLPRE[FIX] {#|c}
+   ESCCHAR {@|?|%|$|OFF}                    SQLP[ROMPT] {SQL>|text}
+   EXITC[OMMIT] {ON|OFF}                    SQLT[ERMINATOR] {;|c|ON|OFF}
+   FEED[BACK] {6|n|ON|OFF}                  SUF[FIX] {SQL|text}
+   FLAGGER {OFF|ENTRY|INTERMED[IATE]|FULL}  TAB {ON|OFF}
+   FLU[SH] {ON|OFF}                         TERM[OUT] {ON|OFF}
+   HEA[DING] {ON|OFF}                       TI[ME] {OFF|ON}
+   HEADS[EP] {||c|ON|OFF}                   TIMI[NG] {OFF|ON}
+   INSTANCE [instance_path|LOCAL]           TRIM[OUT] {ON|OFF}
+   LIN[ESIZE] {80|n}                        TRIMS[POOL] {OFF|ON}
+   LOBOF[FSET] {1|n}                        UND[ERLINE] {-|c|ON|OFF}
+   LOGSOURCE [pathname]                     VER[IFY] {ON|OFF}
+   LONG {80|n}                              WRA[P] {ON|OFF}
+   LONGC[HUNKSIZE] {80|n}                   XQUERY {BASEURI text|
+   MARK[UP] HTML [OFF|ON]                     ORDERING{UNORDERED|
+     [HEAD text] [BODY text] [TABLE text]              ORDERED|DEFAULT}|
+     [ENTMAP {ON|OFF}]                        NODE{BYVALUE|BYREFERENCE|
+     [SPOOL {OFF|ON}]                              DEFAULT}|
+     [PRE[FORMAT] {OFF|ON}]                   CONTEXT text}
+
+
+SQL> quit

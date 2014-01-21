@@ -1,0 +1,1 @@
+CREATE TABLE gps_trace(regioncode STRING,gpstime STRING,longitude STRING,latitude STRING,speed INT,direction INT,eff INT,state INT,traceid STRING,entertime STRING,vprovider INT) ROW FORMAT DELIMITED FIELDS TERMINATED BY ',';
