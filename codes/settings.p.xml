@@ -2,20 +2,45 @@
 	<!-- this file should be put under codes root directory 
 		like /media/sf_VMshare/codes -->
 	<condition property="VMSHARE.DIR" value="" 
-		else="/media/sf_VMshare">
+		else="/home/he/work">
 		<os family="windows" />
 	</condition>
 
-	<property name="ivy-repo.dir" value="${VMSHARE.DIR}/java/ivy-repo"/>
 
-	<property name="java-tools.dir" value="${VMSHARE.DIR}/java/tools"/>
-	<property name="ivy.dir" value="${java-tools.dir}/apache-ivy-2.2.0-bin-with-deps/apache-ivy-2.2.0"/>
+	<property name="java-tools.dir" value="${VMSHARE.DIR}/sw/java/tools"/>
+	<property name="down.dir" value="${VMSHARE.DIR}/down"/>
+
+	<!--
+	<property name="codes.dir" value="${VMSHARE.DIR}/codes"/>
+	-->
+	<property name="codes-rep.dir" value="${VMSHARE.DIR}/codes-rep"/>
+	<property name="git-rep.dir" value="${codes-rep.dir}/git-rep"/>
+	
 	<property name="ant-bin.dir" value="${java-tools.dir}/ant/apache-ant-1.8.2"/>
 	<property name="ant-ext-jars.dir" value="${java-tools.dir}/ant/apache-ant-1.8.2-ext-tasks"/>
 	<property name="ant-contrib.dir" value="${java-tools.dir}/ant/ant-contrib-1.0b3-bin"/>
 
-	<property name="codes.dir" value="${VMSHARE.DIR}/codes"/>
-	<property name="codes-rep.dir" value="${VMSHARE.DIR}/codes-rep"/>
-	<property name="git-rep.dir" value="${codes-rep.dir}/git-rep"/>
+	<target name="install-ant">
+		<mkdir dir="${ant-bin.dir}"/>
+		<get src="http://archive.apache.org/dist/ant/binaries/apache-ant-1.8.2-bin.zip" 
+			dest="${down.dir}/apache-ant-1.8.2-bin.zip" skipexisting="true"/>
+		<unzip src="${down.dir}/apache-ant-1.8.2-bin.zip"
+			dest="${java-tools.dir}/ant" overwrite="false"/>
+		
+		<mkdir dir="${ant-contrib.dir}"/>
+		<get src="http://jaist.dl.sourceforge.net/project/ant-contrib/ant-contrib/1.0b3/ant-contrib-1.0b3-bin.zip" 
+			dest="${down.dir}/ant-contrib-1.0b3-bin.zip" skipexisting="true"/>
+		<unzip src="${down.dir}/ant-contrib-1.0b3-bin.zip"
+			dest="${ant-contrib.dir}" overwrite="false"/>
+	</target>
+	
+	<property name="ivy.dir" value="${java-tools.dir}/ivy/apache-ivy-2.2.0-bin-with-deps/apache-ivy-2.2.0"/>
+	<target name="install-ivy">
+		<get src="http://archive.apache.org/dist/ant/ivy/2.2.0/apache-ivy-2.2.0-bin-with-deps.zip" 
+			dest="${down.dir}/apache-ivy-2.2.0-bin-with-deps.zip" skipexisting="true"/>
+		<unzip src="${down.dir}/apache-ivy-2.2.0-bin-with-deps.zip"
+			dest="${java-tools.dir}/ivy/apache-ivy-2.2.0-bin-with-deps" overwrite="false"/>
+	</target>
+
 	
 </project>

@@ -19,7 +19,7 @@
 	
 	<property name="ivy.default.ivy.user.dir" value="${ivy-repo.dir}"/>
 	<property name="ivy.organisation" value="org.sharp"/>
-	<ivy:settings file="ivy-settings.xml"/>
+	<ivy:settings/>
 	
 	<target name="setup-ivy-repo">
 		<mkdir dir="${ivy-repo.dir}"/>

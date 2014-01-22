@@ -7,6 +7,7 @@
 	<import file="${i.basedir}/ant/env-setting.xml" />
 	
 	<property name="ivy-repo.dir" value="${VMSHARE.DIR}/java/ivy-repo"/>
+	<property name="ivy.dir" value="${java-tools.dir}/apache-ivy-2.2.0-bin-with-deps/apache-ivy-2.2.0"/>
 
 	<target name="default">
 	</target>
@@ -14,12 +15,18 @@
 	<path id="ivy.lib.path">
 	    <fileset dir="${ivy.dir}" includes="*.jar"/>
 	</path>
-	<taskdef resource="org/apache/ivy/ant/antlib.xml" onerror="report"
+	<taskdef resource="org/apache/ivy/ant/antlib.xml"
          uri="antlib:org.apache.ivy.ant" classpathref="ivy.lib.path"/>	
 	
 	<property name="ivy.default.ivy.user.dir" value="${ivy-repo.dir}"/>
 	<property name="ivy.organisation" value="org.sharp"/>
-	<ivy:settings file="ivy-settings.xml"/>
+	<ivy:settings/>
+	
+	<target name="install-ivy">
+		<get src="http://ant.apache.org/" dest="help/index.html"/>
+		<unzip src="${java-tools.dir}/apache-ivy-2.2.0-bin-with-deps.zip"
+			dest="${java-tools.dir}/apache-ivy-2.2.0-bin-with-deps"/>
+	</target>
 	
 	<target name="setup-ivy-repo">
 		<mkdir dir="${ivy-repo.dir}"/>

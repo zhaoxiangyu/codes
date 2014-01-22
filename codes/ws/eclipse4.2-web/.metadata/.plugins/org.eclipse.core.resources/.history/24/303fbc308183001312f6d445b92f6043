@@ -160,9 +160,17 @@
 		</sequential>
 	</macrodef>
 
+	<property name="ant-bin.dir" value="${java-tools.dir}/ant/apache-ant-1.8.2"/>
+	<property name="ant-ext-jars.dir" value="${java-tools.dir}/ant/apache-ant-1.8.2-ext-tasks"/>
+	<property name="ant-contrib.dir" value="${java-tools.dir}/ant/ant-contrib-1.0b3-bin"/>
+
+	<target name="install-ant">
+		
+	</target>
+	
 	<taskdef resource="net/sf/antcontrib/antcontrib.properties">
 	  <classpath>
-	    <pathelement location="${ant-contrib.dir}/ant-contrib/ant-contrib-1.0b3.jar"/>
+	    <pathelement location="${ant-contrib.dir}/ant-contrib-1.0b3.jar"/>
 	  </classpath>
 	</taskdef>
 	
