@@ -1,12 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project name="wd4j" default="release" basedir="." 
-	xmlns:artifact="urn:maven-artifact-ant">
+	xmlns:artifact="urn:maven-artifact-ant" xmlns:ivy="antlib:org.apache.ivy.ant">
+	
+	<import file="${basedir}/../../settings.p.xml" />
+	<import file="${prj.anttask.dir}/ant/ivy-tools.xml" />
 	
 	<description>web dict online service</description>
 
-	<property name="projname" value="console" />
-
-	<property file="build.properties" />
+	<property name="projname" value="wd4j" />
+	<property name="lib.dir" value="${basedir}/WebContent/WEB-INF/lib"/>
+	
+	<target name="resolve">
+	    <ivy:resolve file="${basedir}/ivy.xml" conf="default" />
+	    <ivy:retrieve pattern="${lib.dir}/[artifact]-[revision].[ext]" sync="true"/>
+	</target>
+		
+	<target name="build">
+	</target>
 
 	<target name="release">
 		<available file="${a.run.dir.elearn}/my2.jar" property="runjar.present"/>

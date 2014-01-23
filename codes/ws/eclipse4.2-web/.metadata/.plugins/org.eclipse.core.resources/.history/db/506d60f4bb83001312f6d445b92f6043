@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="wd4j" default="release" basedir="." 
+	xmlns:artifact="urn:maven-artifact-ant" xmlns:ivy="antlib:org.apache.ivy.ant">
+	
+	<description>web dict online service</description>
+
+	<property name="projname" value="wd4j" />
+
+	<import file="${basedir}/../../settings.p.xml" />
+	<import file="${prj.anttask.dir}/ant/ivy-tools.xml" />
+	
+	<target name="resolve">
+	    <ivy:configure />
+	    
+	    <ivy:resolve file="${ivy.dep.file}" conf="${ivy.configurations}" />
+	    
+	    <ivy:retrieve pattern="${ivy.retrieve.pattern}" conf="${ivy.configurations}" />
+	</target>
+		
+	<target name="build">
+	</target>
+
+	<target name="release">
+		<available file="${a.run.dir.elearn}/my2.jar" property="runjar.present"/>
+		<if>
+			<not><isset property="run-jar-uptodate"/></not>
+			<then>
+				<antcall target="create_run_jar"/>
+			</then>
+			<else>
+				<echo message="${a.run.dir.elearn}/my2.jar update"/>
+			</else>
+		</if>
+		<tstamp/>
+		<move todir="${a.release.dir.elearn}" includeemptydirs="false">
+			<fileset dir="${a.release.dir.elearn}" includes="my2.jar,my2.bat"/>
+			<mapper type="glob" from="*" to="*.${DSTAMP}.bak"/>
+		</move>
+		<copy todir="${a.release.dir.elearn}">
+    		<fileset dir="${a.run.dir.elearn}" includes="my2.jar,my2.bat"/>
+    	</copy>
+	</target>
+	
+</project>
