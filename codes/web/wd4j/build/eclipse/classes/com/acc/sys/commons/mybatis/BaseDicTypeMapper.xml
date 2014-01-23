@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.acc.sys.commons.dao.BaseDicTypeDao" >
+  <resultMap id="BaseResultMap" type="com.acc.sys.commons.pojo.BaseDicType" >
+    <id column="ID" property="id" jdbcType="VARCHAR" />
+    <result column="DIC_TYPE_CODE" property="dicTypeCode" jdbcType="VARCHAR" />
+    <result column="DIC_TYPE_NAME" property="dicTypeName" jdbcType="VARCHAR" />
+    <result column="DIC_TYPE_DESC" property="dicTypeDesc" jdbcType="VARCHAR" />
+    <result column="IS_EFFECTIVE" property="isEffective" jdbcType="VARCHAR" />
+    <result column="CREATE_TIME" property="createTime" jdbcType="TIMESTAMP" />
+    <result column="MODIFY_TIME" property="modifyTime" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <select id="customSql" parameterType="map" resultType="map">
+		${sql}
+  </select>
+  <select id="queryByPage" parameterType="com.acc.sys.commons.pojo.BaseDicType"	resultMap="BaseResultMap">
+		select ID, DIC_TYPE_CODE, DIC_TYPE_NAME, DIC_TYPE_DESC, IS_EFFECTIVE, CREATE_TIME, 
+   		 MODIFY_TIME  from BASE_DIC_TYPE 
+   		<where>
+		<if test="param.dicTypeName !=null and param.dicTypeName!=''">
+			and DIC_TYPE_NAME like '%' || #{param.dicTypeName1,jdbcType=VARCHAR} || '%' escape'/'
+		</if>
+		<if test="param.dicTypeDesc !=null and param.dicTypeDesc !=''">
+			and DIC_TYPE_DESC like '%' || #{param.dicTypeDesc,jdbcType=VARCHAR } || '%' 
+		</if>
+		</where>
+	</select>	
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from BASE_DIC_TYPE
+    where ID = #{id,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.acc.sys.commons.pojo.BaseDicType" >
+    insert into BASE_DIC_TYPE (ID, DIC_TYPE_CODE, DIC_TYPE_NAME, 
+      DIC_TYPE_DESC, IS_EFFECTIVE)
+    values (#{id,jdbcType=VARCHAR}, #{dicTypeCode,jdbcType=VARCHAR}, #{dicTypeName,jdbcType=VARCHAR}, 
+      #{dicTypeDesc,jdbcType=VARCHAR}, #{isEffective,jdbcType=VARCHAR})
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.acc.sys.commons.pojo.BaseDicType" >
+    update BASE_DIC_TYPE
+    set DIC_TYPE_CODE = #{dicTypeCode,jdbcType=VARCHAR},
+      DIC_TYPE_NAME = #{dicTypeName,jdbcType=VARCHAR},
+      DIC_TYPE_DESC = #{dicTypeDesc,jdbcType=VARCHAR},
+      IS_EFFECTIVE = #{isEffective,jdbcType=VARCHAR},
+      CREATE_TIME = #{createTime,jdbcType=TIMESTAMP},
+      MODIFY_TIME = #{modifyTime,jdbcType=TIMESTAMP}
+    where ID = #{id,jdbcType=VARCHAR}
+  </update>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select ID, DIC_TYPE_CODE, DIC_TYPE_NAME, DIC_TYPE_DESC, IS_EFFECTIVE, CREATE_TIME, 
+    MODIFY_TIME
+    from BASE_DIC_TYPE
+    where ID = #{id,jdbcType=VARCHAR}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap" >
+    select ID, DIC_TYPE_CODE, DIC_TYPE_NAME, DIC_TYPE_DESC, IS_EFFECTIVE, CREATE_TIME, 
+    MODIFY_TIME
+    from BASE_DIC_TYPE
+  </select>
+  <select id="checkDicTypeName" resultMap="BaseResultMap" >
+    select ID, DIC_TYPE_CODE, DIC_TYPE_NAME, DIC_TYPE_DESC, IS_EFFECTIVE, CREATE_TIME, 
+    MODIFY_TIME
+    from BASE_DIC_TYPE 
+    <where>
+    DIC_TYPE_NAME = #{dicTypeName,jdbcType=VARCHAR}
+    </where>
+  </select>
+  <select id="checkDicTypeCode" resultMap="BaseResultMap" >
+    select ID, DIC_TYPE_CODE, DIC_TYPE_NAME, DIC_TYPE_DESC, IS_EFFECTIVE, CREATE_TIME, 
+    MODIFY_TIME
+    from BASE_DIC_TYPE 
+    <where>
+    DIC_TYPE_CODE = #{dicTypeCode,jdbcType=VARCHAR}
+    </where>
+  </select>
+  <select id="selectByIds" parameterType="map" resultType="map">
+   select ID, DIC_TYPE_CODE, DIC_TYPE_NAME, DIC_TYPE_DESC, IS_EFFECTIVE, CREATE_TIME, 
+    MODIFY_TIME
+    from BASE_DIC_TYPE
+	where ID in 
+    <foreach item="id" collection="idList" open="(" separator="," close=")">
+        #{id}
+    </foreach>
+  </select>
+</mapper>

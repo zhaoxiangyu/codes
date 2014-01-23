@@ -1,0 +1,11 @@
+INDEX VERSION 1.126
+/home/he/work/code-repo/github/codes/ws/eclipse4.2-web/.metadata/.plugins/org.eclipse.jst.jsp.core/jspsearch/2787933064.index
+/wd4j/src
+/home/he/work/code-repo/github/codes/ws/eclipse4.2-web/.metadata/.plugins/org.eclipse.jst.jsp.core/jspsearch/852605724.index
+/wd4j/src
+/home/he/work/code-repo/github/codes/ws/eclipse4.2-web/.metadata/.plugins/org.eclipse.jst.jsp.core/jspsearch/3724997022.index
+/wd4j/src
+/home/he/work/code-repo/github/codes/ws/eclipse4.2-web/.metadata/.plugins/org.eclipse.jst.jsp.core/jspsearch/4214744304.index
+/wd4j/src
+/home/he/work/code-repo/github/codes/ws/eclipse4.2-web/.metadata/.plugins/org.eclipse.jst.jsp.core/jspsearch/2245523575.index
+/wd4j/src
