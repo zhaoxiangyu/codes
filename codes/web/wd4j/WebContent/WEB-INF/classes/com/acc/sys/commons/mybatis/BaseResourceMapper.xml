@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.acc.sys.commons.dao.BaseResourceDao">
+	<resultMap id="BaseResultMap" type="com.acc.sys.commons.pojo.BaseResource">
+		<id column="ID" property="id" jdbcType="VARCHAR" />
+		<result column="RES_NAME" property="resName" jdbcType="VARCHAR" />
+		<result column="RES_DESC" property="resDesc" jdbcType="VARCHAR" />
+		<result column="RES_URL" property="resUrl" jdbcType="VARCHAR" />
+		<result column="DISPLAY_ORDER" property="displayOrder" jdbcType="DECIMAL" />
+		<result column="PARENT_ID" property="parentId" jdbcType="VARCHAR" />
+		<result column="PARENT_NAME" property="parentName" jdbcType="VARCHAR" />
+		<result column="IS_EFFECTIVE" property="isEffective" jdbcType="VARCHAR" />
+		<result column="CREATE_TIME" property="createTime" jdbcType="TIMESTAMP" />
+		<result column="MODIFY_TIME" property="modifyTime" jdbcType="TIMESTAMP" />
+		<result column="ICON_NAME" property="iconName" jdbcType="VARCHAR" />
+		<result column="ICON_PATH" property="iconPath" jdbcType="VARCHAR" />
+		<result column="IS_MENU" property="isMenu" jdbcType="VARCHAR" />
+		<result column="NUM" property="num" jdbcType="VARCHAR" />
+	</resultMap>
+	<select id="customSql" parameterType="map" resultType="map">
+		${sql}
+	</select>
+	<select id="queryByPage" parameterType="map"
+		resultMap="BaseResultMap">
+		select ID, RES_NAME, RES_DESC, RES_URL, DISPLAY_ORDER, PARENT_ID,
+		IS_EFFECTIVE, CREATE_TIME,
+		MODIFY_TIME, ICON_NAME, ICON_PATH, IS_MENU
+		from BASE_RESOURCE where 1=1
+  	</select>
+	<delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+		delete from BASE_RESOURCE where ID in (select id from BASE_RESOURCE start with id=#{id,jdbcType=VARCHAR} connect by prior id=parent_id) 
+	</delete>
+	<insert id="insert" parameterType="com.acc.sys.commons.pojo.BaseResource">
+		insert into BASE_RESOURCE (ID, RES_NAME, RES_DESC,
+		RES_URL, DISPLAY_ORDER, PARENT_ID,
+		IS_EFFECTIVE, CREATE_TIME, MODIFY_TIME,
+		ICON_NAME, ICON_PATH, IS_MENU
+		)
+		values (#{id,jdbcType=VARCHAR}, #{resName,jdbcType=VARCHAR},
+		#{resDesc,jdbcType=VARCHAR},
+		#{resUrl,jdbcType=VARCHAR}, #{displayOrder,jdbcType=DECIMAL}, #{parentId,jdbcType=VARCHAR},
+		#{isEffective,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP},
+		#{modifyTime,jdbcType=TIMESTAMP},
+		#{iconName,jdbcType=VARCHAR}, #{iconPath,jdbcType=VARCHAR}, #{isMenu,jdbcType=VARCHAR}
+		)
+	</insert>
+	<update id="updateByPrimaryKey" parameterType="com.acc.sys.commons.pojo.BaseResource">
+		update BASE_RESOURCE
+		set RES_NAME = #{resName,jdbcType=VARCHAR},
+		RES_DESC = #{resDesc,jdbcType=VARCHAR},
+		RES_URL = #{resUrl,jdbcType=VARCHAR},
+		DISPLAY_ORDER = #{displayOrder,jdbcType=DECIMAL},
+		PARENT_ID = #{parentId,jdbcType=VARCHAR},
+		IS_EFFECTIVE = #{isEffective,jdbcType=VARCHAR},
+		MODIFY_TIME = #{modifyTime,jdbcType=TIMESTAMP},
+		ICON_NAME = #{iconName,jdbcType=VARCHAR},
+		ICON_PATH = #{iconPath,jdbcType=VARCHAR},
+		IS_MENU = #{isMenu,jdbcType=VARCHAR}
+		where ID = #{id,jdbcType=VARCHAR}
+	</update>
+	<select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String">
+		select ID, RES_NAME, RES_DESC, RES_URL, DISPLAY_ORDER, PARENT_ID,
+		IS_EFFECTIVE, CREATE_TIME,
+		MODIFY_TIME, ICON_NAME, ICON_PATH, IS_MENU
+		from BASE_RESOURCE
+		where ID = #{id,jdbcType=VARCHAR}
+	</select>
+	<select id="selectAll" resultMap="BaseResultMap">
+		select ID, RES_NAME, RES_DESC, RES_URL, DISPLAY_ORDER, PARENT_ID,
+		IS_EFFECTIVE, CREATE_TIME,
+		MODIFY_TIME, ICON_NAME, ICON_PATH, IS_MENU
+		from BASE_RESOURCE
+	</select>
+	<select id="queryMenu" parameterType="map" resultType="map">
+		SELECT distinct
+		br.ID, br.PARENT_ID,br.display_order,
+		br.RES_NAME,br.RES_URL,br.ICON_NAME,br.ICON_PATH
+		FROM base_role_resource brm,base_resource br
+		where br.IS_MENU = '1'
+		AND brm.RESOURCE_ID=br.ID
+		AND brm.ROLE_ID in (select t.ROLE_ID from base_role_user t,base_role rl
+		where t.USER_ID=#{userId}AND rl.id=t.role_id and rl.is_effective='1' )
+		and br.is_effective='1'
+		order by br.display_order
+	</select>
+	<select id="queryMenuByUser" parameterType="map" resultType="map">
+	SELECT distinct
+		br.ID, br.PARENT_ID,br.display_order,
+		br.RES_NAME,br.RES_URL,br.ICON_NAME,br.ICON_PATH
+		FROM base_user_menu brm,base_resource br
+		where br.IS_MENU = '1'
+		AND brm.resourceid=br.ID
+		AND brm.userid =#{userId}
+		and br.is_effective='1'
+		order by br.display_order
+	</select>
+	<select id="queryResource" parameterType="map" resultType="map">
+		SELECT distinct
+		br.RES_URL
+		FROM base_role_resource brm,base_resource br
+		where  brm.RESOURCE_ID=br.ID
+		AND brm.ROLE_ID in (select t.ROLE_ID from base_role_user t,base_role rl
+		where t.USER_ID=#{userId}AND rl.id=t.role_id and rl.is_effective='1' )
+		and br.is_effective='1' and br.RES_URL is not null
+	</select>
+	<select id="queryResourceAndMenu" parameterType="map" resultType="map">
+   		select distinct
+			(select r.res_name 
+			from base_resource r where r.id=t.parent_id) parent_name,
+			t.ID,
+			t.RES_NAME,
+			t.RES_DESC,
+			t.RES_URL,
+			t.DISPLAY_ORDER,
+			t.PARENT_ID,
+			t.IS_EFFECTIVE,
+			t.CREATE_TIME,
+			t.MODIFY_TIME,
+			t.IS_MENU,
+			ICON_NAME, 
+			ICON_PATH,
+			(select count(1)
+          from base_resource g
+         start with g.id = t.id
+        connect by prior id = parent_id) NUM
+		from base_resource t, base_role_resource brm where 1=1 and t.id = brm.resource_id 
+  		   <if test="parent_id != null and parent_id != ''">
+		    and t.parent_id = #{parent_id}
+		   </if> 
+		order by parent_id,display_order
+	</select>
+	<select id="queryDisplayOrderMax" parameterType="map" resultType="map">
+		select nvl(max(DISPLAY_ORDER),0)+1 DISPLAY_ORDER from BASE_RESOURCE where parent_id=#{parent_id,jdbcType=VARCHAR}
+	</select>
+	<select id="queryDisplayOrderMin" parameterType="map" resultType="map">
+		select nvl(min(DISPLAY_ORDER),0) DISPLAY_ORDER from BASE_RESOURCE where parent_id=#{parent_id,jdbcType=VARCHAR}
+	</select>
+	<insert id="insertRoleResource" parameterType="map">
+		insert into BASE_ROLE_RESOURCE (ID, ROLE_ID, RESOURCE_ID
+		)
+		values (#{id,jdbcType=VARCHAR}, #{roleId,jdbcType=VARCHAR},
+		#{resourceId,jdbcType=VARCHAR}
+		)
+	</insert>
+	<update id="changeOrder" parameterType="map">
+    	update base_resource set  display_order=display_order+(#{edit_order,jdbcType=INTEGER})  where id=#{id}
+    </update>
+    <update id="changeOrderDesc" parameterType="map">
+    	update base_resource set  display_order=display_order-(#{edit_order,jdbcType=INTEGER}) where parent_id=#{parent_id} and display_order=#{display_order}
+    </update>
+    <select id="checkResName" parameterType="String" resultType="map">
+    select * from BASE_RESOURCE where res_name=#{resName}
+    </select>
+    <select id="checkResURL" parameterType="String" resultType="map">
+    select * from BASE_RESOURCE where RES_URL=#{resUrl}
+    </select>
+	<select id="selectResourceByRoleId" resultMap="BaseResultMap" parameterType="String">
+  	select t.* from BASE_RESOURCE t,BASE_ROLE_RESOURCE t1 where t1.ROLE_ID=#{roleId} and t1.RESOURCE_ID=t.ID
+  	</select>
+  	<select id="selectResourceByUserId" resultMap="BaseResultMap" parameterType="String">
+  	select distinct t.* from BASE_RESOURCE t,BASE_ROLE_RESOURCE t1,BASE_ROLE_USER t2 where t2.USER_ID=#{userId} and t1.RESOURCE_ID=t.ID
+  	and t2.role_id=t1.role_id order by t.parent_id,t.display_order
+  	</select>
+  	<delete id="deleteRoleResourceByRoleId" parameterType="java.lang.String">
+		delete from BASE_ROLE_RESOURCE
+		where ROLE_ID = #{id,jdbcType=VARCHAR}
+	</delete>
+	<delete id="deleteRoleResourceByResourceId" parameterType="java.lang.String">
+		delete from BASE_ROLE_RESOURCE
+		where RESOURCE_ID = #{id,jdbcType=VARCHAR}
+	</delete>
+	<!-- 查找dispaly是否已存在 -->
+	<select id="checkDispalyOrder" parameterType="map" resultMap="BaseResultMap">
+		select * from
+		BASE_RESOURCE where parent_id=#{parent_id,jdbcType=VARCHAR} and display_order=#{display_order,jdbcType=VARCHAR}
+	</select>
+	<select id="selectResIdByParent" parameterType="string" resultType="map">
+	select distinct id from base_resource start with parent_id=#{parentId} connect by prior id = parent_id
+	</select>
+	<select id="collectByUser" parameterType="map">
+	insert into base_user_menu(id,userid,resourceid)values(
+	#{param.id,jdbcType=VARCHAR},
+	#{param.userId,jdbcType=VARCHAR},
+	#{param.resourceid,jdbcType=VARCHAR}
+	)
+	</select>
+	<select id="delCollectByUser" parameterType="map">
+	delete from base_user_menu where userid=
+	#{param.userId,jdbcType=VARCHAR} and resourceid=
+	#{param.resourceid,jdbcType=VARCHAR}
+	</select>
+	<select id="getCollectCountByUser" resultType="string" parameterType="map">
+		select distinct count(1) from base_user_menu where  userid=
+	#{param.userId,jdbcType=VARCHAR} 
+	</select>
+</mapper>

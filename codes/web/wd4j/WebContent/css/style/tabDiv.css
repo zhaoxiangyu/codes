@@ -1,0 +1,134 @@
+/*基本选项卡*/
+.basicTab{
+}
+.basicTab_top{
+	height:35px;
+	background-image: url(../../images/skin/basicTab/tab_bg_center.jpg);
+	background-repeat:repeat-x;
+	width:100%;
+}
+.basicTab_top_left{
+	height:100%;
+	width:100%;
+	background-image: url(../../images/skin/basicTab/tab_bg_left.jpg);
+	background-repeat:no-repeat;
+}
+.basicTab_top_left2{
+	height:100%;
+	width:100%;
+	background-image: url(../../images/skin/basicTab/tab_bg_left2.jpg);
+	background-repeat:no-repeat;
+}
+.basicTab_top_right{
+	height:100%;
+	background-image: url(../../images/skin/basicTab/tab_bg_right.jpg);
+	background-repeat:no-repeat;
+	background-position:100% 0%;
+	padding:0 0 0 20px;
+}
+.basicTab_top a{
+	display:#ffffff;
+}
+.basicTab_normal_center a{
+	color:#ffffff;
+}
+.basicTab_normal_center a:hover{
+	color:#ffffff;
+	text-decoration:none;
+}
+.basicTab_current_center a{
+	color:#000000;
+}
+.basicTab_current_center a:hover{
+	color:#000000;
+	text-decoration:none;
+}
+.basicTab_con{
+	padding:5px 0 0 0;
+}
+.basicTab_normal_left{
+	float:left;
+	width:12px;
+	height:100%;
+}
+.basicTab_normal_center{
+	float:left;
+	height:100%;
+	padding:0 10px 0 10px;
+	cursor:pointer;
+	cursor:hand;
+	line-height:35px;
+	color:#000000 ;
+	font-weight:bold;
+}
+.basicTab_normal_right{
+	float:left;
+	width:12px;
+	height:100%;
+	background-image: url(../../images/skin/basicTab/tab_normal.jpg);
+	background-repeat:no-repeat;
+	background-position:50% 50%;
+}
+
+.basicTab_current_left{
+	background-image: url(../../images/skin/basicTab/tab_current_left.jpg)!important;
+	width:12px;
+	height:100%;
+}
+.basicTab_current_center{
+	background-image: url(../../images/skin/basicTab/tab_current_center.jpg)!important;
+	height:100%;
+	line-height:35px;
+	color:#000000;
+	font-size:13px;
+	font-weight:bold;
+}
+.basicTab_current_right{
+	background-image: url(../../images/skin/basicTab/tab_current_right.jpg)!important;
+	width:12px;
+	height:100%;
+}
+.basicTab_content{
+	padding:3px 0 0 0;
+}
+.basicTab_top .disabled{
+	color:#999999!important;
+	cursor:default!important;
+}
+.basicTab_top a:hover{
+	text-decoration:none;
+}
+.basicTab_content{
+	padding:10px 10px 0 10px;
+}
+.basicTab_content2{
+	padding:10px 10px 0 20px;	
+	font-size:14px;
+}
+.basicTab_title{
+	float:left;
+	color:#ffffff;
+	padding:10px 0 5px 16px;
+	text-shadow: #000000 1px 1px 2px !important;filter: DropShadow(Color=#023B74, OffX=1, OffY=1, Positive=1);
+	font-size:14px;
+	font-weight:bold;
+}
+.basicTab_tabcon{
+	float:right;
+	height:100%;
+	
+}
+.basicTab_top_info{
+	float:left;
+	padding:10px 0 0 10px;
+	color:#ffffff;
+}
+.basicTab_top_more{
+	float:right;
+	padding:10px 10px 0 0;
+	color:#ffffff;
+}
+.basicTab_top_more a{
+	color:#ffffff;
+}
+/*基本选项卡*/

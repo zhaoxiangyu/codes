@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.acc.sys.commons.dao.BaseSysLogDao">
+	<resultMap id="BaseResultMap" type="com.acc.sys.commons.pojo.BaseSysLog">
+		<id column="ID" property="id" jdbcType="VARCHAR" />
+		<result column="OPERATE_MODULE" property="operateModule"
+			jdbcType="VARCHAR" />
+		<result column="OPERATE_TYPE" property="operateType" jdbcType="VARCHAR" />
+		<result column="PARAMETER" property="parameter" jdbcType="VARCHAR" />
+		<result column="IP" property="ip" jdbcType="VARCHAR" />
+		<result column="OPERATE_USER_ID" property="operateUserId"
+			jdbcType="VARCHAR" />
+		<result column="OPERATE_USER_ACCOUNT" property="operateUserAccount"
+			jdbcType="VARCHAR" />
+		<result column="OPERATE_TIME" property="operateTime" jdbcType="TIMESTAMP" />
+		<result column="EFFECT_ID" property="effectId" jdbcType="VARCHAR" />
+		
+		<result column="OPERATE_USER_NAME" property="operateUserName"
+			jdbcType="VARCHAR" />
+		<result column="OPERATE_TIME_STRING" property="operateTimeString" jdbcType="VARCHAR" />
+	</resultMap>
+	<select id="customSql" parameterType="map" resultType="map">
+		${sql}
+	</select>
+	<select id="queryByPage" parameterType="com.acc.sys.commons.pojo.BaseSysLog" resultMap="BaseResultMap">
+		select log.ID, log.OPERATE_MODULE, log.OPERATE_TYPE, log.PARAMETER, log.IP,
+		log.OPERATE_USER_ID, log.OPERATE_USER_ACCOUNT,log.OPERATE_TIME,
+		 log.EFFECT_ID, u.USER_NAME OPERATE_USER_NAME
+		from BASE_SYS_LOG log, BASE_USER u
+		where log.OPERATE_USER_ID = u.ID
+		<if test="param.operateModule !=null and param.operateModule !=''">
+			and log.OPERATE_MODULE=#{param.operateModule}
+		</if>
+		<if test="param.operateType !=null and param.operateType !=''">
+			AND  log.OPERATE_TYPE  like '%' || #{param.operateType} || '%' 
+		</if>
+		<if test="param.parameter !=null and param.parameter!=''">
+			and log.PARAMETER=#{param.parameter}
+		</if>
+		<if test="param.ip !=null and param.ip!=''">
+			and log.IP=#{param.ip}
+		</if>
+		<if test="param.operateUserId !=null and param.operateUserId!=''">
+			and log.OPERATE_USER_ID=#{param.operateUserId}
+		</if>
+		<if test="param.operateUserAccount !=null and param.operateUserAccount!=''">
+			and log.OPERATE_USER_ACCOUNT like '%' || #{param.operateUserAccount1} || '%' escape'/'
+		</if>
+		<if test="param.effectId !=null and param.effectId!=''">
+			and log.EFFECT_ID=#{param.effectId}
+		</if>
+	    <if test="param.beginTime != null and param.beginTime != ''">
+			AND log.OPERATE_TIME   <![CDATA[> ]]>= #{param.beginTime,jdbcType=TIMESTAMP}
+	    </if>
+	    <if test="param.endTime != null and param.endTime != ''">
+		    AND log.OPERATE_TIME   <![CDATA[< ]]>= #{param.endTime,jdbcType=TIMESTAMP}
+	    </if>
+	    <if test="param.userName != null and param.userName != ''">
+		    AND u.USER_NAME like '%' || #{param.userName1} || '%' escape'/'
+	    </if>
+	    	order by log.OPERATE_TIME desc
+	</select>
+	<delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+		delete from BASE_SYS_LOG
+		where ID = #{id,jdbcType=VARCHAR}
+	</delete>
+	<insert id="insert" parameterType="com.acc.sys.commons.pojo.BaseSysLog">
+		insert into BASE_SYS_LOG (ID, OPERATE_MODULE, OPERATE_TYPE,
+		PARAMETER, IP, OPERATE_USER_ID,
+		OPERATE_USER_ACCOUNT, OPERATE_TIME,
+		EFFECT_ID)
+		values (#{id,jdbcType=VARCHAR}, #{operateModule,jdbcType=VARCHAR},
+		#{operateType,jdbcType=VARCHAR},
+		#{parameter,jdbcType=VARCHAR}, #{ip,jdbcType=VARCHAR}, #{operateUserId,jdbcType=VARCHAR},
+		#{operateUserAccount,jdbcType=VARCHAR}, #{operateTime,jdbcType=TIMESTAMP},
+		#{effectId,jdbcType=VARCHAR})
+	</insert>
+	<update id="updateByPrimaryKey" parameterType="com.acc.sys.commons.pojo.BaseSysLog">
+		update BASE_SYS_LOG
+		set OPERATE_MODULE = #{operateModule,jdbcType=VARCHAR},
+		OPERATE_TYPE = #{operateType,jdbcType=VARCHAR},
+		PARAMETER = #{parameter,jdbcType=VARCHAR},
+		IP = #{ip,jdbcType=VARCHAR},
+		OPERATE_USER_ID = #{operateUserId,jdbcType=VARCHAR},
+		OPERATE_USER_ACCOUNT = #{operateUserAccount,jdbcType=VARCHAR},
+		OPERATE_TIME = #{operateTime,jdbcType=DATE},
+		EFFECT_ID = #{effectId,jdbcType=VARCHAR}
+		where ID = #{id,jdbcType=VARCHAR}
+	</update>
+	<select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String">
+		select ID, OPERATE_MODULE, OPERATE_TYPE, PARAMETER, IP,
+		OPERATE_USER_ID, OPERATE_USER_ACCOUNT,
+		OPERATE_TIME, EFFECT_ID
+		from BASE_SYS_LOG
+		where ID = #{id,jdbcType=VARCHAR}
+	</select>
+	<select id="selectAll" resultMap="BaseResultMap">
+		select ID, OPERATE_MODULE, OPERATE_TYPE, PARAMETER, IP, OPERATE_USER_ID,
+		OPERATE_USER_ACCOUNT,
+		OPERATE_TIME, EFFECT_ID
+		from BASE_SYS_LOG
+	</select>
+</mapper>

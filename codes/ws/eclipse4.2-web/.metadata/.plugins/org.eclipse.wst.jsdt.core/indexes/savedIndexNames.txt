@@ -1,6 +1,2 @@
 INDEX VERSION 1.122+/home/he/work/code-repo/github/codes/ws/eclipse4.2-web/.metadata/.plugins/org.eclipse.wst.jsdt.core/indexes
-3675622323.index
-1289755028.index
-1318869349.index
-896678355.index
 717803424.index

@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.acc.sys.commons.dao.BaseUserDao">
+	<resultMap id="BaseResultMap"
+		type="com.acc.sys.commons.pojo.BaseUser">
+		<id column="ID" property="id" jdbcType="VARCHAR" />
+		<result column="USER_ACCOUNT" property="userAccount"
+			jdbcType="VARCHAR" />
+		<result column="USER_NAME" property="userName"
+			jdbcType="VARCHAR" />
+		<result column="USER_PASSWORD" property="userPassword"
+			jdbcType="VARCHAR" />
+		<result column="USER_IDENTITY" property="userIdentity"
+			jdbcType="VARCHAR" />
+		<result column="USER_ID_CARD" property="userIdCard"
+			jdbcType="VARCHAR" />
+		<result column="USER_PHONE" property="userPhone"
+			jdbcType="VARCHAR" />
+		<result column="IS_EFFECTIVE" property="isEffective"
+			jdbcType="VARCHAR" />
+		<result column="CREATE_TIME" property="createTime"
+			jdbcType="DATE" />
+		<result column="MODIFY_TIME" property="modifyTime"
+			jdbcType="DATE" />
+		<result column="CH_SPELL" property="chSpell" jdbcType="VARCHAR" />
+		<result column="ORG_CODE" property="orgCode" jdbcType="VARCHAR" />
+		<result column="USER_SEX" property="userSex" jdbcType="VARCHAR" />
+		<result column="USER_ADDRESS" property="userAddress"
+			jdbcType="VARCHAR" />
+	</resultMap>
+	<resultMap id="BaseRoleUserMap"
+		type="com.acc.sys.commons.pojo.BaseRoleUser">
+		<id column="ID" property="id" jdbcType="VARCHAR" />
+		<result column="ROLE_ID" property="roleId" jdbcType="VARCHAR" />
+		<result column="USER_ID" property="userId" jdbcType="VARCHAR" />
+	</resultMap>
+	<select id="customSql" parameterType="map" resultType="map">
+		${sql}
+	</select>
+	<select id="queryByPage" parameterType="map"
+		resultMap="BaseResultMap">
+		select ID, USER_ACCOUNT, USER_NAME, USER_PASSWORD,
+		USER_IDENTITY, USER_ID_CARD, USER_PHONE, IS_EFFECTIVE,
+		CREATE_TIME, MODIFY_TIME,
+		CH_SPELL,USER_SEX,USER_ADDRESS,ORG_CODE from BASE_USER u where
+		1=1
+		<if test="param.userAccount !=null and param.userAccount!=''">
+			and USER_ACCOUNT like '%${param.userAccount1}%' escape'/'
+		</if>
+		<if test="param.userName !=null and param.userName !=''">
+			and USER_NAME like '%${param.userName1 }%' escape'/'
+		</if>
+		<if
+			test="param.userIdentity !=null and param.userIdentity!=''">
+			and USER_IDENTITY like '%${param.userIdentity1}%' escape'/'
+		</if>
+		<if test="param.orgCode !=null and param.orgCode!=''">
+			and ORG_CODE= #{param.orgCode,jdbcType=VARCHAR}
+		</if>
+		<if test="param.roleId != null and param.roleId != ''">
+			<choose>
+				<when test="param.roleId eq &quot;0&quot;">
+					and not exists( select 1 from BASE_ROLE_USER t where
+					t.ID=u.ID )
+				</when>
+				<otherwise>
+					and exists( select 1 from BASE_ROLE_USER t where
+					t.ROLE_ID=#{param.roleId,jdbcType=VARCHAR} and
+					t.USER_ID=u.ID )
+				</otherwise>
+			</choose>
+		</if>
+		order by modify_time desc
+	</select>
+	<delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+		delete from BASE_user where ID = #{id,jdbcType=VARCHAR}
+	</delete>
+	<insert id="insert"
+		parameterType="com.acc.sys.commons.pojo.BaseUser">
+		insert into BASE_user (ID, USER_ACCOUNT, USER_NAME,
+		USER_PASSWORD, USER_IDENTITY, USER_ID_CARD, USER_PHONE,
+		IS_EFFECTIVE, CREATE_TIME, MODIFY_TIME, ORG_CODE,
+		CH_SPELL,USER_SEX,USER_ADDRESS ) values (#{id,jdbcType=VARCHAR},
+		#{userAccount,jdbcType=VARCHAR}, #{userName,jdbcType=VARCHAR},
+		#{userPassword,jdbcType=VARCHAR},
+		#{userIdentity,jdbcType=VARCHAR},
+		#{userIdCard,jdbcType=VARCHAR}, #{userPhone,jdbcType=VARCHAR},
+		#{isEffective,jdbcType=VARCHAR},
+		#{createTime,jdbcType=TIMESTAMP},
+		#{modifyTime,jdbcType=TIMESTAMP},#{orgCode,jdbcType=VARCHAR},
+		#{chSpell,jdbcType=VARCHAR}, #{userSex,jdbcType=VARCHAR},
+		#{userAddress,jdbcType=VARCHAR} )
+	</insert>
+	<update id="updateByPrimaryKey"
+		parameterType="com.acc.sys.commons.pojo.BaseUser">
+		update BASE_user set USER_ACCOUNT =
+		#{userAccount,jdbcType=VARCHAR}, USER_NAME =
+		#{userName,jdbcType=VARCHAR}, USER_PASSWORD =
+		#{userPassword,jdbcType=VARCHAR}, USER_IDENTITY =
+		#{userIdentity,jdbcType=VARCHAR}, USER_ID_CARD =
+		#{userIdCard,jdbcType=VARCHAR}, USER_PHONE =
+		#{userPhone,jdbcType=VARCHAR}, IS_EFFECTIVE =
+		#{isEffective,jdbcType=VARCHAR}, MODIFY_TIME =
+		#{modifyTime,jdbcType=TIMESTAMP}, ORG_CODE =
+		#{orgCode,jdbcType=VARCHAR}, CH_SPELL =
+		#{chSpell,jdbcType=VARCHAR}, USER_SEX =
+		#{userSex,jdbcType=VARCHAR},
+		USER_ADDRESS=#{userAddress,jdbcType=VARCHAR} where ID =
+		#{id,jdbcType=VARCHAR}
+	</update>
+	<select id="selectByPrimaryKey" resultMap="BaseResultMap"
+		parameterType="java.lang.String">
+		select ID, USER_ACCOUNT, USER_NAME, USER_PASSWORD,
+		USER_IDENTITY, USER_ID_CARD, USER_PHONE, IS_EFFECTIVE,
+		CREATE_TIME, MODIFY_TIME, ORG_CODE,
+		CH_SPELL,USER_SEX,USER_ADDRESS from BASE_user u where ID =
+		#{id,jdbcType=VARCHAR}
+	</select>
+	<select id="selectAll" resultMap="BaseResultMap">
+		select ID, USER_ACCOUNT, USER_NAME, USER_PASSWORD,
+		USER_IDENTITY, USER_ID_CARD, USER_PHONE, IS_EFFECTIVE,
+		CREATE_TIME, MODIFY_TIME, ORG_CODE,
+		CH_SPELL,USER_SEX,USER_ADDRESS from BASE_user
+	</select>
+	<select id="login" parameterType="Map" resultType="map">
+		SELECT bu.USER_PASSWORD, bu.USER_NAME, bu.ID, bu.USER_ID_CARD,
+		bu.USER_ACCOUNT, bu.USER_IDENTITY, bo.ORG_NAME, bo.ORG_CODE,
+		bu.IS_EFFECTIVE USER_IS_EFFECTIVE, bo.IS_EFFECTIVE
+		ORG_IS_EFFECTIVE, br.ROLE_NAME FROM base_user bu,base_organize
+		bo,base_role br,base_role_user bru
+		<where>
+			bu.ID = bru.USER_ID and br.ID = bru.ROLE_ID AND
+			bu.ORG_CODE=bo.ORG_CODE
+			<if test="userName != null and userName != ''">
+				AND bu.USER_ACCOUNT = #{userName}
+			</if>
+			and bu.IS_EFFECTIVE='1'
+		</where>
+	</select>
+	<select id="checkUserAccount" parameterType="String"
+		resultMap="BaseResultMap">
+		select ID, USER_ACCOUNT, USER_NAME, USER_PASSWORD,
+		USER_IDENTITY, USER_ID_CARD, USER_PHONE, IS_EFFECTIVE,
+		CREATE_TIME, MODIFY_TIME, ORG_CODE,
+		CH_SPELL,USER_SEX,USER_ADDRESS from BASE_USER u where 1=1 and
+		USER_ACCOUNT=#{userAccount}
+	</select>
+	<update id="resetPassword" parameterType="String">
+		update BASE_user set USER_PASSWORD =
+		'96e79218965eb72c92a549dd5a330112' where ID =
+		#{userId,jdbcType=VARCHAR}
+	</update>
+	<insert id="insertUserRole"
+		parameterType="com.acc.sys.commons.pojo.BaseRoleUser">
+		insert into BASE_ROLE_USER (ID,ROLE_ID,USER_ID) values
+		(#{id},#{roleId},#{userId})
+	</insert>
+	<select id="selectAllRoleUser" resultMap="BaseRoleUserMap"
+		parameterType="String">
+		select ID,ROLE_ID,USER_ID from BASE_ROLE_USER where 1=1
+		<if test="userId != null and userId != ''">
+			and USER_ID=#{userId}
+		</if>
+	</select>
+	<select id="selectAllRoleByRoleUser" resultMap="BaseRoleUserMap">
+		select distinct ROLE_ID from BASE_ROLE_USER where 1=1
+
+	</select>
+	<delete id="deleteUserRole" parameterType="String">
+		delete from BASE_ROLE_USER where USER_ID=#{userId}
+	</delete>
+	<update id="modifyUserpwd"
+		parameterType="com.acc.sys.commons.pojo.BaseRoleUser">
+		update base_user set user_password=#{userPassword} where
+		id=#{id}
+	</update>
+	<select id="selectByOrgCode" resultMap="BaseResultMap"
+		parameterType="java.lang.String">
+		select ID, USER_ACCOUNT, USER_NAME, USER_PASSWORD,
+		USER_IDENTITY, USER_ID_CARD, USER_PHONE, IS_EFFECTIVE,
+		CREATE_TIME, MODIFY_TIME, ORG_CODE,
+		CH_SPELL,USER_SEX,USER_ADDRESS from BASE_user u where ORG_CODE =
+		#{orgCode,jdbcType=VARCHAR}
+	</select>
+	<select id="selectRoleLevelByUserId" resultType="map"
+		parameterType="java.lang.String">
+		select min(t.role_level) rolelevel from base_user u,base_role
+		t,base_role_user ru where u.id=#{userId} and ru.user_id = u.id
+		and ru.role_id = t.id
+	</select>
+</mapper>

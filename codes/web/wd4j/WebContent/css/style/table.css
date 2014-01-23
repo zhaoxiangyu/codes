@@ -1,0 +1,290 @@
+
+.tableStyle{
+ 	border-collapse: collapse;
+	border: 1px solid #c5dbf0;
+	width: 100%;
+	background-color: White;
+}
+.tableStyle th{
+	border-left: 1.0pt solid windowtext;
+	border-right: 1.0pt solid windowtext;
+	word-wrap: normal;
+	word-break: keep-all;
+	overflow:hidden;
+	border-color: #c5dbf0;
+	height:32px; 
+	padding: 0 2px 0 4px;
+	color:#000000;
+	background-image: url(../../images/skin/th.jpg);
+	background-repeat: repeat-x;
+	font-weight: normal;
+	line-height:28px; 
+	text-align:center;
+}
+.tableStyle td{
+	border-left: 1.0pt solid windowtext;
+	border-right: 1.0pt solid windowtext;
+	border-bottom: 1.0pt solid windowtext;
+	word-wrap: normal;
+	word-break: keep-all;
+	border-color: #c5dbf0;
+	height:32px; 
+	padding: 1px 2px 1px 4px;
+	color:#0e6dad;
+	text-align:center;
+}
+
+.tableStyle2{
+ 	border-collapse: collapse;
+	border: 1px solid #c5dbf0;
+	width: 100%;
+}
+.tableStyle2 th{
+	border-left: 1.0pt solid windowtext;
+	border-right: 1.0pt solid windowtext;
+	word-wrap: normal;
+	word-break: keep-all;
+	overflow:hidden;
+	border-color: #c5dbf0;
+	height:32px; 
+	padding: 0 2px 0 4px;
+	color:#000000;
+	background-image: url(../../images/skin/th.jpg);
+	background-repeat: repeat-x;
+	font-weight: normal;
+	line-height:28px; 
+	text-align:center;
+	padding:0 20px 0 20px;
+}
+.tableStyle2 td{
+	border-left: 1.0pt solid windowtext;
+	border-right: 1.0pt solid windowtext;
+	border-bottom: 1.0pt solid windowtext;
+	word-wrap: normal;
+	word-break: keep-all;
+	border-color: #c5dbf0;
+	height:32px; 
+	padding:0 20px 0 20px;
+}
+
+.tableStyleInfo{
+ 	border-collapse: collapse;
+	border: 1px solid #c5dbf0;
+	width: 100%;
+}
+.tableStyleInfo th{
+	border-left: 1.0pt solid windowtext;
+	border-right: 1.0pt solid windowtext;
+	border-bottom: 1.0pt solid windowtext;
+	overflow:hidden;
+	border-color: #c5dbf0;
+	height:32px; 
+	padding: 0 10px 0 10px;
+	color:#000000;
+	background:#DBECFC;
+	font-weight: normal;
+	line-height:28px; 
+	text-align:left;
+}
+.tableStyleInfo td{
+	border-left: 1.0pt solid windowtext;
+	border-right: 1.0pt solid windowtext;
+	border-bottom: 1.0pt solid windowtext;
+	border-color: #c5dbf0;
+	height:32px; 
+	padding:0 10px 0 10px;
+}
+
+.tableStyleInfo1{
+ 	border-collapse: collapse;
+	border: 1px solid #c5dbf0;
+	width: 100%;
+}
+.tableStyleInfo1 th{
+	border-left: 1.0pt solid windowtext;
+	border-right: 1.0pt solid windowtext;
+	border-bottom: 1.0pt solid windowtext;
+	overflow:hidden;
+	border-color: #c5dbf0;
+	height:32px; 
+	padding: 0 10px 0 10px;
+	color:#000000;
+	background:#DBECFC;
+	font-weight: normal;
+	line-height:28px; 
+	text-align:center;
+}
+.tableStyleInfo1 td{
+	border-left: 1.0pt solid windowtext;
+	border-right: 1.0pt solid windowtext;
+	border-bottom: 1.0pt solid windowtext;
+	border-color: #c5dbf0;
+	height:32px; 
+	padding:0 10px 0 10px;
+}
+
+.tableStyle3 td{
+	padding:0px 5px 5px 2px;
+}
+.tableStyle3 {
+	padding:0px 20px 0px 0px;
+}
+.tableStyle3 th{
+	padding:0px 5px 5px 2px;
+	text-align: right;
+	font-weight: normal;
+}
+.tableStyle5{
+	border: 0px;
+	width: 100%;
+	background-color: White;
+}
+.tableStyle5 td{
+	padding:0px 10px 5px 5px;
+	border: 0px;
+}
+.tableStyle5 th{
+	padding:0px 10px 5px 5px;
+	font-weight: normal;
+}
+.tableStyle4{
+ 	border-collapse: collapse;
+	border: 1px solid #c5dbf0;
+	width: 100%;
+	background-color: White;
+}
+.tableStyle4 th{
+	border-left: 1.0pt solid windowtext;
+	border-right: 1.0pt solid windowtext;
+	word-wrap: normal;
+	word-break: keep-all;
+	overflow:hidden;
+	border-color: #c5dbf0;
+	height:32px; 
+	padding: 0 2px 0 4px;
+	color:#000000;
+	background-image: url(../../images/skin/th.jpg);
+	background-repeat: repeat-x;
+	font-weight: normal;
+	line-height:28px; 
+	text-align:center;
+}
+.tableStyle4 td{
+	border-left: 1.0pt solid windowtext;
+	border-right: 1.0pt solid windowtext;
+	border-bottom: 1.0pt solid windowtext;
+	word-wrap: normal;
+	word-break: keep-all;
+	border-color: #c5dbf0;
+	height:25px; 
+	line-height:25px;
+	text-align:center;
+}
+.tableStyle4 .odd{
+	background-color:#f4f7fa;
+}
+.tableStyle4 .highlight{
+	background-color:#e7eff7;
+}
+.tableStyle4 .selected{
+	background-color:#e7eff7;
+}
+
+.tableStyle6{
+ 	border-collapse: collapse;
+	border: 1px solid #c5dbf0;
+	width: 100%;
+	background-color: White;
+}
+.tableStyle6 th{
+	border: 1.0pt solid windowtext;
+	word-wrap: normal;
+	word-break: keep-all;
+	overflow:hidden;
+	border-color: #c5dbf0;
+	height:32px; 
+	padding: 0 2px 0 4px;
+	color:#000000;
+	background-color: #DBECFC;
+	font-weight: normal;
+	line-height:28px; 
+	text-align:center;
+}
+.tableStyle6 td{
+	border-left: 1.0pt solid windowtext;
+	border-right: 1.0pt solid windowtext;
+	border-bottom: 1.0pt solid windowtext;
+	word-wrap: normal;
+	word-break: keep-all;
+	border-color: #c5dbf0;
+	height:25px; 
+	line-height:25px;
+	text-align:center;
+}
+.tableStyle6 .odd{
+	background-color:#f4f7fa;
+}
+.tableStyle6 .highlight{
+	background-color:#e7eff7;
+}
+.tableStyle6 .selected{
+	background-color:#e7eff7;
+}
+
+.tableStyle7{
+ 	border-collapse: collapse;
+	border: 1px solid #c5dbf0;
+	width: 100%;
+	background-color: White;
+}
+.tableStyle7 th{
+	border: 1.0pt solid windowtext;
+	word-wrap: normal;
+	word-break: keep-all;
+	overflow:hidden;
+	border-color: #c5dbf0;
+	height:32px; 
+	padding: 0 2px 0 4px;
+	color:#000000;
+	background-color: #DBECFC;
+	font-weight: normal;
+	line-height:28px; 
+	text-align:center;
+}
+.tableStyle7 td{
+	border-left: 1.0pt solid windowtext;
+	border-right: 1.0pt solid windowtext;
+	border-bottom: 1.0pt solid windowtext;
+	word-wrap: normal;
+	word-break: keep-all;
+	border-color: #c5dbf0;
+	height:25px; 
+	line-height:25px;
+	text-align:left;
+}
+.tableStyle7 .highlight{
+	background-color:#e7eff7;
+}
+.tableStyle7 .selected{
+	background-color:#e7eff7;
+}
+.tableStyle8{
+	text-align: left;
+	border: 0px;
+	width: 100%;
+	background-color: White;
+}
+.tableStyle8 td{
+	text-align:left;
+	padding:0px 10px 5px 5px;
+	border: 0px;
+}
+.tableStyle8 th{
+	padding:0px 10px 5px 5px;
+	font-weight: normal;
+}
+.ckcxStyle td{
+	text-align:center;
+	padding:0px 10px 5px 5px;
+	border: 0px;
+}

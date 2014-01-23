@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.acc.sys.commons.dao.BaseDicValueDao" >
+  <resultMap id="BaseResultMap" type="com.acc.sys.commons.pojo.BaseDicValue" >
+    <id column="ID" property="id" jdbcType="VARCHAR" />
+    <result column="DIC_TYPE_ID" property="dicTypeId" jdbcType="VARCHAR" />
+    <result column="DIC_VALUE_NAME" property="dicValueName" jdbcType="VARCHAR" />
+    <result column="DIC_VALUE_CODE" property="dicValueCode" jdbcType="VARCHAR" />
+    <result column="IS_EFFECTIVE" property="isEffective" jdbcType="VARCHAR" />
+    <result column="DISPLAY_ORDER" property="displayOrder" jdbcType="DECIMAL" />
+    <result column="CREATE_TIME" property="createTime" jdbcType="TIMESTAMP" />
+    <result column="MODIFY_TIME" property="modifyTime" jdbcType="TIMESTAMP" />
+    <result column="CH_SPELL" property="chSpell" jdbcType="VARCHAR" />
+    <result column="PARENT_ID" property="parentId" jdbcType="VARCHAR" />
+  </resultMap>
+  <select id="customSql" parameterType="map" resultType="map">
+		${sql}
+	</select>
+  <select id="queryByPage" parameterType="map"
+		resultMap="BaseResultMap">
+		select ID, DIC_TYPE_ID, DIC_VALUE_NAME, DIC_VALUE_CODE, IS_EFFECTIVE, 
+	    DISPLAY_ORDER, CREATE_TIME, MODIFY_TIME, CH_SPELL, PARENT_ID
+	    from BASE_DIC_VALUE where 1=1
+	    <!-- 
+	    <if test="param.dicTypeId !=null and param.dicTypeId!=''">
+			and DIC_TYPE_ID=#{param.dicTypeId,jdbcType=VARCHAR}
+		</if>
+		 -->
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+ 	delete from BASE_DIC_VALUE where ID in (select id from BASE_DIC_VALUE start with id=#{id,jdbcType=VARCHAR} connect by prior id=parent_id)
+  </delete>
+  <insert id="insert" parameterType="com.acc.sys.commons.pojo.BaseDicValue" >
+    insert into BASE_DIC_VALUE (ID, DIC_TYPE_ID, DIC_VALUE_NAME, 
+       DIC_VALUE_CODE, IS_EFFECTIVE, 
+      DISPLAY_ORDER,  
+      CH_SPELL, PARENT_ID)
+    values (#{id,jdbcType=VARCHAR}, #{dicTypeId,jdbcType=VARCHAR}, #{dicValueName,jdbcType=VARCHAR}, 
+      #{dicValueCode,jdbcType=VARCHAR}, #{isEffective,jdbcType=VARCHAR}, 
+      #{displayOrder,jdbcType=DECIMAL}, 
+      #{chSpell,jdbcType=VARCHAR}, #{parentId,jdbcType=VARCHAR})
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.acc.sys.commons.pojo.BaseDicValue" >
+    update BASE_DIC_VALUE
+    set DIC_TYPE_ID = #{dicTypeId,jdbcType=VARCHAR},
+      DIC_VALUE_NAME = #{dicValueName,jdbcType=VARCHAR},
+      DIC_VALUE_CODE = #{dicValueCode,jdbcType=VARCHAR},
+      IS_EFFECTIVE = #{isEffective,jdbcType=VARCHAR},
+      DISPLAY_ORDER = #{displayOrder,jdbcType=DECIMAL},
+      MODIFY_TIME = #{modifyTime,jdbcType=TIMESTAMP},
+      CH_SPELL = #{chSpell,jdbcType=VARCHAR},
+      PARENT_ID = #{parentId,jdbcType=VARCHAR}
+    where ID = #{id,jdbcType=VARCHAR}
+  </update>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select ID, DIC_TYPE_ID, DIC_VALUE_NAME, DIC_VALUE_CODE, IS_EFFECTIVE, 
+    DISPLAY_ORDER, CREATE_TIME, MODIFY_TIME, CH_SPELL, PARENT_ID
+    from BASE_DIC_VALUE
+    where ID = #{id,jdbcType=VARCHAR}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap" >
+    select ID, DIC_TYPE_ID, DIC_VALUE_NAME, DIC_VALUE_CODE, IS_EFFECTIVE, 
+    DISPLAY_ORDER, CREATE_TIME, MODIFY_TIME, CH_SPELL, PARENT_ID
+    from BASE_DIC_VALUE
+  </select>
+  <select id="queryDicValueList" parameterType="map" resultType="map">
+		SELECT ID, DIC_TYPE_ID, DIC_VALUE_NAME, PARENT_ID, (select
+		DIC_VALUE_NAME from BASE_DIC_VALUE t where t.id=
+		t1.PARENT_ID)PARENT_NAME, DISPLAY_ORDER, IS_EFFECTIVE,
+		CREATE_TIME,
+		MODIFY_TIME,
+		CH_SPELL , 
+		DIC_VALUE_CODE,
+		(select count(1)
+          from BASE_DIC_VALUE g
+         start with g.id = t1.id
+        connect by prior id = parent_id) NUM
+		FROM BASE_DIC_VALUE t1 
+		<where>
+			1=1
+			<if test="dicTypeId != null and dicTypeId != ''">
+		    and t1.DIC_TYPE_ID = #{dicTypeId}
+		   </if> 
+  		   <if test="parent_id != null and parent_id != ''">
+		    and t1.parent_id = #{parent_id}
+		   </if> 
+		</where>
+		 order by DISPLAY_ORDER ,parent_id
+ </select>
+ <select id="getDictionary" parameterType="map" resultType="map">
+		SELECT  t1.DIC_TYPE_CODE,
+			t.ID,
+			t.DIC_VALUE_CODE,
+			t.DIC_VALUE_NAME,
+			t.DISPLAY_ORDER,
+			t.CH_SPELL, 
+			t2.DIC_VALUE_CODE PARENT_DIC_VALUE_CODE ,
+			t.PARENT_ID
+		FROM base_dic_value t left join base_dic_value t2 on t.PARENT_ID=t2.ID, 
+			base_dic_type t1
+		<where>
+			AND t.IS_EFFECTIVE=1
+			AND t1.IS_EFFECTIVE=1
+			AND t.DIC_TYPE_ID=t1.ID
+			<if test="DICTYPE != null and DICTYPE != ''">
+				AND t1.DIC_TYPE_CODE = #{DICTYPE}
+			</if>
+			order by t.DISPLAY_ORDER
+		</where>
+ </select>
+ <select id="queryDisplayOrderMax" parameterType="map" resultType="map">
+		select nvl(max(DISPLAY_ORDER),0)+1 DISPLAY_ORDER from BASE_DIC_VALUE where parent_id=#{parent_id,jdbcType=VARCHAR} and DIC_TYPE_ID=#{dicTypeId,jdbcType=VARCHAR}
+ </select>
+ <select id="queryDisplayOrderMin" parameterType="map" resultType="map">
+		select nvl(min(DISPLAY_ORDER),0) DISPLAY_ORDER from BASE_DIC_VALUE where parent_id=#{parent_id,jdbcType=VARCHAR} and DIC_TYPE_ID=#{dicTypeId,jdbcType=VARCHAR}
+ </select>
+ <select id="checkDicValueName" parameterType="map" resultType="map">
+		select * from BASE_DIC_VALUE where DIC_TYPE_ID = #{dicTypeId,jdbcType=VARCHAR} and DIC_VALUE_NAME=#{dicValueName,jdbcType=VARCHAR} and PARENT_ID=#{level,jdbcType=VARCHAR}
+ </select>
+ <select id="checkDicValueCode" parameterType="map" resultType="map">
+		select * from BASE_DIC_VALUE where DIC_TYPE_ID = #{dicTypeId,jdbcType=VARCHAR} and DIC_VALUE_Code=#{dicValueCode,jdbcType=VARCHAR} and PARENT_ID=#{level,jdbcType=VARCHAR}
+ </select>
+ <!-- 查找dispaly是否已存在 -->
+	<select id="checkDispalyOrder" parameterType="map" resultMap="BaseResultMap">
+		select * from
+		BASE_DIC_VALUE where parent_id=#{parent_id,jdbcType=VARCHAR} and display_order=#{display_order,jdbcType=VARCHAR} and DIC_TYPE_ID=#{dicTypeId,jdbcType=VARCHAR}
+	</select>
+	<select id="selectDicIdByParent" resultType="map">
+	select distinct id from base_dic_value start with parent_id=#{parentId} connect by prior id = parent_id
+	</select>
+	<select id="selectByIds" parameterType="map" resultType="map">
+    select ID, DIC_TYPE_ID, DIC_VALUE_NAME, DIC_VALUE_CODE, IS_EFFECTIVE, 
+    DISPLAY_ORDER, CREATE_TIME, MODIFY_TIME, CH_SPELL, PARENT_ID
+    from BASE_DIC_VALUE
+	where ID in 
+    <foreach item="id" collection="idList" open="(" separator="," close=")">
+        #{id}
+    </foreach>
+  </select>
+</mapper>
