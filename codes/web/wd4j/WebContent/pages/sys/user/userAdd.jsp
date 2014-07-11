@@ -15,7 +15,6 @@
 	<head>
 		<title>用户添加</title>
 		<%@ include file="../../commons/frame.jsp"%>
-		<%@ include file="../../commons/xdic.jsp"%>
 		<script>$import("md5,validation");</script>
 		<script type="text/javascript">
 		function save(){
