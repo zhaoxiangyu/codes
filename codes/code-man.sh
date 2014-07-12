@@ -10,10 +10,10 @@ install(){
 	echo running install ...
 	git config --global user.name "blueocci_ubuntu"
 	git config --global user.email "blueocci@hotmail.com"
-    cd ../..
+	cd ../..
 	mkdir "github-`date --rfc-3339=date`"
 	cd "github-`date --rfc-3339=date`"
-    git clone https://github.com/blueocci/codes.git
+	git clone https://github.com/blueocci/codes.git
 	cd codes
 	git remote add upstream https://github.com/blueocci/codes.git
 	git fetch upstream
