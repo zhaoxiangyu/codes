@@ -1,0 +1,15 @@
+<project basedir="../.." name="framework" default="default">
+	<target name="default">
+	</target>
+	
+	<target name="gen-dao">
+		<path id="generator.classpath">
+			<pathelement location="WebRoot/generator/ojdbc14.jar"/>
+			<pathelement location="WebRoot/generator/mybatis-generator-core-1.3.2.jar"/>
+		</path>
+		<java classname="org.mybatis.generator.api.ShellRunner"
+			classpathref="generator.classpath" dir="${basedir}/.." fork="true">
+			<arg line="-configfile ${basedir}/WebRoot/generator/generatorConfig.xml"/>
+		</java>
+	</target>
+</project>

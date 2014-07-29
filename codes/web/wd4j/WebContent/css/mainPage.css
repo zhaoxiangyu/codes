@@ -1,0 +1,541 @@
+html {
+	scrollbar-face-color: #DEF;
+	scrollbar-highlight-color: #FFF;
+	scrollbar-shadow-color: #9BC;
+	scrollbar-3dlight-color: #ACD;
+	scrollbar-arrow-color: #68A;
+	scrollbar-track-color: #EEE;
+	scrollbar-darkshadow-color: #DEF;
+}
+
+
+.ali01{
+	text-align:left;
+}
+.ali02{
+	text-align:center;
+}
+.ali03{
+	text-align:right;
+}
+.ver01{
+	vertical-align:top;
+}
+.ver02{
+	vertical-align:middle;
+}
+.ver03{
+	vertical-align:bottom;
+}
+.float_left{
+	float:left;
+}
+.float_right{
+	float:right;
+}
+.menuBtn{
+	background-image: url(../images/skin/menuBtn.png);
+	background-repeat:no-repeat;
+	width:37px;
+	height:37px;
+	cursor:hand;
+	cursor:pointer;
+	position:absolute;
+	right:30px;
+	bottom:10px;
+}
+.mainContent_shadowLeft{
+	width: 1003px;
+	margin: 0 auto;
+	background-image: url(../images/skin/shadow_left.jpg);
+	background-repeat:repeat-y;
+}
+.mainContent_shadowRight{
+	width: 961px;
+	margin: 0 auto;
+	background-image: url(../images/skin/shadow_right.jpg);
+	background-repeat:repeat-y;
+	background-position:100% 0%;
+	position:relative;
+	padding:0 21px 0 21px;
+}
+.head{
+	width: 100%;
+	height:105px;
+	position:relative;
+}
+.main{
+	width: 100%;
+	height:auto!important;
+	>height:100px;
+	min-height:100px;
+	background-color:#f4f4f4;
+}
+
+.foot{
+	width: 100%;
+	height:35px;
+	background-image: url(../images/skin/foot_bg.jpg);
+	background-repeat:repeat-x;
+	color:#ffffff;
+	line-height:35px;
+	text-align:center;
+}
+.banner_center{
+	background-image: url(../images/skin/bs_bannercenter.jpg);
+	background-repeat:repeat-x;
+	width:100%;
+	height:100%;
+}
+.banner_left{
+	background-image: url();
+	background-repeat:no-repeat;
+	width:100%;
+	height:100%;
+}
+.banner_right{
+	background-image: url(../images/skin/bs_bannerright.jpg);
+	background-repeat:no-repeat;
+	background-position:100% 0%;
+	width:100%;
+	height:100%;
+}
+
+
+.banner_center2{
+	background-image: url(../images/skin/banner_center2.jpg);
+	background-repeat:repeat-x;
+	width:100%;
+	height:100%;
+}
+.banner_left2{
+	background-image: url(../images/skin/banner_left2.jpg);
+	background-repeat:no-repeat;
+	width:100%;
+	height:100%;
+}
+.banner_right2{
+	background-image: url(../images/skin/banner_right2.jpg);
+	background-repeat:no-repeat;
+	background-position:100% 0%;
+	width:100%;
+	height:100%;
+}
+
+.version_info{
+	position:absolute;
+	top:69px;
+	left:316px;
+	font-size:10px;
+}
+.user_info{
+	position:absolute;
+	top:86px;
+	left:20px;
+}
+.user_info2{
+	position:absolute;
+	top:97px;
+	right:90px;
+}
+.user_info3{
+	position:absolute;
+	top:130px;
+	left:30px;
+	color:#4b6681;
+}
+.user_info4{
+	position:absolute;
+	top:85px;
+	right:10px;
+	color:#4b6681;
+}
+.user_info4 a{
+	color:#4b6681;
+}
+.user_info4 a:hover{
+	color:#4b6681;
+	text-decoration:none;
+}
+.user_info5{
+	position:absolute;
+	top:130px;
+	left:240px;
+	color:#4b6681;
+}
+
+.icon_label_5{
+	height:20px;
+	line-height:20px;
+	background-image: url(../images/skin/icon-5.png);
+	background-repeat:no-repeat;
+	padding:0 10px 0 20px;
+	float:left;
+}
+.icon_label_6{
+	height:20px;
+	line-height:20px;
+	background-image: url(../images/skin/icon-6.png);
+	background-repeat:no-repeat;
+	padding:0 0 0 20px;
+	float:left;
+}
+.icon_label_7{
+	height:20px;
+	line-height:20px;
+	background-image: url(../images/skin/icon-7.png);
+	background-repeat:no-repeat;
+	padding:0 10px 0 20px;
+	float:left;
+}
+.icon_label_8{
+	height:20px;
+	line-height:20px;
+	background-image: url(../images/skin/icon-8.png);
+	background-repeat:no-repeat;
+	padding:0 0 0 20px;
+	float:left;
+}
+.icon_label_9{
+	height:20px;
+	line-height:20px;
+	background-image: url(../images/skin/icon-9.png);
+	background-repeat:no-repeat;
+	padding:0 10px 0 20px;
+	float:left;
+}
+
+.arrowlistmenu {
+	width: 98%;
+}
+
+div.menuheader a {
+	color: #03509e;
+}
+
+.arrowlistmenu div {
+	margin: 4px 0 4px 0;
+	font-weight: bold;
+}
+
+.arrowlistmenu .menuheader {
+	color: #03509e;
+	background: white url(../images/skin/tab/titlebar.jpg) repeat-x center left;
+	padding: 4px 0 4px 10px;
+	cursor: hand;
+	cursor: pointer;
+	border: solid 1px #b7cce7;
+	height: 16px !important;
+	position: relative;
+	text-indent: 15px;
+}
+
+.arrowlistmenu .openheader {
+	background-image: url(../images/skin/tab/titlebar-active.jpg);
+	color: white;
+	height: 16px !important;
+	border: 1px solid #008eda !important;
+}
+
+.arrowlistmenu ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	margin-bottom: 8px;
+	background-color: white;
+}
+
+.arrowlistmenu ul li {
+	padding-bottom: 2px;
+}
+
+.arrowlistmenu ul li a {
+	background-color: white;
+	color: #000;
+	display: block;
+	text-decoration: none;
+	border-bottom: 1px solid #dadada;
+	width: 100%;
+	height:25px;
+}
+
+.arrowlistmenu ul li a:hover {
+	background: url(../images/skin/tab/titlebar_itemBg.jpg) no-repeat !important;
+	background-position: 10px 0 !important;
+	color: black;
+	text-decoration: none;
+}
+
+.arrowlistmenu ul li li {
+	font-weight: normal;
+	padding-left: 15px;
+}
+
+.arrowlistmenuCurrent {
+	background: url(../images/skin/tab/titlebar_itemBg.jpg) no-repeat !important;
+	background-position: 10px 0 !important;
+}
+
+.arrowlistmenu .hasChildren span {
+	background: url(../images/skin/tab/nolines_plus.gif) no-repeat;
+	background-position: 3px 4px;
+	display: block;
+	padding-top: 3px;
+	padding-bottom: 5px;
+	padding-left: 19px;
+}
+
+.arrowlistmenu .noChildren span {
+	background: url(../images/skin/tab/arrowbullet.jpg) no-repeat;
+	background-position: 3px 4px;
+	display: block;
+	padding-top: 3px;
+	padding-bottom: 3px;
+	padding-left: 19px;
+}
+
+.arrowlistmenu .spanParentStyle {
+	background: url(../images/skin/tab/nolines_plus.gif) no-repeat;
+	background-position: 3px 4px;
+	display: block;
+	padding-top: 3px;
+	padding-bottom: 3px;
+	padding-left: 19px;
+}
+
+.arrowlistmenu .spanStyle {
+	background: url(../images/skin/tab/arrowbullet.jpg) no-repeat !important;
+	background-position: 3px 4px !important;
+	display: block;
+	padding-top: 3px;
+	padding-bottom: 3px;
+	padding-left: 19px;
+}
+.normal_icon1 {
+	background-image: url(../images/skin/navMenu/icon01.png);
+	background-repeat: no-repeat;
+	display: block;
+	width: 18px;
+	height: 16px;
+	position: absolute;
+	left: 2px;
+	top: 5px;
+}
+
+.normal_icon2 {
+	background-image: url(../images/skin/navMenu/icon02.png);
+	background-repeat: no-repeat;
+	display: block;
+	width: 18px;
+	height: 16px;
+	position: absolute;
+	left: 2px;
+	top: 5px;
+}
+
+.normal_icon3 {
+	background-image: url(../images/skin/navMenu/icon03.png);
+	background-repeat: no-repeat;
+	display: block;
+	width: 18px;
+	height: 16px;
+	position: absolute;
+	left: 2px;
+	top: 5px;
+}
+
+.normal_icon4 {
+	background-image: url(../images/skin/navMenu/icon04.png);
+	background-repeat: no-repeat;
+	display: block;
+	width: 18px;
+	height: 16px;
+	position: absolute;
+	left: 2px;
+	top: 5px;
+}
+
+.normal_icon5 {
+	background-image: url(../images/skin/navMenu/icon05.png);
+	background-repeat: no-repeat;
+	display: block;
+	width: 18px;
+	height: 16px;
+	position: absolute;
+	left: 2px;
+	top: 5px;
+}
+
+.normal_icon6 {
+	background-image: url(../images/skin/navMenu/icon06.png);
+	background-repeat: no-repeat;
+	display: block;
+	width: 18px;
+	height: 16px;
+	position: absolute;
+	left: 2px;
+	top: 5px;
+}
+
+.normal_icon7 {
+	background-image: url(../images/skin/navMenu/icon07.png);
+	background-repeat: no-repeat;
+	display: block;
+	width: 18px;
+	height: 16px;
+	position: absolute;
+	left: 2px;
+	top: 5px;
+}
+
+.normal_icon8 {
+	background-image: url(../images/skin/navMenu/icon08.png);
+	background-repeat: no-repeat;
+	display: block;
+	width: 18px;
+	height: 16px;
+	position: absolute;
+	left: 2px;
+	top: 5px;
+}
+
+.normal_icon9 {
+	background-image: url(../images/skin/navMenu/icon09.png);
+	background-repeat: no-repeat;
+	display: block;
+	width: 18px;
+	height: 16px;
+	position: absolute;
+	left: 2px;
+	top: 5px;
+}
+
+.bs_arrbg{
+background-image: url("../images/skin/bs_arrbg.jpg");
+background-repeat: repeat-y;
+}
+.mainBody{
+background-color: #e8f6ff;
+}
+body{
+font-family: Helvetica, Tahoma, Arial, sans-serif;
+}
+
+/*弹出窗口*/ /*浮动面板*/
+.searchMain {
+	position: absolute;
+}
+
+.searchPanTop {
+	background-color: #f8fbfe; /*背景颜色*/
+	border-left: solid 1px #9ebaea; /*边框颜色*/
+	border-right: solid 1px #9ebaea; /*边框颜色*/
+	border-bottom: solid 1px #9ebaea; /*边框颜色*/
+	background-image: url(../js/floatPanel/searchPan.jpg);
+	background-position: 0 100%;
+	background-repeat: repeat-x;
+}
+
+.searchPanLeft {
+	background-color: #f8fbfe; /*背景颜色*/
+	border-top: solid 1px #9ebaea; /*边框颜色*/
+	border-right: solid 1px #9ebaea; /*边框颜色*/
+	border-bottom: solid 1px #9ebaea; /*边框颜色*/
+	background-image: url(../js/floatPanel/searchPan.jpg);
+	background-position: 0 100%;
+	background-repeat: repeat-x;
+}
+
+.searchPanRight {
+	background-color: #f8fbfe; /*背景颜色*/
+	border-top: solid 1px #9ebaea; /*边框颜色*/
+	border-left: solid 1px #9ebaea; /*边框颜色*/
+	border-bottom: solid 1px #9ebaea; /*边框颜色*/
+	background-image: url(../js/floatPanel/searchPan.jpg);
+	background-position: 0 100%;
+	background-repeat: repeat-x;
+}
+
+.searchPanBottom {
+	background-color: #f8fbfe; /*背景颜色*/
+	border-top: solid 1px #9ebaea; /*边框颜色*/
+	border-left: solid 1px #9ebaea; /*边框颜色*/
+	border-right: solid 1px #9ebaea; /*边框颜色*/
+	background-image: url(../js/floatPanel/searchPan.jpg);
+	background-position: 0 100%;
+	background-repeat: repeat-x;
+}
+
+.searchPan_con {
+	padding: 5px;
+	text-align: left;
+}
+
+.searchBtnTop {
+	background-image: url(../js/floatPanel/searchBtnTop.jpg);
+	width: 156px;
+	height: 27px;
+	color: white;
+	border: 0;
+	cursor: pointer;
+	cursor: hand;
+}
+
+.searchBtnLeft {
+	background-image: url(../js/floatPanel/searchBtnLeft.jpg);
+	width: 28px;
+	height: 156px;
+	color: white;
+	border: 0;
+	cursor: pointer;
+	cursor: hand;
+	writing-mode: tb-rl;
+	letter-spacing: 2px;
+	line-height: 150%;
+}
+
+.searchBtnRight {
+	background-image: url(../js/floatPanel/searchBtnRight.jpg);
+	width: 28px;
+	height: 156px;
+	color: white;
+	border: 0;
+	cursor: pointer;
+	cursor: hand;
+	writing-mode: tb-rl;
+	letter-spacing: 2px;
+	line-height: 150%;
+}
+
+.searchBtnBottom {
+	background-image: url(../js/floatPanel/searchBtnBottom.jpg);
+	width: 156px;
+	height: 27px;
+	color: white;
+	border: 0;
+	cursor: pointer;
+	cursor: hand;
+}
+
+.searchBtnConTop {
+	width: 100%;
+}
+
+.searchBtnConLeft {
+	width: 28px;
+}
+
+.searchBtnConRight {
+	width: 28px;
+}
+
+.searchBtnConBottom {
+	width: 100%;
+}
+
+.clearTop {
+	clear: both;
+	line-height: 1px;
+}
+
+/*浮动面板*/ /*进度杄1�7*/

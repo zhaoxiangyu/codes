@@ -1,0 +1,120 @@
+/*悬浮菜单*/
+.menu_desktop{
+	position:absolute;
+	top:105px;
+	left:10px;
+}
+.menu_top_div{
+	position:absolute;
+	top:0px;
+	left:0px;
+	width:41px;
+	height:41px;
+	background-image: url(../../images/skin/menu/yuanBtn.png);
+	background-repeat:no-repeat;
+	z-index:10;
+}
+.menu_top_div:hover{
+	background-image: url(../../images/skin/menu/yuanBtnHover.png);
+}
+.menu_sub_div{
+	display: none;
+	position:absolute;
+	top:18px;
+	left:-5px;
+	width:560px;
+	height:430px;
+	background-image: url(../../images/skin/menu/mainMenuBg.png);
+	z-index:9;
+}
+.menu_setup{
+	position:absolute;
+	top:10px;
+	right:10px;
+	text-align:right;
+	z-index:5;
+}
+.subTitle{
+	width:558px;
+	height:20px;
+	background-image: url(../../images/skin/menu/subTitleBg.png);
+	background-repeat: no-repeat;
+	background-position:0% 100%;
+	padding:10px 0 0 0;
+	z-index:5;
+}
+.subTitleCon{
+	color:white;
+	font-weight:bold;
+	font-size:14px;
+	padding:0px 0 10px 60px;
+	font-family:"microsoft yahei",'';text-shadow: #000000 1px 1px 2px !important;filter: DropShadow(Color=#023B74, OffX=1, OffY=1, Positive=1);
+}
+.iconContent{
+	padding:10px 0 5px 0;
+	z-index:5;
+}
+.iconTable{
+	color:white;
+}
+.iconTable td{
+	width:70px;
+	text-align:center;
+	font-size:12px;
+	padding:3px 0 3px 0;
+}
+.iconTable span{
+	color:white;
+	font-family:"microsoft yahei",'';
+	text-shadow: #000000 1px 1px 2px !important;
+	filter: DropShadow(Color=#023B74, OffX=1, OffY=1, Positive=1);
+}
+
+.iconTable img{
+	width:45px;
+	height:45px;
+}
+
+.icon_nav{
+	position:absolute;
+	right:10px;
+	top:5px;
+}
+.icon_nav_unit{
+	float:left;
+	margin:0 0 0 10px;
+	display:block;
+	width:70px;
+	height:70px;
+	padding:5px;
+}
+.icon_nav_unit_current{
+	background-image: url(../../images/skin/iconBg2.png);
+	background-repeat:no-repeat;
+}
+.icon_nav_unit_hover{
+	background-image: url(../../images/skin/iconBg2.png);
+	background-repeat:no-repeat;
+}
+.icon_nav_unit_icon{
+	width:70px;
+	height:45px;
+	text-align:center;
+}
+.icon_nav_unit_text{
+	width:70px;
+	height:20px;
+	background-image: url(../../images/skin/iconBg.png);
+	background-repeat:no-repeat;
+	background-position:50% 50%;
+	color:#ffffff;
+	text-align:center;
+	line-height:20px;
+}
+.icon_nav_unit_text a{
+	color:#ffffff;
+}
+.icon_nav_unit_text a:hover{
+	color:#ffffff;
+	text-decoration:none;
+}

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.acc.sys.commons.dao.BaseRoleDao" >
+  <resultMap id="BaseResultMap" type="com.acc.sys.commons.pojo.BaseRole" >
+    <id column="ID" property="id" jdbcType="VARCHAR" />
+    <result column="ROLE_NAME" property="roleName" jdbcType="VARCHAR" />
+    <result column="ROLE_DESC" property="roleDesc" jdbcType="VARCHAR" />
+    <result column="IS_EFFECTIVE" property="isEffective" jdbcType="VARCHAR" />
+    <result column="CREATE_TIME" property="createTime" jdbcType="DATE" />
+    <result column="MODIFY_TIME" property="modifyTime" jdbcType="DATE" />
+    <result column="PARENTID" property="parentId" jdbcType="VARCHAR"/>
+    <result column="PARENTNAME" property="parentName" jdbcType="VARCHAR"/>
+  </resultMap>
+  <select id="customSql" parameterType="map" resultType="map">
+		${sql}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from BASE_ROLE
+    where ID in (select id from Base_Role start with id= #{id,jdbcType=VARCHAR} connect by prior id=parentid)
+  </delete>
+  <insert id="insert" parameterType="com.acc.sys.commons.pojo.BaseRole" >
+    insert into BASE_ROLE (ID, ROLE_NAME, ROLE_DESC, 
+      IS_EFFECTIVE, CREATE_TIME, MODIFY_TIME,PARENTID
+      )
+    values (#{id,jdbcType=VARCHAR}, #{roleName,jdbcType=VARCHAR}, #{roleDesc,jdbcType=VARCHAR}, 
+      #{isEffective,jdbcType=VARCHAR}, #{createTime,jdbcType=DATE}, #{modifyTime,jdbcType=DATE},#{parentId,jdbcType=VARCHAR}
+      )
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.acc.sys.commons.pojo.BaseRole" >
+    update BASE_ROLE
+    set ROLE_NAME = #{roleName,jdbcType=VARCHAR},
+      ROLE_DESC = #{roleDesc,jdbcType=VARCHAR},
+      IS_EFFECTIVE = #{isEffective,jdbcType=VARCHAR},
+      CREATE_TIME = #{createTime,jdbcType=DATE},
+      MODIFY_TIME = #{modifyTime,jdbcType=DATE},
+      PARENTID=#{parentId,jdbcType=VARCHAR}
+    where ID = #{id,jdbcType=VARCHAR}
+  </update>
+  <select id="selectAll" resultMap="BaseResultMap" >
+    select ID, ROLE_NAME, ROLE_DESC, IS_EFFECTIVE, CREATE_TIME, MODIFY_TIME,PARENTID
+    from BASE_ROLE where 1=1 and IS_EFFECTIVE='1'
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String">
+    select ID, ROLE_NAME, ROLE_DESC, IS_EFFECTIVE, CREATE_TIME, MODIFY_TIME,PARENTID
+    from BASE_ROLE  where ID = #{id,jdbcType=VARCHAR}
+  </select>
+  <select id="selectAllByRoleId" resultMap="BaseResultMap" parameterType="String">
+    select DISTINCT ID, ROLE_NAME, ROLE_DESC, IS_EFFECTIVE, CREATE_TIME, MODIFY_TIME,PARENTID,
+    (select ROLE_NAME from BASE_ROLE t where t.id=t2.PARENTID) PARENTNAME
+    from BASE_ROLE t2 start with id in (${rolesId}) connect by parentid=prior id
+  </select>
+  <select id="queryByPage" resultMap="BaseResultMap" parameterType="map">
+    select ID, ROLE_NAME, ROLE_DESC, IS_EFFECTIVE, CREATE_TIME, MODIFY_TIME,PARENTID
+    from BASE_ROLE where 1=1
+    <if test="param.roleName != null and param.roleName !=''">
+    and ROLE_NAME like '%${param.roleName1}%' escape'/'
+    </if>
+  </select>
+  <select id="checkRoleName" resultMap="BaseResultMap" parameterType="String" >
+    select ID, ROLE_NAME, ROLE_DESC, IS_EFFECTIVE, CREATE_TIME, MODIFY_TIME,PARENTID
+    from BASE_ROLE where ROLE_NAME=#{roleName }
+  </select>
+  <select id="selectAllParentId" resultType="map" parameterType="String" >
+    select ID
+    from BASE_ROLE start with ID = #{id,jdbcType=VARCHAR} connect by prior PARENTID = ID
+  </select>
+  <select id="selectAllRoleByUserId" resultMap="BaseResultMap" parameterType="String" >
+    select role_id
+    from BASE_ROLE_USER where userid = #{userId,jdbcType=VARCHAR};
+  </select>
+  <insert id="insertRoleResource" parameterType="com.acc.sys.commons.pojo.BaseRoleResource">
+  	insert into BASE_ROLE_RESOURCE(ID,ROLE_ID,RESOURCE_ID)values(#{id},#{roleId},#{resourceId}) 
+  </insert>
+  <delete id="deleteResourceByRoleId" parameterType="String">
+  	delete from BASE_ROLE_RESOURCE where ROLE_ID=#{id}
+  </delete>
+</mapper>

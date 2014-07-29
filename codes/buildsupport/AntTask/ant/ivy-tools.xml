@@ -1,28 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project name="ivy-tools" basedir=".." xmlns:ivy="antlib:org.apache.ivy.ant"
-	default="default">
+<project name="ivy-tools" basedir=".." xmlns:ivy="antlib:org.apache.ivy.ant">
 
 	<dirname property="antfile.dir" file="${ant.file.ivy-tools}"/>
 	<property name="i.basedir" value="${antfile.dir}/.."/>
 	<import file="${i.basedir}/ant/env-setting.xml" />
 	
-	<target name="default">
-	</target>
-	
+	<property name="ivy-repo.dir" value="${VMSHARE.DIR}/ivy-repo"/>
+	<property name="ivy-cache.dir" value="${VMSHARE.DIR}/ivy-repo/cache"/>
+
 	<path id="ivy.lib.path">
 	    <fileset dir="${ivy.dir}" includes="*.jar"/>
 	</path>
-	<taskdef resource="org/apache/ivy/ant/antlib.xml"
+	<taskdef resource="org/apache/ivy/ant/antlib.xml" onerror="report"
          uri="antlib:org.apache.ivy.ant" classpathref="ivy.lib.path"/>	
 	
 	<property name="ivy.default.ivy.user.dir" value="${ivy-repo.dir}"/>
 	<property name="ivy.organisation" value="org.sharp"/>
-	<ivy:settings/>
 	
-	<target name="install-ivy">
-		<unzip src="${java-tools.dir}/apache-ivy-2.2.0-bin-with-deps.zip"
-			dest="${java-tools.dir}/apache-ivy-2.2.0-bin-with-deps"/>
-	</target>
+	<ivy:settings file="${i.basedir}/ant/ivy-settings.xml"/>
 	
 	<target name="setup-ivy-repo">
 		<mkdir dir="${ivy-repo.dir}"/>

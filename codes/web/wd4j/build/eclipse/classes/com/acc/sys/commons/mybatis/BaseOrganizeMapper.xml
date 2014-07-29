@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.acc.sys.commons.dao.BaseOrganizeDao">
+	<resultMap id="BaseResultMap"
+		type="com.acc.sys.commons.pojo.BaseOrganize">
+		<id column="ID" property="id" jdbcType="VARCHAR" />
+		<result column="ORG_NAME" property="orgName" jdbcType="VARCHAR" />
+		<result column="ORG_CODE" property="orgCode" jdbcType="VARCHAR" />
+		<result column="ORG_TYPE" property="orgType" jdbcType="VARCHAR" />
+		<result column="PARENT_ID" property="parentId"
+			jdbcType="VARCHAR" />
+		<result column="PARENT_NAME" property="parentName"
+			jdbcType="VARCHAR" />
+		<result column="DISPLAY_ORDER" property="displayOrder"
+			jdbcType="DECIMAL" />
+		<result column="IS_EFFECTIVE" property="isEffective"
+			jdbcType="VARCHAR" />
+		<result column="CREATE_TIME" property="createTime"
+			jdbcType="DATE" />
+		<result column="MODIFY_TIME" property="modifyTime"
+			jdbcType="DATE" />
+		<result column="CH_SPELL" property="chSpell" jdbcType="VARCHAR" />
+	</resultMap>
+	<select id="customSql" parameterType="map" resultType="map">
+		${sql}
+	</select>
+	<select id="queryByPage" parameterType="map"
+		resultMap="BaseResultMap">
+		select ID, ORG_NAME, ORG_CODE, ORG_TYPE, PARENT_ID,
+		DISPLAY_ORDER, IS_EFFECTIVE, CREATE_TIME, MODIFY_TIME, CH_SPELL
+		from BASE_ORGANIZE
+	</select>
+	<delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+		delete from BASE_ORGANIZE where ID in (select id from
+		BASE_ORGANIZE start with id=#{id,jdbcType=VARCHAR} connect by
+		prior id=parent_id)
+	</delete>
+	<insert id="insert"
+		parameterType="com.acc.sys.commons.pojo.BaseOrganize">
+		insert into BASE_ORGANIZE (ID, ORG_NAME, ORG_CODE, ORG_TYPE,
+		PARENT_ID, DISPLAY_ORDER, IS_EFFECTIVE, CREATE_TIME,
+		MODIFY_TIME, CH_SPELL) values (#{id,jdbcType=VARCHAR},
+		#{orgName,jdbcType=VARCHAR}, #{orgCode,jdbcType=VARCHAR},
+		#{orgType,jdbcType=VARCHAR}, #{parentId,jdbcType=VARCHAR},
+		#{displayOrder,jdbcType=DECIMAL},
+		#{isEffective,jdbcType=VARCHAR}, #{createTime,jdbcType=DATE},
+		#{modifyTime,jdbcType=DATE}, #{chSpell,jdbcType=VARCHAR})
+	</insert>
+	<update id="updateByPrimaryKey"
+		parameterType="com.acc.sys.commons.pojo.BaseOrganize">
+		update BASE_ORGANIZE set ORG_NAME = #{orgName,jdbcType=VARCHAR},
+		ORG_CODE = #{orgCode,jdbcType=VARCHAR}, ORG_TYPE =
+		#{orgType,jdbcType=VARCHAR}, PARENT_ID =
+		#{parentId,jdbcType=VARCHAR}, DISPLAY_ORDER =
+		#{displayOrder,jdbcType=DECIMAL}, IS_EFFECTIVE =
+		#{isEffective,jdbcType=VARCHAR}, CREATE_TIME =
+		#{createTime,jdbcType=DATE}, MODIFY_TIME =
+		#{modifyTime,jdbcType=DATE}, CH_SPELL =
+		#{chSpell,jdbcType=VARCHAR} where ID = #{id,jdbcType=VARCHAR}
+	</update>
+	<select id="selectByPrimaryKey" resultMap="BaseResultMap"
+		parameterType="java.lang.String">
+		select ID, ORG_NAME, ORG_CODE, ORG_TYPE, PARENT_ID,
+		DISPLAY_ORDER, IS_EFFECTIVE, CREATE_TIME, MODIFY_TIME, CH_SPELL
+		from BASE_ORGANIZE where ID = #{id,jdbcType=VARCHAR}
+	</select>
+	<select id="selectAll" resultMap="BaseResultMap">
+		select ID, ORG_NAME, ORG_CODE, ORG_TYPE, PARENT_ID,
+		DISPLAY_ORDER, IS_EFFECTIVE, CREATE_TIME, MODIFY_TIME, CH_SPELL
+		from BASE_ORGANIZE
+	</select>
+	<select id="selectOrgList" parameterType="map" resultType="map">
+		SELECT ID, ORG_NAME, ORG_CODE, ORG_TYPE, PARENT_ID, (select
+		org_name from BASE_ORGANIZE t where t.id=
+		t1.PARENT_ID)PARENT_NAME, DISPLAY_ORDER, IS_EFFECTIVE,
+		CREATE_TIME,MODIFY_TIME, CH_SPELL, (select count(1) from
+		BASE_ORGANIZE g start with g.id = t1.id connect by prior id =
+		parent_id) NUM FROM BASE_ORGANIZE t1
+		<where>
+			<if test="parent_id != null and parent_id != ''">
+				t1.parent_id = #{parent_id}
+			</if>
+		</where>
+		order by parent_id,DISPLAY_ORDER
+	</select>
+	<select id="selectOrgListQy" parameterType="map" resultType="map">
+	select t.*,level
+    from base_organize t   
+		start with parent_id=(select id from BASE_ORGANIZE where ORG_CODE=#{orgCode})
+    	connect by prior id=parent_id
+		order by parent_id,DISPLAY_ORDER
+	</select>
+	<!--根据parent_id查找相应的显示顺序 -->
+	<select id="queryDisplayOrderMax" parameterType="map"
+		resultType="map">
+		select nvl(max(DISPLAY_ORDER),0)+1 DISPLAY_ORDER from
+		base_organize where parent_id=#{parent_id,jdbcType=VARCHAR}
+	</select>
+	<!--根据parent_id查找相应的显示顺序 -->
+	<select id="queryDisplayOrderMin" parameterType="map"
+		resultType="map">
+		select nvl(min(DISPLAY_ORDER),0) DISPLAY_ORDER from
+		base_organize where parent_id=#{parent_id,jdbcType=VARCHAR}
+	</select>
+	<select id="checkOrgName" parameterType="String" resultType="map">
+		select * from BASE_ORGANIZE where org_name=#{org_name}
+	</select>
+	<select id="checkOrgCode" parameterType="String" resultType="map">
+		select * from BASE_ORGANIZE where org_code=#{org_code}
+	</select>
+	<!-- 所有有效组织数据 -->
+	<select id="getOrganDict" resultType="map">
+		SELECT ORG_NAME,ORG_CODE,ID ORG_ID,ORG_TYPE,
+		CH_SPELL,DISPLAY_ORDER,PARENT_ID FROM base_organize where
+		IS_EFFECTIVE='1' order by DISPLAY_ORDER asc
+	</select>
+	<!-- 查找dispaly是否已存在 -->
+	<select id="checkDispalyOrder" parameterType="map"
+		resultMap="BaseResultMap">
+		select * from base_organize where
+		parent_id=#{parent_id,jdbcType=VARCHAR} and
+		display_order=#{display_order,jdbcType=VARCHAR}
+	</select>
+	<select id="selectOrgIdByParent" parameterType="string"
+		resultType="map">
+		select distinct id from base_organize start with
+		parent_id=#{parentId} connect by prior id = parent_id
+	</select>
+	<select id="selectAllParentOrgCodeByOrgCode" parameterType="string"
+		resultMap="BaseResultMap">
+		select * from base_organize start with id = (select id from
+		base_organize t where t.org_code=#{OrgCode}) connect by prior
+		parent_id = id order by parent_id asc
+	</select>
+</mapper>

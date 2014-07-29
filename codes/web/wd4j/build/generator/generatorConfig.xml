@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN" "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd" >
+<generatorConfiguration>
+	<context id="mybatisGeneratorContext" targetRuntime="MyBatis3Simple">
+		<!-- 过滤掉生成的mapper文件中的注释 -->
+		<commentGenerator>
+			<property name="suppressAllComments" value="true" />
+		</commentGenerator>
+		<!-- 数据库连接配置 -->
+		<jdbcConnection driverClass="oracle.jdbc.driver.OracleDriver"
+			connectionURL="jdbc:oracle:thin:@192.168.1.22:1521:orcl" userId="xc2"
+			password="xc2" />
+		<!-- 生成的javabean文件存放的路径 -->
+		<javaModelGenerator targetPackage="com.acc.xc.sl.blk.commons.pojo"
+			targetProject="xc2/src" />
+		<!-- 生成的mapper文件存放的路径 -->
+		<sqlMapGenerator targetPackage="com.acc.xc.sl.blk.commons.mybatis"
+			targetProject="xc2/src" />
+		<!-- 待生成代码的表属性 -->
+		<table schema="xc2" tableName="sl_lk_bkzlxx">
+			<property name="ignoreQualifiersAtRuntime" value="true" />
+		</table>
+
+	</context>
+</generatorConfiguration>
