@@ -1,3 +1,30 @@
 REM https://github.com/talios/clojure-maven-plugin
-call mvn archetype:generate
-call mvn clojure:test
+@echo off
+if ""%1""=="""" (
+    echo "command options: new build run repl test"
+) else (
+    call :%1
+)
+exit /b 0
+
+:new
+    call mvn archetype:generate
+exit /b
+
+:build
+    call mvn clean
+    call mvn clojure:compile
+exit /b
+
+:repl
+    call mvn clojure:repl
+exit /b
+
+:run
+    call :build >NUL
+    call mvn clojure:run -Dclojure.mainClass=org.sharpx.parser.oxford
+exit /b
+
+:test
+    call mvn clojure:test
+exit /b

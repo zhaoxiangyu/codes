@@ -6,3 +6,4 @@
 codes/c/wxMedia/make/build/*
 
 *.class
+**/target/**/*
