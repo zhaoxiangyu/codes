@@ -1,0 +1,60 @@
+!SESSION 2014-07-30 00:19:05.035 -----------------------------------------------
+eclipse.buildId=3.0.4-2.11-20140723-2253-Typesafe
+java.version=1.7.0_65
+java.vendor=Oracle Corporation
+BootLoader constants: OS=linux, ARCH=x86, WS=gtk, NL=en_US
+Command-line arguments:  -os linux -ws gtk -arch x86 -data /home/he/work/code-repo/github/codes/ws/scala
+
+!ENTRY org.scala-ide.sdt.core 4 0 2014-07-30 00:26:06.664
+!MESSAGE scala.reflect.internal.FatalError: package scala does not have a member Int
+
+!ENTRY org.eclipse.core.jobs 4 2 2014-07-30 00:26:27.382
+!MESSAGE An internal error occurred during: "Compute launch button tooltip".
+!STACK 0
+scala.tools.eclipse.ScalaProject$InvalidCompilerSettings: Scala compiler cannot initialize for project: scala. Please check that your classpath contains the standard Scala library.
+	at scala.tools.eclipse.ScalaProject.defaultOrElse(ScalaProject.scala:572)
+	at scala.tools.eclipse.InteractiveCompilationUnit$class.withSourceFile$default$2(InteractiveCompilationUnit.scala:65)
+	at scala.tools.eclipse.javaelements.ScalaSourceFile.withSourceFile$default$2(ScalaSourceFile.scala:69)
+	at scala.tools.eclipse.launching.ScalaLaunchShortcut$$anonfun$getMainMethods$1$$anonfun$2.apply(ScalaLaunchShortcut.scala:194)
+	at scala.tools.eclipse.launching.ScalaLaunchShortcut$$anonfun$getMainMethods$1$$anonfun$2.apply(ScalaLaunchShortcut.scala:194)
+	at scala.tools.eclipse.ScalaProject$$anonfun$withPresentationCompiler$1.apply(ScalaProject.scala:583)
+	at scala.tools.eclipse.ScalaProject$$anonfun$withPresentationCompiler$1.apply(ScalaProject.scala:581)
+	at scala.tools.eclipse.util.Cached$class.apply(Cached.scala:41)
+	at scala.tools.eclipse.ScalaProject$$anon$1.apply(ScalaProject.scala:95)
+	at scala.tools.eclipse.ScalaProject.withPresentationCompiler(ScalaProject.scala:581)
+	at scala.tools.eclipse.ScalaProject.withSourceFile(ScalaProject.scala:590)
+	at scala.tools.eclipse.InteractiveCompilationUnit$class.withSourceFile(InteractiveCompilationUnit.scala:66)
+	at scala.tools.eclipse.javaelements.ScalaSourceFile.withSourceFile(ScalaSourceFile.scala:69)
+	at scala.tools.eclipse.launching.ScalaLaunchShortcut$$anonfun$getMainMethods$1.apply(ScalaLaunchShortcut.scala:234)
+	at scala.tools.eclipse.launching.ScalaLaunchShortcut$$anonfun$getMainMethods$1.apply(ScalaLaunchShortcut.scala:190)
+	at scala.Option.map(Option.scala:145)
+	at scala.tools.eclipse.launching.ScalaLaunchShortcut$.getMainMethods(ScalaLaunchShortcut.scala:190)
+	at scala.tools.eclipse.launching.ScalaLaunchableTester.hasMain(ScalaLaunchableTester.scala:44)
+	at scala.tools.eclipse.launching.ScalaLaunchableTester.test(ScalaLaunchableTester.scala:98)
+	at org.eclipse.core.internal.expressions.Property.test(Property.java:58)
+	at org.eclipse.core.internal.expressions.TestExpression.evaluate(TestExpression.java:99)
+	at org.eclipse.core.internal.expressions.CompositeExpression.evaluateAnd(CompositeExpression.java:53)
+	at org.eclipse.core.internal.expressions.AndExpression.evaluate(AndExpression.java:29)
+	at org.eclipse.core.internal.expressions.CompositeExpression.evaluateAnd(CompositeExpression.java:53)
+	at org.eclipse.core.internal.expressions.IterateExpression.evaluate(IterateExpression.java:150)
+	at org.eclipse.core.internal.expressions.CompositeExpression.evaluateAnd(CompositeExpression.java:53)
+	at org.eclipse.core.internal.expressions.WithExpression.evaluate(WithExpression.java:72)
+	at org.eclipse.core.internal.expressions.CompositeExpression.evaluateAnd(CompositeExpression.java:53)
+	at org.eclipse.core.internal.expressions.EnablementExpression.evaluate(EnablementExpression.java:53)
+	at org.eclipse.debug.internal.ui.launchConfigurations.LaunchShortcutExtension.evalEnablementExpression(LaunchShortcutExtension.java:287)
+	at org.eclipse.debug.internal.ui.contextlaunching.LaunchingResourceManager.getShortcutsForSelection(LaunchingResourceManager.java:456)
+	at org.eclipse.debug.internal.ui.contextlaunching.LaunchingResourceManager.computeLabels(LaunchingResourceManager.java:236)
+	at org.eclipse.debug.internal.ui.contextlaunching.LaunchingResourceManager$2.run(LaunchingResourceManager.java:138)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+
+!ENTRY org.eclipse.core.jobs 2 2 2014-07-30 00:27:02.068
+!MESSAGE Job found still running after platform shutdown.  Jobs should be canceled by the plugin that scheduled them during shutdown: org.eclipse.m2e.core.internal.index.nexus.IndexUpdaterJob
+!SESSION 2014-07-30 00:27:02.355 -----------------------------------------------
+eclipse.buildId=3.0.4-2.11-20140723-2253-Typesafe
+java.version=1.7.0_65
+java.vendor=Oracle Corporation
+BootLoader constants: OS=linux, ARCH=x86, WS=gtk, NL=en_US
+Command-line arguments:  -os linux -ws gtk -arch x86 -data /home/he/work/code-repo/github/codes/ws/scala
+
+!ENTRY org.scala-ide.sdt.core 4 0 2014-07-30 00:35:44.769
+!MESSAGE scala.reflect.internal.FatalError: package scala does not have a member Int
