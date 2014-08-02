@@ -6,3 +6,5 @@
 codes/c/wxMedia/make/build/*
 
 *.class
+**/target/**/*
+codes/clojure/parser/target/classes/org/sharpx/parser/oxford.clj
