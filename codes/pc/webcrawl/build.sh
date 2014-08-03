@@ -17,6 +17,8 @@ scm-commit(){
   mvn clean
   git add .
   git commit -m "added"
+  git pull
+  git push
 }
 
 if test 0 -eq $#; then
