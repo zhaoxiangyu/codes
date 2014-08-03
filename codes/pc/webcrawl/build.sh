@@ -1,16 +1,26 @@
 #!/bin/bash
 
 status(){
-  mvn dependency:tree -Dverbose
+  mvn dependency:tree -Dverbose|grep conflict
 }
 
 run(){
+  mvn clean package
   mvn exec:java -Dexec.mainClass="org.sharpx.oxford.Controller"
 }
 
-updateide(){
+update-ide(){
   mvn eclipse:eclipse
 }
 
-echo $0 $1
-eval "$1"
+scm-commit(){
+  mvn clean
+  git add .
+  git commit -m "added"
+}
+
+if test 0 -eq $#; then
+  echo command options: status run update-ide scm-commit
+else
+  eval "$1"
+fi

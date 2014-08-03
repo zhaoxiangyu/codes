@@ -9,6 +9,7 @@ import java.util.regex.Pattern;
 import org.jcouchdb.db.Database;
 import org.jcouchdb.db.Server;
 import org.jcouchdb.db.ServerImpl;
+import org.sharpx.utils.FsUtils;
 
 import com.mongodb.BasicDBObject;
 import com.mongodb.DB;
@@ -48,7 +49,7 @@ public class Crawler extends WebCrawler {
 	public Crawler() {
 		super();
 		//mongoSetup();
-		couchSetup("169.254.224.110","oxford-htmls");
+		//couchSetup("169.254.224.110","oxford-htmls");
 	}
 
 	private void mongoSetup() {
@@ -114,18 +115,24 @@ public class Crawler extends WebCrawler {
 	
 				System.out.println("///");
 				//mongoSave(url, html,type);
-				couchSave(url,type,html);
-				System.out.println("saved to couchdb.");
-			}catch(RuntimeException e){
-				System.out.println("error save to couchdb.");
-			}catch(Error e){
-				System.out.println("error save to couchdb.");
-			}catch(Throwable e){
-				System.out.println("error save to couchdb.");
+				//couchSave(url,type,html);
+				fileSave(url,type,html);
+				System.out.println("saved to file.");
+			}catch(Exception e){
+				System.out.println("error save to file.");
 			}
 		}else{
 			System.out.println("???");
 		}
+	}
+	
+	private void fileSave(String url, String html,String type) {
+        Map<String,String> doc = new HashMap<String, String>();  
+        doc.put("url", url);
+        doc.put("type", type);
+        doc.put("html", html);  
+  
+        FsUtils.saveJson(doc, "/media/sf_cross-vm-data/web-dict/oxford/htmls/xx.html");
 	}
 
 	private void mongoSave(String url, String html,String type) {
