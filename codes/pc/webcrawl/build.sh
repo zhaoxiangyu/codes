@@ -8,5 +8,9 @@ run(){
   mvn exec:java -Dexec.mainClass="org.sharpx.oxford.Controller"
 }
 
+updateide(){
+  mvn eclipse:eclipse
+}
+
 echo $0 $1
-$1
+eval "$1"

@@ -78,6 +78,7 @@ public class Crawler extends WebCrawler {
   
         // create the document in couchdb  
         couchdb.createDocument(doc);  		
+        //System.out.println("///2");
 	}
 	
 	@Override
@@ -95,23 +96,35 @@ public class Crawler extends WebCrawler {
 	@Override
 	public void visit(Page page) {
 		String url = page.getWebURL().getURL();
-		System.out.println("URL: " + url);
+		System.out.println("xxURL: " + url);
 
 		if (page.getParseData() instanceof HtmlParseData) {
-			HtmlParseData htmlParseData = (HtmlParseData) page.getParseData();
-			String text = htmlParseData.getText();
-			String html = htmlParseData.getHtml();
-			List<WebURL> links = htmlParseData.getOutgoingUrls();
-
-			String type = "";
-			if (url.startsWith(INDEX_PREFX)) {
-				type = "i";
-			} else if (url.startsWith(ENTRY_PREFIX)) {
-				type = "e";
+			try{
+				HtmlParseData htmlParseData = (HtmlParseData) page.getParseData();
+				String text = htmlParseData.getText();
+				String html = htmlParseData.getHtml();
+				List<WebURL> links = htmlParseData.getOutgoingUrls();
+	
+				String type = "";
+				if (url.startsWith(INDEX_PREFX)) {
+					type = "i";
+				} else if (url.startsWith(ENTRY_PREFIX)) {
+					type = "e";
+				}
+	
+				System.out.println("///");
+				//mongoSave(url, html,type);
+				couchSave(url,type,html);
+				System.out.println("saved to couchdb.");
+			}catch(RuntimeException e){
+				System.out.println("error save to couchdb.");
+			}catch(Error e){
+				System.out.println("error save to couchdb.");
+			}catch(Throwable e){
+				System.out.println("error save to couchdb.");
 			}
-
-			//mongoSave(url, html,type);
-			couchSave(url,type,html);
+		}else{
+			System.out.println("???");
 		}
 	}
 
