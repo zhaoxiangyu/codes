@@ -5,16 +5,10 @@
 (defn html-clean
   "convert maliformed html to xml"
   [^String html-str]
-  (try
-    (when html-str
-      (let [cleaner (new HtmlCleaner)]
-        (doto (.getProperties cleaner) ;; set HtmlCleaner properties
-          (.setOmitComments true)
-          (.setPruneTags "script,style"))
-        (let [serializer (PrettyXmlSerializer. (.getProperties cleaner))]
-          (when-let [node (.clean cleaner html-str)]
-            (log-debug node)
-            (.getAsString serializer node))
-          )))
-    (catch Exception e
-      (log-error e "Error when parsing"))))
+  (when html-str
+    (let [cleaner (new HtmlCleaner)
+          cleanprop (doto (.getProperties cleaner) (.setOmitComments true) (.setPruneTags "script,style"))]
+      (when-let [node (.clean cleaner html-str)]
+        (-> (PrettyXmlSerializer. cleanprop)
+          ;(log-debug node)
+          (.getAsString node))))))
