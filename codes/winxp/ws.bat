@@ -1,10 +1,14 @@
 @echo off
 if ""%1"" == """" (
-  echo command options: github ubuntu office list
+  echo command options: github ubuntu office parser list
 ) else (
   call :%1
 )
 exit /b 0
+
+:parser
+  pushd E:\code-repo2\github\codes\clojure\parser
+exit /b
 
 :github
   pushd E:\code-repo2\github\codes
