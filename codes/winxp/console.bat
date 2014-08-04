@@ -20,5 +20,6 @@ set PATH="C:\Program Files\MongoDB 2.6 Standard\bin";%PATH%
 call "e:\he\py\tools-py.bat" setpath
 
 set HOME=E:\code-repo2\github\codes\winxp\user-home
+set JAVA_HOME=C:\Program Files\Java\jdk1.7.0_65
 
 cmd.exe /s /k "clink.bat inject"
