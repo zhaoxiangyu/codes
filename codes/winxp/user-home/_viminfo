@@ -17,9 +17,9 @@
 $
 
 # Command Line History (newest to oldest):
+:q
 :wq
 :w
-:q
 :W
 :%s/"//g
 :q!
@@ -61,18 +61,20 @@ $
 	a
 
 # 文件标记:
-'0  3  5  E:\code-repo2\github\codes\clojure\parser\.gitignore
-'1  29  36  E:\code-repo2\github\codes\winxp\console.bat
-'2  151  0  E:\tools\gnuwin32\bin\set_gnuwin32.bat
-'3  10  0  E:\code-repo2\github\codes\winxp\console.bat
-'4  6  58  E:\code-repo2\github\codes\winxp\console.bat
-'5  1  73  ~\bat-wrapper\mvn.bat
-'6  17  60  E:\code-repo2\github\codes\winxp\console.bat
-'7  32  17  E:\code-repo2\github\codes\winxp\console.bat
-'8  14  17  E:\code-repo2\github\codes\winxp\console.bat
-'9  27  26  E:\code-repo2\github\codes\winxp\console.bat
+'0  25  20  E:\code-repo2\github\codes\clojure\parser\build.bat
+'1  3  5  E:\code-repo2\github\codes\clojure\parser\.gitignore
+'2  29  36  E:\code-repo2\github\codes\winxp\console.bat
+'3  151  0  E:\tools\gnuwin32\bin\set_gnuwin32.bat
+'4  10  0  E:\code-repo2\github\codes\winxp\console.bat
+'5  6  58  E:\code-repo2\github\codes\winxp\console.bat
+'6  1  73  ~\bat-wrapper\mvn.bat
+'7  17  60  E:\code-repo2\github\codes\winxp\console.bat
+'8  32  17  E:\code-repo2\github\codes\winxp\console.bat
+'9  14  17  E:\code-repo2\github\codes\winxp\console.bat
 
 # 跳转列表 (从新到旧):
+-'  25  20  E:\code-repo2\github\codes\clojure\parser\build.bat
+-'  1  0  E:\code-repo2\github\codes\clojure\parser\build.bat
 -'  3  5  E:\code-repo2\github\codes\clojure\parser\.gitignore
 -'  1  0  E:\code-repo2\github\codes\clojure\parser\.gitignore
 -'  29  36  E:\code-repo2\github\codes\winxp\console.bat
@@ -168,12 +170,15 @@ $
 -'  83  4  E:\he-xun\sw\apache-maven-3.2.1\bin\mvn.bat
 -'  187  42  E:\he-xun\sw\apache-maven-3.2.1\bin\mvn.bat
 -'  161  170  E:\he-xun\sw\apache-maven-3.2.1\bin\mvn.bat
--'  196  0  E:\he-xun\sw\apache-maven-3.2.1\bin\mvn.bat
--'  147  37  E:\he-xun\sw\apache-maven-3.2.1\bin\mvn.bat
--'  25  57  E:\code-repo2\github\codes\winxp\console.bat
--'  5  0  c:\Program Files\Vim\_vimrc
 
 # 文件内的标记历史记录 (从新到旧):
+
+> E:\code-repo2\github\codes\clojure\parser\build.bat
+	"	25	20
+	^	25	21
+	.	25	20
+	+	24	7
+	+	25	20
 
 > E:\code-repo2\github\codes\clojure\parser\.gitignore
 	"	3	5

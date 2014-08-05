@@ -47,6 +47,12 @@
             <artifactId>tools.logging</artifactId>
             <version>0.3.0</version>
         </dependency>
+
+        <dependency>
+            <groupId>org.sharpx</groupId>
+            <artifactId>common-utils</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
     </dependencies>
 
     <build>
