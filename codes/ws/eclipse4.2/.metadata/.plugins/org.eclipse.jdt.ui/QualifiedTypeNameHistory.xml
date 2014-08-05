@@ -15,4 +15,9 @@
 <fullyQualifiedTypeName name="com.mongodb.DB"/>
 <fullyQualifiedTypeName name="com.mongodb.DBCollection"/>
 <fullyQualifiedTypeName name="com.mongodb.BasicDBObject"/>
+<fullyQualifiedTypeName name="org.jcouchdb.db.Server"/>
+<fullyQualifiedTypeName name="org.jcouchdb.db.ServerImpl"/>
+<fullyQualifiedTypeName name="org.jcouchdb.db.Database"/>
+<fullyQualifiedTypeName name="java.util.Map"/>
+<fullyQualifiedTypeName name="java.util.HashMap"/>
 </qualifiedTypeNameHistroy>
