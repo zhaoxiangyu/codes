@@ -8,15 +8,23 @@
 # hlsearch on (H) or off (h):
 ~h
 # Last Search Pattern:
-~MSle0~/HOME
+~MSle0/HOME
+
+# Last Substitute Search Pattern:
+~MSle0~&"
+
+# Last Substitute String:
+$
 
 # Command Line History (newest to oldest):
 :wq
-:q
-:q!
 :w
+:q
+:%s/"//g
+:q!
 
 # Search String History (newest to oldest):
+? "
 ?/HOME
 
 # Expression History (newest to oldest):
@@ -26,34 +34,83 @@
 # Input Line History (newest to oldest):
 
 # 寄存器:
-""1	LINE	0
-	echo a
+"0	LINE	0
+	C:\Program Files\Windows Resource Kits\Tools\;  
+"1	LINE	0
+	C:\Program Files\Windows Resource Kits\Tools\;  
 "2	LINE	0
+	set PATH=%PATH%;"C:\Program Files\Java\jdk1.6.0_45\bin"
+"3	LINE	0
+	set PATH=%PATH%;"E:\java"
+"4	LINE	0
+	USERPROFILE  
+"5	LINE	0
+	echo a
+"6	LINE	0
 	source $VIMRUNTIME/vimrc_example.vim
 	source $VIMRUNTIME/mswin.vim
 	behave mswin
-"3	LINE	0
+"7	LINE	0
 	
-"4	LINE	0
+"8	LINE	0
 	C:\Program Files\Java\jdk1.7.0_65\bin\java.exe  
-"-	CHAR	0
-	"
+""-	CHAR	0
+	 
 
 # 文件标记:
-'0  24  0  E:\code-repo2\github\codes\winxp\console.bat
-'1  25  0  E:\code-repo2\github\codes\winxp\console.bat
-'2  1  0  E:\code-repo2\github\codes\winxp\console.bat
-'3  5  0  c:\Program Files\Vim\_vimrc
-'4  76  0  c:\Program Files\Vim\vim74\_vimrc
-'5  19  0  c:\Program Files\Vim\_vimrc
-'6  1  0  c:\Program Files\Vim\backup\_vimrc~
-'7  23  46  E:\code-repo2\github\codes\winxp\console.bat
-'8  1  0  c:\Program Files\Vim\_vimrc
-'9  187  42  E:\he-xun\sw\apache-maven-3.2.1\bin\mvn.bat
+'0  1  73  ~\bat-wrapper\mvn.bat
+'1  16  60  E:\code-repo2\github\codes\winxp\console.bat
+'2  30  17  E:\code-repo2\github\codes\winxp\console.bat
+'3  13  17  E:\code-repo2\github\codes\winxp\console.bat
+'4  26  26  E:\code-repo2\github\codes\winxp\console.bat
+'5  8  0  E:\code-repo2\github\codes\winxp\console.bat
+'6  37  8  E:\he-xun\sw\apache-maven-3.2.1\bin\mvn.bat
+'7  94  17  E:\he-xun\sw\apache-maven-3.2.1\bin\mvn.bat
+'8  161  170  E:\he-xun\sw\apache-maven-3.2.1\bin\mvn.bat
+'9  27  57  E:\code-repo2\github\codes\winxp\console.bat
 
 # 跳转列表 (从新到旧):
--'  24  0  E:\code-repo2\github\codes\winxp\console.bat
--'  25  0  E:\code-repo2\github\codes\winxp\console.bat
+-'  1  73  ~\bat-wrapper\mvn.bat
+-'  16  60  E:\code-repo2\github\codes\winxp\console.bat
+-'  30  17  E:\code-repo2\github\codes\winxp\console.bat
+-'  13  17  E:\code-repo2\github\codes\winxp\console.bat
+-'  26  26  E:\code-repo2\github\codes\winxp\console.bat
+-'  7  0  E:\code-repo2\github\codes\winxp\console.bat
+-'  8  0  E:\code-repo2\github\codes\winxp\console.bat
+-'  27  57  E:\code-repo2\github\codes\winxp\console.bat
+-'  37  8  E:\he-xun\sw\apache-maven-3.2.1\bin\mvn.bat
+-'  103  23  E:\he-xun\sw\apache-maven-3.2.1\bin\mvn.bat
+-'  102  20  E:\he-xun\sw\apache-maven-3.2.1\bin\mvn.bat
+-'  101  15  E:\he-xun\sw\apache-maven-3.2.1\bin\mvn.bat
+-'  98  14  E:\he-xun\sw\apache-maven-3.2.1\bin\mvn.bat
+-'  94  17  E:\he-xun\sw\apache-maven-3.2.1\bin\mvn.bat
+-'  93  13  E:\he-xun\sw\apache-maven-3.2.1\bin\mvn.bat
+-'  85  23  E:\he-xun\sw\apache-maven-3.2.1\bin\mvn.bat
+-'  84  15  E:\he-xun\sw\apache-maven-3.2.1\bin\mvn.bat
+-'  81  12  E:\he-xun\sw\apache-maven-3.2.1\bin\mvn.bat
+-'  80  27  E:\he-xun\sw\apache-maven-3.2.1\bin\mvn.bat
+-'  79  32  E:\he-xun\sw\apache-maven-3.2.1\bin\mvn.bat
+-'  77  12  E:\he-xun\sw\apache-maven-3.2.1\bin\mvn.bat
+-'  71  25  E:\he-xun\sw\apache-maven-3.2.1\bin\mvn.bat
+-'  70  24  E:\he-xun\sw\apache-maven-3.2.1\bin\mvn.bat
+-'  69  17  E:\he-xun\sw\apache-maven-3.2.1\bin\mvn.bat
+-'  66  16  E:\he-xun\sw\apache-maven-3.2.1\bin\mvn.bat
+-'  60  25  E:\he-xun\sw\apache-maven-3.2.1\bin\mvn.bat
+-'  59  17  E:\he-xun\sw\apache-maven-3.2.1\bin\mvn.bat
+-'  56  14  E:\he-xun\sw\apache-maven-3.2.1\bin\mvn.bat
+-'  46  41  E:\he-xun\sw\apache-maven-3.2.1\bin\mvn.bat
+-'  42  41  E:\he-xun\sw\apache-maven-3.2.1\bin\mvn.bat
+-'  41  34  E:\he-xun\sw\apache-maven-3.2.1\bin\mvn.bat
+-'  27  8  E:\he-xun\sw\apache-maven-3.2.1\bin\mvn.bat
+-'  24  10  E:\he-xun\sw\apache-maven-3.2.1\bin\mvn.bat
+-'  1  0  E:\he-xun\sw\apache-maven-3.2.1\bin\mvn.bat
+-'  83  4  E:\he-xun\sw\apache-maven-3.2.1\bin\mvn.bat
+-'  187  42  E:\he-xun\sw\apache-maven-3.2.1\bin\mvn.bat
+-'  161  170  E:\he-xun\sw\apache-maven-3.2.1\bin\mvn.bat
+-'  196  0  E:\he-xun\sw\apache-maven-3.2.1\bin\mvn.bat
+-'  147  37  E:\he-xun\sw\apache-maven-3.2.1\bin\mvn.bat
+-'  29  0  E:\code-repo2\github\codes\winxp\console.bat
+-'  31  0  E:\code-repo2\github\codes\winxp\console.bat
 -'  1  0  E:\code-repo2\github\codes\winxp\console.bat
 -'  5  0  c:\Program Files\Vim\_vimrc
 -'  19  0  c:\Program Files\Vim\_vimrc
@@ -61,17 +118,18 @@
 -'  1  0  c:\Program Files\Vim\vim74\_vimrc
 -'  1  0  c:\Program Files\Vim\_vimrc
 -'  1  0  c:\Program Files\Vim\backup\_vimrc~
--'  23  46  E:\code-repo2\github\codes\winxp\console.bat
--'  187  42  E:\he-xun\sw\apache-maven-3.2.1\bin\mvn.bat
--'  24  10  E:\he-xun\sw\apache-maven-3.2.1\bin\mvn.bat
--'  27  8  E:\he-xun\sw\apache-maven-3.2.1\bin\mvn.bat
--'  41  10  E:\he-xun\sw\apache-maven-3.2.1\bin\mvn.bat
--'  42  5  E:\he-xun\sw\apache-maven-3.2.1\bin\mvn.bat
--'  46  11  E:\he-xun\sw\apache-maven-3.2.1\bin\mvn.bat
--'  161  120  E:\he-xun\sw\apache-maven-3.2.1\bin\mvn.bat
+-'  28  46  E:\code-repo2\github\codes\winxp\console.bat
 -'  155  17  E:\he-xun\sw\apache-maven-3.2.1\bin\mvn.bat
 -'  150  17  E:\he-xun\sw\apache-maven-3.2.1\bin\mvn.bat
 -'  144  26  E:\he-xun\sw\apache-maven-3.2.1\bin\mvn.bat
+-'  38  0  E:\he-xun\sw\apache-maven-3.2.1\bin\mvn.bat
+-'  5  0  c:\Program Files\Vim\_vimrc
+-'  19  0  c:\Program Files\Vim\_vimrc
+-'  76  0  c:\Program Files\Vim\vim74\_vimrc
+-'  1  0  c:\Program Files\Vim\vim74\_vimrc
+-'  1  0  c:\Program Files\Vim\_vimrc
+-'  1  0  c:\Program Files\Vim\backup\_vimrc~
+-'  37  8  E:\he-xun\sw\apache-maven-3.2.1\bin\mvn.bat
 -'  103  23  E:\he-xun\sw\apache-maven-3.2.1\bin\mvn.bat
 -'  102  20  E:\he-xun\sw\apache-maven-3.2.1\bin\mvn.bat
 -'  101  15  E:\he-xun\sw\apache-maven-3.2.1\bin\mvn.bat
@@ -91,73 +149,59 @@
 -'  60  25  E:\he-xun\sw\apache-maven-3.2.1\bin\mvn.bat
 -'  59  17  E:\he-xun\sw\apache-maven-3.2.1\bin\mvn.bat
 -'  56  14  E:\he-xun\sw\apache-maven-3.2.1\bin\mvn.bat
--'  38  0  E:\he-xun\sw\apache-maven-3.2.1\bin\mvn.bat
--'  1  0  E:\he-xun\sw\apache-maven-3.2.1\bin\mvn.bat
--'  187  42  E:\he-xun\sw\apache-maven-3.2.1\bin\mvn.bat
--'  24  10  E:\he-xun\sw\apache-maven-3.2.1\bin\mvn.bat
+-'  46  41  E:\he-xun\sw\apache-maven-3.2.1\bin\mvn.bat
+-'  42  41  E:\he-xun\sw\apache-maven-3.2.1\bin\mvn.bat
+-'  41  34  E:\he-xun\sw\apache-maven-3.2.1\bin\mvn.bat
 -'  27  8  E:\he-xun\sw\apache-maven-3.2.1\bin\mvn.bat
--'  41  10  E:\he-xun\sw\apache-maven-3.2.1\bin\mvn.bat
--'  42  5  E:\he-xun\sw\apache-maven-3.2.1\bin\mvn.bat
--'  46  11  E:\he-xun\sw\apache-maven-3.2.1\bin\mvn.bat
--'  161  120  E:\he-xun\sw\apache-maven-3.2.1\bin\mvn.bat
--'  155  17  E:\he-xun\sw\apache-maven-3.2.1\bin\mvn.bat
--'  150  17  E:\he-xun\sw\apache-maven-3.2.1\bin\mvn.bat
--'  144  26  E:\he-xun\sw\apache-maven-3.2.1\bin\mvn.bat
--'  103  23  E:\he-xun\sw\apache-maven-3.2.1\bin\mvn.bat
--'  102  20  E:\he-xun\sw\apache-maven-3.2.1\bin\mvn.bat
--'  101  15  E:\he-xun\sw\apache-maven-3.2.1\bin\mvn.bat
--'  98  14  E:\he-xun\sw\apache-maven-3.2.1\bin\mvn.bat
--'  94  17  E:\he-xun\sw\apache-maven-3.2.1\bin\mvn.bat
--'  93  13  E:\he-xun\sw\apache-maven-3.2.1\bin\mvn.bat
--'  85  23  E:\he-xun\sw\apache-maven-3.2.1\bin\mvn.bat
--'  84  15  E:\he-xun\sw\apache-maven-3.2.1\bin\mvn.bat
--'  81  12  E:\he-xun\sw\apache-maven-3.2.1\bin\mvn.bat
--'  80  27  E:\he-xun\sw\apache-maven-3.2.1\bin\mvn.bat
--'  79  32  E:\he-xun\sw\apache-maven-3.2.1\bin\mvn.bat
--'  77  12  E:\he-xun\sw\apache-maven-3.2.1\bin\mvn.bat
--'  71  25  E:\he-xun\sw\apache-maven-3.2.1\bin\mvn.bat
--'  70  24  E:\he-xun\sw\apache-maven-3.2.1\bin\mvn.bat
--'  69  17  E:\he-xun\sw\apache-maven-3.2.1\bin\mvn.bat
--'  66  16  E:\he-xun\sw\apache-maven-3.2.1\bin\mvn.bat
--'  60  25  E:\he-xun\sw\apache-maven-3.2.1\bin\mvn.bat
--'  59  17  E:\he-xun\sw\apache-maven-3.2.1\bin\mvn.bat
--'  56  14  E:\he-xun\sw\apache-maven-3.2.1\bin\mvn.bat
--'  38  0  E:\he-xun\sw\apache-maven-3.2.1\bin\mvn.bat
--'  1  0  E:\he-xun\sw\apache-maven-3.2.1\bin\mvn.bat
--'  187  42  E:\he-xun\sw\apache-maven-3.2.1\bin\mvn.bat
 -'  24  10  E:\he-xun\sw\apache-maven-3.2.1\bin\mvn.bat
--'  27  8  E:\he-xun\sw\apache-maven-3.2.1\bin\mvn.bat
--'  41  10  E:\he-xun\sw\apache-maven-3.2.1\bin\mvn.bat
--'  42  5  E:\he-xun\sw\apache-maven-3.2.1\bin\mvn.bat
--'  46  11  E:\he-xun\sw\apache-maven-3.2.1\bin\mvn.bat
--'  161  120  E:\he-xun\sw\apache-maven-3.2.1\bin\mvn.bat
--'  155  17  E:\he-xun\sw\apache-maven-3.2.1\bin\mvn.bat
--'  150  17  E:\he-xun\sw\apache-maven-3.2.1\bin\mvn.bat
--'  144  26  E:\he-xun\sw\apache-maven-3.2.1\bin\mvn.bat
--'  103  23  E:\he-xun\sw\apache-maven-3.2.1\bin\mvn.bat
--'  102  20  E:\he-xun\sw\apache-maven-3.2.1\bin\mvn.bat
--'  101  15  E:\he-xun\sw\apache-maven-3.2.1\bin\mvn.bat
--'  98  14  E:\he-xun\sw\apache-maven-3.2.1\bin\mvn.bat
--'  94  17  E:\he-xun\sw\apache-maven-3.2.1\bin\mvn.bat
--'  93  13  E:\he-xun\sw\apache-maven-3.2.1\bin\mvn.bat
--'  85  23  E:\he-xun\sw\apache-maven-3.2.1\bin\mvn.bat
--'  84  15  E:\he-xun\sw\apache-maven-3.2.1\bin\mvn.bat
--'  81  12  E:\he-xun\sw\apache-maven-3.2.1\bin\mvn.bat
--'  80  27  E:\he-xun\sw\apache-maven-3.2.1\bin\mvn.bat
--'  79  32  E:\he-xun\sw\apache-maven-3.2.1\bin\mvn.bat
--'  77  12  E:\he-xun\sw\apache-maven-3.2.1\bin\mvn.bat
--'  71  25  E:\he-xun\sw\apache-maven-3.2.1\bin\mvn.bat
--'  70  24  E:\he-xun\sw\apache-maven-3.2.1\bin\mvn.bat
--'  69  17  E:\he-xun\sw\apache-maven-3.2.1\bin\mvn.bat
+-'  1  0  E:\he-xun\sw\apache-maven-3.2.1\bin\mvn.bat
+-'  83  4  E:\he-xun\sw\apache-maven-3.2.1\bin\mvn.bat
+-'  187  42  E:\he-xun\sw\apache-maven-3.2.1\bin\mvn.bat
+-'  161  170  E:\he-xun\sw\apache-maven-3.2.1\bin\mvn.bat
+-'  196  0  E:\he-xun\sw\apache-maven-3.2.1\bin\mvn.bat
+-'  147  37  E:\he-xun\sw\apache-maven-3.2.1\bin\mvn.bat
+-'  24  57  E:\code-repo2\github\codes\winxp\console.bat
+-'  5  0  c:\Program Files\Vim\_vimrc
+-'  19  0  c:\Program Files\Vim\_vimrc
+-'  76  0  c:\Program Files\Vim\vim74\_vimrc
+-'  1  0  c:\Program Files\Vim\vim74\_vimrc
+-'  1  0  c:\Program Files\Vim\_vimrc
+-'  37  8  E:\he-xun\sw\apache-maven-3.2.1\bin\mvn.bat
 
 # 文件内的标记历史记录 (从新到旧):
 
+> ~\bat-wrapper\mvn.bat
+	"	1	73
+	^	1	74
+	.	1	73
+	+	1	73
+
 > E:\code-repo2\github\codes\winxp\console.bat
-	"	24	0
-	.	24	0
-	+	26	0
-	+	23	46
+	"	16	60
+	^	16	61
+	.	16	60
+	+	32	0
+	+	28	46
+	+	29	0
+	+	32	0
+	+	27	16
+	+	7	0
+	+	22	0
+	+	10	0
+	+	23	0
 	+	24	0
+	+	17	0
+	+	5	0
+	+	26	26
+	+	30	17
+	+	32	0
+	+	16	60
+
+> E:\he-xun\sw\apache-maven-3.2.1\bin\mvn.bat
+	"	37	8
+	^	161	171
+	.	161	171
+	+	161	171
 
 > c:\Program Files\Vim\_vimrc
 	"	5	0
@@ -170,6 +214,3 @@
 
 > c:\Program Files\Vim\backup\_vimrc~
 	"	1	0
-
-> E:\he-xun\sw\apache-maven-3.2.1\bin\mvn.bat
-	"	187	42
