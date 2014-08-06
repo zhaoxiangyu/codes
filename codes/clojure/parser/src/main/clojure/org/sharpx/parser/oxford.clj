@@ -17,14 +17,15 @@
 (defn -parse
   "parse url:html pair"
   ([{:keys [type url html]}] ;[{t :type url :url html :html}]
-    (let [new-values
-          (if (= type "e")
-            (let [doc (->> (html-clean html)
-                        xml->doc)
-                  entry ($x:text "//div[contains(@class,\"webtop-g\")]/h2" doc)
-                  pos ($x:text "//div[contains(@class,\"webtop-g\")]/span[contains(@class,\"pos\")]" doc)]
-              {:entry entry :pos pos}) ;#((println %) %)))
-            (prn "index"))]
+    (let
+      [new-values
+       (if (= type "e")
+         (let [doc (->> (html-clean html)
+                     xml->doc)
+               entry ($x:text "//div[contains(@class,\"webtop-g\")]/h2" doc)
+               pos ($x:text "//div[contains(@class,\"webtop-g\")]/span[contains(@class,\"pos\")]" doc)]
+           {:entry entry :pos pos}) ;#((println %) %)))
+         (prn "index"))]
       (println new-values)
       (merge {:type type :url url :bc (count html)} new-values)))
 
