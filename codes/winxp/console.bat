@@ -26,7 +26,9 @@ set HOME=E:\code-repo2\github\codes\winxp\user-home
 set PATH=%HOME%\bat-wrapper;%PATH%
 REM set USERPROFILE=E:\code-repo2\github\codes\winxp\user-home
 set JAVA_HOME=C:\Program Files\Java\jdk1.7.0_65
+
 set PATH=E:\tools\gnuwin32\bin;%PATH%
+set PATH=E:\tools\emacs-24.3-bin-i386\emacs-24.3\bin;%PATH%
 
 set PATH=%PATH:"=%
 cmd.exe /s /k clink.bat inject

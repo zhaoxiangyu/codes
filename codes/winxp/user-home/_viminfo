@@ -17,9 +17,9 @@
 $
 
 # Command Line History (newest to oldest):
-:q
 :wq
 :w
+:q
 :W
 :%s/"//g
 :q!
@@ -38,55 +38,54 @@ $
 "0	LINE	0
 	C:\Program Files\Windows Resource Kits\Tools\;  
 ""1	LINE	0
-	E:\tools\gnuwin32\bin  
+	set PATH=E:\tools\emacs-24.3-bin-i386\emacs-24.3\bin;%PATH%
 "2	LINE	0
-	set PATH=C:\Program Files\Git\cmd;%PATH%
+	E:\tools\gnuwin32\bin  
 "3	LINE	0
 	set PATH=C:\Program Files\Git\cmd;%PATH%
 "4	LINE	0
-	C:\Program Files\Windows Resource Kits\Tools\;  
+	set PATH=C:\Program Files\Git\cmd;%PATH%
 "5	LINE	0
-	set PATH=%PATH%;"C:\Program Files\Java\jdk1.6.0_45\bin"
+	C:\Program Files\Windows Resource Kits\Tools\;  
 "6	LINE	0
-	set PATH=%PATH%;"E:\java"
+	set PATH=%PATH%;"C:\Program Files\Java\jdk1.6.0_45\bin"
 "7	LINE	0
-	USERPROFILE  
+	set PATH=%PATH%;"E:\java"
 "8	LINE	0
-	echo a
+	USERPROFILE  
 "9	LINE	0
-	source $VIMRUNTIME/vimrc_example.vim
-	source $VIMRUNTIME/mswin.vim
-	behave mswin
+	echo a
 "-	CHAR	0
 	a
 
 # 文件标记:
-'0  1  0  E:\code-repo2\github\codes\clojure\parser\console.log
-'1  1  20  E:\code-repo2\github\codes\clojure\parser\build.bat
-'2  25  20  E:\code-repo2\github\codes\clojure\parser\build.bat
-'3  3  5  E:\code-repo2\github\codes\clojure\parser\.gitignore
-'4  29  36  E:\code-repo2\github\codes\winxp\console.bat
-'5  151  0  E:\tools\gnuwin32\bin\set_gnuwin32.bat
-'6  10  0  E:\code-repo2\github\codes\winxp\console.bat
-'7  6  58  E:\code-repo2\github\codes\winxp\console.bat
-'8  1  73  ~\bat-wrapper\mvn.bat
-'9  17  60  E:\code-repo2\github\codes\winxp\console.bat
+'0  29  0  E:\code-repo2\github\codes\winxp\console.bat
+'1  1  0  E:\code-repo2\github\codes\clojure\parser\console.log
+'2  1  20  E:\code-repo2\github\codes\clojure\parser\build.bat
+'3  25  20  E:\code-repo2\github\codes\clojure\parser\build.bat
+'4  3  5  E:\code-repo2\github\codes\clojure\parser\.gitignore
+'5  30  36  E:\code-repo2\github\codes\winxp\console.bat
+'6  151  0  E:\tools\gnuwin32\bin\set_gnuwin32.bat
+'7  10  0  E:\code-repo2\github\codes\winxp\console.bat
+'8  6  58  E:\code-repo2\github\codes\winxp\console.bat
+'9  1  73  ~\bat-wrapper\mvn.bat
 
 # 跳转列表 (从新到旧):
+-'  29  0  E:\code-repo2\github\codes\winxp\console.bat
+-'  30  36  E:\code-repo2\github\codes\winxp\console.bat
 -'  1  0  E:\code-repo2\github\codes\clojure\parser\console.log
 -'  32  1  E:\code-repo2\github\codes\clojure\parser\console.log
 -'  1  20  E:\code-repo2\github\codes\clojure\parser\build.bat
 -'  25  20  E:\code-repo2\github\codes\clojure\parser\build.bat
 -'  3  5  E:\code-repo2\github\codes\clojure\parser\.gitignore
 -'  1  0  E:\code-repo2\github\codes\clojure\parser\.gitignore
--'  29  36  E:\code-repo2\github\codes\winxp\console.bat
 -'  10  0  E:\code-repo2\github\codes\winxp\console.bat
 -'  151  0  E:\tools\gnuwin32\bin\set_gnuwin32.bat
 -'  1  0  E:\tools\gnuwin32\bin\set_gnuwin32.bat
 -'  6  58  E:\code-repo2\github\codes\winxp\console.bat
 -'  17  60  E:\code-repo2\github\codes\winxp\console.bat
 -'  1  73  ~\bat-wrapper\mvn.bat
--'  32  17  E:\code-repo2\github\codes\winxp\console.bat
+-'  34  17  E:\code-repo2\github\codes\winxp\console.bat
 -'  14  17  E:\code-repo2\github\codes\winxp\console.bat
 -'  27  26  E:\code-repo2\github\codes\winxp\console.bat
 -'  7  0  E:\code-repo2\github\codes\winxp\console.bat
@@ -123,8 +122,8 @@ $
 -'  161  170  E:\he-xun\sw\apache-maven-3.2.1\bin\mvn.bat
 -'  196  0  E:\he-xun\sw\apache-maven-3.2.1\bin\mvn.bat
 -'  147  37  E:\he-xun\sw\apache-maven-3.2.1\bin\mvn.bat
--'  31  0  E:\code-repo2\github\codes\winxp\console.bat
 -'  33  0  E:\code-repo2\github\codes\winxp\console.bat
+-'  35  0  E:\code-repo2\github\codes\winxp\console.bat
 -'  1  0  E:\code-repo2\github\codes\winxp\console.bat
 -'  5  0  c:\Program Files\Vim\_vimrc
 -'  19  0  c:\Program Files\Vim\_vimrc
@@ -132,7 +131,7 @@ $
 -'  1  0  c:\Program Files\Vim\vim74\_vimrc
 -'  1  0  c:\Program Files\Vim\_vimrc
 -'  1  0  c:\Program Files\Vim\backup\_vimrc~
--'  30  46  E:\code-repo2\github\codes\winxp\console.bat
+-'  32  46  E:\code-repo2\github\codes\winxp\console.bat
 -'  155  17  E:\he-xun\sw\apache-maven-3.2.1\bin\mvn.bat
 -'  150  17  E:\he-xun\sw\apache-maven-3.2.1\bin\mvn.bat
 -'  144  26  E:\he-xun\sw\apache-maven-3.2.1\bin\mvn.bat
@@ -173,6 +172,36 @@ $
 
 # 文件内的标记历史记录 (从新到旧):
 
+> E:\code-repo2\github\codes\winxp\console.bat
+	"	29	0
+	^	29	0
+	.	29	0
+	+	35	0
+	+	32	46
+	+	33	0
+	+	35	0
+	+	28	16
+	+	7	0
+	+	23	0
+	+	11	0
+	+	24	0
+	+	25	0
+	+	18	0
+	+	5	0
+	+	27	26
+	+	34	17
+	+	35	0
+	+	17	60
+	+	23	3
+	+	9	0
+	+	9	0
+	+	10	0
+	+	35	0
+	+	30	36
+	+	35	0
+	+	31	0
+	+	29	0
+
 > E:\code-repo2\github\codes\clojure\parser\console.log
 	"	1	0
 
@@ -188,33 +217,6 @@ $
 	^	3	6
 	.	3	5
 	+	3	5
-
-> E:\code-repo2\github\codes\winxp\console.bat
-	"	29	36
-	^	29	37
-	.	29	36
-	+	33	0
-	+	30	46
-	+	31	0
-	+	33	0
-	+	28	16
-	+	7	0
-	+	23	0
-	+	11	0
-	+	24	0
-	+	25	0
-	+	18	0
-	+	5	0
-	+	27	26
-	+	32	17
-	+	33	0
-	+	17	60
-	+	23	3
-	+	9	0
-	+	9	0
-	+	10	0
-	+	33	0
-	+	29	36
 
 > E:\tools\gnuwin32\bin\set_gnuwin32.bat
 	"	151	0
