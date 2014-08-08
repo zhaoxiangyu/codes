@@ -1,0 +1,50 @@
+import sys
+from getopt import getopt
+import pymongo
+
+def tail(host,port,database,collection,maxlen=10):
+	"""
+	check latest logs in mongodb
+	"""
+	print "check log tails",host,port,database,collection,maxlen
+	client = pymongo.MongoClient(host,port)
+	db = client[database]
+	logs = db[collection]
+	
+	llogs = []
+	for log in logs.find().sort("_id",pymongo.DESCENDING).limit(maxlen):
+		llogs.append(log)
+	
+	llogs.reverse()
+	for log in llogs:
+		print str(log[u'timestamp'])+","+log[u'level']+','+log[u'loggerName'][u'className']+':'+log[u'message']
+
+	client.close()
+
+
+if __name__ == "__main__":
+	host="127.0.0.1"
+	port=27017
+	db="test"
+	collection="log4j"
+	maxlen=10
+
+	print "argv:",sys.argv[1:]
+	options,remainder = getopt(sys.argv[1:],'h:p:d:c:n:',['host=',
+		'port=','database=','collection=','maxlength='])
+
+	#print 'options:',options
+	for opt,arg in options:
+		if opt in ('-h','--host'):
+			host=arg
+		elif opt in ('-p','--port'):
+			port=arg
+		elif opt in ('-d','--database'):
+			db=arg
+		elif opt in ('-c','--collection'):
+			collection=arg
+		elif opt in ('-n','--maxlength'):
+			maxlen=int(arg)
+
+	
+	tail(host,port,db,collection,maxlen)

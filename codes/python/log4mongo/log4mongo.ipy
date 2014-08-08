@@ -1,0 +1,9 @@
+def download():
+	mongo_jar_file="mongo-2.10.1.jar"
+	!wget -O $mongo_jar_file https://cloud.github.com/downloads/mongodb/mongo-java-driver/mongo-2.10.1.jar
+	#!if not exists $mongo_jar_file wget -O $mongo_jar_file https://github.com/downloads/mongodb/mongo-java-driver/mongo-2.10.1.jar
+
+def package():
+	pass
+
+
