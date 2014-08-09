@@ -1,3 +1,0 @@
-1406818529217	Convert local variable 'mongoClient' to field
-1406818537901	Convert local variable 'db' to field
-1406818546866	Convert local variable 'coll' to field

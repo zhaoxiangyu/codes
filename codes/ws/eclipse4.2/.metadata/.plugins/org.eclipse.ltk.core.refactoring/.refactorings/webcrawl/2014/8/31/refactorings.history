@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Convert local variable &apos;org.sharpx.oxford.Crawler.couchSetup().couchdb&apos; in &apos;org.sharpx.oxford.Crawler.couchSetup()&apos; to field&#x0A;- Original project: &apos;webcrawl&apos;&#x0A;- Original element: &apos;org.sharpx.oxford.Crawler.couchSetup().couchdb&apos;&#x0A;- Field name: &apos;couchdb&apos;&#x0A;- Initialize field in method&#x0A;- Declared visibility: &apos;private&apos;" description="Convert local variable &apos;couchdb&apos; to field" final="false" flags="2" id="org.eclipse.jdt.ui.promote.temp" initialize="1" input="/src\/main\/java&lt;org.sharpx.oxford{Crawler.java" name="couchdb" selection="1851 48" stamp="1406958817687" static="false" version="1.0" visibility="2"/>
-</session>
