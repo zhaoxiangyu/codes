@@ -180,7 +180,7 @@ public class Console {
 	}
 	
 	static Pluggable[] loadModules(){
-		return loadModules(JdkUtils.getResourceAsReader("org/sharpx/swing/apps/modules.properties"));
+		return loadModules(JdkUtils.getResourceAsReader("org/sharp/utils/beans/modules.properties"));
 	}
 
 	@Deprecated
@@ -209,7 +209,7 @@ public class Console {
 	private static String fetchBuildNum(){
 		Properties p = new Properties();
 		try {
-			p.load(JdkUtils.getResourceAsReader("org/sharpx/swing/apps/runtime.properties"));
+			p.load(JdkUtils.getResourceAsReader("org/sharp/utils/beans/runtime.properties"));
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
