@@ -94,8 +94,8 @@ import org.dom4j.io.SAXReader;
 import org.sharpx.swing.intf.FileHandler;
 import org.sharpx.swing.intf.ItemSelected;
 import org.sharpx.swing.intf.Pluggable.TabbedUI;
-import org.sharpx.utils.jdkex.LangUtils;
-import org.sharpx.utils.jdkex.Utils;
+import org.sharpx.utils.DsUtils;
+import org.sharpx.utils.LangUtils;
 
 public class SwingUtils {
 
@@ -1114,7 +1114,7 @@ public class SwingUtils {
 	
 	public static String applyKeyEventOnText(KeyEvent e,String text,int caretPosition){
 		char c = e.getKeyChar();
-		Utils.log.debug("keychar:"+CharUtils.unicodeEscaped(c));
+		DsUtils.log.debug("keychar:"+CharUtils.unicodeEscaped(c));
 		StringBuffer newInput = new StringBuffer(text);
 		if(c == '\u0008'){	//back space
 			if(caretPosition-1 < 0)
@@ -1127,7 +1127,7 @@ public class SwingUtils {
 		}else{
 			newInput.insert(caretPosition, c);
 		}
-		Utils.log.debug("keychar:"+newInput.toString());
+		DsUtils.log.debug("keychar:"+newInput.toString());
 		return newInput.toString();
 	}
 

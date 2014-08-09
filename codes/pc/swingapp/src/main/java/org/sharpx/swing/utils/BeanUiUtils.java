@@ -21,7 +21,7 @@ import javax.swing.table.TableCellRenderer;
 import javax.swing.text.JTextComponent;
 
 import org.apache.commons.beanutils.PropertyUtils;
-import org.sharpx.utils.jdkex.Utils;
+import org.sharpx.utils.DsUtils;
 
 public class BeanUiUtils {
 
@@ -33,7 +33,7 @@ public class BeanUiUtils {
 	
 	public static JPanel beanUi(final Object obj){
 		final JPanel panel = SwingUtils.newPanel(null);
-		Utils.introspect(obj, new Utils.PropertyHandler() {
+		DsUtils.introspect(obj, new DsUtils.PropertyHandler() {
 			public void property(Object obj, PropertyDescriptor p) {
 			}
 			public <T>void simpleProperty(final Object obj,final String pName, T pValue, Class<T> pType) {
@@ -70,7 +70,7 @@ public class BeanUiUtils {
 			PropertyDescriptor p = pds[i];
 			final String pName = p.getName();
 			Class pt = p.getPropertyType();
-			Utils.log.info("property:"
+			DsUtils.log.info("property:"
 					+ (pt == null ? "indexed_property" : pt.getSimpleName())
 					+ " " + pName);
 			if (!"class".equalsIgnoreCase(pName) && p.getReadMethod() != null)
@@ -86,7 +86,7 @@ public class BeanUiUtils {
 
 					} });
 				} catch (Exception e) {
-					Utils.log.error("", e);
+					DsUtils.log.error("", e);
 				}
 		}
 
@@ -97,7 +97,7 @@ public class BeanUiUtils {
 					final int column) {
 				final Object value = getModel().getValueAt(row, column);
 				if (value != null) {
-					Utils.log.info("getCellEditor(" + row + "," + column
+					DsUtils.log.info("getCellEditor(" + row + "," + column
 							+ ")");
 					return new TableCellEditor() {
 						Component editorComponent;
@@ -130,17 +130,17 @@ public class BeanUiUtils {
 						}
 
 						public Object getCellEditorValue() {
-							Utils.log.info("getCellEditorValue("+rown+","+columnn+"):" + value);
+							DsUtils.log.info("getCellEditorValue("+rown+","+columnn+"):" + value);
 							return value;
 						}
 
 						public boolean isCellEditable(EventObject anEvent) {
-							Utils.log.info("isCellEditable("+rown+","+columnn+")");
+							DsUtils.log.info("isCellEditable("+rown+","+columnn+")");
 							return (value instanceof TableCellData);
 						}
 
 						public boolean shouldSelectCell(EventObject anEvent) {
-							Utils.log.info("shouldSelectCell("+rown+","+columnn+")");
+							DsUtils.log.info("shouldSelectCell("+rown+","+columnn+")");
 							return false;
 						}
 
@@ -150,7 +150,7 @@ public class BeanUiUtils {
 								if (editorComponent instanceof JTextField) {
 									String newValue = ((JTextField) editorComponent)
 											.getText();
-									Utils.log.info("new value("+rown+","+columnn+"):" + newValue);
+									DsUtils.log.info("new value("+rown+","+columnn+"):" + newValue);
 									Class type = PropertyUtils.getPropertyType(
 											data.object(), data.propertyName());
 									if(type.isInstance(newValue))
@@ -165,7 +165,7 @@ public class BeanUiUtils {
 						}
 
 						public void cancelCellEditing() {
-							Utils.log.info("cancelCellEditing("+rown+","+columnn+")");
+							DsUtils.log.info("cancelCellEditing("+rown+","+columnn+")");
 						}
 
 						public void addCellEditorListener(CellEditorListener l) {
@@ -183,7 +183,7 @@ public class BeanUiUtils {
 					int column) {
 				Object value = getModel().getValueAt(row, column);
 				if (value != null) {
-					Utils.log.info("getCellRenderer(" + row + "," + column
+					DsUtils.log.info("getCellRenderer(" + row + "," + column
 							+ ")");
 					return new TableCellRenderer() {
 						public Component getTableCellRendererComponent(

@@ -5,7 +5,7 @@ import java.util.Date;
 
 import org.apache.commons.io.FilenameUtils;
 import org.apache.commons.lang3.builder.ToStringBuilder;
-import org.sharpx.utils.jdkex.Utils;
+import org.sharpx.utils.FsUtils;
 
 public class ReviewInfo implements Comparable<ReviewInfo>{
 	
@@ -83,12 +83,12 @@ public class ReviewInfo implements Comparable<ReviewInfo>{
 	}
 	
 	public void toDisk(String dir) {
-		Utils.saveJox(this, FilenameUtils.concat(dir,"info.txt"));
+		FsUtils.saveJox(this, FilenameUtils.concat(dir,"info.txt"));
 	}
 	
 	public static ReviewInfo fromDisk(String dir) {
 		Date lookuptime = new Date(new File(dir).lastModified());
-		ReviewInfo info = (ReviewInfo)Utils.loadJox2(
+		ReviewInfo info = (ReviewInfo)FsUtils.loadJox2(
 				FilenameUtils.concat(dir,"info.txt"), 
 				ReviewInfo.class);
 		if(info!=null){

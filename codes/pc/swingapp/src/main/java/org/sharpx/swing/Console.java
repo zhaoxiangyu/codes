@@ -34,11 +34,12 @@ import org.sharpx.swing.intf.AppContext;
 import org.sharpx.swing.intf.Pluggable;
 import org.sharpx.swing.intf.Pluggable.AppLifeCycle;
 import org.sharpx.swing.intf.Pluggable.TabbedUI;
-import org.sharpx.utils.jdkex.FjUtils;
+import org.sharpx.utils.FjUtils;
 import org.sharpx.utils.jdkex.JdkUtils;
-import org.sharpx.utils.jdkex.LangUtils;
-import org.sharpx.utils.jdkex.SecurityUtils;
-import org.sharpx.utils.jdkex.Utils;
+import org.sharpx.utils.FsUtils;
+import org.sharpx.utils.LangUtils;
+import org.sharpx.utils.SecurityUtils;
+import org.sharpx.utils.DsUtils;
 import org.sharpx.swing.beans.Config;
 import org.sharpx.swing.beans.Constants;
 import org.sharpx.swing.beans.UserInfo;
@@ -63,15 +64,19 @@ public class Console {
 		}
 
 		public <T> T getConfig(String name, Class<T> clazz) {
-			return Utils.loadJox2(
+			return FsUtils.loadJox2(
 					FsUtils.fnConcat(dataDirPath(),name+".xml"), 
-					clazz, Utils.newInstance(clazz));
+					clazz, DsUtils.newInstance(clazz));
 		}
 
 		public <T> void saveConfig(String name, T config) {
-			Utils.saveJox2(
-					FsUtils.fnConcat(dataDirPath(),name+".xml"), 
-					config);
+			try {
+				FsUtils.saveJox2(
+						FsUtils.fnConcat(dataDirPath(),name+".xml"), 
+						config);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
 		}
 
 		public <T> T requestObject(Class<T> clazz) {
@@ -113,7 +118,7 @@ public class Console {
 		frame.addWindowListener(new WindowAdapter() {
 
 			public void windowClosing(WindowEvent e) {
-				Utils.log.debug("windowClosing called.");
+				//Utils.log.debug("windowClosing called.");
 				for(int i=modules().length-1;i>=0;i--){
 					AppLifeCycle alc = modules()[i].lifeCycle();
 					if(alc!=null)
@@ -412,7 +417,7 @@ public class Console {
 		dialog.setVisible(true);*/
 		
 		boolean ret = false;
-		UserInfo ui = Utils.loadJox2("userinfo.txt",UserInfo.class, new UserInfo());
+		UserInfo ui = FsUtils.loadJox2("userinfo.txt",UserInfo.class, new UserInfo());
 		ret = SecurityUtils.checkKey(machineCode, ui.getUserKey());
 		if(ret)
 			return;
@@ -423,7 +428,11 @@ public class Console {
 		ret = SecurityUtils.checkKey(machineCode, regcode);
 		if(ret){
 			ui.setUserKey(regcode);
-			Utils.saveJox2("userinfo.txt", ui);
+			try {
+				FsUtils.saveJox2("userinfo.txt", ui);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
 		}else{
 			JOptionPane.showMessageDialog(frame,"register code wrong!",
 					"Error",JOptionPane.ERROR_MESSAGE);

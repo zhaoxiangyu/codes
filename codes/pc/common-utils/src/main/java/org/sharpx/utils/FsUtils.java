@@ -307,21 +307,25 @@ public class FsUtils {
 		return null;
 	}
 
-	public static Object saveJox(Object obj, String file) throws FileNotFoundException,IOException {
+	public static Object saveJox(Object obj, String file){
 		FileOutputStream fileOut;
 		/*fileOut = FileUtils.openOutputStream(new File(file));
 		JOXBeanOutputStream joxOut = new JOXBeanOutputStream(fileOut,
 				"utf-8");*/
-		fileOut = FileUtils.openOutputStream(new File(file));
-		JOXBeanWriter joxOut = new JOXBeanWriter(
-				new OutputStreamWriter(fileOut,"utf-8"), "utf-8");
-		if(obj!=null)
-			joxOut.writeObject(obj.getClass().getSimpleName(), obj);
-		joxOut.close();
+		try {
+			fileOut = FileUtils.openOutputStream(new File(file));
+			JOXBeanWriter joxOut = new JOXBeanWriter(
+					new OutputStreamWriter(fileOut,"utf-8"), "utf-8");
+			if(obj!=null)
+				joxOut.writeObject(obj.getClass().getSimpleName(), obj);
+			joxOut.close();
+		} catch (IOException e) {
+			throw new RuntimeException(e);
+		}
 		return obj;
 	}
 
-	public static <T> void saveJox2(String file,T config) throws FileNotFoundException, IOException{
+	public static <T> void saveJox2(String file,T config){
 		FsUtils.saveJox(config, file);
 	}
 

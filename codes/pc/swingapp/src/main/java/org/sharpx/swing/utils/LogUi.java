@@ -5,15 +5,15 @@ import java.awt.Container;
 import javax.swing.JScrollPane;
 
 import org.sharpx.swing.intf.Pluggable;
-import org.sharpx.utils.jdkex.TextAreaAppender;
-import org.sharpx.utils.jdkex.Utils;
+import org.sharpx.utils.DsUtils;
+import org.sharpx.utils.TextAreaAppender;
 
 public class LogUi implements Pluggable {
 
 	private JScrollPane sp;
 
 	public LogUi(){
-		TextAreaAppender taa = (TextAreaAppender) Utils.log.getAppender(TextAreaAppender.name);
+		TextAreaAppender taa = (TextAreaAppender) DsUtils.log.getAppender(TextAreaAppender.name);
 		if(taa!=null)
 			sp = new JScrollPane(taa.getTextArea());
 	}
