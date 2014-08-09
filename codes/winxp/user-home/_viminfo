@@ -17,12 +17,12 @@
 $
 
 # Command Line History (newest to oldest):
+:q!
+:q
 :wq
 :w
-:q
 :W
 :%s/"//g
-:q!
 
 # Search String History (newest to oldest):
 ? "
@@ -59,18 +59,23 @@ $
 	a
 
 # 文件标记:
-'0  29  0  E:\code-repo2\github\codes\winxp\console.bat
-'1  1  0  E:\code-repo2\github\codes\clojure\parser\console.log
-'2  1  20  E:\code-repo2\github\codes\clojure\parser\build.bat
-'3  25  20  E:\code-repo2\github\codes\clojure\parser\build.bat
-'4  3  5  E:\code-repo2\github\codes\clojure\parser\.gitignore
-'5  30  36  E:\code-repo2\github\codes\winxp\console.bat
-'6  151  0  E:\tools\gnuwin32\bin\set_gnuwin32.bat
-'7  10  0  E:\code-repo2\github\codes\winxp\console.bat
-'8  6  58  E:\code-repo2\github\codes\winxp\console.bat
-'9  1  73  ~\bat-wrapper\mvn.bat
+'0  11  0  C:\Documents and Settings\he\Local Settings\Temp\中药学(张廷模)讲稿.docx
+'1  1  0  C:\Documents
+'2  1  26331  G:\web-dict\oxford\htmls\25-6420.json
+'3  1  174837  G:\web-dict\oxford\htmls\20-7567.json
+'4  29  0  E:\code-repo2\github\codes\winxp\console.bat
+'5  1  0  E:\code-repo2\github\codes\clojure\parser\console.log
+'6  1  20  E:\code-repo2\github\codes\clojure\parser\build.bat
+'7  25  20  E:\code-repo2\github\codes\clojure\parser\build.bat
+'8  3  5  E:\code-repo2\github\codes\clojure\parser\.gitignore
+'9  30  36  E:\code-repo2\github\codes\winxp\console.bat
 
 # 跳转列表 (从新到旧):
+-'  11  0  C:\Documents and Settings\he\Local Settings\Temp\中药学(张廷模)讲稿.docx
+-'  24  0  C:\Documents and Settings\he\Local Settings\Temp\中药学(张廷模)讲稿.docx
+-'  1  0  C:\Documents
+-'  1  26331  G:\web-dict\oxford\htmls\25-6420.json
+-'  1  174837  G:\web-dict\oxford\htmls\20-7567.json
 -'  29  0  E:\code-repo2\github\codes\winxp\console.bat
 -'  30  36  E:\code-repo2\github\codes\winxp\console.bat
 -'  1  0  E:\code-repo2\github\codes\clojure\parser\console.log
@@ -165,12 +170,28 @@ $
 -'  46  41  E:\he-xun\sw\apache-maven-3.2.1\bin\mvn.bat
 -'  42  41  E:\he-xun\sw\apache-maven-3.2.1\bin\mvn.bat
 -'  41  34  E:\he-xun\sw\apache-maven-3.2.1\bin\mvn.bat
--'  27  8  E:\he-xun\sw\apache-maven-3.2.1\bin\mvn.bat
--'  24  10  E:\he-xun\sw\apache-maven-3.2.1\bin\mvn.bat
--'  1  0  E:\he-xun\sw\apache-maven-3.2.1\bin\mvn.bat
--'  83  4  E:\he-xun\sw\apache-maven-3.2.1\bin\mvn.bat
 
 # 文件内的标记历史记录 (从新到旧):
+
+> C:\Documents and Settings\he\Local Settings\Temp\中药学(张廷模)讲稿.docx
+	"	11	0
+	.	1	0
+	+	1	0
+
+> C:\Documents and Settings\he\Local Settings\Temp\zipfile:C:\Documents and Settings\he\Local Settings\Temp\中药学(张廷模)讲稿.docx::word\document.xml
+	"	1	0
+
+> C:\Documents and Settings\he\Local Settings\Temp\zipfile:C:\Documents and Settings\he\Local Settings\Temp\中药学(张廷模)讲稿.docx::word\footer1.xml
+	"	1	0
+
+> C:\Documents
+	"	1	0
+
+> G:\web-dict\oxford\htmls\25-6420.json
+	"	1	26331
+
+> G:\web-dict\oxford\htmls\20-7567.json
+	"	1	174837
 
 > E:\code-repo2\github\codes\winxp\console.bat
 	"	29	0
