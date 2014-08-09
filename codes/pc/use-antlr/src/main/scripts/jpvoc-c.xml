@@ -1,0 +1,129 @@
+<project name="jpVocParser" basedir="../.." default="default" xmlns:ivy="antlib:org.apache.ivy.ant">
+	<import file="${basedir}/../AntTask/ant/env-setting.xml" />
+	<import file="${basedir}/../AntTask/ant/common-tools.xml" />
+	<import file="${basedir}/../AntTask/ant/ivy-tools.xml"/>
+	<import file="${basedir}/../AntTask/ant/use-android-tools.xml"/>
+
+	<property name="java.src.dir" location="src"/>
+	<property name="javac.out.dir" location="bin/ant/classes"/>
+	<property name="jar.out.file" location="bin/ant/classes.jar"/>
+	<property name="javah.out.dir" location="jni/gen/javah/jpVocParser"/>
+	
+	<property name="jni.libname" value="vocabulary"/>
+	<property name="jni.libdir" location="bin/jni"/>
+	<property name="jni.srcdir" location="jni/src"/>
+	
+	<!-- ================================= 
+          target: default target              
+         ================================= -->
+    <target name="default">
+    	<!--
+    	-->
+    	<antcall target="prepare-jpVoc"></antcall>
+
+		<antcall target="cparser-build"></antcall>
+		<antcall target="cparser-run"></antcall>
+    </target>
+	
+	<target name="cparser-jnirun">
+		<echo>-Djava.library.path=${jni.libdir}</echo>
+    	<java classname="org.sharp.vocreader.jni.Main" 
+    		classpath="${javac.out.dir}" fork="true">
+    		<jvmarg value="-Djava.library.path=${jni.libdir}"/>
+    		<arg line="${basedir}/bin/voca.filenames"/>
+    	</java>
+	</target>
+	
+	<target name="compile">
+		<mkdir dir="${javac.out.dir}"/>
+		<javac srcdir="${java.src.dir}" destdir="${javac.out.dir}"/>
+		<jar destfile="${jar.out.file}" basedir="${javac.out.dir}"/>
+	</target>
+
+	<target name="gen-code">
+		<antcall target="compile"></antcall>
+		
+		<delete dir="${javah.out.dir}"/>
+		<mkdir dir="${javah.out.dir}"/>
+		<javah destdir="${javah.out.dir}"
+			classpath="${javac.out.dir}" verbose="yes">
+			<class name="org.sharp.vocreader.jni.VocabularySupport"/>
+		</javah>
+		
+		<antlr3 target="antlr/grammar/c/JpVocabulary.g"
+		    outputdirectory="antlr/gen/c"/>
+		<delete dir="antlr/gen/java"/>
+	</target>
+	
+	<target name="cparser-build">
+		<path id="gen.srcfiles">
+			<fileset dir="${basedir}" 
+				includes="antlr/gen/c/*.c,jni/src/jpVocParser/jpVoc.c">
+			</fileset>
+		</path>
+		<pathconvert property="gen.srcfilelist" pathsep=" " refid="gen.srcfiles"/>
+		<make makefile="build/make/jpVocParser.mk" 
+			target="build">
+			<vars>
+				<env key="MODULE_NAME" value="jpVoc"/>
+				<env key="SRC_DIR" value="${basedir}"/>
+				<env key="SRC_FILES" value="${gen.srcfilelist}"/>
+				<env key="MAIN_SRC" value="jni/src/jpVocParser/jpVocMain.c"/>
+				<env key="LIB_NAMES" value="antlr3c"/>
+				<env key="INC_PATH" value="antlr/gen/c"/>
+				<!--
+				<env key="LIB_PATH" value="lib1:lib2"/>
+				<env key="JNISRC_FILES" value=""/>
+				-->
+			</vars>
+		</make>
+	</target>
+
+	<target name="cparser-run">
+		<make 
+			makefile="build/make/jpVocParser.mk" 
+			target="run-dynamiclink">
+			<vars>
+				<env key="MODULE_NAME" value="jpVoc"/>
+				<env key="PROG_ARGS" value="${basedir}/bin/voca.filenames > ~/voca.html"/>
+				<!--
+				-->
+			</vars>
+		</make>
+		<!--
+		<cmd2 executable="bin/out/jpVoc-sl"
+			line="${basedir}/bin/voca.filenames"/>
+		<make makefile="build/make/jpVocParser.mk" 
+			target="run-staticlink"/>
+		-->
+	</target>
+
+	<target name="prepare-jpVoc">
+		<pathconvert property="mp3paths" pathsep="::">
+			<fileset dir="${VMSHARE.DIR}/win7/jpwords" includes="unit*/**/*.mp3"/>
+			<regexpmapper from="^(.*)/([^/]*)\.mp3$$" to="\2" casesensitive="yes"/>
+		</pathconvert>
+		<echo message="${mp3paths}"/>
+		
+		<concat destfile="bin/voca.filenames">
+		${mp3paths}
+			<filterchain>
+				<tokenfilter delimOutput="\n">
+					<stringtokenizer delims="::"/>
+					<uniqfilter/>
+				</tokenfilter>
+				<sortfilter/>
+			</filterchain>
+		</concat>
+		<native2ascii dest="bin" ext=".unicodes" src="bin/" 
+			includes="voca.filenames">
+		</native2ascii>
+		
+		<!--
+		<loadfile property="mp3names" srcfile="bin/voca.filenames"></loadfile>
+		<echo message="${mp3names}"/>
+		<cmd line="cat ${basedir}/bin/voca.unicodes"/>
+		-->
+	</target>
+	
+</project>
