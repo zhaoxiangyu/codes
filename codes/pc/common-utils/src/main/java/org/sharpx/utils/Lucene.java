@@ -46,8 +46,6 @@ import org.apache.lucene.store.FSDirectory;
 import org.apache.lucene.store.LockObtainFailedException;
 import org.apache.lucene.util.Version;
 import org.sharpx.utils.intf.ContentParser;
-import org.sharpx.utils.jdkex.LangUtils;
-import org.sharpx.utils.jdkex.Utils;
 import org.tartarus.snowball.ext.EnglishStemmer;
 
 public class Lucene {
@@ -93,7 +91,7 @@ public class Lucene {
 			String[] ret = new String[0];
 
 			String kw = englishStem(keyword).toLowerCase();
-			Utils.log.debug("keyword:"+kw);
+			DsUtils.log.debug("keyword:"+kw);
 			/*if(Character.isUpperCase(keyword.charAt(0))){
 				kw = LangUtils.capitalize(kw);
 			}*/
@@ -120,7 +118,7 @@ public class Lucene {
 				public void start(String originalText, TokenStream tokenStream) {
 					ot = originalText;
 					ts = tokenStream;
-					Utils.log.debug("Fragmenter.start");
+					DsUtils.log.debug("Fragmenter.start");
 				}
 				public boolean isNewFragment() {
 
@@ -224,10 +222,10 @@ public class Lucene {
 					int i=1;
 					while(i++ <= tps.freq()){
 						int pn = tps.nextPosition();
-						Utils.log.debug("position:"+pn+",term:"+t.text()+",field:"+t.field());
+						DsUtils.log.debug("position:"+pn+",term:"+t.text()+",field:"+t.field());
 						if(tps.isPayloadAvailable()){
 							byte[] pl =tps.getPayload(new byte[0], 0);
-							Utils.log.debug("payload:"+new String(pl));
+							DsUtils.log.debug("payload:"+new String(pl));
 						}
 					}
 				}
@@ -358,7 +356,7 @@ public class Lucene {
 	}
 	
 	public void indexDoc(String indexPath, Indexable item){
-		Utils.log.info("indexDoc");
+		DsUtils.log.info("indexDoc");
 		if (indexPath == null || "".equals(indexPath.trim()))
 			return;
 		try {
@@ -416,7 +414,7 @@ public class Lucene {
 
 		final TopDocs results = searcher.search(q, 100);
 
-		Utils.log.info("Searched for: " + query.toString() + ","
+		DsUtils.log.info("Searched for: " + query.toString() + ","
 				+ results.totalHits + " hits.");
 		return new SearchResult() {
 
@@ -466,7 +464,7 @@ public class Lucene {
 
 		final TopDocs results = searcher.search(q, 100);
 
-		Utils.log.info("Searched for: " + queryString + ","
+		DsUtils.log.info("Searched for: " + queryString + ","
 				+ results.totalHits + " hits.");
 		return new SearchResult() {
 
@@ -501,7 +499,7 @@ public class Lucene {
 				FSDirectory.open(new File(indexPath)));
 		final TopDocs results = searcher.search(query, 100);
 
-		Utils.log.info("Searched for: " + query.toString() + ","
+		DsUtils.log.info("Searched for: " + query.toString() + ","
 				+ results.totalHits + " hits.");
 		return new SearchResult() {
 

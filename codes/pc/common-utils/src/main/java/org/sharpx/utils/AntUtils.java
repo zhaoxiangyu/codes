@@ -3,7 +3,6 @@ package org.sharpx.utils;
 import java.io.File;
 
 import org.apache.tools.ant.DirectoryScanner;
-import org.sharpx.utils.jdkex.Utils;
 
 public class AntUtils {
 
@@ -17,7 +16,7 @@ public class AntUtils {
 		if(ds.getIncludedFilesCount()>0) {
 			includeFiles=ds.getIncludedFiles();
 		}
-		return (String[]) Utils.defaultIfNull(includeFiles, new String[0]);
+		return (String[]) DsUtils.defaultIfNull(includeFiles, new String[0]);
 	}
 
 	public static String[] listFiles(String baseDir,String[] includes){
@@ -33,7 +32,7 @@ public class AntUtils {
 		if(ds.getIncludedDirsCount()>0) {
 			includeDirs=ds.getIncludedDirectories();
 		}
-		return (String[]) Utils.defaultIfNull(includeDirs, new String[0]);
+		return (String[]) DsUtils.defaultIfNull(includeDirs, new String[0]);
 	}
 
 }

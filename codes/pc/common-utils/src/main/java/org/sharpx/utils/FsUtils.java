@@ -12,13 +12,23 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.FilenameFilter;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.io.OutputStream;
+import java.io.OutputStreamWriter;
+import java.io.Reader;
+import java.nio.ByteBuffer;
+import java.nio.CharBuffer;
+import java.nio.channels.FileChannel;
+import java.nio.charset.Charset;
+import java.nio.charset.UnsupportedCharsetException;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
-import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+import java.util.regex.PatternSyntaxException;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipInputStream;
 import java.util.zip.ZipOutputStream;
@@ -26,6 +36,7 @@ import java.util.zip.ZipOutputStream;
 import org.apache.commons.io.DirectoryWalker;
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.FilenameUtils;
+import org.apache.commons.io.IOUtils;
 import org.apache.commons.io.filefilter.FileFilterUtils;
 import org.apache.commons.io.filefilter.WildcardFileFilter;
 import org.apache.commons.lang3.StringUtils;
@@ -33,8 +44,9 @@ import org.codehaus.jackson.map.ObjectMapper;
 import org.exolab.castor.xml.Marshaller;
 import org.exolab.castor.xml.Unmarshaller;
 import org.sharpx.utils.beans.DirSnap;
-import org.sharpx.utils.beans.FileInfo;
-import org.sharpx.utils.jdkex.Utils;
+
+import com.wutka.jox.JOXBeanReader;
+import com.wutka.jox.JOXBeanWriter;
 
 public class FsUtils {
 
@@ -48,7 +60,7 @@ public class FsUtils {
 			ObjectMapper mapper = new ObjectMapper();
 			mapper.writeValue(f, obj);
 		} catch (Exception e) {
-			Utils.log.error("", e);
+			DsUtils.log.error("", e);
 		}
 		return obj;
 	}
@@ -65,7 +77,7 @@ public class FsUtils {
 				conf = def;
 			return conf;
 		} catch (Exception e) {
-			Utils.log.error("", e);
+			DsUtils.log.error("", e);
 		}
 		return null;
 	}
@@ -76,7 +88,7 @@ public class FsUtils {
 			fileOut = new FileWriter(file);
 			Marshaller.marshal(obj, fileOut);
 		} catch (Exception e) {
-			Utils.log.error("", e);
+			DsUtils.log.error("", e);
 		}
 		return obj;
 	}
@@ -88,7 +100,7 @@ public class FsUtils {
 			Object conf = Unmarshaller.unmarshal(clazz, in);
 			return conf;
 		} catch (Exception e) {
-			Utils.log.error("", e);
+			DsUtils.log.error("", e);
 		}
 		return null;
 	}
@@ -106,7 +118,7 @@ public class FsUtils {
 			}
 		});
 		fh.summary(hm);
-		Utils.log.info("total " + hm.get("dc") + " dir, " + hm.get("fc")
+		DsUtils.log.info("total " + hm.get("dc") + " dir, " + hm.get("fc")
 				+ " files parsed.");
 		return (File[]) fl.toArray(new File[0]);
 	}
@@ -123,13 +135,13 @@ public class FsUtils {
 			}
 		});
 		fh.summary(hm);
-		Utils.log.info("total " + hm.get("dc") + " dir, " + hm.get("fc")
+		DsUtils.log.info("total " + hm.get("dc") + " dir, " + hm.get("fc")
 				+ " files parsed.");
 		return (File[]) fl.toArray(new File[0]);
 	}
 
 	public static File[] findMp3WaveFiles(String dir) {
-		Utils.log.info("finding mp3 file under folder " + dir);
+		DsUtils.log.info("finding mp3 file under folder " + dir);
 		final List fl = new ArrayList();
 		HashMap hm = new HashMap();
 		BaseFileHandler fh = null;
@@ -142,13 +154,13 @@ public class FsUtils {
 			}
 		});
 		fh.summary(hm);
-		Utils.log.info("total " + hm.get("dc") + " dir, " + hm.get("fc")
+		DsUtils.log.info("total " + hm.get("dc") + " dir, " + hm.get("fc")
 				+ " files parsed.");
 		return (File[]) fl.toArray(new File[0]);
 	}
 
 	public static File[] findWavFile(String dir, final String word) {
-		Utils.log.info("finding wav file for word " + word + " under folder "
+		DsUtils.log.info("finding wav file for word " + word + " under folder "
 				+ dir);
 		final List fl = new ArrayList();
 		HashMap hm = new HashMap();
@@ -162,7 +174,7 @@ public class FsUtils {
 			}
 		});
 		fh.summary(hm);
-		Utils.log.info("total " + hm.get("dc") + " dir, " + hm.get("fc")
+		DsUtils.log.info("total " + hm.get("dc") + " dir, " + hm.get("fc")
 				+ " files parsed.");
 		return (File[]) fl.toArray(new File[0]);
 	}
@@ -170,7 +182,7 @@ public class FsUtils {
 	private void travDir(String s, FileHandler fh) {
 		File f = new File(s);
 		if (!f.exists()) {
-			Utils.log.debug(s + " does not exist");
+			DsUtils.log.debug(s + " does not exist");
 			return;
 		}
 		if (f.isFile())
@@ -184,7 +196,133 @@ public class FsUtils {
 			for (int i = 0; i < objects.length; i++)
 				travDir(s + f.separator + objects[i], fh);
 		} else
-			Utils.log.error("Unknown: " + s);
+			DsUtils.log.error("Unknown: " + s);
+	}
+
+	public static boolean bgrep(String regexp, String file, String encodingName) {
+		boolean ret = false;
+		if (encodingName == null)
+			encodingName = "UTF-8"; // Default to UTF-8 encoding
+		int flags = Pattern.MULTILINE; // Default regexp flags
+	
+		try {
+			// Get the Charset for converting bytes to chars
+			Charset charset = Charset.forName(encodingName);
+	
+			// Next argument must be a regexp. Compile it to a Pattern object
+			Pattern pattern = Pattern.compile(regexp, flags);
+	
+			// Loop through each of the specified filenames
+			CharBuffer chars; // This will hold complete text of the file
+			try { // Handle per-file errors locally
+					// Open a FileChannel to the named file
+				FileInputStream stream = new FileInputStream(file);
+				FileChannel f = stream.getChannel();
+	
+				// Memory-map the file into one big ByteBuffer. This is
+				// easy but may be somewhat inefficient for short files.
+				ByteBuffer bytes = f.map(FileChannel.MapMode.READ_ONLY, 0,
+						f.size());
+	
+				// We can close the file once it is is mapped into memory.
+				// Closing the stream closes the channel, too.
+				stream.close();
+	
+				// Decode the entire ByteBuffer into one big CharBuffer
+				chars = charset.decode(bytes);
+			} catch (IOException e) { // File not found or other problem
+				DsUtils.log.error("", e); // Print error message
+				return false;
+			}
+	
+			// This is the basic regexp loop for finding all matches in a
+			// CharSequence. Note that CharBuffer implements CharSequence.
+			// A Matcher holds state for a given Pattern and text.
+			Matcher matcher = pattern.matcher(chars);
+			while (matcher.find()) { // While there are more matches
+				// Print out details of the match
+				DsUtils.log.info(file + ":" + // file name
+						matcher.start() + ": " + // character pos
+						matcher.group()); // matching text
+				return true;
+			}
+		} catch (UnsupportedCharsetException e) { // Bad encoding name
+			DsUtils.log.error("Unknown encoding: " + encodingName);
+		} catch (PatternSyntaxException e) { // Bad pattern
+			DsUtils.log.error("Syntax error in search pattern:\n"
+					+ e.getMessage());
+		} catch (ArrayIndexOutOfBoundsException e) { // Wrong number of
+			// arguments
+		}
+		return ret;
+	}
+
+	private static Object loadJox(String file, Class clazz) throws FileNotFoundException,IOException {
+		FileInputStream in;
+		in = new FileInputStream(file);
+		/*JOXBeanInputStream joxIn = new JOXBeanInputStream(in);*/
+		JOXBeanReader joxIn = new JOXBeanReader(new InputStreamReader(in,"utf-8"));
+		Object conf = joxIn.readObject(clazz);
+		in.close();
+		return conf;
+	}
+
+	@Deprecated
+	public static <T> T loadJox2(String filePath, Class<T> clazz) {
+		T c = null;
+		try {
+			File file = new File(filePath);
+			if(file.exists() && file.isFile())
+				c = (T) FsUtils.loadJox(filePath, clazz);
+			
+			if (c == null)
+				c = (T) clazz.newInstance();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return c;
+	}
+
+	public static <T> T loadJox2(String filePath, Class<T> clazz, T def) {
+		T c = null;
+		try {
+			File file = new File(filePath);
+			if(file.exists() && file.isFile())
+				c = (T) FsUtils.loadJox(filePath, clazz);
+			
+			if (c == null)
+				c = def;
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return c;
+	}
+
+	public static String readerToString(Reader r){
+		try {
+			return IOUtils.toString(r);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		return null;
+	}
+
+	public static Object saveJox(Object obj, String file) throws FileNotFoundException,IOException {
+		FileOutputStream fileOut;
+		/*fileOut = FileUtils.openOutputStream(new File(file));
+		JOXBeanOutputStream joxOut = new JOXBeanOutputStream(fileOut,
+				"utf-8");*/
+		fileOut = FileUtils.openOutputStream(new File(file));
+		JOXBeanWriter joxOut = new JOXBeanWriter(
+				new OutputStreamWriter(fileOut,"utf-8"), "utf-8");
+		if(obj!=null)
+			joxOut.writeObject(obj.getClass().getSimpleName(), obj);
+		joxOut.close();
+		return obj;
+	}
+
+	public static <T> void saveJox2(String file,T config) throws FileNotFoundException, IOException{
+		FsUtils.saveJox(config, file);
 	}
 
 	public static void unzip(File file, File destination) throws IOException {
@@ -384,7 +522,7 @@ public class FsUtils {
 			xe.writeObject(obj);
 			xe.close();
 		} catch (FileNotFoundException e) {
-			Utils.log.error("", e);
+			DsUtils.log.error("", e);
 		}
 	}
 
@@ -409,7 +547,7 @@ public class FsUtils {
 				ret = xd.readObject();
 			}
 		} catch (FileNotFoundException e) {
-			Utils.log.error("", e);
+			DsUtils.log.error("", e);
 		}
 		return ret == null ? def : ret;
 	}
@@ -446,6 +584,10 @@ public class FsUtils {
 			e.printStackTrace();
 		}
 		return cPath;
+	}
+	
+	public static String fnConcat(String basePath, String fullFilenameToAdd){
+		return FilenameUtils.concat(basePath, fullFilenameToAdd);
 	}
 
 }

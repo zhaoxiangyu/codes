@@ -1,0 +1,1 @@
+/usr/bin/mvn -s ~/work/code-repo/github/codes/ubuntu/user-home/.m2/settings.xml $*

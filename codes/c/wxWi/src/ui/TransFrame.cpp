@@ -33,7 +33,7 @@ TransFrame::TransFrame(wxWindow* parent,wxWindowID id,const wxPoint& pos,const w
 	wxBoxSizer* BoxSizer2;
 	wxBoxSizer* BoxSizer1;
 	wxBoxSizer* BoxSizer3;
-
+	
 	Create(parent, id, _("Translator"), wxDefaultPosition, wxDefaultSize, wxDEFAULT_FRAME_STYLE, _T("id"));
 	SetClientSize(wxSize(800,600));
 	Move(wxDefaultPosition);
@@ -68,7 +68,7 @@ TransFrame::TransFrame(wxWindow* parent,wxWindowID id,const wxPoint& pos,const w
 	BoxSizer1->Add(BoxSizer4, 0, wxALL|wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL, 5);
 	SetSizer(BoxSizer1);
 	BoxSizer1->SetSizeHints(this);
-
+	
 	Connect(ID_BUTTON1,wxEVT_COMMAND_BUTTON_CLICKED,(wxObjectEventFunction)&TransFrame::OnbSaveClick);
 	//*)
 }

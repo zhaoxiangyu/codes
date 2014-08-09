@@ -8,7 +8,6 @@ import org.apache.commons.proxy.Interceptor;
 import org.apache.commons.proxy.Invocation;
 import org.apache.commons.proxy.factory.cglib.CglibProxyFactory;
 import org.sharpx.utils.annotation.Log;
-import org.sharpx.utils.jdkex.Utils;
 
 public class Proxies {
 	private static CglibProxyFactory fac = new CglibProxyFactory();
@@ -25,7 +24,7 @@ public class Proxies {
 				try{
 					ret = inv.proceed();
 				}catch (Exception e) {
-					Utils.log.error(ToStringBuilder.reflectionToString(inv.getProxy())+"."+inv.getMethod().getName()+":"+Arrays.toString(inv.getArguments()));
+					DsUtils.log.error(ToStringBuilder.reflectionToString(inv.getProxy())+"."+inv.getMethod().getName()+":"+Arrays.toString(inv.getArguments()));
 					throw e;
 				}
 				return ret;
@@ -42,7 +41,7 @@ public class Proxies {
 			String key = obtainKey(inv.getMethod().getName(),inv.getArguments());
 			if(map.containsKey(key)){
 				ret = map.get(key);
-				Utils.log.debug("cached retvalue "+key+".");
+				DsUtils.log.debug("cached retvalue "+key+".");
 			}else{
 				ret = inv.proceed();
 				map.put(key, ret);

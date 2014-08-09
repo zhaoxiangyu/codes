@@ -23,7 +23,6 @@ import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.message.BasicNameValuePair;
 import org.apache.http.params.CoreProtocolPNames;
 import org.apache.http.util.EntityUtils;
-import org.sharpx.utils.jdkex.Utils;
 
 public class HttpCli {
 
@@ -65,7 +64,7 @@ public class HttpCli {
 			int statuscode = response.getStatusLine().getStatusCode();
 			if(statuscode == 302){
 				String location = response.getFirstHeader("Location").getValue();
-				Utils.log.info("HTTP/1.1 302 Moved Temporarily,"+location);
+				DsUtils.log.info("HTTP/1.1 302 Moved Temporarily,"+location);
 				httppost.abort();
 				HttpGet httpget = new HttpGet(location);
 				response = httpclient.execute(httpget);

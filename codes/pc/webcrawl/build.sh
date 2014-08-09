@@ -6,7 +6,7 @@ status(){
 
 run(){
   mvn clean package
-  mvn exec:java -Dexec.mainClass="org.sharpx.oxford.Controller"
+  mvn exec:java -Dexec.mainClass="org.sharpx.crawler.Controller"
 }
 
 update-ide(){

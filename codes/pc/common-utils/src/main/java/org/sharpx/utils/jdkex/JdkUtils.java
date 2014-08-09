@@ -3,10 +3,16 @@ package org.sharpx.utils.jdkex;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.Reader;
-
-import org.apache.commons.io.IOUtils;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class JdkUtils {
+
+	public static boolean regExMatched(String text, String regex){
+		Pattern patt = Pattern.compile(regex);
+		Matcher matcher = patt.matcher(text);
+		return matcher.matches();
+	}
 
 	public static void sleep(long millis){
 		try {
@@ -65,15 +71,6 @@ public class JdkUtils {
 	
 		Runtime.getRuntime().exec(command);
 		System.exit(0);
-	}
-	
-	public static String readerToString(Reader r){
-		try {
-			return IOUtils.toString(r);
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-		return null;
 	}
 	
 	public static Reader getResourceAsReader(String path){

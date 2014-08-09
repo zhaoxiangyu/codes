@@ -18,7 +18,6 @@ import org.apache.poi.hwpf.usermodel.CharacterRun;
 import org.apache.poi.hwpf.usermodel.Paragraph;
 import org.apache.poi.hwpf.usermodel.Range;
 import org.sharpx.utils.intf.ContentParser;
-import org.sharpx.utils.jdkex.Utils;
 
 public class PoiUtils {
 
@@ -81,7 +80,7 @@ public class PoiUtils {
 				boolean outlined = cr.isOutlined();
 				boolean shadowed = cr.isShadowed();
 				boolean highlighted = cr.isHighlighted();
-				Utils.log.info("CharacterRun:color," + color + ";" + "("
+				DsUtils.log.info("CharacterRun:color," + color + ";" + "("
 						+ (embossed ? "embossed" : " ")
 						+ (imprinted ? "imprinted" : " ")
 						+ (outlined ? "outlined" : " ")
@@ -100,7 +99,7 @@ public class PoiUtils {
 	public static String doc2Html(File docFile) throws FileNotFoundException, IOException {
 		StringBuffer ret = new StringBuffer();
 		HWPFDocument hwpfDoc = new HWPFDocument(new FileInputStream(docFile));
-		Utils.log.info("hwpfDoc:"+ToStringBuilder.reflectionToString(hwpfDoc));
+		DsUtils.log.info("hwpfDoc:"+ToStringBuilder.reflectionToString(hwpfDoc));
 		Range overallRange = hwpfDoc.getOverallRange();
 		int npr = overallRange.numParagraphs();
 		for (int j = 0; j < npr; j++) {

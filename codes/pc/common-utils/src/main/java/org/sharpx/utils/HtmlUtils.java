@@ -7,7 +7,6 @@ import net.htmlparser.jericho.Renderer;
 import net.htmlparser.jericho.Segment;
 import net.htmlparser.jericho.Source;
 
-import org.sharpx.utils.jdkex.Utils;
 
 public class HtmlUtils {
 
@@ -21,7 +20,7 @@ public class HtmlUtils {
 			renderer.setIncludeHyperlinkURLs(false);
 			return renderer.toString();
 		} catch (Exception e) {
-			Utils.log.error("", e);
+			DsUtils.log.error("", e);
 		}
 		return "";
 	}
@@ -36,7 +35,7 @@ public class HtmlUtils {
 			renderer.setIncludeHyperlinkURLs(false);
 			return renderer.toString();
 		} catch (Exception e) {
-			Utils.log.error("", e);
+			DsUtils.log.error("", e);
 		}
 		return "";
 	}

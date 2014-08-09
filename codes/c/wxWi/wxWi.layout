@@ -1,14 +1,17 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <CodeBlocks_layout_file>
 	<ActiveTarget name="TEST" />
-	<File name="common-vars.mak" open="0" top="0" tabpos="25">
+	<File name="common-vars.mak" open="1" top="0" tabpos="4">
 		<Cursor position="98" topLine="0" />
 	</File>
-	<File name="cpp-unit.mak" open="0" top="0" tabpos="24">
+	<File name="cpp-unit.mak" open="1" top="0" tabpos="5">
 		<Cursor position="397" topLine="0" />
 	</File>
-	<File name="open-shell.script" open="0" top="0" tabpos="27">
+	<File name="open-shell.script" open="1" top="0" tabpos="6">
 		<Cursor position="111" topLine="0" />
+	</File>
+	<File name="src/boost/boostMain.h" open="1" top="0" tabpos="7">
+		<Cursor position="0" topLine="0" />
 	</File>
 	<File name="src/cppunit/utils/DataUtilsTest.cpp" open="0" top="0" tabpos="16">
 		<Cursor position="1251" topLine="16" />
@@ -136,8 +139,8 @@
 	<File name="src/utils/DataUtils.h" open="0" top="0" tabpos="3">
 		<Cursor position="150" topLine="0" />
 	</File>
-	<File name="src/utils/IOUtils.cpp" open="0" top="0" tabpos="2">
-		<Cursor position="1813" topLine="81" />
+	<File name="src/utils/IOUtils.cpp" open="1" top="0" tabpos="8">
+		<Cursor position="1813" topLine="0" />
 	</File>
 	<File name="src/utils/IOUtils.h" open="0" top="0" tabpos="4">
 		<Cursor position="333" topLine="1" />
@@ -157,7 +160,7 @@
 	<File name="src/utils/my_wx.h" open="0" top="0" tabpos="0">
 		<Cursor position="210" topLine="0" />
 	</File>
-	<File name="use-boost.mak" open="0" top="0" tabpos="26">
+	<File name="use-boost.mak" open="1" top="0" tabpos="3">
 		<Cursor position="257" topLine="0" />
 	</File>
 	<File name="wxWi-Debug.mak" open="0" top="0" tabpos="7">
@@ -172,10 +175,10 @@
 	<File name="wxWi-TEST.mak" open="0" top="0" tabpos="6">
 		<Cursor position="1602" topLine="32" />
 	</File>
-	<File name="wxWi-WinRelease.mak" open="0" top="0" tabpos="0">
-		<Cursor position="1077" topLine="19" />
+	<File name="wxWi-WinRelease.mak" open="1" top="0" tabpos="2">
+		<Cursor position="1077" topLine="9" />
 	</File>
-	<File name="wxWi.mak" open="0" top="0" tabpos="8">
+	<File name="wxWi.mak" open="1" top="0" tabpos="1">
 		<Cursor position="626" topLine="0" />
 	</File>
 	<File name="wxsmith/TransFrame.wxs" open="0" top="0" tabpos="0">
