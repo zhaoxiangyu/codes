@@ -17,6 +17,7 @@
           target: default target              
          ================================= -->
     <target name="default">
+    	<antcall target="ivy-test"/>
     </target>
 	
 	<target name="prepare-jpVocx">

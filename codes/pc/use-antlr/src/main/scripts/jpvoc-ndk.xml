@@ -2,7 +2,7 @@
 	
 	<property environment="env"/>
 	<property name="REPO_ROOT" value="${env.REPO_ROOT}"/>
-	<import file="${REPO_ROOT}/settings.p.xml" />
+	<include file="${REPO_ROOT}/settings.p.xml" />
 
 	<property name="java.src.dir" location="src"/>
 	<property name="javac.out.dir" location="bin/ant/classes"/>

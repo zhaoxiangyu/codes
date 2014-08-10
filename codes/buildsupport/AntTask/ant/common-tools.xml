@@ -2,10 +2,15 @@
 <project name="common-tools" basedir=".." xmlns:ivy="antlib:org.apache.ivy.ant"
 	default="default">
 
-	<dirname property="antfile.dir" file="${ant.file.common-tools}"/>
-	<property name="i.basedir" value="${antfile.dir}/.."/>
+	<property name="i.basedir" value="${ant.file.common-tools}/.."/>
 	<import file="${i.basedir}/ant/env-setting.xml" />
+	<import file="${i.basedir}/ant/ivy-tools.xml" />
 	
+	<target name="resolve">
+	    <ivy:resolve file="${basedir}/ivy.xml" conf="default" />
+	    <ivy:retrieve type="jar" pattern="${lib.dir}/[artifact]-[revision].[ext]" sync="true"/>
+	</target>
+		
 	<target name="default">
 		<!--
 		<gcc modulename="smartq" src="my/c" objs="a.o b.o c.o" target="echo_vars"/>
@@ -148,8 +153,10 @@
 		</sequential>
 	</macrodef>
 	
+	<!--
 	<taskdef resource="cpptasks.tasks" classpath="${ant-ext-jars.dir}/cpptasks.jar"/>
 	<typedef resource="cpptasks.types" classpath="${ant-ext-jars.dir}/cpptasks.jar"/>
+	-->
 	
 	<taskdef resource="org/eclipse/jgit/ant/ant-tasks.properties">
        <classpath>
@@ -159,12 +166,14 @@
        </classpath>
    </taskdef>
 	
+	<!--
 	<taskdef name="xmltask" classname="com.oopsconsultancy.xmltask.ant.XmlTask">
 		<classpath>
 			<pathelement location="${ant-ext-jars.dir}/xmltask.jar"/>
 		</classpath>
 	</taskdef>
-
+	-->
+	
 	<property name="jaranalyzer12.loc" location="${java-tools.dir}/JarAnalyzer-1.2"></property>
 	<path id="jaranalyzer.classpath">
 	   <pathelement path="${jaranalyzer12.loc}/jaranalyzer-1.2.jar"/>

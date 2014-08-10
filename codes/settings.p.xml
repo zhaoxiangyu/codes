@@ -2,6 +2,8 @@
 	<!-- this file should be put under codes root directory 
 		like /media/sf_VMshare/codes -->
 	
+	<property name="ivy.dir" value="${ant.file.env-setting.p}/../buildsupport/tools/ivy/apache-ivy-2.2.0-bin-with-deps/apache-ivy-2.2.0"/>
+
 	<property name="prj.anttask.dir" location="buildsupport/AntTask"/>
 	<property name="prj.android.dir" location="android"/>
 	<property name="prj.wd4web.dir" location="web/wd4web"/>
@@ -12,10 +14,9 @@
 	<property name="prj.swing.dir" location="pc/swing"/>
 	
 	<import file="${prj.anttask.dir}/ant/env-setting.xml" />
-	<import file="${prj.anttask.dir}/ant/common-tools.xml" />
-	<property name="ivy.dir" location="buildsupport/tools/ivy/apache-ivy-2.2.0-bin-with-deps/apache-ivy-2.2.0"/>
 	<import file="${prj.anttask.dir}/ant/ivy-tools.xml"/>
-	<import file="${prj.anttask.dir}/ant/use-android-tools.xml"/>
+	<!--import file="${prj.anttask.dir}/ant/common-tools.xml" />
+	<import file="${prj.anttask.dir}/ant/use-android-tools.xml"/-->
 
 	<condition property="VMSHARE.DIR" value="" 
 		else="/home/he/work">
