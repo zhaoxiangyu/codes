@@ -1,29 +1,30 @@
 <project name="env-setting.p" basedir="..">
 	<!-- this file should be put under codes root directory 
 		like /media/sf_VMshare/codes -->
+	
+	<property environment="env"/>
+	<property name="REPO_ROOT" value="${env.REPO_ROOT}"/>
+	
+	<property name="prj.anttask.dir" value="${REPO_ROOT}/buildsupport/AntTask"/>
+	<property name="prj.android.dir" value="${REPO_ROOT}/android"/>
+	<property name="prj.wd4web.dir" value="${REPO_ROOT}/web/wd4web"/>
+	<property name="prj.wd4j.dir" value="${REPO_ROOT}/web/wd4j"/>
+	<property name="prj.rhc-jws.dir" value="${REPO_ROOT}/web/rhc-jws"/>
+	<property name="prj.wxWi.dir" value="${REPO_ROOT}/c/wxWi"/>
+	<property name="prj.myddriver.dir" value="${REPO_ROOT}/c/myddriver"/>
+	<property name="prj.swing.dir" value="${REPO_ROOT}/pc/swing"/>
+	
 	<condition property="VMSHARE.DIR" value="" 
 		else="/home/he/work">
 		<os family="windows" />
 	</condition>
-
-
+	
 	<property name="java-tools.dir" value="${VMSHARE.DIR}/sw/java/tools"/>
 	<property name="down.dir" value="${VMSHARE.DIR}/down"/>
-
-	<property name="codes.dir" value="${VMSHARE.DIR}/code-repo/github/codes"/>
-
-	<property name="prj.anttask.dir" value="${codes.dir}/buildsupport/AntTask"/>
-	<property name="prj.android.dir" value="${codes.dir}/android"/>
-	<property name="prj.wd4web.dir" value="${codes.dir}/web/wd4web"/>
-	<property name="prj.wd4j.dir" value="${codes.dir}/web/wd4j"/>
-	<property name="prj.rhc-jws.dir" value="${codes.dir}/web/rhc-jws"/>
-	<property name="prj.wxWi.dir" value="${codes.dir}/c/wxWi"/>
-	<property name="prj.myddriver.dir" value="${codes.dir}/c/myddriver"/>
-	<property name="prj.swing.dir" value="${codes.dir}/pc/swing"/>
-	
 	<property name="ant-bin.dir" value="${java-tools.dir}/ant/apache-ant-1.8.2"/>
-	<property name="ant-ext-jars.dir" value="${java-tools.dir}/ant/apache-ant-1.8.2-ext-tasks"/>
+	<!--property name="ant-ext-jars.dir" value="${java-tools.dir}/ant/apache-ant-1.8.2-ext-tasks"/-->
 	<property name="ant-contrib.dir" value="${java-tools.dir}/ant/ant-contrib-1.0b3-bin"/>
+	<property name="ivy.dir" value="${java-tools.dir}/ivy/apache-ivy-2.2.0-bin-with-deps/apache-ivy-2.2.0"/>
 
 	<target name="install-ant">
 		<mkdir dir="${ant-bin.dir}"/>
@@ -39,13 +40,11 @@
 			dest="${ant-contrib.dir}" overwrite="false"/>
 	</target>
 	
-	<property name="ivy.dir" value="${java-tools.dir}/ivy/apache-ivy-2.2.0-bin-with-deps/apache-ivy-2.2.0"/>
 	<target name="install-ivy">
 		<get src="http://archive.apache.org/dist/ant/ivy/2.2.0/apache-ivy-2.2.0-bin-with-deps.zip" 
 			dest="${down.dir}/apache-ivy-2.2.0-bin-with-deps.zip" skipexisting="true"/>
 		<unzip src="${down.dir}/apache-ivy-2.2.0-bin-with-deps.zip"
 			dest="${java-tools.dir}/ivy/apache-ivy-2.2.0-bin-with-deps" overwrite="false"/>
 	</target>
-
 	
 </project>
