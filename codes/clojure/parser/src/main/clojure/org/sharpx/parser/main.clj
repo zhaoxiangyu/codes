@@ -16,4 +16,4 @@
   #_ (-parse "g:\\web-dict\\oxford\\htmls\\20-1000.json" "g:\\web-dict\\oxford\\analysis")
   #_ (-parse "g:\\web-dict\\oxford\\htmls\\20-1100.json" "g:\\web-dict\\oxford\\analysis")
   #_ (-parse "g:\\web-dict\\oxford\\htmls\\20-1099.json" "g:\\web-dict\\oxford\\analysis")
-  (-parse "g:\\web-dict\\oxford\\htmls\\20-1098.json" "g:\\web-dict\\oxford\\analysis"))
+  (process-html "g:\\web-dict\\oxford\\htmls\\20-1098.json" "g:\\web-dict\\oxford\\analysis"))

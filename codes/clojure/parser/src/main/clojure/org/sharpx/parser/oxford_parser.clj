@@ -1,11 +1,7 @@
 ; clojure code to parse oxford dict html
 (ns org.sharpx.parser.oxford-parser
-  ;  (:use [monger.core :only [connect get-db disconnect]])
-  (:require [clojure.java.io :as io])
   (:use [org.sharpx.parser htmlclean]
-        [clj-xpath.core]
-        clojure.java.browse org.sharpx.fs-util)
-  (:import org.sharpx.utils.FsUtils java.net.URL java.io.File java.util.HashMap)
+        [clj-xpath.core])
   (:gen-class))
 
 (defn- validate
@@ -58,19 +54,5 @@
          (prn "index"))
        ret (merge {:type type :url url :bc (count html)} new-values)]
       (prn ret)
-      ret))
-  ([filepath,dest-dir]
-    (let [fc (FsUtils/loadJson filepath (.getClass (HashMap.)) nil) ;(FsUtils/loadJson filepath (class HashMap) nil)
-          type (.get fc "html") ;type (:type fc)
-          url (.get fc "url") ;url (:url fc)
-          html (.get fc "type")
-          ;file info
-          inf (io/file filepath)
-          fbn (->> (.getName inf) (re-find #"^[^\.]+"))
-          outf (io/file dest-dir fbn (str fbn ".html"))]
-      (when-not (.exists outf)
-        (io/make-parents outf) (spit outf html))
-      (browse-url (.toString (.toURL outf)))
-      ;(println "url:" url "html:" html)
-      (-parse {:type type :url url :html html}))))
+      ret)))
 
