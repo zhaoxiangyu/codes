@@ -1,50 +1,29 @@
-<project name="env-setting.p" basedir="..">
+<project name="env-setting.p" basedir=".">
 	<!-- this file should be put under codes root directory 
 		like /media/sf_VMshare/codes -->
 	
-	<property environment="env"/>
-	<property name="REPO_ROOT" value="${env.REPO_ROOT}"/>
+	<property name="prj.anttask.dir" location="buildsupport/AntTask"/>
+	<property name="prj.android.dir" location="android"/>
+	<property name="prj.wd4web.dir" location="web/wd4web"/>
+	<property name="prj.wd4j.dir" location="web/wd4j"/>
+	<property name="prj.rhc-jws.dir" location="web/rhc-jws"/>
+	<property name="prj.wxWi.dir" location="c/wxWi"/>
+	<property name="prj.myddriver.dir" location="c/myddriver"/>
+	<property name="prj.swing.dir" location="pc/swing"/>
 	
-	<property name="prj.anttask.dir" value="${REPO_ROOT}/buildsupport/AntTask"/>
-	<property name="prj.android.dir" value="${REPO_ROOT}/android"/>
-	<property name="prj.wd4web.dir" value="${REPO_ROOT}/web/wd4web"/>
-	<property name="prj.wd4j.dir" value="${REPO_ROOT}/web/wd4j"/>
-	<property name="prj.rhc-jws.dir" value="${REPO_ROOT}/web/rhc-jws"/>
-	<property name="prj.wxWi.dir" value="${REPO_ROOT}/c/wxWi"/>
-	<property name="prj.myddriver.dir" value="${REPO_ROOT}/c/myddriver"/>
-	<property name="prj.swing.dir" value="${REPO_ROOT}/pc/swing"/>
-	
+	<import file="${prj.anttask.dir}/ant/env-setting.xml" />
+	<import file="${prj.anttask.dir}/ant/common-tools.xml" />
+	<property name="ivy.dir" location="buildsupport/tools/ivy/apache-ivy-2.2.0-bin-with-deps/apache-ivy-2.2.0"/>
+	<import file="${prj.anttask.dir}/ant/ivy-tools.xml"/>
+	<import file="${prj.anttask.dir}/ant/use-android-tools.xml"/>
+
 	<condition property="VMSHARE.DIR" value="" 
 		else="/home/he/work">
 		<os family="windows" />
 	</condition>
 	
-	<property name="java-tools.dir" value="${VMSHARE.DIR}/sw/java/tools"/>
-	<property name="down.dir" value="${VMSHARE.DIR}/down"/>
-	<property name="ant-bin.dir" value="${java-tools.dir}/ant/apache-ant-1.8.2"/>
-	<!--property name="ant-ext-jars.dir" value="${java-tools.dir}/ant/apache-ant-1.8.2-ext-tasks"/-->
-	<property name="ant-contrib.dir" value="${java-tools.dir}/ant/ant-contrib-1.0b3-bin"/>
-	<property name="ivy.dir" value="${java-tools.dir}/ivy/apache-ivy-2.2.0-bin-with-deps/apache-ivy-2.2.0"/>
+	<!--property name="ant-bin.dir" location="buildsupport/tools/ant/apache-ant-1.8.2"/>
+	<property name="ant-ext-jars.dir" value="${java-tools.dir}/ant/apache-ant-1.8.2-ext-tasks"/>
+	<property name="ant-contrib.dir" location="buildsupport/tools/ant/ant-contrib-1.0b3-bin"/-->
 
-	<target name="install-ant">
-		<mkdir dir="${ant-bin.dir}"/>
-		<get src="http://archive.apache.org/dist/ant/binaries/apache-ant-1.8.2-bin.zip" 
-			dest="${down.dir}/apache-ant-1.8.2-bin.zip" skipexisting="true"/>
-		<unzip src="${down.dir}/apache-ant-1.8.2-bin.zip"
-			dest="${java-tools.dir}/ant" overwrite="false"/>
-		
-		<mkdir dir="${ant-contrib.dir}"/>
-		<get src="http://jaist.dl.sourceforge.net/project/ant-contrib/ant-contrib/1.0b3/ant-contrib-1.0b3-bin.zip" 
-			dest="${down.dir}/ant-contrib-1.0b3-bin.zip" skipexisting="true"/>
-		<unzip src="${down.dir}/ant-contrib-1.0b3-bin.zip"
-			dest="${ant-contrib.dir}" overwrite="false"/>
-	</target>
-	
-	<target name="install-ivy">
-		<get src="http://archive.apache.org/dist/ant/ivy/2.2.0/apache-ivy-2.2.0-bin-with-deps.zip" 
-			dest="${down.dir}/apache-ivy-2.2.0-bin-with-deps.zip" skipexisting="true"/>
-		<unzip src="${down.dir}/apache-ivy-2.2.0-bin-with-deps.zip"
-			dest="${java-tools.dir}/ivy/apache-ivy-2.2.0-bin-with-deps" overwrite="false"/>
-	</target>
-	
 </project>

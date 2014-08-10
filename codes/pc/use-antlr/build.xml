@@ -1,11 +1,8 @@
 <project name="jpVocParser" basedir="../.." default="default" xmlns:ivy="antlib:org.apache.ivy.ant">
+	
 	<property environment="env"/>
 	<property name="REPO_ROOT" value="${env.REPO_ROOT}"/>
 	<import file="${REPO_ROOT}/settings.p.xml" />
-	<import file="${prj.anttask.dir}/ant/env-setting.xml" />
-	<import file="${prj.anttask.dir}/ant/common-tools.xml" />
-	<import file="${prj.anttask.dir}/ant/ivy-tools.xml"/>
-	<import file="${prj.anttask.dir}/ant/use-android-tools.xml"/>
 
 	<property name="java.src.dir" location="src"/>
 	<property name="javac.out.dir" location="bin/ant/classes"/>
