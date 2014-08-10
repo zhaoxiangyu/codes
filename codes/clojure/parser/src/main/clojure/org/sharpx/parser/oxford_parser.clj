@@ -1,12 +1,10 @@
 ; clojure code to parse oxford dict html
-(ns org.sharpx.parser.oxford
+(ns org.sharpx.parser.oxford-parser
   ;  (:use [monger.core :only [connect get-db disconnect]])
-  (:require [monger.core :as mg]
-            [monger.collection :as mc]
-            [clojure.java.io :as io])
-  (:use [org.sharpx.parser.htmlclean]
+  (:require [clojure.java.io :as io])
+  (:use [org.sharpx.parser htmlclean]
         [clj-xpath.core]
-        clojure.java.browse)
+        clojure.java.browse org.sharpx.fs-util)
   (:import org.sharpx.utils.FsUtils java.net.URL java.io.File java.util.HashMap)
   (:gen-class))
 
@@ -57,9 +55,10 @@
                       {:xr xr} {:h-gr h-gr :h-r h-r})]
            #_ (validate term false)
            term) ;#((println %) %)))
-         (prn "index"))]
-      (prn new-values)
-      (merge {:type type :url url :bc (count html)} new-values)))
+         (prn "index"))
+       ret (merge {:type type :url url :bc (count html)} new-values)]
+      (prn ret)
+      ret))
   ([filepath,dest-dir]
     (let [fc (FsUtils/loadJson filepath (.getClass (HashMap.)) nil) ;(FsUtils/loadJson filepath (class HashMap) nil)
           type (.get fc "html") ;type (:type fc)
@@ -75,35 +74,3 @@
       ;(println "url:" url "html:" html)
       (-parse {:type type :url url :html html}))))
 
-(defn -htmls
-  "processing url:html pairs in mongo database"
-  [host port dbname cname parser]
-  (let [conn (mg/connect {:host host :port port})
-        db (mg/get-db conn dbname)
-        rs (map parser (mc/find-maps db cname))]
-    (last rs)
-    (mg/disconnect conn)
-    rs))
-
-(defn rand-parse
-  "parse one file in src-dir randomly, store results to des-dir"
-  [src-dir dest-dir]
-  (let [files (file-seq src-dir)
-        ;content (slurp (take 1 files))
-        ]))
-
-(defn -main [& argv]
-  (println "oxford dict parser started!")
-  #_ (let [htmls (-htmls "169.254.244.218" 27017 "oxford" "htmls" -parse)]
-       (dorun (map println htmls)))
-  #_ (rand-parse "g:\\web-dict\\oxford\\htmls" "g:\\web-dict\\oxford\\analysis")
-  #_ (-parse "g:\\web-dict\\oxford\\htmls\\20-1000.json" "g:\\web-dict\\oxford\\analysis")
-  #_ (-parse "g:\\web-dict\\oxford\\htmls\\20-500.json" "g:\\web-dict\\oxford\\analysis")
-  #_ (-parse "g:\\web-dict\\oxford\\htmls\\20-501.json" "g:\\web-dict\\oxford\\analysis")
-  #_ (-parse "g:\\web-dict\\oxford\\htmls\\20-502.json" "g:\\web-dict\\oxford\\analysis")
-  #_ (-parse "g:\\web-dict\\oxford\\htmls\\20-503.json" "g:\\web-dict\\oxford\\analysis")
-  #_ (-parse "g:\\web-dict\\oxford\\htmls\\20-600.json" "g:\\web-dict\\oxford\\analysis")
-  #_ (-parse "g:\\web-dict\\oxford\\htmls\\20-1000.json" "g:\\web-dict\\oxford\\analysis")
-  #_ (-parse "g:\\web-dict\\oxford\\htmls\\20-1100.json" "g:\\web-dict\\oxford\\analysis")
-  #_ (-parse "g:\\web-dict\\oxford\\htmls\\20-1099.json" "g:\\web-dict\\oxford\\analysis")
-  (-parse "g:\\web-dict\\oxford\\htmls\\20-1098.json" "g:\\web-dict\\oxford\\analysis"))
