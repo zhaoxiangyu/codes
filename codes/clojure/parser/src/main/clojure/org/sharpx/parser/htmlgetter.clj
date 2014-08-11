@@ -2,8 +2,7 @@
   (:require [monger.core :as mg]
             [monger.collection :as mc])
   (:require [clojure.java.io :as io])
-  (:use [org.sharpx.parser oxford-parser]
-        [clj-xpath.core]
+  (:use [clj-xpath.core]
         clojure.java.browse org.sharpx.fs-util)
   (:import org.sharpx.utils.FsUtils java.net.URL java.io.File java.util.HashMap))
 
@@ -20,12 +19,16 @@
 (defn from-fs
   "parse one file in src-dir randomly, store results to des-dir"
   [src-dir dest-dir parser]
-  (let [files (file-seq src-dir)
+  (let [;files (file-seq src-dir)
+        files (read-dir-files src-dir)
+        files (sort-by #(.length %) < files)
         ;content (slurp (take 1 files))
-        ]))
+        ]
+    (doseq [[fn fs] (map (fn [file] [(.getName file) (.length file)]) files)]
+      (println "filename:" fn ",size:" fs))))
 
 (defn process-html
-  ([filepath,dest-dir]
+  ([filepath dest-dir parse]
     (let [fc (FsUtils/loadJson filepath (.getClass (HashMap.)) nil) ;(FsUtils/loadJson filepath (class HashMap) nil)
           type (.get fc "html") ;type (:type fc)
           url (.get fc "url") ;url (:url fc)
@@ -38,4 +41,4 @@
         (io/make-parents outf) (spit outf html))
       (browse-url (.toString (.toURL outf)))
       ;(println "url:" url "html:" html)
-      (-parse {:type type :url url :html html}))))
+      (parse {:type type :url url :html html}))))

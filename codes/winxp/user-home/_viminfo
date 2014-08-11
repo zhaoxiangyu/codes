@@ -37,7 +37,7 @@ $
 # 寄存器:
 "0	LINE	0
 	C:\Program Files\Windows Resource Kits\Tools\;  
-""1	LINE	0
+"1	LINE	0
 	set PATH=E:\tools\emacs-24.3-bin-i386\emacs-24.3\bin;%PATH%
 "2	LINE	0
 	E:\tools\gnuwin32\bin  
@@ -55,22 +55,25 @@ $
 	USERPROFILE  
 "9	LINE	0
 	echo a
-"-	CHAR	0
-	a
+""-	CHAR	0
+	oxford
 
 # 文件标记:
-'0  55  19  ~\.m2\settings.xml
-'1  1  0  ~\bat-wrapper\mvn.bat
-'2  44  8  E:\down\Xword-master\wl.txt
-'3  11  2  E:\down\Xword-master\wl.txt
-'4  11  0  C:\Documents and Settings\he\Local Settings\Temp\中药学(张廷模)讲稿.docx
-'5  1  0  C:\Documents
-'6  1  26331  G:\web-dict\oxford\htmls\25-6420.json
-'7  1  174837  G:\web-dict\oxford\htmls\20-7567.json
-'8  29  0  E:\code-repo2\github\codes\winxp\console.bat
-'9  1  0  E:\code-repo2\github\codes\clojure\parser\console.log
+'0  25  74  E:\code-repo2\github\codes\clojure\parser\build.bat
+'1  61  3  ~\.m2\settings.xml
+'2  55  19  ~\.m2\settings.xml
+'3  1  0  ~\bat-wrapper\mvn.bat
+'4  44  8  E:\down\Xword-master\wl.txt
+'5  11  2  E:\down\Xword-master\wl.txt
+'6  11  0  C:\Documents and Settings\he\Local Settings\Temp\中药学(张廷模)讲稿.docx
+'7  1  0  C:\Documents
+'8  1  26331  G:\web-dict\oxford\htmls\25-6420.json
+'9  1  174837  G:\web-dict\oxford\htmls\20-7567.json
 
 # 跳转列表 (从新到旧):
+-'  25  74  E:\code-repo2\github\codes\clojure\parser\build.bat
+-'  1  0  E:\code-repo2\github\codes\clojure\parser\build.bat
+-'  61  3  ~\.m2\settings.xml
 -'  55  19  ~\.m2\settings.xml
 -'  259  0  ~\.m2\settings.xml
 -'  1  0  ~\.m2\settings.xml
@@ -87,8 +90,6 @@ $
 -'  30  36  E:\code-repo2\github\codes\winxp\console.bat
 -'  1  0  E:\code-repo2\github\codes\clojure\parser\console.log
 -'  32  1  E:\code-repo2\github\codes\clojure\parser\console.log
--'  1  20  E:\code-repo2\github\codes\clojure\parser\build.bat
--'  25  20  E:\code-repo2\github\codes\clojure\parser\build.bat
 -'  3  5  E:\code-repo2\github\codes\clojure\parser\.gitignore
 -'  1  0  E:\code-repo2\github\codes\clojure\parser\.gitignore
 -'  10  0  E:\code-repo2\github\codes\winxp\console.bat
@@ -167,13 +168,18 @@ $
 -'  79  32  E:\he-xun\sw\apache-maven-3.2.1\bin\mvn.bat
 -'  77  12  E:\he-xun\sw\apache-maven-3.2.1\bin\mvn.bat
 -'  71  25  E:\he-xun\sw\apache-maven-3.2.1\bin\mvn.bat
--'  70  24  E:\he-xun\sw\apache-maven-3.2.1\bin\mvn.bat
--'  69  17  E:\he-xun\sw\apache-maven-3.2.1\bin\mvn.bat
 
 # 文件内的标记历史记录 (从新到旧):
 
+> E:\code-repo2\github\codes\clojure\parser\build.bat
+	"	25	74
+	^	25	75
+	.	25	74
+	+	24	7
+	+	25	74
+
 > ~\.m2\settings.xml
-	"	55	19
+	"	61	3
 	.	55	19
 	+	55	19
 
@@ -242,13 +248,6 @@ $
 
 > E:\code-repo2\github\codes\clojure\parser\console.log
 	"	1	0
-
-> E:\code-repo2\github\codes\clojure\parser\build.bat
-	"	1	20
-	^	25	21
-	.	25	20
-	+	24	7
-	+	25	20
 
 > E:\code-repo2\github\codes\clojure\parser\.gitignore
 	"	3	5

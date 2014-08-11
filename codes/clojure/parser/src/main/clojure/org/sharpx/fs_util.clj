@@ -100,6 +100,13 @@
       (map #(.getName ^File %) content-files))
     []))
 
+(defn read-dir-files
+  [dir]
+  (if (exists-file? dir)
+    (let [content-files (.listFiles (File. dir))]
+      (filter #(.isFile ^File %) content-files))
+    []))
+
 (defn current-classpath
   []
   (System/getProperty "java.class.path"))

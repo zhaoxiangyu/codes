@@ -22,7 +22,7 @@ exit /b
 
 :run
     REM call :build >NUL
-    call mvn compile clojure:run -Dclojure.mainClass=org.sharpx.parser.oxford
+    call mvn compile clojure:run -Dclojure.mainClass=org.sharpx.parser.main
 exit /b
 
 :test
