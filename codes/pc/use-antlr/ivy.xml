@@ -1,0 +1,11 @@
+<ivy-module version="2.0">
+	<info organisation="org.sharp" module="jpVocParser" revision="1.0"/>
+    <configurations>
+    	<conf name="antlr-java"  description=""/>
+    	<conf name="test" extends="antlr-java" visibility="private" description="for testing our framework"/>
+    </configurations>
+    <publications>
+    	<artifact name="jpVocParser" type="jar"  conf="antlr-java" ext="jar"/>
+    	<artifact name="antlr-3.4-complete" type="jar"  conf="antlr-java" ext="jar"/>
+    </publications>
+</ivy-module>

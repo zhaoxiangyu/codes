@@ -1,0 +1,159 @@
+<project name="jpVocParser" basedir="../.." default="default" xmlns:ivy="antlib:org.apache.ivy.ant">
+	<import file="${basedir}/../AntTask/ant/env-setting.xml" />
+	<import file="${basedir}/../AntTask/ant/common-tools.xml" />
+	<import file="${basedir}/../AntTask/ant/ivy-tools.xml"/>
+	<import file="${basedir}/../AntTask/ant/use-android-tools.xml"/>
+
+	<property name="java.src.dir" location="src"/>
+	<property name="javac.out.dir" location="bin/ant/classes"/>
+	<property name="jar.out.file" location="bin/ant/classes.jar"/>
+	<property name="javah.out.dir" location="jni/gen/javah/jpVocParser"/>
+	
+	<property name="jni.libname" value="vocabulary"/>
+	<property name="jni.libdir" location="bin/jni"/>
+	<property name="jni.srcdir" location="jni/src"/>
+	
+	<!-- ================================= 
+          target: default target              
+         ================================= -->
+    <target name="default">
+    	<antcall target="prepare-jpVoc"></antcall>
+
+    	<antcall target="cparser-ndk-build"></antcall>
+		<antcall target="emulator-start-android2.1" /> 
+		<antcall target="cparser-ndk-run"></antcall>
+
+		<antcall target="gen-code"></antcall>
+		<antcall target="cparser-ndk-jnibuild"></antcall>
+		<antcall target="cparser-ndkjni-install"></antcall>
+    	
+    </target>
+	
+	<target name="cparser-ndkjni-install">
+		<jar destfile="bin/ant/jpVocJni.jar">
+			<fileset dir="bin/ant/classes" includes="org/sharp/vocreader/**"></fileset>
+		</jar>
+		<copy todir="${prj.android.dir}/smartqApp/libs" file="bin/ant/jpVocJni.jar"/>
+		<mkdir dir="${prj.android.dir}/smartqApp/libs/armeabi"/>
+		<copy todir="${prj.android.dir}/smartqApp/libs/armeabi" file="bin/ndk-jni/libvocabulary.so"/>
+	</target>
+
+	<target name="compile">
+		<mkdir dir="${javac.out.dir}"/>
+		<javac srcdir="${java.src.dir}" destdir="${javac.out.dir}"/>
+		<jar destfile="${jar.out.file}" basedir="${javac.out.dir}"/>
+	</target>
+
+	<target name="gen-code">
+		<antcall target="compile"></antcall>
+		
+		<delete dir="${javah.out.dir}"/>
+		<mkdir dir="${javah.out.dir}"/>
+		<javah destdir="${javah.out.dir}"
+			classpath="${javac.out.dir}" verbose="yes">
+			<class name="org.sharp.vocreader.jni.VocabularySupport"/>
+		</javah>
+		
+		<antlr3 target="antlr/grammar/c/JpVocabulary.g"
+		    outputdirectory="antlr/gen/c"/>
+		<delete dir="antlr/gen/java"/>
+	</target>
+	
+	<target name="cparser-ndk-jnibuild">
+		<path id="jni.srcfiles">
+			<fileset dir="${jni.srcdir}/jpVocParser" 
+				includes="**/jpVoc.c,**/vocabularySupport.cpp"
+				excludes="**/jpVocMain.c, **/vocabularySupport.c">
+			</fileset>
+		</path>
+		<pathconvert property="jni.srcfilelist" pathsep=" " refid="jni.srcfiles"/>
+		<make makefile="build/make/jpVocParser-ndk.mk" 
+			target="jnilib">
+			<vars>
+				<env key="MODULE_NAME" value="${jni.libname}"/>
+				<env key="JNISRC_DIR" value="${jni.srcdir}/jpVocParser"/>
+				<env key="JNISRC_FILES" value="${jni.srcfilelist}"/>
+				<env key="SRC_DIR" value="antlr/gen/c"/>
+				<env key="LIB_NAMES" value="antlr3c"/>
+				<env key="INC_PATH" value="${javah.out.dir}:antlr/gen/c:${jni.srcdir}:${jni.srcdir}/jpVocParser"/>
+			</vars>
+		</make>
+	</target>
+
+	<target name="cparser-ndk-jnibuild2">
+		<make makefile="build/make/jpVocParser-ndk2.mk" 
+			target="ndk_build">
+		</make>
+	</target>
+
+	<target name="cparser-ndkjni-install2">
+		<jar destfile="bin/ant/jpVocJni.jar">
+			<fileset dir="bin/ant/classes" includes="org/sharp/vocreader/**"></fileset>
+		</jar>
+		<copy todir="${prj.android.dir}/smartqApp/libs" file="bin/ant/jpVocJni.jar"/>
+		<mkdir dir="${prj.android.dir}/smartqApp/libs/armeabi"/>
+		<copy todir="${prj.android.dir}/smartqApp/libs/armeabi" file="libs/armeabi/libvocabulary.so"/>
+	</target>
+
+	<target name="cparser-ndk-build">
+		<path id="gen.srcfiles">
+			<fileset dir="${basedir}" 
+				includes="antlr/gen/c/*.c,jni/src/jpVocParser/jpVoc.c">
+			</fileset>
+		</path>
+		<pathconvert property="gen.srcfilelist" pathsep=" " refid="gen.srcfiles"/>
+		<make makefile="build/make/jpVocParser-ndk.mk" 
+			target="build">
+			<vars>
+				<env key="MODULE_NAME" value="jpVoc"/>
+				<env key="SRC_DIR" value="${basedir}"/>
+				<env key="SRC_FILES" value="${gen.srcfilelist}"/>
+				<env key="MAIN_SRC" value="jni/src/jpVocParser/jpVocMain.c"/>
+				<env key="LIB_NAMES" value="antlr3c"/>
+				<env key="INC_PATH" value="antlr/gen/c"/>
+			</vars>
+		</make>
+	</target>
+
+	<target name="cparser-ndk-run">
+		<property name="emulator.tmp.dir" value="/cache"/>
+		<parallel>
+			<sequential>
+				<adb-push file="bin/ndk-out/jpVoc-dl" 
+					to="${emulator.tmp.dir}"/>
+				<adb-push file="bin/ndk-lib/libjpVoc.so" 
+					to="${emulator.tmp.dir}"/>
+				<adb-shell cmd="cd ${emulator.tmp.dir}; export LD_LIBRARY_PATH=${emulator.tmp.dir}:$LD_LIBRARY_PATH; echo $LD_LIBRARY_PATH; ./jpVoc-dl"/>
+			</sequential>
+		</parallel>
+	</target>
+
+	<target name="prepare-jpVoc">
+		<pathconvert property="mp3paths" pathsep="::">
+			<fileset dir="${VMSHARE.DIR}/win7/jpwords" includes="unit*/**/*.mp3"/>
+			<regexpmapper from="^(.*)/([^/]*)\.mp3$$" to="\2" casesensitive="yes"/>
+		</pathconvert>
+		<echo message="${mp3paths}"/>
+		
+		<concat destfile="bin/voca.filenames">
+		${mp3paths}
+			<filterchain>
+				<tokenfilter delimOutput="\n">
+					<stringtokenizer delims="::"/>
+					<uniqfilter/>
+				</tokenfilter>
+				<sortfilter/>
+			</filterchain>
+		</concat>
+		<native2ascii dest="bin" ext=".unicodes" src="bin/" 
+			includes="voca.filenames">
+		</native2ascii>
+		
+		<!--
+		<loadfile property="mp3names" srcfile="bin/voca.filenames"></loadfile>
+		<echo message="${mp3names}"/>
+		<cmd line="cat ${basedir}/bin/voca.unicodes"/>
+		-->
+	</target>
+		
+</project>

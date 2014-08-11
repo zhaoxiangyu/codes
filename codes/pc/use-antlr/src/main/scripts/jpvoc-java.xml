@@ -1,0 +1,159 @@
+<project name="jpVocParser" basedir="../.." default="default" xmlns:ivy="antlib:org.apache.ivy.ant">
+	<import file="${basedir}/../AntTask/ant/env-setting.xml" />
+	<import file="${basedir}/../AntTask/ant/common-tools.xml" />
+	<import file="${basedir}/../AntTask/ant/ivy-tools.xml"/>
+	<import file="${basedir}/../AntTask/ant/use-android-tools.xml"/>
+
+	<property name="java.src.dir" location="src"/>
+	<property name="javac.out.dir" location="bin/ant/classes"/>
+	<property name="jar.out.file" location="bin/ant/classes.jar"/>
+	<property name="javah.out.dir" location="jni/gen/javah/jpVocParser"/>
+	
+	<!-- ================================= 
+          target: default target              
+         ================================= -->
+    <target name="default">
+    	<antcall target="prepare-jpVoc"></antcall>
+    	<antcall target="build-javaParser"/>
+    	<java classname="org.sharp.parser.antlr.ToJsonFile">
+    		<classpath>
+    			<pathelement location="${javac.out.dir}"/>
+				<path refid="atlr3.classpath"></path>
+    			<pathelement location="libs/gson-2.1.jar"/>
+    		</classpath>
+    		<arg line="${basedir}/bin/voca.filenames ${basedir}/bin/voca.json"/>
+    	</java>
+    </target>
+	
+	<target name="package-jpVocParser" depends="build-javaParser">
+		<jar destfile="bin/ant/jpVocParser.jar">
+			<fileset dir="bin/ant/classes" includes="org/sharp/parser/**/*"></fileset>
+		</jar>
+		<!--
+		<antcall target="setup-ivy-repo"/>
+		<ivy:resolve organisation="${ivy.organisation}" module="jpVocParser" 
+			revision="1.0" inline="true" />
+		<ivy:resolve/>
+		<ivy:deliver module="jpVocParser"/>
+		-->
+		<ivy:retrieve/>
+		<ivy:publish resolver="local" update="true" overwrite="true">
+		   	<artifacts pattern="bin/ant/[artifact].[ext]"/>
+			<artifacts pattern="${antlr.dir}/[artifact].[ext]"/>
+			<!--
+			<artifact name="antlr3.4" url="${antlr.dir}/antlr-3.4-complete.jar"/>
+			-->
+		</ivy:publish>
+	</target>
+	
+	<target name="prepare-jpVoc">
+		<pathconvert property="mp3paths" pathsep="::">
+			<fileset dir="${VMSHARE.DIR}/win7/jpwords" includes="unit*/**/*.mp3"/>
+			<regexpmapper from="^(.*)/([^/]*)\.mp3$$" to="\2" casesensitive="yes"/>
+		</pathconvert>
+		<echo message="${mp3paths}"/>
+		
+		<concat destfile="bin/voca.filenames">
+		${mp3paths}
+			<filterchain>
+				<tokenfilter delimOutput="\n">
+					<stringtokenizer delims="::"/>
+					<uniqfilter/>
+				</tokenfilter>
+				<sortfilter/>
+			</filterchain>
+		</concat>
+		<native2ascii dest="bin" ext=".unicodes" src="bin/" 
+			includes="voca.filenames">
+		</native2ascii>
+		
+		<!--
+		<loadfile property="mp3names" srcfile="bin/voca.filenames"></loadfile>
+		<echo message="${mp3names}"/>
+		<cmd line="cat ${basedir}/bin/voca.unicodes"/>
+		-->
+	</target>
+	
+	<target name="build-javaParser">
+		<delete dir="${javac.out.dir}" includes="**"></delete>
+		<mkdir dir="${javac.out.dir}"/>
+		<javac destdir="${javac.out.dir}"
+			listfiles="Yes" deprecation="Yes">
+			<classpath>
+				<path refid="atlr3.classpath"></path>
+    			<pathelement location="libs/gson-2.1.jar"/>
+			</classpath>
+			<compilerarg value="-Xlint:unchecked"/>
+			<src path="antlr/gen/java"></src>
+			<src path="antlr/src"></src>
+			<src path="src"></src>
+		</javac>
+	</target>
+	
+	<target name="run-javaParser" depends="build-javaParser">
+		<!--
+		<java classname="org.sharpx.parser.antlr.JpVocabulary" 
+			input="bin/voca.filenames" output="bin/parser-output.txt">
+			<arg value="voclist"/>
+			<classpath>
+				<path refid="atlr3.classpath"/>
+				<pathelement location="bin/ant/classes"/>
+			</classpath>
+		</java>
+		<cmd line="cat ${basedir}/bin/parser-output.txt"/>
+		-->
+		<java classname="org.sharp.parser.antlr.JpVocabulary" 
+			input="bin/voca.filenames" output="bin/vocabularylist.html">
+			<arg value="voclist"/>
+			<classpath>
+				<path refid="atlr3.classpath"/>
+				<pathelement location="bin/ant/classes"/>
+			</classpath>
+		</java>
+		<!--
+		<java classname="org.sharpx.parser.antlr.JpVocabulary" 
+			inputstring="ペキンだいがく（北京大学） 〔专〕 北京大学">
+			<classpath>
+				<path refid="atlr3.classpath"/>
+				<pathelement location="bin/ant/classes"/>
+			</classpath>
+		</java>
+		<java classname="org.sharpx.parser.antlr.JpVocabulary" 
+			inputstring="あんまり　（副） 太，非常，过于">
+			<classpath>
+				<path refid="atlr3.classpath"/>
+				<pathelement location="bin/ant/classes"/>
+			</classpath>
+		</java>
+		<java classname="org.sharpx.parser.antlr.JpVocabulary" 
+			inputstring="あキューせいでん（阿Q正伝［专］）阿Q正传">
+			<classpath>
+				<path refid="atlr3.classpath"/>
+				<pathelement location="bin/ant/classes"/>
+			</classpath>
+		</java>
+		<java classname="org.sharpx.parser.antlr.JpVocabulary" 
+			inputstring="ばんりのちょうじょう（万里の長城 〔专〕 万里长城">
+			<classpath>
+				<path refid="atlr3.classpath"/>
+				<pathelement location="bin/ant/classes"/>
+			</classpath>
+		</java>
+		<java classname="org.sharpx.parser.antlr.JpVocabulary" 
+			inputstring="查（看），弄清">
+			<classpath>
+				<path refid="atlr3.classpath"/>
+				<pathelement location="bin/ant/classes"/>
+			</classpath>
+		</java>
+		<java classname="org.sharpx.parser.antlr.JpVocabulary" 
+			inputstring="～">
+			<classpath>
+				<path refid="atlr3.classpath"/>
+				<pathelement location="bin/ant/classes"/>
+			</classpath>
+		</java>
+		-->
+	</target>
+	
+</project>
