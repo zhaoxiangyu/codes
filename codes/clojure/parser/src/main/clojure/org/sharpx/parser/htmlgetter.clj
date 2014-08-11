@@ -16,16 +16,14 @@
     (mg/disconnect conn)
     rs))
 
-(defn from-fs
-  "parse one file in src-dir randomly, store results to des-dir"
-  [src-dir dest-dir parser]
-  (let [;files (file-seq src-dir)
-        files (read-dir-files src-dir)
-        files (sort-by #(.length %) < files)
-        ;content (slurp (take 1 files))
-        ]
-    (doseq [[fn fs] (map (fn [file] [(.getName file) (.length file)]) files)]
-      (println "filename:" fn ",size:" fs))))
+(defn- validate
+  "validate term"
+  [term doflag]
+  (let [str-term (pr-str term)
+        _ (spit "" str-term)
+        fc (slurp "filepath")
+        lterm (read-string fc)
+        _ (compare term lterm)]))
 
 (defn process-html
   ([filepath dest-dir parse]
@@ -41,4 +39,16 @@
         (io/make-parents outf) (spit outf html))
       (browse-url (.toString (.toURL outf)))
       ;(println "url:" url "html:" html)
-      (parse {:type type :url url :html html}))))
+      (parse {:type type :url url :html html})
+      #_(validate ret false))))
+
+(defn from-fs
+  "parse one file in src-dir randomly, store results to des-dir"
+  [src-dir dest-dir parser]
+  (let [;files (file-seq src-dir)
+        files (read-dir-files src-dir)
+        files (sort-by #(.length %) < files)
+        ;content (slurp (take 1 files))
+        ]
+    (doseq [[fn fs] (map (fn [file] [(.getName file) (.length file)]) files)]
+      (println "filename:" fn ",size:" fs))))

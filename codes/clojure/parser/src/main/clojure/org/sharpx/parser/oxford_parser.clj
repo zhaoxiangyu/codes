@@ -4,15 +4,6 @@
         [clj-xpath.core])
   (:gen-class))
 
-(defn- validate
-  "validate term"
-  [term doflag]
-  (let [str-term (pr-str term)
-        _ (spit "" str-term)
-        fc (slurp "filepath")
-        lterm (read-string fc)
-        _ (compare term lterm)]))
-
 (defn- parse-definitions
   [doc]
   (let [nodes ($x:node* "//div[@class=\"h-g\"]/span[@class=\"n-g\"]" doc)]
@@ -61,6 +52,5 @@
                        (parse-term html) ;#((println %) %)))
                        (prn "index"))
           ret (merge {:type type :url url :bc (count html)} new-values)]
-      (validate ret false)
       ret)))
 
