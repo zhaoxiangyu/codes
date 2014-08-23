@@ -21,22 +21,36 @@
   [term output-dir browse-html]
   (prn term)
   (let [entry (:entry term)
+        str-term (pr-str term)
         term-file (io/file output-dir (str entry ".term"))]
     (if (.exists term-file)
       (let [fc (slurp term-file)
             lterm (read-string fc)
             term-diff (diff term lterm)
-            ret (compare (vec (take 2 term-diff)) [nil nil])]
-        (if ret (println "OK validation!")
-          (do (browse-html) (println "FAILED validation!"))))
-      (let [str-term (pr-str term)
-            _ (browse-html)
+            ret (= (vec (take 2 term-diff)) [nil nil])]
+        (if ret
+          (do (println "OK validation!") true)
+          (do (browse-html)
+            (println "FAILED validation!")
+            (println "new values:" (first term-diff))
+            (println "old values:" (second term-diff))
+            (let [input (do (println "Accept new parse result and overwrite file?y/n") (read-line))]
+              (if (or (= input "y") (= input "Y"))
+                (do (spit term-file str-term)
+                  (when (.exists term-file)
+                    (println "parse result updated to " (.getPath term-file)))
+                  true)
+                (do (println "you have denied above parse result!")
+                  false))))))
+      (let [_ (browse-html)
             input (do (println "Is above parse result correct?y/n") (read-line))]
         (if (or (= input "y") (= input "Y"))
           (do (spit term-file str-term)
               (when (.exists term-file)
-                (println "parse result saved to " (.getPath term-file))))
-          (do (println "you have denied above parse result!")))))))
+                (println "parse result saved to " (.getPath term-file)))
+            true)
+          (do (println "you have denied above parse result!")
+            false))))))
 
 (defn process-html
   ([filepath dest-dir parse]
@@ -52,7 +66,7 @@
       (when-not (.exists outf)
         (io/make-parents outf) (spit outf html))
       ;(println "url:" url "html:" html)
-      (let [term (parse {:type type :url url :html html})]
+      (let [term (parse {:type type :url url :html html} #(browse-url (.toString (.toURL outf))))]
         (validate term (str dest-dir file-path-separator fbn)
           #(browse-url (.toString (.toURL outf))))))))
 
