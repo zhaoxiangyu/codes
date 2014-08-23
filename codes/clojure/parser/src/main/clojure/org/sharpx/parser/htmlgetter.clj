@@ -18,7 +18,7 @@
 
 (defn- validate
   "validate term"
-  [term output-dir]
+  [term output-dir browse-html]
   (prn term)
   (let [entry (:entry term)
         term-file (io/file output-dir (str entry ".term"))]
@@ -27,8 +27,10 @@
             lterm (read-string fc)
             term-diff (diff term lterm)
             ret (compare (vec (take 2 term-diff)) [nil nil])]
-        (if ret (println "OK validation!") (println "FAILED validation!")))
+        (if ret (println "OK validation!")
+          (do (browse-html) (println "FAILED validation!"))))
       (let [str-term (pr-str term)
+            _ (browse-html)
             input (do (println "Is above parse result correct?y/n") (read-line))]
         (if (or (= input "y") (= input "Y"))
           (do (spit term-file str-term)
@@ -49,10 +51,10 @@
           outf (io/file dest-dir fbn (str fbn ".html"))]
       (when-not (.exists outf)
         (io/make-parents outf) (spit outf html))
-      #_ (browse-url (.toString (.toURL outf)))
       ;(println "url:" url "html:" html)
       (let [term (parse {:type type :url url :html html})]
-        (validate term (str dest-dir file-path-separator fbn))))))
+        (validate term (str dest-dir file-path-separator fbn)
+          #(browse-url (.toString (.toURL outf))))))))
 
 (defn from-fs
   "parse one file in src-dir randomly, store results to des-dir"
