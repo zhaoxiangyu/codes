@@ -2,7 +2,7 @@
   (:require [monger.core :as mg]
             [monger.collection :as mc])
   (:require [clojure.java.io :as io])
-  (:use [clj-xpath.core]
+  (:use [clj-xpath.core] clojure.data
         clojure.java.browse org.sharpx.fs-util)
   (:import org.sharpx.utils.FsUtils java.net.URL java.io.File java.util.HashMap))
 
@@ -21,11 +21,12 @@
   [term output-dir]
   (prn term)
   (let [entry (:entry term)
-        term-file (io/file output-dir entry ".term")]
+        term-file (io/file output-dir (str entry ".term"))]
     (if (.exists term-file)
       (let [fc (slurp term-file)
             lterm (read-string fc)
-            ret (compare term lterm)]
+            term-diff (diff term lterm)
+            ret (compare (vec (take 2 term-diff)) [nil nil])]
         (if ret (println "OK validation!") (println "FAILED validation!")))
       (let [str-term (pr-str term)
             input (do (println "Is above parse result correct?y/n") (read-line))]

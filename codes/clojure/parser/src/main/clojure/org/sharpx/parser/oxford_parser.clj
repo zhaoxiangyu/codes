@@ -16,7 +16,7 @@
               g ($x:text? (str "//div[@class=\"h-g\"]/span[@class=\"n-g\" and position()=" (inc i) "]" "/span[@class=\"z_g\"]") doc)
               r ($x:text? (str "//div[@class=\"h-g\"]/span[@class=\"n-g\" and position()=" (inc i) "]" "/span[@class=\"z_r\"]") doc)
               defi ($x:text? (str "//div[@class=\"h-g\"]/span[@class=\"n-g\" and position()=" (inc i) "]" "/span[@class=\"d\"]") doc)]
-          {:n ord :plural plural :gr gr :cf cf :g g :r r :defi defi}))
+          (array-map :n ord :plural plural :gr gr :cf cf :g g :r r :defi defi)))
       nodes)))
 
 (defn- parse-term
@@ -39,9 +39,8 @@
         defi (if (nil? (first defi)) ($x:text* "//div[@class=\"h-g\"]/span[@class=\"d\" or @class=\"dab\"]" doc))
         defi (if (nil? (first defi)) (parse-definitions doc))
         xr ($x:text* "//div[@class=\"h-g\"]/span[@class=\"xr-g\"]" doc)
-        term (merge {:entry entry :pos pos :also also :BrE BrE :BrE-mp3 BrE-mp3 :NAmE NAmE :NAmE-mp3 NAmE-mp3
-                     :plural plural :defi defi}
-               {:xr xr} {:h-gr h-gr :h-r h-r})]
+        term (array-map :entry entry :pos pos :also also :BrE BrE :BrE-mp3 BrE-mp3 :NAmE NAmE :NAmE-mp3 NAmE-mp3
+                     :plural plural :defi defi :xr xr :h-gr h-gr :h-r h-r)]
     term))
 
 ;/html/body//div[contains(@id,"entryContent")]
@@ -51,5 +50,5 @@
     (let [new-values (if (= type "e")
                        (parse-term html) ;#((println %) %)))
                        (prn "index"))
-          ret (merge {:type type :url url :bc (count html)} new-values)]
-      ret)))
+          ret (merge new-values (array-map :type type :url url :bc (count html)))]
+      new-values)))
