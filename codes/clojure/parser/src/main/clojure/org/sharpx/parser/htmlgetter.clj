@@ -1,7 +1,7 @@
 (ns org.sharpx.parser.htmlgetter
   (:require [monger.core :as mg]
-            [monger.collection :as mc])
-  (:require [clojure.java.io :as io])
+            [monger.collection :as mc]
+            [clojure.java.io :as io])
   (:use [clj-xpath.core] clojure.data
         clojure.java.browse org.sharpx.fs-util)
   (:import org.sharpx.utils.FsUtils java.net.URL java.io.File java.util.HashMap))
