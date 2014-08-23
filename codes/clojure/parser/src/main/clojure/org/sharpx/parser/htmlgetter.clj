@@ -18,15 +18,26 @@
 
 (defn- validate
   "validate term"
-  [term doflag]
-  (let [str-term (pr-str term)
-        _ (spit "" str-term)
-        fc (slurp "filepath")
-        lterm (read-string fc)
-        _ (compare term lterm)]))
+  [term output-dir]
+  (prn term)
+  (let [entry (:entry term)
+        term-file (io/file output-dir entry ".term")]
+    (if (.exists term-file)
+      (let [fc (slurp term-file)
+            lterm (read-string fc)
+            ret (compare term lterm)]
+        (if ret (println "OK validation!") (println "FAILED validation!")))
+      (let [str-term (pr-str term)
+            input (do (println "Is above parse result correct?y/n") (read-line))]
+        (if (or (= input "y") (= input "Y"))
+          (do (spit term-file str-term)
+              (when (.exists term-file)
+                (println "parse result saved to " (.getPath term-file))))
+          (do (println "you have denied above parse result!")))))))
 
 (defn process-html
   ([filepath dest-dir parse]
+    (println "processing html " filepath)
     (let [fc (FsUtils/loadJson filepath (.getClass (HashMap.)) nil) ;(FsUtils/loadJson filepath (class HashMap) nil)
           type (.get fc "html") ;type (:type fc)
           url (.get fc "url") ;url (:url fc)
@@ -37,10 +48,10 @@
           outf (io/file dest-dir fbn (str fbn ".html"))]
       (when-not (.exists outf)
         (io/make-parents outf) (spit outf html))
-      (browse-url (.toString (.toURL outf)))
+      #_ (browse-url (.toString (.toURL outf)))
       ;(println "url:" url "html:" html)
-      (parse {:type type :url url :html html})
-      #_(validate ret false))))
+      (let [term (parse {:type type :url url :html html})]
+        (validate term (str dest-dir file-path-separator fbn))))))
 
 (defn from-fs
   "parse one file in src-dir randomly, store results to des-dir"

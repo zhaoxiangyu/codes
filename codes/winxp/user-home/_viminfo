@@ -8,23 +8,26 @@
 # hlsearch on (H) or off (h):
 ~h
 # Last Search Pattern:
-~MSle0/HOME
+~MSle0~/o .*p
 
 # Last Substitute Search Pattern:
-~MSle0~&"
+~MSle0&"
 
 # Last Substitute String:
 $
 
 # Command Line History (newest to oldest):
-:wq
 :q
-:q!
+:wq
 :w
+:q!
 :W
 :%s/"//g
 
 # Search String History (newest to oldest):
+?/o .*p
+?/o.*p
+?/pre.*b
 ? "
 ?/HOME
 
@@ -36,7 +39,10 @@ $
 
 # 寄存器:
 "0	LINE	0
-	C:\Program Files\Windows Resource Kits\Tools\;  
+	:office
+	  pushd E:\he-xun\prj
+	exit /b
+	
 "1	LINE	0
 	set PATH=E:\tools\emacs-24.3-bin-i386\emacs-24.3\bin;%PATH%
 "2	LINE	0
@@ -56,25 +62,44 @@ $
 "9	LINE	0
 	echo a
 ""-	CHAR	0
-	oxford
+	office
 
 # 文件标记:
-'0  25  74  E:\code-repo2\github\codes\clojure\parser\build.bat
-'1  61  3  ~\.m2\settings.xml
-'2  55  19  ~\.m2\settings.xml
-'3  1  0  ~\bat-wrapper\mvn.bat
-'4  44  8  E:\down\Xword-master\wl.txt
-'5  11  2  E:\down\Xword-master\wl.txt
-'6  11  0  C:\Documents and Settings\he\Local Settings\Temp\中药学(张廷模)讲稿.docx
-'7  1  0  C:\Documents
-'8  1  26331  G:\web-dict\oxford\htmls\25-6420.json
-'9  1  174837  G:\web-dict\oxford\htmls\20-7567.json
+'0  1  0  f:\web-dict\oxford\htmls\200-501.json
+'1  55  16  ~\.m2\settings.xml
+'2  3  50  E:\code-repo2\github\codes\winxp\ws.bat
+'3  22  20  E:\code-repo2\github\codes\winxp\ws.bat
+'4  55  11  e:\code-repo2\github\codes\clojure\parser\src\main\clojure\org\sharpx\parser\oxford_parser.clj
+'5  19  0  E:\code-repo2\github\codes\code-man.bat
+'6  6  5  E:\code-repo2\github\codes\code-man.bat
+'7  25  74  E:\code-repo2\github\codes\clojure\parser\build.bat
+'8  61  3  ~\.m2\settings.xml
+'9  1  0  ~\bat-wrapper\mvn.bat
 
 # 跳转列表 (从新到旧):
+-'  1  0  f:\web-dict\oxford\htmls\200-501.json
+-'  55  16  ~\.m2\settings.xml
+-'  61  3  ~\.m2\settings.xml
+-'  3  50  E:\code-repo2\github\codes\winxp\ws.bat
+-'  22  20  E:\code-repo2\github\codes\winxp\ws.bat
+-'  1  0  E:\code-repo2\github\codes\winxp\ws.bat
+-'  55  11  e:\code-repo2\github\codes\clojure\parser\src\main\clojure\org\sharpx\parser\oxford_parser.clj
+-'  44  44  e:\code-repo2\github\codes\clojure\parser\src\main\clojure\org\sharpx\parser\oxford_parser.clj
+-'  24  7  e:\code-repo2\github\codes\clojure\parser\src\main\clojure\org\sharpx\parser\oxford_parser.clj
+-'  5  14  e:\code-repo2\github\codes\clojure\parser\src\main\clojure\org\sharpx\parser\oxford_parser.clj
+-'  2  0  e:\code-repo2\github\codes\clojure\parser\src\main\clojure\org\sharpx\parser\oxford_parser.clj
+-'  1  0  e:\code-repo2\github\codes\clojure\parser\src\main\clojure\org\sharpx\parser\oxford_parser.clj
+-'  19  0  E:\code-repo2\github\codes\code-man.bat
+-'  6  5  E:\code-repo2\github\codes\code-man.bat
+-'  38  56  E:\code-repo2\github\codes\code-man.bat
+-'  27  4  E:\code-repo2\github\codes\code-man.bat
+-'  45  2  E:\code-repo2\github\codes\code-man.bat
+-'  43  8  E:\code-repo2\github\codes\code-man.bat
+-'  41  7  E:\code-repo2\github\codes\code-man.bat
+-'  29  6  E:\code-repo2\github\codes\code-man.bat
+-'  1  0  E:\code-repo2\github\codes\code-man.bat
 -'  25  74  E:\code-repo2\github\codes\clojure\parser\build.bat
 -'  1  0  E:\code-repo2\github\codes\clojure\parser\build.bat
--'  61  3  ~\.m2\settings.xml
--'  55  19  ~\.m2\settings.xml
 -'  259  0  ~\.m2\settings.xml
 -'  1  0  ~\.m2\settings.xml
 -'  1  0  ~\bat-wrapper\mvn.bat
@@ -136,40 +161,45 @@ $
 -'  147  37  E:\he-xun\sw\apache-maven-3.2.1\bin\mvn.bat
 -'  33  0  E:\code-repo2\github\codes\winxp\console.bat
 -'  35  0  E:\code-repo2\github\codes\winxp\console.bat
--'  1  0  E:\code-repo2\github\codes\winxp\console.bat
--'  5  0  c:\Program Files\Vim\_vimrc
--'  19  0  c:\Program Files\Vim\_vimrc
--'  76  0  c:\Program Files\Vim\vim74\_vimrc
--'  1  0  c:\Program Files\Vim\vim74\_vimrc
--'  1  0  c:\Program Files\Vim\_vimrc
--'  1  0  c:\Program Files\Vim\backup\_vimrc~
--'  32  46  E:\code-repo2\github\codes\winxp\console.bat
--'  155  17  E:\he-xun\sw\apache-maven-3.2.1\bin\mvn.bat
--'  150  17  E:\he-xun\sw\apache-maven-3.2.1\bin\mvn.bat
--'  144  26  E:\he-xun\sw\apache-maven-3.2.1\bin\mvn.bat
--'  38  0  E:\he-xun\sw\apache-maven-3.2.1\bin\mvn.bat
--'  5  0  c:\Program Files\Vim\_vimrc
--'  19  0  c:\Program Files\Vim\_vimrc
--'  76  0  c:\Program Files\Vim\vim74\_vimrc
--'  1  0  c:\Program Files\Vim\vim74\_vimrc
--'  1  0  c:\Program Files\Vim\_vimrc
--'  1  0  c:\Program Files\Vim\backup\_vimrc~
--'  37  8  E:\he-xun\sw\apache-maven-3.2.1\bin\mvn.bat
--'  103  23  E:\he-xun\sw\apache-maven-3.2.1\bin\mvn.bat
--'  102  20  E:\he-xun\sw\apache-maven-3.2.1\bin\mvn.bat
--'  101  15  E:\he-xun\sw\apache-maven-3.2.1\bin\mvn.bat
--'  98  14  E:\he-xun\sw\apache-maven-3.2.1\bin\mvn.bat
--'  94  17  E:\he-xun\sw\apache-maven-3.2.1\bin\mvn.bat
--'  93  13  E:\he-xun\sw\apache-maven-3.2.1\bin\mvn.bat
--'  85  23  E:\he-xun\sw\apache-maven-3.2.1\bin\mvn.bat
--'  84  15  E:\he-xun\sw\apache-maven-3.2.1\bin\mvn.bat
--'  81  12  E:\he-xun\sw\apache-maven-3.2.1\bin\mvn.bat
--'  80  27  E:\he-xun\sw\apache-maven-3.2.1\bin\mvn.bat
--'  79  32  E:\he-xun\sw\apache-maven-3.2.1\bin\mvn.bat
--'  77  12  E:\he-xun\sw\apache-maven-3.2.1\bin\mvn.bat
--'  71  25  E:\he-xun\sw\apache-maven-3.2.1\bin\mvn.bat
+-'  25  74  E:\code-repo2\github\codes\clojure\parser\build.bat
+-'  1  0  E:\code-repo2\github\codes\clojure\parser\build.bat
+-'  1  0  ~\bat-wrapper\mvn.bat
+-'  44  8  E:\down\Xword-master\wl.txt
+-'  11  2  E:\down\Xword-master\wl.txt
+-'  1  0  E:\down\Xword-master\wl.txt
+-'  11  0  C:\Documents and Settings\he\Local Settings\Temp\中药学(张廷模)讲稿.docx
+-'  24  0  C:\Documents and Settings\he\Local Settings\Temp\中药学(张廷模)讲稿.docx
+-'  1  0  C:\Documents
+-'  55  11  e:\code-repo2\github\codes\clojure\parser\src\main\clojure\org\sharpx\parser\oxford_parser.clj
+-'  55  16  ~\.m2\settings.xml
+-'  61  3  ~\.m2\settings.xml
+-'  3  50  E:\code-repo2\github\codes\winxp\ws.bat
+-'  22  20  E:\code-repo2\github\codes\winxp\ws.bat
 
 # 文件内的标记历史记录 (从新到旧):
+
+> f:\web-dict\oxford\htmls\200-501.json
+	"	1	0
+
+> ~\.m2\settings.xml
+	"	55	16
+	.	55	19
+	+	55	19
+
+> E:\code-repo2\github\codes\winxp\ws.bat
+	"	3	50
+	^	3	51
+	.	3	50
+	+	22	20
+	+	25	5
+	+	26	37
+	+	3	50
+
+> e:\code-repo2\github\codes\clojure\parser\src\main\clojure\org\sharpx\parser\oxford_parser.clj
+	"	55	11
+
+> E:\code-repo2\github\codes\code-man.bat
+	"	19	0
 
 > E:\code-repo2\github\codes\clojure\parser\build.bat
 	"	25	74
@@ -177,11 +207,6 @@ $
 	.	25	74
 	+	24	7
 	+	25	74
-
-> ~\.m2\settings.xml
-	"	61	3
-	.	55	19
-	+	55	19
 
 > ~\bat-wrapper\mvn.bat
 	"	1	0

@@ -53,4 +53,3 @@
                        (prn "index"))
           ret (merge {:type type :url url :bc (count html)} new-values)]
       ret)))
-
