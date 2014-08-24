@@ -1,6 +1,6 @@
 @echo off
 if ""%1"" == """" (
-  echo command options: github ubuntu office parser list
+  echo command options: github ubuntu office storm parser list
 ) else (
   call :%1
 )
@@ -19,7 +19,11 @@ exit /b
 exit /b
 
 :office
-  pushd E:\he-xun
+  pushd E:\he-xun\prj
+exit /b
+
+:storm
+  pushd E:\he-xun\prj\naomi-lzhd-storm
 exit /b
 
 :list

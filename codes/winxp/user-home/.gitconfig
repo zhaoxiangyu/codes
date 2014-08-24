@@ -1,3 +1,5 @@
 [user]
 	email = hejack0207@sina.com
 	name = helong
+[push]
+	default = matching
