@@ -1,7 +1,6 @@
 <project name="jpVocParser" basedir="../.." default="default" xmlns:ivy="antlib:org.apache.ivy.ant">
 	
-	<property environment="env"/>
-	<property name="REPO_ROOT" value="${env.REPO_ROOT}"/>
+	<property name="REPO_ROOT" environment="env" value="${env.REPO_ROOT}"/>
 	<include file="${REPO_ROOT}/settings.p.xml" />
 
 	<property name="java.src.dir" location="src"/>

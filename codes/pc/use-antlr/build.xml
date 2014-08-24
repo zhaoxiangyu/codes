@@ -1,17 +1,12 @@
 <project name="jpVocParser" basedir="../.." default="default" xmlns:ivy="antlib:org.apache.ivy.ant">
 	
-	<property environment="env"/>
-	<property name="REPO_ROOT" value="${env.REPO_ROOT}"/>
+	<property name="REPO_ROOT" environment="env" value="${env.REPO_ROOT}"/>
 	<import file="${REPO_ROOT}/settings.p.xml" />
 
 	<property name="java.src.dir" location="src"/>
 	<property name="javac.out.dir" location="bin/ant/classes"/>
 	<property name="jar.out.file" location="bin/ant/classes.jar"/>
 	<property name="javah.out.dir" location="jni/gen/javah/jpVocParser"/>
-	
-	<property name="jni.libname" value="vocabulary"/>
-	<property name="jni.libdir" location="bin/jni"/>
-	<property name="jni.srcdir" location="jni/src"/>
 	
 	<!-- ================================= 
           target: default target              
