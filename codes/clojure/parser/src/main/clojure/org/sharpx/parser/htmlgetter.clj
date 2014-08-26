@@ -46,8 +46,8 @@
             input (do (println "Is above parse result correct?y/n") (read-line))]
         (if (or (= input "y") (= input "Y"))
           (do (spit term-file str-term)
-              (when (.exists term-file)
-                (println "parse result saved to " (.getPath term-file)))
+            (when (.exists term-file)
+              (println "parse result saved to " (.getPath term-file)))
             true)
           (do (println "you have denied above parse result!")
             false))))))
@@ -70,13 +70,25 @@
         (validate term (str dest-dir file-path-separator fbn)
           #(browse-url (.toString (.toURL outf))))))))
 
+(defn gen-snap
+  [src-dir snap-file]
+  (let [;files (file-seq src-dir)
+        files (read-dir-files src-dir)
+        fs (count files)
+        _ (println "files count:" fs)
+        files (sort-by #(.length %) < files)
+        files (map (fn [file] {:fn (.getName file) :fs (.length file)}) files)
+        snap {:dir src-dir :files files}]
+    (spit snap-file (pr-str snap))
+    (println "saved dir snap to file" (.getPath snap-file))
+    snap))
+
 (defn from-fs
   "parse one file in src-dir randomly, store results to des-dir"
   [src-dir dest-dir parser]
-  (let [;files (file-seq src-dir)
-        files (read-dir-files src-dir)
-        files (sort-by #(.length %) < files)
-        ;content (slurp (take 1 files))
-        ]
-    (doseq [[fn fs] (map (fn [file] [(.getName file) (.length file)]) files)]
-      (println "filename:" fn ",size:" fs))))
+  (let [snap-file (io/file dest-dir "source-dir.snap")
+        snap (if (.exists snap-file)
+               (read-string (slurp snap-file))
+               (gen-snap src-dir snap-file))]
+    (doseq [{:keys [fn fs]} (take 10 (:files snap))]
+      (println "filename:" (str (:dir snap) file-path-separator fn) ",size:" fs))))
