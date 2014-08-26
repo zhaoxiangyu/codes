@@ -335,3 +335,42 @@
 2014-07-30 00:35:44,294 ERROR [main] - System.err - at org.eclipse.equinox.launcher.Main.basicRun(Main.java:591)
 2014-07-30 00:35:44,294 ERROR [main] - System.err - at org.eclipse.equinox.launcher.Main.run(Main.java:1450)
 2014-07-30 00:35:44,776 ERROR [main] - org.scala-ide.sdt.core - org.scala-ide.sdt.core - org.scala-ide.sdt.core - 0 - scala.reflect.internal.FatalError: package scala does not have a member Int
+2014-08-24 20:58:04,253 ERROR [main] - System.err - SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+2014-08-24 20:58:04,254 ERROR [main] - System.err - SLF4J: Defaulting to no-operation (NOP) logger implementation
+2014-08-24 20:58:04,255 ERROR [main] - System.err - SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+2014-08-24 20:58:13,135 ERROR [main] - org.scala-ide.sdt.core - org.scala-ide.sdt.core - org.scala-ide.sdt.core - 0 - scala.reflect.internal.MissingRequirementError: object scala in compiler mirror not found.
+2014-08-24 21:05:29,435 ERROR [main] - System.err - SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+2014-08-24 21:05:29,436 ERROR [main] - System.err - SLF4J: Defaulting to no-operation (NOP) logger implementation
+2014-08-24 21:05:29,436 ERROR [main] - System.err - SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+2014-08-24 21:10:47,776  WARN [org.eclipse.jdt.internal.ui.text.JavaReconciler] - ImplicitHighlightingPresenter - Timeout while waiting for `askLoadedTyped` during implicit highlighting.
+2014-08-24 21:16:56,248  WARN [org.eclipse.jdt.internal.ui.text.JavaReconciler] - ImplicitHighlightingPresenter - Timeout while waiting for `askLoadedTyped` during implicit highlighting.
+2014-08-24 21:17:17,281  WARN [org.eclipse.jdt.internal.ui.text.JavaReconciler] - ImplicitHighlightingPresenter - Timeout while waiting for `askLoadedTyped` during implicit highlighting.
+2014-08-24 21:18:08,751  WARN [org.eclipse.jdt.internal.ui.text.JavaReconciler] - ImplicitHighlightingPresenter - Timeout while waiting for `askLoadedTyped` during implicit highlighting.
+2014-08-24 21:18:25,745  WARN [org.eclipse.jdt.internal.ui.text.JavaReconciler] - ImplicitHighlightingPresenter - Timeout while waiting for `askLoadedTyped` during implicit highlighting.
+2014-08-24 21:19:41,784  WARN [org.eclipse.jdt.internal.ui.text.JavaReconciler] - ImplicitHighlightingPresenter - Timeout while waiting for `askLoadedTyped` during implicit highlighting.
+2014-08-24 21:27:02,888 ERROR [main] - org.scala-ide.sdt.core - org.scala-ide.sdt.core - org.scala-ide.sdt.core - 0 - scala.reflect.internal.MissingRequirementError: object scala in compiler mirror not found.
+2014-08-24 21:59:24,199 ERROR [main] - System.err - SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+2014-08-24 21:59:24,200 ERROR [main] - System.err - SLF4J: Defaulting to no-operation (NOP) logger implementation
+2014-08-24 21:59:24,200 ERROR [main] - System.err - SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+2014-08-24 22:46:24,374 ERROR [main] - org.scala-ide.sdt.core - org.scala-ide.sdt.core - org.scala-ide.sdt.core - 0 - scala.reflect.internal.MissingRequirementError: object scala in compiler mirror not found.
+2014-08-24 22:46:37,154  WARN [org.eclipse.jdt.internal.ui.text.JavaReconciler] - ImplicitHighlightingPresenter - Timeout while waiting for `askLoadedTyped` during implicit highlighting.
+2014-08-24 23:26:55,233  WARN [Worker-22] - ImplicitHighlightingPresenter - Timeout while waiting for `askLoadedTyped` during implicit highlighting.
+2014-08-24 23:26:55,572  WARN [Worker-22] - ImplicitHighlightingPresenter - Timeout while waiting for `askLoadedTyped` during implicit highlighting.
+2014-08-24 23:26:55,957  WARN [Worker-22] - ImplicitHighlightingPresenter - Timeout while waiting for `askLoadedTyped` during implicit highlighting.
+2014-08-24 23:26:57,235  WARN [Worker-22] - ImplicitHighlightingPresenter - Timeout while waiting for `askLoadedTyped` during implicit highlighting.
+2014-08-24 23:26:57,825  WARN [Worker-22] - ImplicitHighlightingPresenter - Timeout while waiting for `askLoadedTyped` during implicit highlighting.
+2014-08-24 23:27:13,866  WARN [Worker-24] - ImplicitHighlightingPresenter - Timeout while waiting for `askLoadedTyped` during implicit highlighting.
+2014-08-24 23:27:14,231  WARN [Worker-24] - ImplicitHighlightingPresenter - Timeout while waiting for `askLoadedTyped` during implicit highlighting.
+2014-08-24 23:27:14,551  WARN [Worker-24] - ImplicitHighlightingPresenter - Timeout while waiting for `askLoadedTyped` during implicit highlighting.
+2014-08-24 23:37:52,366  WARN [Worker-26] - ImplicitHighlightingPresenter - Timeout while waiting for `askLoadedTyped` during implicit highlighting.
+2014-08-24 23:37:53,023  WARN [Worker-26] - ImplicitHighlightingPresenter - Timeout while waiting for `askLoadedTyped` during implicit highlighting.
+2014-08-24 23:39:08,802  WARN [Worker-26] - ImplicitHighlightingPresenter - Timeout while waiting for `askLoadedTyped` during implicit highlighting.
+2014-08-24 23:39:09,471  WARN [Worker-26] - ImplicitHighlightingPresenter - Timeout while waiting for `askLoadedTyped` during implicit highlighting.
+2014-08-24 23:40:29,295  WARN [Worker-26] - ImplicitHighlightingPresenter - Timeout while waiting for `askLoadedTyped` during implicit highlighting.
+2014-08-24 23:40:29,884  WARN [Worker-26] - ImplicitHighlightingPresenter - Timeout while waiting for `askLoadedTyped` during implicit highlighting.
+2014-08-24 23:40:30,704  WARN [Worker-26] - ImplicitHighlightingPresenter - Timeout while waiting for `askLoadedTyped` during implicit highlighting.
+2014-08-24 23:40:31,292  WARN [Worker-26] - ImplicitHighlightingPresenter - Timeout while waiting for `askLoadedTyped` during implicit highlighting.
+2014-08-24 23:40:44,646  WARN [Worker-33] - ImplicitHighlightingPresenter - Timeout while waiting for `askLoadedTyped` during implicit highlighting.
+2014-08-24 23:40:45,232  WARN [Worker-33] - ImplicitHighlightingPresenter - Timeout while waiting for `askLoadedTyped` during implicit highlighting.
+2014-08-24 23:41:28,682  WARN [Worker-26] - ImplicitHighlightingPresenter - Timeout while waiting for `askLoadedTyped` during implicit highlighting.
+2014-08-24 23:41:29,260  WARN [Worker-26] - ImplicitHighlightingPresenter - Timeout while waiting for `askLoadedTyped` during implicit highlighting.

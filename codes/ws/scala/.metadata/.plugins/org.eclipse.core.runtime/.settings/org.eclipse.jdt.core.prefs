@@ -1,9 +1,15 @@
-eclipse.preferences.version=1
-org.eclipse.jdt.core.classpathVariable.M2_REPO=/home/he/.m2/repository
-org.eclipse.jdt.core.codeComplete.visibilityCheck=enabled
-org.eclipse.jdt.core.compiler.codegen.inlineJsrBytecode=enabled
-org.eclipse.jdt.core.compiler.codegen.targetPlatform=1.7
+#Sun Aug 24 23:40:22 CST 2014
+org.eclipse.jdt.core.classpathVariable.JRE_SRCROOT=
 org.eclipse.jdt.core.compiler.compliance=1.7
-org.eclipse.jdt.core.compiler.problem.assertIdentifier=error
+org.eclipse.jdt.core.classpathVariable.JRE_LIB=/usr/lib/jvm/jdk1.7.0_65/jre/lib/rt.jar
+org.eclipse.jdt.core.compiler.codegen.targetPlatform=1.7
 org.eclipse.jdt.core.compiler.problem.enumIdentifier=error
+org.eclipse.jdt.core.codeComplete.visibilityCheck=enabled
+org.eclipse.jdt.core.classpathVariable.ECLIPSE_HOME=/home/he/work/sw/java/scala-SDK-3.0.4-2.11-2.11/eclipse
+org.eclipse.jdt.core.classpathVariable.JUNIT_HOME=/home/he/work/sw/java/scala-SDK-3.0.4-2.11-2.11/eclipse/plugins/org.junit_4.11.0.v201303080030/
+eclipse.preferences.version=1
+org.eclipse.jdt.core.compiler.codegen.inlineJsrBytecode=enabled
+org.eclipse.jdt.core.classpathVariable.JRE_SRC=/usr/lib/jvm/jdk1.7.0_65/src.zip
 org.eclipse.jdt.core.compiler.source=1.7
+org.eclipse.jdt.core.compiler.problem.assertIdentifier=error
+org.eclipse.jdt.core.classpathVariable.M2_REPO=/media/sf_cross-vm-data/mvn-repo/.m2/repository
