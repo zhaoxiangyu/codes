@@ -13,7 +13,7 @@
   (compare [nil nil] [nil nil])
   (diff {:a "a"} {:a "aa"})
   (prn (take-while true? [true 1 "xx" (not nil) nil false]))
-  (prn (peel [:a :b :c :d :e :f :g]))
+  (prn (peel [:a :b :c :d :e :f :g] nil))
   #_ (compare {:a "a"} {:a "aa"})
   #_ (prn (array-map :z "haha" :a "xxxxx"))
   #_ (prn (merge (array-map :z "haha" :a "xx") (array-map :x "x" :b "b") (array-map :aaa nil)))

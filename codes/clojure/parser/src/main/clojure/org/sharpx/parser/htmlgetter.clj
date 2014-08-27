@@ -2,8 +2,8 @@
   (:require [monger.core :as mg]
             [monger.collection :as mc]
             [clojure.java.io :as io])
-  (:use [clj-xpath.core] clojure.data
-        clojure.java.browse org.sharpx.fs-util)
+  (:use clj-xpath.core clojure.data clojure.java.browse
+        [org.sharpx fs-util ds-util])
   (:import org.sharpx.utils.FsUtils java.net.URL java.io.File java.util.HashMap))
 
 (defn from-mongo
@@ -90,5 +90,6 @@
         snap (if (.exists snap-file)
                (read-string (slurp snap-file))
                (gen-snap src-dir snap-file))]
-    (doseq [{:keys [fn fs]} (take 10 (:files snap))]
+    (peel (:files snap) (fn [{:keys [fn fs]}] (println "filename:" (str (:dir snap) file-path-separator fn) ",size:" fs)))
+    #_ (doseq [{:keys [fn fs]} (take 30 (peel (:files snap)))]
       (println "filename:" (str (:dir snap) file-path-separator fn) ",size:" fs))))
