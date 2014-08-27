@@ -51,7 +51,7 @@
                :plural plural :defi defi :xr xr :h-gr h-gr :h-r h-r)]
     ;term
     (apply array-map
-      (mapcat #(vector %1 %2) (keys term) (map trimblanks (vals term))))))
+      (mapcat vector (keys term) (map trimblanks (vals term))))))
 
 ;/html/body//div[contains(@id,"entryContent")]
 (defn -parse
