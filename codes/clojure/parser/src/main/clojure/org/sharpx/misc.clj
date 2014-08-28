@@ -19,5 +19,5 @@
     (println ~message "y/n?")
     (let [~'input (read-line)]
       (if (or (= ~'input "y") (= ~'input "Y"))
-        ~yes-expr
-        ~no-expr))))
+        (do ~@yes-expr)
+        (do ~@no-expr)))))

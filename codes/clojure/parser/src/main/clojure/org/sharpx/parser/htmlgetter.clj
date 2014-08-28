@@ -34,23 +34,21 @@
             (println "FAILED validation!")
             (println "new values:" (first term-diff))
             (println "old values:" (second term-diff))
-            (let [input (do (println "Accept new parse result and overwrite file?y/n") (read-line))]
-              (if (or (= input "y") (= input "Y"))
-                (do (spit term-file str-term)
-                  (when (.exists term-file)
-                    (println "parse result updated to " (.getPath term-file)))
-                  true)
-                (do (println "you have denied above parse result!")
-                  false))))))
-      (let [_ (browse-html)
-            input (do (println "Is above parse result correct?y/n") (read-line))]
-        (if (or (= input "y") (= input "Y"))
-          (do (spit term-file str-term)
-            (when (.exists term-file)
-              (println "parse result saved to " (.getPath term-file)))
-            true)
-          (do (println "you have denied above parse result!")
-            false))))))
+            (mconfirm "Accept new parse result and overwrite file?"
+              [(spit term-file str-term)
+               (when (.exists term-file)
+                 (println "parse result updated to " (.getPath term-file)))
+               true]
+              [(println "you have denied above parse result!")
+               false]))))
+      (do (browse-html)
+        (mconfirm "Is above parse result correct?"
+          [(spit term-file str-term)
+           (when (.exists term-file)
+             (println "parse result saved to " (.getPath term-file)))
+           true]
+          [(println "you have denied above parse result!")
+           false])))))
 
 (defn process-html
   ([filepath dest-dir parse]
@@ -72,7 +70,7 @@
             true
             (validate term (str dest-dir file-path-separator fbn))))
         (catch Exception e (.printStackTrace e)
-          (mconfirm "Want to continue?" true false))))))
+          (mconfirm "Want to continue?" [true] [false]))))))
 
 (defn gen-snap
   [src-dir snap-file]

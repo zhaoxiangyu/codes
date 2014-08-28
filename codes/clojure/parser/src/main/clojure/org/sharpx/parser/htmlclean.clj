@@ -6,6 +6,7 @@
   "convert maliformed html to xml"
   [^String html-str]
   (when html-str
+    #_(println html-str)
     (let [cleaner (new HtmlCleaner)
           cleanprop (doto (.getProperties cleaner) (.setOmitComments true) (.setPruneTags "script,style"))]
       (when-let [node (.clean cleaner html-str)]

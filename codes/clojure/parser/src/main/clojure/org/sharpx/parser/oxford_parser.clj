@@ -30,6 +30,7 @@
 (defn- parse-term
   [html]
   (let [doc (->> (html-clean html)
+              ((fn [str] (println str) str))
               xml->doc)
         ;20-500 cabby 20-501 caber
         entry ($x:text "//div[@class=\"webtop-g\"]/h2" doc)
