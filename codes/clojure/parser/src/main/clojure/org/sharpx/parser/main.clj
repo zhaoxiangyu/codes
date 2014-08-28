@@ -24,7 +24,6 @@
   (from-fs html-dir analysis-dir -parse)
   #_ (let [htmls (from-mongo "169.254.244.218" 27017 "oxford" "htmls" -parse)]
        (dorun (map println htmls)))
-  #_ (from-fs html-dir "" -parser)
   (test1)
   #_ (doseq [filename filenames
           :let [ret (process-html (toks->path [html-dir filename]) analysis-dir -parse)]

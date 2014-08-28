@@ -64,4 +64,4 @@
           ret (merge new-values (array-map :type type :url url :bc (count html)))]
       new-values)
     (catch Exception e
-      (exception-handler) #_ (.printStackTrace e) (throw e))))
+      (exception-handler) (throw e))))

@@ -3,7 +3,7 @@
             [monger.collection :as mc]
             [clojure.java.io :as io])
   (:use clj-xpath.core clojure.data clojure.java.browse
-        [org.sharpx fs-util ds-util])
+        [org.sharpx fs-util ds-util misc])
   (:import org.sharpx.utils.FsUtils java.net.URL java.io.File java.util.HashMap))
 
 (defn from-mongo
@@ -63,12 +63,16 @@
           inf (io/file filepath)
           fbn (->> (.getName inf) (re-find #"^[^\.]+"))
           outf (io/file dest-dir fbn (str fbn ".html"))]
-      (when-not (.exists outf)
-        (io/make-parents outf) (spit outf html))
-      ;(println "url:" url "html:" html)
-      (let [term (parse {:type type :url url :html html} #(browse-url (.toString (.toURL outf))))]
-        (validate term (str dest-dir file-path-separator fbn)
-          #(browse-url (.toString (.toURL outf))))))))
+      (try
+        (when-not (.exists outf)
+          (io/make-parents outf) (spit outf html))
+        ;(println "url:" url "html:" html)
+        (let [term (parse {:type type :url url :html html} #(browse-url (.toString (.toURL outf))))]
+          (if (nil? term)
+            true
+            (validate term (str dest-dir file-path-separator fbn))))
+        (catch Exception e (.printStackTrace e)
+          (mconfirm "Want to continue?" true false))))))
 
 (defn gen-snap
   [src-dir snap-file]
@@ -90,6 +94,9 @@
         snap (if (.exists snap-file)
                (read-string (slurp snap-file))
                (gen-snap src-dir snap-file))]
-    (peel (:files snap) (fn [{:keys [fn fs]}] (println "filename:" (str (:dir snap) file-path-separator fn) ",size:" fs)))
+    (peel (:files snap)
+      (fn [{:keys [fn fs]}]
+        (println "filename:" (toks->path [(:dir snap) fn]) ",size:" fs)
+        (process-html (toks->path [(:dir snap) fn]) dest-dir parser)))
     #_ (doseq [{:keys [fn fs]} (take 30 (peel (:files snap)))]
-      (println "filename:" (str (:dir snap) file-path-separator fn) ",size:" fs))))
+         (println "filename:" (str (:dir snap) file-path-separator fn) ",size:" fs))))
