@@ -13,7 +13,7 @@
       no-val)))
 
 (defmacro mconfirm
-  "show message,if confirmed return yes-val else return no-val"
+  "show message,if confirmed return yes-expr else return no-expr"
   [message yes-expr no-expr]
   `(do
     (println ~message "y/n?")
