@@ -5,18 +5,27 @@
         [clj-xpath.core])
   (:gen-class))
 
-(defn- parse-definitions
+(def term-head "head" "//div[@class=\"entry\"]/div[@class=\"h-g\"]")
+(def term-block "block?" "//div[@class=\"entry\"]/span[@class=\"block-g\"]")
+(def term-morphs "morph" "//div[@class=\"entry\"]/span[@class=\"ifs-g\"]")
+(def term-help "help" "//div[@class=\"entry\"]/span[@class=\"help\"]")
+(def term-explanations "explanations" "//div[@class=\"entry\"]/div[@class=\"sd-g\"]")
+(def term-idoms "idoms" "//div[@class=\"entry\"]/span[@class=\"ids-g\"]")
+(def term-phverbs "phrase verbs" "//div[@class=\"entry\"]/div[@class=\"pvp-g\"]")
+(def term-usages "usage notes" "//div[@class=\"entry\"]/span[@class=\"unbox\"]")
+
+(defn- parse-head-definitions
   [doc]
-  (let [nodes ($x:node* "//div[@class=\"h-g\"]/span[@class=\"n-g\"]" doc)]
+  (let [nodes ($x:node* (str term-head "/span[@class=\"n-g\"]") doc)]
     (map-indexed
       (fn [i n]
-        (let [ord ($x:text? (str "//div[@class=\"h-g\"]/span[@class=\"n-g\" and position()=" (inc i) "]" "/span[@class=\"z_n\"]") doc)
-              plural ($x:text? (str "//div[@class=\"h-g\"]/span[@class=\"n-g\" and position()=" (inc i) "]" "/span[@class=\"a\"]") doc)
-              gr ($x:text? (str "//div[@class=\"h-g\"]/span[@class=\"n-g\" and position()=" (inc i) "]" "/span[@class=\"z_gr\"]") doc)
-              cf ($x:text? (str "//div[@class=\"h-g\"]/span[@class=\"n-g\" and position()=" (inc i) "]" "/span[@class=\"cf\"]") doc)
-              g ($x:text? (str "//div[@class=\"h-g\"]/span[@class=\"n-g\" and position()=" (inc i) "]" "/span[@class=\"z_g\"]") doc)
-              r ($x:text? (str "//div[@class=\"h-g\"]/span[@class=\"n-g\" and position()=" (inc i) "]" "/span[@class=\"z_r\"]") doc)
-              defi ($x:text? (str "//div[@class=\"h-g\"]/span[@class=\"n-g\" and position()=" (inc i) "]" "/span[@class=\"d\"]") doc)]
+        (let [ord ($x:text? (str term-head "/span[@class=\"n-g\" and position()=" (inc i) "]" "/span[@class=\"z_n\"]") doc)
+              plural ($x:text? (str term-head "/span[@class=\"n-g\" and position()=" (inc i) "]" "/span[@class=\"a\"]") doc)
+              gr ($x:text? (str term-head "/span[@class=\"n-g\" and position()=" (inc i) "]" "/span[@class=\"z_gr\"]") doc)
+              cf ($x:text? (str term-head "/span[@class=\"n-g\" and position()=" (inc i) "]" "/span[@class=\"cf\"]") doc)
+              g ($x:text? (str term-head "/span[@class=\"n-g\" and position()=" (inc i) "]" "/span[@class=\"z_g\"]") doc)
+              r ($x:text? (str term-head "/span[@class=\"n-g\" and position()=" (inc i) "]" "/span[@class=\"z_r\"]") doc)
+              defi ($x:text? (str term-head "/span[@class=\"n-g\" and position()=" (inc i) "]" "/span[@class=\"d\"]") doc)]
           (array-map :n ord :plural plural :gr gr :cf cf :g g :r r :defi defi)))
       nodes)))
 
@@ -33,21 +42,22 @@
               ((fn [str] (println str) str))
               xml->doc)
         ;20-500 cabby 20-501 caber
-        entry ($x:text "//div[@class=\"webtop-g\"]/h2" doc)
-        pos ($x:text? "//div[@class=\"webtop-g\"]/span[@class=\"pos\"]" doc)
-        also ($x:text? "//span[@class=\"vs-g\"]/span[@class=\"vs\" or @class=\"v\"]" doc)
-        BrE ($x:text? "//div[@class=\"ei-g\"]/span[@class=\"i\"]" doc)
-        BrE-mp3 (($x:attrs? "//div[@class=\"ei-g\"]/div[@class=\"sound audio_play_button pron-uk icon-audio\"]" doc) :data-src-mp3)
-        NAmE ($x:text? "//div[@class=\"ei-g\"]/span[@class=\"y\"]" doc)
-        NAmE-mp3 (($x:attrs? "//div[@class=\"ei-g\"]/div[@class=\"sound audio_play_button pron-us icon-audio\"]" doc) :data-src-mp3)
-        plural ($x:text? "//span[@class=\"if-g\"]/span[@class=\"if\"]" doc)
-        h-gr ($x:text* "//div[@class=\"top-g\"]/span[@class=\"z_gr\"]" doc)
-        h-r ($x:text? "//div[@class=\"top-g\"]/span[@class=\"z_r\"]" doc)
-        defi ($x:text? "//div[@class=\"def_block\"]/span[@class=\"d\"]" doc)
-        ;20-1000
-        defi (if (nil? (first defi)) ($x:text* "//div[@class=\"h-g\"]/span[@class=\"d\" or @class=\"dab\"]" doc) defi)
-        defi (if (nil? (first defi)) (parse-definitions doc) defi)
-        xr ($x:text* "//div[@class=\"h-g\"]/span[@class=\"xr-g\"]" doc)
+        entry ($x:text (str term-head "//div[@class=\"webtop-g\"]/h2") doc)
+        pos ($x:text? (str term-head "//div[@class=\"webtop-g\"]/span[@class=\"pos\"]") doc)
+        also ($x:text? (str term-head "//span[@class=\"vs-g\"]/span[@class=\"vs\" or @class=\"v\"]") doc)
+        BrE ($x:text? (str term-head "//div[@class=\"ei-g\"]/span[@class=\"i\"]") doc)
+        BrE-mp3 (($x:attrs? (str term-head "//div[@class=\"ei-g\"]/div[@class=\"sound audio_play_button pron-uk icon-audio\"]") doc) :data-src-mp3)
+        NAmE ($x:text? (str term-head "//div[@class=\"ei-g\"]/span[@class=\"y\"]") doc)
+        NAmE-mp3 (($x:attrs? (str term-head "//div[@class=\"ei-g\"]/div[@class=\"sound audio_play_button pron-us icon-audio\"]") doc) :data-src-mp3)
+        h-gr ($x:text* (str term-head "//div[@class=\"top-g\"]/span[@class=\"z_gr\"]") doc)
+        h-r ($x:text? (str term-head "//div[@class=\"top-g\"]/span[@class=\"z_r\"]") doc)
+        defi ($x:text? (str term-head "/div[@class=\"def_block\"]/span[@class=\"d\"]") doc)
+        defi (if (nil? (first defi)) ($x:text* (str term-head "/span[@class=\"d\" or @class=\"dab\"]") doc) defi)
+        defi (if (nil? (first defi)) (parse-head-definitions doc) defi)
+        xr ($x:text* (str term-head "/span[@class=\"xr-g\"]") doc);bushel 20-1100 idoms
+        plural ($x:text? (str term-head "//span[@class=\"if-g\"]/span[@class=\"if\"]") doc)
+        ;;;
+
         term (array-map :entry entry :pos pos :also also :BrE BrE :BrE-mp3 BrE-mp3 :NAmE NAmE :NAmE-mp3 NAmE-mp3
                :plural plural :defi defi :xr xr :h-gr h-gr :h-r h-r)]
     ;term

@@ -68,7 +68,7 @@
         (let [term (parse {:type type :url url :html html} #(browse-url (.toString (.toURL outf))))]
           (if (nil? term)
             true
-            (validate term (str dest-dir file-path-separator fbn))))
+            (validate term (str dest-dir file-path-separator fbn) #(browse-url (.toString (.toURL outf))))))
         (catch Exception e (.printStackTrace e)
           (mconfirm "Want to continue?" [true] [false]))))))
 

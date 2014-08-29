@@ -65,18 +65,19 @@ $
 	office
 
 # 文件标记:
-'0  1  0  f:\web-dict\oxford\htmls\200-501.json
-'1  55  16  ~\.m2\settings.xml
-'2  3  50  E:\code-repo2\github\codes\winxp\ws.bat
-'3  22  20  E:\code-repo2\github\codes\winxp\ws.bat
-'4  55  11  e:\code-repo2\github\codes\clojure\parser\src\main\clojure\org\sharpx\parser\oxford_parser.clj
-'5  19  0  E:\code-repo2\github\codes\code-man.bat
-'6  6  5  E:\code-repo2\github\codes\code-man.bat
-'7  25  74  E:\code-repo2\github\codes\clojure\parser\build.bat
-'8  61  3  ~\.m2\settings.xml
-'9  1  0  ~\bat-wrapper\mvn.bat
+'0  1  0  E:\code-repo2\github\codes\clojure\parser\x
+'1  1  0  f:\web-dict\oxford\htmls\200-501.json
+'2  55  16  ~\.m2\settings.xml
+'3  3  50  E:\code-repo2\github\codes\winxp\ws.bat
+'4  22  20  E:\code-repo2\github\codes\winxp\ws.bat
+'5  55  11  e:\code-repo2\github\codes\clojure\parser\src\main\clojure\org\sharpx\parser\oxford_parser.clj
+'6  19  0  E:\code-repo2\github\codes\code-man.bat
+'7  6  5  E:\code-repo2\github\codes\code-man.bat
+'8  25  74  E:\code-repo2\github\codes\clojure\parser\build.bat
+'9  61  3  ~\.m2\settings.xml
 
 # 跳转列表 (从新到旧):
+-'  1  0  E:\code-repo2\github\codes\clojure\parser\x
 -'  1  0  f:\web-dict\oxford\htmls\200-501.json
 -'  55  16  ~\.m2\settings.xml
 -'  61  3  ~\.m2\settings.xml
@@ -174,9 +175,11 @@ $
 -'  55  16  ~\.m2\settings.xml
 -'  61  3  ~\.m2\settings.xml
 -'  3  50  E:\code-repo2\github\codes\winxp\ws.bat
--'  22  20  E:\code-repo2\github\codes\winxp\ws.bat
 
 # 文件内的标记历史记录 (从新到旧):
+
+> E:\code-repo2\github\codes\clojure\parser\x
+	"	1	0
 
 > f:\web-dict\oxford\htmls\200-501.json
 	"	1	0
