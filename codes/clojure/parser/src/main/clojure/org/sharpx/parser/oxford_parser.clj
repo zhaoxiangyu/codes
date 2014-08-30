@@ -16,45 +16,47 @@
 
 (defn- parse-definitions
   [doc prefix]
-  (doall (map-indexed
-    (fn [i _]
-      (let [prefix (str prefix "[" (inc i) "]")
-            sd ($x:text? (str prefix "/h3[@class=\"sd\"]") doc)
-            nodes ($x:node* (str prefix "/span[@class=\"n-g\"]") doc)
-            ngs (doall (map-indexed
-                  (fn [i _]
-                    (let [prefix (str prefix "/span[@class=\"n-g\" and position()=" (inc i) "]")
-                          ord ($x:text? (str prefix "/span[@class=\"z_n\"]") doc)
-                          plural ($x:text? (str prefix "/span[@class=\"a\"]") doc)
-                          gr ($x:text? (str prefix "/span[@class=\"z_gr\"]") doc)
-                          cf ($x:text? (str prefix "/span[@class=\"cf\"]") doc)
-                          g ($x:text? (str prefix "/span[@class=\"z_g\"]") doc)
-                          r ($x:text? (str prefix "/span[@class=\"z_r\"]") doc)
-                          defi ($x:text? (str prefix "/span[@class=\"d\"]") doc)
-                          examples (map-indexed
-                                     (fn [i _]
-                                       (let [prefix (str prefix "/span[@class=\"x-g\" and position()=" (inc i) "]")
-                                             cf ($x:text? (str prefix "/span[@class=\"cf\"]") doc)
-                                             x ($x:text? (str prefix "/span[@class=\"x\"]") doc)]
-                                         (array-map :n i :cf cf :x x)))
-                                     ($x:node* (str prefix "/span[@class=\"x-g\"]") doc))]
-                      (array-map :n ord :plural plural :gr gr :cf cf :g g :r r :defi defi :examples examples)))
-                  nodes))]
-        #_ (println "prefix:" prefix)
-        (if (and (nil? sd) (empty? ngs))
-          nil (array-map :sd sd :ngs ngs))))
-    ($x:node* prefix doc))))
+  (doall
+    (filter (comp not nil?)
+      (map-indexed
+        (fn [i _]
+          (let [prefix (str prefix "[" (inc i) "]")
+                sd ($x:text? (str prefix "/h3[@class=\"sd\"]") doc)
+                nodes ($x:node* (str prefix "/span[@class=\"n-g\"]") doc)
+                ngs (doall (map-indexed
+                             (fn [i _]
+                               (let [prefix (str prefix "/span[@class=\"n-g\"][" (inc i) "]")
+                                     ord ($x:text? (str prefix "/span[@class=\"z_n\"]") doc)
+                                     plural ($x:text? (str prefix "/span[@class=\"a\"]") doc)
+                                     gr ($x:text? (str prefix "/span[@class=\"z_gr\"]") doc)
+                                     cf ($x:text? (str prefix "/span[@class=\"cf\"]") doc)
+                                     g ($x:text? (str prefix "/span[@class=\"z_g\"]") doc)
+                                     r ($x:text? (str prefix "/span[@class=\"z_r\"]") doc)
+                                     defi ($x:text? (str prefix "/span[@class=\"d\"]") doc)
+                                     examples (map-indexed
+                                                (fn [i _]
+                                                  (let [prefix (str prefix "/span[@class=\"x-g\"][" (inc i) "]")
+                                                        cf ($x:text? (str prefix "/span[@class=\"cf\"]") doc)
+                                                        x ($x:text? (str prefix "/span[@class=\"x\"]") doc)]
+                                                    (array-map :n i :cf cf :x x)))
+                                                ($x:node* (str prefix "/span[@class=\"x-g\"]") doc))]
+                                 (array-map :n ord :plural plural :gr gr :cf cf :g g :r r :defi defi :examples examples)))
+                             nodes))]
+            #_ (println "prefix:" prefix)
+            (if (and (nil? sd) (empty? ngs))
+              nil (array-map :sd sd :ngs ngs))))
+        ($x:node* prefix doc)))))
 
 (defn- parse-morphs
   [doc]
   (let [nodes ($x:node* (str term-morphs "/span[@class=\"if-g\"]/span[@class=\"if\"]") doc)]
     (map-indexed
       (fn [i n]
-        (let [morph ($x:text? (str term-morphs "//span[@class=\"if\" and position()=" (inc i) "]") doc)
-              BrE ($x:text? (str term-morphs "//div[@class=\"ei-g\" and position()=" (inc i) "]/span[@class=\"i\"]") doc)
-              BrE-mp3 (($x:attrs? (str term-morphs "//div[@class=\"ei-g\" and position()=" (inc i) "]/div[@class=\"sound audio_play_button pron-uk icon-audio\"]") doc) :data-src-mp3)
-              NAmE ($x:text? (str term-morphs "//div[@class=\"ei-g\" and position()=" (inc i) "]/span[@class=\"y\"]") doc)
-              NAmE-mp3 (($x:attrs? (str term-morphs "//div[@class=\"ei-g\" and position()=" (inc i) "]/div[@class=\"sound audio_play_button pron-us icon-audio\"]") doc) :data-src-mp3)]
+        (let [morph ($x:text? (str term-morphs "//span[@class=\"if\"][" (inc i) "]") doc)
+              BrE ($x:text? (str term-morphs "//div[@class=\"ei-g\"][" (inc i) "]/span[@class=\"i\"]") doc)
+              BrE-mp3 (($x:attrs? (str term-morphs "//div[@class=\"ei-g\"][" (inc i) "]/div[@class=\"sound audio_play_button pron-uk icon-audio\"]") doc) :data-src-mp3)
+              NAmE ($x:text? (str term-morphs "//div[@class=\"ei-g\"][" (inc i) "]/span[@class=\"y\"]") doc)
+              NAmE-mp3 (($x:attrs? (str term-morphs "//div[@class=\"ei-g\"][" (inc i) "]/div[@class=\"sound audio_play_button pron-us icon-audio\"]") doc) :data-src-mp3)]
           (array-map :n i :morph morph :BrE BrE :BrE-mp3 BrE-mp3 :NAmE NAmE :NAmE-mp3 NAmE-mp3)))
       nodes)))
 
@@ -66,9 +68,9 @@
     (seq? str) (map trimblanks str)))
 
 (defn- parse-term
-  [html xml-writer]
+  [html xmlstr-handler]
   (let [doc (->> (html-clean html)
-              xml-writer
+              xmlstr-handler
               xml->doc)
         ;term head
         entry ($x:text (str term-head "//div[@class=\"webtop-g\"]/h2") doc)
@@ -81,14 +83,14 @@
         h-gr ($x:text* (str term-head "//div[@class=\"top-g\"]/span[@class=\"z_gr\"]") doc)
         h-r ($x:text? (str term-head "//div[@class=\"top-g\"]/span[@class=\"z_r\"]") doc)
         defi ($x:text? (str term-head "/div[@class=\"def_block\"]/span[@class=\"d\"]") doc)
-        defi (if (nil? (first defi)) ($x:text* (str term-head "/span[@class=\"d\" or @class=\"dab\"]") doc) defi)
-        defi (if (nil? (first defi)) (parse-definitions doc term-head) defi)
+        defi (if (or (nil? defi) (empty? defi)) ($x:text* (str term-head "/span[@class=\"d\" or @class=\"dab\"]") doc) defi)
+        defi (if (or (nil? defi) (empty? defi)) (parse-definitions doc term-head) defi)
         xr ($x:text* (str term-head "/span[@class=\"xr-g\"]") doc) ;bushel 20-1100 idoms
         plural ($x:text? (str term-head "//span[@class=\"if-g\"]/span[@class=\"if\"]") doc)
         ;term morphs
         morphs (parse-morphs doc)
         help ($x:text* term-help doc)
-        defi (if (nil? (first defi)) (parse-definitions doc term-explanations) defi)
+        defi (if (or (nil? defi) (empty? defi)) (parse-definitions doc term-explanations) defi)
         _ (pr defi)
 
         term (array-map :entry entry :pos pos :also also :BrE BrE :BrE-mp3 BrE-mp3 :NAmE NAmE :NAmE-mp3 NAmE-mp3
