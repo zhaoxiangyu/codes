@@ -2,7 +2,7 @@
 (ns org.sharpx.parser.oxford-parser
   (:require [clojure.string :as string])
   (:use [org.sharpx.parser htmlclean]
-        [clj-xpath.core])
+        [clj-xpath.core] clojure.pprint)
   (:gen-class))
 
 (def term-head "head" "//div[@class=\"entry\"]/div[@class=\"h-g\"]")
@@ -13,6 +13,8 @@
 (def term-idoms "idoms" "//div[@class=\"entry\"]/span[@class=\"ids-g\"]")
 (def term-phverbs "phrase verbs" "//div[@class=\"entry\"]/div[@class=\"pvp-g\"]")
 (def term-usages "usage notes" "//div[@class=\"entry\"]/span[@class=\"unbox\"]")
+(def audio-uk "sound audio_play_button pron-uk icon-audio")
+(def audio-us "sound audio_play_button pron-us icon-audio")
 
 (defn- parse-definitions
   [doc prefix]
@@ -28,7 +30,7 @@
                                (let [prefix (str prefix "/span[@class=\"n-g\"][" (inc i) "]")
                                      ord ($x:text? (str prefix "/span[@class=\"z_n\"]") doc)
                                      plural ($x:text? (str prefix "/span[@class=\"a\"]") doc)
-                                     gr ($x:text? (str prefix "/span[@class=\"z_gr\"]") doc)
+                                     gr ($x:text* (str prefix "/span[@class=\"z_gr\"]") doc)
                                      cf ($x:text? (str prefix "/span[@class=\"cf\"]") doc)
                                      g ($x:text? (str prefix "/span[@class=\"z_g\"]") doc)
                                      r ($x:text? (str prefix "/span[@class=\"z_r\"]") doc)
@@ -38,7 +40,7 @@
                                                   (let [prefix (str prefix "/span[@class=\"x-g\"][" (inc i) "]")
                                                         cf ($x:text? (str prefix "/span[@class=\"cf\"]") doc)
                                                         x ($x:text? (str prefix "/span[@class=\"x\"]") doc)]
-                                                    (array-map :n i :cf cf :x x)))
+                                                    (array-map :n (inc i) :cf cf :x x)))
                                                 ($x:node* (str prefix "/span[@class=\"x-g\"]") doc))]
                                  (array-map :n ord :plural plural :gr gr :cf cf :g g :r r :defi defi :examples examples)))
                              nodes))]
@@ -48,15 +50,15 @@
         ($x:node* prefix doc)))))
 
 (defn- parse-morphs
-  [doc]
-  (let [nodes ($x:node* (str term-morphs "/span[@class=\"if-g\"]/span[@class=\"if\"]") doc)]
+  [doc prefix]
+  (let [nodes ($x:node* (str prefix "/span[@class=\"if-g\"]/span[@class=\"if\"]") doc)]
     (map-indexed
       (fn [i n]
-        (let [morph ($x:text? (str term-morphs "//span[@class=\"if\"][" (inc i) "]") doc)
-              BrE ($x:text? (str term-morphs "//div[@class=\"ei-g\"][" (inc i) "]/span[@class=\"i\"]") doc)
-              BrE-mp3 (($x:attrs? (str term-morphs "//div[@class=\"ei-g\"][" (inc i) "]/div[@class=\"sound audio_play_button pron-uk icon-audio\"]") doc) :data-src-mp3)
-              NAmE ($x:text? (str term-morphs "//div[@class=\"ei-g\"][" (inc i) "]/span[@class=\"y\"]") doc)
-              NAmE-mp3 (($x:attrs? (str term-morphs "//div[@class=\"ei-g\"][" (inc i) "]/div[@class=\"sound audio_play_button pron-us icon-audio\"]") doc) :data-src-mp3)]
+        (let [morph ($x:text? (str prefix "//span[@class=\"if\"][" (inc i) "]") doc)
+              BrE ($x:text? (str prefix "//div[@class=\"ei-g\"][" (inc i) "]/span[@class=\"i\"]") doc)
+              BrE-mp3 (($x:attrs? (str prefix "//div[@class=\"ei-g\"][" (inc i) "]/div[@class=\"" audio-uk "\"]") doc) :data-src-mp3)
+              NAmE ($x:text? (str prefix "//div[@class=\"ei-g\"][" (inc i) "]/span[@class=\"y\"]") doc)
+              NAmE-mp3 (($x:attrs? (str prefix "//div[@class=\"ei-g\"][" (inc i) "]/div[@class=\"" audio-us "\"]") doc) :data-src-mp3)]
           (array-map :n i :morph morph :BrE BrE :BrE-mp3 BrE-mp3 :NAmE NAmE :NAmE-mp3 NAmE-mp3)))
       nodes)))
 
@@ -88,10 +90,10 @@
         xr ($x:text* (str term-head "/span[@class=\"xr-g\"]") doc) ;bushel 20-1100 idoms
         plural ($x:text? (str term-head "//span[@class=\"if-g\"]/span[@class=\"if\"]") doc)
         ;term morphs
-        morphs (parse-morphs doc)
+        morphs (parse-morphs doc term-morphs)
         help ($x:text* term-help doc)
         defi (if (or (nil? defi) (empty? defi)) (parse-definitions doc term-explanations) defi)
-        _ (pr defi)
+        _ (pprint defi)
 
         term (array-map :entry entry :pos pos :also also :BrE BrE :BrE-mp3 BrE-mp3 :NAmE NAmE :NAmE-mp3 NAmE-mp3
                :plural plural :defi defi :xr xr :h-gr h-gr :h-r h-r :morphs morphs :help help)]

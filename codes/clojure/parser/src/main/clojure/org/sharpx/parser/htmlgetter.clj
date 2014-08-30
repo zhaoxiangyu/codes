@@ -2,7 +2,7 @@
   (:require [monger.core :as mg]
             [monger.collection :as mc]
             [clojure.java.io :as io])
-  (:use clj-xpath.core clojure.data clojure.java.browse
+  (:use clj-xpath.core clojure.data clojure.java.browse clojure.pprint
         [org.sharpx fs-util ds-util misc])
   (:import org.sharpx.utils.FsUtils java.net.URL java.io.File java.util.HashMap))
 
@@ -19,7 +19,7 @@
 (defn- validate
   "validate term"
   [term output-dir browse-html]
-  (prn term)
+  (pprint term)
   (let [entry (:entry term)
         str-term (pr-str term)
         term-file (io/file output-dir (str entry ".term"))]
