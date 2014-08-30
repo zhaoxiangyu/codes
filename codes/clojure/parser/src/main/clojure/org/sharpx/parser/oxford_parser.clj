@@ -16,13 +16,13 @@
 
 (defn- parse-definitions
   [doc prefix]
-  (map-indexed
-    (fn [i n]
-      (let [prefix (str prefix "[position()=" (inc i) "]")
+  (doall (map-indexed
+    (fn [i _]
+      (let [prefix (str prefix "[" (inc i) "]")
             sd ($x:text? (str prefix "/h3[@class=\"sd\"]") doc)
             nodes ($x:node* (str prefix "/span[@class=\"n-g\"]") doc)
-            ngs (map-indexed
-                  (fn [i n]
+            ngs (doall (map-indexed
+                  (fn [i _]
                     (let [prefix (str prefix "/span[@class=\"n-g\" and position()=" (inc i) "]")
                           ord ($x:text? (str prefix "/span[@class=\"z_n\"]") doc)
                           plural ($x:text? (str prefix "/span[@class=\"a\"]") doc)
@@ -32,18 +32,18 @@
                           r ($x:text? (str prefix "/span[@class=\"z_r\"]") doc)
                           defi ($x:text? (str prefix "/span[@class=\"d\"]") doc)
                           examples (map-indexed
-                                     (fn [i x]
+                                     (fn [i _]
                                        (let [prefix (str prefix "/span[@class=\"x-g\" and position()=" (inc i) "]")
                                              cf ($x:text? (str prefix "/span[@class=\"cf\"]") doc)
                                              x ($x:text? (str prefix "/span[@class=\"x\"]") doc)]
                                          (array-map :n i :cf cf :x x)))
                                      ($x:node* (str prefix "/span[@class=\"x-g\"]") doc))]
                       (array-map :n ord :plural plural :gr gr :cf cf :g g :r r :defi defi :examples examples)))
-                  nodes)]
+                  nodes))]
         #_ (println "prefix:" prefix)
         (if (and (nil? sd) (empty? ngs))
           nil (array-map :sd sd :ngs ngs))))
-    ($x:node* prefix doc)))
+    ($x:node* prefix doc))))
 
 (defn- parse-morphs
   [doc]
@@ -66,9 +66,9 @@
     (seq? str) (map trimblanks str)))
 
 (defn- parse-term
-  [html]
+  [html xml-writer]
   (let [doc (->> (html-clean html)
-              ((fn [str] (println str) str))
+              xml-writer
               xml->doc)
         ;term head
         entry ($x:text (str term-head "//div[@class=\"webtop-g\"]/h2") doc)
@@ -100,10 +100,10 @@
 ;/html/body//div[contains(@id,"entryContent")]
 (defn -parse
   "parse url:html pair"
-  [{:keys [type url html]} exception-handler] ;[{t :type url :url html :html}]
+  [{:keys [type url html]} xml-writer exception-handler] ;[{t :type url :url html :html}]
   (try
     (let [new-values (if (= type "e")
-                       (parse-term html) ;#((println %) %)))
+                       (parse-term html xml-writer) ;#((println %) %)))
                        (prn "index"))
           ret (merge new-values (array-map :type type :url url :bc (count html)))]
       new-values)

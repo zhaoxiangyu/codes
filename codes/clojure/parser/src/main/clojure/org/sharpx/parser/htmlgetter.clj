@@ -60,12 +60,15 @@
           ;file info
           inf (io/file filepath)
           fbn (->> (.getName inf) (re-find #"^[^\.]+"))
-          outf (io/file dest-dir fbn (str fbn ".html"))]
+          outf (io/file dest-dir fbn (str fbn ".html"))
+          outxml (io/file dest-dir fbn (str fbn ".xml"))]
       (try
         (when-not (.exists outf)
           (io/make-parents outf) (spit outf html))
         ;(println "url:" url "html:" html)
-        (let [term (parse {:type type :url url :html html} #(browse-url (.toString (.toURL outf))))]
+        (let [term (parse {:type type :url url :html html}
+                     (fn [xml] (spit outxml xml) xml)
+                     #(browse-url (.toString (.toURL outf))))]
           (if (nil? term)
             true
             (validate term (str dest-dir file-path-separator fbn) #(browse-url (.toString (.toURL outf))))))
