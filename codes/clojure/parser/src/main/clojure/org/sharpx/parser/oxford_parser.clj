@@ -16,6 +16,9 @@
 (def audio-uk "sound audio_play_button pron-uk icon-audio")
 (def audio-us "sound audio_play_button pron-us icon-audio")
 
+(declare parse-definitions)
+(declare parse-coll)
+
 (defn- trimblanks
   [symb]
   (cond
@@ -24,9 +27,6 @@
     (number? symb) symb
     (seq? symb) (map trimblanks symb)
     (map? symb) (into (empty symb) (for [[k v] symb] [k (trimblanks v)]))))
-
-(declare parse-definitions)
-(declare parse-coll)
 
 (defn- parse-head
   [doc prefix]
