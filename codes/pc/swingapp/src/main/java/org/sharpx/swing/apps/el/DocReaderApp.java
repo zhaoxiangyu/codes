@@ -107,7 +107,7 @@ public class DocReaderApp implements Pluggable {
 		}
 		
 		private boolean lookupVoice(NewWord newWord){
-			DirSnap ds = appCtx.requestObject(DirSnaps.class).get(config.getMp3LibPath());
+			DirSnap ds = appCtx.requestObject(DirSnaps.class).fromFile(config.getMp3LibPath());
 			String termKey = newWord.getTermName();
 			if(termKey!=null && !LangUtils.equals(termKey, "")){
 				String ret = VocChecker.lookUpAndCopy(ds, termKey,
