@@ -1,6 +1,6 @@
-// $ANTLR 3.0.1 /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/JpVocabulary.g 2014-08-31 17:13:51
+// $ANTLR 3.0.1 /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/org/sharpx/parser/antlr/JpVocabulary.g 2014-08-31 17:40:35
 
-package org.sharp.parser.antlr;
+package org.sharpx.parser.antlr;
 
 
 import org.antlr.runtime.*;
@@ -43,14 +43,14 @@ public class JpVocabularyLexer extends Lexer {
     public JpVocabularyLexer(CharStream input) {
         super(input);
     }
-    public String getGrammarFileName() { return "/home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/JpVocabulary.g"; }
+    public String getGrammarFileName() { return "/home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/org/sharpx/parser/antlr/JpVocabulary.g"; }
 
     // $ANTLR start ANMALI
     public final void mANMALI() throws RecognitionException {
         try {
             int _type = ANMALI;
-            // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/JpVocabulary.g:214:8: ( '\\u3042\\u3093\\u307E\\u308A\\u3000\\uFF08\\u526F\\uFF09 \\u592A\\uFF0C\\u975E\\u5E38\\uFF0C\\u8FC7\\u4E8E' )
-            // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/JpVocabulary.g:214:10: '\\u3042\\u3093\\u307E\\u308A\\u3000\\uFF08\\u526F\\uFF09 \\u592A\\uFF0C\\u975E\\u5E38\\uFF0C\\u8FC7\\u4E8E'
+            // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/org/sharpx/parser/antlr/JpVocabulary.g:214:8: ( '\\u3042\\u3093\\u307E\\u308A\\u3000\\uFF08\\u526F\\uFF09 \\u592A\\uFF0C\\u975E\\u5E38\\uFF0C\\u8FC7\\u4E8E' )
+            // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/org/sharpx/parser/antlr/JpVocabulary.g:214:10: '\\u3042\\u3093\\u307E\\u308A\\u3000\\uFF08\\u526F\\uFF09 \\u592A\\uFF0C\\u975E\\u5E38\\uFF0C\\u8FC7\\u4E8E'
             {
             match("\u3042\u3093\u307E\u308A\u3000\uFF08\u526F\uFF09 \u592A\uFF0C\u975E\u5E38\uFF0C\u8FC7\u4E8E"); 
 
@@ -68,8 +68,8 @@ public class JpVocabularyLexer extends Lexer {
     public final void mAQIUSEIDEN() throws RecognitionException {
         try {
             int _type = AQIUSEIDEN;
-            // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/JpVocabulary.g:215:12: ( '\\u3042\\u30AD\\u30E5\\u30FC\\u305B\\u3044\\u3067\\u3093\\uFF08\\u963FQ\\u6B63\\u4F1D\\uFF3B\\u4E13\\uFF3D\\uFF09\\u963FQ\\u6B63\\u4F20' )
-            // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/JpVocabulary.g:215:13: '\\u3042\\u30AD\\u30E5\\u30FC\\u305B\\u3044\\u3067\\u3093\\uFF08\\u963FQ\\u6B63\\u4F1D\\uFF3B\\u4E13\\uFF3D\\uFF09\\u963FQ\\u6B63\\u4F20'
+            // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/org/sharpx/parser/antlr/JpVocabulary.g:215:12: ( '\\u3042\\u30AD\\u30E5\\u30FC\\u305B\\u3044\\u3067\\u3093\\uFF08\\u963FQ\\u6B63\\u4F1D\\uFF3B\\u4E13\\uFF3D\\uFF09\\u963FQ\\u6B63\\u4F20' )
+            // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/org/sharpx/parser/antlr/JpVocabulary.g:215:13: '\\u3042\\u30AD\\u30E5\\u30FC\\u305B\\u3044\\u3067\\u3093\\uFF08\\u963FQ\\u6B63\\u4F1D\\uFF3B\\u4E13\\uFF3D\\uFF09\\u963FQ\\u6B63\\u4F20'
             {
             match("\u3042\u30AD\u30E5\u30FC\u305B\u3044\u3067\u3093\uFF08\u963FQ\u6B63\u4F1D\uFF3B\u4E13\uFF3D\uFF09\u963FQ\u6B63\u4F20"); 
 
@@ -87,8 +87,8 @@ public class JpVocabularyLexer extends Lexer {
     public final void mMANRINOQIOJIO() throws RecognitionException {
         try {
             int _type = MANRINOQIOJIO;
-            // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/JpVocabulary.g:216:15: ( '\\u3070\\u3093\\u308A\\u306E\\u3061\\u3087\\u3046\\u3058\\u3087\\u3046\\uFF08\\u4E07\\u91CC\\u306E\\u9577\\u57CE \\u3014\\u4E13\\u3015 \\u4E07\\u91CC\\u957F\\u57CE' )
-            // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/JpVocabulary.g:216:16: '\\u3070\\u3093\\u308A\\u306E\\u3061\\u3087\\u3046\\u3058\\u3087\\u3046\\uFF08\\u4E07\\u91CC\\u306E\\u9577\\u57CE \\u3014\\u4E13\\u3015 \\u4E07\\u91CC\\u957F\\u57CE'
+            // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/org/sharpx/parser/antlr/JpVocabulary.g:216:15: ( '\\u3070\\u3093\\u308A\\u306E\\u3061\\u3087\\u3046\\u3058\\u3087\\u3046\\uFF08\\u4E07\\u91CC\\u306E\\u9577\\u57CE \\u3014\\u4E13\\u3015 \\u4E07\\u91CC\\u957F\\u57CE' )
+            // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/org/sharpx/parser/antlr/JpVocabulary.g:216:16: '\\u3070\\u3093\\u308A\\u306E\\u3061\\u3087\\u3046\\u3058\\u3087\\u3046\\uFF08\\u4E07\\u91CC\\u306E\\u9577\\u57CE \\u3014\\u4E13\\u3015 \\u4E07\\u91CC\\u957F\\u57CE'
             {
             match("\u3070\u3093\u308A\u306E\u3061\u3087\u3046\u3058\u3087\u3046\uFF08\u4E07\u91CC\u306E\u9577\u57CE \u3014\u4E13\u3015 \u4E07\u91CC\u957F\u57CE"); 
 
@@ -106,8 +106,8 @@ public class JpVocabularyLexer extends Lexer {
     public final void mKOI() throws RecognitionException {
         try {
             int _type = KOI;
-            // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/JpVocabulary.g:217:5: ( '\\u67E5\\uFF08\\u770B\\uFF09\\uFF0C\\u5F04\\u6E05' )
-            // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/JpVocabulary.g:217:7: '\\u67E5\\uFF08\\u770B\\uFF09\\uFF0C\\u5F04\\u6E05'
+            // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/org/sharpx/parser/antlr/JpVocabulary.g:217:5: ( '\\u67E5\\uFF08\\u770B\\uFF09\\uFF0C\\u5F04\\u6E05' )
+            // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/org/sharpx/parser/antlr/JpVocabulary.g:217:7: '\\u67E5\\uFF08\\u770B\\uFF09\\uFF0C\\u5F04\\u6E05'
             {
             match("\u67E5\uFF08\u770B\uFF09\uFF0C\u5F04\u6E05"); 
 
@@ -125,8 +125,8 @@ public class JpVocabularyLexer extends Lexer {
     public final void mWADAXI() throws RecognitionException {
         try {
             int _type = WADAXI;
-            // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/JpVocabulary.g:218:9: ( '\\u3092\\u305F\\u3057 \\u3014\\u4EE3\\u3015 \\u6211' )
-            // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/JpVocabulary.g:218:11: '\\u3092\\u305F\\u3057 \\u3014\\u4EE3\\u3015 \\u6211'
+            // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/org/sharpx/parser/antlr/JpVocabulary.g:218:9: ( '\\u3092\\u305F\\u3057 \\u3014\\u4EE3\\u3015 \\u6211' )
+            // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/org/sharpx/parser/antlr/JpVocabulary.g:218:11: '\\u3092\\u305F\\u3057 \\u3014\\u4EE3\\u3015 \\u6211'
             {
             match("\u3092\u305F\u3057 \u3014\u4EE3\u3015 \u6211"); 
 
@@ -144,10 +144,10 @@ public class JpVocabularyLexer extends Lexer {
     public final void mPronun() throws RecognitionException {
         try {
             int _type = Pronun;
-            // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/JpVocabulary.g:221:5: ( ( HINA | KATA )+ )
-            // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/JpVocabulary.g:221:7: ( HINA | KATA )+
+            // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/org/sharpx/parser/antlr/JpVocabulary.g:221:5: ( ( HINA | KATA )+ )
+            // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/org/sharpx/parser/antlr/JpVocabulary.g:221:7: ( HINA | KATA )+
             {
-            // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/JpVocabulary.g:221:7: ( HINA | KATA )+
+            // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/org/sharpx/parser/antlr/JpVocabulary.g:221:7: ( HINA | KATA )+
             int cnt1=0;
             loop1:
             do {
@@ -161,7 +161,7 @@ public class JpVocabularyLexer extends Lexer {
 
                 switch (alt1) {
             	case 1 :
-            	    // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/JpVocabulary.g:
+            	    // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/org/sharpx/parser/antlr/JpVocabulary.g:
             	    {
             	    if ( (input.LA(1)>='\u3040' && input.LA(1)<='\u30FF') ) {
             	        input.consume();
@@ -200,11 +200,11 @@ public class JpVocabularyLexer extends Lexer {
     public final void mWriting() throws RecognitionException {
         try {
             int _type = Writing;
-            // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/JpVocabulary.g:225:5: ( LPA ( JPCHAR | DIGIT | ALPHA | FTILDE | WRT_PUNC )+ RPA )
-            // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/JpVocabulary.g:225:7: LPA ( JPCHAR | DIGIT | ALPHA | FTILDE | WRT_PUNC )+ RPA
+            // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/org/sharpx/parser/antlr/JpVocabulary.g:225:5: ( LPA ( JPCHAR | DIGIT | ALPHA | FTILDE | WRT_PUNC )+ RPA )
+            // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/org/sharpx/parser/antlr/JpVocabulary.g:225:7: LPA ( JPCHAR | DIGIT | ALPHA | FTILDE | WRT_PUNC )+ RPA
             {
             mLPA(); 
-            // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/JpVocabulary.g:225:11: ( JPCHAR | DIGIT | ALPHA | FTILDE | WRT_PUNC )+
+            // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/org/sharpx/parser/antlr/JpVocabulary.g:225:11: ( JPCHAR | DIGIT | ALPHA | FTILDE | WRT_PUNC )+
             int cnt2=0;
             loop2:
             do {
@@ -218,7 +218,7 @@ public class JpVocabularyLexer extends Lexer {
 
                 switch (alt2) {
             	case 1 :
-            	    // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/JpVocabulary.g:
+            	    // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/org/sharpx/parser/antlr/JpVocabulary.g:
             	    {
             	    if ( (input.LA(1)>='0' && input.LA(1)<='9')||(input.LA(1)>='A' && input.LA(1)<='Z')||(input.LA(1)>='a' && input.LA(1)<='z')||input.LA(1)=='\u3005'||(input.LA(1)>='\u3040' && input.LA(1)<='\u30FF')||(input.LA(1)>='\u4E00' && input.LA(1)<='\u9FA5')||(input.LA(1)>='\uFF10' && input.LA(1)<='\uFF19')||(input.LA(1)>='\uFF21' && input.LA(1)<='\uFF3A')||(input.LA(1)>='\uFF41' && input.LA(1)<='\uFF5A')||input.LA(1)=='\uFF5E' ) {
             	        input.consume();
@@ -258,12 +258,12 @@ public class JpVocabularyLexer extends Lexer {
     public final void mPartOfSpeech() throws RecognitionException {
         try {
             int _type = PartOfSpeech;
-            // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/JpVocabulary.g:229:5: ( LBR KANJI ( KANJI )? ( DIGIT )? RBR )
-            // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/JpVocabulary.g:229:7: LBR KANJI ( KANJI )? ( DIGIT )? RBR
+            // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/org/sharpx/parser/antlr/JpVocabulary.g:229:5: ( LBR KANJI ( KANJI )? ( DIGIT )? RBR )
+            // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/org/sharpx/parser/antlr/JpVocabulary.g:229:7: LBR KANJI ( KANJI )? ( DIGIT )? RBR
             {
             mLBR(); 
             mKANJI(); 
-            // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/JpVocabulary.g:229:17: ( KANJI )?
+            // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/org/sharpx/parser/antlr/JpVocabulary.g:229:17: ( KANJI )?
             int alt3=2;
             int LA3_0 = input.LA(1);
 
@@ -272,7 +272,7 @@ public class JpVocabularyLexer extends Lexer {
             }
             switch (alt3) {
                 case 1 :
-                    // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/JpVocabulary.g:229:17: KANJI
+                    // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/org/sharpx/parser/antlr/JpVocabulary.g:229:17: KANJI
                     {
                     mKANJI(); 
 
@@ -281,7 +281,7 @@ public class JpVocabularyLexer extends Lexer {
 
             }
 
-            // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/JpVocabulary.g:229:24: ( DIGIT )?
+            // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/org/sharpx/parser/antlr/JpVocabulary.g:229:24: ( DIGIT )?
             int alt4=2;
             int LA4_0 = input.LA(1);
 
@@ -290,7 +290,7 @@ public class JpVocabularyLexer extends Lexer {
             }
             switch (alt4) {
                 case 1 :
-                    // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/JpVocabulary.g:229:24: DIGIT
+                    // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/org/sharpx/parser/antlr/JpVocabulary.g:229:24: DIGIT
                     {
                     mDIGIT(); 
 
@@ -314,7 +314,7 @@ public class JpVocabularyLexer extends Lexer {
     public final void mExpl() throws RecognitionException {
         try {
             int _type = Expl;
-            // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/JpVocabulary.g:233:5: ( ( KANJI | ALPHA | PUNC | FTILDE ) ( KANJI | ALPHA | PUNC | FTILDE | LBR | RBR | LPA | RPA )* ( KANJI | ALPHA | PUNC | RPA | RBR ) | KANJI )
+            // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/org/sharpx/parser/antlr/JpVocabulary.g:233:5: ( ( KANJI | ALPHA | PUNC | FTILDE ) ( KANJI | ALPHA | PUNC | FTILDE | LBR | RBR | LPA | RPA )* ( KANJI | ALPHA | PUNC | RPA | RBR ) | KANJI )
             int alt6=2;
             int LA6_0 = input.LA(1);
 
@@ -338,7 +338,7 @@ public class JpVocabularyLexer extends Lexer {
             }
             switch (alt6) {
                 case 1 :
-                    // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/JpVocabulary.g:233:7: ( KANJI | ALPHA | PUNC | FTILDE ) ( KANJI | ALPHA | PUNC | FTILDE | LBR | RBR | LPA | RPA )* ( KANJI | ALPHA | PUNC | RPA | RBR )
+                    // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/org/sharpx/parser/antlr/JpVocabulary.g:233:7: ( KANJI | ALPHA | PUNC | FTILDE ) ( KANJI | ALPHA | PUNC | FTILDE | LBR | RBR | LPA | RPA )* ( KANJI | ALPHA | PUNC | RPA | RBR )
                     {
                     if ( (input.LA(1)>='A' && input.LA(1)<='Z')||(input.LA(1)>='a' && input.LA(1)<='z')||input.LA(1)=='\u2026'||(input.LA(1)>='\u4E00' && input.LA(1)<='\u9FA5')||input.LA(1)=='\uFF02'||input.LA(1)=='\uFF0C'||input.LA(1)=='\uFF0F'||(input.LA(1)>='\uFF1B' && input.LA(1)<='\uFF1C')||input.LA(1)=='\uFF1E'||(input.LA(1)>='\uFF21' && input.LA(1)<='\uFF3A')||(input.LA(1)>='\uFF41' && input.LA(1)<='\uFF5A')||input.LA(1)=='\uFF5E' ) {
                         input.consume();
@@ -350,7 +350,7 @@ public class JpVocabularyLexer extends Lexer {
                         recover(mse);    throw mse;
                     }
 
-                    // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/JpVocabulary.g:234:6: ( KANJI | ALPHA | PUNC | FTILDE | LBR | RBR | LPA | RPA )*
+                    // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/org/sharpx/parser/antlr/JpVocabulary.g:234:6: ( KANJI | ALPHA | PUNC | FTILDE | LBR | RBR | LPA | RPA )*
                     loop5:
                     do {
                         int alt5=2;
@@ -372,7 +372,7 @@ public class JpVocabularyLexer extends Lexer {
 
                         switch (alt5) {
                     	case 1 :
-                    	    // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/JpVocabulary.g:
+                    	    // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/org/sharpx/parser/antlr/JpVocabulary.g:
                     	    {
                     	    if ( (input.LA(1)>='(' && input.LA(1)<=')')||(input.LA(1)>='A' && input.LA(1)<='[')||input.LA(1)==']'||(input.LA(1)>='a' && input.LA(1)<='z')||input.LA(1)=='\u2026'||(input.LA(1)>='\u3014' && input.LA(1)<='\u3015')||(input.LA(1)>='\u4E00' && input.LA(1)<='\u9FA5')||input.LA(1)=='\uFF02'||(input.LA(1)>='\uFF08' && input.LA(1)<='\uFF09')||input.LA(1)=='\uFF0C'||input.LA(1)=='\uFF0F'||(input.LA(1)>='\uFF1B' && input.LA(1)<='\uFF1C')||input.LA(1)=='\uFF1E'||(input.LA(1)>='\uFF21' && input.LA(1)<='\uFF3B')||input.LA(1)=='\uFF3D'||(input.LA(1)>='\uFF41' && input.LA(1)<='\uFF5A')||input.LA(1)=='\uFF5E' ) {
                     	        input.consume();
@@ -407,7 +407,7 @@ public class JpVocabularyLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/JpVocabulary.g:236:7: KANJI
+                    // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/org/sharpx/parser/antlr/JpVocabulary.g:236:7: KANJI
                     {
                     mKANJI(); 
 
@@ -436,14 +436,14 @@ public class JpVocabularyLexer extends Lexer {
             Token GRM_PUNC2=null;
 
             String pronu="";
-            // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/JpVocabulary.g:244:5: (ft1= FTILDE (h1= HINA | k1= KATA ) (h2= HINA | k2= KATA | KANJI | GRM_PUNC | LPA | RPA | ft2= FTILDE )* )
-            // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/JpVocabulary.g:244:7: ft1= FTILDE (h1= HINA | k1= KATA ) (h2= HINA | k2= KATA | KANJI | GRM_PUNC | LPA | RPA | ft2= FTILDE )*
+            // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/org/sharpx/parser/antlr/JpVocabulary.g:244:5: (ft1= FTILDE (h1= HINA | k1= KATA ) (h2= HINA | k2= KATA | KANJI | GRM_PUNC | LPA | RPA | ft2= FTILDE )* )
+            // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/org/sharpx/parser/antlr/JpVocabulary.g:244:7: ft1= FTILDE (h1= HINA | k1= KATA ) (h2= HINA | k2= KATA | KANJI | GRM_PUNC | LPA | RPA | ft2= FTILDE )*
             {
             int ft1Start297 = getCharIndex();
             mFTILDE(); 
             ft1 = new CommonToken(input, Token.INVALID_TOKEN_TYPE, Token.DEFAULT_CHANNEL, ft1Start297, getCharIndex()-1);
             pronu+=ft1.getText();
-            // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/JpVocabulary.g:245:7: (h1= HINA | k1= KATA )
+            // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/org/sharpx/parser/antlr/JpVocabulary.g:245:7: (h1= HINA | k1= KATA )
             int alt7=2;
             int LA7_0 = input.LA(1);
 
@@ -461,7 +461,7 @@ public class JpVocabularyLexer extends Lexer {
             }
             switch (alt7) {
                 case 1 :
-                    // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/JpVocabulary.g:245:8: h1= HINA
+                    // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/org/sharpx/parser/antlr/JpVocabulary.g:245:8: h1= HINA
                     {
                     int h1Start309 = getCharIndex();
                     mHINA(); 
@@ -471,7 +471,7 @@ public class JpVocabularyLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/JpVocabulary.g:245:36: k1= KATA
+                    // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/org/sharpx/parser/antlr/JpVocabulary.g:245:36: k1= KATA
                     {
                     int k1Start316 = getCharIndex();
                     mKATA(); 
@@ -483,7 +483,7 @@ public class JpVocabularyLexer extends Lexer {
 
             }
 
-            // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/JpVocabulary.g:246:7: (h2= HINA | k2= KATA | KANJI | GRM_PUNC | LPA | RPA | ft2= FTILDE )*
+            // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/org/sharpx/parser/antlr/JpVocabulary.g:246:7: (h2= HINA | k2= KATA | KANJI | GRM_PUNC | LPA | RPA | ft2= FTILDE )*
             loop8:
             do {
                 int alt8=8;
@@ -514,7 +514,7 @@ public class JpVocabularyLexer extends Lexer {
 
                 switch (alt8) {
             	case 1 :
-            	    // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/JpVocabulary.g:246:9: h2= HINA
+            	    // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/org/sharpx/parser/antlr/JpVocabulary.g:246:9: h2= HINA
             	    {
             	    int h2Start330 = getCharIndex();
             	    mHINA(); 
@@ -524,7 +524,7 @@ public class JpVocabularyLexer extends Lexer {
             	    }
             	    break;
             	case 2 :
-            	    // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/JpVocabulary.g:246:37: k2= KATA
+            	    // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/org/sharpx/parser/antlr/JpVocabulary.g:246:37: k2= KATA
             	    {
             	    int k2Start337 = getCharIndex();
             	    mKATA(); 
@@ -534,7 +534,7 @@ public class JpVocabularyLexer extends Lexer {
             	    }
             	    break;
             	case 3 :
-            	    // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/JpVocabulary.g:247:11: KANJI
+            	    // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/org/sharpx/parser/antlr/JpVocabulary.g:247:11: KANJI
             	    {
             	    int KANJI1Start351 = getCharIndex();
             	    mKANJI(); 
@@ -544,7 +544,7 @@ public class JpVocabularyLexer extends Lexer {
             	    }
             	    break;
             	case 4 :
-            	    // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/JpVocabulary.g:247:40: GRM_PUNC
+            	    // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/org/sharpx/parser/antlr/JpVocabulary.g:247:40: GRM_PUNC
             	    {
             	    int GRM_PUNC2Start356 = getCharIndex();
             	    mGRM_PUNC(); 
@@ -554,21 +554,21 @@ public class JpVocabularyLexer extends Lexer {
             	    }
             	    break;
             	case 5 :
-            	    // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/JpVocabulary.g:248:11: LPA
+            	    // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/org/sharpx/parser/antlr/JpVocabulary.g:248:11: LPA
             	    {
             	    mLPA(); 
 
             	    }
             	    break;
             	case 6 :
-            	    // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/JpVocabulary.g:248:17: RPA
+            	    // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/org/sharpx/parser/antlr/JpVocabulary.g:248:17: RPA
             	    {
             	    mRPA(); 
 
             	    }
             	    break;
             	case 7 :
-            	    // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/JpVocabulary.g:248:23: ft2= FTILDE
+            	    // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/org/sharpx/parser/antlr/JpVocabulary.g:248:23: ft2= FTILDE
             	    {
             	    int ft2Start381 = getCharIndex();
             	    mFTILDE(); 
@@ -604,14 +604,14 @@ public class JpVocabularyLexer extends Lexer {
             Token KANJI4=null;
 
             String wr="";String pronu="";
-            // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/JpVocabulary.g:256:5: ( FTILDE ( KANJI )+ (h1= HINA )* )
-            // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/JpVocabulary.g:256:7: FTILDE ( KANJI )+ (h1= HINA )*
+            // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/org/sharpx/parser/antlr/JpVocabulary.g:256:5: ( FTILDE ( KANJI )+ (h1= HINA )* )
+            // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/org/sharpx/parser/antlr/JpVocabulary.g:256:7: FTILDE ( KANJI )+ (h1= HINA )*
             {
             int FTILDE3Start420 = getCharIndex();
             mFTILDE(); 
             FTILDE3 = new CommonToken(input, Token.INVALID_TOKEN_TYPE, Token.DEFAULT_CHANNEL, FTILDE3Start420, getCharIndex()-1);
             wr+=FTILDE3.getText();
-            // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/JpVocabulary.g:257:7: ( KANJI )+
+            // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/org/sharpx/parser/antlr/JpVocabulary.g:257:7: ( KANJI )+
             int cnt9=0;
             loop9:
             do {
@@ -625,7 +625,7 @@ public class JpVocabularyLexer extends Lexer {
 
                 switch (alt9) {
             	case 1 :
-            	    // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/JpVocabulary.g:257:8: KANJI
+            	    // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/org/sharpx/parser/antlr/JpVocabulary.g:257:8: KANJI
             	    {
             	    int KANJI4Start431 = getCharIndex();
             	    mKANJI(); 
@@ -644,7 +644,7 @@ public class JpVocabularyLexer extends Lexer {
                 cnt9++;
             } while (true);
 
-            // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/JpVocabulary.g:257:34: (h1= HINA )*
+            // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/org/sharpx/parser/antlr/JpVocabulary.g:257:34: (h1= HINA )*
             loop10:
             do {
                 int alt10=2;
@@ -657,7 +657,7 @@ public class JpVocabularyLexer extends Lexer {
 
                 switch (alt10) {
             	case 1 :
-            	    // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/JpVocabulary.g:257:35: h1= HINA
+            	    // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/org/sharpx/parser/antlr/JpVocabulary.g:257:35: h1= HINA
             	    {
             	    int h1Start439 = getCharIndex();
             	    mHINA(); 
@@ -694,14 +694,14 @@ public class JpVocabularyLexer extends Lexer {
             Token KANJI6=null;
 
             String wr="";String pronu="";
-            // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/JpVocabulary.g:265:5: ( FTILDE ( KANJI )+ (h1= HINA )* LPA (h2= HINA )+ RPA )
-            // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/JpVocabulary.g:265:7: FTILDE ( KANJI )+ (h1= HINA )* LPA (h2= HINA )+ RPA
+            // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/org/sharpx/parser/antlr/JpVocabulary.g:265:5: ( FTILDE ( KANJI )+ (h1= HINA )* LPA (h2= HINA )+ RPA )
+            // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/org/sharpx/parser/antlr/JpVocabulary.g:265:7: FTILDE ( KANJI )+ (h1= HINA )* LPA (h2= HINA )+ RPA
             {
             int FTILDE5Start483 = getCharIndex();
             mFTILDE(); 
             FTILDE5 = new CommonToken(input, Token.INVALID_TOKEN_TYPE, Token.DEFAULT_CHANNEL, FTILDE5Start483, getCharIndex()-1);
             wr+=FTILDE5.getText();
-            // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/JpVocabulary.g:266:7: ( KANJI )+
+            // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/org/sharpx/parser/antlr/JpVocabulary.g:266:7: ( KANJI )+
             int cnt11=0;
             loop11:
             do {
@@ -715,7 +715,7 @@ public class JpVocabularyLexer extends Lexer {
 
                 switch (alt11) {
             	case 1 :
-            	    // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/JpVocabulary.g:266:8: KANJI
+            	    // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/org/sharpx/parser/antlr/JpVocabulary.g:266:8: KANJI
             	    {
             	    int KANJI6Start494 = getCharIndex();
             	    mKANJI(); 
@@ -734,7 +734,7 @@ public class JpVocabularyLexer extends Lexer {
                 cnt11++;
             } while (true);
 
-            // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/JpVocabulary.g:266:34: (h1= HINA )*
+            // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/org/sharpx/parser/antlr/JpVocabulary.g:266:34: (h1= HINA )*
             loop12:
             do {
                 int alt12=2;
@@ -747,7 +747,7 @@ public class JpVocabularyLexer extends Lexer {
 
                 switch (alt12) {
             	case 1 :
-            	    // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/JpVocabulary.g:266:35: h1= HINA
+            	    // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/org/sharpx/parser/antlr/JpVocabulary.g:266:35: h1= HINA
             	    {
             	    int h1Start502 = getCharIndex();
             	    mHINA(); 
@@ -763,7 +763,7 @@ public class JpVocabularyLexer extends Lexer {
             } while (true);
 
             mLPA(); 
-            // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/JpVocabulary.g:267:11: (h2= HINA )+
+            // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/org/sharpx/parser/antlr/JpVocabulary.g:267:11: (h2= HINA )+
             int cnt13=0;
             loop13:
             do {
@@ -777,7 +777,7 @@ public class JpVocabularyLexer extends Lexer {
 
                 switch (alt13) {
             	case 1 :
-            	    // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/JpVocabulary.g:267:12: h2= HINA
+            	    // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/org/sharpx/parser/antlr/JpVocabulary.g:267:12: h2= HINA
             	    {
             	    int h2Start519 = getCharIndex();
             	    mHINA(); 
@@ -813,8 +813,8 @@ public class JpVocabularyLexer extends Lexer {
     public final void mLPA() throws RecognitionException {
         try {
             int _type = LPA;
-            // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/JpVocabulary.g:270:7: ( '(' | '\\uff08' )
-            // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/JpVocabulary.g:
+            // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/org/sharpx/parser/antlr/JpVocabulary.g:270:7: ( '(' | '\\uff08' )
+            // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/org/sharpx/parser/antlr/JpVocabulary.g:
             {
             if ( input.LA(1)=='('||input.LA(1)=='\uFF08' ) {
                 input.consume();
@@ -840,8 +840,8 @@ public class JpVocabularyLexer extends Lexer {
     public final void mRPA() throws RecognitionException {
         try {
             int _type = RPA;
-            // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/JpVocabulary.g:271:7: ( ')' | '\\uff09' )
-            // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/JpVocabulary.g:
+            // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/org/sharpx/parser/antlr/JpVocabulary.g:271:7: ( ')' | '\\uff09' )
+            // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/org/sharpx/parser/antlr/JpVocabulary.g:
             {
             if ( input.LA(1)==')'||input.LA(1)=='\uFF09' ) {
                 input.consume();
@@ -867,8 +867,8 @@ public class JpVocabularyLexer extends Lexer {
     public final void mFTILDE() throws RecognitionException {
         try {
             int _type = FTILDE;
-            // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/JpVocabulary.g:272:9: ( '\\uff53' | '\\uff5e' )
-            // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/JpVocabulary.g:
+            // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/org/sharpx/parser/antlr/JpVocabulary.g:272:9: ( '\\uff53' | '\\uff5e' )
+            // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/org/sharpx/parser/antlr/JpVocabulary.g:
             {
             if ( input.LA(1)=='\uFF53'||input.LA(1)=='\uFF5E' ) {
                 input.consume();
@@ -893,8 +893,8 @@ public class JpVocabularyLexer extends Lexer {
     // $ANTLR start JPCHAR
     public final void mJPCHAR() throws RecognitionException {
         try {
-            // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/JpVocabulary.g:276:7: ( HINA | KATA | KANJI )
-            // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/JpVocabulary.g:
+            // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/org/sharpx/parser/antlr/JpVocabulary.g:276:7: ( HINA | KATA | KANJI )
+            // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/org/sharpx/parser/antlr/JpVocabulary.g:
             {
             if ( (input.LA(1)>='\u3040' && input.LA(1)<='\u30FF')||(input.LA(1)>='\u4E00' && input.LA(1)<='\u9FA5') ) {
                 input.consume();
@@ -918,8 +918,8 @@ public class JpVocabularyLexer extends Lexer {
     // $ANTLR start LBR
     public final void mLBR() throws RecognitionException {
         try {
-            // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/JpVocabulary.g:279:7: ( '[' | '\\u3014' | '\\uff3b' )
-            // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/JpVocabulary.g:
+            // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/org/sharpx/parser/antlr/JpVocabulary.g:279:7: ( '[' | '\\u3014' | '\\uff3b' )
+            // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/org/sharpx/parser/antlr/JpVocabulary.g:
             {
             if ( input.LA(1)=='['||input.LA(1)=='\u3014'||input.LA(1)=='\uFF3B' ) {
                 input.consume();
@@ -943,8 +943,8 @@ public class JpVocabularyLexer extends Lexer {
     // $ANTLR start RBR
     public final void mRBR() throws RecognitionException {
         try {
-            // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/JpVocabulary.g:282:7: ( ']' | '\\u3015' | '\\uff3d' )
-            // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/JpVocabulary.g:
+            // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/org/sharpx/parser/antlr/JpVocabulary.g:282:7: ( ']' | '\\u3015' | '\\uff3d' )
+            // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/org/sharpx/parser/antlr/JpVocabulary.g:
             {
             if ( input.LA(1)==']'||input.LA(1)=='\u3015'||input.LA(1)=='\uFF3D' ) {
                 input.consume();
@@ -968,8 +968,8 @@ public class JpVocabularyLexer extends Lexer {
     // $ANTLR start ALPHA
     public final void mALPHA() throws RecognitionException {
         try {
-            // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/JpVocabulary.g:285:9: ( 'a' .. 'z' | 'A' .. 'Z' | '\\uff21' .. '\\uff3a' | '\\uff41' .. '\\uff5a' )
-            // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/JpVocabulary.g:
+            // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/org/sharpx/parser/antlr/JpVocabulary.g:285:9: ( 'a' .. 'z' | 'A' .. 'Z' | '\\uff21' .. '\\uff3a' | '\\uff41' .. '\\uff5a' )
+            // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/org/sharpx/parser/antlr/JpVocabulary.g:
             {
             if ( (input.LA(1)>='A' && input.LA(1)<='Z')||(input.LA(1)>='a' && input.LA(1)<='z')||(input.LA(1)>='\uFF21' && input.LA(1)<='\uFF3A')||(input.LA(1)>='\uFF41' && input.LA(1)<='\uFF5A') ) {
                 input.consume();
@@ -993,8 +993,8 @@ public class JpVocabularyLexer extends Lexer {
     // $ANTLR start DIGIT
     public final void mDIGIT() throws RecognitionException {
         try {
-            // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/JpVocabulary.g:288:9: ( '0' .. '9' | '\\UFF10' .. '\\UFF19' )
-            // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/JpVocabulary.g:
+            // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/org/sharpx/parser/antlr/JpVocabulary.g:288:9: ( '0' .. '9' | '\\UFF10' .. '\\UFF19' )
+            // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/org/sharpx/parser/antlr/JpVocabulary.g:
             {
             if ( (input.LA(1)>='0' && input.LA(1)<='9')||(input.LA(1)>='\uFF10' && input.LA(1)<='\uFF19') ) {
                 input.consume();
@@ -1018,8 +1018,8 @@ public class JpVocabularyLexer extends Lexer {
     // $ANTLR start KANJI
     public final void mKANJI() throws RecognitionException {
         try {
-            // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/JpVocabulary.g:291:9: ( '\\u4E00' .. '\\u9FA5' )
-            // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/JpVocabulary.g:291:11: '\\u4E00' .. '\\u9FA5'
+            // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/org/sharpx/parser/antlr/JpVocabulary.g:291:9: ( '\\u4E00' .. '\\u9FA5' )
+            // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/org/sharpx/parser/antlr/JpVocabulary.g:291:11: '\\u4E00' .. '\\u9FA5'
             {
             matchRange('\u4E00','\u9FA5'); 
 
@@ -1034,8 +1034,8 @@ public class JpVocabularyLexer extends Lexer {
     // $ANTLR start HINA
     public final void mHINA() throws RecognitionException {
         try {
-            // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/JpVocabulary.g:294:9: ( '\\u3040' .. '\\u309F' )
-            // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/JpVocabulary.g:294:11: '\\u3040' .. '\\u309F'
+            // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/org/sharpx/parser/antlr/JpVocabulary.g:294:9: ( '\\u3040' .. '\\u309F' )
+            // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/org/sharpx/parser/antlr/JpVocabulary.g:294:11: '\\u3040' .. '\\u309F'
             {
             matchRange('\u3040','\u309F'); 
 
@@ -1050,8 +1050,8 @@ public class JpVocabularyLexer extends Lexer {
     // $ANTLR start KATA
     public final void mKATA() throws RecognitionException {
         try {
-            // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/JpVocabulary.g:297:9: ( '\\u30A0' .. '\\u30FF' )
-            // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/JpVocabulary.g:297:11: '\\u30A0' .. '\\u30FF'
+            // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/org/sharpx/parser/antlr/JpVocabulary.g:297:9: ( '\\u30A0' .. '\\u30FF' )
+            // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/org/sharpx/parser/antlr/JpVocabulary.g:297:11: '\\u30A0' .. '\\u30FF'
             {
             matchRange('\u30A0','\u30FF'); 
 
@@ -1066,8 +1066,8 @@ public class JpVocabularyLexer extends Lexer {
     // $ANTLR start PUNC
     public final void mPUNC() throws RecognitionException {
         try {
-            // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/JpVocabulary.g:300:9: ( '\\uFF0C' | '\\uFF5E' | '\\uFF1B' | '\\UFF02' | '\\u2026' | '\\uFF0F' | '\\uFF1C' | '\\uFF1E' )
-            // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/JpVocabulary.g:
+            // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/org/sharpx/parser/antlr/JpVocabulary.g:300:9: ( '\\uFF0C' | '\\uFF5E' | '\\uFF1B' | '\\UFF02' | '\\u2026' | '\\uFF0F' | '\\uFF1C' | '\\uFF1E' )
+            // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/org/sharpx/parser/antlr/JpVocabulary.g:
             {
             if ( input.LA(1)=='\u2026'||input.LA(1)=='\uFF02'||input.LA(1)=='\uFF0C'||input.LA(1)=='\uFF0F'||(input.LA(1)>='\uFF1B' && input.LA(1)<='\uFF1C')||input.LA(1)=='\uFF1E'||input.LA(1)=='\uFF5E' ) {
                 input.consume();
@@ -1091,8 +1091,8 @@ public class JpVocabularyLexer extends Lexer {
     // $ANTLR start WRT_PUNC
     public final void mWRT_PUNC() throws RecognitionException {
         try {
-            // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/JpVocabulary.g:304:12: ( '\\u3005' )
-            // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/JpVocabulary.g:304:14: '\\u3005'
+            // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/org/sharpx/parser/antlr/JpVocabulary.g:304:12: ( '\\u3005' )
+            // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/org/sharpx/parser/antlr/JpVocabulary.g:304:14: '\\u3005'
             {
             match('\u3005'); 
 
@@ -1107,8 +1107,8 @@ public class JpVocabularyLexer extends Lexer {
     // $ANTLR start GRM_PUNC
     public final void mGRM_PUNC() throws RecognitionException {
         try {
-            // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/JpVocabulary.g:307:11: ( '\\u2215' )
-            // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/JpVocabulary.g:307:13: '\\u2215'
+            // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/org/sharpx/parser/antlr/JpVocabulary.g:307:11: ( '\\u2215' )
+            // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/org/sharpx/parser/antlr/JpVocabulary.g:307:13: '\\u2215'
             {
             match('\u2215'); 
 
@@ -1124,10 +1124,10 @@ public class JpVocabularyLexer extends Lexer {
     public final void mWS() throws RecognitionException {
         try {
             int _type = WS;
-            // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/JpVocabulary.g:309:9: ( ( ' ' | '\\u0000' | '\\t' | '\\u3000' )+ )
-            // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/JpVocabulary.g:309:11: ( ' ' | '\\u0000' | '\\t' | '\\u3000' )+
+            // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/org/sharpx/parser/antlr/JpVocabulary.g:309:9: ( ( ' ' | '\\u0000' | '\\t' | '\\u3000' )+ )
+            // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/org/sharpx/parser/antlr/JpVocabulary.g:309:11: ( ' ' | '\\u0000' | '\\t' | '\\u3000' )+
             {
-            // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/JpVocabulary.g:309:11: ( ' ' | '\\u0000' | '\\t' | '\\u3000' )+
+            // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/org/sharpx/parser/antlr/JpVocabulary.g:309:11: ( ' ' | '\\u0000' | '\\t' | '\\u3000' )+
             int cnt14=0;
             loop14:
             do {
@@ -1141,7 +1141,7 @@ public class JpVocabularyLexer extends Lexer {
 
                 switch (alt14) {
             	case 1 :
-            	    // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/JpVocabulary.g:
+            	    // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/org/sharpx/parser/antlr/JpVocabulary.g:
             	    {
             	    if ( input.LA(1)=='\u0000'||input.LA(1)=='\t'||input.LA(1)==' '||input.LA(1)=='\u3000' ) {
             	        input.consume();
@@ -1181,10 +1181,10 @@ public class JpVocabularyLexer extends Lexer {
     public final void mNEWLINE() throws RecognitionException {
         try {
             int _type = NEWLINE;
-            // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/JpVocabulary.g:311:9: ( ( '\\r' )? '\\n' )
-            // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/JpVocabulary.g:311:11: ( '\\r' )? '\\n'
+            // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/org/sharpx/parser/antlr/JpVocabulary.g:311:9: ( ( '\\r' )? '\\n' )
+            // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/org/sharpx/parser/antlr/JpVocabulary.g:311:11: ( '\\r' )? '\\n'
             {
-            // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/JpVocabulary.g:311:11: ( '\\r' )?
+            // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/org/sharpx/parser/antlr/JpVocabulary.g:311:11: ( '\\r' )?
             int alt15=2;
             int LA15_0 = input.LA(1);
 
@@ -1193,7 +1193,7 @@ public class JpVocabularyLexer extends Lexer {
             }
             switch (alt15) {
                 case 1 :
-                    // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/JpVocabulary.g:311:11: '\\r'
+                    // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/org/sharpx/parser/antlr/JpVocabulary.g:311:11: '\\r'
                     {
                     match('\r'); 
 
@@ -1214,124 +1214,124 @@ public class JpVocabularyLexer extends Lexer {
     // $ANTLR end NEWLINE
 
     public void mTokens() throws RecognitionException {
-        // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/JpVocabulary.g:1:8: ( ANMALI | AQIUSEIDEN | MANRINOQIOJIO | KOI | WADAXI | Pronun | Writing | PartOfSpeech | Expl | Suffix1 | Suffix2 | Suffix3 | LPA | RPA | FTILDE | WS | NEWLINE )
+        // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/org/sharpx/parser/antlr/JpVocabulary.g:1:8: ( ANMALI | AQIUSEIDEN | MANRINOQIOJIO | KOI | WADAXI | Pronun | Writing | PartOfSpeech | Expl | Suffix1 | Suffix2 | Suffix3 | LPA | RPA | FTILDE | WS | NEWLINE )
         int alt16=17;
         alt16 = dfa16.predict(input);
         switch (alt16) {
             case 1 :
-                // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/JpVocabulary.g:1:10: ANMALI
+                // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/org/sharpx/parser/antlr/JpVocabulary.g:1:10: ANMALI
                 {
                 mANMALI(); 
 
                 }
                 break;
             case 2 :
-                // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/JpVocabulary.g:1:17: AQIUSEIDEN
+                // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/org/sharpx/parser/antlr/JpVocabulary.g:1:17: AQIUSEIDEN
                 {
                 mAQIUSEIDEN(); 
 
                 }
                 break;
             case 3 :
-                // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/JpVocabulary.g:1:28: MANRINOQIOJIO
+                // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/org/sharpx/parser/antlr/JpVocabulary.g:1:28: MANRINOQIOJIO
                 {
                 mMANRINOQIOJIO(); 
 
                 }
                 break;
             case 4 :
-                // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/JpVocabulary.g:1:42: KOI
+                // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/org/sharpx/parser/antlr/JpVocabulary.g:1:42: KOI
                 {
                 mKOI(); 
 
                 }
                 break;
             case 5 :
-                // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/JpVocabulary.g:1:46: WADAXI
+                // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/org/sharpx/parser/antlr/JpVocabulary.g:1:46: WADAXI
                 {
                 mWADAXI(); 
 
                 }
                 break;
             case 6 :
-                // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/JpVocabulary.g:1:53: Pronun
+                // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/org/sharpx/parser/antlr/JpVocabulary.g:1:53: Pronun
                 {
                 mPronun(); 
 
                 }
                 break;
             case 7 :
-                // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/JpVocabulary.g:1:60: Writing
+                // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/org/sharpx/parser/antlr/JpVocabulary.g:1:60: Writing
                 {
                 mWriting(); 
 
                 }
                 break;
             case 8 :
-                // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/JpVocabulary.g:1:68: PartOfSpeech
+                // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/org/sharpx/parser/antlr/JpVocabulary.g:1:68: PartOfSpeech
                 {
                 mPartOfSpeech(); 
 
                 }
                 break;
             case 9 :
-                // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/JpVocabulary.g:1:81: Expl
+                // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/org/sharpx/parser/antlr/JpVocabulary.g:1:81: Expl
                 {
                 mExpl(); 
 
                 }
                 break;
             case 10 :
-                // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/JpVocabulary.g:1:86: Suffix1
+                // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/org/sharpx/parser/antlr/JpVocabulary.g:1:86: Suffix1
                 {
                 mSuffix1(); 
 
                 }
                 break;
             case 11 :
-                // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/JpVocabulary.g:1:94: Suffix2
+                // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/org/sharpx/parser/antlr/JpVocabulary.g:1:94: Suffix2
                 {
                 mSuffix2(); 
 
                 }
                 break;
             case 12 :
-                // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/JpVocabulary.g:1:102: Suffix3
+                // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/org/sharpx/parser/antlr/JpVocabulary.g:1:102: Suffix3
                 {
                 mSuffix3(); 
 
                 }
                 break;
             case 13 :
-                // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/JpVocabulary.g:1:110: LPA
+                // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/org/sharpx/parser/antlr/JpVocabulary.g:1:110: LPA
                 {
                 mLPA(); 
 
                 }
                 break;
             case 14 :
-                // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/JpVocabulary.g:1:114: RPA
+                // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/org/sharpx/parser/antlr/JpVocabulary.g:1:114: RPA
                 {
                 mRPA(); 
 
                 }
                 break;
             case 15 :
-                // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/JpVocabulary.g:1:118: FTILDE
+                // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/org/sharpx/parser/antlr/JpVocabulary.g:1:118: FTILDE
                 {
                 mFTILDE(); 
 
                 }
                 break;
             case 16 :
-                // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/JpVocabulary.g:1:125: WS
+                // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/org/sharpx/parser/antlr/JpVocabulary.g:1:125: WS
                 {
                 mWS(); 
 
                 }
                 break;
             case 17 :
-                // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/JpVocabulary.g:1:128: NEWLINE
+                // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/org/sharpx/parser/antlr/JpVocabulary.g:1:128: NEWLINE
                 {
                 mNEWLINE(); 
 

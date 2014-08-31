@@ -6,11 +6,11 @@ options {
 }
 
 @header{
-package org.sharp.parser.antlr;
+package org.sharpx.parser.antlr;
 }
 
 @lexer::header{
-package org.sharp.parser.antlr;
+package org.sharpx.parser.antlr;
 }
 
 @rulecatch {

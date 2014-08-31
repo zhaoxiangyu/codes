@@ -1,6 +1,6 @@
-// $ANTLR 3.0.1 /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/JpVocabulary.g 2014-08-31 17:13:51
+// $ANTLR 3.0.1 /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/org/sharpx/parser/antlr/JpVocabulary.g 2014-08-31 17:40:35
 
-package org.sharp.parser.antlr;
+package org.sharpx.parser.antlr;
 
 
 import org.antlr.runtime.*;
@@ -48,7 +48,7 @@ public class JpVocabularyParser extends BaseParser {
         
 
     public String[] getTokenNames() { return tokenNames; }
-    public String getGrammarFileName() { return "/home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/JpVocabulary.g"; }
+    public String getGrammarFileName() { return "/home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/org/sharpx/parser/antlr/JpVocabulary.g"; }
 
 
       private String emptyIfNull(String str){
@@ -61,20 +61,20 @@ public class JpVocabularyParser extends BaseParser {
 
 
     // $ANTLR start voclist
-    // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/JpVocabulary.g:31:1: voclist : ( ( vocabulary )? NEWLINE )+ ;
+    // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/org/sharpx/parser/antlr/JpVocabulary.g:31:1: voclist : ( ( vocabulary )? NEWLINE )+ ;
     public final void voclist() throws RecognitionException {
         vocabulary_return vocabulary1 = null;
 
 
         try {
-            // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/JpVocabulary.g:32:5: ( ( ( vocabulary )? NEWLINE )+ )
-            // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/JpVocabulary.g:32:7: ( ( vocabulary )? NEWLINE )+
+            // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/org/sharpx/parser/antlr/JpVocabulary.g:32:5: ( ( ( vocabulary )? NEWLINE )+ )
+            // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/org/sharpx/parser/antlr/JpVocabulary.g:32:7: ( ( vocabulary )? NEWLINE )+
             {
             System.out.println("<html><head></head><body><table>");
                    System.out.println("<tr><td>pronun</td><td>writing</td>"+
                    "<td>part of speech</td><td>explanation</td></tr>");
                   
-            // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/JpVocabulary.g:36:7: ( ( vocabulary )? NEWLINE )+
+            // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/org/sharpx/parser/antlr/JpVocabulary.g:36:7: ( ( vocabulary )? NEWLINE )+
             int cnt2=0;
             loop2:
             do {
@@ -88,9 +88,9 @@ public class JpVocabularyParser extends BaseParser {
 
                 switch (alt2) {
             	case 1 :
-            	    // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/JpVocabulary.g:36:8: ( vocabulary )? NEWLINE
+            	    // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/org/sharpx/parser/antlr/JpVocabulary.g:36:8: ( vocabulary )? NEWLINE
             	    {
-            	    // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/JpVocabulary.g:36:8: ( vocabulary )?
+            	    // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/org/sharpx/parser/antlr/JpVocabulary.g:36:8: ( vocabulary )?
             	    int alt1=2;
             	    int LA1_0 = input.LA(1);
 
@@ -99,7 +99,7 @@ public class JpVocabularyParser extends BaseParser {
             	    }
             	    switch (alt1) {
             	        case 1 :
-            	            // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/JpVocabulary.g:36:9: vocabulary
+            	            // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/org/sharpx/parser/antlr/JpVocabulary.g:36:9: vocabulary
             	            {
             	            pushFollow(FOLLOW_vocabulary_in_voclist71);
             	            vocabulary1=vocabulary();
@@ -155,7 +155,7 @@ public class JpVocabularyParser extends BaseParser {
     };
 
     // $ANTLR start vocabulary
-    // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/JpVocabulary.g:45:1: vocabulary returns [String pronun, String writing, String partOfSpeech, String expl] : ( word | suffix1 | suffix2 | prefix | aNMALI | aQIUSEIDEN | mANRINOQIOJIO | kOI | jIOU | wADAXI );
+    // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/org/sharpx/parser/antlr/JpVocabulary.g:45:1: vocabulary returns [String pronun, String writing, String partOfSpeech, String expl] : ( word | suffix1 | suffix2 | prefix | aNMALI | aQIUSEIDEN | mANRINOQIOJIO | kOI | jIOU | wADAXI );
     public final vocabulary_return vocabulary() throws RecognitionException {
         vocabulary_return retval = new vocabulary_return();
         retval.start = input.LT(1);
@@ -182,7 +182,7 @@ public class JpVocabularyParser extends BaseParser {
 
 
         try {
-            // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/JpVocabulary.g:46:5: ( word | suffix1 | suffix2 | prefix | aNMALI | aQIUSEIDEN | mANRINOQIOJIO | kOI | jIOU | wADAXI )
+            // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/org/sharpx/parser/antlr/JpVocabulary.g:46:5: ( word | suffix1 | suffix2 | prefix | aNMALI | aQIUSEIDEN | mANRINOQIOJIO | kOI | jIOU | wADAXI )
             int alt3=10;
             switch ( input.LA(1) ) {
             case Pronun:
@@ -258,7 +258,7 @@ public class JpVocabularyParser extends BaseParser {
 
             switch (alt3) {
                 case 1 :
-                    // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/JpVocabulary.g:46:7: word
+                    // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/org/sharpx/parser/antlr/JpVocabulary.g:46:7: word
                     {
                     pushFollow(FOLLOW_word_in_vocabulary111);
                     word2=word();
@@ -273,7 +273,7 @@ public class JpVocabularyParser extends BaseParser {
                     }
                     break;
                 case 2 :
-                    // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/JpVocabulary.g:52:7: suffix1
+                    // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/org/sharpx/parser/antlr/JpVocabulary.g:52:7: suffix1
                     {
                     pushFollow(FOLLOW_suffix1_in_vocabulary127);
                     suffix13=suffix1();
@@ -285,7 +285,7 @@ public class JpVocabularyParser extends BaseParser {
                     }
                     break;
                 case 3 :
-                    // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/JpVocabulary.g:55:7: suffix2
+                    // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/org/sharpx/parser/antlr/JpVocabulary.g:55:7: suffix2
                     {
                     pushFollow(FOLLOW_suffix2_in_vocabulary144);
                     suffix24=suffix2();
@@ -298,7 +298,7 @@ public class JpVocabularyParser extends BaseParser {
                     }
                     break;
                 case 4 :
-                    // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/JpVocabulary.g:59:7: prefix
+                    // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/org/sharpx/parser/antlr/JpVocabulary.g:59:7: prefix
                     {
                     pushFollow(FOLLOW_prefix_in_vocabulary161);
                     prefix5=prefix();
@@ -310,7 +310,7 @@ public class JpVocabularyParser extends BaseParser {
                     }
                     break;
                 case 5 :
-                    // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/JpVocabulary.g:62:7: aNMALI
+                    // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/org/sharpx/parser/antlr/JpVocabulary.g:62:7: aNMALI
                     {
                     pushFollow(FOLLOW_aNMALI_in_vocabulary177);
                     aNMALI6=aNMALI();
@@ -325,7 +325,7 @@ public class JpVocabularyParser extends BaseParser {
                     }
                     break;
                 case 6 :
-                    // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/JpVocabulary.g:68:7: aQIUSEIDEN
+                    // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/org/sharpx/parser/antlr/JpVocabulary.g:68:7: aQIUSEIDEN
                     {
                     pushFollow(FOLLOW_aQIUSEIDEN_in_vocabulary193);
                     aQIUSEIDEN7=aQIUSEIDEN();
@@ -340,7 +340,7 @@ public class JpVocabularyParser extends BaseParser {
                     }
                     break;
                 case 7 :
-                    // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/JpVocabulary.g:74:7: mANRINOQIOJIO
+                    // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/org/sharpx/parser/antlr/JpVocabulary.g:74:7: mANRINOQIOJIO
                     {
                     pushFollow(FOLLOW_mANRINOQIOJIO_in_vocabulary209);
                     mANRINOQIOJIO8=mANRINOQIOJIO();
@@ -355,7 +355,7 @@ public class JpVocabularyParser extends BaseParser {
                     }
                     break;
                 case 8 :
-                    // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/JpVocabulary.g:80:7: kOI
+                    // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/org/sharpx/parser/antlr/JpVocabulary.g:80:7: kOI
                     {
                     pushFollow(FOLLOW_kOI_in_vocabulary225);
                     kOI9=kOI();
@@ -370,7 +370,7 @@ public class JpVocabularyParser extends BaseParser {
                     }
                     break;
                 case 9 :
-                    // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/JpVocabulary.g:86:7: jIOU
+                    // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/org/sharpx/parser/antlr/JpVocabulary.g:86:7: jIOU
                     {
                     pushFollow(FOLLOW_jIOU_in_vocabulary241);
                     jIOU10=jIOU();
@@ -385,7 +385,7 @@ public class JpVocabularyParser extends BaseParser {
                     }
                     break;
                 case 10 :
-                    // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/JpVocabulary.g:92:7: wADAXI
+                    // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/org/sharpx/parser/antlr/JpVocabulary.g:92:7: wADAXI
                     {
                     pushFollow(FOLLOW_wADAXI_in_vocabulary257);
                     wADAXI11=wADAXI();
@@ -423,14 +423,14 @@ public class JpVocabularyParser extends BaseParser {
     };
 
     // $ANTLR start aNMALI
-    // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/JpVocabulary.g:103:1: aNMALI returns [String pronun, String writing, String partOfSpeech, String expl] : ANMALI ;
+    // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/org/sharpx/parser/antlr/JpVocabulary.g:103:1: aNMALI returns [String pronun, String writing, String partOfSpeech, String expl] : ANMALI ;
     public final aNMALI_return aNMALI() throws RecognitionException {
         aNMALI_return retval = new aNMALI_return();
         retval.start = input.LT(1);
 
         try {
-            // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/JpVocabulary.g:104:5: ( ANMALI )
-            // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/JpVocabulary.g:104:7: ANMALI
+            // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/org/sharpx/parser/antlr/JpVocabulary.g:104:5: ( ANMALI )
+            // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/org/sharpx/parser/antlr/JpVocabulary.g:104:7: ANMALI
             {
             match(input,ANMALI,FOLLOW_ANMALI_in_aNMALI289); 
             retval.pronun ="\u3042\u3093\u307E\u308A";
@@ -462,14 +462,14 @@ public class JpVocabularyParser extends BaseParser {
     };
 
     // $ANTLR start aQIUSEIDEN
-    // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/JpVocabulary.g:111:1: aQIUSEIDEN returns [String pronun, String writing, String partOfSpeech, String expl] : AQIUSEIDEN ;
+    // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/org/sharpx/parser/antlr/JpVocabulary.g:111:1: aQIUSEIDEN returns [String pronun, String writing, String partOfSpeech, String expl] : AQIUSEIDEN ;
     public final aQIUSEIDEN_return aQIUSEIDEN() throws RecognitionException {
         aQIUSEIDEN_return retval = new aQIUSEIDEN_return();
         retval.start = input.LT(1);
 
         try {
-            // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/JpVocabulary.g:112:5: ( AQIUSEIDEN )
-            // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/JpVocabulary.g:112:7: AQIUSEIDEN
+            // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/org/sharpx/parser/antlr/JpVocabulary.g:112:5: ( AQIUSEIDEN )
+            // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/org/sharpx/parser/antlr/JpVocabulary.g:112:7: AQIUSEIDEN
             {
             match(input,AQIUSEIDEN,FOLLOW_AQIUSEIDEN_in_aQIUSEIDEN322); 
             retval.pronun ="\u3042\u30AD\u30E5\u30FC\u305B\u3044\u3067\u3093";
@@ -502,14 +502,14 @@ public class JpVocabularyParser extends BaseParser {
     };
 
     // $ANTLR start mANRINOQIOJIO
-    // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/JpVocabulary.g:120:1: mANRINOQIOJIO returns [String pronun, String writing, String partOfSpeech, String expl] : MANRINOQIOJIO ;
+    // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/org/sharpx/parser/antlr/JpVocabulary.g:120:1: mANRINOQIOJIO returns [String pronun, String writing, String partOfSpeech, String expl] : MANRINOQIOJIO ;
     public final mANRINOQIOJIO_return mANRINOQIOJIO() throws RecognitionException {
         mANRINOQIOJIO_return retval = new mANRINOQIOJIO_return();
         retval.start = input.LT(1);
 
         try {
-            // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/JpVocabulary.g:121:5: ( MANRINOQIOJIO )
-            // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/JpVocabulary.g:121:7: MANRINOQIOJIO
+            // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/org/sharpx/parser/antlr/JpVocabulary.g:121:5: ( MANRINOQIOJIO )
+            // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/org/sharpx/parser/antlr/JpVocabulary.g:121:7: MANRINOQIOJIO
             {
             match(input,MANRINOQIOJIO,FOLLOW_MANRINOQIOJIO_in_mANRINOQIOJIO351); 
             retval.pronun ="\u3070\u3093\u308A\u306E\u3061\u3087\u3046\u3058\u3087\u3046";
@@ -542,14 +542,14 @@ public class JpVocabularyParser extends BaseParser {
     };
 
     // $ANTLR start kOI
-    // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/JpVocabulary.g:129:1: kOI returns [String pronun, String writing, String partOfSpeech, String expl] : KOI ;
+    // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/org/sharpx/parser/antlr/JpVocabulary.g:129:1: kOI returns [String pronun, String writing, String partOfSpeech, String expl] : KOI ;
     public final kOI_return kOI() throws RecognitionException {
         kOI_return retval = new kOI_return();
         retval.start = input.LT(1);
 
         try {
-            // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/JpVocabulary.g:130:5: ( KOI )
-            // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/JpVocabulary.g:130:7: KOI
+            // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/org/sharpx/parser/antlr/JpVocabulary.g:130:5: ( KOI )
+            // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/org/sharpx/parser/antlr/JpVocabulary.g:130:7: KOI
             {
             match(input,KOI,FOLLOW_KOI_in_kOI384); 
             retval.pronun ="\u3053\u3044";
@@ -582,14 +582,14 @@ public class JpVocabularyParser extends BaseParser {
     };
 
     // $ANTLR start jIOU
-    // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/JpVocabulary.g:138:1: jIOU returns [String pronun, String writing, String partOfSpeech, String expl] : FTILDE ;
+    // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/org/sharpx/parser/antlr/JpVocabulary.g:138:1: jIOU returns [String pronun, String writing, String partOfSpeech, String expl] : FTILDE ;
     public final jIOU_return jIOU() throws RecognitionException {
         jIOU_return retval = new jIOU_return();
         retval.start = input.LT(1);
 
         try {
-            // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/JpVocabulary.g:139:5: ( FTILDE )
-            // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/JpVocabulary.g:139:7: FTILDE
+            // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/org/sharpx/parser/antlr/JpVocabulary.g:139:5: ( FTILDE )
+            // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/org/sharpx/parser/antlr/JpVocabulary.g:139:7: FTILDE
             {
             match(input,FTILDE,FOLLOW_FTILDE_in_jIOU417); 
             retval.pronun ="\u3058\u3087\u3046";
@@ -620,14 +620,14 @@ public class JpVocabularyParser extends BaseParser {
     };
 
     // $ANTLR start wADAXI
-    // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/JpVocabulary.g:145:1: wADAXI returns [String pronun, String writing, String partOfSpeech, String expl] : WADAXI ;
+    // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/org/sharpx/parser/antlr/JpVocabulary.g:145:1: wADAXI returns [String pronun, String writing, String partOfSpeech, String expl] : WADAXI ;
     public final wADAXI_return wADAXI() throws RecognitionException {
         wADAXI_return retval = new wADAXI_return();
         retval.start = input.LT(1);
 
         try {
-            // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/JpVocabulary.g:146:5: ( WADAXI )
-            // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/JpVocabulary.g:146:7: WADAXI
+            // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/org/sharpx/parser/antlr/JpVocabulary.g:146:5: ( WADAXI )
+            // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/org/sharpx/parser/antlr/JpVocabulary.g:146:7: WADAXI
             {
             match(input,WADAXI,FOLLOW_WADAXI_in_wADAXI450); 
             retval.pronun ="\u308F\u305F\u3057";
@@ -659,7 +659,7 @@ public class JpVocabularyParser extends BaseParser {
     };
 
     // $ANTLR start word
-    // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/JpVocabulary.g:153:1: word returns [String pronun, String writing, String partOfSpeech, String expl] : ( Pronun ( Writing )? ( PartOfSpeech )? ( Expl )? | Pronun wr1= Writing wr2= Writing ( Expl )? | Pronun wr1= Writing PartOfSpeech wr2= Writing ( Expl )? | Pronun PartOfSpeech Writing ( Expl )? );
+    // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/org/sharpx/parser/antlr/JpVocabulary.g:153:1: word returns [String pronun, String writing, String partOfSpeech, String expl] : ( Pronun ( Writing )? ( PartOfSpeech )? ( Expl )? | Pronun wr1= Writing wr2= Writing ( Expl )? | Pronun wr1= Writing PartOfSpeech wr2= Writing ( Expl )? | Pronun PartOfSpeech Writing ( Expl )? );
     public final word_return word() throws RecognitionException {
         word_return retval = new word_return();
         retval.start = input.LT(1);
@@ -681,7 +681,7 @@ public class JpVocabularyParser extends BaseParser {
         Token Expl24=null;
 
         try {
-            // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/JpVocabulary.g:154:5: ( Pronun ( Writing )? ( PartOfSpeech )? ( Expl )? | Pronun wr1= Writing wr2= Writing ( Expl )? | Pronun wr1= Writing PartOfSpeech wr2= Writing ( Expl )? | Pronun PartOfSpeech Writing ( Expl )? )
+            // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/org/sharpx/parser/antlr/JpVocabulary.g:154:5: ( Pronun ( Writing )? ( PartOfSpeech )? ( Expl )? | Pronun wr1= Writing wr2= Writing ( Expl )? | Pronun wr1= Writing PartOfSpeech wr2= Writing ( Expl )? | Pronun PartOfSpeech Writing ( Expl )? )
             int alt10=4;
             int LA10_0 = input.LA(1);
 
@@ -768,11 +768,11 @@ public class JpVocabularyParser extends BaseParser {
             }
             switch (alt10) {
                 case 1 :
-                    // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/JpVocabulary.g:154:7: Pronun ( Writing )? ( PartOfSpeech )? ( Expl )?
+                    // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/org/sharpx/parser/antlr/JpVocabulary.g:154:7: Pronun ( Writing )? ( PartOfSpeech )? ( Expl )?
                     {
                     Pronun12=(Token)input.LT(1);
                     match(input,Pronun,FOLLOW_Pronun_in_word483); 
-                    // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/JpVocabulary.g:154:14: ( Writing )?
+                    // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/org/sharpx/parser/antlr/JpVocabulary.g:154:14: ( Writing )?
                     int alt4=2;
                     int LA4_0 = input.LA(1);
 
@@ -781,7 +781,7 @@ public class JpVocabularyParser extends BaseParser {
                     }
                     switch (alt4) {
                         case 1 :
-                            // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/JpVocabulary.g:154:14: Writing
+                            // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/org/sharpx/parser/antlr/JpVocabulary.g:154:14: Writing
                             {
                             Writing13=(Token)input.LT(1);
                             match(input,Writing,FOLLOW_Writing_in_word485); 
@@ -791,7 +791,7 @@ public class JpVocabularyParser extends BaseParser {
 
                     }
 
-                    // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/JpVocabulary.g:154:23: ( PartOfSpeech )?
+                    // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/org/sharpx/parser/antlr/JpVocabulary.g:154:23: ( PartOfSpeech )?
                     int alt5=2;
                     int LA5_0 = input.LA(1);
 
@@ -800,7 +800,7 @@ public class JpVocabularyParser extends BaseParser {
                     }
                     switch (alt5) {
                         case 1 :
-                            // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/JpVocabulary.g:154:23: PartOfSpeech
+                            // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/org/sharpx/parser/antlr/JpVocabulary.g:154:23: PartOfSpeech
                             {
                             PartOfSpeech14=(Token)input.LT(1);
                             match(input,PartOfSpeech,FOLLOW_PartOfSpeech_in_word488); 
@@ -810,7 +810,7 @@ public class JpVocabularyParser extends BaseParser {
 
                     }
 
-                    // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/JpVocabulary.g:154:37: ( Expl )?
+                    // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/org/sharpx/parser/antlr/JpVocabulary.g:154:37: ( Expl )?
                     int alt6=2;
                     int LA6_0 = input.LA(1);
 
@@ -819,7 +819,7 @@ public class JpVocabularyParser extends BaseParser {
                     }
                     switch (alt6) {
                         case 1 :
-                            // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/JpVocabulary.g:154:37: Expl
+                            // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/org/sharpx/parser/antlr/JpVocabulary.g:154:37: Expl
                             {
                             Expl15=(Token)input.LT(1);
                             match(input,Expl,FOLLOW_Expl_in_word491); 
@@ -838,7 +838,7 @@ public class JpVocabularyParser extends BaseParser {
                     }
                     break;
                 case 2 :
-                    // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/JpVocabulary.g:160:7: Pronun wr1= Writing wr2= Writing ( Expl )?
+                    // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/org/sharpx/parser/antlr/JpVocabulary.g:160:7: Pronun wr1= Writing wr2= Writing ( Expl )?
                     {
                     Pronun16=(Token)input.LT(1);
                     match(input,Pronun,FOLLOW_Pronun_in_word508); 
@@ -846,7 +846,7 @@ public class JpVocabularyParser extends BaseParser {
                     match(input,Writing,FOLLOW_Writing_in_word512); 
                     wr2=(Token)input.LT(1);
                     match(input,Writing,FOLLOW_Writing_in_word516); 
-                    // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/JpVocabulary.g:160:38: ( Expl )?
+                    // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/org/sharpx/parser/antlr/JpVocabulary.g:160:38: ( Expl )?
                     int alt7=2;
                     int LA7_0 = input.LA(1);
 
@@ -855,7 +855,7 @@ public class JpVocabularyParser extends BaseParser {
                     }
                     switch (alt7) {
                         case 1 :
-                            // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/JpVocabulary.g:160:38: Expl
+                            // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/org/sharpx/parser/antlr/JpVocabulary.g:160:38: Expl
                             {
                             Expl17=(Token)input.LT(1);
                             match(input,Expl,FOLLOW_Expl_in_word518); 
@@ -873,7 +873,7 @@ public class JpVocabularyParser extends BaseParser {
                     }
                     break;
                 case 3 :
-                    // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/JpVocabulary.g:165:7: Pronun wr1= Writing PartOfSpeech wr2= Writing ( Expl )?
+                    // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/org/sharpx/parser/antlr/JpVocabulary.g:165:7: Pronun wr1= Writing PartOfSpeech wr2= Writing ( Expl )?
                     {
                     Pronun18=(Token)input.LT(1);
                     match(input,Pronun,FOLLOW_Pronun_in_word535); 
@@ -883,7 +883,7 @@ public class JpVocabularyParser extends BaseParser {
                     match(input,PartOfSpeech,FOLLOW_PartOfSpeech_in_word541); 
                     wr2=(Token)input.LT(1);
                     match(input,Writing,FOLLOW_Writing_in_word545); 
-                    // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/JpVocabulary.g:165:51: ( Expl )?
+                    // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/org/sharpx/parser/antlr/JpVocabulary.g:165:51: ( Expl )?
                     int alt8=2;
                     int LA8_0 = input.LA(1);
 
@@ -892,7 +892,7 @@ public class JpVocabularyParser extends BaseParser {
                     }
                     switch (alt8) {
                         case 1 :
-                            // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/JpVocabulary.g:165:51: Expl
+                            // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/org/sharpx/parser/antlr/JpVocabulary.g:165:51: Expl
                             {
                             Expl20=(Token)input.LT(1);
                             match(input,Expl,FOLLOW_Expl_in_word547); 
@@ -911,7 +911,7 @@ public class JpVocabularyParser extends BaseParser {
                     }
                     break;
                 case 4 :
-                    // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/JpVocabulary.g:171:7: Pronun PartOfSpeech Writing ( Expl )?
+                    // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/org/sharpx/parser/antlr/JpVocabulary.g:171:7: Pronun PartOfSpeech Writing ( Expl )?
                     {
                     Pronun21=(Token)input.LT(1);
                     match(input,Pronun,FOLLOW_Pronun_in_word564); 
@@ -919,7 +919,7 @@ public class JpVocabularyParser extends BaseParser {
                     match(input,PartOfSpeech,FOLLOW_PartOfSpeech_in_word566); 
                     Writing23=(Token)input.LT(1);
                     match(input,Writing,FOLLOW_Writing_in_word568); 
-                    // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/JpVocabulary.g:171:35: ( Expl )?
+                    // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/org/sharpx/parser/antlr/JpVocabulary.g:171:35: ( Expl )?
                     int alt9=2;
                     int LA9_0 = input.LA(1);
 
@@ -928,7 +928,7 @@ public class JpVocabularyParser extends BaseParser {
                     }
                     switch (alt9) {
                         case 1 :
-                            // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/JpVocabulary.g:171:35: Expl
+                            // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/org/sharpx/parser/antlr/JpVocabulary.g:171:35: Expl
                             {
                             Expl24=(Token)input.LT(1);
                             match(input,Expl,FOLLOW_Expl_in_word570); 
@@ -963,15 +963,15 @@ public class JpVocabularyParser extends BaseParser {
 
 
     // $ANTLR start suffix1
-    // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/JpVocabulary.g:178:1: suffix1 returns [String pronun] : Suffix1 ;
+    // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/org/sharpx/parser/antlr/JpVocabulary.g:178:1: suffix1 returns [String pronun] : Suffix1 ;
     public final String suffix1() throws RecognitionException {
         String pronun = null;
 
         Token Suffix125=null;
 
         try {
-            // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/JpVocabulary.g:179:5: ( Suffix1 )
-            // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/JpVocabulary.g:179:7: Suffix1
+            // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/org/sharpx/parser/antlr/JpVocabulary.g:179:5: ( Suffix1 )
+            // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/org/sharpx/parser/antlr/JpVocabulary.g:179:7: Suffix1
             {
             Suffix125=(Token)input.LT(1);
             match(input,Suffix1,FOLLOW_Suffix1_in_suffix1604); 
@@ -1005,7 +1005,7 @@ public class JpVocabularyParser extends BaseParser {
     };
 
     // $ANTLR start suffix2
-    // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/JpVocabulary.g:185:1: suffix2 returns [String pronun, String writing] : ( Suffix2 | Suffix3 );
+    // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/org/sharpx/parser/antlr/JpVocabulary.g:185:1: suffix2 returns [String pronun, String writing] : ( Suffix2 | Suffix3 );
     public final suffix2_return suffix2() throws RecognitionException {
         suffix2_stack.push(new suffix2_scope());
         suffix2_return retval = new suffix2_return();
@@ -1015,7 +1015,7 @@ public class JpVocabularyParser extends BaseParser {
         Token Suffix327=null;
 
         try {
-            // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/JpVocabulary.g:190:5: ( Suffix2 | Suffix3 )
+            // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/org/sharpx/parser/antlr/JpVocabulary.g:190:5: ( Suffix2 | Suffix3 )
             int alt11=2;
             int LA11_0 = input.LA(1);
 
@@ -1033,7 +1033,7 @@ public class JpVocabularyParser extends BaseParser {
             }
             switch (alt11) {
                 case 1 :
-                    // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/JpVocabulary.g:190:7: Suffix2
+                    // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/org/sharpx/parser/antlr/JpVocabulary.g:190:7: Suffix2
                     {
                     Suffix226=(Token)input.LT(1);
                     match(input,Suffix2,FOLLOW_Suffix2_in_suffix2639); 
@@ -1044,7 +1044,7 @@ public class JpVocabularyParser extends BaseParser {
                     }
                     break;
                 case 2 :
-                    // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/JpVocabulary.g:194:7: Suffix3
+                    // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/org/sharpx/parser/antlr/JpVocabulary.g:194:7: Suffix3
                     {
                     Suffix327=(Token)input.LT(1);
                     match(input,Suffix3,FOLLOW_Suffix3_in_suffix2655); 
@@ -1073,7 +1073,7 @@ public class JpVocabularyParser extends BaseParser {
 
 
     // $ANTLR start prefix
-    // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/JpVocabulary.g:200:1: prefix returns [String pronun] : ( Expl Pronun FTILDE | Pronun FTILDE );
+    // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/org/sharpx/parser/antlr/JpVocabulary.g:200:1: prefix returns [String pronun] : ( Expl Pronun FTILDE | Pronun FTILDE );
     public final String prefix() throws RecognitionException {
         String pronun = null;
 
@@ -1084,7 +1084,7 @@ public class JpVocabularyParser extends BaseParser {
         Token FTILDE32=null;
 
         try {
-            // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/JpVocabulary.g:201:5: ( Expl Pronun FTILDE | Pronun FTILDE )
+            // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/org/sharpx/parser/antlr/JpVocabulary.g:201:5: ( Expl Pronun FTILDE | Pronun FTILDE )
             int alt12=2;
             int LA12_0 = input.LA(1);
 
@@ -1102,7 +1102,7 @@ public class JpVocabularyParser extends BaseParser {
             }
             switch (alt12) {
                 case 1 :
-                    // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/JpVocabulary.g:201:7: Expl Pronun FTILDE
+                    // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/org/sharpx/parser/antlr/JpVocabulary.g:201:7: Expl Pronun FTILDE
                     {
                     Expl28=(Token)input.LT(1);
                     match(input,Expl,FOLLOW_Expl_in_prefix688); 
@@ -1118,7 +1118,7 @@ public class JpVocabularyParser extends BaseParser {
                     }
                     break;
                 case 2 :
-                    // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/JpVocabulary.g:206:7: Pronun FTILDE
+                    // /home/he/work/code-repo/github/codes/pc/use-antlr/src/main/antlr/org/sharpx/parser/antlr/JpVocabulary.g:206:7: Pronun FTILDE
                     {
                     Pronun31=(Token)input.LT(1);
                     match(input,Pronun,FOLLOW_Pronun_in_prefix708); 
