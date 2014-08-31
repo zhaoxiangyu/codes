@@ -32,14 +32,51 @@
 	<build>
 		<!-- To use the plugin goals in your POM or parent POM -->
 		<plugins>
+<plugin>
+  <groupId>org.codehaus.mojo</groupId>
+  <artifactId>build-helper-maven-plugin</artifactId>
+  <version>1.7</version>
+  <executions>
+    <execution>
+      <id>add-antlr-source</id>
+      <phase>generate-sources</phase>
+      <goals>
+        <goal>add-source</goal>
+      </goals>
+      <configuration>
+        <sources>
+          <source>src/main/antlr3</source>
+          <source>target/generated-sources/antlr3</source>
+        </sources>
+      </configuration>
+    </execution>
+  </executions>
+</plugin>
 			<plugin>
-				<groupId>org.codehaus.mojo</groupId>
+				<groupId>org.antlr</groupId>
 				<artifactId>antlr3-maven-plugin</artifactId>
-				<version>1.0</version>
+				<version>${antlr.version}</version>
 				<executions>
 					<execution>
 						<goals>
 							<goal>antlr</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<artifactId>maven-assembly-plugin</artifactId>
+				<configuration>
+					<descriptorRefs>
+						<descriptorRef>jar-with-dependencies</descriptorRef>
+					</descriptorRefs>
+				</configuration>
+				<executions>
+					<execution>
+						<id>make-assembly</id>
+						<phase>package</phase>
+						<goals>
+							<goal>attached</goal>
 						</goals>
 					</execution>
 				</executions>
