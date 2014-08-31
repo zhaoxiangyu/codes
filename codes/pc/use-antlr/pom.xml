@@ -30,19 +30,23 @@
 	</dependencies>
 
 	<build>
+		<!-- To define the plugin version in your parent POM -->
+		<pluginManagement>
+			<plugins>
+				<plugin>
+					<groupId>org.codehaus.mojo</groupId>
+					<artifactId>antlr3-maven-plugin</artifactId>
+					<version>1.0</version>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+
+		<!-- To use the plugin goals in your POM or parent POM -->
 		<plugins>
 			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-compiler-plugin</artifactId>
-				<configuration>
-					<source>1.6</source>
-					<target>1.6</target>
-				</configuration>
-			</plugin>
-			<plugin>
-				<groupId>org.antlr</groupId>
+				<groupId>org.codehaus.mojo</groupId>
 				<artifactId>antlr3-maven-plugin</artifactId>
-				<version>${antlr.version}</version>
+				<version>1.0</version>
 				<executions>
 					<execution>
 						<goals>
@@ -52,21 +56,12 @@
 				</executions>
 			</plugin>
 			<plugin>
-				<artifactId>maven-assembly-plugin</artifactId>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
 				<configuration>
-					<descriptorRefs>
-						<descriptorRef>jar-with-dependencies</descriptorRef>
-					</descriptorRefs>
+					<source>1.6</source>
+					<target>1.6</target>
 				</configuration>
-				<executions>
-					<execution>
-						<id>make-assembly</id>
-						<phase>package</phase>
-						<goals>
-							<goal>attached</goal>
-						</goals>
-					</execution>
-				</executions>
 			</plugin>
 		</plugins>
 	</build>
