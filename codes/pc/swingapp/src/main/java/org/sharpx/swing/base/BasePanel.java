@@ -1,4 +1,4 @@
-package org.sharp.swing.base;
+package org.sharpx.swing.base;
 
 import javax.swing.JPanel;
 

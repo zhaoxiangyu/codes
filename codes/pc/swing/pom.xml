@@ -20,13 +20,13 @@
 		    <groupId>org.apache.pdfbox</groupId>
 		    <artifactId>pdfbox</artifactId>
 		    <version>1.6.0</version>
-		</dependency> -->
+		</dependency>
 
 		<dependency>
 		    <groupId>org.sharp</groupId>
 		    <artifactId>smartFrog</artifactId>
 		    <version>0.0.1</version>
-		</dependency>
+		</dependency> -->
 		 
 		<dependency>
 		    <groupId>org.apache.lucene</groupId>
@@ -103,6 +103,7 @@
 		    <version>1.3.1</version>
 		</dependency>
 
+		<!-- 
 		<dependency>
 		  <groupId>com.orientechnologies</groupId>
 		  <artifactId>orient-commons</artifactId>
@@ -113,7 +114,7 @@
 		  <artifactId>orientdb-core</artifactId>
 		  <version>0.9.24</version>
 		</dependency>
-
+ 		-->
 		<dependency>
 			<groupId>jgraph</groupId>
 			<artifactId>jgraph</artifactId>
@@ -218,6 +219,7 @@
 		</dependency>
 	</dependencies>
 
+	<!-- 
 	<repositories>
 		<repository>
 			<id>orientechnologies-repository</id>
@@ -231,7 +233,6 @@
 	</repositories>
 	
 	<build>
-		<!-- To define the plugin version in your parent POM -->
 		<pluginManagement>
 			<plugins>
 				<plugin>
@@ -241,7 +242,6 @@
 				</plugin>
 			</plugins>
 		</pluginManagement>
-		<!-- To use the plugin goals in your POM or parent POM -->
 		<plugins>
 			<plugin>
 				<groupId>com.valtech.source.dependometer</groupId>
@@ -260,5 +260,6 @@
 			</plugin>
 		</plugins>
 	</reporting>
+	 -->
 
 </project>
