@@ -2,8 +2,8 @@
   (:require [monger.core :as mg]
             [monger.collection :as mc]
             [clojure.java.io :as io])
-  (:use [clj-xpath.core] clojure.data
-        clojure.java.browse org.sharpx.fs-util)
+  (:use clj-xpath.core clojure.data clojure.java.browse clojure.pprint
+        [org.sharpx fs-util ds-util misc])
   (:import org.sharpx.utils.FsUtils java.net.URL java.io.File java.util.HashMap))
 
 (defn from-mongo
@@ -19,7 +19,7 @@
 (defn- validate
   "validate term"
   [term output-dir browse-html]
-  (prn term)
+  (pprint term)
   (let [entry (:entry term)
         str-term (pr-str term)
         term-file (io/file output-dir (str entry ".term"))]
@@ -34,23 +34,21 @@
             (println "FAILED validation!")
             (println "new values:" (first term-diff))
             (println "old values:" (second term-diff))
-            (let [input (do (println "Accept new parse result and overwrite file?y/n") (read-line))]
-              (if (or (= input "y") (= input "Y"))
-                (do (spit term-file str-term)
-                  (when (.exists term-file)
-                    (println "parse result updated to " (.getPath term-file)))
-                  true)
-                (do (println "you have denied above parse result!")
-                  false))))))
-      (let [_ (browse-html)
-            input (do (println "Is above parse result correct?y/n") (read-line))]
-        (if (or (= input "y") (= input "Y"))
-          (do (spit term-file str-term)
-              (when (.exists term-file)
-                (println "parse result saved to " (.getPath term-file)))
-            true)
-          (do (println "you have denied above parse result!")
-            false))))))
+            (mconfirm "Accept new parse result and overwrite file?"
+              [(spit term-file str-term)
+               (when (.exists term-file)
+                 (println "parse result updated to " (.getPath term-file)))
+               true]
+              [(println "you have denied above parse result!")
+               false]))))
+      (do (browse-html)
+        (mconfirm "Is above parse result correct?"
+          [(spit term-file str-term)
+           (when (.exists term-file)
+             (println "parse result saved to " (.getPath term-file)))
+           true]
+          [(println "you have denied above parse result!")
+           false])))))
 
 (defn process-html
   ([filepath dest-dir parse]
@@ -62,21 +60,44 @@
           ;file info
           inf (io/file filepath)
           fbn (->> (.getName inf) (re-find #"^[^\.]+"))
-          outf (io/file dest-dir fbn (str fbn ".html"))]
-      (when-not (.exists outf)
-        (io/make-parents outf) (spit outf html))
-      ;(println "url:" url "html:" html)
-      (let [term (parse {:type type :url url :html html} #(browse-url (.toString (.toURL outf))))]
-        (validate term (str dest-dir file-path-separator fbn)
-          #(browse-url (.toString (.toURL outf))))))))
+          outf (io/file dest-dir fbn (str fbn ".html"))
+          outxml (io/file dest-dir fbn (str fbn ".xml"))]
+      (try
+        (when-not (.exists outf)
+          (io/make-parents outf) (spit outf html))
+        ;(println "url:" url "html:" html)
+        (let [term (parse {:type type :url url :html html}
+                     (fn [xml] (spit outxml xml) xml)
+                     #(browse-url (.toString (.toURL outf))))]
+          (if (nil? term)
+            true
+            (validate term (str dest-dir file-path-separator fbn) #(browse-url (.toString (.toURL outf))))))
+        (catch Exception e (.printStackTrace e)
+          (mconfirm "Want to continue?" [true] [false]))))))
+
+(defn gen-snap
+  [src-dir snap-file]
+  (let [;files (file-seq src-dir)
+        files (read-dir-files src-dir)
+        fs (count files)
+        _ (println "files count:" fs)
+        files (sort-by #(.length %) < files)
+        files (map (fn [file] {:fn (.getName file) :fs (.length file)}) files)
+        snap {:dir src-dir :files files}]
+    (spit snap-file (pr-str snap))
+    (println "saved dir snap to file" (.getPath snap-file))
+    snap))
 
 (defn from-fs
   "parse one file in src-dir randomly, store results to des-dir"
   [src-dir dest-dir parser]
-  (let [;files (file-seq src-dir)
-        files (read-dir-files src-dir)
-        files (sort-by #(.length %) < files)
-        ;content (slurp (take 1 files))
-        ]
-    (doseq [[fn fs] (map (fn [file] [(.getName file) (.length file)]) files)]
-      (println "filename:" fn ",size:" fs))))
+  (let [snap-file (io/file dest-dir "source-dir.snap")
+        snap (if (.exists snap-file)
+               (read-string (slurp snap-file))
+               (gen-snap src-dir snap-file))]
+    (peel (:files snap)
+      (fn [{:keys [fn fs]}]
+        (println "filename:" (toks->path [(:dir snap) fn]) ",size:" fs)
+        (process-html (toks->path [(:dir snap) fn]) dest-dir parser)))
+    #_ (doseq [{:keys [fn fs]} (take 30 (peel (:files snap)))]
+         (println "filename:" (str (:dir snap) file-path-separator fn) ",size:" fs))))

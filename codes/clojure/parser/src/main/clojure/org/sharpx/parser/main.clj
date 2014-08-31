@@ -1,6 +1,6 @@
 (ns org.sharpx.parser.main
   (:use [org.sharpx.parser htmlgetter oxford-parser]
-        org.sharpx.fs-util
+        [org.sharpx fs-util ds-util]
         clojure.data)
   (:gen-class))
 
@@ -13,6 +13,7 @@
   (compare [nil nil] [nil nil])
   (diff {:a "a"} {:a "aa"})
   (prn (take-while true? [true 1 "xx" (not nil) nil false]))
+  (prn (peel [:a :b :c :d :e :f :g] nil))
   #_ (compare {:a "a"} {:a "aa"})
   #_ (prn (array-map :z "haha" :a "xxxxx"))
   #_ (prn (merge (array-map :z "haha" :a "xx") (array-map :x "x" :b "b") (array-map :aaa nil)))
@@ -20,12 +21,11 @@
 
 (defn -main [& argv]
   (println "oxford dict parser started!")
-  #_ (from-fs html-dir analysis-dir -parse)
+  (from-fs html-dir analysis-dir -parse)
   #_ (let [htmls (from-mongo "169.254.244.218" 27017 "oxford" "htmls" -parse)]
        (dorun (map println htmls)))
-  #_ (from-fs html-dir "" -parser)
   (test1)
-  (doseq [filename filenames
+  #_ (doseq [filename filenames
           :let [ret (process-html (toks->path [html-dir filename]) analysis-dir -parse)]
           :while (true? ret)])
   #_ (dorun
