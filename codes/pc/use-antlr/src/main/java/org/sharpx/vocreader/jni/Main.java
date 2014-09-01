@@ -6,7 +6,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.io.Reader;
 
-import org.sharp.vocreader.jni.beans.Vocabulary;
+import org.sharpx.vocreader.jni.beans.Vocabulary;
 
 
 public class Main {

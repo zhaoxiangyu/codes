@@ -10,6 +10,7 @@ import org.sharpx.parser.antlr.JpVocabularyLexer;
 import org.sharpx.parser.antlr.JpVocabularyParser;
 import org.sharpx.parser.antlr.JpVocabularyParser.vocabulary_return;
 
+
 public class JpVocabulary {
 	
 	public static boolean parseJpVocx(String mp3name, Vocabulary voc){

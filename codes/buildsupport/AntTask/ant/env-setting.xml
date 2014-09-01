@@ -8,7 +8,6 @@
 			<available file="${antfile.dir}/local-settings.properties"/>
 		</not>
 	</condition>
-	<import file="${codes-root.dir}/settings.p.xml"/>
 	
 	<property environment="env"/>
 	<condition property="CMD" value="cmd.exe" else="bash">

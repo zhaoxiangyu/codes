@@ -2,9 +2,9 @@ package org.sharp.swing.base;
 
 import javax.swing.JPanel;
 
-import org.sharp.intf.Pluggable.TabbedUI;
-import org.sharp.intf.PluggableSupport.TabbedUISupport;
-import org.sharp.swing.utils.SwingUtils;
+import org.sharpx.swing.intf.Pluggable.TabbedUI;
+import org.sharpx.swing.intf.PluggableSupport.TabbedUISupport;
+import org.sharpx.swing.utils.SwingUtils;
 
 public class BasePanel extends JPanel implements TabbedUISupport {
 

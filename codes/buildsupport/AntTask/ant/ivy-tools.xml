@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project name="ivy-tools" basedir=".." xmlns:ivy="antlib:org.apache.ivy.ant">
 
-	<dirname property="antfile.dir" file="${ant.file.ivy-tools}"/>
-	<property name="i.basedir" value="${antfile.dir}/.."/>
-	<import file="${i.basedir}/ant/env-setting.xml" />
+	<property environment="env"/>
+
+	<property name="i.basedir" value="${ant.file.ivy-tools}/.."/>
 	
+	<property name="ivy.dir" value="${env.REPO_ROOT}/buildsupport/tools/ivy/apache-ivy-2.2.0-bin-with-deps/apache-ivy-2.2.0"/>
 	<property name="ivy-repo.dir" value="${VMSHARE.DIR}/ivy-repo"/>
 	<property name="ivy-cache.dir" value="${VMSHARE.DIR}/ivy-repo/cache"/>
 
@@ -15,9 +16,13 @@
          uri="antlib:org.apache.ivy.ant" classpathref="ivy.lib.path"/>	
 	
 	<property name="ivy.default.ivy.user.dir" value="${ivy-repo.dir}"/>
-	<property name="ivy.organisation" value="org.sharp"/>
+	<property name="ivy.organisation" value="org.sharpx"/>
 	
 	<ivy:settings file="${i.basedir}/ant/ivy-settings.xml"/>
+	
+	<target name="ivy-test">
+		<echo message="ivy.dir: ${ivy.dir}"/>
+	</target>
 	
 	<target name="setup-ivy-repo">
 		<mkdir dir="${ivy-repo.dir}"/>

@@ -570,11 +570,11 @@ public class FsUtils {
 			supporter = s;
 		}
 
-		private static void toFile(DirSnap ds, String file) {
+		public static void toFile(DirSnap ds, String file) {
 			FsUtils.saveJson(ds, file);
 		}
 
-		private static DirSnap fromFile(String file) {
+		public static DirSnap fromFile(String file) {
 			DirSnap ds = (DirSnap) FsUtils.loadJson(file, DirSnap.class, null);
 			return ds;
 		}

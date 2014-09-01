@@ -1,8 +1,7 @@
 <project name="jpVocParser" basedir="../.." default="default" xmlns:ivy="antlib:org.apache.ivy.ant">
-	<import file="${basedir}/../AntTask/ant/env-setting.xml" />
-	<import file="${basedir}/../AntTask/ant/common-tools.xml" />
-	<import file="${basedir}/../AntTask/ant/ivy-tools.xml"/>
-	<import file="${basedir}/../AntTask/ant/use-android-tools.xml"/>
+	
+	<property name="REPO_ROOT" environment="env" value="${env.REPO_ROOT}"/>
+	<include file="${REPO_ROOT}/settings.p.xml" />
 
 	<property name="java.src.dir" location="src"/>
 	<property name="javac.out.dir" location="bin/ant/classes"/>
@@ -15,7 +14,7 @@
     <target name="default">
     	<antcall target="prepare-jpVoc"></antcall>
     	<antcall target="build-javaParser"/>
-    	<java classname="org.sharp.parser.antlr.ToJsonFile">
+    	<java classname="org.sharpx.parser.antlr.ToJsonFile">
     		<classpath>
     			<pathelement location="${javac.out.dir}"/>
 				<path refid="atlr3.classpath"></path>
@@ -102,7 +101,7 @@
 		</java>
 		<cmd line="cat ${basedir}/bin/parser-output.txt"/>
 		-->
-		<java classname="org.sharp.parser.antlr.JpVocabulary" 
+		<java classname="org.sharpx.parser.antlr.JpVocabulary" 
 			input="bin/voca.filenames" output="bin/vocabularylist.html">
 			<arg value="voclist"/>
 			<classpath>

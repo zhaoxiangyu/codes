@@ -1,0 +1,13 @@
+char	unicode
+， 		\uFF0C
+～		\uFF5E
+；		\uFF1B
+［		\uFF3B
+］		\uFF3D
+＂		\UFF02
+…		\u2026
+／		\uFF0F
+々		\u3005
+＜		\uFF1C
+＞		\uFF1E
+∕		\u2215
