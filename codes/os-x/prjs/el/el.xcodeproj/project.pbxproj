@@ -79,6 +79,28 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		877849F319BB12130072027E /* ui */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = ui;
+			sourceTree = "<group>";
+		};
+		877849F419BB12260072027E /* core */ = {
+			isa = PBXGroup;
+			children = (
+				877849F519BB1C800072027E /* data */,
+			);
+			name = core;
+			sourceTree = "<group>";
+		};
+		877849F519BB1C800072027E /* data */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = data;
+			sourceTree = "<group>";
+		};
 		87FE2AA419BB0CFD00A87234 = {
 			isa = PBXGroup;
 			children = (
@@ -112,6 +134,8 @@
 		87FE2AB919BB0CFD00A87234 /* el */ = {
 			isa = PBXGroup;
 			children = (
+				877849F419BB12260072027E /* core */,
+				877849F319BB12130072027E /* ui */,
 				87FE2AC219BB0CFD00A87234 /* ElAppDelegate.h */,
 				87FE2AC319BB0CFD00A87234 /* ElAppDelegate.m */,
 				87FE2ABA19BB0CFD00A87234 /* Supporting Files */,
@@ -432,6 +456,7 @@
 				87FE2AE419BB0CFE00A87234 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		87FE2AE519BB0CFE00A87234 /* Build configuration list for PBXNativeTarget "elTests" */ = {
 			isa = XCConfigurationList;
@@ -440,6 +465,7 @@
 				87FE2AE719BB0CFE00A87234 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
