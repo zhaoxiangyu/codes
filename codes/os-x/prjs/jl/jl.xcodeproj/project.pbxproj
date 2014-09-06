@@ -121,10 +121,7 @@
 			children = (
 				87AB2A6619BB4077000D5549 /* JlAppDelegate.h */,
 				87AB2A6719BB4077000D5549 /* JlAppDelegate.m */,
-				87AB2A6F19BB4077000D5549 /* JlViewController.h */,
-				87AB2A7019BB4077000D5549 /* JlViewController.m */,
-				87AB2A7219BB4077000D5549 /* JlViewController_iPhone.xib */,
-				87AB2A7519BB4077000D5549 /* JlViewController_iPad.xib */,
+				87AB2A9519BB41B1000D5549 /* ui */,
 				87AB2A5E19BB4077000D5549 /* Supporting Files */,
 			);
 			path = jl;
@@ -161,6 +158,17 @@
 				87AB2A8719BB4077000D5549 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		87AB2A9519BB41B1000D5549 /* ui */ = {
+			isa = PBXGroup;
+			children = (
+				87AB2A6F19BB4077000D5549 /* JlViewController.h */,
+				87AB2A7019BB4077000D5549 /* JlViewController.m */,
+				87AB2A7219BB4077000D5549 /* JlViewController_iPhone.xib */,
+				87AB2A7519BB4077000D5549 /* JlViewController_iPad.xib */,
+			);
+			name = ui;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
