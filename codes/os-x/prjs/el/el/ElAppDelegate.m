@@ -8,35 +8,13 @@
 
 #import "ElAppDelegate.h"
 
-#import "ElMasterViewController.h"
-
-#import "ElDetailViewController.h"
-
 @implementation ElAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
-    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
-        ElMasterViewController *masterViewController = [[ElMasterViewController alloc] initWithNibName:@"ElMasterViewController_iPhone" bundle:nil];
-        self.navigationController = [[UINavigationController alloc] initWithRootViewController:masterViewController];
-        self.window.rootViewController = self.navigationController;
-    } else {
-        ElMasterViewController *masterViewController = [[ElMasterViewController alloc] initWithNibName:@"ElMasterViewController_iPad" bundle:nil];
-        UINavigationController *masterNavigationController = [[UINavigationController alloc] initWithRootViewController:masterViewController];
-        
-        ElDetailViewController *detailViewController = [[ElDetailViewController alloc] initWithNibName:@"ElDetailViewController_iPad" bundle:nil];
-        UINavigationController *detailNavigationController = [[UINavigationController alloc] initWithRootViewController:detailViewController];
-    	
-    	masterViewController.detailViewController = detailViewController;
-    	
-        self.splitViewController = [[UISplitViewController alloc] init];
-        self.splitViewController.delegate = detailViewController;
-        self.splitViewController.viewControllers = @[masterNavigationController, detailNavigationController];
-        
-        self.window.rootViewController = self.splitViewController;
-    }
+    self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     return YES;
 }
