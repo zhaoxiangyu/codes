@@ -7,7 +7,8 @@
 //
 
 //#include "IOSSupport.h"
-#include "core/port/OsSupport.h"
+#import <AVFoundation/AVFoundation.h>
+#import "core/port/OsSupport.h"
 
 long OsSupport::currentTimeMillis(){
 	//return wxGetLocalTimeMillis();
@@ -15,6 +16,11 @@ long OsSupport::currentTimeMillis(){
 }
 
 void OsSupport::playMp3(string path){
+    
+    NSString* filePath = [NSString stringWithUTF8String:path.c_str()];
+    NSURL* fileUrl = [NSURL fileURLWithPath:filePath];
+    AVAudioPlayer* player = [[AVAudioPlayer alloc] initWithContentsOfURL:fileUrl error:NULL];
+    [player play];
 }
 
 string OsSupport::getMdn(){

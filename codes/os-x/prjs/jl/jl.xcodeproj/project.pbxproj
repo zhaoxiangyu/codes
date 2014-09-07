@@ -111,7 +111,6 @@
 		87AB2B1119BBEAF6000D5549 /* JlCoreAdapter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JlCoreAdapter.h; sourceTree = "<group>"; };
 		87AB2B1219BBEAF7000D5549 /* JlCoreAdapter.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = JlCoreAdapter.mm; sourceTree = "<group>"; };
 		87AB2B1519BBEE84000D5549 /* IOSSupport.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = IOSSupport.mm; sourceTree = "<group>"; };
-		87AB2B1619BBEE84000D5549 /* IOSSupport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IOSSupport.h; sourceTree = "<group>"; };
 		87AB2B1819BBEF2B000D5549 /* OsSupport.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = OsSupport.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -327,7 +326,6 @@
 				87AB2B1119BBEAF6000D5549 /* JlCoreAdapter.h */,
 				87AB2B1219BBEAF7000D5549 /* JlCoreAdapter.mm */,
 				87AB2B1519BBEE84000D5549 /* IOSSupport.mm */,
-				87AB2B1619BBEE84000D5549 /* IOSSupport.h */,
 				87AB2B1819BBEF2B000D5549 /* OsSupport.cpp */,
 			);
 			name = adapter;
