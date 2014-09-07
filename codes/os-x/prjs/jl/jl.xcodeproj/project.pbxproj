@@ -39,7 +39,6 @@
 		87AB2AFE19BB4AB4000D5549 /* DataUtils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 87AB2AEC19BB4AB4000D5549 /* DataUtils.cpp */; };
 		87AB2B1319BBEAF7000D5549 /* JlCoreAdapter.mm in Sources */ = {isa = PBXBuildFile; fileRef = 87AB2B1219BBEAF7000D5549 /* JlCoreAdapter.mm */; };
 		87AB2B1719BBEE84000D5549 /* IOSSupport.mm in Sources */ = {isa = PBXBuildFile; fileRef = 87AB2B1519BBEE84000D5549 /* IOSSupport.mm */; };
-		87AB2B1A19BBEF2B000D5549 /* OsSupport.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 87AB2B1819BBEF2B000D5549 /* OsSupport.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -111,7 +110,7 @@
 		87AB2B1119BBEAF6000D5549 /* JlCoreAdapter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JlCoreAdapter.h; sourceTree = "<group>"; };
 		87AB2B1219BBEAF7000D5549 /* JlCoreAdapter.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = JlCoreAdapter.mm; sourceTree = "<group>"; };
 		87AB2B1519BBEE84000D5549 /* IOSSupport.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = IOSSupport.mm; sourceTree = "<group>"; };
-		87AB2B1819BBEF2B000D5549 /* OsSupport.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = OsSupport.cpp; sourceTree = "<group>"; };
+		87AC445119BC84080064B65A /* IOSSupport.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IOSSupport.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -326,7 +325,7 @@
 				87AB2B1119BBEAF6000D5549 /* JlCoreAdapter.h */,
 				87AB2B1219BBEAF7000D5549 /* JlCoreAdapter.mm */,
 				87AB2B1519BBEE84000D5549 /* IOSSupport.mm */,
-				87AB2B1819BBEF2B000D5549 /* OsSupport.cpp */,
+				87AC445119BC84080064B65A /* IOSSupport.h */,
 			);
 			name = adapter;
 			sourceTree = "<group>";
@@ -461,7 +460,6 @@
 				87AB2AFE19BB4AB4000D5549 /* DataUtils.cpp in Sources */,
 				87AB2B1319BBEAF7000D5549 /* JlCoreAdapter.mm in Sources */,
 				87AB2B1719BBEE84000D5549 /* IOSSupport.mm in Sources */,
-				87AB2B1A19BBEF2B000D5549 /* OsSupport.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

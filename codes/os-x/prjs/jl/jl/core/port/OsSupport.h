@@ -6,11 +6,11 @@
 class OsSupport
 {
 	public:
-		static long currentTimeMillis();
-		static void playMp3(string path);
-		static string getMdn();
-		static string getImei();
-		static void copyAssetFile(string srcName, string targetName);
+		long currentTimeMillis();
+		void playMp3(string path);
+		string getMdn();
+		string getImei();
+		void copyAssetFile(string srcName, string targetName);
 
 	protected:
 	private:
