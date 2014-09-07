@@ -39,7 +39,7 @@ class JpwordReader
 		State mCourseState;
 		vector<Course> mCourses;
 		UrlSetting mSetting;
-		OsSupport mOsSupport;
+		OsSupport* mOsSupport;
 		const static int MAX_LEVEL;
 
 		vector<AudioInfo> infoList();

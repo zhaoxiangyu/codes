@@ -10,7 +10,7 @@ class OsSupport
 		void playMp3(string path);
 		string getMdn();
 		string getImei();
-		void copyAssetFile(string srcName, string targetName);
+		virtual void copyAssetFile(string srcName, string targetName)=0;
 
 	protected:
 	private:
