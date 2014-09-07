@@ -167,8 +167,7 @@
 		87AB2A5D19BB4077000D5549 /* jl */ = {
 			isa = PBXGroup;
 			children = (
-				87AB2B1119BBEAF6000D5549 /* JlCoreAdapter.h */,
-				87AB2B1219BBEAF7000D5549 /* JlCoreAdapter.mm */,
+				87AB2B1419BBEC5C000D5549 /* adapter */,
 				87AB2AC919BB4AB4000D5549 /* core */,
 				87AB2A6619BB4077000D5549 /* JlAppDelegate.h */,
 				87AB2A6719BB4077000D5549 /* JlAppDelegate.m */,
@@ -315,6 +314,15 @@
 				87AB2B0719BB5C32000D5549 /* OsSupport.h */,
 			);
 			path = port;
+			sourceTree = "<group>";
+		};
+		87AB2B1419BBEC5C000D5549 /* adapter */ = {
+			isa = PBXGroup;
+			children = (
+				87AB2B1119BBEAF6000D5549 /* JlCoreAdapter.h */,
+				87AB2B1219BBEAF7000D5549 /* JlCoreAdapter.mm */,
+			);
+			name = adapter;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
