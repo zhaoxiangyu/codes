@@ -49,6 +49,7 @@ void JpwordReader::saveCache(vector<AudioInfo> infoList,int courseNo){
 void JpwordReader::loadCache(LevelsInfo lvs, int courseNo){
 	string filePath = CourseUtils::courseCacheFilePath(courseNo);
 	long ct = mOsSupport->currentTimeMillis();
+    //long ct = OsSupport::currentTimeMillis();
 	vector<AudioInfo> o;
 	if(IOUtils::fileExists(filePath)){
 		//o = (AudioInfo[]) oss.fromString(
@@ -57,6 +58,7 @@ void JpwordReader::loadCache(LevelsInfo lvs, int courseNo){
 		IOUtils::log("file "+filePath+ " not exists.");
 	}
 	long ct2 = mOsSupport->currentTimeMillis();
+    //long ct2 = OsSupport::currentTimeMillis();
 	int sec = (int) ((ct2 - ct) / 1000);
 	if (!o.empty()){
 		//IOUtils::log("takes " + sec + " seconds,total " + o.length
@@ -145,6 +147,7 @@ void JpwordReader::playMp3(){
 	AudioInfo* info = current();
 	if(info != NULL){
 		mOsSupport->playMp3(info->getMp3Path());
+        //OsSupport::playMp3(info->getMp3Path());
 	}
 }
 

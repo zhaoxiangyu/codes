@@ -10,22 +10,22 @@
 #import <AVFoundation/AVFoundation.h>
 #import "IOSSupport.h"
 
-struct IOSImpl {
+struct OsApi {
     AVAudioPlayer* player;
 };
 
-IOSImpl* IOSSupport::impl=NULL;
+//OsApi* OsSupport::api=NULL;
 
-long IOSSupport::currentTimeMillis(){
+long OsSupport::currentTimeMillis(){
 	//return wxGetLocalTimeMillis();
 	return 0;
 }
 
-void IOSSupport::playMp3(string path){
+void OsSupport::playMp3(string path){
     
     NSString* filePath = [NSString stringWithUTF8String:path.c_str()];
     NSURL* fileUrl = [NSURL fileURLWithPath:filePath];
-    AVAudioPlayer* player = impl->player;
+    AVAudioPlayer* player = api->player;
     if (nil != player) {
         [player stop];
         //[player release];
@@ -34,14 +34,14 @@ void IOSSupport::playMp3(string path){
     [player play];
 }
 
-string IOSSupport::getMdn(){
+string OsSupport::getMdn(){
     return "";
 }
 
-string IOSSupport::getImei(){
+string OsSupport::getImei(){
     return "";
 }
 
-void IOSSupport::copyAssetFile(string srcName, string targetName){
+void OsSupport::copyAssetFile(string srcName, string targetName){
     
 }

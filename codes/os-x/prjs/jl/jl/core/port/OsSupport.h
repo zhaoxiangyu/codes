@@ -3,6 +3,7 @@
 
 #include "../header/Stl.h"
 
+struct OsApi;
 class OsSupport
 {
 	public:
@@ -10,9 +11,10 @@ class OsSupport
 		void playMp3(string path);
 		string getMdn();
 		string getImei();
-		virtual void copyAssetFile(string srcName, string targetName)=0;
+		void copyAssetFile(string srcName, string targetName);
 
 	protected:
+        OsApi* api;
 	private:
 };
 
