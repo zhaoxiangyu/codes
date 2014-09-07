@@ -1,6 +1,6 @@
 #include "JpwordReader.h"
-#include "utils/IOUtils.h"
-#include "utils/OsSupport.h"
+#include "port/IOUtils.h"
+#include "port/OsSupport.h"
 #include "utils/DataUtils.h"
 
 #include "support/CourseUtils.h"

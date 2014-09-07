@@ -2,7 +2,7 @@
 #define JPWORDREADER_H
 
 #include "header/Stl.h"
-#include "utils/OsSupport.h"
+#include "port/OsSupport.h"
 #include "data/AudioInfo.h"
 #include "data/Course.h"
 #include "data/UrlSetting.h"

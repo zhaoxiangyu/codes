@@ -37,6 +37,7 @@
 		87AB2AFC19BB4AB4000D5549 /* NetworkSupport.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 87AB2AE719BB4AB4000D5549 /* NetworkSupport.cpp */; };
 		87AB2AFD19BB4AB4000D5549 /* UnitUtils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 87AB2AE919BB4AB4000D5549 /* UnitUtils.cpp */; };
 		87AB2AFE19BB4AB4000D5549 /* DataUtils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 87AB2AEC19BB4AB4000D5549 /* DataUtils.cpp */; };
+		87AB2B1319BBEAF7000D5549 /* JlCoreAdapter.mm in Sources */ = {isa = PBXBuildFile; fileRef = 87AB2B1219BBEAF7000D5549 /* JlCoreAdapter.mm */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -103,8 +104,10 @@
 		87AB2AEA19BB4AB4000D5549 /* UnitUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UnitUtils.h; sourceTree = "<group>"; };
 		87AB2AEC19BB4AB4000D5549 /* DataUtils.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DataUtils.cpp; sourceTree = "<group>"; };
 		87AB2AED19BB4AB4000D5549 /* DataUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataUtils.h; sourceTree = "<group>"; };
-		87AB2AEF19BB4AB4000D5549 /* IOUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IOUtils.h; sourceTree = "<group>"; };
-		87AB2AF119BB4AB4000D5549 /* OsSupport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OsSupport.h; sourceTree = "<group>"; };
+		87AB2B0619BB5C32000D5549 /* IOUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IOUtils.h; sourceTree = "<group>"; };
+		87AB2B0719BB5C32000D5549 /* OsSupport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OsSupport.h; sourceTree = "<group>"; };
+		87AB2B1119BBEAF6000D5549 /* JlCoreAdapter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JlCoreAdapter.h; sourceTree = "<group>"; };
+		87AB2B1219BBEAF7000D5549 /* JlCoreAdapter.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = JlCoreAdapter.mm; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -164,6 +167,8 @@
 		87AB2A5D19BB4077000D5549 /* jl */ = {
 			isa = PBXGroup;
 			children = (
+				87AB2B1119BBEAF6000D5549 /* JlCoreAdapter.h */,
+				87AB2B1219BBEAF7000D5549 /* JlCoreAdapter.mm */,
 				87AB2AC919BB4AB4000D5549 /* core */,
 				87AB2A6619BB4077000D5549 /* JlAppDelegate.h */,
 				87AB2A6719BB4077000D5549 /* JlAppDelegate.m */,
@@ -220,6 +225,7 @@
 		87AB2AC919BB4AB4000D5549 /* core */ = {
 			isa = PBXGroup;
 			children = (
+				87AB2B0519BB5C30000D5549 /* port */,
 				87AB2ACA19BB4AB4000D5549 /* data */,
 				87AB2AD119BB4AB4000D5549 /* header */,
 				87AB2AD519BB4AB4000D5549 /* JpwordReader.cpp */,
@@ -298,10 +304,17 @@
 			children = (
 				87AB2AEC19BB4AB4000D5549 /* DataUtils.cpp */,
 				87AB2AED19BB4AB4000D5549 /* DataUtils.h */,
-				87AB2AEF19BB4AB4000D5549 /* IOUtils.h */,
-				87AB2AF119BB4AB4000D5549 /* OsSupport.h */,
 			);
 			path = utils;
+			sourceTree = "<group>";
+		};
+		87AB2B0519BB5C30000D5549 /* port */ = {
+			isa = PBXGroup;
+			children = (
+				87AB2B0619BB5C32000D5549 /* IOUtils.h */,
+				87AB2B0719BB5C32000D5549 /* OsSupport.h */,
+			);
+			path = port;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -432,6 +445,7 @@
 				87AB2AFC19BB4AB4000D5549 /* NetworkSupport.cpp in Sources */,
 				87AB2AFD19BB4AB4000D5549 /* UnitUtils.cpp in Sources */,
 				87AB2AFE19BB4AB4000D5549 /* DataUtils.cpp in Sources */,
+				87AB2B1319BBEAF7000D5549 /* JlCoreAdapter.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

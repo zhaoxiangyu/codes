@@ -8,9 +8,6 @@
 class IOUtils
 {
 	public:
-		IOUtils();
-		virtual ~IOUtils();
-
 		static bool saveToFile(string fpath, string& content);
 		static string loadFromFile(string fpath);
 		static string httpGet(string url);
