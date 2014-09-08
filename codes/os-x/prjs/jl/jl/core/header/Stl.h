@@ -10,6 +10,7 @@
 #include <algorithm>
 
 #include <string>
+#include <regex>
 #include "Type.h"
 
 using namespace std;

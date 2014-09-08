@@ -103,7 +103,7 @@ string CourseUtils::courseZipFileName(int courseNo){
 }
 
 int CourseUtils::courseNoOf(string path){
-	string no = DataUtils::getMatch("unit\\d+/(\\d+)/", path, 2);
+	string no = DataUtils::getMatch("unit\\d+/(\\d+)/", path, 1);
 	return DataUtils::string2int(no);
 }
 
