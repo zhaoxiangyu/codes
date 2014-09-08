@@ -35,6 +35,7 @@
 }
 
 void setupCore(JlAppDelegate* app,JlViewController* viewController){
+    
     app->reader = new JpwordReader();
     app->listener = new ReaderEventListener();
     app->reader->listener = app->listener;
@@ -76,6 +77,7 @@ void setupCore(JlAppDelegate* app,JlViewController* viewController){
 - (void)applicationWillTerminate:(UIApplication *)application
 {
     reader->quit();
+    delete listener;
     delete reader;
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }

@@ -18,18 +18,9 @@ JpwordReader::~JpwordReader()
 
 const int JpwordReader::MAX_LEVEL = 5;
 
-void JpwordReader::unzipComplete(){
-//	loadCourse(mCourseState.currentCourseNo());
-	freshView();
-}
-
-void JpwordReader::chooseCourse(int courseNo){
-	saveCache(infoList(),courseNo);
-	string courseState = mCourseState.toString();
-	IOUtils::saveToFile(CourseUtils::courseCacheFilePath(courseNo),
-		courseState);
-	//TODO
-}
+/*
+    control interface
+ */
 
 void JpwordReader::start(){
 	//TODO
@@ -44,51 +35,17 @@ void JpwordReader::quit(){
     //TODO
 }
 
-void JpwordReader::saveCache(vector<AudioInfo> infoList,int courseNo){
-	string infos = "";
+void JpwordReader::chooseCourse(int courseNo){
+	saveCache(infoList(),courseNo);
+	string courseState = mCourseState.toString();
 	IOUtils::saveToFile(CourseUtils::courseCacheFilePath(courseNo),
-		infos);
-}
-
-void JpwordReader::loadCache(LevelsInfo lvs, int courseNo){
-	string filePath = CourseUtils::courseCacheFilePath(courseNo);
-	long ct = OsSupport::currentTimeMillis();
-	vector<AudioInfo> o;
-	if(IOUtils::fileExists(filePath)){
-		//o = (AudioInfo[]) oss.fromString(
-		//	oss.readFile(filePath), AudioInfo[].class);
-	}else{
-		IOUtils::log("file "+filePath+ " not exists.");
-	}
-	long ct2 = OsSupport::currentTimeMillis();
-	int sec = (int) ((ct2 - ct) / 1000);
-	if (!o.empty()){
-		//IOUtils::log("takes " + sec + " seconds,total " + o.length
-		//		+ " audio info loaded.");
-		//for_each(o.begin(),o.end(),NULL);
-		//lvs.add(ai);
-	}
-}
-
-void JpwordReader::loadCourse(int courseNo){
-	levels.clear(-1,MAX_LEVEL);
-	loadCache(levels, courseNo);
-	if(levelList().empty()){
-		IOUtils::log("loading from cache failed.");
-		loadMp3(levels,courseNo);
-	}else{
-		IOUtils::log("loaded from cache.");
-	}
+                        courseState);
+	//TODO
 }
 
 void JpwordReader::switchLC(int newLevel){
 	mCourseState.switchToLevel(newLevel);
 	freshView();
-}
-
-string JpwordReader::text(){
-	AudioInfo* currentAudio = current();
-	return currentAudio == NULL ? "" : currentAudio -> getName();
 }
 
 void JpwordReader::upLevel(){
@@ -150,6 +107,66 @@ void JpwordReader::playMp3(){
 	if(info != NULL){
         OsSupport::playMp3(info->getMp3Path());
 	}
+}
+
+/*
+    Used to retrieve information for display
+ */
+
+string JpwordReader::text(){
+	AudioInfo* currentAudio = current();
+	return currentAudio == NULL ? "" : currentAudio -> getName();
+}
+
+string JpwordReader::errorMessage(){
+    //TODO
+    return "";
+}
+
+/*
+    PRIVATE methods goes here
+ */
+
+void JpwordReader::saveCache(vector<AudioInfo> infoList,int courseNo){
+	string infos = "";
+	IOUtils::saveToFile(CourseUtils::courseCacheFilePath(courseNo),
+                        infos);
+}
+
+void JpwordReader::loadCache(LevelsInfo lvs, int courseNo){
+	string filePath = CourseUtils::courseCacheFilePath(courseNo);
+	long ct = OsSupport::currentTimeMillis();
+	vector<AudioInfo> o;
+	if(IOUtils::fileExists(filePath)){
+		//o = (AudioInfo[]) oss.fromString(
+		//	oss.readFile(filePath), AudioInfo[].class);
+	}else{
+		IOUtils::log("file "+filePath+ " not exists.");
+	}
+	long ct2 = OsSupport::currentTimeMillis();
+	int sec = (int) ((ct2 - ct) / 1000);
+	if (!o.empty()){
+		//IOUtils::log("takes " + sec + " seconds,total " + o.length
+		//		+ " audio info loaded.");
+		//for_each(o.begin(),o.end(),NULL);
+		//lvs.add(ai);
+	}
+}
+
+void JpwordReader::loadCourse(int courseNo){
+	levels.clear(-1,MAX_LEVEL);
+	loadCache(levels, courseNo);
+	if(levelList().empty()){
+		IOUtils::log("loading from cache failed.");
+		loadMp3(levels,courseNo);
+	}else{
+		IOUtils::log("loaded from cache.");
+	}
+}
+
+void JpwordReader::unzipComplete(){
+    //	loadCourse(mCourseState.currentCourseNo());
+	freshView();
 }
 
 AudioInfo* JpwordReader::current(){

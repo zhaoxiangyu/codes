@@ -34,6 +34,7 @@ class JpwordReader
 		void chooseCourse(int courseNo);
 
         string text();
+        string errorMessage();
 
     protected:
 	
