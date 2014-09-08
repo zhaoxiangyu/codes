@@ -91,6 +91,7 @@ import org.apache.commons.lang3.CharUtils;
 import org.dom4j.Document;
 import org.dom4j.Element;
 import org.dom4j.io.SAXReader;
+import org.sharpx.swing.utils.SwingUtils.JTableUtilsX.ColumnsSupportX;
 import org.sharpx.swing.intf.FileHandler;
 import org.sharpx.swing.intf.ItemSelected;
 import org.sharpx.swing.intf.Pluggable.TabbedUI;
@@ -1490,6 +1491,35 @@ public class SwingUtils {
 		p.remove(c);
 	}
 
+	public static ColumnsSupportX<File> fileView() {
+		return new ColumnsSupportX<File>() {
+
+			public Object[] columnValues(File f) {
+				return new Object[]{f.getName(),
+						DsUtils.toShortStr(f.lastModified()),null,
+						f.length(),f.getPath()};
+			}
+
+			public String[] columnNames() {
+				return new String[]{"filename",
+						"lastUpdated","created",
+						"size","path"};
+			}
+
+			public Integer[] columnWidths() {
+				return new Integer[]{10*15,10*10,10*10,10*8,10*22};
+			}
+
+			public int defaultSortColumn() {
+				return 1;
+			}
+
+			public boolean defaultAsc() {
+				return false;
+			}
+		};
+	}
+	
 	public static void setVisible(Component c,Container p, boolean visible) {
 		hideComponent(c,p);
 		if(visible)

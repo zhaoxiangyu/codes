@@ -26,12 +26,12 @@
 		<item value="1" key="ResourceViewer.STORE_SORT_TYPE"/>
 	</section>
 	<section name="CleanDialogSettings">
-		<item value="565" key="DIALOG_WIDTH"/>
+		<item value="567" key="DIALOG_WIDTH"/>
 		<item value="true" key="BUILD_NOW"/>
-		<item value="106" key="DIALOG_Y_ORIGIN"/>
 		<item value="false" key="BUILD_ALL"/>
+		<item value="106" key="DIALOG_Y_ORIGIN"/>
+		<item value="503" key="DIALOG_HEIGHT"/>
 		<item value="551" key="DIALOG_X_ORIGIN"/>
-		<item value="474" key="DIALOG_HEIGHT"/>
 		<item value="true" key="TOGGLE_SELECTED"/>
 	</section>
 </section>
