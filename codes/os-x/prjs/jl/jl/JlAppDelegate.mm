@@ -9,8 +9,11 @@
 #import "JlAppDelegate.h"
 
 #import "JlViewController.h"
+#import "core/JpwordReader.h"
 
-@implementation JlAppDelegate
+@implementation JlAppDelegate{
+    JpwordReader* reader;
+}
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
@@ -21,6 +24,8 @@
     } else {
         self.viewController = [[JlViewController alloc] initWithNibName:@"JlViewController_iPad" bundle:nil];
     }
+    reader = new JpwordReader();
+
     self.window.rootViewController = self.viewController;
     [self.window makeKeyAndVisible];
     return YES;
@@ -50,6 +55,7 @@
 
 - (void)applicationWillTerminate:(UIApplication *)application
 {
+    delete reader;
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 

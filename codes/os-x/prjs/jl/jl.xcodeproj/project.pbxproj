@@ -12,7 +12,7 @@
 		87AB2A5C19BB4077000D5549 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 87AB2A5B19BB4077000D5549 /* CoreGraphics.framework */; };
 		87AB2A6219BB4077000D5549 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 87AB2A6019BB4077000D5549 /* InfoPlist.strings */; };
 		87AB2A6419BB4077000D5549 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 87AB2A6319BB4077000D5549 /* main.m */; };
-		87AB2A6819BB4077000D5549 /* JlAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 87AB2A6719BB4077000D5549 /* JlAppDelegate.m */; };
+		87AB2A6819BB4077000D5549 /* JlAppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 87AB2A6719BB4077000D5549 /* JlAppDelegate.mm */; };
 		87AB2A6A19BB4077000D5549 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 87AB2A6919BB4077000D5549 /* Default.png */; };
 		87AB2A6C19BB4077000D5549 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 87AB2A6B19BB4077000D5549 /* Default@2x.png */; };
 		87AB2A6E19BB4077000D5549 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 87AB2A6D19BB4077000D5549 /* Default-568h@2x.png */; };
@@ -64,7 +64,7 @@
 		87AB2A6319BB4077000D5549 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		87AB2A6519BB4077000D5549 /* jl-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "jl-Prefix.pch"; sourceTree = "<group>"; };
 		87AB2A6619BB4077000D5549 /* JlAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JlAppDelegate.h; sourceTree = "<group>"; };
-		87AB2A6719BB4077000D5549 /* JlAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JlAppDelegate.m; sourceTree = "<group>"; };
+		87AB2A6719BB4077000D5549 /* JlAppDelegate.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = JlAppDelegate.mm; sourceTree = "<group>"; };
 		87AB2A6919BB4077000D5549 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		87AB2A6B19BB4077000D5549 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		87AB2A6D19BB4077000D5549 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
@@ -181,7 +181,7 @@
 				87AB2B1419BBEC5C000D5549 /* adapter */,
 				87AB2AC919BB4AB4000D5549 /* core */,
 				87AB2A6619BB4077000D5549 /* JlAppDelegate.h */,
-				87AB2A6719BB4077000D5549 /* JlAppDelegate.m */,
+				87AB2A6719BB4077000D5549 /* JlAppDelegate.mm */,
 				87AB2A9519BB41B1000D5549 /* ui */,
 				87AB2A5E19BB4077000D5549 /* Supporting Files */,
 			);
@@ -453,7 +453,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				87AB2A6419BB4077000D5549 /* main.m in Sources */,
-				87AB2A6819BB4077000D5549 /* JlAppDelegate.m in Sources */,
+				87AB2A6819BB4077000D5549 /* JlAppDelegate.mm in Sources */,
 				87AB2A7119BB4077000D5549 /* JlViewController.mm in Sources */,
 				87AB2AF219BB4AB4000D5549 /* AudioInfo.cpp in Sources */,
 				87AB2AF319BB4AB4000D5549 /* Course.cpp in Sources */,

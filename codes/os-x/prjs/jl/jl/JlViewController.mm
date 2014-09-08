@@ -14,7 +14,7 @@
 @end
 
 @implementation JlViewController{
-    JpwordReader* reader;    
+    JpwordReader* reader;
 }
 
 - (void)viewDidLoad
