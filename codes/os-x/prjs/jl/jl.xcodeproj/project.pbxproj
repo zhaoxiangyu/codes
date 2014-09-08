@@ -172,7 +172,7 @@
 		87AB2A5D19BB4077000D5549 /* jl */ = {
 			isa = PBXGroup;
 			children = (
-				87AB2B1419BBEC5C000D5549 /* adapter */,
+				87AB2B1419BBEC5C000D5549 /* port */,
 				87AB2AC919BB4AB4000D5549 /* core */,
 				87AB2A6619BB4077000D5549 /* JlAppDelegate.h */,
 				87AB2A6719BB4077000D5549 /* JlAppDelegate.mm */,
@@ -320,14 +320,14 @@
 			path = port;
 			sourceTree = "<group>";
 		};
-		87AB2B1419BBEC5C000D5549 /* adapter */ = {
+		87AB2B1419BBEC5C000D5549 /* port */ = {
 			isa = PBXGroup;
 			children = (
 				87A99DEB19BDA4FA00586D07 /* ReaderEventListener.mm */,
 				87AC445219BCA4100064B65A /* OsSupport.mm */,
 				87AC445719BD3D5E0064B65A /* IOUtils.mm */,
 			);
-			name = adapter;
+			name = port;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
