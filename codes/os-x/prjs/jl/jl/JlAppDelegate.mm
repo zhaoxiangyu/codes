@@ -24,7 +24,10 @@
     } else {
         self.viewController = [[JlViewController alloc] initWithNibName:@"JlViewController_iPad" bundle:nil];
     }
+    
     reader = new JpwordReader();
+    reader->start();
+    
     [self.viewController setValue: self forKey: @"app"];
     self.window.rootViewController = self.viewController;
     [self.window makeKeyAndVisible];
@@ -65,6 +68,7 @@
 
 - (void)applicationWillTerminate:(UIApplication *)application
 {
+    reader->quit();
     delete reader;
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }

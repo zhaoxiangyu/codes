@@ -13,7 +13,10 @@
 class JpwordReader
 {
 	public:
-		LevelsInfo levels;
+        JpwordReader();
+        virtual ~JpwordReader();
+
+        LevelsInfo levels;
 		ReaderEventListener* listener;
 
 		vector<Course> courseList();
@@ -31,8 +34,6 @@ class JpwordReader
 		void quit();
 		void chooseCourse(int courseNo);
 
-		JpwordReader();
-		virtual ~JpwordReader();
 	protected:
 		void freshView();
 	private:
