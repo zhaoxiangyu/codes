@@ -37,8 +37,6 @@
 		87AB2AFC19BB4AB4000D5549 /* NetworkSupport.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 87AB2AE719BB4AB4000D5549 /* NetworkSupport.cpp */; };
 		87AB2AFD19BB4AB4000D5549 /* UnitUtils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 87AB2AE919BB4AB4000D5549 /* UnitUtils.cpp */; };
 		87AB2AFE19BB4AB4000D5549 /* DataUtils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 87AB2AEC19BB4AB4000D5549 /* DataUtils.cpp */; };
-		87AB2B1319BBEAF7000D5549 /* JlCoreAdapter.mm in Sources */ = {isa = PBXBuildFile; fileRef = 87AB2B1219BBEAF7000D5549 /* JlCoreAdapter.mm */; };
-		87AB2B1719BBEE84000D5549 /* IOSSupport.mm in Sources */ = {isa = PBXBuildFile; fileRef = 87AB2B1519BBEE84000D5549 /* IOSSupport.mm */; };
 		87AC445419BCA4100064B65A /* OsSupport.mm in Sources */ = {isa = PBXBuildFile; fileRef = 87AC445219BCA4100064B65A /* OsSupport.mm */; };
 		87AC445619BCA7B60064B65A /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 87AC445519BCA7B60064B65A /* AVFoundation.framework */; };
 		87AC445919BD3D5F0064B65A /* IOUtils.mm in Sources */ = {isa = PBXBuildFile; fileRef = 87AC445719BD3D5E0064B65A /* IOUtils.mm */; };
@@ -110,10 +108,6 @@
 		87AB2AED19BB4AB4000D5549 /* DataUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataUtils.h; sourceTree = "<group>"; };
 		87AB2B0619BB5C32000D5549 /* IOUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IOUtils.h; sourceTree = "<group>"; };
 		87AB2B0719BB5C32000D5549 /* OsSupport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OsSupport.h; sourceTree = "<group>"; };
-		87AB2B1119BBEAF6000D5549 /* JlCoreAdapter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JlCoreAdapter.h; sourceTree = "<group>"; };
-		87AB2B1219BBEAF7000D5549 /* JlCoreAdapter.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = JlCoreAdapter.mm; sourceTree = "<group>"; };
-		87AB2B1519BBEE84000D5549 /* IOSSupport.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = IOSSupport.mm; sourceTree = "<group>"; };
-		87AC445119BC84080064B65A /* IOSSupport.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IOSSupport.h; sourceTree = "<group>"; };
 		87AC445219BCA4100064B65A /* OsSupport.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = OsSupport.mm; sourceTree = "<group>"; };
 		87AC445519BCA7B60064B65A /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		87AC445719BD3D5E0064B65A /* IOUtils.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = IOUtils.mm; sourceTree = "<group>"; };
@@ -330,11 +324,7 @@
 		87AB2B1419BBEC5C000D5549 /* adapter */ = {
 			isa = PBXGroup;
 			children = (
-				87AB2B1119BBEAF6000D5549 /* JlCoreAdapter.h */,
-				87AB2B1219BBEAF7000D5549 /* JlCoreAdapter.mm */,
 				87AC445219BCA4100064B65A /* OsSupport.mm */,
-				87AB2B1519BBEE84000D5549 /* IOSSupport.mm */,
-				87AC445119BC84080064B65A /* IOSSupport.h */,
 				87AC445719BD3D5E0064B65A /* IOUtils.mm */,
 			);
 			name = adapter;
@@ -468,8 +458,6 @@
 				87AB2AFC19BB4AB4000D5549 /* NetworkSupport.cpp in Sources */,
 				87AB2AFD19BB4AB4000D5549 /* UnitUtils.cpp in Sources */,
 				87AB2AFE19BB4AB4000D5549 /* DataUtils.cpp in Sources */,
-				87AB2B1319BBEAF7000D5549 /* JlCoreAdapter.mm in Sources */,
-				87AB2B1719BBEE84000D5549 /* IOSSupport.mm in Sources */,
 				87AC445419BCA4100064B65A /* OsSupport.mm in Sources */,
 				87AC445919BD3D5F0064B65A /* IOUtils.mm in Sources */,
 			);

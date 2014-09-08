@@ -16,7 +16,7 @@ JpwordReader::~JpwordReader()
 	//dtor
 }
 
-const int JpwordReader::MAX_LEVEL = 4;
+const int JpwordReader::MAX_LEVEL = 5;
 
 void JpwordReader::unzipComplete(){
 //	loadCourse(mCourseState.currentCourseNo());
@@ -145,7 +145,6 @@ void JpwordReader::playMp3(){
 	AudioInfo* info = current();
 	if(info != NULL){
         OsSupport::playMp3(info->getMp3Path());
-        //OsSupport::playMp3(info->getMp3Path());
 	}
 }
 
