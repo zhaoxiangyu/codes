@@ -105,27 +105,28 @@
               zr ($x:text? (str prefix "/span[@class=\"z_r\"]") doc)
               defi ($x:text? (str prefix "/div[@class=\"def_block\"]/span[@class=\"ud\" or @class=\"d\"]") doc)
               defi (if (or (nil? defi) (empty? defi)) ($x:text* (str prefix "/span[@class=\"d\" or @class=\"dab\"]") doc) defi)
-              xgs (parse-coll doc prefix "/span[@class=\"x-g\"]" [{:item-tag "/span[@class=\"x\"]" :key-name :example}])
+              xgs (parse-coll doc prefix "/span[@class=\"x-g\"]" [:example "/span[@class=\"x\"]"])
               #_ (ngs)]
           (array-map :n (inc i) :cm cm :h4 h4 :zr zr :defi defi :xgs xgs)))
       nodes)))
 
 (defn- parse-coll
-  "doc '/docs' '/doc[@class='xx']'
-  [{:item-tag '/name' :key-name 'title'}
-  {:structure [{:item-tag 'xx' :key-name 'xx'}] :item-tag '/subtitle' :key-name 'subtitle'}]
+  "parse-coll doc '/docs' '/doc[@class='xx']'
+  [[:title '/name']
+  [:subtitle '/subtitle' [:xx 'xx']]
   returns:
-  [{:n 1 :title 'haha' :subtitle [{:xx 'yy'}]}{:n 2 :title 'haha2' :subtitle [{:xx 'yy2'}]}]"
-  [doc prefix item-tag sons]
+  [{:n 1 :title 'haha' :subtitle [{:xx 'yy'}]}
+  {:n 2 :title 'haha2' :subtitle [{:xx 'yy2'}]}]"
+  [doc prefix item-tag & sons]
   (let [nodes ($x:node* (str prefix item-tag) doc)]
     (map-indexed
       (fn [i _]
         (let [prefix (str prefix item-tag "[" (inc i) "]")]
           (into (array-map :n (inc i))
-            (for [{:keys [structure item-tag key-name]} sons]
+            (for [[key-name item-tag & structure] sons]
               (cond
-                (nil? structure) [key-name ($x:text? (str prefix item-tag) doc)]
-                (not (nil? structure)) [key-name (parse-coll doc prefix item-tag structure)])))))
+                (empty? structure) [key-name ($x:text? (str prefix item-tag) doc)]
+                (not (empty? structure)) [key-name (parse-coll doc prefix item-tag structure)])))))
       nodes)))
 
 (defn- parse-term
