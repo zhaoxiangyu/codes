@@ -10,9 +10,11 @@
 
 #import "JlViewController.h"
 #import "core/JpwordReader.h"
+#import "core/port/ReaderEventListener.h"
 
 @implementation JlAppDelegate{
     JpwordReader* reader;
+    ReaderEventListener* listener;
 }
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
@@ -24,14 +26,19 @@
     } else {
         self.viewController = [[JlViewController alloc] initWithNibName:@"JlViewController_iPad" bundle:nil];
     }
-    
-    reader = new JpwordReader();
-    reader->start();
+    setupCore(self,self.viewController);
     
     [self.viewController setValue: self forKey: @"app"];
     self.window.rootViewController = self.viewController;
     [self.window makeKeyAndVisible];
     return YES;
+}
+
+void setupCore(JlAppDelegate* app,JlViewController* viewController){
+    app->reader = new JpwordReader();
+    app->listener = new ReaderEventListener();
+    app->reader->listener = app->listener;
+    app->reader->start();
 }
 
 - (void)chooseCourse:(int)courseNo

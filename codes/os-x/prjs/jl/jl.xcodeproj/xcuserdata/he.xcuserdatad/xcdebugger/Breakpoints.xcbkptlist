@@ -27,5 +27,18 @@
          landmarkName = "IOSSupport::playMp3(string path)"
          landmarkType = "5">
       </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "Yes"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "jl/JlAppDelegate.mm"
+         timestampString = "431860079.583768"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "38"
+         endingLineNumber = "38"
+         landmarkName = "setupCore()"
+         landmarkType = "7">
+      </FileBreakpoint>
    </FileBreakpoints>
 </Bucket>

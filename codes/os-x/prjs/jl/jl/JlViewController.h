@@ -10,6 +10,8 @@
 
 @interface JlViewController : UIViewController
 
+- (void)refreshView;
+
 - (IBAction)toFirst:(id)sender;
 
 @end

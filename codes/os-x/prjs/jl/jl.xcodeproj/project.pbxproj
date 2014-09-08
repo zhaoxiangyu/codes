@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		87A99DEC19BDA4FA00586D07 /* ReaderEventListener.mm in Sources */ = {isa = PBXBuildFile; fileRef = 87A99DEB19BDA4FA00586D07 /* ReaderEventListener.mm */; };
 		87AB2A5819BB4077000D5549 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 87AB2A5719BB4077000D5549 /* UIKit.framework */; };
 		87AB2A5A19BB4077000D5549 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 87AB2A5919BB4077000D5549 /* Foundation.framework */; };
 		87AB2A5C19BB4077000D5549 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 87AB2A5B19BB4077000D5549 /* CoreGraphics.framework */; };
@@ -29,7 +30,6 @@
 		87AB2AF419BB4AB4000D5549 /* UrlSetting.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 87AB2ACF19BB4AB4000D5549 /* UrlSetting.cpp */; };
 		87AB2AF519BB4AB4000D5549 /* JpwordReader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 87AB2AD519BB4AB4000D5549 /* JpwordReader.cpp */; };
 		87AB2AF619BB4AB4000D5549 /* DownloadEventListener.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 87AB2AD819BB4AB4000D5549 /* DownloadEventListener.cpp */; };
-		87AB2AF719BB4AB4000D5549 /* ReaderEventListener.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 87AB2ADA19BB4AB4000D5549 /* ReaderEventListener.cpp */; };
 		87AB2AF819BB4AB4000D5549 /* UnzipEventListener.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 87AB2ADC19BB4AB4000D5549 /* UnzipEventListener.cpp */; };
 		87AB2AF919BB4AB4000D5549 /* LevelsInfo.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 87AB2ADF19BB4AB4000D5549 /* LevelsInfo.cpp */; };
 		87AB2AFA19BB4AB4000D5549 /* State.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 87AB2AE119BB4AB4000D5549 /* State.cpp */; };
@@ -53,6 +53,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		87A99DEB19BDA4FA00586D07 /* ReaderEventListener.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ReaderEventListener.mm; sourceTree = "<group>"; };
+		87A99DED19BDA54500586D07 /* ReaderEventListener.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReaderEventListener.h; sourceTree = "<group>"; };
 		87AB2A5319BB4077000D5549 /* jl.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = jl.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		87AB2A5719BB4077000D5549 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		87AB2A5919BB4077000D5549 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -89,8 +91,6 @@
 		87AB2AD619BB4AB4000D5549 /* JpwordReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JpwordReader.h; sourceTree = "<group>"; };
 		87AB2AD819BB4AB4000D5549 /* DownloadEventListener.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DownloadEventListener.cpp; sourceTree = "<group>"; };
 		87AB2AD919BB4AB4000D5549 /* DownloadEventListener.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DownloadEventListener.h; sourceTree = "<group>"; };
-		87AB2ADA19BB4AB4000D5549 /* ReaderEventListener.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ReaderEventListener.cpp; sourceTree = "<group>"; };
-		87AB2ADB19BB4AB4000D5549 /* ReaderEventListener.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReaderEventListener.h; sourceTree = "<group>"; };
 		87AB2ADC19BB4AB4000D5549 /* UnzipEventListener.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = UnzipEventListener.cpp; sourceTree = "<group>"; };
 		87AB2ADD19BB4AB4000D5549 /* UnzipEventListener.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UnzipEventListener.h; sourceTree = "<group>"; };
 		87AB2ADF19BB4AB4000D5549 /* LevelsInfo.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LevelsInfo.cpp; sourceTree = "<group>"; };
@@ -270,8 +270,6 @@
 			children = (
 				87AB2AD819BB4AB4000D5549 /* DownloadEventListener.cpp */,
 				87AB2AD919BB4AB4000D5549 /* DownloadEventListener.h */,
-				87AB2ADA19BB4AB4000D5549 /* ReaderEventListener.cpp */,
-				87AB2ADB19BB4AB4000D5549 /* ReaderEventListener.h */,
 				87AB2ADC19BB4AB4000D5549 /* UnzipEventListener.cpp */,
 				87AB2ADD19BB4AB4000D5549 /* UnzipEventListener.h */,
 			);
@@ -315,6 +313,7 @@
 		87AB2B0519BB5C30000D5549 /* port */ = {
 			isa = PBXGroup;
 			children = (
+				87A99DED19BDA54500586D07 /* ReaderEventListener.h */,
 				87AB2B0619BB5C32000D5549 /* IOUtils.h */,
 				87AB2B0719BB5C32000D5549 /* OsSupport.h */,
 			);
@@ -324,6 +323,7 @@
 		87AB2B1419BBEC5C000D5549 /* adapter */ = {
 			isa = PBXGroup;
 			children = (
+				87A99DEB19BDA4FA00586D07 /* ReaderEventListener.mm */,
 				87AC445219BCA4100064B65A /* OsSupport.mm */,
 				87AC445719BD3D5E0064B65A /* IOUtils.mm */,
 			);
@@ -450,7 +450,6 @@
 				87AB2AF419BB4AB4000D5549 /* UrlSetting.cpp in Sources */,
 				87AB2AF519BB4AB4000D5549 /* JpwordReader.cpp in Sources */,
 				87AB2AF619BB4AB4000D5549 /* DownloadEventListener.cpp in Sources */,
-				87AB2AF719BB4AB4000D5549 /* ReaderEventListener.cpp in Sources */,
 				87AB2AF819BB4AB4000D5549 /* UnzipEventListener.cpp in Sources */,
 				87AB2AF919BB4AB4000D5549 /* LevelsInfo.cpp in Sources */,
 				87AB2AFA19BB4AB4000D5549 /* State.cpp in Sources */,
@@ -460,6 +459,7 @@
 				87AB2AFE19BB4AB4000D5549 /* DataUtils.cpp in Sources */,
 				87AC445419BCA4100064B65A /* OsSupport.mm in Sources */,
 				87AC445919BD3D5F0064B65A /* IOUtils.mm in Sources */,
+				87A99DEC19BDA4FA00586D07 /* ReaderEventListener.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

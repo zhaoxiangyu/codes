@@ -1,6 +1,7 @@
 #ifndef READEREVENTLISTENER_H
 #define READEREVENTLISTENER_H
 
+struct ListenerImpl;
 
 class ReaderEventListener
 {
@@ -8,6 +9,8 @@ class ReaderEventListener
 		ReaderEventListener();
 		virtual ~ReaderEventListener();
 
+        ListenerImpl* impl;
+    
 		void viewNeedsFresh();
 		void showError(int errorCode);
 	protected:

@@ -6,7 +6,7 @@
 #include "data/AudioInfo.h"
 #include "data/Course.h"
 #include "data/UrlSetting.h"
-#include "listener/ReaderEventListener.h"
+#include "port/ReaderEventListener.h"
 #include "runtime/LevelsInfo.h"
 #include "runtime/State.h"
 
@@ -27,16 +27,17 @@ class JpwordReader
 		bool forward();	
 		void downLevel();
 		void upLevel();
-		string text();
 		void switchLC(int newLevel);
 		void pause();
 		void start();
 		void quit();
 		void chooseCourse(int courseNo);
 
-	protected:
-		void freshView();
-	private:
+        string text();
+
+    protected:
+	
+    private:
 		State mCourseState;
 		vector<Course> mCourses;
 		UrlSetting mSetting;
@@ -50,6 +51,7 @@ class JpwordReader
 		void loadCache(LevelsInfo lvs, int courseNo);
 		void saveCache(vector<AudioInfo> infoList,int courseNo);
 		void unzipComplete();
+        void freshView();
 };
 
 #endif // JPWORDREADER_H

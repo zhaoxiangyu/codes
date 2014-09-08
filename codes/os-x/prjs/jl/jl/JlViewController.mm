@@ -9,6 +9,7 @@
 #import "JlViewController.h"
 #import "JlAppDelegate.h"
 
+
 @implementation JlViewController{
     JlAppDelegate* app;
 }
@@ -24,6 +25,11 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)refreshView
+{
+    NSLog(@"about to refresh UI");
 }
 
 - (IBAction)toFirst:(id)sender
