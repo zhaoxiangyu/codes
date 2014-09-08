@@ -7,12 +7,15 @@
 //
 
 #import "JlViewController.h"
+#import "core/JpwordReader.h"
 
 @interface JlViewController ()
 
 @end
 
-@implementation JlViewController
+@implementation JlViewController{
+    JpwordReader* reader;    
+}
 
 - (void)viewDidLoad
 {

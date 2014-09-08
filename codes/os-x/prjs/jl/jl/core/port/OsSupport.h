@@ -7,14 +7,14 @@ struct OsApi;
 class OsSupport
 {
 	public:
-		long currentTimeMillis();
-		void playMp3(string path);
-		string getMdn();
-		string getImei();
-		void copyAssetFile(string srcName, string targetName);
+		static long currentTimeMillis();
+		static void playMp3(string path);
+		static string getMdn();
+		static string getImei();
+		static void copyAssetFile(string srcName, string targetName);
 
 	protected:
-        OsApi* api;
+        static OsApi* api;
 	private:
 };
 

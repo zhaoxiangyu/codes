@@ -14,7 +14,7 @@ struct IOSImpl {
     AVAudioPlayer* player;
 };
 
-IOSImpl* IOSSupport::impl=NULL;
+//IOSImpl* IOSSupport::impl=NULL;
 
 long IOSSupport::currentTimeMillis(){
 	//return wxGetLocalTimeMillis();

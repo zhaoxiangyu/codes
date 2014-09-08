@@ -14,7 +14,7 @@ struct OsApi {
     AVAudioPlayer* player;
 };
 
-//OsApi* OsSupport::api=NULL;
+OsApi* OsSupport::api=new OsApi();
 
 long OsSupport::currentTimeMillis(){
 	//return wxGetLocalTimeMillis();
@@ -31,6 +31,7 @@ void OsSupport::playMp3(string path){
         //[player release];
     }
     player = [[AVAudioPlayer alloc] initWithContentsOfURL:fileUrl error:NULL];
+    api->player = player;
     [player play];
 }
 
