@@ -25,10 +25,20 @@
         self.viewController = [[JlViewController alloc] initWithNibName:@"JlViewController_iPad" bundle:nil];
     }
     reader = new JpwordReader();
-
+    [self.viewController setValue: self forKey: @"app"];
     self.window.rootViewController = self.viewController;
     [self.window makeKeyAndVisible];
     return YES;
+}
+
+- (void)chooseCourse:(int)courseNo
+{
+    reader->chooseCourse(courseNo);
+}
+
+- (void)toFirst
+{
+    reader->toBeginning();
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application

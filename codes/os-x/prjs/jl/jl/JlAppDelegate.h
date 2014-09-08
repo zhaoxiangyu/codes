@@ -16,4 +16,8 @@
 
 @property (strong, nonatomic) JlViewController *viewController;
 
+- (void)chooseCourse:(int)courseNo;
+
+- (void)toFirst;
+
 @end

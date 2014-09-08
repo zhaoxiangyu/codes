@@ -7,26 +7,28 @@
 //
 
 #import "JlViewController.h"
-#import "core/JpwordReader.h"
-
-@interface JlViewController ()
-
-@end
+#import "JlAppDelegate.h"
 
 @implementation JlViewController{
-    JpwordReader* reader;
+    JlAppDelegate* app;
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    //[app chooseCourse:1];
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (IBAction)toFirst:(id)sender
+{
+    [app toFirst];
 }
 
 @end

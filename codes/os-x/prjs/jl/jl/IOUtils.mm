@@ -6,6 +6,7 @@
 //  Copyright (c) 2014 he. All rights reserved.
 //
 
+#import <Foundation/Foundation.h>
 #import <iostream>
 #import <cstdlib>
 
@@ -14,6 +15,8 @@
 bool IOUtils::removeFile(string fpath){
 	return false;
 }
+
+string IOUtils::mPathSep = "/"; //= wxFileName::GetPathSeparator();
 
 string IOUtils::fileBaseName(string path){
 	return "";
@@ -26,7 +29,8 @@ vector<string>& IOUtils::findFiles(string path, vector<string>& extNames){
 }
 
 void IOUtils::log(string msg){
-	//TODO
+    NSString* logmsg = [NSString stringWithUTF8String:msg.c_str()];
+    NSLog(@"%@",logmsg);
 }
 
 bool IOUtils::dirExists(string path){
@@ -36,8 +40,6 @@ bool IOUtils::dirExists(string path){
 bool IOUtils::fileExists(string path){
 	return false;
 }
-
-string IOUtils::mPathSep = "/"; //= wxFileName::GetPathSeparator();
 
 string IOUtils::fullPath(string parent, string name){
 	return parent + mPathSep + name;

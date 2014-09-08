@@ -10,4 +10,6 @@
 
 @interface JlViewController : UIViewController
 
+- (IBAction)toFirst:(id)sender;
+
 @end
