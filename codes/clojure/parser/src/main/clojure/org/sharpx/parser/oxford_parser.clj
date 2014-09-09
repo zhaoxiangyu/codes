@@ -16,6 +16,10 @@
 (def audio-uk "sound audio_play_button pron-uk icon-audio")
 (def audio-us "sound audio_play_button pron-us icon-audio")
 
+(declare parse-definitions)
+(declare parse-coll)
+(declare conj-no-override)
+
 (defn- trimblanks
   [symb]
   (cond
@@ -25,27 +29,25 @@
     (seq? symb) (map trimblanks symb)
     (map? symb) (into (empty symb) (for [[k v] symb] [k (trimblanks v)]))))
 
-(declare parse-definitions)
-(declare parse-coll)
-
 (defn- parse-head
   [doc prefix]
   (let [entry ($x:text (str prefix "//div[@class=\"webtop-g\"]/h2") doc)
         pos ($x:text? (str prefix "//div[@class=\"webtop-g\"]/span[@class=\"pos\"]") doc)
         also ($x:text? (str prefix "//span[@class=\"vs-g\"]/span[@class=\"vs\" or @class=\"v\"]") doc)
         BrE ($x:text? (str prefix "//div[@class=\"ei-g\"]/span[@class=\"i\"]") doc)
-        BrE-mp3 (($x:attrs? (str prefix "//div[@class=\"ei-g\"]/div[@class=\"sound audio_play_button pron-uk icon-audio\"]") doc) :data-src-mp3)
+        BrE-mp3 (:data-src-mp3 ($x:attrs? (str prefix "//div[@class=\"ei-g\"]/div[@class=\"sound audio_play_button pron-uk icon-audio\"]") doc))
         NAmE ($x:text? (str prefix "//div[@class=\"ei-g\"]/span[@class=\"y\"]") doc)
-        NAmE-mp3 (($x:attrs? (str prefix "//div[@class=\"ei-g\"]/div[@class=\"sound audio_play_button pron-us icon-audio\"]") doc) :data-src-mp3)
+        NAmE-mp3 (:data-src-mp3 ($x:attrs? (str prefix "//div[@class=\"ei-g\"]/div[@class=\"sound audio_play_button pron-us icon-audio\"]") doc))
         h-gr ($x:text* (str prefix "//div[@class=\"top-g\"]/span[@class=\"z_gr\"]") doc)
         h-r ($x:text? (str prefix "//div[@class=\"top-g\"]/span[@class=\"z_r\"]") doc)
         defi ($x:text? (str prefix "/div[@class=\"def_block\"]/span[@class=\"d\"]") doc)
         defi (if (or (nil? defi) (empty? defi)) ($x:text* (str prefix "/span[@class=\"d\" or @class=\"dab\"]") doc) defi)
         defi (if (or (nil? defi) (empty? defi)) (parse-definitions doc prefix) defi)
         xr ($x:text* (str prefix "/span[@class=\"xr-g\"]") doc) ;bushel 20-1100 idoms
-        plural ($x:text? (str prefix "//span[@class=\"if-g\"]/span[@class=\"if\"]") doc)]
+        plural ($x:text? (str prefix "//span[@class=\"if-g\"]/span[@class=\"if\"]") doc)
+        pic-url (:href ($x:attrs? (str prefix "//div[@id=\"ox-enlarge\"]/a[@class=\"topic\"]") doc))]
     (array-map :entry entry :pos pos :also also :BrE BrE :BrE-mp3 BrE-mp3 :NAmE NAmE :NAmE-mp3 NAmE-mp3
-      :plural plural :defi defi :xr xr :h-gr h-gr :h-r h-r)))
+      :plural plural :defi defi :xr xr :h-gr h-gr :h-r h-r :pic-url pic-url)))
 
 (defn- parse-morphs
   [doc prefix]
@@ -101,32 +103,38 @@
       (fn [i _]
         (let [prefix (str prefix "[" (inc i) "]")
               cm ($x:text? (str prefix "/span[@class=\"cm\"]") doc)
-              h4 ($x:text* (str prefix "/h4|/z") doc)
+              h4 ($x:text* (str prefix "/h4|z") doc)
               zr ($x:text? (str prefix "/span[@class=\"z_r\"]") doc)
               defi ($x:text? (str prefix "/div[@class=\"def_block\"]/span[@class=\"ud\" or @class=\"d\"]") doc)
               defi (if (or (nil? defi) (empty? defi)) ($x:text* (str prefix "/span[@class=\"d\" or @class=\"dab\"]") doc) defi)
-              xgs (parse-coll doc prefix "/span[@class=\"x-g\"]" [{:item-tag "/span[@class=\"x\"]" :key-name :example}])
+              xgs (parse-coll doc prefix "/span[@class=\"x-g\"]" [:example "/span[@class=\"x\"]"])
               #_ (ngs)]
           (array-map :n (inc i) :cm cm :h4 h4 :zr zr :defi defi :xgs xgs)))
       nodes)))
 
 (defn- parse-coll
-  "doc '/docs' '/doc[@class='xx']'
-  [{:item-tag '/name' :key-name 'title'}
-  {:structure [{:item-tag 'xx' :key-name 'xx'}] :item-tag '/subtitle' :key-name 'subtitle'}]
+  "parse-coll doc '/docs' '/doc[@class='xx']' [:title '/name'] [:subtitle '/subtitle' [:xx 'xx']]
   returns:
-  [{:n 1 :title 'haha' :subtitle [{:xx 'yy'}]}{:n 2 :title 'haha2' :subtitle [{:xx 'yy2'}]}]"
-  [doc prefix item-tag sons]
+  [{:n 1 :title 'haha' :subtitle [{:xx 'yy'}]} {:n 2 :title 'haha2' :subtitle [{:xx 'yy2'}]}]"
+  [doc prefix item-tag & sons]
   (let [nodes ($x:node* (str prefix item-tag) doc)]
     (map-indexed
       (fn [i _]
         (let [prefix (str prefix item-tag "[" (inc i) "]")]
-          (into (array-map :n (inc i))
-            (for [{:keys [structure item-tag key-name]} sons]
-              (cond
-                (nil? structure) [key-name ($x:text? (str prefix item-tag) doc)]
-                (not (nil? structure)) [key-name (parse-coll doc prefix item-tag structure)])))))
+          (reduce conj-no-override (array-map :n (inc i))
+            (map (fn [[key-name item-tag & structure]]
+                   (cond
+                     (empty? structure) [key-name ($x:text? (str prefix item-tag) doc)]
+                     (not (empty? structure)) [key-name (parse-coll doc prefix item-tag structure)]))
+              sons))))
       nodes)))
+
+(defn- conj-no-override
+  [coll [key-name value]]
+  (let [v (get coll key-name nil)]
+    (if (and (map? coll) (not (or (empty? v) (nil? v))))
+      (conj coll elem)
+      coll)))
 
 (defn- parse-term
   [html xmlstr-handler]
@@ -139,8 +147,11 @@
         defi (:defi head)
         defi (if (or (nil? defi) (empty? defi)) (parse-definitions doc term-explanations) defi)
         ;_ (pprint defi)
-        idoms (parse-idoms doc term-idoms)
-
+        ;idoms (parse-idoms doc term-idoms)
+        idoms (parse-coll doc term-idoms "/div[@class=\"id-g\"]"
+                [:cm "/span[@class=\"cm\"]"] [:h4 "/(h4|z)"] [:zr "/span[@class=\"z_r\"]"]
+                [:defi "/div[@class=\"def_block\"]/span[@class=\"ud\" or @class=\"d\"]"] [:defi "/span[@class=\"d\" or @class=\"dab\"]"]
+                [:xgs "/span[@class=\"x-g\"]" [:example "/span[@class=\"x\"]"]])
         term (array-map :head head :morphs morphs :help help :defi defi :idoms idoms)]
     ;term
     (apply array-map
