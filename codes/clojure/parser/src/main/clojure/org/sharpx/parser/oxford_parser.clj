@@ -122,49 +122,51 @@
       (fn [i _]
         (let [prefix (str prefix item-tag "[" (inc i) "]")]
           (reduce conj-no-override (array-map :n (inc i))
-            (map
-              (fn [[key-name item-tag & structure]]
-                (cond
-                  (empty? structure) [key-name ($x:text? (str prefix item-tag) doc)]
-                  (not (empty? structure)) [key-name (parse-coll doc prefix item-tag structure)]))
+            (map (fn [[key-name item-tag & structure]]
+                   (cond
+                     (empty? structure) [key-name ($x:text? (str prefix item-tag) doc)]
+                     (not (empty? structure)) [key-name (parse-coll doc prefix item-tag structure)]))
               sons))))
       nodes)))
 
 (defn- conj-no-override
-  [coll elem]
-  (conj coll elem))
+  [coll [key-name value]]
+  (let [v (get coll key-name nil)]
+    (if (and (map? coll) (not (or (empty? v) (nil? v)))
+      (conj coll elem)
+      coll))
 
-(defn- parse-term
-  [html xmlstr-handler]
-  (let [doc (->> (html-clean html)
-              xmlstr-handler
-              xml->doc)
-        head (parse-head doc term-head)
-        morphs (parse-morphs doc term-morphs)
-        help ($x:text* term-help doc)
-        defi (:defi head)
-        defi (if (or (nil? defi) (empty? defi)) (parse-definitions doc term-explanations) defi)
-        ;_ (pprint defi)
-        ;idoms (parse-idoms doc term-idoms)
-        idoms (parse-coll doc term-idoms "/div[@class=\"id-g\"]"
-                [:cm "/span[@class=\"cm\"]"] [:h4 "/(h4|z)"]
-                [:zr "/span[@class=\"z_r\"]"] [:defi "/div[@class=\"def_block\"]/span[@class=\"ud\" or @class=\"d\"]"]
-                ;[:defi "/todo"]
-                [:xgs "/span[@class=\"x-g\"]" [:example "/span[@class=\"x\"]"]])
-        term (array-map :head head :morphs morphs :help help :defi defi :idoms idoms)]
-    ;term
-    (apply array-map
-      (mapcat vector (keys term) (map trimblanks (vals term))))))
+  (defn- parse-term
+    [html xmlstr-handler]
+    (let [doc (->> (html-clean html)
+                xmlstr-handler
+                xml->doc)
+          head (parse-head doc term-head)
+          morphs (parse-morphs doc term-morphs)
+          help ($x:text* term-help doc)
+          defi (:defi head)
+          defi (if (or (nil? defi) (empty? defi)) (parse-definitions doc term-explanations) defi)
+          ;_ (pprint defi)
+          ;idoms (parse-idoms doc term-idoms)
+          idoms (parse-coll doc term-idoms "/div[@class=\"id-g\"]"
+                  [:cm "/span[@class=\"cm\"]"] [:h4 "/(h4|z)"]
+                  [:zr "/span[@class=\"z_r\"]"] [:defi "/div[@class=\"def_block\"]/span[@class=\"ud\" or @class=\"d\"]"]
+                  ;[:defi "/todo"]
+                  [:xgs "/span[@class=\"x-g\"]" [:example "/span[@class=\"x\"]"]])
+          term (array-map :head head :morphs morphs :help help :defi defi :idoms idoms)]
+      ;term
+      (apply array-map
+        (mapcat vector (keys term) (map trimblanks (vals term))))))
 
-;/html/body//div[contains(@id,"entryContent")]
-(defn -parse
-  "parse url:html pair"
-  [{:keys [type url html]} xml-writer exception-handler] ;[{t :type url :url html :html}]
-  (try
-    (let [new-values (if (= type "e")
-                       (parse-term html xml-writer) ;#((println %) %)))
-                       (prn "it's category page,not term page!"))
-          ret (merge new-values (array-map :type type :url url :bc (count html)))]
-      new-values)
-    (catch Exception e
-      (exception-handler) (throw e))))
+  ;/html/body//div[contains(@id,"entryContent")]
+  (defn -parse
+    "parse url:html pair"
+    [{:keys [type url html]} xml-writer exception-handler] ;[{t :type url :url html :html}]
+    (try
+      (let [new-values (if (= type "e")
+                         (parse-term html xml-writer) ;#((println %) %)))
+                         (prn "it's category page,not term page!"))
+            ret (merge new-values (array-map :type type :url url :bc (count html)))]
+        new-values)
+      (catch Exception e
+        (exception-handler) (throw e))))
