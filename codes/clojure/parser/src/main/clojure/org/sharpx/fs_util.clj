@@ -119,3 +119,8 @@
   [zipfile target]
   (let [entries (->> zipfile (ZipFile.) .entries enumeration-seq (map (memfn getName)))]
     (some? #(.startsWith % (str target "/")) entries)))
+
+(defn copy-uri-to-file [uri file]
+  (with-open [in (io/input-stream uri)
+              out (io/output-stream file)]
+    (io/copy in out)))
