@@ -22,7 +22,7 @@
   "validate term"
   [term output-dir browse-html]
   (pprint term)
-  (let [entry (:entry term)
+  (let [entry (:entry (:head term))
         term-file (io/file output-dir (str entry ".term"))]
     (if (.exists term-file)
       (let [fc (slurp term-file)
@@ -51,7 +51,8 @@
   "save term to file term-file"
   [term output-dir]
   (let [str-term (pr-str term)
-        entry (:entry term)
+        head (:head term)
+        entry (:entry head)
         term-file (io/file output-dir (str entry ".term"))
         pic-file (io/file output-dir (str entry ".jpg"))
         BrE-mp3-file (io/file output-dir (str entry "-BrE.mp3"))
@@ -59,12 +60,12 @@
     (spit term-file str-term)
     (when (.exists term-file)
       (println "parse result updated to " (.getPath term-file)))
-    (when (and (not (nil? (:pic-url term))) (not (.exists pic-file)))
-      (copy-uri-to-file (:pic-url term) pic-file))
-    (when (and (not (nil? (:BrE-mp3 term))) (not (.exists BrE-mp3-file)))
-      (copy-uri-to-file (:BrE-mp3 term) BrE-mp3-file))
-    (when (and (not (nil? (:NAmE-mp3 term))) (not (.exists NAmE-mp3-file)))
-      (copy-uri-to-file (:NAmE-mp3 term) NAmE-mp3-file))))
+    (when (and (not (nil? (:pic-url head))) (not (.exists pic-file)))
+      (copy-uri-to-file (:pic-url head) pic-file))
+    (when (and (not (nil? (:BrE-mp3 head)) (not (.exists BrE-mp3-file)))
+      (copy-uri-to-file (:BrE-mp3 head) BrE-mp3-file))
+    (when (and (not (nil? (:NAmE-mp3 head))) (not (.exists NAmE-mp3-file)))
+      (copy-uri-to-file (:NAmE-mp3 head) NAmE-mp3-file)))))
 
 (defn process-html
   ([filepath dest-dir parse]
