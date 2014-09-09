@@ -18,6 +18,7 @@
 
 (declare parse-definitions)
 (declare parse-coll)
+(declare conj-no-override)
 
 (defn- trimblanks
   [symb]
@@ -120,12 +121,18 @@
     (map-indexed
       (fn [i _]
         (let [prefix (str prefix item-tag "[" (inc i) "]")]
-          (into (array-map :n (inc i))
-            (for [[key-name item-tag & structure] sons]
-              (cond
-                (empty? structure) [key-name ($x:text? (str prefix item-tag) doc)]
-                (not (empty? structure)) [key-name (parse-coll doc prefix item-tag structure)])))))
+          (reduce conj-no-override (array-map :n (inc i))
+            (map
+              (fn [[key-name item-tag & structure]]
+                (cond
+                  (empty? structure) [key-name ($x:text? (str prefix item-tag) doc)]
+                  (not (empty? structure)) [key-name (parse-coll doc prefix item-tag structure)]))
+              sons))))
       nodes)))
+
+(defn- conj-no-override
+  [coll elem]
+  (conj coll elem))
 
 (defn- parse-term
   [html xmlstr-handler]
