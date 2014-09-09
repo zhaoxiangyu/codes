@@ -1,3 +1,5 @@
+import os,fnmatch,zipfile
+import os.path as path
 from urllib import urlretrieve
 
 #base_url="https://web-word-list.googlecode.com/files"
@@ -10,8 +12,14 @@ def download():
 		url=base_url+"/course"+str(i+1)+".zip"
 		print "downloading file:",url
 		to_file=save_to+"/course"+str(i+1)+".zip"
-		urlretrieve(url,to_file)
+		if not path.isfile(to_file):
+			urlretrieve(url,to_file)
 
+	for fp in os.listdir(save_to):
+		if fnmatch.fnmatch(fp,"*.zip"):
+			with zipfile.ZipFile(fp) as zf:
+				dest_dir=path.join(save_to,
+				zf.extractall(save_to)
 
 if __name__ == "__main__":
 	download()

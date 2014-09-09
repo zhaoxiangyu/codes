@@ -23,6 +23,7 @@ const int JpwordReader::MAX_LEVEL = 5;
  */
 
 void JpwordReader::start(){
+    IOUtils::log("JpwordReader starting!");
 	//TODO
 }
 
@@ -32,6 +33,7 @@ void JpwordReader::pause(){
 }
 
 void JpwordReader::quit(){
+    IOUtils::log("JpwordReader about to quit!");
     //TODO
 }
 
