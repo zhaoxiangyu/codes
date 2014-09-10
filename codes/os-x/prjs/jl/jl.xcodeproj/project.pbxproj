@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		872CEA1E19C08DFE00DBD997 /* audios.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 872CEA1D19C08DFE00DBD997 /* audios.bundle */; };
 		87A99DEC19BDA4FA00586D07 /* ReaderEventListener.mm in Sources */ = {isa = PBXBuildFile; fileRef = 87A99DEB19BDA4FA00586D07 /* ReaderEventListener.mm */; };
 		87AB2A5819BB4077000D5549 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 87AB2A5719BB4077000D5549 /* UIKit.framework */; };
 		87AB2A5A19BB4077000D5549 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 87AB2A5919BB4077000D5549 /* Foundation.framework */; };
@@ -53,6 +54,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		872CEA1D19C08DFE00DBD997 /* audios.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = audios.bundle; sourceTree = "<group>"; };
 		87A99DEB19BDA4FA00586D07 /* ReaderEventListener.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ReaderEventListener.mm; sourceTree = "<group>"; };
 		87A99DED19BDA54500586D07 /* ReaderEventListener.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReaderEventListener.h; sourceTree = "<group>"; };
 		87AB2A5319BB4077000D5549 /* jl.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = jl.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -172,6 +174,7 @@
 		87AB2A5D19BB4077000D5549 /* jl */ = {
 			isa = PBXGroup;
 			children = (
+				872CEA1D19C08DFE00DBD997 /* audios.bundle */,
 				87AB2B1419BBEC5C000D5549 /* port */,
 				87AB2AC919BB4AB4000D5549 /* core */,
 				87AB2A6619BB4077000D5549 /* JlAppDelegate.h */,
@@ -408,6 +411,7 @@
 				87AB2A6E19BB4077000D5549 /* Default-568h@2x.png in Resources */,
 				87AB2A7419BB4077000D5549 /* JlViewController_iPhone.xib in Resources */,
 				87AB2A7719BB4077000D5549 /* JlViewController_iPad.xib in Resources */,
+				872CEA1E19C08DFE00DBD997 /* audios.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
