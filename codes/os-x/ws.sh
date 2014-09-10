@@ -7,7 +7,7 @@ jl(){
 }
 
 if test $# -eq 0; then
-  echo "ws jl el"
+  echo "ws: jl el"
 else
   eval $1
 fi
