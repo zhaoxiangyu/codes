@@ -22,14 +22,14 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
 
-    NSString * mp3BundlePath = [[NSBundle mainBundle] pathForResource:@"audios" ofType:@"bundle"];
-    NSBundle * mp3Bundle = [NSBundle bundleWithPath:mp3BundlePath];
+    //NSString * mp3BundlePath = [[NSBundle mainBundle] pathForResource:@"audios" ofType:@"bundle"];
+    //NSBundle * mp3Bundle = [NSBundle bundleWithPath:mp3BundlePath];
     //NSString * mp3Path = [mp3Bundle pathForResource:@"unit1\\1\\～ちゅん" ofType:@"mp3" inDirectory:@"jw/course1"];
     //NSLog(@"%@", mp3Path);
-    NSArray * mp3Array = [mp3Bundle pathsForResourcesOfType:@"mp3" inDirectory:@"jw/course1"];
-    for (NSString * mp3Path in mp3Array) {
-        NSLog(@"%@", mp3Path);
-    }
+    //NSArray * mp3Array = [mp3Bundle pathsForResourcesOfType:@"mp3" inDirectory:@"jw/course1"];
+    //for (NSString * mp3Path in mp3Array) {
+    //    NSLog(@"%@", mp3Path);
+    //}
 
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
         self.viewController = [[JlViewController alloc] initWithNibName:@"JlViewController_iPhone" bundle:nil];

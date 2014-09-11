@@ -24,7 +24,29 @@ const int JpwordReader::MAX_LEVEL = 5;
 
 void JpwordReader::start(){
     IOUtils::log("JpwordReader starting!");
-	//TODO
+    //IOUtils::saveToFile("test.txt", "unit1\\1\\I\\スミス 〔专〕 史密斯");
+    IOUtils::saveToFile("test.txt", "xxxxxxxxx");
+    string fc = IOUtils::loadFromFile("test.txt");
+    IOUtils::log("file content:"+fc);
+    
+    bool exists = IOUtils::fileExists("test.txt");
+    if(exists)
+        IOUtils::log("file test.txt found");
+    else
+        IOUtils::log("file test.txt not found");
+    
+    
+    exists = IOUtils::dirExists("course1");
+    if(exists)
+        IOUtils::log("dir course1 found");
+    else
+        IOUtils::log("dir course1 not found");
+    
+    exists = IOUtils::dirExists("course***1");
+    if(exists)
+        IOUtils::log("dir course***1 found");
+    else
+        IOUtils::log("dir course***1 not found");
 }
 
 void JpwordReader::pause(){

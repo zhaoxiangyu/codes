@@ -8,7 +8,7 @@
 class IOUtils
 {
 	public:
-		static bool saveToFile(string fpath, string& content);
+		static bool saveToFile(string fpath, string content);
 		static string loadFromFile(string fpath);
 		static string httpGet(string url);
 		static string fullPath(string parent, string name);

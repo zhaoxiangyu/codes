@@ -16,8 +16,6 @@ bool IOUtils::removeFile(string fpath){
 	return false;
 }
 
-string IOUtils::mPathSep = "/"; //= wxFileName::GetPathSeparator();
-
 string IOUtils::fileBaseName(string path){
 	return "";
 }
@@ -34,23 +32,40 @@ void IOUtils::log(string msg){
 }
 
 bool IOUtils::dirExists(string path){
-	return false;
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    const char* spath = IOUtils::toRealPath(path).c_str();
+    NSString* fpath = [NSString stringWithUTF8String:spath];
+    BOOL isDir;
+    BOOL exists = [fileManager fileExistsAtPath:fpath isDirectory:&isDir];
+    return exists && isDir;
+    //return true;
 }
 
 bool IOUtils::fileExists(string path){
-	return false;
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    const char* spath = IOUtils::toRealPath(path).c_str();
+    NSString* fpath = [NSString stringWithUTF8String:spath];
+    BOOL isDir;
+    BOOL exists = [fileManager fileExistsAtPath:fpath isDirectory:&isDir];
+    return exists && !isDir;
+    //return false;
 }
+
+string IOUtils::mPathSep = "/";
 
 string IOUtils::fullPath(string parent, string name){
 	return parent + mPathSep + name;
 }
 
 string IOUtils::toRealPath(string vpath){
-    //TODO
-	return fullPath("",vpath);
+    NSString * audioBundlePath = [[NSBundle mainBundle] pathForResource:@"audios" ofType:@"bundle"];
+    //NSBundle * audioBundle = [NSBundle bundleWithPath:audioBundlePath];
+    //NSString * jwPath = [audioBundle pathForResource:@"unit1\\1\\～ちゅん" ofType:@"mp3" inDirectory:@"jw"];
+    string jwPath = string([audioBundlePath UTF8String]) + "/jw";
+	return fullPath(jwPath,vpath);
 }
 
-bool IOUtils::saveToFile(string fpath, string& content){
+bool IOUtils::saveToFile(string fpath, string content){
 	ofstream ofs(toRealPath(fpath).c_str());
 	ofs << content;
 	ofs.close();
