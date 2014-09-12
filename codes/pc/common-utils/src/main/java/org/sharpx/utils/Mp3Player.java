@@ -1,4 +1,4 @@
-package org.sharp.utils.legacy;
+package org.sharpx.utils;
 
 import java.io.File;
 import java.util.Map;
@@ -9,8 +9,7 @@ import javazoom.jlgui.basicplayer.BasicPlayerEvent;
 import javazoom.jlgui.basicplayer.BasicPlayerException;
 import javazoom.jlgui.basicplayer.BasicPlayerListener;
 
-import org.sharp.intf.AudioPlayer;
-//import org.sharp.jdkex.Utils;
+import org.sharpx.utils.intf.AudioPlayer;
 
 /**
  * * This class implements a simple player based on BasicPlayer. * BasicPlayer
