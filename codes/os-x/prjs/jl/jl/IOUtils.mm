@@ -76,7 +76,7 @@ string IOUtils::loadFromFile(string fpath){
 	string* content = new string();
 	ifstream ifs(toRealPath(fpath).c_str());
     stringbuf* sb = new stringbuf();
-    ifs.get(*sb);
+    ifs.get(*sb,'\0');
 	//ifs >> *content;
     //getline(ifs,*content);
 	return sb->str();
