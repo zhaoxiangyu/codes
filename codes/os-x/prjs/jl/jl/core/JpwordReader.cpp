@@ -1,3 +1,5 @@
+#include "header/UseBoost.h"
+
 #include "JpwordReader.h"
 #include "port/IOUtils.h"
 #include "port/OsSupport.h"
@@ -154,6 +156,16 @@ string JpwordReader::errorMessage(){
 
 void JpwordReader::saveCache(vector<AudioInfo> infoList,int courseNo){
 	string infos = "";
+
+    ptree pt;
+    pt.put("course.cn", to_string(courseNo));
+    /**/
+    for (unsigned i = 0; i < infoList.size(); i++) {
+        AudioInfo ai = infoList[i];
+        pt.put("course.ai.name", ai.getName());
+    }
+    //write_xml(filename, pt);
+    
 	IOUtils::saveToFile(CourseUtils::courseCacheFilePath(courseNo),
                         infos);
 }

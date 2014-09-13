@@ -113,6 +113,7 @@
 		87AC445219BCA4100064B65A /* OsSupport.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = OsSupport.mm; sourceTree = "<group>"; };
 		87AC445519BCA7B60064B65A /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		87AC445719BD3D5E0064B65A /* IOUtils.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = IOUtils.mm; sourceTree = "<group>"; };
+		87EDE63E19C40A2F0088E276 /* UseBoost.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UseBoost.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -264,6 +265,7 @@
 				87AB2AD219BB4AB4000D5549 /* Serializable.h */,
 				87AB2AD319BB4AB4000D5549 /* Stl.h */,
 				87AB2AD419BB4AB4000D5549 /* Type.h */,
+				87EDE63E19C40A2F0088E276 /* UseBoost.h */,
 			);
 			path = header;
 			sourceTree = "<group>";
@@ -543,7 +545,9 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = /usr/local/Cellar/boost/1.55.0_2/include;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				LIBRARY_SEARCH_PATHS = /usr/local/Cellar/boost/1.55.0_2/lib;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -565,7 +569,9 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = /usr/local/Cellar/boost/1.55.0_2/include;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				LIBRARY_SEARCH_PATHS = /usr/local/Cellar/boost/1.55.0_2/lib;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -581,6 +587,7 @@
 				INFOPLIST_FILE = "jl/jl-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
+				he_cust = "";
 			};
 			name = Debug;
 		};
@@ -592,6 +599,7 @@
 				INFOPLIST_FILE = "jl/jl-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
+				he_cust = "";
 			};
 			name = Release;
 		};

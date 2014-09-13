@@ -26,7 +26,6 @@ string CourseUtils::unzippedDirPath(int courseNo){
 }
 
 void CourseUtils::saveCourseList(vector<Course>& courses){
-	//TODO
 	string coursesStr = "";
 	IOUtils::saveToFile(pathToCourseListFile(), coursesStr);
 }
