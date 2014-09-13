@@ -53,7 +53,7 @@ void JpwordReader::start(){
 }
 
 void JpwordReader::pause(){
-	CourseUtils::saveCourseList(mCourses);
+	//CourseUtils::saveCourseList(mCourses);
 	//TODO
 }
 
@@ -219,7 +219,7 @@ vector<Course> JpwordReader::courseList(){
 }
 
 void JpwordReader::loadMp3(LevelsInfo lvs, int courseNo){
-	string path = CourseUtils::unzippedDirPath(courseNo);
+	string path = CourseUtils::courseDir(courseNo);
 	IOUtils::log("load mp3 from path " + path);
 	vector<string> extnames;
 	extnames.push_back("mp3");

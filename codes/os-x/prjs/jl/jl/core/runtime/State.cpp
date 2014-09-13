@@ -48,6 +48,10 @@ State::LevelState& State::currentLevel(){
 	return *mCurrentLevel;
 }
 
+/*
+ State of Level
+ */
+
 State::LevelState::LevelState(){
 
 }

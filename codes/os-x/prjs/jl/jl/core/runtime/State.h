@@ -25,16 +25,16 @@ class State: public Serializable
 	};
 
 	public:
-		LevelState& currentLevel();
+        State();
+        virtual ~State();
+
+        LevelState& currentLevel();
 		LevelState& switchToLevel(int level);
 		int currentCourseNo();
 		void setCurrentToLast(int size);
 
 		virtual string toString();
 		virtual void fromString(string str);
-
-		State();
-		virtual ~State();
 	protected:
 	private:
 		map<int, LevelState> levelStates;
