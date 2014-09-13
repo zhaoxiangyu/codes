@@ -24,8 +24,9 @@ const int JpwordReader::MAX_LEVEL = 5;
 
 void JpwordReader::start(){
     IOUtils::log("JpwordReader starting!");
-    //IOUtils::saveToFile("test.txt", "unit1\\1\\I\\スミス 〔专〕 史密斯");
-    IOUtils::saveToFile("test.txt", "xxxxxxxxx");
+    IOUtils::saveToFile("test.txt", u8"unit1\\1\\I\\スミス 〔专〕 史密斯2\nhahahahahahdddd\nxxxxxxx");
+    //IOUtils::saveToFile("test.txt", u8"unit1\\1\\I\\スミス〔专〕史密斯");
+    //IOUtils::saveToFile("test.txt", u8"xxxxxxxxx");
     string fc = IOUtils::loadFromFile("test.txt");
     IOUtils::log("file content:"+fc);
     

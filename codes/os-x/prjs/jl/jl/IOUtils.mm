@@ -75,8 +75,11 @@ bool IOUtils::saveToFile(string fpath, string content){
 string IOUtils::loadFromFile(string fpath){
 	string* content = new string();
 	ifstream ifs(toRealPath(fpath).c_str());
-	ifs >> *content;
-	return *content;
+    stringbuf* sb = new stringbuf();
+    ifs.get(*sb);
+	//ifs >> *content;
+    //getline(ifs,*content);
+	return sb->str();
 }
 
 string IOUtils::cwd(){
