@@ -1,5 +1,6 @@
 #!/bin/bash
 
+echo "current directory:" $(pwd)
 echo "commiting codes to github"
 pushd ..
 git add -A .
