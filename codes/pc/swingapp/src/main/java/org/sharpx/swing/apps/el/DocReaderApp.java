@@ -62,7 +62,7 @@ import org.sharpx.utils.Lucene.Indexable;
 import org.sharpx.utils.Lucene.SearchResult;
 import org.sharpx.utils.PoiUtils;
 import org.sharpx.utils.beans.DirSnap;
-//import org.sharpx.utils.legacy.Mp3Player;
+import org.sharpx.utils.Mp3Player;
 //import org.sharpx.utils.s4j.ScalaUtils;
 
 public class DocReaderApp implements Pluggable {
@@ -138,7 +138,7 @@ public class DocReaderApp implements Pluggable {
 			pArticles = ArticleUtils.loadArticles(docs,new Converter<File,Article>(){
 				public Article to(File f) {
 					try {
-						Article arti = new ScalaUtils().doc2Article(f);
+						Article arti = null;//new ScalaUtils().doc2Article(f);
 						arti.getRi().setLastrvt(new Date(f.lastModified()));
 						return arti;
 					}catch(Exception e){
@@ -341,7 +341,7 @@ public class DocReaderApp implements Pluggable {
 				lucene.indexDoc(config.getIndexPath(),
 						new Lucene.IndexableFile(file,
 								PoiUtils.newWorddocConentParser()));
-				Article article = new ScalaUtils().doc2Article(file);
+				Article article = null;//new ScalaUtils().doc2Article(file);
 				ArticleUtils.fillArticle(config.getArticlesPath(),article);
 				freshNewWordsPanel(/*file,*/article);
 				freshPhrasesPanel(/*file,*/article);

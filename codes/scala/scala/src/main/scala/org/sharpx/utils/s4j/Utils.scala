@@ -4,7 +4,7 @@ import java.io.{FileInputStream, File}
 import java.util.{HashMap, ArrayList}
 import org.apache.poi.hwpf.usermodel.CharacterRun
 import org.apache.poi.hwpf.HWPFDocument
-import org.sharpx.swing.apps.el.beans.{Article,Phrase, NewWord}
+//import org.sharpx.swing.apps.el.beans.{Article,Phrase, NewWord}
 import org.sharpx.utils.scala.beans.{Article => Arti, Para => Par, Phrase => Phras, NewWord => NewWor}
 import org.sharpx.utils.scala.ArticleParsers
 import scala.xml.Elem
@@ -37,6 +37,7 @@ class ScalaUtils {
 	    
 	}
 	
+	/*
 	var f = {nw:NewWor =>
 	    new NewWord(nw.spell,nw.docName,nw.partOfSpeech,nw.seqNo,nw.ordi,nw.notes)}
 	def f2(arti:Arti):Article = 
@@ -57,6 +58,7 @@ class ScalaUtils {
 	  val al = Converter.l2al[Phras,String](pl,{_.text})
 	  al.toArray(Array[String]())
 	}
+	*/
 	/*implicit def articleConverter(nw:Arti):Article = null*/
 	
 	/*Black = "#000000" Green = "#008000" 
@@ -79,17 +81,19 @@ class ScalaUtils {
 	
 	def highlightKeyword(text:String,keyword:String):String = 
 		<html>{text}</html>.buildString(false)
-		
+	
+	/*	
 	def parseArticle(file:File): ArrayList[NewWord] = c1(ArticleParsers.parse(file))
 	
 	def parseArticle(text:String,docName:String): HashMap[String,ArrayList[NewWord]] =
 		c2(ArticleParsers.parse(text,docName))
-
+	*/
+	
 	def doc2Html(file:File):String = {
 		val hwpfDoc = new HWPFDocument(new FileInputStream(file));
 		<html><head><title>{
 			  val title = hwpfDoc.getSummaryInformation.getTitle
-			  Utils.log.info("doc title:"+title)
+			  //Utils.log.info("doc title:"+title)
 			  title}
 		</title></head><body>{
 			val ors = hwpfDoc.getOverallRange();
@@ -126,6 +130,7 @@ class ScalaUtils {
 		println("wordCount:"+si.getWordCount);
 	}
 	
+	/*
 	def doc2Article(file:File):Article = {
 		val hwpfDoc = new HWPFDocument(new FileInputStream(file));
 		val si = hwpfDoc.getSummaryInformation
@@ -170,6 +175,7 @@ class ScalaUtils {
 		article.setWordCount(wordCount)
 		article
 	}
+	*/
 	
 	private def toPara(paraText:String) : Par = {
 	  null
@@ -185,7 +191,7 @@ class ScalaUtils {
 			
 	def charRunRangeToSpanTag(cr:CharacterRun): Elem = {
 	  var ret = <span style={"color:"+colorName(cr.getColor%16)}>{cr.text}</span> /*{Some(cr.getColor)}*/
-	  Utils.log.info(ret)
+	  //Utils.log.info(ret)
 	  ret = if (cr.isHighlighted){
 		<span style="background:Gray">
 		  if (cr.isItalic){
