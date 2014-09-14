@@ -19,6 +19,14 @@ install(){
 	#git fetch upstream
 }
 
+pub(){
+	#echo $1
+	echo publish to github ...
+	git add .
+	git commit -m "publish on"
+	git push
+}
+
 case "$1" in
 help)
 	git config -l
@@ -33,10 +41,7 @@ gui)
 	echo running gui ...
 	;;
 pub)
-	echo publish to github ...
-	git add .
-	git commit -m "publish on `date --rfc-3339=seconds`"
-	git push
+	pub $2
 	;;
 *)
 	echo "Usage: $0 {help|status|install|gui|pub}"

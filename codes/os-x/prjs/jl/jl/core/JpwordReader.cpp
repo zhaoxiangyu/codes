@@ -7,6 +7,7 @@
 
 #include "support/CourseUtils.h"
 #include "support/UnitUtils.h"
+#include "support/AudioInfoUtils.h"
 
 JpwordReader::JpwordReader()
 {
@@ -38,7 +39,6 @@ void JpwordReader::start(){
     else
         IOUtils::log("file test.txt not found");
     
-    
     exists = IOUtils::dirExists("course1");
     if(exists)
         IOUtils::log("dir course1 found");
@@ -50,6 +50,8 @@ void JpwordReader::start(){
         IOUtils::log("dir course***1 found");
     else
         IOUtils::log("dir course***1 not found");
+
+    IOUtils::log("name:"+AudioInfoUtils::nameOf(u8"unit1\\1\\I\\スミス 〔专〕 史密斯.mp3"));
 }
 
 void JpwordReader::pause(){
@@ -232,7 +234,7 @@ void JpwordReader::loadMp3(LevelsInfo lvs, int courseNo){
 
 		AudioInfo ai;
 		ai.setMp3Path(fpsFound[i]);
-		ai.setName(IOUtils::fileBaseName(fpsFound[i]));
+		ai.setName(AudioInfoUtils::nameOf(fpsFound[i]));
 		ai.setCourseNo(cn);
 		ai.setUnitNo(un);
 		ai.setLevel(0);

@@ -41,6 +41,7 @@
 		87AC445419BCA4100064B65A /* OsSupport.mm in Sources */ = {isa = PBXBuildFile; fileRef = 87AC445219BCA4100064B65A /* OsSupport.mm */; };
 		87AC445619BCA7B60064B65A /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 87AC445519BCA7B60064B65A /* AVFoundation.framework */; };
 		87AC445919BD3D5F0064B65A /* IOUtils.mm in Sources */ = {isa = PBXBuildFile; fileRef = 87AC445719BD3D5E0064B65A /* IOUtils.mm */; };
+		87B3A10A19C5C027009480A2 /* AudioInfoUtils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 87B3A10819C5C027009480A2 /* AudioInfoUtils.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -113,6 +114,8 @@
 		87AC445219BCA4100064B65A /* OsSupport.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = OsSupport.mm; sourceTree = "<group>"; };
 		87AC445519BCA7B60064B65A /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		87AC445719BD3D5E0064B65A /* IOUtils.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = IOUtils.mm; sourceTree = "<group>"; };
+		87B3A10819C5C027009480A2 /* AudioInfoUtils.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AudioInfoUtils.cpp; sourceTree = "<group>"; };
+		87B3A10919C5C027009480A2 /* AudioInfoUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AudioInfoUtils.h; sourceTree = "<group>"; };
 		87EDE63E19C40A2F0088E276 /* UseBoost.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UseBoost.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -295,6 +298,8 @@
 		87AB2AE319BB4AB4000D5549 /* support */ = {
 			isa = PBXGroup;
 			children = (
+				87B3A10819C5C027009480A2 /* AudioInfoUtils.cpp */,
+				87B3A10919C5C027009480A2 /* AudioInfoUtils.h */,
 				87AB2AE419BB4AB4000D5549 /* Constants.h */,
 				87AB2AE519BB4AB4000D5549 /* CourseUtils.cpp */,
 				87AB2AE619BB4AB4000D5549 /* CourseUtils.h */,
@@ -466,6 +471,7 @@
 				87AC445419BCA4100064B65A /* OsSupport.mm in Sources */,
 				87AC445919BD3D5F0064B65A /* IOUtils.mm in Sources */,
 				87A99DEC19BDA4FA00586D07 /* ReaderEventListener.mm in Sources */,
+				87B3A10A19C5C027009480A2 /* AudioInfoUtils.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
