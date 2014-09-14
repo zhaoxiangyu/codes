@@ -53,6 +53,7 @@ void JpwordReader::start(){
 }
 
 void JpwordReader::pause(){
+    saveCache(levelList(), mCourseState.currentCourseNo());
 	//CourseUtils::saveCourseList(mCourses);
 	//TODO
 }
@@ -63,11 +64,11 @@ void JpwordReader::quit(){
 }
 
 void JpwordReader::chooseCourse(int courseNo){
-	saveCache(infoList(),courseNo);
-	string courseState = mCourseState.toString();
-	IOUtils::saveToFile(CourseUtils::courseCacheFilePath(courseNo),
-                        courseState);
-	//TODO
+	saveCache(levelList(),mCourseState.currentCourseNo());
+    loadCache(levels, courseNo);
+//	string courseState = mCourseState.toString();
+//	IOUtils::saveToFile(CourseUtils::courseCacheFilePath(courseNo),
+//                        courseState);
 }
 
 void JpwordReader::switchLC(int newLevel){
@@ -201,10 +202,10 @@ void JpwordReader::loadCourse(int courseNo){
 	}
 }
 
-void JpwordReader::unzipComplete(){
-    //	loadCourse(mCourseState.currentCourseNo());
-	freshView();
-}
+//void JpwordReader::unzipComplete(){
+//    //	loadCourse(mCourseState.currentCourseNo());
+//	freshView();
+//}
 
 AudioInfo* JpwordReader::current(){
 	if(mCourseState.currentLevel().getCurrent()<0 ||
@@ -244,9 +245,9 @@ vector<AudioInfo> JpwordReader::levelList(){
 	return levels.levelList(mCourseState.currentLevel().getCurrent());
 }
 
-vector<AudioInfo> JpwordReader::infoList(){
-	return levels.levelList(-1);
-}
+//vector<AudioInfo> JpwordReader::infoList(){
+//	return levels.levelList(-1);
+//}
 
 void JpwordReader::freshView(){
 	if(listener != NULL){

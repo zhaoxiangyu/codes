@@ -16,11 +16,13 @@ class JpwordReader
         JpwordReader();
         virtual ~JpwordReader();
 
-        LevelsInfo levels;
 		ReaderEventListener* listener;
 
-		vector<Course> courseList();
-		void playMp3();
+        void start();
+        void pause();
+        void quit();
+
+        void playMp3();
 		void toBeginning();
 		void toEnding();
 		bool back();
@@ -28,31 +30,30 @@ class JpwordReader
 		void downLevel();
 		void upLevel();
 		void switchLC(int newLevel);
-		void pause();
-		void start();
-		void quit();
 		void chooseCourse(int courseNo);
 
+        vector<Course> courseList();
         string text();
         string errorMessage();
 
     protected:
+//        vector<AudioInfo> infoList();
+        vector<AudioInfo> levelList();
+        AudioInfo* current();
+        void loadCourse(int courseNo);
+        void freshView();
 	
     private:
+        LevelsInfo levels;
 		State mCourseState;
 		vector<Course> mCourses;
-		UrlSetting mSetting;
+//		UrlSetting mSetting;
 		const static int MAX_LEVEL;
 
-		vector<AudioInfo> infoList();
-		vector<AudioInfo> levelList();
-		AudioInfo* current();
-		void loadCourse(int courseNo);
 		void loadMp3(LevelsInfo lvs, int courseNo);
 		void loadCache(LevelsInfo lvs, int courseNo);
 		void saveCache(vector<AudioInfo> infoList,int courseNo);
-		void unzipComplete();
-        void freshView();
+//		void unzipComplete();
 };
 
 #endif // JPWORDREADER_H
