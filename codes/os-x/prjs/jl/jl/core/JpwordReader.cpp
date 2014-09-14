@@ -51,7 +51,7 @@ void JpwordReader::start(){
     else
         IOUtils::log("dir course***1 not found");
 
-    IOUtils::log("name:"+AudioInfoUtils::nameOf(u8"unit1\\1\\I\\スミス 〔专〕 史密斯.mp3"));
+//    IOUtils::log("name:"+AudioInfoUtils::nameOf(u8"unit1\\1\\I\\スミス 〔专〕 史密斯.mp3"));
 }
 
 void JpwordReader::pause(){

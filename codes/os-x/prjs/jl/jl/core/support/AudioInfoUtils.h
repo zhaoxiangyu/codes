@@ -9,7 +9,6 @@
 #ifndef __jl__AudioInfoUtils__
 #define __jl__AudioInfoUtils__
 
-#include <iostream>
 #include "../header/Stl.h"
 
 class AudioInfoUtils

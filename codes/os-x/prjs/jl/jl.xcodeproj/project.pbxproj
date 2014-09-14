@@ -25,7 +25,7 @@
 		87AB2A8019BB4077000D5549 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 87AB2A5719BB4077000D5549 /* UIKit.framework */; };
 		87AB2A8119BB4077000D5549 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 87AB2A5919BB4077000D5549 /* Foundation.framework */; };
 		87AB2A8919BB4077000D5549 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 87AB2A8719BB4077000D5549 /* InfoPlist.strings */; };
-		87AB2A8C19BB4077000D5549 /* jlTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 87AB2A8B19BB4077000D5549 /* jlTests.m */; };
+		87AB2A8C19BB4077000D5549 /* jlTests.mm in Sources */ = {isa = PBXBuildFile; fileRef = 87AB2A8B19BB4077000D5549 /* jlTests.mm */; };
 		87AB2AF219BB4AB4000D5549 /* AudioInfo.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 87AB2ACB19BB4AB4000D5549 /* AudioInfo.cpp */; };
 		87AB2AF319BB4AB4000D5549 /* Course.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 87AB2ACD19BB4AB4000D5549 /* Course.cpp */; };
 		87AB2AF419BB4AB4000D5549 /* UrlSetting.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 87AB2ACF19BB4AB4000D5549 /* UrlSetting.cpp */; };
@@ -80,7 +80,7 @@
 		87AB2A8619BB4077000D5549 /* jlTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "jlTests-Info.plist"; sourceTree = "<group>"; };
 		87AB2A8819BB4077000D5549 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		87AB2A8A19BB4077000D5549 /* jlTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = jlTests.h; sourceTree = "<group>"; };
-		87AB2A8B19BB4077000D5549 /* jlTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = jlTests.m; sourceTree = "<group>"; };
+		87AB2A8B19BB4077000D5549 /* jlTests.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = jlTests.mm; sourceTree = "<group>"; };
 		87AB2ACB19BB4AB4000D5549 /* AudioInfo.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AudioInfo.cpp; sourceTree = "<group>"; };
 		87AB2ACC19BB4AB4000D5549 /* AudioInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AudioInfo.h; sourceTree = "<group>"; };
 		87AB2ACD19BB4AB4000D5549 /* Course.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Course.cpp; sourceTree = "<group>"; };
@@ -207,7 +207,7 @@
 			isa = PBXGroup;
 			children = (
 				87AB2A8A19BB4077000D5549 /* jlTests.h */,
-				87AB2A8B19BB4077000D5549 /* jlTests.m */,
+				87AB2A8B19BB4077000D5549 /* jlTests.mm */,
 				87AB2A8519BB4077000D5549 /* Supporting Files */,
 			);
 			path = jlTests;
@@ -479,7 +479,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				87AB2A8C19BB4077000D5549 /* jlTests.m in Sources */,
+				87AB2A8C19BB4077000D5549 /* jlTests.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
