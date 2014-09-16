@@ -19,7 +19,7 @@ set foldlevel=99
 set nocompatible	" be iMproved, required
 filetype off		" required
 "set the runtime path to include Vundle and initiallize
-set rpt+=~/.vim/bundle/Vundle.vim
+set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 call vundle#end()
