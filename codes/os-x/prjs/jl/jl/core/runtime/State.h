@@ -37,7 +37,7 @@ class State: public Serializable
 		virtual void fromString(string str);
 	protected:
 	private:
-		map<int, LevelState> levelStates;
+		map<int, LevelState>* levelStates;
 		LevelState* mCurrentLevel;
 		int courseNo;
 		int unitNo;

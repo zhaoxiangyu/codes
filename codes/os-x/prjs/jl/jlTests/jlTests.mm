@@ -51,4 +51,31 @@
     //IOUtils::log("string matched:"+num);
 }
 
+- (void)testIOUtils
+{
+    IOUtils::saveToFile("test.txt", u8"unit1\\1\\I\\スミス 〔专〕 史密斯2\nhahahahahahdddd\nxxxxxxx");
+    //IOUtils::saveToFile("test.txt", u8"unit1\\1\\I\\スミス〔专〕史密斯");
+    //IOUtils::saveToFile("test.txt", u8"xxxxxxxxx");
+    string fc = IOUtils::loadFromFile("test.txt");
+    IOUtils::log("file content:"+fc);
+    
+    bool exists = IOUtils::fileExists("test.txt");
+    if(exists)
+        IOUtils::log("file test.txt found");
+    else
+        IOUtils::log("file test.txt not found");
+    
+    exists = IOUtils::dirExists("course1");
+    if(exists)
+        IOUtils::log("dir course1 found");
+    else
+        IOUtils::log("dir course1 not found");
+    
+    exists = IOUtils::dirExists("course***1");
+    if(exists)
+        IOUtils::log("dir course***1 found");
+    else
+        IOUtils::log("dir course***1 not found");
+}
+
 @end

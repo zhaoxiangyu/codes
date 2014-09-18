@@ -1,8 +1,14 @@
+#include "../header/UseBoost.h"
 #include "State.h"
+//#include "../header/UseBoost.h"
+
 
 State::State()
 {
-	//ctor
+	unitNo = 1;
+    courseNo = 1;
+    levelStates=new map<int,LevelState>();
+    (*levelStates)[1];
 }
 
 State::~State()
@@ -15,6 +21,11 @@ string State::toString(){
 }
 
 void State::fromString(string str){
+    //istringstream iss(str);
+    ptree pt;
+    read_json(str,pt);
+    unitNo = pt.get("unitNo", 1);
+    courseNo = pt.get("unitNo",1);
 }
 
 void State::setCurrentToLast(int size){
@@ -32,13 +43,13 @@ int State::currentCourseNo(){
 }
 
 State::LevelState& State::switchToLevel(int level){
-	if(levelStates.count(level) > 0){
-		return levelStates[level];
+	if(levelStates->count(level) > 0){
+		return (*levelStates)[level];
 	}else{
 		State::LevelState* ls = new State::LevelState();
 		ls -> setLevel(level);
 		pair< int,State::LevelState > p(level, *ls);
-		levelStates.insert(p);
+		levelStates->insert(p);
 		mCurrentLevel = ls;
 		return *ls;
 	}

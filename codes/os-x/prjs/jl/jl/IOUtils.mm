@@ -74,13 +74,19 @@ bool IOUtils::saveToFile(string fpath, string content){
 
 string IOUtils::loadFromFile(string fpath){
 	//string* content = new string();
-	ifstream ifs(toRealPath(fpath).c_str());
-    stringbuf sb;
-    ifs.get(sb,'\0');
-	//ifs >> *content;
-    //getline(ifs,*content);
-    ifs.close();
-	return sb.str();
+    try
+    {
+        ifstream ifs(toRealPath(fpath).c_str());
+        stringbuf sb;
+        ifs.get(sb,'\0');
+        //ifs >> *content;
+        //getline(ifs,*content);
+        ifs.close();
+        return sb.str();
+    }catch(...)
+    {
+        return "";
+    }
 }
 
 string IOUtils::cwd(){
