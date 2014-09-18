@@ -32,6 +32,7 @@ void JpwordReader::start(){
     {
         mCourseState.fromString(courseState);
     }
+    loadCache(levels, mCourseState.currentCourseNo());
 }
 
 void JpwordReader::pause(){
@@ -145,7 +146,7 @@ void JpwordReader::saveCache(vector<AudioInfo> infoList,int courseNo){
     /**/
     for (unsigned i = 0; i < infoList.size(); i++) {
         AudioInfo ai = infoList[i];
-        pt.put("course.ai.name", ai.getName());
+        pt.put("ais.ai.name", ai.getName());
     }
     //write_xml(filename, pt);
     
@@ -155,16 +156,36 @@ void JpwordReader::saveCache(vector<AudioInfo> infoList,int courseNo){
 
 void JpwordReader::loadCache(LevelsInfo lvs, int courseNo){
 	string filePath = CourseUtils::courseCacheFilePath(courseNo);
-	long ct = OsSupport::currentTimeMillis();
 	vector<AudioInfo> o;
 	if(IOUtils::fileExists(filePath)){
-		//o = (AudioInfo[]) oss.fromString(
-		//	oss.readFile(filePath), AudioInfo[].class);
+        string fc=IOUtils::loadFromFile(filePath);
+        ptree pt;
+        read_json(fc,pt);
+        BOOST_FOREACH(ptree::value_type &v,
+                      pt.get_child("ais"))
+        {
+            AudioInfo& ai = (* new AudioInfo());
+            BOOST_FOREACH(ptree::value_type &v2,
+                          v.second.get_child("ais.ai"))
+            {
+                string k = v2.first;
+                string vl = v2.second.data();
+                if(k=="ais.ai.unitno")
+                    ai.setUnitNo(stoi(vl));
+                if(k=="ais.ai.courseno")
+                    ai.setCourseNo(stoi(vl));
+                if(k=="ais.ai.name")
+                    ai.setName(vl);
+                if(k=="ais.ai.mp3path")
+                    ai.setMp3Path(vl);
+                if(k=="ais.ai.level")
+                    ai.setLevel(stoi(vl));
+            }
+            lvs.add(ai);
+        }
 	}else{
 		IOUtils::log("file "+filePath+ " not exists.");
 	}
-	long ct2 = OsSupport::currentTimeMillis();
-	int sec = (int) ((ct2 - ct) / 1000);
 	if (!o.empty()){
 		//IOUtils::log("takes " + sec + " seconds,total " + o.length
 		//		+ " audio info loaded.");
