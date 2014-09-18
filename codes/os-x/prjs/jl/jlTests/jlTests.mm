@@ -44,4 +44,11 @@
     IOUtils::log("string matched:"+num);
 }
 
+- (void)testNameOfJpword
+{
+    IOUtils::log("name:"+AudioInfoUtils::nameOf(u8"unit1\\1\\I\\スミス 〔专〕 史密斯.mp3"));
+    //string num = DataUtils::getMatch("[\\w\\\\]*([^\\\\]*)\\.mp3","unit1\\1\\I\\邓小平.mp3",1);
+    //IOUtils::log("string matched:"+num);
+}
+
 @end
