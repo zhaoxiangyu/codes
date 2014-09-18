@@ -26,6 +26,30 @@ void State::fromString(string str){
     read_json(str,pt);
     unitNo = pt.get("unitNo", 1);
     courseNo = pt.get("courseNo",1);
+    int level = pt.get("levelStates.1.level",1);
+    int current = pt.get("levelStates.1.current",0);
+    int last = pt.get("levelStates.1.last",0);
+    (*levelStates)[1]=(* new LevelState(level,current,last));
+
+    level = pt.get("levelStates.2.level",1);
+    current = pt.get("levelStates.2.current",0);
+    last = pt.get("levelStates.2.last",0);
+    (*levelStates)[2]=(* new LevelState(level,current,last));
+
+    level = pt.get("levelStates.3.level",1);
+    current = pt.get("levelStates.3.current",0);
+    last = pt.get("levelStates.3.last",0);
+    (*levelStates)[3]=(* new LevelState(level,current,last));
+
+    level = pt.get("levelStates.4.level",1);
+    current = pt.get("levelStates.4.current",0);
+    last = pt.get("levelStates.4.last",0);
+    (*levelStates)[4]=(* new LevelState(level,current,last));
+
+    level = pt.get("levelStates.5.level",1);
+    current = pt.get("levelStates.5.current",0);
+    last = pt.get("levelStates.5.last",0);
+    (*levelStates)[5]=(* new LevelState(level,current,last));
 }
 
 void State::setCurrentToLast(int size){
