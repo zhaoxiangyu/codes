@@ -7,7 +7,7 @@ State::State()
 {
 	unitNo = 1;
     courseNo = 1;
-    levelStates=new map<int,LevelState>();
+    levelStates=new map<int,LevelState&>();
     (*levelStates)[1];
 }
 
@@ -25,7 +25,7 @@ void State::fromString(string str){
     ptree pt;
     read_json(str,pt);
     unitNo = pt.get("unitNo", 1);
-    courseNo = pt.get("unitNo",1);
+    courseNo = pt.get("courseNo",1);
 }
 
 void State::setCurrentToLast(int size){
@@ -46,7 +46,7 @@ State::LevelState& State::switchToLevel(int level){
 	if(levelStates->count(level) > 0){
 		return (*levelStates)[level];
 	}else{
-		State::LevelState* ls = new State::LevelState();
+		State::LevelState* ls = new State::LevelState(level,0,0);
 		ls -> setLevel(level);
 		pair< int,State::LevelState > p(level, *ls);
 		levelStates->insert(p);
@@ -64,7 +64,15 @@ State::LevelState& State::currentLevel(){
  */
 
 State::LevelState::LevelState(){
+    this -> level = 1;
+    this -> current = 0;
+    this -> last = 0;
+}
 
+State::LevelState::LevelState(int level,int current,int last){
+    this-> level = level;
+    this-> current = current;
+    this-> last = last;
 }
 
 State::LevelState::~LevelState(){
