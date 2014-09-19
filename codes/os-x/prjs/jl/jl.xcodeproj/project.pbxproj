@@ -590,8 +590,11 @@
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "jl/jl-Prefix.pch";
+				HEADER_SEARCH_PATHS = /opt/local/include/;
 				INFOPLIST_FILE = "jl/jl-Info.plist";
+				LIBRARY_SEARCH_PATHS = /opt/local/lib;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "";
 				WRAPPER_EXTENSION = app;
 				he_cust = "";
 			};
@@ -602,8 +605,11 @@
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "jl/jl-Prefix.pch";
+				HEADER_SEARCH_PATHS = /opt/local/include/;
 				INFOPLIST_FILE = "jl/jl-Info.plist";
+				LIBRARY_SEARCH_PATHS = /opt/local/lib;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "";
 				WRAPPER_EXTENSION = app;
 				he_cust = "";
 			};

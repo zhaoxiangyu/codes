@@ -8,7 +8,7 @@ State::State()
 	unitNo = 1;
     courseNo = 1;
     levelStates=new map<int,LevelState&>();
-    (*levelStates)[1];
+    //(*levelStates)[1];
 }
 
 State::~State()

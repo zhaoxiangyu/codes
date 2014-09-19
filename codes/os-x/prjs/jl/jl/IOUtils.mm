@@ -20,7 +20,7 @@ string IOUtils::fileBaseName(string path){
 	return "";
 }
 
-vector<string>& IOUtils::findFiles(string path, vector<string>& extNames){
+vector<string> IOUtils::findFiles(string path, vector<string>& extNames){
 	//TODO
 	vector<string> pathsFound;
 	return pathsFound;
