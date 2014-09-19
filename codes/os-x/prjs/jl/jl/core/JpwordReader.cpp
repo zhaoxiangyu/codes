@@ -32,7 +32,8 @@ void JpwordReader::start(){
     {
         mCourseState.fromString(courseState);
     }
-    loadCache(levels, mCourseState.currentCourseNo());
+    //loadCache(levels, mCourseState.currentCourseNo());
+    loadCourse(mCourseState.currentCourseNo());
 }
 
 void JpwordReader::pause(){
@@ -186,12 +187,12 @@ void JpwordReader::loadCache(LevelsInfo lvs, int courseNo){
 	}else{
 		IOUtils::log("file "+filePath+ " not exists.");
 	}
-	if (!o.empty()){
+	//if (!o.empty()){
 		//IOUtils::log("takes " + sec + " seconds,total " + o.length
 		//		+ " audio info loaded.");
 		//for_each(o.begin(),o.end(),NULL);
 		//lvs.add(ai);
-	}
+	//}
 }
 
 void JpwordReader::loadCourse(int courseNo){
@@ -206,7 +207,7 @@ void JpwordReader::loadCourse(int courseNo){
 }
 
 //void JpwordReader::unzipComplete(){
-//    //	loadCourse(mCourseState.currentCourseNo());
+// 	loadCourse(mCourseState.currentCourseNo());
 //	freshView();
 //}
 
@@ -231,9 +232,8 @@ void JpwordReader::loadMp3(LevelsInfo lvs, int courseNo){
 	for (unsigned i = 0; i < fpsFound.size(); i++) {
 		int cn = CourseUtils::courseNoOf(fpsFound[i]);
 		int un = UnitUtils::unitNoOf(fpsFound[i]);
-		//TODO FIX
 
-		AudioInfo ai;
+		AudioInfo& ai = (* new AudioInfo());
 		ai.setMp3Path(fpsFound[i]);
 		ai.setName(AudioInfoUtils::nameOf(fpsFound[i]));
 		ai.setCourseNo(cn);
