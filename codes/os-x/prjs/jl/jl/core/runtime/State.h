@@ -29,8 +29,8 @@ class State: public Serializable
         State();
         virtual ~State();
 
-        LevelState& currentLevel();
-		LevelState& switchToLevel(int level);
+        LevelState* currentLevel();
+		LevelState* switchToLevel(int level);
 		int currentCourseNo();
 		void setCurrentToLast(int size);
 
@@ -38,7 +38,7 @@ class State: public Serializable
 		virtual void fromString(string str);
 	protected:
 	private:
-		map<int, LevelState&>* levelStates;
+		map<int, LevelState*>* levelStates;
 		LevelState* mCurrentLevel;
 		int courseNo;
 		int unitNo;
