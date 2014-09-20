@@ -37,7 +37,7 @@ void JpwordReader::start(){
 }
 
 void JpwordReader::pause(){
-    saveCache(infoList(), mCourseState.currentCourseNo());
+    saveCache(levels, mCourseState.currentCourseNo());
 	//CourseUtils::saveCourseList(mCourses);
 	//TODO
 }
@@ -48,7 +48,7 @@ void JpwordReader::quit(){
 }
 
 void JpwordReader::chooseCourse(int courseNo){
-	saveCache(infoList(),mCourseState.currentCourseNo());
+	saveCache(levels, mCourseState.currentCourseNo());
     loadCache(levels, courseNo);
 //	string courseState = mCourseState.toString();
 //	IOUtils::saveToFile(CourseUtils::courseCacheFilePath(courseNo),
@@ -139,17 +139,17 @@ string JpwordReader::errorMessage(){
     PRIVATE methods goes here
  */
 
-void JpwordReader::saveCache(vector<AudioInfo> infoList,int courseNo){
+void JpwordReader::saveCache(LevelsInfo,int courseNo){
 	string infos = "";
 
+    /*
     ptree pt;
     pt.put("course.cn", to_string(courseNo));
-    /**/
     for (unsigned i = 0; i < infoList.size(); i++) {
         AudioInfo ai = infoList[i];
         pt.put("ais.ai.name", ai.getName());
     }
-    //write_xml(filename, pt);
+     */
     
 	IOUtils::saveToFile(CourseUtils::courseCacheFilePath(courseNo),
                         infos);

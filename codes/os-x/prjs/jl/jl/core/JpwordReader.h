@@ -53,7 +53,7 @@ class JpwordReader
 
 		void loadMp3(LevelsInfo lvs, int courseNo);
 		void loadCache(LevelsInfo lvs, int courseNo);
-		void saveCache(vector<AudioInfo> infoList,int courseNo);
+		void saveCache(LevelsInfo lvs,int courseNo);
         const string stateFilePath = "state.json";
 //		void unzipComplete();
 };
