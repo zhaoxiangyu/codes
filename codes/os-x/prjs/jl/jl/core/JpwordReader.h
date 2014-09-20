@@ -37,8 +37,8 @@ class JpwordReader
         string errorMessage();
 
     protected:
-//        vector<AudioInfo> infoList();
-        vector<AudioInfo> levelList();
+        vector<AudioInfo> infoList();
+//        vector<AudioInfo> levelList();
         AudioInfo* current();
         void loadCourse(int courseNo);
         void freshView();
@@ -46,9 +46,10 @@ class JpwordReader
     private:
         LevelsInfo levels;
 		State mCourseState;
+    
 		vector<Course> mCourses;
 //		UrlSetting mSetting;
-		const static int MAX_LEVEL;
+		const static int MAX_LEVEL = 5;
 
 		void loadMp3(LevelsInfo lvs, int courseNo);
 		void loadCache(LevelsInfo lvs, int courseNo);
