@@ -32,7 +32,6 @@ void JpwordReader::start(){
     {
         mCourseState.fromString(courseState);
     }
-    //loadCache(levels, mCourseState.currentCourseNo());
     loadCourse(mCourseState.currentCourseNo());
 }
 
@@ -234,6 +233,7 @@ void JpwordReader::loadMp3(LevelsInfo lvs, int courseNo){
 		int un = UnitUtils::unitNoOf(fpsFound[i]);
 
 		AudioInfo ai;
+        IOUtils::log("mp3 file:"+fpsFound[i]);
 		ai.setMp3Path(fpsFound[i]);
 		ai.setName(AudioInfoUtils::nameOf(fpsFound[i]));
 		ai.setCourseNo(cn);
@@ -241,7 +241,7 @@ void JpwordReader::loadMp3(LevelsInfo lvs, int courseNo){
 		ai.setLevel(0);
 		lvs.add(ai);
 	}
-	//IOUtils::log("from path total " + infoList.size() + " mp3 loaded.");
+	IOUtils::log("from path total " + to_string(infoList().size()) + " mp3 loaded.");
 }
 
 vector<AudioInfo> JpwordReader::infoList(){
