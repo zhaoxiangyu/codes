@@ -22,7 +22,7 @@ install(){
 pub(){
 	#echo $1
 	echo publish to github ...
-	git add .
+	git add -A .
 	git commit -m "publish on"
 	git push
 }
