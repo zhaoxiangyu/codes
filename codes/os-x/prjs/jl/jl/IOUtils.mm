@@ -21,8 +21,22 @@ string IOUtils::fileBaseName(string path){
 }
 
 vector<string> IOUtils::findFiles(string path, vector<string>& extNames){
-	//TODO
 	vector<string> pathsFound;
+    
+    for(int i=0;i<extNames.size();i++){
+        string extName = extNames[i];
+        NSString *rootDir = [NSString stringWithUTF8String:path.c_str()];
+        NSString *ext = [NSString stringWithUTF8String:extName.c_str()];
+        NSFileManager *localFileManager=[[NSFileManager alloc] init];
+        NSDirectoryEnumerator *dirEnum = [localFileManager enumeratorAtPath:rootDir];
+        NSString *file;
+        while ((file = [dirEnum nextObject])) {
+            if ([[file pathExtension] isEqualToString: ext]) {
+                pathsFound.push_back(string([file cStringUsingEncoding: [NSString defaultCStringEncoding]]));
+            }
+        }
+    }
+
 	return pathsFound;
 }
 
