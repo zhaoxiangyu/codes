@@ -109,7 +109,7 @@ int CourseUtils::courseNoOf(string path){
 vector<string> CourseUtils::courseTitles(){
 	vector<string>* vs = new vector<string>;
 	for (int i = 0; i < MAX_COURSE_NO; i++) {
-		vs->push_back("Course " + (i + 1));
+		vs->push_back("Course " + to_string(i + 1));
 	}
 	return *vs;
 }
@@ -119,5 +119,5 @@ string CourseUtils::courseCacheFilePath(int courseNo){
 }
 
 string CourseUtils::courseDir(int courseNo){
-	return "course"+courseNo;
+	return "course"+to_string(courseNo);
 }
