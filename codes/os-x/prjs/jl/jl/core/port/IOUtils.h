@@ -8,7 +8,7 @@
 class IOUtils
 {
 	public:
-		static bool saveToFile(string fpath, string& content);
+		static bool saveToFile(string fpath, string content);
 		static string loadFromFile(string fpath);
 		static string httpGet(string url);
 		static string fullPath(string parent, string name);
@@ -18,7 +18,7 @@ class IOUtils
 		static void log(string msg);
 		static void downloadFile(string url, string saveTo, DownloadEventListener downListener);
 		static void unzipFile(string path, string parent, UnzipEventListener unzipListener);
-		static vector<string>& findFiles(string path, vector<string>& extNames);
+		static vector<string> findFiles(string path, vector<string>& extNames);
 		//static string relativePath(string path, string base);
 		static string fileBaseName(string path);
 	protected:

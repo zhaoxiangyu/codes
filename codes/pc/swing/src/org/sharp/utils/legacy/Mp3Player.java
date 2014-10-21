@@ -10,7 +10,7 @@ import javazoom.jlgui.basicplayer.BasicPlayerException;
 import javazoom.jlgui.basicplayer.BasicPlayerListener;
 
 import org.sharp.intf.AudioPlayer;
-import org.sharp.jdkex.Utils;
+//import org.sharp.jdkex.Utils;
 
 /**
  * * This class implements a simple player based on BasicPlayer. * BasicPlayer
@@ -78,9 +78,9 @@ public class Mp3Player implements BasicPlayerListener,AudioPlayer {
 				}
 				
 			}.start();*/
-			Utils.log.debug("play() complete.");
+			//Utils.log.debug("play() complete.");
 		} catch (BasicPlayerException e) {
-			Utils.log.error(e.getMessage(), e);
+			//Utils.log.error(e.getMessage(), e);
 		}
 	}
 	
@@ -139,7 +139,7 @@ public class Mp3Player implements BasicPlayerListener,AudioPlayer {
 		, basicplayer.sourcedataline=com.sun.media.sound.DirectAudioDevice$DirectSDL@11f
 		f436, bitrate=24000, mp3.mode=3, mp3.vbr=false, audio.samplerate.hz=16000.0, mp3
 		.original=true*/
-		Utils.log.debug("opened : " + properties.toString());
+		//Utils.log.debug("opened : " + properties.toString());
 		Long dur = (Long)properties.get("duration");
 		if(dur!=null)
 			duration = dur.longValue();
@@ -189,7 +189,7 @@ public class Mp3Player implements BasicPlayerListener,AudioPlayer {
 	public void stateUpdated(BasicPlayerEvent event) {
 		// Notification of BasicPlayer states (opened, playing, end of media,
 		// ...)
-		Utils.log.debug("stateUpdated : " + event.getCode()+","+event.getDescription());
+		//Utils.log.debug("stateUpdated : " + event.getCode()+","+event.getDescription());
 		if(pcb!=null && event.getCode() == BasicPlayerEvent.EOM){
 			pcb.endOfMedia(event.getPosition());
 		}
@@ -203,16 +203,16 @@ public class Mp3Player implements BasicPlayerListener,AudioPlayer {
 	 *            : a handle to the player
 	 */
 	public void setController(BasicController controller) {
-		Utils.log.debug("setController : " + controller);
+		//Utils.log.debug("setController : " + controller);
 	}
 
 	public void seek(double pro) {
 		try {
-			Utils.log.debug("about to seek to pos:"+pro+",bytes:"+bytes+",total:"+(long)(pro*bytes));
+			//Utils.log.debug("about to seek to pos:"+pro+",bytes:"+bytes+",total:"+(long)(pro*bytes));
 			long skipped = control.seek((long)(pro*bytes));
 			microseconds = 0;
 		} catch (BasicPlayerException e) {
-			Utils.log.error("",e);
+			//Utils.log.error("",e);
 		}
 	}
 

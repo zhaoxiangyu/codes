@@ -9,14 +9,15 @@ class State: public Serializable
 	class LevelState
 	{
 		public:
-			int getCurrent();
+			int getCurrent() const;
 			void setCurrent(int current);
-			int getLast();
+			int getLast() const;
 			void setLast(int last);
-			int getLevel();
+			int getLevel() const;
 			void setLevel(int level);
 
-			LevelState();
+            LevelState();
+			LevelState(int,int,int);
 			virtual ~LevelState();
 		private:
 			int current;
@@ -25,16 +26,16 @@ class State: public Serializable
 	};
 
 	public:
-		LevelState& currentLevel();
-		LevelState& switchToLevel(int level);
+        State();
+        virtual ~State();
+
+        LevelState& currentLevel();
+		const LevelState& switchToLevel(int level);
 		int currentCourseNo();
 		void setCurrentToLast(int size);
 
 		virtual string toString();
 		virtual void fromString(string str);
-
-		State();
-		virtual ~State();
 	protected:
 	private:
 		map<int, LevelState> levelStates;

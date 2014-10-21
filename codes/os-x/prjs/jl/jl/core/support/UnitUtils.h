@@ -9,9 +9,9 @@ class UnitUtils
 		UnitUtils();
 		virtual ~UnitUtils();
 
-		static vector<string> unitTitles();
 		static int unitNoOf(string path);
-		static string unitDir(int unitNo);
+//		static string unitDir(int unitNo);
+//        static vector<string> unitTitles();
 	protected:
 	private:
 };

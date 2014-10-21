@@ -1,4 +1,5 @@
 #include "DataUtils.h"
+#include "../port/IOUtils.h"
 
 DataUtils::DataUtils()
 {
@@ -13,7 +14,8 @@ DataUtils::~DataUtils()
 /*
  groupNo 0 based index of matched group
  */
-string DataUtils::getMatch(string expression,string text,int groupNo){
+string DataUtils::getMatch(string expression,string text,int groupNo)
+{
     regex re(expression);
     smatch match;
     if(regex_match(text, match, re)){

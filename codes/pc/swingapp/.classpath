@@ -2,6 +2,7 @@
 <classpath>
   <classpathentry kind="src" path="src/test/java" output="target/test-classes" including="**/*.java"/>
   <classpathentry kind="src" path="src/main/java" including="**/*.java"/>
+  <classpathentry kind="src" path="src/main/resources" excluding="**/*.java"/>
   <classpathentry kind="output" path="target/classes"/>
   <classpathentry kind="var" path="M2_REPO/javax/transaction/jta/1.1/jta-1.1.jar"/>
   <classpathentry kind="var" path="M2_REPO/javax/media/jmf/2.1.1e/jmf-2.1.1e.jar"/>
@@ -58,5 +59,6 @@
   <classpathentry kind="var" path="M2_REPO/commons-io/commons-io/1.3.2/commons-io-1.3.2.jar"/>
   <classpathentry kind="var" path="M2_REPO/org/apache/ant/ant/1.7.1/ant-1.7.1.jar"/>
   <classpathentry kind="var" path="M2_REPO/org/apache/ant/ant-launcher/1.7.1/ant-launcher-1.7.1.jar"/>
+  <classpathentry kind="var" path="M2_REPO/org/sharpx/scala/1.0-SNAPSHOT/scala-1.0-SNAPSHOT.jar"/>
   <classpathentry kind="var" path="M2_REPO/com/miglayout/miglayout/3.7.4/miglayout-3.7.4.jar"/>
 </classpath>

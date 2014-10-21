@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		872CEA1E19C08DFE00DBD997 /* audios.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 872CEA1D19C08DFE00DBD997 /* audios.bundle */; };
 		87A99DEC19BDA4FA00586D07 /* ReaderEventListener.mm in Sources */ = {isa = PBXBuildFile; fileRef = 87A99DEB19BDA4FA00586D07 /* ReaderEventListener.mm */; };
 		87AB2A5819BB4077000D5549 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 87AB2A5719BB4077000D5549 /* UIKit.framework */; };
 		87AB2A5A19BB4077000D5549 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 87AB2A5919BB4077000D5549 /* Foundation.framework */; };
@@ -24,7 +25,7 @@
 		87AB2A8019BB4077000D5549 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 87AB2A5719BB4077000D5549 /* UIKit.framework */; };
 		87AB2A8119BB4077000D5549 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 87AB2A5919BB4077000D5549 /* Foundation.framework */; };
 		87AB2A8919BB4077000D5549 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 87AB2A8719BB4077000D5549 /* InfoPlist.strings */; };
-		87AB2A8C19BB4077000D5549 /* jlTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 87AB2A8B19BB4077000D5549 /* jlTests.m */; };
+		87AB2A8C19BB4077000D5549 /* jlTests.mm in Sources */ = {isa = PBXBuildFile; fileRef = 87AB2A8B19BB4077000D5549 /* jlTests.mm */; };
 		87AB2AF219BB4AB4000D5549 /* AudioInfo.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 87AB2ACB19BB4AB4000D5549 /* AudioInfo.cpp */; };
 		87AB2AF319BB4AB4000D5549 /* Course.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 87AB2ACD19BB4AB4000D5549 /* Course.cpp */; };
 		87AB2AF419BB4AB4000D5549 /* UrlSetting.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 87AB2ACF19BB4AB4000D5549 /* UrlSetting.cpp */; };
@@ -40,6 +41,7 @@
 		87AC445419BCA4100064B65A /* OsSupport.mm in Sources */ = {isa = PBXBuildFile; fileRef = 87AC445219BCA4100064B65A /* OsSupport.mm */; };
 		87AC445619BCA7B60064B65A /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 87AC445519BCA7B60064B65A /* AVFoundation.framework */; };
 		87AC445919BD3D5F0064B65A /* IOUtils.mm in Sources */ = {isa = PBXBuildFile; fileRef = 87AC445719BD3D5E0064B65A /* IOUtils.mm */; };
+		87B3A10A19C5C027009480A2 /* AudioInfoUtils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 87B3A10819C5C027009480A2 /* AudioInfoUtils.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +55,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		872CEA1D19C08DFE00DBD997 /* audios.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = audios.bundle; sourceTree = "<group>"; };
 		87A99DEB19BDA4FA00586D07 /* ReaderEventListener.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ReaderEventListener.mm; sourceTree = "<group>"; };
 		87A99DED19BDA54500586D07 /* ReaderEventListener.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReaderEventListener.h; sourceTree = "<group>"; };
 		87AB2A5319BB4077000D5549 /* jl.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = jl.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -77,7 +80,7 @@
 		87AB2A8619BB4077000D5549 /* jlTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "jlTests-Info.plist"; sourceTree = "<group>"; };
 		87AB2A8819BB4077000D5549 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		87AB2A8A19BB4077000D5549 /* jlTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = jlTests.h; sourceTree = "<group>"; };
-		87AB2A8B19BB4077000D5549 /* jlTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = jlTests.m; sourceTree = "<group>"; };
+		87AB2A8B19BB4077000D5549 /* jlTests.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = jlTests.mm; sourceTree = "<group>"; };
 		87AB2ACB19BB4AB4000D5549 /* AudioInfo.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AudioInfo.cpp; sourceTree = "<group>"; };
 		87AB2ACC19BB4AB4000D5549 /* AudioInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AudioInfo.h; sourceTree = "<group>"; };
 		87AB2ACD19BB4AB4000D5549 /* Course.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Course.cpp; sourceTree = "<group>"; };
@@ -111,6 +114,9 @@
 		87AC445219BCA4100064B65A /* OsSupport.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = OsSupport.mm; sourceTree = "<group>"; };
 		87AC445519BCA7B60064B65A /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		87AC445719BD3D5E0064B65A /* IOUtils.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = IOUtils.mm; sourceTree = "<group>"; };
+		87B3A10819C5C027009480A2 /* AudioInfoUtils.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AudioInfoUtils.cpp; sourceTree = "<group>"; };
+		87B3A10919C5C027009480A2 /* AudioInfoUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AudioInfoUtils.h; sourceTree = "<group>"; };
+		87EDE63E19C40A2F0088E276 /* UseBoost.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UseBoost.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -172,6 +178,7 @@
 		87AB2A5D19BB4077000D5549 /* jl */ = {
 			isa = PBXGroup;
 			children = (
+				872CEA1D19C08DFE00DBD997 /* audios.bundle */,
 				87AB2B1419BBEC5C000D5549 /* port */,
 				87AB2AC919BB4AB4000D5549 /* core */,
 				87AB2A6619BB4077000D5549 /* JlAppDelegate.h */,
@@ -200,7 +207,7 @@
 			isa = PBXGroup;
 			children = (
 				87AB2A8A19BB4077000D5549 /* jlTests.h */,
-				87AB2A8B19BB4077000D5549 /* jlTests.m */,
+				87AB2A8B19BB4077000D5549 /* jlTests.mm */,
 				87AB2A8519BB4077000D5549 /* Supporting Files */,
 			);
 			path = jlTests;
@@ -261,6 +268,7 @@
 				87AB2AD219BB4AB4000D5549 /* Serializable.h */,
 				87AB2AD319BB4AB4000D5549 /* Stl.h */,
 				87AB2AD419BB4AB4000D5549 /* Type.h */,
+				87EDE63E19C40A2F0088E276 /* UseBoost.h */,
 			);
 			path = header;
 			sourceTree = "<group>";
@@ -290,6 +298,8 @@
 		87AB2AE319BB4AB4000D5549 /* support */ = {
 			isa = PBXGroup;
 			children = (
+				87B3A10819C5C027009480A2 /* AudioInfoUtils.cpp */,
+				87B3A10919C5C027009480A2 /* AudioInfoUtils.h */,
 				87AB2AE419BB4AB4000D5549 /* Constants.h */,
 				87AB2AE519BB4AB4000D5549 /* CourseUtils.cpp */,
 				87AB2AE619BB4AB4000D5549 /* CourseUtils.h */,
@@ -408,6 +418,7 @@
 				87AB2A6E19BB4077000D5549 /* Default-568h@2x.png in Resources */,
 				87AB2A7419BB4077000D5549 /* JlViewController_iPhone.xib in Resources */,
 				87AB2A7719BB4077000D5549 /* JlViewController_iPad.xib in Resources */,
+				872CEA1E19C08DFE00DBD997 /* audios.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -460,6 +471,7 @@
 				87AC445419BCA4100064B65A /* OsSupport.mm in Sources */,
 				87AC445919BD3D5F0064B65A /* IOUtils.mm in Sources */,
 				87A99DEC19BDA4FA00586D07 /* ReaderEventListener.mm in Sources */,
+				87B3A10A19C5C027009480A2 /* AudioInfoUtils.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -467,7 +479,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				87AB2A8C19BB4077000D5549 /* jlTests.m in Sources */,
+				87AB2A8C19BB4077000D5549 /* jlTests.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -539,7 +551,9 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				LIBRARY_SEARCH_PATHS = /usr/local/Cellar/boost/1.55.0_2/lib;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -561,7 +575,9 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				LIBRARY_SEARCH_PATHS = /usr/local/Cellar/boost/1.55.0_2/lib;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -574,9 +590,13 @@
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "jl/jl-Prefix.pch";
+				HEADER_SEARCH_PATHS = /opt/local/include/;
 				INFOPLIST_FILE = "jl/jl-Info.plist";
+				LIBRARY_SEARCH_PATHS = /opt/local/lib;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "";
 				WRAPPER_EXTENSION = app;
+				he_cust = "";
 			};
 			name = Debug;
 		};
@@ -585,9 +605,13 @@
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "jl/jl-Prefix.pch";
+				HEADER_SEARCH_PATHS = /opt/local/include/;
 				INFOPLIST_FILE = "jl/jl-Info.plist";
+				LIBRARY_SEARCH_PATHS = /opt/local/lib;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "";
 				WRAPPER_EXTENSION = app;
+				he_cust = "";
 			};
 			name = Release;
 		};

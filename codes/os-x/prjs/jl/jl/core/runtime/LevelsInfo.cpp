@@ -14,10 +14,10 @@ vector<AudioInfo>& LevelsInfo::levelList(int level){
 	if(levelListMap.count(level) > 0){
 		return levelListMap[level];
 	}else{
-		vector<AudioInfo>* lList = new vector<AudioInfo>;
-		pair< int, vector<AudioInfo> > p(level, *lList);
+		vector<AudioInfo> lList = vector<AudioInfo>();
+		pair< int, vector<AudioInfo> > p(level, lList);
 		levelListMap.insert(p);
-		return *lList;
+		return levelListMap[level];
 	}
 }
 

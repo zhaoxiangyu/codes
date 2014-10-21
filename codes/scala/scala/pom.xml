@@ -19,7 +19,8 @@
 		<maven.compiler.source>1.5</maven.compiler.source>
 		<maven.compiler.target>1.5</maven.compiler.target>
 		<encoding>UTF-8</encoding>
-		<scala.version>2.11.2</scala.version>
+		<scala.version>2.9.1</scala.version>
+		<!-- scala.version>2.11.2</scala.version -->
 	</properties>
 
 	<repositories>
@@ -29,7 +30,7 @@
 			<url>http://scala-tools.org/repo-releases</url>
 		</repository>
 	</repositories>
-	
+
 	<pluginRepositories>
 		<pluginRepository>
 			<id>scala-tools.org</id>
@@ -37,7 +38,7 @@
 			<url>http://scala-tools.org/repo-releases</url>
 		</pluginRepository>
 	</pluginRepositories>
-	
+
 	<dependencies>
 		<dependency>
 			<groupId>org.scala-lang</groupId>
@@ -51,22 +52,23 @@
 			<version>4.8.1</version>
 			<scope>test</scope>
 		</dependency>
-		<!-- 
+
 		<dependency>
-			<groupId>org.scala-tools.testing</groupId>
-			<artifactId>specs_2.10</artifactId>
-			<version>1.6.9</version>
-			<scope>test</scope>
+			<groupId>org.scala-lang</groupId>
+			<artifactId>scala-swing</artifactId>
+			<version>${scala.version}</version>
 		</dependency>
-		 -->
-		 
+
+		<!-- <dependency> <groupId>org.scala-tools.testing</groupId> <artifactId>specs_2.10</artifactId> 
+			<version>1.6.9</version> <scope>test</scope> </dependency> -->
+
 		<dependency>
 			<groupId>org.scalatest</groupId>
 			<artifactId>scalatest</artifactId>
 			<version>1.2</version>
 			<scope>test</scope>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>org.apache.poi</groupId>
 			<artifactId>poi-scratchpad</artifactId>

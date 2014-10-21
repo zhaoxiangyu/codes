@@ -12,27 +12,29 @@ class CourseUtils
 
 		static string courseCacheFilePath(int courseNo);
 		static string courseDir(int courseNo);
-		static vector<string> courseTitles();
 		static int courseNoOf(string path);
-		static vector<Course>* courseList();
-		static vector<Course>* courseList2();
-		static string zipFilePath(int courseNo);
-		static string pathToUnzip();
-		static string pathToUnzip(int courseNo);
-		static bool isCourseUnzipped(int courseNo);
 		static bool isCourseNoValid(int courseNo);
-		static vector<Course>* loadCourseList();
-		static void saveCourseList(vector<Course>& courses);
-		static string unzippedDirPath(int courseNo);
+    
+        static vector<string> courseTitles();
+        static vector<Course>* courseList();
+//        static vector<Course>* loadCourseList();
+//        static vector<Course>* courseList2();
+//		static void saveCourseList(vector<Course>& courses);
+
+//      static bool isCourseUnzipped(int courseNo);
+//      static string zipFilePath(int courseNo);
+//      static string pathToUnzip();
+//      static string pathToUnzip(int courseNo);
+//		static string unzippedDirPath(int courseNo);
 	protected:
 	private:
 		const static string cacheFileName;
-		const static string jpMp3Path;
 		const static int MAX_COURSE_NO;
 		const static int ILLEGAL_COURSE_NO;
 		const static string courseListFileName;
+        const static string jpMp3Path;
 
-		static string courseZipFileName(int courseNo);
+    //		static string courseZipFileName(int courseNo);
 		static string pathToCourseListFile();
 };
 

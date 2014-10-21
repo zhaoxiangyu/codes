@@ -49,16 +49,16 @@
 	<File name="src/core/vlc/vlcPlayer.c" open="1" top="0" tabpos="3">
 		<Cursor position="1470" topLine="33" />
 	</File>
-	<File name="src/ui/gtk+/gstPlayer.c" open="0" top="0" tabpos="4">
+	<File name="src/ui/gtk+/gstPlayer.c" open="1" top="0" tabpos="4">
 		<Cursor position="1862" topLine="40" />
 	</File>
-	<File name="src/ui/gtk+/gtkPlayer.cpp" open="0" top="0" tabpos="0">
+	<File name="src/ui/gtk+/gtkPlayer.cpp" open="1" top="1" tabpos="0">
 		<Cursor position="623" topLine="123" />
 	</File>
 	<File name="src/ui/sdl/wxSDLSurfacePanel.cpp" open="0" top="0" tabpos="10">
 		<Cursor position="0" topLine="0" />
 	</File>
-	<File name="src/ui/wxCVPanel.cpp" open="1" top="1" tabpos="8">
+	<File name="src/ui/wxCVPanel.cpp" open="1" top="0" tabpos="8">
 		<Cursor position="833" topLine="0" />
 	</File>
 	<File name="src/ui/wxCVPanel.h" open="0" top="0" tabpos="13">
@@ -70,13 +70,13 @@
 	<File name="src/ui/wxGstPanel.h" open="0" top="0" tabpos="1">
 		<Cursor position="0" topLine="0" />
 	</File>
-	<File name="src/ui/wxMediaApp.cpp" open="0" top="0" tabpos="2">
+	<File name="src/ui/wxMediaApp.cpp" open="1" top="0" tabpos="2">
 		<Cursor position="432" topLine="0" />
 	</File>
 	<File name="src/ui/wxMediaApp.h" open="0" top="0" tabpos="2">
 		<Cursor position="450" topLine="0" />
 	</File>
-	<File name="src/ui/wxMediaMain.cpp" open="0" top="0" tabpos="3">
+	<File name="src/ui/wxMediaMain.cpp" open="1" top="0" tabpos="3">
 		<Cursor position="4193" topLine="98" />
 	</File>
 	<File name="src/ui/wxMediaMain.h" open="0" top="0" tabpos="7">

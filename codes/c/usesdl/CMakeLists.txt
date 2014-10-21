@@ -3,8 +3,9 @@ project(racecar)
 set(SRCS car.cpp keyboard_handler.cpp main.cpp)
 add_executable(racecar ${SRCS})
 
+set(CMAKE_CXX_LIBRARY_ARCHITECTURE x86)
 set(CMAKE_INCLUDE_PATH e:/cpp/libs/SDL2-devel-2.0.3-VC/SDL2-2.0.3;e:/cpp/libs/SDL2_image-devel-2.0.0-VC/SDL2_image-2.0.0)
-set(CMAKE_LIBRARY_ARCHITECTURE e:/cpp/libs/SDL2-devel-2.0.3-VC/SDL2-2.0.3;e:/cpp/libs/SDL2_image-devel-2.0.0-VC/SDL2_image-2.0.0)
+set(CMAKE_LIBRARY_PATH e:/cpp/libs/SDL2-devel-2.0.3-VC/SDL2-2.0.3;e:/cpp/libs/SDL2_image-devel-2.0.0-VC/SDL2_image-2.0.0)
 
 include(FindPkgConfig)
 include(FindSDL)
