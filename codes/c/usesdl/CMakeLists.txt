@@ -1,0 +1,25 @@
+cmake_minimum_required(VERSION 2.8)
+project(racecar)
+set(SRCS car.cpp keyboard_handler.cpp main.cpp)
+add_executable(racecar ${SRCS})
+
+set(CMAKE_INCLUDE_PATH e:/cpp/libs/SDL2-devel-2.0.3-VC/SDL2-2.0.3;e:/cpp/libs/SDL2_image-devel-2.0.0-VC/SDL2_image-2.0.0)
+set(CMAKE_LIBRARY_ARCHITECTURE e:/cpp/libs/SDL2-devel-2.0.3-VC/SDL2-2.0.3;e:/cpp/libs/SDL2_image-devel-2.0.0-VC/SDL2_image-2.0.0)
+
+include(FindPkgConfig)
+include(FindSDL)
+include(FindSDL_image)
+
+if(SDL_FOUND)
+	include_directories(${SDL_INCLUDE_DIR})
+	target_link_libraries(racecar ${SDL_LIBRARY})
+else(SDL_FOUND)
+	MESSAGE("SDL not found")
+endif(SDL_FOUND)
+
+if(SDL_IMAGE_FOUND)
+	include_directories(${SDL_IMAGE_INCLUDE_DIRS})
+	target_link_libraries(racecar ${SDL_IMAGE_LIBRARIES})
+else(SDL_IMAGE_FOUND)
+	MESSAGE("SDLIMAGE not found")
+endif(SDL_IMAGE_FOUND)
