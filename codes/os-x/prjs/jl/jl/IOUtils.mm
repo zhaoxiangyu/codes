@@ -23,16 +23,20 @@ string IOUtils::fileBaseName(string path){
 vector<string> IOUtils::findFiles(string path, vector<string>& extNames){
 	vector<string> pathsFound;
     
+    string realpath = toRealPath(path);
+    IOUtils::log("load mp3 from path " + realpath);
     for(int i=0;i<extNames.size();i++){
         string extName = extNames[i];
-        NSString *rootDir = [NSString stringWithUTF8String:path.c_str()];
+        NSString *rootDir = [NSString stringWithUTF8String:realpath.c_str()];
         NSString *ext = [NSString stringWithUTF8String:extName.c_str()];
         NSFileManager *localFileManager=[[NSFileManager alloc] init];
         NSDirectoryEnumerator *dirEnum = [localFileManager enumeratorAtPath:rootDir];
         NSString *file;
         while ((file = [dirEnum nextObject])) {
             if ([[file pathExtension] isEqualToString: ext]) {
-                pathsFound.push_back(string([file cStringUsingEncoding: [NSString defaultCStringEncoding]]));
+                string filename = string([file cStringUsingEncoding: NSUTF8StringEncoding]);
+                log("Found file:"+filename);
+                pathsFound.push_back(filename);
             }
         }
     }
@@ -88,8 +92,7 @@ bool IOUtils::saveToFile(string fpath, string content){
 
 string IOUtils::loadFromFile(string fpath){
 	//string* content = new string();
-    try
-    {
+    try{
         ifstream ifs(toRealPath(fpath).c_str());
         stringbuf sb;
         ifs.get(sb,'\0');
@@ -97,8 +100,7 @@ string IOUtils::loadFromFile(string fpath){
         //getline(ifs,*content);
         ifs.close();
         return sb.str();
-    }catch(...)
-    {
+    }catch(...){
         return "";
     }
 }

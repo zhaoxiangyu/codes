@@ -21,7 +21,7 @@ UnitUtils::~UnitUtils()
 //}
 
 int UnitUtils::unitNoOf(string path){
-	string no = DataUtils::getMatch("unit(\\d+)/", path, 1);
+	string no = DataUtils::getMatch("unit(\\d+)_", path, 1);
 	return DataUtils::string2int(no);
 }
 

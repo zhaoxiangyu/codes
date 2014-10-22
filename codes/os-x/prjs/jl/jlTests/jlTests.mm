@@ -9,6 +9,7 @@
 #import "jlTests.h"
 #include "../jl/core/support/AudioInfoUtils.h"
 #include "../jl/core/utils/DataUtils.h"
+#include "../jl/core/support/CourseUtils.h"
 #include "../jl/core/port/IOUtils.h"
 
 @implementation jlTests
@@ -30,6 +31,12 @@
 - (void)testExample
 {
     //STFail(@"Unit tests are not implemented yet in jlTests");
+}
+
+- (void)testCourseNo
+{
+    int courseNo = CourseUtils::courseNoOf("unit1_2_xx.mp3");
+    IOUtils::log("course no:"+to_string(courseNo));
 }
 
 - (void)testRegMatch

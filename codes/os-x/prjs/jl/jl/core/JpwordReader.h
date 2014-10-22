@@ -37,7 +37,7 @@ class JpwordReader
         string errorMessage();
 
     protected:
-        vector<AudioInfo> infoList();
+        vector<AudioInfo>& infoList();
 //        vector<AudioInfo> levelList();
         AudioInfo* current();
         void loadCourse(int courseNo);
@@ -51,9 +51,9 @@ class JpwordReader
 //		UrlSetting mSetting;
 		const static int MAX_LEVEL = 5;
 
-		void loadMp3(LevelsInfo lvs, int courseNo);
-		void loadCache(LevelsInfo lvs, int courseNo);
-		void saveCache(LevelsInfo lvs,int courseNo);
+		void loadMp3(LevelsInfo& lvs, int courseNo);
+		void loadCache(LevelsInfo& lvs, int courseNo);
+		void saveCache(LevelsInfo& lvs,int courseNo);
         const string stateFilePath = "state.json";
 //		void unzipComplete();
 };

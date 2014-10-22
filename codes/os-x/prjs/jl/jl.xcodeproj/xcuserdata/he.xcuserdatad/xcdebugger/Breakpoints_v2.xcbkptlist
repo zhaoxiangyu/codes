@@ -13,5 +13,65 @@
             stopOnStyle = "0">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "jl/core/JpwordReader.cpp"
+            timestampString = "435683594.24864"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "243"
+            endingLineNumber = "243"
+            landmarkName = "JpwordReader::loadMp3(LevelsInfo&amp; lvs, int courseNo)"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "JpwordReader::loadMp3(LevelsInfo&amp;, int)"
+                  moduleName = "jl"
+                  urlString = "file://localhost/Volumes/Data/Codes-repo/github/codes/os-x/prjs/jl/jl/core/JpwordReader.cpp"
+                  timestampString = "435683834.724127"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "243"
+                  endingLineNumber = "243"
+                  offsetFromSymbolStart = "2324">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "JpwordReader::loadMp3(LevelsInfo&amp;, int)"
+                  moduleName = "jl"
+                  urlString = "file://localhost/Volumes/Data/Codes-repo/github/codes/os-x/prjs/jl/jl/core/JpwordReader.cpp"
+                  timestampString = "435683834.724515"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "243"
+                  endingLineNumber = "243"
+                  offsetFromSymbolStart = "2375">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "JpwordReader::loadMp3(LevelsInfo&amp;, int)"
+                  moduleName = "jl"
+                  urlString = "file://localhost/Volumes/Data/Codes-repo/github/codes/os-x/prjs/jl/jl/core/JpwordReader.cpp"
+                  timestampString = "435683834.724926"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "243"
+                  endingLineNumber = "243"
+                  offsetFromSymbolStart = "2792">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

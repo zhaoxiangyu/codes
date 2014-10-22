@@ -102,8 +102,13 @@ vector<Course>* CourseUtils::courseList(){
 //}
 
 int CourseUtils::courseNoOf(string path){
-	string no = DataUtils::getMatch("unit\\d+\\(\\d+)\\", path, 1);
-	return DataUtils::string2int(no);
+    try{
+        string no = DataUtils::getMatch("unit\\d+_(\\d+)_.*", path, 1);
+        int ret = DataUtils::string2int(no);
+        return ret;
+    }catch(...){
+        return 1;
+    }
 }
 
 vector<string> CourseUtils::courseTitles(){

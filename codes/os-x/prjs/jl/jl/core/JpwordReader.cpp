@@ -138,7 +138,7 @@ string JpwordReader::errorMessage(){
     PRIVATE methods goes here
  */
 
-void JpwordReader::saveCache(LevelsInfo,int courseNo){
+void JpwordReader::saveCache(LevelsInfo& lvs,int courseNo){
 	string infos = "";
 
     /*
@@ -154,7 +154,7 @@ void JpwordReader::saveCache(LevelsInfo,int courseNo){
                         infos);
 }
 
-void JpwordReader::loadCache(LevelsInfo lvs, int courseNo){
+void JpwordReader::loadCache(LevelsInfo& lvs, int courseNo){
 	string filePath = CourseUtils::courseCacheFilePath(courseNo);
 	vector<AudioInfo> o;
 	if(IOUtils::fileExists(filePath)){
@@ -222,9 +222,8 @@ vector<Course> JpwordReader::courseList(){
 	return mCourses;
 }
 
-void JpwordReader::loadMp3(LevelsInfo lvs, int courseNo){
+void JpwordReader::loadMp3(LevelsInfo& lvs, int courseNo){
 	string path = CourseUtils::courseDir(courseNo);
-	IOUtils::log("load mp3 from path " + path);
 	vector<string> extnames;
 	extnames.push_back("mp3");
 	vector<string> fpsFound = IOUtils::findFiles(path,extnames);
@@ -244,8 +243,8 @@ void JpwordReader::loadMp3(LevelsInfo lvs, int courseNo){
 	IOUtils::log("from path total " + to_string(infoList().size()) + " mp3 loaded.");
 }
 
-vector<AudioInfo> JpwordReader::infoList(){
-	return levels.levelList(mCourseState.currentLevel().getCurrent());
+vector<AudioInfo>& JpwordReader::infoList(){
+	return levels.levelList(mCourseState.currentLevel().getLevel());
 }
 
 //vector<AudioInfo> JpwordReader::infoList(){

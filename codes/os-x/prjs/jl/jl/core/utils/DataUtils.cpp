@@ -31,11 +31,8 @@ string DataUtils::getMatch(string expression,string text,int groupNo)
 }
 
 int DataUtils::string2int(string str){
-    /*
-	istringstream iss(str);
-	int i = 0;
-	iss >> i;
-	return i;
-     */
-    return stoi(str);
+    if(str.length()>0)
+        return stoi(str);
+    else
+        return 1;
 }
