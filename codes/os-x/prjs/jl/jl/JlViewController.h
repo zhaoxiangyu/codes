@@ -17,4 +17,6 @@
 
 - (IBAction)toFirst:(id)sender;
 
+@property (weak, nonatomic) IBOutlet UILabel *wordDisplay;
+
 @end
