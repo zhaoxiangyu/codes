@@ -2,19 +2,21 @@
 #import "JlViewController.h"
 
 struct ListenerImpl{
-    JlViewController* viewContorller;
+    JlViewController* viewController;
 };
 
 ReaderEventListener::ReaderEventListener()
 {
 	//ctor
+    impl = new ListenerImpl();
 }
 
 ReaderEventListener::~ReaderEventListener()
 {
 	//dtor
+    delete impl;
 }
 
 void ReaderEventListener::viewNeedsFresh(){
-    [impl->viewContorller refreshView];
+    [impl->viewController refreshView];
 }

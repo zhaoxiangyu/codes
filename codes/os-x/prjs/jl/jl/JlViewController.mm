@@ -7,11 +7,9 @@
 //
 
 #import "JlViewController.h"
-#import "JlAppDelegate.h"
 
 
 @implementation JlViewController{
-    JlAppDelegate* app;
 }
 
 - (void)viewDidLoad
@@ -29,12 +27,12 @@
 
 - (void)refreshView
 {
-    NSLog(@"about to refresh UI");
+    NSLog(@"about to refresh UI:%@",[_app text]);
 }
 
 - (IBAction)toFirst:(id)sender
 {
-    [app toFirst];
+    [_app toFirst];
 }
 
 @end

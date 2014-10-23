@@ -12,6 +12,10 @@
 #import "core/JpwordReader.h"
 #import "core/port/ReaderEventListener.h"
 
+struct ListenerImpl{
+    JlViewController* viewController;
+};
+
 @implementation JlAppDelegate{
     JpwordReader* reader;
     ReaderEventListener* listener;
@@ -44,6 +48,7 @@ void uncaughtExceptionHandler(NSException *exception) {
     } else {
         self.viewController = [[JlViewController alloc] initWithNibName:@"JlViewController_iPad" bundle:nil];
     }
+    self.viewController.app = self;
     setupCore(self,self.viewController);
     
     [self.viewController setValue: self forKey: @"app"];
@@ -56,6 +61,8 @@ void setupCore(JlAppDelegate* app,JlViewController* viewController){
     
     app->reader = new JpwordReader();
     app->listener = new ReaderEventListener();
+    app->listener->impl->viewController = viewController;
+    
     app->reader->listener = app->listener;
     app->reader->start();
 }
@@ -68,6 +75,12 @@ void setupCore(JlAppDelegate* app,JlViewController* viewController){
 - (void)toFirst
 {
     reader->toBeginning();
+}
+
+- (NSString*)text
+{
+    string text = reader->text();
+    return [NSString stringWithUTF8String: text.c_str()];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application

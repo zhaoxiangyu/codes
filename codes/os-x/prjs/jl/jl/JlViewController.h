@@ -7,8 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "JlAppDelegate.h"
 
 @interface JlViewController : UIViewController
+
+@property (strong, nonatomic) JlAppDelegate *app;
 
 - (void)refreshView;
 

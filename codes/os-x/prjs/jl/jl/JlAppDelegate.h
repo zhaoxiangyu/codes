@@ -20,4 +20,6 @@
 
 - (void)toFirst;
 
+- (NSString*)text;
+
 @end

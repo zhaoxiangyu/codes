@@ -30,10 +30,10 @@ int LevelsInfo::levelWC(int level){
 }
 
 void LevelsInfo::add(AudioInfo& ai){
-	vector<AudioInfo> auL = levelListMap[ai.getLevel()];
+	vector<AudioInfo>& auL = levelListMap[ai.getLevel()];
 	auL.push_back(ai);
 
-	levelList(-1).push_back(ai);
+	//levelList(-1).push_back(ai);
 }
 
 void LevelsInfo::remove(AudioInfo& ai){

@@ -33,6 +33,7 @@ void JpwordReader::start(){
         mCourseState.fromString(courseState);
     }
     loadCourse(mCourseState.currentCourseNo());
+    freshView();
 }
 
 void JpwordReader::pause(){
