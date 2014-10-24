@@ -16,6 +16,10 @@ struct ListenerImpl{
     JlViewController* viewController;
 };
 
+struct Impl {
+    JpwordReader* r;
+};
+
 @implementation JlAppDelegate{
     JpwordReader* reader;
     ReaderEventListener* listener;
@@ -48,10 +52,15 @@ void uncaughtExceptionHandler(NSException *exception) {
     } else {
         self.viewController = [[JlViewController alloc] initWithNibName:@"JlViewController_iPad" bundle:nil];
     }
-    self.viewController.app = self;
+    //self.viewController.app = self;
+    //[self.viewController setup];
+    self.viewController.impl = new Impl();
+    self.viewController.impl->r = &JpwordReader::getInstance();
+
     setupCore(self,self.viewController);
     
-    [self.viewController setValue: self forKey: @"app"];
+    //[self.viewController setValue: self forKey: @"app"];
+    
     self.window.rootViewController = self.viewController;
     [self.window makeKeyAndVisible];
     return YES;
@@ -59,7 +68,8 @@ void uncaughtExceptionHandler(NSException *exception) {
 
 void setupCore(JlAppDelegate* app,JlViewController* viewController){
     
-    app->reader = new JpwordReader();
+    //app->reader = new JpwordReader();
+    app->reader = &JpwordReader::getInstance();
     app->listener = new ReaderEventListener();
     app->listener->impl->viewController = viewController;
     
@@ -67,21 +77,21 @@ void setupCore(JlAppDelegate* app,JlViewController* viewController){
     app->reader->start();
 }
 
-- (void)chooseCourse:(int)courseNo
-{
-    reader->chooseCourse(courseNo);
-}
-
-- (void)toFirst
-{
-    reader->toBeginning();
-}
-
-- (NSString*)text
-{
-    string text = reader->text();
-    return [NSString stringWithUTF8String: text.c_str()];
-}
+//- (void)chooseCourse:(int)courseNo
+//{
+//    reader->chooseCourse(courseNo);
+//}
+//
+//- (void)toFirst
+//{
+//    reader->toBeginning();
+//}
+//
+//- (NSString*)text
+//{
+//    string text = reader->text();
+//    return [NSString stringWithUTF8String: text.c_str()];
+//}
 
 - (void)applicationWillResignActive:(UIApplication *)application
 {
@@ -109,7 +119,7 @@ void setupCore(JlAppDelegate* app,JlViewController* viewController){
 {
     reader->quit();
     delete listener;
-    delete reader;
+    //delete reader;
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 

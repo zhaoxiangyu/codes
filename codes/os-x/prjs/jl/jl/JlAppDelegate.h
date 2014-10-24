@@ -16,10 +16,10 @@
 
 @property (strong, nonatomic) JlViewController *viewController;
 
-- (void)chooseCourse:(int)courseNo;
+//- (void)chooseCourse:(int)courseNo;
 
-- (void)toFirst;
+//- (void)toFirst;
 
-- (NSString*)text;
+//- (NSString*)text;
 
 @end

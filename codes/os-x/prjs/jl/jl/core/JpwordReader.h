@@ -12,10 +12,18 @@
 
 class JpwordReader
 {
-	public:
         JpwordReader();
+        JpwordReader(const JpwordReader&);
+        void operator = (const JpwordReader&);
         virtual ~JpwordReader();
 
+public:
+        static JpwordReader& getInstance(){
+            static JpwordReader reader;
+            return reader;
+        }
+    
+    
 		ReaderEventListener* listener;
 
         void start();

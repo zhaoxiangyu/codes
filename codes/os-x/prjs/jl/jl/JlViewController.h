@@ -11,11 +11,15 @@
 
 @interface JlViewController : UIViewController
 
-@property (strong, nonatomic) JlAppDelegate *app;
+@property (nonatomic) struct Impl *impl;
+
+//@property (strong, nonatomic) JlAppDelegate *app;
 
 - (void)refreshView;
 
-- (IBAction)toFirst:(id)sender;
+- (void)setup;
+
+//- (IBAction)toFirst:(id)sender;
 
 @property (weak, nonatomic) IBOutlet UILabel *wordDisplay;
 
