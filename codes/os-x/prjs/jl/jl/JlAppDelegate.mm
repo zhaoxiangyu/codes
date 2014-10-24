@@ -38,28 +38,13 @@ void uncaughtExceptionHandler(NSException *exception) {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
 
-    //NSString * mp3BundlePath = [[NSBundle mainBundle] pathForResource:@"audios" ofType:@"bundle"];
-    //NSBundle * mp3Bundle = [NSBundle bundleWithPath:mp3BundlePath];
-    //NSString * mp3Path = [mp3Bundle pathForResource:@"unit1\\1\\～ちゅん" ofType:@"mp3" inDirectory:@"jw/course1"];
-    //NSLog(@"%@", mp3Path);
-    //NSArray * mp3Array = [mp3Bundle pathsForResourcesOfType:@"mp3" inDirectory:@"jw/course1"];
-    //for (NSString * mp3Path in mp3Array) {
-    //    NSLog(@"%@", mp3Path);
-    //}
-
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
         self.viewController = [[JlViewController alloc] initWithNibName:@"JlViewController_iPhone" bundle:nil];
     } else {
         self.viewController = [[JlViewController alloc] initWithNibName:@"JlViewController_iPad" bundle:nil];
     }
-    //self.viewController.app = self;
-    //[self.viewController setup];
-    self.viewController.impl = new Impl();
-    self.viewController.impl->r = &JpwordReader::getInstance();
 
     setupCore(self,self.viewController);
-    
-    //[self.viewController setValue: self forKey: @"app"];
     
     self.window.rootViewController = self.viewController;
     [self.window makeKeyAndVisible];
@@ -68,13 +53,15 @@ void uncaughtExceptionHandler(NSException *exception) {
 
 void setupCore(JlAppDelegate* app,JlViewController* viewController){
     
-    //app->reader = new JpwordReader();
+    viewController.impl = new Impl();
+    //[viewController impl] = new Impl();
+    [viewController impl]->r = &JpwordReader::getInstance();
     app->reader = &JpwordReader::getInstance();
     app->listener = new ReaderEventListener();
     app->listener->impl->viewController = viewController;
     
     app->reader->listener = app->listener;
-    app->reader->start();
+    //app->reader->start();
 }
 
 //- (void)chooseCourse:(int)courseNo
@@ -119,7 +106,6 @@ void setupCore(JlAppDelegate* app,JlViewController* viewController){
 {
     reader->quit();
     delete listener;
-    //delete reader;
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 

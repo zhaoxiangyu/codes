@@ -10,14 +10,13 @@
 #import "JlAppDelegate.h"
 
 @interface JlViewController : UIViewController {
-//    IBOutlet UILabel *wordDisplay;
+    IBOutlet UILabel *wordDisplay;
 }
 
-    @property (nonatomic) struct Impl *impl;
+    @property (nonatomic) struct Impl* impl;
 
     //@property (strong, nonatomic) JlAppDelegate *app;
 
-    @property (weak, nonatomic) IBOutlet UILabel *wordDisplay;
 
     - (void)refreshView;
 
