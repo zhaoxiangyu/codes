@@ -9,18 +9,22 @@
 #import <UIKit/UIKit.h>
 #import "JlAppDelegate.h"
 
-@interface JlViewController : UIViewController
+@interface JlViewController : UIViewController {
+//    IBOutlet UILabel *wordDisplay;
+}
 
-@property (nonatomic) struct Impl *impl;
+    @property (nonatomic) struct Impl *impl;
 
-//@property (strong, nonatomic) JlAppDelegate *app;
+    //@property (strong, nonatomic) JlAppDelegate *app;
 
-- (void)refreshView;
+    @property (weak, nonatomic) IBOutlet UILabel *wordDisplay;
 
-- (void)setup;
+    - (void)refreshView;
 
-//- (IBAction)toFirst:(id)sender;
+    - (void)setup;
 
-@property (weak, nonatomic) IBOutlet UILabel *wordDisplay;
+    //- (IBAction)toFirst:(id)sender;
+
+    - (IBAction)doBtnAbout:(id)sender;
 
 @end

@@ -17,6 +17,8 @@ struct Impl {
     JpwordReader* reader;
 }
 
+//@synthesize wordDisplay;
+
 - (void)setup {
     reader = &JpwordReader::getInstance();
 //    self.impl->r = &JpwordReader::getInstance();
@@ -26,6 +28,8 @@ struct Impl {
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    self.wordDisplay = [[UILabel alloc] init];
+    NSLog(@"viewDidLoad finished");
     //[app chooseCourse:1];
 }
 
@@ -41,8 +45,10 @@ struct Impl {
     string text = [self impl]->r->text();
     NSString* nsText = [NSString stringWithUTF8String: text.c_str()];
     NSLog(@"about to refresh UIx:%@",nsText);
-    //[[self wordDisplay] setText: @"XXXXX"];
-    self.wordDisplay.text = nsText;
+
+    NSLog(@"wordDisplay:%@",[self wordDisplay]);
+    [[self wordDisplay] setText: nsText];
+    //self.wordDisplay.text = nsText;
 }
 
 //- (IBAction)toFirst:(id)sender
@@ -50,4 +56,9 @@ struct Impl {
 //    [_app toFirst];
 //}
 
+- (IBAction)doBtnAbout:(id)sender {
+    //[sender setTitle: @"HA"];
+    //[[self wordDisplay] setHidden:YES];
+    [self refreshView];
+}
 @end
