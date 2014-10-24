@@ -64,22 +64,6 @@ void setupCore(JlAppDelegate* app,JlViewController* viewController){
     //app->reader->start();
 }
 
-//- (void)chooseCourse:(int)courseNo
-//{
-//    reader->chooseCourse(courseNo);
-//}
-//
-//- (void)toFirst
-//{
-//    reader->toBeginning();
-//}
-//
-//- (NSString*)text
-//{
-//    string text = reader->text();
-//    return [NSString stringWithUTF8String: text.c_str()];
-//}
-
 - (void)applicationWillResignActive:(UIApplication *)application
 {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

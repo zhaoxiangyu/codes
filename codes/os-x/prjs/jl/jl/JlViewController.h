@@ -15,14 +15,9 @@
 
     @property (nonatomic) struct Impl* impl;
 
-    //@property (strong, nonatomic) JlAppDelegate *app;
-
-
     - (void)refreshView;
 
-    - (void)setup;
-
-    //- (IBAction)toFirst:(id)sender;
+    - (IBAction)toFirst:(id)sender;
 
     - (IBAction)doBtnAbout:(id)sender;
 

@@ -19,11 +19,6 @@ struct Impl {
 
 //@synthesize wordDisplay;
 
-- (void)setup {
-//    reader = &JpwordReader::getInstance();
-//    self.impl->r = &JpwordReader::getInstance();
-}
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -49,10 +44,10 @@ struct Impl {
     [wordDisplay setText: nsText];
 }
 
-//- (IBAction)toFirst:(id)sender
-//{
-//    [_app toFirst];
-//}
+- (IBAction)toFirst:(id)sender
+{
+    
+}
 
 - (IBAction)doBtnAbout:(id)sender {
     //[sender setTitle: @"HA"];
