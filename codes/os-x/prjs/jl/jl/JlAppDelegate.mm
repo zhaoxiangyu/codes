@@ -50,11 +50,11 @@ void uncaughtExceptionHandler(NSException *exception) {
 
 void setupCore(JpwordReader* reader, JlViewController* viewController){
     
-    viewController.impl = new Impl();
-    //[viewController impl] = new Impl();
-    
     reader = &JpwordReader::getInstance();
     reader->listener->impl->viewController = viewController;
+
+    viewController.impl = new Impl();
+    //[viewController impl] = new Impl();
     [viewController impl]->r = reader;
 }
 
