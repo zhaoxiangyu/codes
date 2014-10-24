@@ -11,15 +11,6 @@
 @class JlViewController;
 
 @interface JlAppDelegate : UIResponder <UIApplicationDelegate>
-
-@property (strong, nonatomic) UIWindow *window;
-
-@property (strong, nonatomic) JlViewController *viewController;
-
-//- (void)chooseCourse:(int)courseNo;
-
-//- (void)toFirst;
-
-//- (NSString*)text;
-
+    @property (strong, nonatomic) UIWindow *window;
+    @property (strong, nonatomic) JlViewController *viewController;
 @end

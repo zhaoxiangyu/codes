@@ -12,11 +12,13 @@
 JpwordReader::JpwordReader()
 {
 	//ctor
+    listener = new ReaderEventListener();
 }
 
 JpwordReader::~JpwordReader()
 {
 	//dtor
+    delete listener;
 }
 
 //const int JpwordReader::MAX_LEVEL;

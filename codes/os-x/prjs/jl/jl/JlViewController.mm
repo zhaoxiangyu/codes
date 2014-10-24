@@ -14,7 +14,7 @@ struct Impl {
 };
 
 @implementation JlViewController{
-    JpwordReader* reader;
+//    JpwordReader* reader;
 }
 
 //@synthesize wordDisplay;
@@ -40,7 +40,7 @@ struct Impl {
     NSString* nsText = [NSString stringWithUTF8String: text.c_str()];
     NSLog(@"about to refresh UIx:%@",nsText);
 
-    NSLog(@"wordDisplay:%@",wordDisplay);
+    //NSLog(@"wordDisplay:%@",wordDisplay);
     [wordDisplay setText: nsText];
 }
 

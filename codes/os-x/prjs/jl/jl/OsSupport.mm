@@ -17,7 +17,6 @@ struct OsApi {
 OsApi* OsSupport::api=new OsApi();
 
 long OsSupport::currentTimeMillis(){
-	//return wxGetLocalTimeMillis();
 	return 0;
 }
 

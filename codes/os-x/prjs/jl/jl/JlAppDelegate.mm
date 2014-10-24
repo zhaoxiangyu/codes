@@ -8,21 +8,18 @@
 
 #import "JlAppDelegate.h"
 
-#import "JlViewController.h"
 #import "core/JpwordReader.h"
+#import "JlViewController.h"
+struct Impl {
+    JpwordReader* r;
+};
 #import "core/port/ReaderEventListener.h"
-
 struct ListenerImpl{
     JlViewController* viewController;
 };
 
-struct Impl {
-    JpwordReader* r;
-};
-
 @implementation JlAppDelegate{
     JpwordReader* reader;
-    ReaderEventListener* listener;
 }
 
 void uncaughtExceptionHandler(NSException *exception) {
@@ -44,24 +41,21 @@ void uncaughtExceptionHandler(NSException *exception) {
         self.viewController = [[JlViewController alloc] initWithNibName:@"JlViewController_iPad" bundle:nil];
     }
 
-    setupCore(self,self.viewController);
+    setupCore(reader, self.viewController);
     
     self.window.rootViewController = self.viewController;
     [self.window makeKeyAndVisible];
     return YES;
 }
 
-void setupCore(JlAppDelegate* app,JlViewController* viewController){
+void setupCore(JpwordReader* reader, JlViewController* viewController){
     
     viewController.impl = new Impl();
     //[viewController impl] = new Impl();
-    [viewController impl]->r = &JpwordReader::getInstance();
-    app->reader = &JpwordReader::getInstance();
-    app->listener = new ReaderEventListener();
-    app->listener->impl->viewController = viewController;
     
-    app->reader->listener = app->listener;
-    //app->reader->start();
+    reader = &JpwordReader::getInstance();
+    reader->listener->impl->viewController = viewController;
+    [viewController impl]->r = reader;
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application
@@ -89,7 +83,6 @@ void setupCore(JlAppDelegate* app,JlViewController* viewController){
 - (void)applicationWillTerminate:(UIApplication *)application
 {
     reader->quit();
-    delete listener;
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 

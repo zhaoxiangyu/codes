@@ -14,11 +14,7 @@
 }
 
     @property (nonatomic) struct Impl* impl;
-
     - (void)refreshView;
-
     - (IBAction)toFirst:(id)sender;
-
     - (IBAction)doBtnAbout:(id)sender;
-
 @end
