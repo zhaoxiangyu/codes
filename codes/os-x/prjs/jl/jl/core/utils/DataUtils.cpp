@@ -36,3 +36,7 @@ int DataUtils::string2int(string str){
     else
         return 1;
 }
+
+int DataUtils::getUniqueId(){
+    return 0;
+}

@@ -17,7 +17,6 @@ class LevelsInfo
 		void clear(int start,int end);
 	protected:
 	private:
-		//map<int,string> testMap;
 		map< int,vector<AudioInfo> > levelListMap;
 };
 
