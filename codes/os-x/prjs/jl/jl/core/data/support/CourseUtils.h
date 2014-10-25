@@ -1,8 +1,8 @@
 #ifndef COURSEUTILS_H
 #define COURSEUTILS_H
 
-#include "../header/Stl.h"
-#include "../data/Course.h"
+#include "../../header/Stl.h"
+#include "../Course.h"
 
 class CourseUtils
 {

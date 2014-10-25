@@ -31,13 +31,13 @@
 		87AB2AF519BB4AB4000D5549 /* JpwordReader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 87AB2AD519BB4AB4000D5549 /* JpwordReader.cpp */; };
 		87AB2AF919BB4AB4000D5549 /* LevelsInfo.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 87AB2ADF19BB4AB4000D5549 /* LevelsInfo.cpp */; };
 		87AB2AFA19BB4AB4000D5549 /* State.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 87AB2AE119BB4AB4000D5549 /* State.cpp */; };
-		87AB2AFB19BB4AB4000D5549 /* CourseUtils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 87AB2AE519BB4AB4000D5549 /* CourseUtils.cpp */; };
-		87AB2AFD19BB4AB4000D5549 /* UnitUtils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 87AB2AE919BB4AB4000D5549 /* UnitUtils.cpp */; };
 		87AB2AFE19BB4AB4000D5549 /* DataUtils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 87AB2AEC19BB4AB4000D5549 /* DataUtils.cpp */; };
 		87AC445419BCA4100064B65A /* OsSupport.mm in Sources */ = {isa = PBXBuildFile; fileRef = 87AC445219BCA4100064B65A /* OsSupport.mm */; };
 		87AC445619BCA7B60064B65A /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 87AC445519BCA7B60064B65A /* AVFoundation.framework */; };
 		87AC445919BD3D5F0064B65A /* IOUtils.mm in Sources */ = {isa = PBXBuildFile; fileRef = 87AC445719BD3D5E0064B65A /* IOUtils.mm */; };
-		87B3A10A19C5C027009480A2 /* AudioInfoUtils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 87B3A10819C5C027009480A2 /* AudioInfoUtils.cpp */; };
+		87DDE2BD19FBA7CE00880304 /* AudioInfoUtils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 87DDE2B719FBA7CE00880304 /* AudioInfoUtils.cpp */; };
+		87DDE2BE19FBA7CE00880304 /* CourseUtils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 87DDE2B919FBA7CE00880304 /* CourseUtils.cpp */; };
+		87DDE2BF19FBA7CE00880304 /* UnitUtils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 87DDE2BB19FBA7CE00880304 /* UnitUtils.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -90,10 +90,6 @@
 		87AB2AE019BB4AB4000D5549 /* LevelsInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LevelsInfo.h; sourceTree = "<group>"; };
 		87AB2AE119BB4AB4000D5549 /* State.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = State.cpp; sourceTree = "<group>"; };
 		87AB2AE219BB4AB4000D5549 /* State.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = State.h; sourceTree = "<group>"; };
-		87AB2AE519BB4AB4000D5549 /* CourseUtils.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CourseUtils.cpp; sourceTree = "<group>"; };
-		87AB2AE619BB4AB4000D5549 /* CourseUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CourseUtils.h; sourceTree = "<group>"; };
-		87AB2AE919BB4AB4000D5549 /* UnitUtils.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = UnitUtils.cpp; sourceTree = "<group>"; };
-		87AB2AEA19BB4AB4000D5549 /* UnitUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UnitUtils.h; sourceTree = "<group>"; };
 		87AB2AEC19BB4AB4000D5549 /* DataUtils.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DataUtils.cpp; sourceTree = "<group>"; };
 		87AB2AED19BB4AB4000D5549 /* DataUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataUtils.h; sourceTree = "<group>"; };
 		87AB2B0619BB5C32000D5549 /* IOUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IOUtils.h; sourceTree = "<group>"; };
@@ -101,8 +97,12 @@
 		87AC445219BCA4100064B65A /* OsSupport.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = OsSupport.mm; sourceTree = "<group>"; };
 		87AC445519BCA7B60064B65A /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		87AC445719BD3D5E0064B65A /* IOUtils.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = IOUtils.mm; sourceTree = "<group>"; };
-		87B3A10819C5C027009480A2 /* AudioInfoUtils.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AudioInfoUtils.cpp; sourceTree = "<group>"; };
-		87B3A10919C5C027009480A2 /* AudioInfoUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AudioInfoUtils.h; sourceTree = "<group>"; };
+		87DDE2B719FBA7CE00880304 /* AudioInfoUtils.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AudioInfoUtils.cpp; sourceTree = "<group>"; };
+		87DDE2B819FBA7CE00880304 /* AudioInfoUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AudioInfoUtils.h; sourceTree = "<group>"; };
+		87DDE2B919FBA7CE00880304 /* CourseUtils.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CourseUtils.cpp; sourceTree = "<group>"; };
+		87DDE2BA19FBA7CE00880304 /* CourseUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CourseUtils.h; sourceTree = "<group>"; };
+		87DDE2BB19FBA7CE00880304 /* UnitUtils.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = UnitUtils.cpp; sourceTree = "<group>"; };
+		87DDE2BC19FBA7CE00880304 /* UnitUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UnitUtils.h; sourceTree = "<group>"; };
 		87EDE63E19C40A2F0088E276 /* UseBoost.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UseBoost.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -229,7 +229,6 @@
 				87AB2AD519BB4AB4000D5549 /* JpwordReader.cpp */,
 				87AB2AD619BB4AB4000D5549 /* JpwordReader.h */,
 				87AB2ADE19BB4AB4000D5549 /* runtime */,
-				87AB2AE319BB4AB4000D5549 /* support */,
 				87AB2AEB19BB4AB4000D5549 /* utils */,
 			);
 			path = core;
@@ -238,6 +237,7 @@
 		87AB2ACA19BB4AB4000D5549 /* data */ = {
 			isa = PBXGroup;
 			children = (
+				87DDE2B619FBA7CE00880304 /* support */,
 				87AB2ACB19BB4AB4000D5549 /* AudioInfo.cpp */,
 				87AB2ACC19BB4AB4000D5549 /* AudioInfo.h */,
 				87AB2ACD19BB4AB4000D5549 /* Course.cpp */,
@@ -268,19 +268,6 @@
 			path = runtime;
 			sourceTree = "<group>";
 		};
-		87AB2AE319BB4AB4000D5549 /* support */ = {
-			isa = PBXGroup;
-			children = (
-				87B3A10819C5C027009480A2 /* AudioInfoUtils.cpp */,
-				87B3A10919C5C027009480A2 /* AudioInfoUtils.h */,
-				87AB2AE519BB4AB4000D5549 /* CourseUtils.cpp */,
-				87AB2AE619BB4AB4000D5549 /* CourseUtils.h */,
-				87AB2AE919BB4AB4000D5549 /* UnitUtils.cpp */,
-				87AB2AEA19BB4AB4000D5549 /* UnitUtils.h */,
-			);
-			path = support;
-			sourceTree = "<group>";
-		};
 		87AB2AEB19BB4AB4000D5549 /* utils */ = {
 			isa = PBXGroup;
 			children = (
@@ -308,6 +295,19 @@
 				87AC445719BD3D5E0064B65A /* IOUtils.mm */,
 			);
 			name = port;
+			sourceTree = "<group>";
+		};
+		87DDE2B619FBA7CE00880304 /* support */ = {
+			isa = PBXGroup;
+			children = (
+				87DDE2B719FBA7CE00880304 /* AudioInfoUtils.cpp */,
+				87DDE2B819FBA7CE00880304 /* AudioInfoUtils.h */,
+				87DDE2B919FBA7CE00880304 /* CourseUtils.cpp */,
+				87DDE2BA19FBA7CE00880304 /* CourseUtils.h */,
+				87DDE2BB19FBA7CE00880304 /* UnitUtils.cpp */,
+				87DDE2BC19FBA7CE00880304 /* UnitUtils.h */,
+			);
+			path = support;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -431,13 +431,13 @@
 				87AB2AF519BB4AB4000D5549 /* JpwordReader.cpp in Sources */,
 				87AB2AF919BB4AB4000D5549 /* LevelsInfo.cpp in Sources */,
 				87AB2AFA19BB4AB4000D5549 /* State.cpp in Sources */,
-				87AB2AFB19BB4AB4000D5549 /* CourseUtils.cpp in Sources */,
-				87AB2AFD19BB4AB4000D5549 /* UnitUtils.cpp in Sources */,
 				87AB2AFE19BB4AB4000D5549 /* DataUtils.cpp in Sources */,
 				87AC445419BCA4100064B65A /* OsSupport.mm in Sources */,
+				87DDE2BD19FBA7CE00880304 /* AudioInfoUtils.cpp in Sources */,
 				87AC445919BD3D5F0064B65A /* IOUtils.mm in Sources */,
+				87DDE2BF19FBA7CE00880304 /* UnitUtils.cpp in Sources */,
+				87DDE2BE19FBA7CE00880304 /* CourseUtils.cpp in Sources */,
 				87A99DEC19BDA4FA00586D07 /* ReaderEventListener.mm in Sources */,
-				87B3A10A19C5C027009480A2 /* AudioInfoUtils.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

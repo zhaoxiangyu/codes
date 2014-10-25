@@ -5,9 +5,9 @@
 #include "port/OsSupport.h"
 #include "utils/DataUtils.h"
 
-#include "support/CourseUtils.h"
-#include "support/UnitUtils.h"
-#include "support/AudioInfoUtils.h"
+#include "data/support/CourseUtils.h"
+#include "data/support/UnitUtils.h"
+#include "data/support/AudioInfoUtils.h"
 
 JpwordReader::JpwordReader()
 {

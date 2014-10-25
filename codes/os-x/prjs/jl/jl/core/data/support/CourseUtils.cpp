@@ -1,7 +1,7 @@
 #include "CourseUtils.h"
 #include "UnitUtils.h"
-#include "../port/IOUtils.h"
-#include "../utils/DataUtils.h"
+#include "../../port/IOUtils.h"
+#include "../../utils/DataUtils.h"
 
 const string CourseUtils::cacheFileName = "course.json";
 const string CourseUtils::jpMp3Path = "jpWordsReader/br/chuji/";
