@@ -28,14 +28,10 @@
 		87AB2A8C19BB4077000D5549 /* jlTests.mm in Sources */ = {isa = PBXBuildFile; fileRef = 87AB2A8B19BB4077000D5549 /* jlTests.mm */; };
 		87AB2AF219BB4AB4000D5549 /* AudioInfo.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 87AB2ACB19BB4AB4000D5549 /* AudioInfo.cpp */; };
 		87AB2AF319BB4AB4000D5549 /* Course.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 87AB2ACD19BB4AB4000D5549 /* Course.cpp */; };
-		87AB2AF419BB4AB4000D5549 /* UrlSetting.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 87AB2ACF19BB4AB4000D5549 /* UrlSetting.cpp */; };
 		87AB2AF519BB4AB4000D5549 /* JpwordReader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 87AB2AD519BB4AB4000D5549 /* JpwordReader.cpp */; };
-		87AB2AF619BB4AB4000D5549 /* DownloadEventListener.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 87AB2AD819BB4AB4000D5549 /* DownloadEventListener.cpp */; };
-		87AB2AF819BB4AB4000D5549 /* UnzipEventListener.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 87AB2ADC19BB4AB4000D5549 /* UnzipEventListener.cpp */; };
 		87AB2AF919BB4AB4000D5549 /* LevelsInfo.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 87AB2ADF19BB4AB4000D5549 /* LevelsInfo.cpp */; };
 		87AB2AFA19BB4AB4000D5549 /* State.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 87AB2AE119BB4AB4000D5549 /* State.cpp */; };
 		87AB2AFB19BB4AB4000D5549 /* CourseUtils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 87AB2AE519BB4AB4000D5549 /* CourseUtils.cpp */; };
-		87AB2AFC19BB4AB4000D5549 /* NetworkSupport.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 87AB2AE719BB4AB4000D5549 /* NetworkSupport.cpp */; };
 		87AB2AFD19BB4AB4000D5549 /* UnitUtils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 87AB2AE919BB4AB4000D5549 /* UnitUtils.cpp */; };
 		87AB2AFE19BB4AB4000D5549 /* DataUtils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 87AB2AEC19BB4AB4000D5549 /* DataUtils.cpp */; };
 		87AC445419BCA4100064B65A /* OsSupport.mm in Sources */ = {isa = PBXBuildFile; fileRef = 87AC445219BCA4100064B65A /* OsSupport.mm */; };
@@ -85,26 +81,17 @@
 		87AB2ACC19BB4AB4000D5549 /* AudioInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AudioInfo.h; sourceTree = "<group>"; };
 		87AB2ACD19BB4AB4000D5549 /* Course.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Course.cpp; sourceTree = "<group>"; };
 		87AB2ACE19BB4AB4000D5549 /* Course.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Course.h; sourceTree = "<group>"; };
-		87AB2ACF19BB4AB4000D5549 /* UrlSetting.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = UrlSetting.cpp; sourceTree = "<group>"; };
-		87AB2AD019BB4AB4000D5549 /* UrlSetting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UrlSetting.h; sourceTree = "<group>"; };
 		87AB2AD219BB4AB4000D5549 /* Serializable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Serializable.h; sourceTree = "<group>"; };
 		87AB2AD319BB4AB4000D5549 /* Stl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Stl.h; sourceTree = "<group>"; };
 		87AB2AD419BB4AB4000D5549 /* Type.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Type.h; sourceTree = "<group>"; };
 		87AB2AD519BB4AB4000D5549 /* JpwordReader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = JpwordReader.cpp; sourceTree = "<group>"; };
 		87AB2AD619BB4AB4000D5549 /* JpwordReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JpwordReader.h; sourceTree = "<group>"; };
-		87AB2AD819BB4AB4000D5549 /* DownloadEventListener.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DownloadEventListener.cpp; sourceTree = "<group>"; };
-		87AB2AD919BB4AB4000D5549 /* DownloadEventListener.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DownloadEventListener.h; sourceTree = "<group>"; };
-		87AB2ADC19BB4AB4000D5549 /* UnzipEventListener.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = UnzipEventListener.cpp; sourceTree = "<group>"; };
-		87AB2ADD19BB4AB4000D5549 /* UnzipEventListener.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UnzipEventListener.h; sourceTree = "<group>"; };
 		87AB2ADF19BB4AB4000D5549 /* LevelsInfo.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LevelsInfo.cpp; sourceTree = "<group>"; };
 		87AB2AE019BB4AB4000D5549 /* LevelsInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LevelsInfo.h; sourceTree = "<group>"; };
 		87AB2AE119BB4AB4000D5549 /* State.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = State.cpp; sourceTree = "<group>"; };
 		87AB2AE219BB4AB4000D5549 /* State.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = State.h; sourceTree = "<group>"; };
-		87AB2AE419BB4AB4000D5549 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		87AB2AE519BB4AB4000D5549 /* CourseUtils.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CourseUtils.cpp; sourceTree = "<group>"; };
 		87AB2AE619BB4AB4000D5549 /* CourseUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CourseUtils.h; sourceTree = "<group>"; };
-		87AB2AE719BB4AB4000D5549 /* NetworkSupport.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = NetworkSupport.cpp; sourceTree = "<group>"; };
-		87AB2AE819BB4AB4000D5549 /* NetworkSupport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkSupport.h; sourceTree = "<group>"; };
 		87AB2AE919BB4AB4000D5549 /* UnitUtils.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = UnitUtils.cpp; sourceTree = "<group>"; };
 		87AB2AEA19BB4AB4000D5549 /* UnitUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UnitUtils.h; sourceTree = "<group>"; };
 		87AB2AEC19BB4AB4000D5549 /* DataUtils.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DataUtils.cpp; sourceTree = "<group>"; };
@@ -241,7 +228,6 @@
 				87AB2AD119BB4AB4000D5549 /* header */,
 				87AB2AD519BB4AB4000D5549 /* JpwordReader.cpp */,
 				87AB2AD619BB4AB4000D5549 /* JpwordReader.h */,
-				87AB2AD719BB4AB4000D5549 /* listener */,
 				87AB2ADE19BB4AB4000D5549 /* runtime */,
 				87AB2AE319BB4AB4000D5549 /* support */,
 				87AB2AEB19BB4AB4000D5549 /* utils */,
@@ -256,8 +242,6 @@
 				87AB2ACC19BB4AB4000D5549 /* AudioInfo.h */,
 				87AB2ACD19BB4AB4000D5549 /* Course.cpp */,
 				87AB2ACE19BB4AB4000D5549 /* Course.h */,
-				87AB2ACF19BB4AB4000D5549 /* UrlSetting.cpp */,
-				87AB2AD019BB4AB4000D5549 /* UrlSetting.h */,
 			);
 			path = data;
 			sourceTree = "<group>";
@@ -271,17 +255,6 @@
 				87EDE63E19C40A2F0088E276 /* UseBoost.h */,
 			);
 			path = header;
-			sourceTree = "<group>";
-		};
-		87AB2AD719BB4AB4000D5549 /* listener */ = {
-			isa = PBXGroup;
-			children = (
-				87AB2AD819BB4AB4000D5549 /* DownloadEventListener.cpp */,
-				87AB2AD919BB4AB4000D5549 /* DownloadEventListener.h */,
-				87AB2ADC19BB4AB4000D5549 /* UnzipEventListener.cpp */,
-				87AB2ADD19BB4AB4000D5549 /* UnzipEventListener.h */,
-			);
-			path = listener;
 			sourceTree = "<group>";
 		};
 		87AB2ADE19BB4AB4000D5549 /* runtime */ = {
@@ -300,11 +273,8 @@
 			children = (
 				87B3A10819C5C027009480A2 /* AudioInfoUtils.cpp */,
 				87B3A10919C5C027009480A2 /* AudioInfoUtils.h */,
-				87AB2AE419BB4AB4000D5549 /* Constants.h */,
 				87AB2AE519BB4AB4000D5549 /* CourseUtils.cpp */,
 				87AB2AE619BB4AB4000D5549 /* CourseUtils.h */,
-				87AB2AE719BB4AB4000D5549 /* NetworkSupport.cpp */,
-				87AB2AE819BB4AB4000D5549 /* NetworkSupport.h */,
 				87AB2AE919BB4AB4000D5549 /* UnitUtils.cpp */,
 				87AB2AEA19BB4AB4000D5549 /* UnitUtils.h */,
 			);
@@ -458,14 +428,10 @@
 				87AB2A7119BB4077000D5549 /* JlViewController.mm in Sources */,
 				87AB2AF219BB4AB4000D5549 /* AudioInfo.cpp in Sources */,
 				87AB2AF319BB4AB4000D5549 /* Course.cpp in Sources */,
-				87AB2AF419BB4AB4000D5549 /* UrlSetting.cpp in Sources */,
 				87AB2AF519BB4AB4000D5549 /* JpwordReader.cpp in Sources */,
-				87AB2AF619BB4AB4000D5549 /* DownloadEventListener.cpp in Sources */,
-				87AB2AF819BB4AB4000D5549 /* UnzipEventListener.cpp in Sources */,
 				87AB2AF919BB4AB4000D5549 /* LevelsInfo.cpp in Sources */,
 				87AB2AFA19BB4AB4000D5549 /* State.cpp in Sources */,
 				87AB2AFB19BB4AB4000D5549 /* CourseUtils.cpp in Sources */,
-				87AB2AFC19BB4AB4000D5549 /* NetworkSupport.cpp in Sources */,
 				87AB2AFD19BB4AB4000D5549 /* UnitUtils.cpp in Sources */,
 				87AB2AFE19BB4AB4000D5549 /* DataUtils.cpp in Sources */,
 				87AC445419BCA4100064B65A /* OsSupport.mm in Sources */,

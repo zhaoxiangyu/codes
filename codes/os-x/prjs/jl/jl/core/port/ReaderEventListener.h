@@ -12,7 +12,7 @@ class ReaderEventListener
         ListenerImpl* impl;
     
 		void viewNeedsFresh();
-		void showError(int errorCode);
+		//void showError(int errorCode);
 	protected:
 	private:
 };

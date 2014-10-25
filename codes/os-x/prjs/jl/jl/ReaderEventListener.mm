@@ -20,3 +20,7 @@ ReaderEventListener::~ReaderEventListener()
 void ReaderEventListener::viewNeedsFresh(){
     [impl->viewController refreshView];
 }
+
+//void ReaderEventListener::showError(int errorCode){
+//    //no need implment
+//}

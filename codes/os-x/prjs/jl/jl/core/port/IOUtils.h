@@ -2,8 +2,6 @@
 #define UTILS_H
 
 #include "../header/Stl.h"
-#include "../listener/DownloadEventListener.h"
-#include "../listener/UnzipEventListener.h"
 
 class IOUtils
 {
@@ -16,8 +14,6 @@ class IOUtils
 		static bool dirExists(string path);
 		static bool removeFile(string fpath);
 		static void log(string msg);
-		static void downloadFile(string url, string saveTo, DownloadEventListener downListener);
-		static void unzipFile(string path, string parent, UnzipEventListener unzipListener);
 		static vector<string> findFiles(string path, vector<string>& extNames);
 		//static string relativePath(string path, string base);
 		static string fileBaseName(string path);

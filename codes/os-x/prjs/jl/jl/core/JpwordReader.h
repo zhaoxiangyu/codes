@@ -5,7 +5,6 @@
 #include "port/OsSupport.h"
 #include "data/AudioInfo.h"
 #include "data/Course.h"
-#include "data/UrlSetting.h"
 #include "port/ReaderEventListener.h"
 #include "runtime/LevelsInfo.h"
 #include "runtime/State.h"

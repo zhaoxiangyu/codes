@@ -12,5 +12,5 @@
 
 string AudioInfoUtils::nameOf(string path)
 {
-    return DataUtils::getMatch("[\\w\\\\]*([^\\\\]*)\\.mp3", path, 1);
+    return DataUtils::getMatch("[\\w_]*([^_]*)\\.mp3", path, 1);
 }

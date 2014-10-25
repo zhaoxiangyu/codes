@@ -17,15 +17,6 @@ class CourseUtils
     
         static vector<string> courseTitles();
         static vector<Course>* courseList();
-//        static vector<Course>* loadCourseList();
-//        static vector<Course>* courseList2();
-//		static void saveCourseList(vector<Course>& courses);
-
-//      static bool isCourseUnzipped(int courseNo);
-//      static string zipFilePath(int courseNo);
-//      static string pathToUnzip();
-//      static string pathToUnzip(int courseNo);
-//		static string unzippedDirPath(int courseNo);
 	protected:
 	private:
 		const static string cacheFileName;
@@ -34,7 +25,6 @@ class CourseUtils
 		const static string courseListFileName;
         const static string jpMp3Path;
 
-    //		static string courseZipFileName(int courseNo);
 		static string pathToCourseListFile();
 };
 
