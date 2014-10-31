@@ -1,10 +1,10 @@
 cmake_minimum_required(VERSION 2.8.7)
 
 project(tuxtuner)
-set(SRCS ../include/kiss_fftr.c ../include/kiss_fft.c ../include/RtAudio.cpp ../main.cpp)
+set(SRCS include/kiss_fftr.c include/kiss_fft.c include/RtAudio.cpp main.cpp)
 
 add_executable(tuxtuner ${SRCS})
-include_directories(${PROJECT_SOURCE_DIR}/../include)
+include_directories(include/)
 
 find_package(PkgConfig)
 if(WIN32)
