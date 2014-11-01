@@ -3,7 +3,7 @@
 
 #include <stdio.h>
 #include <malloc.h>
-#include <varargs.h>
+#include <stdarg.h>
 #include <stdlib.h>
 #include <time.h>
 
@@ -16,7 +16,7 @@ char **wordlist=NULL;
 int num_words=0;
 
 enum _Direction{ACROSS,DOWN};
-typedef enum _Direction Direction; 
+typedef enum _Direction Direction;
 typedef int BOOL;
 #define True 1
 #define False 0
@@ -105,7 +105,7 @@ prod = 1;
 for (i=0;i<(dimension-1);i++)
 {
 int skip;
-if (i == dimension-2) 
+if (i == dimension-2)
   {
     skip = el_size*dims[i+1];
     next_ptr = (void *)(((char *)next_ptr) + padding); /* add in the padding */
@@ -176,7 +176,7 @@ char *my_fgets(char *s,int n,FILE *stream)
 char *ret;
 
 ret = fgets(s,n,stream);
-if (ret == NULL) 
+if (ret == NULL)
   {
     *s = 0;
     return(NULL);
@@ -186,7 +186,7 @@ return(strtidy(s,"\n\r "));
 }
 
 /*******************************************************************
-remove specified chars from front and back of a string 
+remove specified chars from front and back of a string
 ********************************************************************/
 char *strtidy(char *str,CONST char *chars)
 {
@@ -303,7 +303,7 @@ if (dir == ACROSS)
     for (k=0;k<len;k++)
       if (grid[i+k][j])
 	{
-	  if ((k == 0) || (k == (len-1))) 
+	  if ((k == 0) || (k == (len-1)))
 	    score += 2;
 	  else
 	    score += 3;
@@ -316,7 +316,7 @@ else
     for (k=0;k<len;k++)
       if (grid[i][j+k])
 	{
-	  if ((k == 0) || (k == (len-1))) 
+	  if ((k == 0) || (k == (len-1)))
 	    score += 4;
 	  else
 	    score += 6;
@@ -457,7 +457,7 @@ while (remaining > 0)
       numbest=0;
       for (n=0;n<num;n++)
 	{
-	  if (scores[n] == bestscore) 
+	  if (scores[n] == bestscore)
 	    {
 	      if (numbest == k) choose=n;
 	      numbest++;
