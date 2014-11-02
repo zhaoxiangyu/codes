@@ -19,8 +19,8 @@ $SDLIMAGE
 # Command Line History (newest to oldest):
 :q
 :wq
-::q
 :w
+::q
 :N
 :n
 :p
@@ -70,21 +70,31 @@ $SDLIMAGE
 "9	LINE	0
 	
 ""-	CHAR	0
-	e:/cpp/libs/SDL2-devel-2.0.3-VC/SDL2-2.0.3;e:/cpp/libs/SDL2_image-devel-2.0.0-VC/SDL2_image-2.0.0
+	e
 
 # 文件标记:
-'0  35  0  E:\code-repo2\github\codes\code-man.bat
-'1  86  21  C:\Program Files\CMake 2.8\share\cmake-2.8\Modules\FindSDL_image.cmake
-'2  1  0  E:\code-repo2\github\codes\python\readme.txt
-'3  3  0  E:\code-repo2\github\codes\python\down-jw.py
-'4  6  37  E:\code-repo2\github\codes\c\usesdl\CMakeLists.txt
-'5  8  21  E:\code-repo2\github\codes\c\usesdl\CMakeLists.txt
-'6  74  0  C:\Program Files\CMake 2.8\share\cmake-2.8\Modules\FindSDL.cmake
-'7  9  0  E:\code-repo2\github\codes\c\usesdl\CMakeLists.txt
-'8  67  0  C:\Program Files\CMake 2.8\share\cmake-2.8\Modules\FindSDL.cmake
-'9  24  7  E:\code-repo2\github\codes\c\usesdl\CMakeLists.txt
+'0  15  4  e:\code-repo2\github\codes\c\opensource\asio\build.bat
+'1  14  4  e:\code-repo2\github\codes\c\opensource\asio\build.bat
+'2  6  20  E:\opensource\build.bat
+'3  5  0  E:\opensource\asio-1.10.4\src\Makefile.mgw
+'4  18  4  e:\code-repo2\github\codes\c\opensource\asio\build.bat
+'5  17  6  e:\code-repo2\github\codes\c\opensource\asio\build.bat
+'6  35  0  E:\code-repo2\github\codes\code-man.bat
+'7  86  21  C:\Program Files\CMake 2.8\share\cmake-2.8\Modules\FindSDL_image.cmake
+'8  1  0  E:\code-repo2\github\codes\python\readme.txt
+'9  3  0  E:\code-repo2\github\codes\python\down-jw.py
 
 # 跳转列表 (从新到旧):
+-'  15  4  e:\code-repo2\github\codes\c\opensource\asio\build.bat
+-'  14  4  e:\code-repo2\github\codes\c\opensource\asio\build.bat
+-'  6  20  E:\opensource\build.bat
+-'  1  0  E:\opensource\build.bat
+-'  5  0  E:\opensource\asio-1.10.4\src\Makefile.mgw
+-'  216  1  E:\opensource\asio-1.10.4\src\Makefile.mgw
+-'  1  0  E:\opensource\asio-1.10.4\src\Makefile.mgw
+-'  18  4  e:\code-repo2\github\codes\c\opensource\asio\build.bat
+-'  17  6  e:\code-repo2\github\codes\c\opensource\asio\build.bat
+-'  1  0  e:\code-repo2\github\codes\c\opensource\asio\build.bat
 -'  35  0  E:\code-repo2\github\codes\code-man.bat
 -'  19  0  E:\code-repo2\github\codes\code-man.bat
 -'  86  21  C:\Program Files\CMake 2.8\share\cmake-2.8\Modules\FindSDL_image.cmake
@@ -173,18 +183,26 @@ $SDLIMAGE
 -'  29  0  E:\code-repo2\github\codes\winxp\console.bat
 -'  30  36  E:\code-repo2\github\codes\winxp\console.bat
 -'  1  0  E:\code-repo2\github\codes\clojure\parser\console.log
--'  32  1  E:\code-repo2\github\codes\clojure\parser\console.log
--'  3  5  E:\code-repo2\github\codes\clojure\parser\.gitignore
--'  1  0  E:\code-repo2\github\codes\clojure\parser\.gitignore
--'  10  0  E:\code-repo2\github\codes\winxp\console.bat
--'  151  0  E:\tools\gnuwin32\bin\set_gnuwin32.bat
--'  1  0  E:\tools\gnuwin32\bin\set_gnuwin32.bat
--'  6  58  E:\code-repo2\github\codes\winxp\console.bat
--'  17  60  E:\code-repo2\github\codes\winxp\console.bat
--'  34  17  E:\code-repo2\github\codes\winxp\console.bat
--'  14  17  E:\code-repo2\github\codes\winxp\console.bat
 
 # 文件内的标记历史记录 (从新到旧):
+
+> e:\code-repo2\github\codes\c\opensource\asio\build.bat
+	"	15	4
+	^	14	5
+	.	14	4
+	+	4	24
+	+	16	6
+	+	17	6
+	+	14	4
+
+> E:\opensource\build.bat
+	"	6	20
+	^	6	21
+	.	6	20
+	+	6	20
+
+> E:\opensource\asio-1.10.4\src\Makefile.mgw
+	"	5	0
 
 > E:\code-repo2\github\codes\code-man.bat
 	"	35	0
