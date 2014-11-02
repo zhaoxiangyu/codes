@@ -8,7 +8,7 @@
 # hlsearch on (H) or off (h):
 ~h
 # Last Search Pattern:
-~MSle0~/\\cpp
+~MSle0~/SDL_IMAGE_FOUND
 
 # Last Substitute Search Pattern:
 ~MSle0&SDL_image
@@ -30,6 +30,7 @@ $SDLIMAGE
 :%s/"//g
 
 # Search String History (newest to oldest):
+?/SDL_IMAGE_FOUND
 ?/cpp
 ?/\\cpp
 ?/\cpp
@@ -72,18 +73,28 @@ $SDLIMAGE
 	e:/cpp/libs/SDL2-devel-2.0.3-VC/SDL2-2.0.3;e:/cpp/libs/SDL2_image-devel-2.0.0-VC/SDL2_image-2.0.0
 
 # 文件标记:
-'0  6  37  E:\code-repo2\github\codes\c\usesdl\CMakeLists.txt
-'1  8  21  E:\code-repo2\github\codes\c\usesdl\CMakeLists.txt
-'2  74  0  C:\Program Files\CMake 2.8\share\cmake-2.8\Modules\FindSDL.cmake
-'3  9  0  E:\code-repo2\github\codes\c\usesdl\CMakeLists.txt
-'4  67  0  C:\Program Files\CMake 2.8\share\cmake-2.8\Modules\FindSDL.cmake
-'5  24  7  E:\code-repo2\github\codes\c\usesdl\CMakeLists.txt
-'6  21  7  E:\code-repo2\github\codes\c\usesdl\CMakeLists.txt
-'7  1  33  E:\code-repo2\github\codes\c\usesdl\CMakeLists.txt
-'8  22  44  E:\code-repo2\github\codes\c\usesdl\CMakeLists.txt
-'9  16  13  E:\code-repo2\github\codes\c\usesdl\build.bat
+'0  35  0  E:\code-repo2\github\codes\code-man.bat
+'1  86  21  C:\Program Files\CMake 2.8\share\cmake-2.8\Modules\FindSDL_image.cmake
+'2  1  0  E:\code-repo2\github\codes\python\readme.txt
+'3  3  0  E:\code-repo2\github\codes\python\down-jw.py
+'4  6  37  E:\code-repo2\github\codes\c\usesdl\CMakeLists.txt
+'5  8  21  E:\code-repo2\github\codes\c\usesdl\CMakeLists.txt
+'6  74  0  C:\Program Files\CMake 2.8\share\cmake-2.8\Modules\FindSDL.cmake
+'7  9  0  E:\code-repo2\github\codes\c\usesdl\CMakeLists.txt
+'8  67  0  C:\Program Files\CMake 2.8\share\cmake-2.8\Modules\FindSDL.cmake
+'9  24  7  E:\code-repo2\github\codes\c\usesdl\CMakeLists.txt
 
 # 跳转列表 (从新到旧):
+-'  35  0  E:\code-repo2\github\codes\code-man.bat
+-'  19  0  E:\code-repo2\github\codes\code-man.bat
+-'  86  21  C:\Program Files\CMake 2.8\share\cmake-2.8\Modules\FindSDL_image.cmake
+-'  11  33  C:\Program Files\CMake 2.8\share\cmake-2.8\Modules\FindSDL_image.cmake
+-'  5  3  C:\Program Files\CMake 2.8\share\cmake-2.8\Modules\FindSDL_image.cmake
+-'  40  0  C:\Program Files\CMake 2.8\share\cmake-2.8\Modules\FindSDL_image.cmake
+-'  1  0  C:\Program Files\CMake 2.8\share\cmake-2.8\Modules\FindSDL_image.cmake
+-'  1  0  E:\code-repo2\github\codes\python\readme.txt
+-'  3  0  E:\code-repo2\github\codes\python\down-jw.py
+-'  1  0  E:\code-repo2\github\codes\python\down-jw.py
 -'  6  37  E:\code-repo2\github\codes\c\usesdl\CMakeLists.txt
 -'  8  21  E:\code-repo2\github\codes\c\usesdl\CMakeLists.txt
 -'  74  0  C:\Program Files\CMake 2.8\share\cmake-2.8\Modules\FindSDL.cmake
@@ -138,7 +149,6 @@ $SDLIMAGE
 -'  5  14  e:\code-repo2\github\codes\clojure\parser\src\main\clojure\org\sharpx\parser\oxford_parser.clj
 -'  2  0  e:\code-repo2\github\codes\clojure\parser\src\main\clojure\org\sharpx\parser\oxford_parser.clj
 -'  1  0  e:\code-repo2\github\codes\clojure\parser\src\main\clojure\org\sharpx\parser\oxford_parser.clj
--'  19  0  E:\code-repo2\github\codes\code-man.bat
 -'  6  5  E:\code-repo2\github\codes\code-man.bat
 -'  38  56  E:\code-repo2\github\codes\code-man.bat
 -'  27  4  E:\code-repo2\github\codes\code-man.bat
@@ -173,16 +183,20 @@ $SDLIMAGE
 -'  17  60  E:\code-repo2\github\codes\winxp\console.bat
 -'  34  17  E:\code-repo2\github\codes\winxp\console.bat
 -'  14  17  E:\code-repo2\github\codes\winxp\console.bat
--'  27  26  E:\code-repo2\github\codes\winxp\console.bat
--'  7  0  E:\code-repo2\github\codes\winxp\console.bat
--'  8  0  E:\code-repo2\github\codes\winxp\console.bat
--'  28  57  E:\code-repo2\github\codes\winxp\console.bat
--'  37  8  E:\he-xun\sw\apache-maven-3.2.1\bin\mvn.bat
--'  103  23  E:\he-xun\sw\apache-maven-3.2.1\bin\mvn.bat
--'  74  0  C:\Program Files\CMake 2.8\share\cmake-2.8\Modules\FindSDL.cmake
--'  7  21  E:\code-repo2\github\codes\c\usesdl\CMakeLists.txt
 
 # 文件内的标记历史记录 (从新到旧):
+
+> E:\code-repo2\github\codes\code-man.bat
+	"	35	0
+
+> C:\Program Files\CMake 2.8\share\cmake-2.8\Modules\FindSDL_image.cmake
+	"	86	21
+
+> E:\code-repo2\github\codes\python\readme.txt
+	"	1	0
+
+> E:\code-repo2\github\codes\python\down-jw.py
+	"	3	0
 
 > E:\code-repo2\github\codes\c\usesdl\CMakeLists.txt
 	"	6	37
@@ -320,9 +334,6 @@ $SDLIMAGE
 
 > e:\code-repo2\github\codes\clojure\parser\src\main\clojure\org\sharpx\parser\oxford_parser.clj
 	"	55	11
-
-> E:\code-repo2\github\codes\code-man.bat
-	"	19	0
 
 > E:\code-repo2\github\codes\clojure\parser\build.bat
 	"	25	74
