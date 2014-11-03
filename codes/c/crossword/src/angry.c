@@ -39,8 +39,7 @@ char *my_fgets();
 /*******************************************************************
 create a matrix of any dimension. The return must be cast correctly.
 ********************************************************************/
-void *any_matrix(va_alist)
-va_dcl
+void *any_matrix(int dim,...)
 {
 int dimension;
 int el_size;
@@ -52,8 +51,9 @@ void *next_ptr;
 va_list ap;
 
 /* first gather the arguments */
-va_start(ap);
-dimension = va_arg(ap, int);
+va_start(ap,dim);
+//dimension = va_arg(ap, int);
+dimension = dim;
 el_size = va_arg(ap, int);
 
 

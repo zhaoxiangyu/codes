@@ -11,7 +11,7 @@ exit /b 0
 
 :mingw
 	echo building using mingw
-	REM set BOOSTDIR=XX
+	set BOOSTDIR=e:/opensource/boost_1_56_0
 	pushd %ASIO_HOME%\src
 	%MAKE% -f Makefile.mgw	
 	%MAKE% -f Makefile.mgw check

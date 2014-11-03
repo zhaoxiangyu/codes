@@ -8,7 +8,7 @@
 # hlsearch on (H) or off (h):
 ~h
 # Last Search Pattern:
-~MSle0~/SDL_IMAGE_FOUND
+~Msle0~/\<va_arg\>
 
 # Last Substitute Search Pattern:
 ~MSle0&SDL_image
@@ -17,19 +17,26 @@
 $SDLIMAGE
 
 # Command Line History (newest to oldest):
-:q
+:q!
 :wq
 :w
+:q
 ::q
 :N
 :n
 :p
 :s/SDL_image/SDLIMAGE/g
-:q!
 :W
 :%s/"//g
 
 # Search String History (newest to oldest):
+? \<va_arg\>
+? \<dimension\>
+?/any_matrix
+?/install
+?/audioprobe
+?/ole32
+?/client
 ?/SDL_IMAGE_FOUND
 ?/cpp
 ?/\\cpp
@@ -51,47 +58,112 @@ $SDLIMAGE
 # 寄存器:
 "0	LINE	0
 	set(CMAKE_INCLUDE_PATH e:/cpp/libs/SDL2-devel-2.0.3-VC/SDL2-2.0.3;e:/cpp/libs/SDL2_image-devel-2.0.0-VC/SDL2_image-2.0.0)
-"1	LINE	0
-	find_package(SDL_IMAGE REQUIRED)
+""1	LINE	0
+	//
 "2	LINE	0
-	find_package(SDL REQUIRED)
+	va_dcl
 "3	LINE	0
-	cmake -G "Visual Studio 8 2005" ..  
+	find_package(SDL_IMAGE REQUIRED)
 "4	LINE	0
-	  )
+	find_package(SDL REQUIRED)
 "5	LINE	0
-	    rename 0.8.1 storm-0.8.1.zip
+	cmake -G "Visual Studio 8 2005" ..  
 "6	LINE	0
-	    wget https://github.com/apache/incubator-storm/archive/0.8.1.zip
+	  )
 "7	LINE	0
-	  if not exist storm-0.8.1.zip (
+	    rename 0.8.1 storm-0.8.1.zip
 "8	LINE	0
-	  7z x -ostorm-0.8.1 storm-0.8.1.zip
+	    wget https://github.com/apache/incubator-storm/archive/0.8.1.zip
 "9	LINE	0
-	
-""-	CHAR	0
-	e
+	  if not exist storm-0.8.1.zip (
+"-	CHAR	0
+	t
 
 # 文件标记:
-'0  15  4  e:\code-repo2\github\codes\c\opensource\asio\build.bat
-'1  14  4  e:\code-repo2\github\codes\c\opensource\asio\build.bat
-'2  6  20  E:\opensource\build.bat
-'3  5  0  E:\opensource\asio-1.10.4\src\Makefile.mgw
-'4  18  4  e:\code-repo2\github\codes\c\opensource\asio\build.bat
-'5  17  6  e:\code-repo2\github\codes\c\opensource\asio\build.bat
-'6  35  0  E:\code-repo2\github\codes\code-man.bat
-'7  86  21  C:\Program Files\CMake 2.8\share\cmake-2.8\Modules\FindSDL_image.cmake
-'8  1  0  E:\code-repo2\github\codes\python\readme.txt
-'9  3  0  E:\code-repo2\github\codes\python\down-jw.py
+'0  33  14  E:\code-repo2\github\codes\c\crossword\src\angry.c
+'1  54  14  E:\code-repo2\github\codes\c\crossword\src\angry.c
+'2  55  14  E:\code-repo2\github\codes\c\crossword\src\angry.c
+'3  4  0  E:\code-repo2\github\codes\c\crossword\src\angry.c
+'4  1  0  E:\code-repo2\github\codes\c\opensource\tuxtuner\CMakeLists.txt
+'5  1  0  E:\code-repo2\github\codes\c\opensource\tuxtuner\Makefile
+'6  1  0  E:\opensource\rtaudio-4.1.1\CMakeLists.txt
+'7  106  12  E:\opensource\rtaudio-4.1.1\win32\Makefile
+'8  61  0  E:\opensource\rtaudio-4.1.1\CMakeLists.txt
+'9  504  33  E:\opensource\rtaudio-4.1.1\win32\Makefile
 
 # 跳转列表 (从新到旧):
+-'  33  14  E:\code-repo2\github\codes\c\crossword\src\angry.c
+-'  54  14  E:\code-repo2\github\codes\c\crossword\src\angry.c
+-'  55  14  E:\code-repo2\github\codes\c\crossword\src\angry.c
+-'  66  11  E:\code-repo2\github\codes\c\crossword\src\angry.c
+-'  57  10  E:\code-repo2\github\codes\c\crossword\src\angry.c
+-'  56  7  E:\code-repo2\github\codes\c\crossword\src\angry.c
+-'  578  20  E:\code-repo2\github\codes\c\crossword\src\angry.c
+-'  577  16  E:\code-repo2\github\codes\c\crossword\src\angry.c
+-'  42  6  E:\code-repo2\github\codes\c\crossword\src\angry.c
+-'  43  0  E:\code-repo2\github\codes\c\crossword\src\angry.c
+-'  4  0  E:\code-repo2\github\codes\c\crossword\src\angry.c
+-'  1  0  E:\code-repo2\github\codes\c\crossword\src\angry.c
+-'  1  0  E:\code-repo2\github\codes\c\opensource\tuxtuner\CMakeLists.txt
+-'  1  0  E:\code-repo2\github\codes\c\opensource\tuxtuner\Makefile
+-'  1  0  E:\opensource\rtaudio-4.1.1\CMakeLists.txt
+-'  125  0  E:\opensource\rtaudio-4.1.1\CMakeLists.txt
+-'  58  0  E:\opensource\rtaudio-4.1.1\CMakeLists.txt
+-'  61  0  E:\opensource\rtaudio-4.1.1\CMakeLists.txt
+-'  106  12  E:\opensource\rtaudio-4.1.1\win32\Makefile
+-'  105  36  E:\opensource\rtaudio-4.1.1\win32\Makefile
+-'  104  3  E:\opensource\rtaudio-4.1.1\win32\Makefile
+-'  103  22  E:\opensource\rtaudio-4.1.1\win32\Makefile
+-'  101  12  E:\opensource\rtaudio-4.1.1\win32\Makefile
+-'  100  36  E:\opensource\rtaudio-4.1.1\win32\Makefile
+-'  99  3  E:\opensource\rtaudio-4.1.1\win32\Makefile
+-'  98  22  E:\opensource\rtaudio-4.1.1\win32\Makefile
+-'  504  33  E:\opensource\rtaudio-4.1.1\win32\Makefile
+-'  69  0  E:\opensource\rtaudio-4.1.1\CMakeLists.txt
+-'  18  0  E:\opensource\rtaudio-4.1.1\CMakeLists.txt
+-'  768  11  E:\opensource\rtaudio-4.1.1\win32\Makefile
+-'  514  9  E:\opensource\rtaudio-4.1.1\win32\Makefile
+-'  513  72  E:\opensource\rtaudio-4.1.1\win32\Makefile
+-'  512  0  E:\opensource\rtaudio-4.1.1\win32\Makefile
+-'  509  9  E:\opensource\rtaudio-4.1.1\win32\Makefile
+-'  508  33  E:\opensource\rtaudio-4.1.1\win32\Makefile
+-'  507  0  E:\opensource\rtaudio-4.1.1\win32\Makefile
+-'  1  0  E:\opensource\rtaudio-4.1.1\win32\Makefile
+-'  606  0  E:\opensource\rtaudio-4.1.1\win32\Makefile
+-'  652  0  E:\opensource\rtaudio-4.1.1\win32\Makefile
+-'  3601  0  E:\opensource\rtaudio-4.1.1\RtAudio.cpp
+-'  2028  20  E:\opensource\rtaudio-4.1.1\RtAudio.cpp
+-'  2009  22  E:\opensource\rtaudio-4.1.1\RtAudio.cpp
+-'  2001  26  E:\opensource\rtaudio-4.1.1\RtAudio.cpp
+-'  1992  26  E:\opensource\rtaudio-4.1.1\RtAudio.cpp
+-'  1989  46  E:\opensource\rtaudio-4.1.1\RtAudio.cpp
+-'  1987  52  E:\opensource\rtaudio-4.1.1\RtAudio.cpp
+-'  1979  23  E:\opensource\rtaudio-4.1.1\RtAudio.cpp
+-'  1959  26  E:\opensource\rtaudio-4.1.1\RtAudio.cpp
+-'  1950  7  E:\opensource\rtaudio-4.1.1\RtAudio.cpp
+-'  1949  31  E:\opensource\rtaudio-4.1.1\RtAudio.cpp
+-'  1938  21  E:\opensource\rtaudio-4.1.1\RtAudio.cpp
+-'  1920  26  E:\opensource\rtaudio-4.1.1\RtAudio.cpp
+-'  1915  7  E:\opensource\rtaudio-4.1.1\RtAudio.cpp
+-'  1914  31  E:\opensource\rtaudio-4.1.1\RtAudio.cpp
+-'  1911  33  E:\opensource\rtaudio-4.1.1\RtAudio.cpp
+-'  1890  5  E:\opensource\rtaudio-4.1.1\RtAudio.cpp
+-'  1881  17  E:\opensource\rtaudio-4.1.1\RtAudio.cpp
+-'  1850  57  E:\opensource\rtaudio-4.1.1\RtAudio.cpp
+-'  793  24  E:\opensource\rtaudio-4.1.1\RtAudio.cpp
+-'  444  10  E:\opensource\rtaudio-4.1.1\RtAudio.cpp
+-'  37  0  E:\opensource\rtaudio-4.1.1\RtAudio.cpp
+-'  1  0  E:\opensource\rtaudio-4.1.1\RtAudio.cpp
+-'  139  0  E:\opensource\rtaudio-4.1.1\win32\Makefile
+-'  1  0  E:\opensource\asio-1.10.4\src\Makefile.mgw
+-'  5  0  E:\opensource\asio-1.10.4\src\Makefile.mgw
+-'  1  0  E:\opensource\build-asio.bat
+-'  14  39  E:\opensource\build-asio.bat
 -'  15  4  e:\code-repo2\github\codes\c\opensource\asio\build.bat
 -'  14  4  e:\code-repo2\github\codes\c\opensource\asio\build.bat
 -'  6  20  E:\opensource\build.bat
 -'  1  0  E:\opensource\build.bat
--'  5  0  E:\opensource\asio-1.10.4\src\Makefile.mgw
 -'  216  1  E:\opensource\asio-1.10.4\src\Makefile.mgw
--'  1  0  E:\opensource\asio-1.10.4\src\Makefile.mgw
 -'  18  4  e:\code-repo2\github\codes\c\opensource\asio\build.bat
 -'  17  6  e:\code-repo2\github\codes\c\opensource\asio\build.bat
 -'  1  0  e:\code-repo2\github\codes\c\opensource\asio\build.bat
@@ -108,83 +180,51 @@ $SDLIMAGE
 -'  6  37  E:\code-repo2\github\codes\c\usesdl\CMakeLists.txt
 -'  8  21  E:\code-repo2\github\codes\c\usesdl\CMakeLists.txt
 -'  74  0  C:\Program Files\CMake 2.8\share\cmake-2.8\Modules\FindSDL.cmake
--'  67  0  C:\Program Files\CMake 2.8\share\cmake-2.8\Modules\FindSDL.cmake
--'  9  0  E:\code-repo2\github\codes\c\usesdl\CMakeLists.txt
--'  24  7  E:\code-repo2\github\codes\c\usesdl\CMakeLists.txt
--'  1  0  C:\Program Files\CMake 2.8\share\cmake-2.8\Modules\FindSDL.cmake
--'  21  7  E:\code-repo2\github\codes\c\usesdl\CMakeLists.txt
--'  1  0  E:\code-repo2\github\codes\c\usesdl\CMakeLists.txt
--'  22  44  E:\code-repo2\github\codes\c\usesdl\CMakeLists.txt
--'  10  0  E:\code-repo2\github\codes\c\usesdl\CMakeLists.txt
--'  16  13  E:\code-repo2\github\codes\c\usesdl\build.bat
--'  15  0  E:\code-repo2\github\codes\c\usesdl\build.bat
--'  147  0  E:\code-repo2\github\codes\c\usesdl\win32\CMakeCache.txt
--'  237  0  E:\code-repo2\github\codes\c\usesdl\win32\CMakeCache.txt
--'  17  0  E:\code-repo2\github\codes\c\usesdl\c.txt
--'  1  0  E:\code-repo2\github\codes\c\usesdl\c.txt
--'  303  0  E:\code-repo2\github\codes\c\usesdl\c.txt
--'  2  29  E:\code-repo2\github\codes\c\usesdl\win32\CMakeCache.txt
--'  241  33  E:\code-repo2\github\codes\c\usesdl\win32\CMakeCache.txt
--'  174  32  E:\code-repo2\github\codes\c\usesdl\win32\CMakeCache.txt
--'  162  29  E:\code-repo2\github\codes\c\usesdl\win32\CMakeCache.txt
--'  159  29  E:\code-repo2\github\codes\c\usesdl\win32\CMakeCache.txt
--'  1  0  E:\code-repo2\github\codes\c\usesdl\win32\CMakeCache.txt
--'  296  0  E:\code-repo2\github\codes\c\usesdl\win32\CMakeCache.txt
--'  48  0  E:\code-repo2\github\codes\c\usesdl\win32\CMakeCache.txt
--'  13  14  E:\code-repo2\github\codes\c\usesdl\build.bat
--'  19  5  E:\code-repo2\github\codes\c\usesdl\build.bat
--'  1  0  E:\code-repo2\github\codes\c\usesdl\build.bat
--'  3  41  E:\opensource\race_car-master\CMakeLists.txt
--'  16  16  E:\opensource\race_car-master\CMakeLists.txt
--'  22  13  E:\opensource\race_car-master\CMakeLists.txt
--'  7  0  E:\opensource\race_car-master\CMakeLists.txt
--'  14  0  E:\opensource\race_car-master\CMakeLists.txt
--'  9  30  E:\opensource\race_car-master\CMakeLists.txt
--'  1  0  E:\opensource\race_car-master\CMakeLists.txt
--'  30  0  E:\down\tubegame-master\make-exe.lisp
--'  1  0  E:\down\tubegame-master\make-exe.lisp
--'  42  0  E:\down\tubegame-master\make-dist.bat
--'  12  0  E:\down\tubegame-master\make-dist.bat
--'  1  0  E:\down\tubegame-master\make-dist.bat
--'  3  50  E:\code-repo2\github\codes\winxp\ws.bat
--'  1  0  E:\code-repo2\github\codes\clojure\parser\x
--'  1  0  f:\web-dict\oxford\htmls\200-501.json
--'  55  16  ~\.m2\settings.xml
--'  61  3  ~\.m2\settings.xml
--'  22  20  E:\code-repo2\github\codes\winxp\ws.bat
--'  1  0  E:\code-repo2\github\codes\winxp\ws.bat
--'  55  11  e:\code-repo2\github\codes\clojure\parser\src\main\clojure\org\sharpx\parser\oxford_parser.clj
--'  44  44  e:\code-repo2\github\codes\clojure\parser\src\main\clojure\org\sharpx\parser\oxford_parser.clj
--'  24  7  e:\code-repo2\github\codes\clojure\parser\src\main\clojure\org\sharpx\parser\oxford_parser.clj
--'  5  14  e:\code-repo2\github\codes\clojure\parser\src\main\clojure\org\sharpx\parser\oxford_parser.clj
--'  2  0  e:\code-repo2\github\codes\clojure\parser\src\main\clojure\org\sharpx\parser\oxford_parser.clj
--'  1  0  e:\code-repo2\github\codes\clojure\parser\src\main\clojure\org\sharpx\parser\oxford_parser.clj
--'  6  5  E:\code-repo2\github\codes\code-man.bat
--'  38  56  E:\code-repo2\github\codes\code-man.bat
--'  27  4  E:\code-repo2\github\codes\code-man.bat
--'  45  2  E:\code-repo2\github\codes\code-man.bat
--'  43  8  E:\code-repo2\github\codes\code-man.bat
--'  41  7  E:\code-repo2\github\codes\code-man.bat
--'  29  6  E:\code-repo2\github\codes\code-man.bat
--'  1  0  E:\code-repo2\github\codes\code-man.bat
--'  25  74  E:\code-repo2\github\codes\clojure\parser\build.bat
--'  1  0  E:\code-repo2\github\codes\clojure\parser\build.bat
--'  259  0  ~\.m2\settings.xml
--'  1  0  ~\.m2\settings.xml
--'  1  0  ~\bat-wrapper\mvn.bat
--'  44  8  E:\down\Xword-master\wl.txt
--'  11  2  E:\down\Xword-master\wl.txt
--'  1  0  E:\down\Xword-master\wl.txt
--'  11  0  C:\Documents and Settings\he\Local Settings\Temp\中药学(张廷模)讲稿.docx
--'  24  0  C:\Documents and Settings\he\Local Settings\Temp\中药学(张廷模)讲稿.docx
--'  1  0  C:\Documents
--'  1  26331  G:\web-dict\oxford\htmls\25-6420.json
--'  1  174837  G:\web-dict\oxford\htmls\20-7567.json
--'  29  0  E:\code-repo2\github\codes\winxp\console.bat
--'  30  36  E:\code-repo2\github\codes\winxp\console.bat
--'  1  0  E:\code-repo2\github\codes\clojure\parser\console.log
+-'  106  12  E:\opensource\rtaudio-4.1.1\win32\Makefile
+-'  105  36  E:\opensource\rtaudio-4.1.1\win32\Makefile
+-'  104  3  E:\opensource\rtaudio-4.1.1\win32\Makefile
+-'  103  22  E:\opensource\rtaudio-4.1.1\win32\Makefile
+-'  101  12  E:\opensource\rtaudio-4.1.1\win32\Makefile
+-'  100  36  E:\opensource\rtaudio-4.1.1\win32\Makefile
+-'  99  3  E:\opensource\rtaudio-4.1.1\win32\Makefile
+-'  98  22  E:\opensource\rtaudio-4.1.1\win32\Makefile
 
 # 文件内的标记历史记录 (从新到旧):
+
+> E:\code-repo2\github\codes\c\crossword\src\angry.c
+	"	33	14
+	^	54	15
+	.	54	14
+	+	43	0
+	+	42	27
+	+	55	1
+	+	55	0
+	+	56	15
+	+	54	14
+
+> E:\code-repo2\github\codes\c\opensource\tuxtuner\CMakeLists.txt
+	"	1	0
+
+> E:\code-repo2\github\codes\c\opensource\tuxtuner\Makefile
+	"	1	0
+
+> E:\opensource\rtaudio-4.1.1\CMakeLists.txt
+	"	1	0
+
+> E:\opensource\rtaudio-4.1.1\win32\Makefile
+	"	106	12
+
+> E:\opensource\rtaudio-4.1.1\RtAudio.cpp
+	"	3601	0
+
+> E:\opensource\asio-1.10.4\src\Makefile.mgw
+	"	1	0
+
+> E:\opensource\build-asio.bat
+	"	1	0
+	^	14	40
+	.	14	39
+	+	14	39
 
 > e:\code-repo2\github\codes\c\opensource\asio\build.bat
 	"	15	4
@@ -200,9 +240,6 @@ $SDLIMAGE
 	^	6	21
 	.	6	20
 	+	6	20
-
-> E:\opensource\asio-1.10.4\src\Makefile.mgw
-	"	5	0
 
 > E:\code-repo2\github\codes\code-man.bat
 	"	35	0
