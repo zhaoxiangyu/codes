@@ -1,5 +1,7 @@
 syntax on
 set fileencodings=utf-8,ucs-bom,gbk,cp936
+set tabstop=4
+set expandtab
 set ruler
 set showcmd
 set modeline
