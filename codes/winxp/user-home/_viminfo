@@ -8,19 +8,21 @@
 # hlsearch on (H) or off (h):
 ~h
 # Last Search Pattern:
-~Msle0~/\<va_arg\>
+~MSle0~/__WINDOWS_DS
 
 # Last Substitute Search Pattern:
-~MSle0&SDL_image
+~MSle0&\\
 
 # Last Substitute String:
-$SDLIMAGE
+$\/
 
 # Command Line History (newest to oldest):
-:q!
 :wq
 :w
 :q
+:q!
+:s/\\/\//g
+:s/\\/\/g
 ::q
 :N
 :n
@@ -30,6 +32,12 @@ $SDLIMAGE
 :%s/"//g
 
 # Search String History (newest to oldest):
+?/__WINDOWS_DS
+?/sleep
+?/#if
+? \<sleep\>
+? \\
+?/dsound
 ? \<va_arg\>
 ? \<dimension\>
 ?/any_matrix
@@ -57,41 +65,71 @@ $SDLIMAGE
 
 # 寄存器:
 "0	LINE	0
-	set(CMAKE_INCLUDE_PATH e:/cpp/libs/SDL2-devel-2.0.3-VC/SDL2-2.0.3;e:/cpp/libs/SDL2_image-devel-2.0.0-VC/SDL2_image-2.0.0)
-""1	LINE	0
-	//
+	include_directories(${RTAUDIO_DIR}/include/)
+"1	LINE	0
+	include_directories(${RTAUDIO_DIR}/include/)
 "2	LINE	0
-	va_dcl
+	set(RTAUDIO_DIR E:/opensource/rtaudio-4.1.1)
 "3	LINE	0
-	find_package(SDL_IMAGE REQUIRED)
+	E:\opensource\rtaudio-4.1.1\include\dsound.h
 "4	LINE	0
-	find_package(SDL REQUIRED)
+		pkg_search_module(SDL2 REQUIRED sdl2)
+		include_directories(${SDL2_INCLUDE_DIRS})
+		target_link_libraries(racecar ${SDL2_LIBRARIES})
 "5	LINE	0
-	cmake -G "Visual Studio 8 2005" ..  
+	add_definitions(-D__WINDOWS_DS__)
 "6	LINE	0
-	  )
+	//
 "7	LINE	0
-	    rename 0.8.1 storm-0.8.1.zip
+	va_dcl
 "8	LINE	0
-	    wget https://github.com/apache/incubator-storm/archive/0.8.1.zip
+	find_package(SDL_IMAGE REQUIRED)
 "9	LINE	0
-	  if not exist storm-0.8.1.zip (
-"-	CHAR	0
-	t
+	find_package(SDL REQUIRED)
+""-	CHAR	0
+	path
 
 # 文件标记:
-'0  33  14  E:\code-repo2\github\codes\c\crossword\src\angry.c
-'1  54  14  E:\code-repo2\github\codes\c\crossword\src\angry.c
-'2  55  14  E:\code-repo2\github\codes\c\crossword\src\angry.c
-'3  4  0  E:\code-repo2\github\codes\c\crossword\src\angry.c
-'4  1  0  E:\code-repo2\github\codes\c\opensource\tuxtuner\CMakeLists.txt
-'5  1  0  E:\code-repo2\github\codes\c\opensource\tuxtuner\Makefile
-'6  1  0  E:\opensource\rtaudio-4.1.1\CMakeLists.txt
-'7  106  12  E:\opensource\rtaudio-4.1.1\win32\Makefile
-'8  61  0  E:\opensource\rtaudio-4.1.1\CMakeLists.txt
-'9  504  33  E:\opensource\rtaudio-4.1.1\win32\Makefile
+'0  4  53  E:\opensource\TuxTuner-master\CMakeLists.txt
+'1  17  21  E:\opensource\TuxTuner-master\CMakeLists.txt
+'2  16  19  E:\opensource\TuxTuner-master\main.cpp
+'3  200  1  E:\opensource\TuxTuner-master\main.cpp
+'4  8  34  E:\opensource\TuxTuner-master\CMakeLists.txt
+'5  1  19  E:\opensource\TuxTuner-master\main.cpp
+'6  1  0  E:\opensource\TuxTuner-master\win32\CMake
+'7  38  0  E:\opensource\rtaudio-4.1.1\RtAudio.cpp
+'8  5  61  E:\opensource\TuxTuner-master\CMakeLists.txt
+'9  14  29  E:\opensource\TuxTuner-master\main.cpp
 
 # 跳转列表 (从新到旧):
+-'  4  53  E:\opensource\TuxTuner-master\CMakeLists.txt
+-'  17  21  E:\opensource\TuxTuner-master\CMakeLists.txt
+-'  8  34  E:\opensource\TuxTuner-master\CMakeLists.txt
+-'  16  19  E:\opensource\TuxTuner-master\main.cpp
+-'  200  1  E:\opensource\TuxTuner-master\main.cpp
+-'  1  0  E:\opensource\TuxTuner-master\main.cpp
+-'  14  29  E:\opensource\TuxTuner-master\main.cpp
+-'  5  61  E:\opensource\TuxTuner-master\CMakeLists.txt
+-'  1  0  E:\opensource\TuxTuner-master\win32\CMake
+-'  38  0  E:\opensource\rtaudio-4.1.1\RtAudio.cpp
+-'  3580  0  E:\opensource\rtaudio-4.1.1\RtAudio.cpp
+-'  3601  0  E:\opensource\rtaudio-4.1.1\RtAudio.cpp
+-'  6  0  E:\opensource\TuxTuner-master\CMakeLists.txt
+-'  11  25  E:\opensource\TuxTuner-master\CMakeLists.txt
+-'  9  8  E:\opensource\TuxTuner-master\main.cpp
+-'  96  12  E:\opensource\TuxTuner-master\include\RtAudio.cpp
+-'  74  12  E:\opensource\TuxTuner-master\include\RtAudio.cpp
+-'  1  0  E:\opensource\TuxTuner-master\include\RtAudio.cpp
+-'  5463  2  E:\opensource\TuxTuner-master\include\RtAudio.cpp
+-'  12  8  E:\opensource\TuxTuner-master\main.cpp
+-'  206  2  E:\opensource\TuxTuner-master\main.cpp
+-'  171  1  E:\opensource\TuxTuner-master\main.cpp
+-'  358  0  E:\opensource\TuxTuner-master\main.cpp
+-'  14  33  E:\opensource\TuxTuner-master\CMakeLists.txt
+-'  3535  26  E:\opensource\TuxTuner-master\include\RtAudio.cpp
+-'  6  0  E:\opensource\TuxTuner-master\include\RtAudio.h
+-'  1  0  E:\opensource\TuxTuner-master\include\RtAudio.h
+-'  1  0  E:\opensource\TuxTuner-master\CMakeLists.txt
 -'  33  14  E:\code-repo2\github\codes\c\crossword\src\angry.c
 -'  54  14  E:\code-repo2\github\codes\c\crossword\src\angry.c
 -'  55  14  E:\code-repo2\github\codes\c\crossword\src\angry.c
@@ -131,7 +169,6 @@ $SDLIMAGE
 -'  1  0  E:\opensource\rtaudio-4.1.1\win32\Makefile
 -'  606  0  E:\opensource\rtaudio-4.1.1\win32\Makefile
 -'  652  0  E:\opensource\rtaudio-4.1.1\win32\Makefile
--'  3601  0  E:\opensource\rtaudio-4.1.1\RtAudio.cpp
 -'  2028  20  E:\opensource\rtaudio-4.1.1\RtAudio.cpp
 -'  2009  22  E:\opensource\rtaudio-4.1.1\RtAudio.cpp
 -'  2001  26  E:\opensource\rtaudio-4.1.1\RtAudio.cpp
@@ -162,34 +199,59 @@ $SDLIMAGE
 -'  15  4  e:\code-repo2\github\codes\c\opensource\asio\build.bat
 -'  14  4  e:\code-repo2\github\codes\c\opensource\asio\build.bat
 -'  6  20  E:\opensource\build.bat
--'  1  0  E:\opensource\build.bat
--'  216  1  E:\opensource\asio-1.10.4\src\Makefile.mgw
--'  18  4  e:\code-repo2\github\codes\c\opensource\asio\build.bat
--'  17  6  e:\code-repo2\github\codes\c\opensource\asio\build.bat
--'  1  0  e:\code-repo2\github\codes\c\opensource\asio\build.bat
--'  35  0  E:\code-repo2\github\codes\code-man.bat
--'  19  0  E:\code-repo2\github\codes\code-man.bat
--'  86  21  C:\Program Files\CMake 2.8\share\cmake-2.8\Modules\FindSDL_image.cmake
--'  11  33  C:\Program Files\CMake 2.8\share\cmake-2.8\Modules\FindSDL_image.cmake
--'  5  3  C:\Program Files\CMake 2.8\share\cmake-2.8\Modules\FindSDL_image.cmake
--'  40  0  C:\Program Files\CMake 2.8\share\cmake-2.8\Modules\FindSDL_image.cmake
--'  1  0  C:\Program Files\CMake 2.8\share\cmake-2.8\Modules\FindSDL_image.cmake
--'  1  0  E:\code-repo2\github\codes\python\readme.txt
--'  3  0  E:\code-repo2\github\codes\python\down-jw.py
--'  1  0  E:\code-repo2\github\codes\python\down-jw.py
--'  6  37  E:\code-repo2\github\codes\c\usesdl\CMakeLists.txt
--'  8  21  E:\code-repo2\github\codes\c\usesdl\CMakeLists.txt
--'  74  0  C:\Program Files\CMake 2.8\share\cmake-2.8\Modules\FindSDL.cmake
--'  106  12  E:\opensource\rtaudio-4.1.1\win32\Makefile
--'  105  36  E:\opensource\rtaudio-4.1.1\win32\Makefile
--'  104  3  E:\opensource\rtaudio-4.1.1\win32\Makefile
--'  103  22  E:\opensource\rtaudio-4.1.1\win32\Makefile
--'  101  12  E:\opensource\rtaudio-4.1.1\win32\Makefile
--'  100  36  E:\opensource\rtaudio-4.1.1\win32\Makefile
--'  99  3  E:\opensource\rtaudio-4.1.1\win32\Makefile
--'  98  22  E:\opensource\rtaudio-4.1.1\win32\Makefile
 
 # 文件内的标记历史记录 (从新到旧):
+
+> E:\opensource\TuxTuner-master\CMakeLists.txt
+	"	4	53
+	^	4	54
+	.	4	53
+	+	11	0
+	+	15	0
+	+	19	0
+	+	12	0
+	+	17	31
+	+	18	43
+	+	14	33
+	+	23	0
+	+	11	0
+	+	11	0
+	+	11	55
+	+	11	0
+	+	11	0
+	+	11	16
+	+	11	0
+	+	6	0
+	+	4	0
+	+	5	61
+	+	11	0
+	+	8	0
+	+	9	0
+	+	8	34
+	+	17	21
+	+	4	53
+
+> E:\opensource\TuxTuner-master\main.cpp
+	"	16	19
+	^	16	20
+	.	16	19
+	+	12	8
+	+	15	5
+	+	13	25
+	+	14	0
+	+	16	19
+
+> E:\opensource\TuxTuner-master\win32\CMake
+	"	1	0
+
+> E:\opensource\rtaudio-4.1.1\RtAudio.cpp
+	"	38	0
+
+> E:\opensource\TuxTuner-master\include\RtAudio.cpp
+	"	96	12
+
+> E:\opensource\TuxTuner-master\include\RtAudio.h
+	"	6	0
 
 > E:\code-repo2\github\codes\c\crossword\src\angry.c
 	"	33	14
@@ -213,9 +275,6 @@ $SDLIMAGE
 
 > E:\opensource\rtaudio-4.1.1\win32\Makefile
 	"	106	12
-
-> E:\opensource\rtaudio-4.1.1\RtAudio.cpp
-	"	3601	0
 
 > E:\opensource\asio-1.10.4\src\Makefile.mgw
 	"	1	0
