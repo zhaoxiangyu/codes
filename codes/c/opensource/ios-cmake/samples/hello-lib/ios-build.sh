@@ -17,7 +17,7 @@ genprj(){
 build(){
 	pushd xcode/ios
 	echo "building use xcode"
-	xcodebuild -target crosswords -configuration Debug
+	xcodebuild -target hello-lib -configuration Debug
 	popd
 }
 

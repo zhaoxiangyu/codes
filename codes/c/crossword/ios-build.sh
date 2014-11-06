@@ -21,8 +21,15 @@ build(){
 	popd
 }
 
+install(){
+	pushd xcode/ios
+	echo "installing crosswords"
+	xcodebuild -target install -configuration Debug
+	popd
+}
+
 if test 0 -eq $#; then
-	echo usage: genprj build
+	echo usage: genprj build install
 else
 	eval $1
 fi

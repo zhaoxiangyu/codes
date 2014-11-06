@@ -22,8 +22,8 @@ t1383613266
 s475
 
 N/Users/he/work/codes-repo/github/codes/c/crossword/xcode/ios/CMakeFiles/3.0.1/CompilerIdC/CMakeCCompilerId.c
-c00000000545B94A3000000000000344F
-t1415287971
+c00000000545BA459000000000000344F
+t1415291993
 s13391
 
 N/Users/he/work/codes-repo/github/codes/c/crossword/xcode/ios/CMakeFiles/3.0.1/CompilerIdC/CompilerIdC
@@ -31,26 +31,26 @@ t2
 s0
 
 N/Users/he/work/codes-repo/github/codes/c/crossword/xcode/ios/CMakeFiles/3.0.1/CompilerIdC/CompilerIdC.build/Debug/CompilerIdC.build/Objects-normal/i386/CMakeCCompilerId.o
-t1415287972
+t1415291994
 s3500
 
 N/Users/he/work/codes-repo/github/codes/c/crossword/xcode/ios/CMakeFiles/3.0.1/CompilerIdC/CompilerIdC.build/Debug/CompilerIdC.build/Objects-normal/i386/CompilerIdC.LinkFileList
-c00000000545B94A400000000000000AB
-t1415287972
+c00000000545BA45A00000000000000AB
+t1415291994
 s171
 
 N/Users/he/work/codes-repo/github/codes/c/crossword/xcode/ios/CMakeFiles/3.0.1/CompilerIdC/CompilerIdC.build/Debug/CompilerIdC.build/Script-2C8FEB8E15DC1A1A00E56A5D.sh
-c00000000545B94A4000000000000002A
-t1415287972
+c00000000545BA45A000000000000002A
+t1415291994
 s42
 
 CCheck dependencies
 r0
-lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection18"Check dependencies18"Check dependenciesb5ddb024cc0bba41^1554d424cc0bba41^---0#1#1#--18"Check dependencies36"82620FE9-D209-409E-8942-C50B42D8793A-
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection18"Check dependencies18"Check dependencies6e4c2fdadb0bba41^9a3f4edadb0bba41^---0#1#1#--18"Check dependencies36"45CA229A-8EE5-452E-89A2-1E0ADEFCF9BA-
 
 CCompileC ./CompilerIdC.build/Debug/CompilerIdC.build/Objects-normal/i386/CMakeCCompilerId.o /Users/he/work/codes-repo/github/codes/c/crossword/xcode/ios/CMakeFiles/3.0.1/CompilerIdC/CMakeCCompilerId.c normal i386 c com.apple.compilers.llvm.clang.1_0.compiler
-s436980772.827746
-e436980772.899757
+s436984794.306986
+e436984794.376777
 r1
 xCompileC
 x./CompilerIdC.build/Debug/CompilerIdC.build/Objects-normal/i386/CMakeCCompilerId.o
@@ -60,12 +60,12 @@ xi386
 xc
 xcom.apple.compilers.llvm.clang.1_0.compiler
 d/Users/he/work/codes-repo/github/codes/c/crossword/xcode/ios/CMakeFiles/3.0.1/CompilerIdC/CMakeCCompilerId.c
-lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection116"Compile /Users/he/work/codes-repo/github/codes/c/crossword/xcode/ios/CMakeFiles/3.0.1/CompilerIdC/CMakeCCompilerId.c168"CompileC ./CompilerIdC.build/Debug/CompilerIdC.build/Objects-normal/i386/CMakeCCompilerId.o CMakeCCompilerId.c normal i386 c com.apple.compilers.llvm.clang.1_0.compiler240fd424cc0bba41^48a9e824cc0bba41^---0#0#1#-19%DVTDocumentLocation2@124"file://localhost/Users/he/work/codes-repo/github/codes/c/crossword/xcode/ios/CMakeFiles/3.0.1/CompilerIdC/CMakeCCompilerId.c0000000000000000^2657"CompileC ./CompilerIdC.build/Debug/CompilerIdC.build/Objects-normal/i386/CMakeCCompilerId.o CMakeCCompilerId.c normal i386 c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/he/work/codes-repo/github/codes/c/crossword/xcode/ios/CMakeFiles/3.0.1/CompilerIdC    setenv LANG en_US.US-ASCII    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x c -arch i386 -fmessage-length=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -Wno-trigraphs -fpascal-strings -Os -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-return-type -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wno-unused-variable -Wunused-value -Wno-empty-body -Wno-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-constant-conversion -Wno-int-conversion -Wno-bool-conversion -Wno-enum-conversion -Wno-shorten-64-to-32 -Wpointer-sign -Wno-newline-eof -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk -fasm-blocks -fstrict-aliasing -Wdeprecated-declarations -mmacosx-version-min=10.9 -g -fvisibility=hidden -Wno-sign-conversion -I/Users/he/work/codes-repo/github/codes/c/crossword/xcode/ios/CMakeFiles/3.0.1/CompilerIdC/./CompilerIdC.build/Debug/CompilerIdC.build/CompilerIdC.hmap -I/Users/he/work/codes-repo/github/codes/c/crossword/xcode/ios/CMakeFiles/3.0.1/CompilerIdC/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Users/he/work/codes-repo/github/codes/c/crossword/xcode/ios/CMakeFiles/3.0.1/CompilerIdC/./CompilerIdC.build/Debug/CompilerIdC.build/DerivedSources/i386 -I/Users/he/work/codes-repo/github/codes/c/crossword/xcode/ios/CMakeFiles/3.0.1/CompilerIdC/./CompilerIdC.build/Debug/CompilerIdC.build/DerivedSources -F/Users/he/work/codes-repo/github/codes/c/crossword/xcode/ios/CMakeFiles/3.0.1/CompilerIdC -MMD -MT dependencies -MF /Users/he/work/codes-repo/github/codes/c/crossword/xcode/ios/CMakeFiles/3.0.1/CompilerIdC/./CompilerIdC.build/Debug/CompilerIdC.build/Objects-normal/i386/CMakeCCompilerId.d --serialize-diagnostics /Users/he/work/codes-repo/github/codes/c/crossword/xcode/ios/CMakeFiles/3.0.1/CompilerIdC/./CompilerIdC.build/Debug/CompilerIdC.build/Objects-normal/i386/CMakeCCompilerId.dia -c /Users/he/work/codes-repo/github/codes/c/crossword/xcode/ios/CMakeFiles/3.0.1/CompilerIdC/CMakeCCompilerId.c -o /Users/he/work/codes-repo/github/codes/c/crossword/xcode/ios/CMakeFiles/3.0.1/CompilerIdC/CompilerIdC.build/Debug/CompilerIdC.build/Objects-normal/i386/CMakeCCompilerId.o36"4551BEF9-57B0-438E-9B1E-17AB99D4DBBE-
-bD0299B18-60C8-4E17-AA91-54FEA919506B
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection116"Compile /Users/he/work/codes-repo/github/codes/c/crossword/xcode/ios/CMakeFiles/3.0.1/CompilerIdC/CMakeCCompilerId.c168"CompileC ./CompilerIdC.build/Debug/CompilerIdC.build/Objects-normal/i386/CMakeCCompilerId.o CMakeCCompilerId.c normal i386 c com.apple.compilers.llvm.clang.1_0.compiler94c04edadb0bba41^a88f60dadb0bba41^---0#0#1#-19%DVTDocumentLocation2@124"file://localhost/Users/he/work/codes-repo/github/codes/c/crossword/xcode/ios/CMakeFiles/3.0.1/CompilerIdC/CMakeCCompilerId.c0000000000000000^2657"CompileC ./CompilerIdC.build/Debug/CompilerIdC.build/Objects-normal/i386/CMakeCCompilerId.o CMakeCCompilerId.c normal i386 c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/he/work/codes-repo/github/codes/c/crossword/xcode/ios/CMakeFiles/3.0.1/CompilerIdC    setenv LANG en_US.US-ASCII    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x c -arch i386 -fmessage-length=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -Wno-trigraphs -fpascal-strings -Os -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-return-type -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wno-unused-variable -Wunused-value -Wno-empty-body -Wno-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-constant-conversion -Wno-int-conversion -Wno-bool-conversion -Wno-enum-conversion -Wno-shorten-64-to-32 -Wpointer-sign -Wno-newline-eof -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk -fasm-blocks -fstrict-aliasing -Wdeprecated-declarations -mmacosx-version-min=10.9 -g -fvisibility=hidden -Wno-sign-conversion -I/Users/he/work/codes-repo/github/codes/c/crossword/xcode/ios/CMakeFiles/3.0.1/CompilerIdC/./CompilerIdC.build/Debug/CompilerIdC.build/CompilerIdC.hmap -I/Users/he/work/codes-repo/github/codes/c/crossword/xcode/ios/CMakeFiles/3.0.1/CompilerIdC/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Users/he/work/codes-repo/github/codes/c/crossword/xcode/ios/CMakeFiles/3.0.1/CompilerIdC/./CompilerIdC.build/Debug/CompilerIdC.build/DerivedSources/i386 -I/Users/he/work/codes-repo/github/codes/c/crossword/xcode/ios/CMakeFiles/3.0.1/CompilerIdC/./CompilerIdC.build/Debug/CompilerIdC.build/DerivedSources -F/Users/he/work/codes-repo/github/codes/c/crossword/xcode/ios/CMakeFiles/3.0.1/CompilerIdC -MMD -MT dependencies -MF /Users/he/work/codes-repo/github/codes/c/crossword/xcode/ios/CMakeFiles/3.0.1/CompilerIdC/./CompilerIdC.build/Debug/CompilerIdC.build/Objects-normal/i386/CMakeCCompilerId.d --serialize-diagnostics /Users/he/work/codes-repo/github/codes/c/crossword/xcode/ios/CMakeFiles/3.0.1/CompilerIdC/./CompilerIdC.build/Debug/CompilerIdC.build/Objects-normal/i386/CMakeCCompilerId.dia -c /Users/he/work/codes-repo/github/codes/c/crossword/xcode/ios/CMakeFiles/3.0.1/CompilerIdC/CMakeCCompilerId.c -o /Users/he/work/codes-repo/github/codes/c/crossword/xcode/ios/CMakeFiles/3.0.1/CompilerIdC/CompilerIdC.build/Debug/CompilerIdC.build/Objects-normal/i386/CMakeCCompilerId.o36"FBD91FBD-C746-4EFB-A500-597D802C7D21-
+b018EB491-6838-47BD-9A6F-940C74BCFC9F
 
 CLd /Users/he/work/codes-repo/github/codes/c/crossword/xcode/ios/CMakeFiles/3.0.1/CompilerIdC/./CompilerIdC normal i386
-s436980772.915932
-e436980773.006080
+s436984794.387728
+e436984794.449713
 r1
 xLd
 x/Users/he/work/codes-repo/github/codes/c/crossword/xcode/ios/CMakeFiles/3.0.1/CompilerIdC/./CompilerIdC
@@ -105,17 +105,17 @@ d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/
 d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libunc.dylib
 d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libunwind.dylib
 d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libxpc.dylib
-lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection108"Link /Users/he/work/codes-repo/github/codes/c/crossword/xcode/ios/CMakeFiles/3.0.1/CompilerIdC/./CompilerIdC28"Ld ./CompilerIdC normal i3861e8aea24cc0bba41^e2940125cc0bba41^---0#0#1#--1111"Ld ./CompilerIdC normal i386    cd /Users/he/work/codes-repo/github/codes/c/crossword/xcode/ios/CMakeFiles/3.0.1/CompilerIdC    setenv MACOSX_DEPLOYMENT_TARGET 10.9    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -arch i386 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk -L/Users/he/work/codes-repo/github/codes/c/crossword/xcode/ios/CMakeFiles/3.0.1/CompilerIdC -F/Users/he/work/codes-repo/github/codes/c/crossword/xcode/ios/CMakeFiles/3.0.1/CompilerIdC -filelist /Users/he/work/codes-repo/github/codes/c/crossword/xcode/ios/CMakeFiles/3.0.1/CompilerIdC/./CompilerIdC.build/Debug/CompilerIdC.build/Objects-normal/i386/CompilerIdC.LinkFileList -mmacosx-version-min=10.9 -Xlinker -dependency_info -Xlinker /Users/he/work/codes-repo/github/codes/c/crossword/xcode/ios/CMakeFiles/3.0.1/CompilerIdC/./CompilerIdC.build/Debug/CompilerIdC.build/Objects-normal/i386/CompilerIdC_dependency_info.dat -o /Users/he/work/codes-repo/github/codes/c/crossword/xcode/ios/CMakeFiles/3.0.1/CompilerIdC/./CompilerIdC36"98FA97E0-F5ED-4906-B1F0-B839276F6CCC-
-bD0299B18-60C8-4E17-AA91-54FEA919506B
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection108"Link /Users/he/work/codes-repo/github/codes/c/crossword/xcode/ios/CMakeFiles/3.0.1/CompilerIdC/./CompilerIdC28"Ld ./CompilerIdC normal i386cc5d63dadb0bba41^1b4873dadb0bba41^---0#0#1#--1111"Ld ./CompilerIdC normal i386    cd /Users/he/work/codes-repo/github/codes/c/crossword/xcode/ios/CMakeFiles/3.0.1/CompilerIdC    setenv MACOSX_DEPLOYMENT_TARGET 10.9    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -arch i386 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk -L/Users/he/work/codes-repo/github/codes/c/crossword/xcode/ios/CMakeFiles/3.0.1/CompilerIdC -F/Users/he/work/codes-repo/github/codes/c/crossword/xcode/ios/CMakeFiles/3.0.1/CompilerIdC -filelist /Users/he/work/codes-repo/github/codes/c/crossword/xcode/ios/CMakeFiles/3.0.1/CompilerIdC/./CompilerIdC.build/Debug/CompilerIdC.build/Objects-normal/i386/CompilerIdC.LinkFileList -mmacosx-version-min=10.9 -Xlinker -dependency_info -Xlinker /Users/he/work/codes-repo/github/codes/c/crossword/xcode/ios/CMakeFiles/3.0.1/CompilerIdC/./CompilerIdC.build/Debug/CompilerIdC.build/Objects-normal/i386/CompilerIdC_dependency_info.dat -o /Users/he/work/codes-repo/github/codes/c/crossword/xcode/ios/CMakeFiles/3.0.1/CompilerIdC/./CompilerIdC36"0F170498-E7EB-4A44-B5F4-C66B84B97BDA-
+b018EB491-6838-47BD-9A6F-940C74BCFC9F
 
 CPhaseScriptExecution Run\ Script /Users/he/work/codes-repo/github/codes/c/crossword/xcode/ios/CMakeFiles/3.0.1/CompilerIdC/./CompilerIdC.build/Debug/CompilerIdC.build/Script-2C8FEB8E15DC1A1A00E56A5D.sh
-s436980773.016474
-e436980773.066162
+s436984794.460148
+e436984794.509535
 r1
 xPhaseScriptExecution
 xRun Script
 x/Users/he/work/codes-repo/github/codes/c/crossword/xcode/ios/CMakeFiles/3.0.1/CompilerIdC/./CompilerIdC.build/Debug/CompilerIdC.build/Script-2C8FEB8E15DC1A1A00E56A5D.sh
 oGCC_VERSION=com.apple.compilers.llvm.clang.1_0
-lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection36"Run custom shell script 'Run Script'111"PhaseScriptExecution Run\ Script ./CompilerIdC.build/Debug/CompilerIdC.build/Script-2C8FEB8E15DC1A1A00E56A5D.shc9930425cc0bba41^df191125cc0bba41^-47"GCC_VERSION=com.apple.compilers.llvm.clang.1_01(21%IDEActivityLogMessage2@47"GCC_VERSION=com.apple.compilers.llvm.clang.1_0-436980773#0#47#-0#-----0#0#1#--393"PhaseScriptExecution Run\ Script ./CompilerIdC.build/Debug/CompilerIdC.build/Script-2C8FEB8E15DC1A1A00E56A5D.sh    cd /Users/he/work/codes-repo/github/codes/c/crossword/xcode/ios/CMakeFiles/3.0.1/CompilerIdC    /bin/sh -c /Users/he/work/codes-repo/github/codes/c/crossword/xcode/ios/CMakeFiles/3.0.1/CompilerIdC/./CompilerIdC.build/Debug/CompilerIdC.build/Script-2C8FEB8E15DC1A1A00E56A5D.sh36"AAF4A8AE-76DD-4F26-B059-BEA0A2B56C81-
-bD0299B18-60C8-4E17-AA91-54FEA919506B
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection36"Run custom shell script 'Run Script'111"PhaseScriptExecution Run\ Script ./CompilerIdC.build/Debug/CompilerIdC.build/Script-2C8FEB8E15DC1A1A00E56A5D.shc72976dadb0bba41^b1fb82dadb0bba41^-47"GCC_VERSION=com.apple.compilers.llvm.clang.1_01(21%IDEActivityLogMessage2@47"GCC_VERSION=com.apple.compilers.llvm.clang.1_0-436984794#0#47#-0#-----0#0#1#--393"PhaseScriptExecution Run\ Script ./CompilerIdC.build/Debug/CompilerIdC.build/Script-2C8FEB8E15DC1A1A00E56A5D.sh    cd /Users/he/work/codes-repo/github/codes/c/crossword/xcode/ios/CMakeFiles/3.0.1/CompilerIdC    /bin/sh -c /Users/he/work/codes-repo/github/codes/c/crossword/xcode/ios/CMakeFiles/3.0.1/CompilerIdC/./CompilerIdC.build/Debug/CompilerIdC.build/Script-2C8FEB8E15DC1A1A00E56A5D.sh36"A289DA12-D0F3-4F96-8EA0-02D22AAA62F5-
+b018EB491-6838-47BD-9A6F-940C74BCFC9F
 

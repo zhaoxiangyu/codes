@@ -2,8 +2,6 @@ cmake_minimum_required(VERSION 2.8.7)
 
 project(crosswords)
 set(SRCS src/angry.c)
-add_executable(crosswords ${SRCS})
+add_library(crosswords STATIC ${SRCS})
 
-if(UNIX)
-endif()
-
+install(TARGETS crosswords DESTINATION .)

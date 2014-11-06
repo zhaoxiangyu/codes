@@ -1,0 +1,27 @@
+Tinstall
+v6
+r1
+cCheck dependencies
+cPhaseScriptExecution CMake\ PostBuild\ Rules /Users/he/work/codes-repo/github/codes/c/crossword/xcode/ios/crosswords.build/Debug-iphoneos/install.build/Script-CF4DC9B10EE646D693E248E4.sh
+
+N/Users/he/work/codes-repo/github/codes/c/crossword/xcode/ios/crosswords.build/Debug-iphoneos/install.build/Script-CF4DC9B10EE646D693E248E4.sh
+c00000000545BA7B400000000000000CA
+t1415292852
+s202
+
+CCheck dependencies
+r0
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection18"Check dependencies18"Check dependencies25b34234df0bba41^59a24334df0bba41^---0#1#1#--18"Check dependencies36"9EF9A226-34C8-4F97-84F3-39A414F90330-
+
+CPhaseScriptExecution CMake\ PostBuild\ Rules /Users/he/work/codes-repo/github/codes/c/crossword/xcode/ios/crosswords.build/Debug-iphoneos/install.build/Script-CF4DC9B10EE646D693E248E4.sh
+s436985652.266830
+e436985652.635858
+r1
+xPhaseScriptExecution
+xCMake PostBuild Rules
+x/Users/he/work/codes-repo/github/codes/c/crossword/xcode/ios/crosswords.build/Debug-iphoneos/install.build/Script-CF4DC9B10EE646D693E248E4.sh
+o/opt/local/bin/cmake -DBUILD_TYPE=Debug-iphoneos -P cmake_install.cmake
+o-- Install configuration: "Debug-iphoneos"
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection47"Run custom shell script 'CMake PostBuild Rules'143"[1mPhaseScriptExecution[0m CMake\ PostBuild\ Rules xcode/ios/crosswords.build/Debug-iphoneos/install.build/Script-CF4DC9B10EE646D693E248E4.shc1a84434df0bba41^d0d5a234df0bba41^-115"/opt/local/bin/cmake -DBUILD_TYPE=Debug-iphoneos -P cmake_install.cmake-- Install configuration: "Debug-iphoneos"2(21%IDEActivityLogMessage2@72"/opt/local/bin/cmake -DBUILD_TYPE=Debug-iphoneos -P cmake_install.cmake-436985652#0#72#-0#-----2@43"-- Install configuration: "Debug-iphoneos"-436985652#72#43#-0#-----0#0#1#--359"[1mPhaseScriptExecution[0m CMake\ PostBuild\ Rules xcode/ios/crosswords.build/Debug-iphoneos/install.build/Script-CF4DC9B10EE646D693E248E4.sh    cd /Users/he/work/codes-repo/github/codes/c/crossword    /bin/sh -c /Users/he/work/codes-repo/github/codes/c/crossword/xcode/ios/crosswords.build/Debug-iphoneos/install.build/Script-CF4DC9B10EE646D693E248E4.sh36"B50A0A68-F181-49C5-BCB0-1B1378BD71A8-
+b6CF7848D-A362-467C-BDA2-652F684F1384
+

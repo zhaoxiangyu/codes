@@ -1,0 +1,120 @@
+Tcrosswords
+v6
+r1
+cCheck dependencies
+cCompileC xcode/ios/crosswords.build/Debug-iphoneos/crosswords.build/Objects-normal/armv7/angry.o /Users/he/work/codes-repo/github/codes/c/crossword/src/angry.c normal armv7 c com.apple.compilers.llvm.clang.1_0.compiler
+cLibtool /Users/he/work/codes-repo/github/codes/c/crossword/xcode/ios/Debug-iphoneos/libcrosswords.a normal armv7
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.0.sdk
+c00000000525642EE0000000000000110
+t1381384942
+s272
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.0.sdk/SDKSettings.plist
+c00000000527843AE000000000000036B
+t1383613358
+s875
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.0.sdk/System/Library/CoreServices/SystemVersion.plist
+c00000000527843AE00000000000001A0
+t1383613358
+s416
+
+N/Users/he/work/codes-repo/github/codes/c/crossword/src/angry.c
+c00000000545B9B0B0000000000003171
+t1415289611
+s12657
+
+N/Users/he/work/codes-repo/github/codes/c/crossword/xcode/ios/Debug-iphoneos/libcrosswords.a
+t2
+s0
+
+N/Users/he/work/codes-repo/github/codes/c/crossword/xcode/ios/crosswords.build/Debug-iphoneos/crosswords.build/Objects-normal/armv7/angry.o
+t1415292006
+s19488
+
+N/Users/he/work/codes-repo/github/codes/c/crossword/xcode/ios/crosswords.build/Debug-iphoneos/crosswords.build/Objects-normal/armv7/crosswords.LinkFileList
+c00000000545BA465000000000000008B
+t1415292005
+s139
+
+CCheck dependencies
+r0
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection18"Check dependencies18"Check dependenciesfa60cde5db0bba41^1688cee5db0bba41^---0#1#1#--18"Check dependencies36"CB80243E-6071-4ADA-9C84-8859739D023D-
+
+CCompileC xcode/ios/crosswords.build/Debug-iphoneos/crosswords.build/Objects-normal/armv7/angry.o /Users/he/work/codes-repo/github/codes/c/crossword/src/angry.c normal armv7 c com.apple.compilers.llvm.clang.1_0.compiler
+s436984805.808242
+e436984806.013449
+r1
+xCompileC
+xxcode/ios/crosswords.build/Debug-iphoneos/crosswords.build/Objects-normal/armv7/angry.o
+x/Users/he/work/codes-repo/github/codes/c/crossword/src/angry.c
+xnormal
+xarmv7
+xc
+xcom.apple.compilers.llvm.clang.1_0.compiler
+d/Users/he/work/codes-repo/github/codes/c/crossword/src/angry.c
+o[1m/Users/he/work/codes-repo/github/codes/c/crossword/src/angry.c:166:5: [0m[0;1;35mwarning: [0m[1m
+o      implicitly declaring library function 'strlen' with type 'unsigned long
+o      (const char *)'[0m
+oif (strlen(buf) == 0)
+o[0;1;32m    ^
+o[0m[1m/Users/he/work/codes-repo/github/codes/c/crossword/src/angry.c:166:5: [0m[0;1;30mnote: [0m
+o      please include the header <string.h> or explicitly provide a declaration
+o      for 'strlen'[0m
+o[1m/Users/he/work/codes-repo/github/codes/c/crossword/src/angry.c:193:22: [0m[0;1;35mwarning: [0m[1m
+o      implicitly declaring library function 'strchr' with type 'char *(const
+o      char *, int)'[0m
+owhile ((len > 0) && (strchr(chars,*str) != NULL))
+o[0;1;32m                     ^
+o[0m[1m/Users/he/work/codes-repo/github/codes/c/crossword/src/angry.c:193:22: [0m[0;1;30mnote: [0m
+o      please include the header <string.h> or explicitly provide a declaration
+o      for 'strchr'[0m
+o[1m/Users/he/work/codes-repo/github/codes/c/crossword/src/angry.c:195:2: [0m[0;1;35mwarning: [0m[1m
+o      implicitly declaring library function 'memcpy' with type 'void *(void *,
+o      const void *, unsigned long)'[0m
+o        memcpy(str,&str[1],len);
+o[0;1;32m        ^
+o[0m[1m/Users/he/work/codes-repo/github/codes/c/crossword/src/angry.c:195:2: [0m[0;1;30mnote: [0m
+o      please include the header <string.h> or explicitly provide a declaration
+o      for 'memcpy'[0m
+o[1m/Users/he/work/codes-repo/github/codes/c/crossword/src/angry.c:229:5: [0m[0;1;35mwarning: [0m[1m
+o      implicitly declaring library function 'strcpy' with type 'char *(char *,
+o      const char *)'[0m
+o    strcpy(list[i],line);
+o[0;1;32m    ^
+o[0m[1m/Users/he/work/codes-repo/github/codes/c/crossword/src/angry.c:229:5: [0m[0;1;30mnote: [0m
+o      please include the header <string.h> or explicitly provide a declaration
+o      for 'strcpy'[0m
+o[1m/Users/he/work/codes-repo/github/codes/c/crossword/src/angry.c:425:5: [0m[0;1;35mwarning: [0m[1m
+o      unused variable 'bad' [-Wunused-variable][0m
+oint bad=0;
+o[0;1;32m    ^
+o[0m[1m/Users/he/work/codes-repo/github/codes/c/crossword/src/angry.c:525:1: [0m[0;1;35mwarning: [0m[1m
+o      implicitly declaring library function 'memset' with type 'void *(void *,
+o      int, unsigned long)'[0m
+omemset(head,0,10);
+o[0;1;32m^
+o[0m[1m/Users/he/work/codes-repo/github/codes/c/crossword/src/angry.c:525:1: [0m[0;1;30mnote: [0m
+o      please include the header <string.h> or explicitly provide a declaration
+o      for 'memset'[0m
+o[1m/Users/he/work/codes-repo/github/codes/c/crossword/src/angry.c:536:37: [0m[0;1;35mwarning: [0m[1m
+o      implicit declaration of function 'toupper' is invalid in C99
+o      [-Wimplicit-function-declaration][0m
+o    fprintf(f,"%c",grid[i][j]?(char)toupper(grid[i][j]):0333);
+o[0;1;32m                                    ^
+o[0m7 warnings generated.
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection70"Compile /Users/he/work/codes-repo/github/codes/c/crossword/src/angry.c183"[1mCompileC[0m xcode/ios/crosswords.build/Debug-iphoneos/crosswords.build/Objects-normal/armv7/angry.o [1msrc/angry.c[0m normal armv7 c com.apple.compilers.llvm.clang.1_0.compiler3109cfe5db0bba41^1fbf03e6db0bba41^-2867"[1m/Users/he/work/codes-repo/github/codes/c/crossword/src/angry.c:166:5: [0m[0;1;35mwarning: [0m[1m      implicitly declaring library function 'strlen' with type 'unsigned long      (const char *)'[0mif (strlen(buf) == 0)[0;1;32m    ^[0m[1m/Users/he/work/codes-repo/github/codes/c/crossword/src/angry.c:166:5: [0m[0;1;30mnote: [0m      please include the header <string.h> or explicitly provide a declaration      for 'strlen'[0m[1m/Users/he/work/codes-repo/github/codes/c/crossword/src/angry.c:193:22: [0m[0;1;35mwarning: [0m[1m      implicitly declaring library function 'strchr' with type 'char *(const      char *, int)'[0mwhile ((len > 0) && (strchr(chars,*str) != NULL))[0;1;32m                     ^[0m[1m/Users/he/work/codes-repo/github/codes/c/crossword/src/angry.c:193:22: [0m[0;1;30mnote: [0m      please include the header <string.h> or explicitly provide a declaration      for 'strchr'[0m[1m/Users/he/work/codes-repo/github/codes/c/crossword/src/angry.c:195:2: [0m[0;1;35mwarning: [0m[1m      implicitly declaring library function 'memcpy' with type 'void *(void *,      const void *, unsigned long)'[0m        memcpy(str,&str[1],len);[0;1;32m        ^[0m[1m/Users/he/work/codes-repo/github/codes/c/crossword/src/angry.c:195:2: [0m[0;1;30mnote: [0m      please include the header <string.h> or explicitly provide a declaration      for 'memcpy'[0m[1m/Users/he/work/codes-repo/github/codes/c/crossword/src/angry.c:229:5: [0m[0;1;35mwarning: [0m[1m      implicitly declaring library function 'strcpy' with type 'char *(char *,      const char *)'[0m    strcpy(list[i],line);[0;1;32m    ^[0m[1m/Users/he/work/codes-repo/github/codes/c/crossword/src/angry.c:229:5: [0m[0;1;30mnote: [0m      please include the header <string.h> or explicitly provide a declaration      for 'strcpy'[0m[1m/Users/he/work/codes-repo/github/codes/c/crossword/src/angry.c:425:5: [0m[0;1;35mwarning: [0m[1m      unused variable 'bad' [-Wunused-variable][0mint bad=0;[0;1;32m    ^[0m[1m/Users/he/work/codes-repo/github/codes/c/crossword/src/angry.c:525:1: [0m[0;1;35mwarning: [0m[1m      implicitly declaring library function 'memset' with type 'void *(void *,      int, unsigned long)'[0mmemset(head,0,10);[0;1;32m^[0m[1m/Users/he/work/codes-repo/github/codes/c/crossword/src/angry.c:525:1: [0m[0;1;30mnote: [0m      please include the header <string.h> or explicitly provide a declaration      for 'memset'[0m[1m/Users/he/work/codes-repo/github/codes/c/crossword/src/angry.c:536:37: [0m[0;1;35mwarning: [0m[1m      implicit declaration of function 'toupper' is invalid in C99      [-Wimplicit-function-declaration][0m    fprintf(f,"%c",grid[i][j]?(char)toupper(grid[i][j]):0333);[0;1;32m                                    ^[0m7 warnings generated.7(36%IDEClangDiagnosticActivityLogMessage2@87"Implicitly declaring library function 'strlen' with type 'unsigned long (const char *)'-436984806#18446744073709551615#0#1(2@85"Please include the header <string.h> or explicitly provide a declaration for 'strlen'-436984806#18446744073709551615#0#-0#27"com.apple.dt.IDE.diagnostic23%DVTTextDocumentLocation3@78"file://localhost/Users/he/work/codes-repo/github/codes/c/crossword/src/angry.c0000000000000000^165#4#165#4#3473#0#14"Semantic Issue--1#27"com.apple.dt.IDE.diagnostic3@78"file://localhost/Users/he/work/codes-repo/github/codes/c/crossword/src/angry.c0000000000000000^165#4#165#4#3473#0#14"Semantic Issue--2@84"Implicitly declaring library function 'strchr' with type 'char *(const char *, int)'-436984806#18446744073709551615#0#1(2@85"Please include the header <string.h> or explicitly provide a declaration for 'strchr'-436984806#18446744073709551615#0#-0#27"com.apple.dt.IDE.diagnostic3@78"file://localhost/Users/he/work/codes-repo/github/codes/c/crossword/src/angry.c0000000000000000^192#21#192#21#4151#0#14"Semantic Issue--1#27"com.apple.dt.IDE.diagnostic3@78"file://localhost/Users/he/work/codes-repo/github/codes/c/crossword/src/angry.c0000000000000000^192#21#192#21#4151#0#14"Semantic Issue--2@102"Implicitly declaring library function 'memcpy' with type 'void *(void *, const void *, unsigned long)'-436984806#18446744073709551615#0#1(2@85"Please include the header <string.h> or explicitly provide a declaration for 'memcpy'-436984806#18446744073709551615#0#-0#27"com.apple.dt.IDE.diagnostic3@78"file://localhost/Users/he/work/codes-repo/github/codes/c/crossword/src/angry.c0000000000000000^194#1#194#1#4184#0#14"Semantic Issue--1#27"com.apple.dt.IDE.diagnostic3@78"file://localhost/Users/he/work/codes-repo/github/codes/c/crossword/src/angry.c0000000000000000^194#1#194#1#4184#0#14"Semantic Issue--2@87"Implicitly declaring library function 'strcpy' with type 'char *(char *, const char *)'-436984806#18446744073709551615#0#1(2@85"Please include the header <string.h> or explicitly provide a declaration for 'strcpy'-436984806#18446744073709551615#0#-0#27"com.apple.dt.IDE.diagnostic3@78"file://localhost/Users/he/work/codes-repo/github/codes/c/crossword/src/angry.c0000000000000000^228#4#228#4#4851#0#14"Semantic Issue--1#27"com.apple.dt.IDE.diagnostic3@78"file://localhost/Users/he/work/codes-repo/github/codes/c/crossword/src/angry.c0000000000000000^228#4#228#4#4851#0#14"Semantic Issue--2@21"Unused variable 'bad'-436984806#18446744073709551615#0#-1#27"com.apple.dt.IDE.diagnostic3@78"file://localhost/Users/he/work/codes-repo/github/codes/c/crossword/src/angry.c0000000000000000^424#4#424#4#9268#0#19"Unused Entity Issue--2@93"Implicitly declaring library function 'memset' with type 'void *(void *, int, unsigned long)'-436984806#18446744073709551615#0#1(2@85"Please include the header <string.h> or explicitly provide a declaration for 'memset'-436984806#18446744073709551615#0#-0#27"com.apple.dt.IDE.diagnostic3@78"file://localhost/Users/he/work/codes-repo/github/codes/c/crossword/src/angry.c0000000000000000^524#0#524#0#11365#0#14"Semantic Issue--1#27"com.apple.dt.IDE.diagnostic3@78"file://localhost/Users/he/work/codes-repo/github/codes/c/crossword/src/angry.c0000000000000000^524#0#524#0#11365#0#14"Semantic Issue--2@60"Implicit declaration of function 'toupper' is invalid in C99-436984806#18446744073709551615#0#-1#27"com.apple.dt.IDE.diagnostic3@78"file://localhost/Users/he/work/codes-repo/github/codes/c/crossword/src/angry.c0000000000000000^535#36#535#36#11567#0#14"Semantic Issue--0#0#1#-19%DVTDocumentLocation4@78"file://localhost/Users/he/work/codes-repo/github/codes/c/crossword/src/angry.c0000000000000000^2573"[1mCompileC[0m xcode/ios/crosswords.build/Debug-iphoneos/crosswords.build/Objects-normal/armv7/angry.o [1msrc/angry.c[0m normal armv7 c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/he/work/codes-repo/github/codes/c/crossword    setenv LANG en_US.US-ASCII    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/opt/local/bin:/opt/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x c -arch armv7 -fmessage-length=80 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -fcolor-diagnostics -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-return-type -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wno-unused-variable -Wunused-value -Wno-empty-body -Wno-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-constant-conversion -Wno-int-conversion -Wno-bool-conversion -Wno-enum-conversion -Wno-shorten-64-to-32 -Wpointer-sign -Wno-newline-eof -DCMAKE_INTDIR=\"Debug-iphoneos\" -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.0.sdk -fstrict-aliasing -Wdeprecated-declarations -g -Wno-sign-conversion -miphoneos-version-min=7.0 -I/Users/he/work/codes-repo/github/codes/c/crossword/xcode/ios/Debug-iphoneos/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Users/he/work/codes-repo/github/codes/c/crossword/xcode/ios/crosswords.build/Debug-iphoneos/crosswords.build/DerivedSources/armv7 -I/Users/he/work/codes-repo/github/codes/c/crossword/xcode/ios/crosswords.build/Debug-iphoneos/crosswords.build/DerivedSources -Wmost -Wno-four-char-constants -Wno-unknown-pragmas -F/Users/he/work/codes-repo/github/codes/c/crossword/xcode/ios/Debug-iphoneos -MMD -MT dependencies -MF /Users/he/work/codes-repo/github/codes/c/crossword/xcode/ios/crosswords.build/Debug-iphoneos/crosswords.build/Objects-normal/armv7/angry.d --serialize-diagnostics /Users/he/work/codes-repo/github/codes/c/crossword/xcode/ios/crosswords.build/Debug-iphoneos/crosswords.build/Objects-normal/armv7/angry.dia -c /Users/he/work/codes-repo/github/codes/c/crossword/src/angry.c -o /Users/he/work/codes-repo/github/codes/c/crossword/xcode/ios/crosswords.build/Debug-iphoneos/crosswords.build/Objects-normal/armv7/angry.o36"1EAB993C-DD0F-4D92-8E73-A13F54B6FC27-
+b78D5161B-3B3E-4345-AE95-EFF196D8DC95
+
+CLibtool /Users/he/work/codes-repo/github/codes/c/crossword/xcode/ios/Debug-iphoneos/libcrosswords.a normal armv7
+s436984806.023035
+e436984806.072161
+r1
+xLibtool
+x/Users/he/work/codes-repo/github/codes/c/crossword/xcode/ios/Debug-iphoneos/libcrosswords.a
+xnormal
+xarmv7
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection69"[1mLibtool[0m xcode/ios/Debug-iphoneos/libcrosswords.a normal armv769"[1mLibtool[0m xcode/ios/Debug-iphoneos/libcrosswords.a normal armv722fa05e6db0bba41^525f12e6db0bba41^---0#0#1#--980"[1mLibtool[0m xcode/ios/Debug-iphoneos/libcrosswords.a normal armv7    cd /Users/he/work/codes-repo/github/codes/c/crossword    setenv IPHONEOS_DEPLOYMENT_TARGET 7.0    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/opt/local/bin:/opt/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/libtool -static -arch_only armv7 -syslibroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.0.sdk -L/Users/he/work/codes-repo/github/codes/c/crossword/xcode/ios/Debug-iphoneos -filelist /Users/he/work/codes-repo/github/codes/c/crossword/xcode/ios/crosswords.build/Debug-iphoneos/crosswords.build/Objects-normal/armv7/crosswords.LinkFileList -o /Users/he/work/codes-repo/github/codes/c/crossword/xcode/ios/Debug-iphoneos/libcrosswords.a36"768DD5DF-F8AA-45C1-8E75-088059E3C723-
+b78D5161B-3B3E-4345-AE95-EFF196D8DC95
+

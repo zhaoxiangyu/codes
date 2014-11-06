@@ -199,6 +199,9 @@ IOS_PLATFORM:STRING=OS
 //Value Computed by CMake
 crosswords_BINARY_DIR:STATIC=/Users/he/work/codes-repo/github/codes/c/crossword/xcode/ios
 
+//Dependencies for target
+crosswords_LIB_DEPENDS:STATIC=
+
 //Value Computed by CMake
 crosswords_SOURCE_DIR:STATIC=/Users/he/work/codes-repo/github/codes/c/crossword
 
@@ -208,7 +211,7 @@ crosswords_SOURCE_DIR:STATIC=/Users/he/work/codes-repo/github/codes/c/crossword
 ########################
 
 //Stored Xcode object GUID
-ALL_BUILD_GUID_CMAKE:INTERNAL=523A8CD57BC64E78ABF98569
+ALL_BUILD_GUID_CMAKE:INTERNAL=5A180A3E8C6645C094AFEE47
 //ADVANCED property for variable: CMAKE_AR
 CMAKE_AR-ADVANCED:INTERNAL=1
 //This is the directory where this CMakeCache.txt was created
@@ -327,9 +330,11 @@ CMAKE_USE_RELATIVE_PATHS-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_VERBOSE_MAKEFILE
 CMAKE_VERBOSE_MAKEFILE-ADVANCED:INTERNAL=1
 //Stored Xcode object GUID
-PROJECT_crosswords_GUID_CMAKE:INTERNAL=A120D17C337B44679B5AEA22
+PROJECT_crosswords_GUID_CMAKE:INTERNAL=0367F2A8D1E3487C9CD6523A
 //Stored Xcode object GUID
-ZERO_CHECK_GUID_CMAKE:INTERNAL=9E0D0E0E6F18482CA56ACBB7
+ZERO_CHECK_GUID_CMAKE:INTERNAL=55D8477FA1AA448486A9BAF4
 //Stored Xcode object GUID
-crosswords_GUID_CMAKE:INTERNAL=4C166DD4B94E4FFF8B8087D4
+crosswords_GUID_CMAKE:INTERNAL=7C792E05F51A4543BBF6F1CB
+//Stored Xcode object GUID
+install_GUID_CMAKE:INTERNAL=9B6E54B53C3D41E69C56A6BD
 

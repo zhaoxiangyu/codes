@@ -7,63 +7,75 @@
        objects = {
 
 /* Begin PBXAggregateTarget section */
-              523A8CD57BC64E78ABF98569 /* ALL_BUILD */ = {
+              5A180A3E8C6645C094AFEE47 /* ALL_BUILD */ = {
                      isa = PBXAggregateTarget;
-                     buildConfigurationList = 36240649C44641C689B46D20 /* Build configuration list for PBXAggregateTarget "ALL_BUILD" */;
+                     buildConfigurationList = A6300753467F44308FA71614 /* Build configuration list for PBXAggregateTarget "ALL_BUILD" */;
                      buildPhases = (
-                            7D05D495243E4B2993CB3D20 /* CMake Rules */,
+                            9EB6434F9924402BA4BD51FD /* CMake Rules */,
                      );
                      dependencies = (
-                            12B4AC8DC0A545F48D7A004E /* PBXTargetDependency */,
-                            8D7FB79DC3144F8981517327 /* PBXTargetDependency */,
+                            A3633485410B487B8C080DD5 /* PBXTargetDependency */,
+                            7D9F1561C2AD4603B52F7F7D /* PBXTargetDependency */,
                      );
                      name = ALL_BUILD;
                      productName = ALL_BUILD;
               };
-              9E0D0E0E6F18482CA56ACBB7 /* ZERO_CHECK */ = {
+              55D8477FA1AA448486A9BAF4 /* ZERO_CHECK */ = {
                      isa = PBXAggregateTarget;
-                     buildConfigurationList = FDCA4D080E1645A4AF2E3BBB /* Build configuration list for PBXAggregateTarget "ZERO_CHECK" */;
+                     buildConfigurationList = E5E1239825994DC48F4901D2 /* Build configuration list for PBXAggregateTarget "ZERO_CHECK" */;
                      buildPhases = (
-                            8BADBDA92411403DB14CACA6 /* CMake Rules */,
+                            14284421528D4970ABC1D889 /* CMake Rules */,
                      );
                      dependencies = (
                      );
                      name = ZERO_CHECK;
                      productName = ZERO_CHECK;
               };
+              9B6E54B53C3D41E69C56A6BD /* install */ = {
+                     isa = PBXAggregateTarget;
+                     buildConfigurationList = 862AC325181F4691AE68ACC8 /* Build configuration list for PBXAggregateTarget "install" */;
+                     buildPhases = (
+                            CF4DC9B10EE646D693E248E4 /* CMake PostBuild Rules */,
+                     );
+                     dependencies = (
+                            2A042C7F123A47B2BF2C178E /* PBXTargetDependency */,
+                     );
+                     name = install;
+                     productName = install;
+              };
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
-82D22ED06B3B47E0A081C0EE /* /Users/he/work/codes-repo/github/codes/c/crossword/CMakeLists.txt */ = {isa = PBXBuildFile; fileRef = 556F7708BD45455485D3CE8E /* /Users/he/work/codes-repo/github/codes/c/crossword/CMakeLists.txt */; settings = { COMPILER_FLAGS = ""; }; };
-5C6FCB09E30841CCACBAA961 /* /Users/he/work/codes-repo/github/codes/c/crossword/src/angry.c */ = {isa = PBXBuildFile; fileRef = 4C9D78C70FB3421BB6DEE3BD /* /Users/he/work/codes-repo/github/codes/c/crossword/src/angry.c */; settings = { COMPILER_FLAGS = ""; }; };
+0EB6143C3ED4402DA365CFBD /* /Users/he/work/codes-repo/github/codes/c/crossword/CMakeLists.txt */ = {isa = PBXBuildFile; fileRef = E7B7C4A6FBCF43CD96B2CFB2 /* /Users/he/work/codes-repo/github/codes/c/crossword/CMakeLists.txt */; settings = { COMPILER_FLAGS = ""; }; };
+8C609613F4D84468BEE74868 /* /Users/he/work/codes-repo/github/codes/c/crossword/src/angry.c */ = {isa = PBXBuildFile; fileRef = 70B81E2042F540B88C43B57D /* /Users/he/work/codes-repo/github/codes/c/crossword/src/angry.c */; settings = { COMPILER_FLAGS = ""; }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXBuildStyle section */
-              50024A5CDDE543C5B4D23A0E /*  */ = {
+              56B2DDE0A08D41258C187888 /*  */ = {
                      isa = PBXBuildStyle;
               };
-              4D9C2A8C1B8F4B349F81CD2D /* Debug */ = {
+              8694036E8F564BF0816A4AB4 /* Debug */ = {
                      isa = PBXBuildStyle;
                      buildSettings = {
                             COPY_PHASE_STRIP = NO;
                      };
                      name = Debug;
               };
-              E6A7446F9D5B4DEEBAB7BC58 /* Release */ = {
+              E391745D9C934160B094726C /* Release */ = {
                      isa = PBXBuildStyle;
                      buildSettings = {
                             COPY_PHASE_STRIP = NO;
                      };
                      name = Release;
               };
-              8874DDD3A5FA4465A3D59C6D /* MinSizeRel */ = {
+              E9772FEEFA684771A10B6DDA /* MinSizeRel */ = {
                      isa = PBXBuildStyle;
                      buildSettings = {
                             COPY_PHASE_STRIP = NO;
                      };
                      name = MinSizeRel;
               };
-              39C8097011214176A8F35BA2 /* RelWithDebInfo */ = {
+              A82D07F7999449B780E82EB0 /* RelWithDebInfo */ = {
                      isa = PBXBuildStyle;
                      buildSettings = {
                             COPY_PHASE_STRIP = NO;
@@ -73,115 +85,122 @@
 /* End PBXBuildStyle section */
 
 /* Begin PBXContainerItemProxy section */
-              08C71B7B0E16437FA4C3DF01 /* PBXContainerItemProxy */ = {
+              E8E9C7EC78144ED99559B9E0 /* PBXContainerItemProxy */ = {
                      isa = PBXContainerItemProxy;
-                     containerPortal = A120D17C337B44679B5AEA22 /* Project object */;
+                     containerPortal = 0367F2A8D1E3487C9CD6523A /* Project object */;
                      proxyType = 1;
-                     remoteGlobalIDString = 4C166DD4B94E4FFF8B8087D4;
+                     remoteGlobalIDString = 55D8477FA1AA448486A9BAF4;
+                     remoteInfo = ZERO_CHECK;
+              };
+              C759222B847447BDA32AA144 /* PBXContainerItemProxy */ = {
+                     isa = PBXContainerItemProxy;
+                     containerPortal = 0367F2A8D1E3487C9CD6523A /* Project object */;
+                     proxyType = 1;
+                     remoteGlobalIDString = 7C792E05F51A4543BBF6F1CB;
                      remoteInfo = crosswords;
               };
-              8AE136EB30704156B4001E0A /* PBXContainerItemProxy */ = {
+              53C58C64FDDD49F2855778E9 /* PBXContainerItemProxy */ = {
                      isa = PBXContainerItemProxy;
-                     containerPortal = A120D17C337B44679B5AEA22 /* Project object */;
+                     containerPortal = 0367F2A8D1E3487C9CD6523A /* Project object */;
                      proxyType = 1;
-                     remoteGlobalIDString = 9E0D0E0E6F18482CA56ACBB7;
+                     remoteGlobalIDString = 55D8477FA1AA448486A9BAF4;
                      remoteInfo = ZERO_CHECK;
               };
-              F88B490CDBE34F52AA0E633E /* PBXContainerItemProxy */ = {
+              353FE85BE0504A3FB9418D23 /* PBXContainerItemProxy */ = {
                      isa = PBXContainerItemProxy;
-                     containerPortal = A120D17C337B44679B5AEA22 /* Project object */;
+                     containerPortal = 0367F2A8D1E3487C9CD6523A /* Project object */;
                      proxyType = 1;
-                     remoteGlobalIDString = 9E0D0E0E6F18482CA56ACBB7;
-                     remoteInfo = ZERO_CHECK;
+                     remoteGlobalIDString = 5A180A3E8C6645C094AFEE47;
+                     remoteInfo = ALL_BUILD;
               };
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-556F7708BD45455485D3CE8E /* /Users/he/work/codes-repo/github/codes/c/crossword/CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = "sourcecode.text"; fileEncoding = 4; name = "CMakeLists.txt"; path = "CMakeLists.txt"; sourceTree = SOURCE_ROOT; };
-4C9D78C70FB3421BB6DEE3BD /* /Users/he/work/codes-repo/github/codes/c/crossword/src/angry.c */ = {isa = PBXFileReference; explicitFileType = "sourcecode.c.c"; fileEncoding = 4; name = "angry.c"; path = "src/angry.c"; sourceTree = SOURCE_ROOT; };
-CB76A5A23EB94DEE93DD930D /* crosswords */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; path = crosswords; refType = 0; sourceTree = BUILT_PRODUCTS_DIR; };
+E7B7C4A6FBCF43CD96B2CFB2 /* /Users/he/work/codes-repo/github/codes/c/crossword/CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = "sourcecode.text"; fileEncoding = 4; name = "CMakeLists.txt"; path = "CMakeLists.txt"; sourceTree = SOURCE_ROOT; };
+70B81E2042F540B88C43B57D /* /Users/he/work/codes-repo/github/codes/c/crossword/src/angry.c */ = {isa = PBXFileReference; explicitFileType = "sourcecode.c.c"; fileEncoding = 4; name = "angry.c"; path = "src/angry.c"; sourceTree = SOURCE_ROOT; };
+3B106E7A8E494C679F748D40 /* crosswords */ = {isa = PBXFileReference; explicitFileType = "archive.ar"; path = "libcrosswords.a"; refType = 0; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
-              9520B971C56545FBA8FCC230  = {
+              CE9BADA5914545B5A25EAF2E  = {
                      isa = PBXGroup;
                      children = (
-                            14AB1EEABD2C4F558BB42500 /* Sources */,
-                            806B3260FD154DEDBE0841AE /* Resources */,
-                            F6458B1BCF8A4DED9BA8DBC9 /* Products */,
+                            484FB8CA0E5E4C3AA225E04E /* Sources */,
+                            A1740C76BBE74C1E99E5FB68 /* Resources */,
+                            C42F79BCCEF044F9BB20FF03 /* Products */,
                      );
                      sourceTree = "<group>";
               };
-              14AB1EEABD2C4F558BB42500 /* Sources */ = {
+              484FB8CA0E5E4C3AA225E04E /* Sources */ = {
                      isa = PBXGroup;
                      children = (
-                            D7894B1175944DB894826883 /* ALL_BUILD */,
-                            02AA58FFE8BC438BA93247A7 /* ZERO_CHECK */,
-                            98B1D5B7346449C9B151930A /* crosswords */,
+                            668807B58B2A4279B8EEBF1A /* ALL_BUILD */,
+                            A99B3420734045E2AD0F3D6D /* ZERO_CHECK */,
+                            C2E0F8FB51C644A39AFBD950 /* crosswords */,
                      );
                      name = Sources;
                      sourceTree = "<group>";
               };
-              806B3260FD154DEDBE0841AE /* Resources */ = {
+              A1740C76BBE74C1E99E5FB68 /* Resources */ = {
                      isa = PBXGroup;
                      children = (
                      );
                      name = Resources;
                      sourceTree = "<group>";
               };
-              D7894B1175944DB894826883 /* ALL_BUILD */ = {
+              668807B58B2A4279B8EEBF1A /* ALL_BUILD */ = {
                      isa = PBXGroup;
                      children = (
-                            92E87357793941CF9B9ADD05 /* CMake Rules */,
-                            556F7708BD45455485D3CE8E /* /Users/he/work/codes-repo/github/codes/c/crossword/CMakeLists.txt */,
+                            7F108B444DD14DDDB157FD3A /* CMake Rules */,
+                            E7B7C4A6FBCF43CD96B2CFB2 /* /Users/he/work/codes-repo/github/codes/c/crossword/CMakeLists.txt */,
                      );
                      name = ALL_BUILD;
                      sourceTree = "<group>";
               };
-              92E87357793941CF9B9ADD05 /* CMake Rules */ = {
+              7F108B444DD14DDDB157FD3A /* CMake Rules */ = {
                      isa = PBXGroup;
                      children = (
                      );
                      name = "CMake Rules";
                      sourceTree = "<group>";
               };
-              02AA58FFE8BC438BA93247A7 /* ZERO_CHECK */ = {
+              A99B3420734045E2AD0F3D6D /* ZERO_CHECK */ = {
                      isa = PBXGroup;
                      children = (
-                            BB1D727FAD504BBEACCE9506 /* CMake Rules */,
-                            556F7708BD45455485D3CE8E /* /Users/he/work/codes-repo/github/codes/c/crossword/CMakeLists.txt */,
+                            95AB02D2FA08476CB51FAF86 /* CMake Rules */,
+                            E7B7C4A6FBCF43CD96B2CFB2 /* /Users/he/work/codes-repo/github/codes/c/crossword/CMakeLists.txt */,
                      );
                      name = ZERO_CHECK;
                      sourceTree = "<group>";
               };
-              BB1D727FAD504BBEACCE9506 /* CMake Rules */ = {
+              95AB02D2FA08476CB51FAF86 /* CMake Rules */ = {
                      isa = PBXGroup;
                      children = (
                      );
                      name = "CMake Rules";
                      sourceTree = "<group>";
               };
-              98B1D5B7346449C9B151930A /* crosswords */ = {
+              C2E0F8FB51C644A39AFBD950 /* crosswords */ = {
                      isa = PBXGroup;
                      children = (
-                            B1FF0BB396194418BA481BC3 /* Source Files */,
-                            556F7708BD45455485D3CE8E /* /Users/he/work/codes-repo/github/codes/c/crossword/CMakeLists.txt */,
+                            0CDF91C11AA74F1E8E5F4B38 /* Source Files */,
+                            E7B7C4A6FBCF43CD96B2CFB2 /* /Users/he/work/codes-repo/github/codes/c/crossword/CMakeLists.txt */,
                      );
                      name = crosswords;
                      sourceTree = "<group>";
               };
-              B1FF0BB396194418BA481BC3 /* Source Files */ = {
+              0CDF91C11AA74F1E8E5F4B38 /* Source Files */ = {
                      isa = PBXGroup;
                      children = (
-                            4C9D78C70FB3421BB6DEE3BD /* /Users/he/work/codes-repo/github/codes/c/crossword/src/angry.c */,
+                            70B81E2042F540B88C43B57D /* /Users/he/work/codes-repo/github/codes/c/crossword/src/angry.c */,
                      );
                      name = "Source Files";
                      sourceTree = "<group>";
               };
-              F6458B1BCF8A4DED9BA8DBC9 /* Products */ = {
+              C42F79BCCEF044F9BB20FF03 /* Products */ = {
                      isa = PBXGroup;
                      children = (
-                            CB76A5A23EB94DEE93DD930D /* crosswords */,
+                            3B106E7A8E494C679F748D40 /* crosswords */,
                      );
                      name = Products;
                      sourceTree = "<group>";
@@ -189,54 +208,55 @@ CB76A5A23EB94DEE93DD930D /* crosswords */ = {isa = PBXFileReference; explicitFil
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-              4C166DD4B94E4FFF8B8087D4 /* crosswords */ = {
+              7C792E05F51A4543BBF6F1CB /* crosswords */ = {
                      isa = PBXNativeTarget;
-                     buildConfigurationList = D6E908B1EBAF49D2AD9522CE /* Build configuration list for PBXNativeTarget "crosswords" */;
+                     buildConfigurationList = FBB7C13379F24C78BC576792 /* Build configuration list for PBXNativeTarget "crosswords" */;
                      buildPhases = (
-                            BA556EA08B0546D08C06536F /* Sources */,
+                            B2C6A819097F4B3AB97A034B /* Sources */,
                      );
                      buildRules = (
                      );
                      dependencies = (
-                            910ACE9EDA9F487490401951 /* PBXTargetDependency */,
+                            0ABC9FE0265F4E52937B4280 /* PBXTargetDependency */,
                      );
                      name = crosswords;
                      productName = crosswords;
-                     productReference = CB76A5A23EB94DEE93DD930D /* crosswords */;
-                     productType = "com.apple.product-type.tool";
+                     productReference = 3B106E7A8E494C679F748D40 /* crosswords */;
+                     productType = "com.apple.product-type.library.static";
               };
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-              A120D17C337B44679B5AEA22 /* Project object */ = {
+              0367F2A8D1E3487C9CD6523A /* Project object */ = {
                      isa = PBXProject;
                      attributes = {
                             BuildIndependentTargetsInParallel = YES;
                      };
-                     buildConfigurationList = 8BE72C0A695D4741AEF8D979 /* Build configuration list for PBXProject  "crosswords" */;
+                     buildConfigurationList = 3F63B247CC88452CAC7DC9D6 /* Build configuration list for PBXProject  "crosswords" */;
                      buildSettings = {
                      };
                      buildStyles = (
-                            4D9C2A8C1B8F4B349F81CD2D /* Debug */,
-                            E6A7446F9D5B4DEEBAB7BC58 /* Release */,
-                            8874DDD3A5FA4465A3D59C6D /* MinSizeRel */,
-                            39C8097011214176A8F35BA2 /* RelWithDebInfo */,
+                            8694036E8F564BF0816A4AB4 /* Debug */,
+                            E391745D9C934160B094726C /* Release */,
+                            E9772FEEFA684771A10B6DDA /* MinSizeRel */,
+                            A82D07F7999449B780E82EB0 /* RelWithDebInfo */,
                      );
                      compatibilityVersion = "Xcode 3.2";
                      hasScannedForEncodings = 0;
-                     mainGroup = 9520B971C56545FBA8FCC230;
+                     mainGroup = CE9BADA5914545B5A25EAF2E;
                      projectDirPath = "../..";
                      projectRoot = "";
                      targets = (
-                            523A8CD57BC64E78ABF98569 /* ALL_BUILD */,
-                            9E0D0E0E6F18482CA56ACBB7 /* ZERO_CHECK */,
-                            4C166DD4B94E4FFF8B8087D4 /* crosswords */,
+                            5A180A3E8C6645C094AFEE47 /* ALL_BUILD */,
+                            55D8477FA1AA448486A9BAF4 /* ZERO_CHECK */,
+                            7C792E05F51A4543BBF6F1CB /* crosswords */,
+                            9B6E54B53C3D41E69C56A6BD /* install */,
                      );
               };
 /* End PBXProject section */
 
 /* Begin PBXShellScriptBuildPhase section */
-              51C648E852DA4DB5995378B5 /*  */ = {
+              D30B90EDEC4C4E12A888AD17 /*  */ = {
                      isa = PBXShellScriptBuildPhase;
                      buildActionMask = 2147483647;
                      files = (
@@ -251,7 +271,7 @@ CB76A5A23EB94DEE93DD930D /* crosswords */ = {isa = PBXFileReference; explicitFil
 exit 0";
                      showEnvVarsInLog = 0;
               };
-              7D05D495243E4B2993CB3D20 /* CMake Rules */ = {
+              9EB6434F9924402BA4BD51FD /* CMake Rules */ = {
                      isa = PBXShellScriptBuildPhase;
                      buildActionMask = 2147483647;
                      files = (
@@ -262,7 +282,7 @@ exit 0";
                      shellScript = "make -C /Users/he/work/codes-repo/github/codes/c/crossword/xcode/ios -f /Users/he/work/codes-repo/github/codes/c/crossword/xcode/ios/CMakeScripts/ALL_BUILD_cmakeRulesBuildPhase.make$CONFIGURATION all";
                      showEnvVarsInLog = 0;
               };
-              330B81B94C1A4E43A47B5F89 /*  */ = {
+              3DE7122D88C94EBF9F5EE100 /*  */ = {
                      isa = PBXShellScriptBuildPhase;
                      buildActionMask = 2147483647;
                      files = (
@@ -277,7 +297,7 @@ exit 0";
 exit 0";
                      showEnvVarsInLog = 0;
               };
-              8BADBDA92411403DB14CACA6 /* CMake Rules */ = {
+              14284421528D4970ABC1D889 /* CMake Rules */ = {
                      isa = PBXShellScriptBuildPhase;
                      buildActionMask = 2147483647;
                      files = (
@@ -288,39 +308,70 @@ exit 0";
                      shellScript = "make -C /Users/he/work/codes-repo/github/codes/c/crossword/xcode/ios -f /Users/he/work/codes-repo/github/codes/c/crossword/xcode/ios/CMakeScripts/ZERO_CHECK_cmakeRulesBuildPhase.make$CONFIGURATION all";
                      showEnvVarsInLog = 0;
               };
+              104C83C9636944EE8184B4A4 /*  */ = {
+                     isa = PBXShellScriptBuildPhase;
+                     buildActionMask = 2147483647;
+                     files = (
+                     );
+                     inputPaths = (
+                     );
+                     outputPaths = (
+                     );
+                     runOnlyForDeploymentPostprocessing = 0;
+                     shellPath = /bin/sh;
+                     shellScript = "# shell script goes here
+exit 0";
+                     showEnvVarsInLog = 0;
+              };
+              CF4DC9B10EE646D693E248E4 /* CMake PostBuild Rules */ = {
+                     isa = PBXShellScriptBuildPhase;
+                     buildActionMask = 2147483647;
+                     files = (
+                     );
+                     name = "CMake PostBuild Rules";
+                     runOnlyForDeploymentPostprocessing = 0;
+                     shellPath = /bin/sh;
+                     shellScript = "make -C /Users/he/work/codes-repo/github/codes/c/crossword/xcode/ios -f /Users/he/work/codes-repo/github/codes/c/crossword/xcode/ios/CMakeScripts/install_postBuildPhase.make$CONFIGURATION all";
+                     showEnvVarsInLog = 0;
+              };
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-              BA556EA08B0546D08C06536F /* Sources */ = {
+              B2C6A819097F4B3AB97A034B /* Sources */ = {
                      isa = PBXSourcesBuildPhase;
                      buildActionMask = 2147483647;
                      files = (
-                            5C6FCB09E30841CCACBAA961 /* /Users/he/work/codes-repo/github/codes/c/crossword/src/angry.c */,
+                            8C609613F4D84468BEE74868 /* /Users/he/work/codes-repo/github/codes/c/crossword/src/angry.c */,
                      );
                      runOnlyForDeploymentPostprocessing = 0;
               };
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-              12B4AC8DC0A545F48D7A004E /* PBXTargetDependency */ = {
+              A3633485410B487B8C080DD5 /* PBXTargetDependency */ = {
                      isa = PBXTargetDependency;
-                     target = 4C166DD4B94E4FFF8B8087D4 /* crosswords */;
-                     targetProxy = 08C71B7B0E16437FA4C3DF01 /* PBXContainerItemProxy */;
+                     target = 55D8477FA1AA448486A9BAF4 /* ZERO_CHECK */;
+                     targetProxy = E8E9C7EC78144ED99559B9E0 /* PBXContainerItemProxy */;
               };
-              8D7FB79DC3144F8981517327 /* PBXTargetDependency */ = {
+              7D9F1561C2AD4603B52F7F7D /* PBXTargetDependency */ = {
                      isa = PBXTargetDependency;
-                     target = 9E0D0E0E6F18482CA56ACBB7 /* ZERO_CHECK */;
-                     targetProxy = 8AE136EB30704156B4001E0A /* PBXContainerItemProxy */;
+                     target = 7C792E05F51A4543BBF6F1CB /* crosswords */;
+                     targetProxy = C759222B847447BDA32AA144 /* PBXContainerItemProxy */;
               };
-              910ACE9EDA9F487490401951 /* PBXTargetDependency */ = {
+              0ABC9FE0265F4E52937B4280 /* PBXTargetDependency */ = {
                      isa = PBXTargetDependency;
-                     target = 9E0D0E0E6F18482CA56ACBB7 /* ZERO_CHECK */;
-                     targetProxy = F88B490CDBE34F52AA0E633E /* PBXContainerItemProxy */;
+                     target = 55D8477FA1AA448486A9BAF4 /* ZERO_CHECK */;
+                     targetProxy = 53C58C64FDDD49F2855778E9 /* PBXContainerItemProxy */;
+              };
+              2A042C7F123A47B2BF2C178E /* PBXTargetDependency */ = {
+                     isa = PBXTargetDependency;
+                     target = 5A180A3E8C6645C094AFEE47 /* ALL_BUILD */;
+                     targetProxy = 353FE85BE0504A3FB9418D23 /* PBXContainerItemProxy */;
               };
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-              703B42F910274E58985E2A88 /* Debug */ = {
+              6B1C9D40FDB44D839D58BC82 /* Debug */ = {
                      isa = XCBuildConfiguration;
                      buildSettings = {
                             ARCHS = armv7;
@@ -329,7 +380,7 @@ exit 0";
                      };
                      name = Debug;
               };
-              902D819A851B4A63A4800CC4 /* Release */ = {
+              B08CDFAD53274D0296F5F9EE /* Release */ = {
                      isa = XCBuildConfiguration;
                      buildSettings = {
                             ARCHS = armv7;
@@ -338,7 +389,7 @@ exit 0";
                      };
                      name = Release;
               };
-              22554BC06F35464E9C5EB535 /* MinSizeRel */ = {
+              ADE297B3FDE24E0DA29C149A /* MinSizeRel */ = {
                      isa = XCBuildConfiguration;
                      buildSettings = {
                             ARCHS = armv7;
@@ -347,7 +398,7 @@ exit 0";
                      };
                      name = MinSizeRel;
               };
-              E070DC5A772A4CAEBB7F918B /* RelWithDebInfo */ = {
+              4B2CAA226BEC4BA1AA821B44 /* RelWithDebInfo */ = {
                      isa = XCBuildConfiguration;
                      buildSettings = {
                             ARCHS = armv7;
@@ -356,7 +407,7 @@ exit 0";
                      };
                      name = RelWithDebInfo;
               };
-              A8BBA3527C784472803DFF66 /* Debug */ = {
+              774196D0CDA84D8682FE6F0A /* Debug */ = {
                      isa = XCBuildConfiguration;
                      buildSettings = {
                             ARCHS = armv7;
@@ -379,7 +430,7 @@ exit 0";
                      };
                      name = Debug;
               };
-              1F98F916F3EB4FC88BEEC32E /* Release */ = {
+              99A34D2B6A3345FFB2A73FB0 /* Release */ = {
                      isa = XCBuildConfiguration;
                      buildSettings = {
                             ARCHS = armv7;
@@ -402,7 +453,7 @@ exit 0";
                      };
                      name = Release;
               };
-              79E2B57D600E4067A099766E /* MinSizeRel */ = {
+              976AB2AB6E7A457FB73E0CA4 /* MinSizeRel */ = {
                      isa = XCBuildConfiguration;
                      buildSettings = {
                             ARCHS = armv7;
@@ -425,7 +476,7 @@ exit 0";
                      };
                      name = MinSizeRel;
               };
-              559324B2BB0447C3AEA1DF10 /* RelWithDebInfo */ = {
+              CC33958DC5FD4ABAB8AC37F7 /* RelWithDebInfo */ = {
                      isa = XCBuildConfiguration;
                      buildSettings = {
                             ARCHS = armv7;
@@ -448,7 +499,7 @@ exit 0";
                      };
                      name = RelWithDebInfo;
               };
-              A74535B7CC804E1AA35C53BF /* Debug */ = {
+              3B8495886C0345DE92F63AED /* Debug */ = {
                      isa = XCBuildConfiguration;
                      buildSettings = {
                             ARCHS = armv7;
@@ -471,7 +522,7 @@ exit 0";
                      };
                      name = Debug;
               };
-              834638CEAC494528B3752A01 /* Release */ = {
+              0BDBA9F77FEC4432BC3E87A7 /* Release */ = {
                      isa = XCBuildConfiguration;
                      buildSettings = {
                             ARCHS = armv7;
@@ -494,7 +545,7 @@ exit 0";
                      };
                      name = Release;
               };
-              9911C914F4344FD98FE0FD7E /* MinSizeRel */ = {
+              9BEA55D0A8064690B935A1C6 /* MinSizeRel */ = {
                      isa = XCBuildConfiguration;
                      buildSettings = {
                             ARCHS = armv7;
@@ -517,7 +568,7 @@ exit 0";
                      };
                      name = MinSizeRel;
               };
-              0716376CA222436689124DCB /* RelWithDebInfo */ = {
+              D9D6A9C2DC84438D874BE633 /* RelWithDebInfo */ = {
                      isa = XCBuildConfiguration;
                      buildSettings = {
                             ARCHS = armv7;
@@ -540,23 +591,23 @@ exit 0";
                      };
                      name = RelWithDebInfo;
               };
-              98946771D1A643FEAEBA415F /* Debug */ = {
+              934A5DB086F94AE2A39AE369 /* Debug */ = {
                      isa = XCBuildConfiguration;
                      buildSettings = {
                             ARCHS = armv7;
                             COMBINE_HIDPI_IMAGES = YES;
-                            EXECUTABLE_PREFIX = "";
-                            EXECUTABLE_SUFFIX = "";
+                            EXECUTABLE_PREFIX = lib;
+                            EXECUTABLE_SUFFIX = ".a";
                             GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
                             GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
                             GCC_OPTIMIZATION_LEVEL = 0;
                             GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'", );
                             GCC_SYMBOLS_PRIVATE_EXTERN = NO;
                             INSTALL_PATH = "";
-                            LIBRARY_SEARCH_PATHS = "";
+                            LIBRARY_STYLE = STATIC;
                             ONLY_ACTIVE_ARCH = NO;
                             OTHER_CFLAGS = "    ";
-                            OTHER_LDFLAGS = "  -Wl,-headerpad_max_install_names  ";
+                            OTHER_LDFLAGS = " ";
                             OTHER_REZFLAGS = "";
                             PRODUCT_NAME = crosswords;
                             SECTORDER_FLAGS = "";
@@ -566,23 +617,23 @@ exit 0";
                      };
                      name = Debug;
               };
-              33D7EB7B926A40D4975B5363 /* Release */ = {
+              349A4F5983A646ADA1001CC2 /* Release */ = {
                      isa = XCBuildConfiguration;
                      buildSettings = {
                             ARCHS = armv7;
                             COMBINE_HIDPI_IMAGES = YES;
-                            EXECUTABLE_PREFIX = "";
-                            EXECUTABLE_SUFFIX = "";
+                            EXECUTABLE_PREFIX = lib;
+                            EXECUTABLE_SUFFIX = ".a";
                             GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
                             GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
                             GCC_OPTIMIZATION_LEVEL = 3;
                             GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'", );
                             GCC_SYMBOLS_PRIVATE_EXTERN = NO;
                             INSTALL_PATH = "";
-                            LIBRARY_SEARCH_PATHS = "";
+                            LIBRARY_STYLE = STATIC;
                             ONLY_ACTIVE_ARCH = NO;
                             OTHER_CFLAGS = "    -DNDEBUG  ";
-                            OTHER_LDFLAGS = "  -Wl,-headerpad_max_install_names  ";
+                            OTHER_LDFLAGS = " ";
                             OTHER_REZFLAGS = "";
                             PRODUCT_NAME = crosswords;
                             SECTORDER_FLAGS = "";
@@ -592,23 +643,23 @@ exit 0";
                      };
                      name = Release;
               };
-              87BB01090E5A4F158A814F20 /* MinSizeRel */ = {
+              EFAFF339F5CF47CFB93FA7E1 /* MinSizeRel */ = {
                      isa = XCBuildConfiguration;
                      buildSettings = {
                             ARCHS = armv7;
                             COMBINE_HIDPI_IMAGES = YES;
-                            EXECUTABLE_PREFIX = "";
-                            EXECUTABLE_SUFFIX = "";
+                            EXECUTABLE_PREFIX = lib;
+                            EXECUTABLE_SUFFIX = ".a";
                             GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
                             GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
                             GCC_OPTIMIZATION_LEVEL = s;
                             GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'", );
                             GCC_SYMBOLS_PRIVATE_EXTERN = NO;
                             INSTALL_PATH = "";
-                            LIBRARY_SEARCH_PATHS = "";
+                            LIBRARY_STYLE = STATIC;
                             ONLY_ACTIVE_ARCH = NO;
                             OTHER_CFLAGS = "    -DNDEBUG  ";
-                            OTHER_LDFLAGS = "  -Wl,-headerpad_max_install_names  ";
+                            OTHER_LDFLAGS = " ";
                             OTHER_REZFLAGS = "";
                             PRODUCT_NAME = crosswords;
                             SECTORDER_FLAGS = "";
@@ -618,25 +669,117 @@ exit 0";
                      };
                      name = MinSizeRel;
               };
-              4383AC94E91A4A55BA473044 /* RelWithDebInfo */ = {
+              F1E1AC8A3D1F429E9498CC57 /* RelWithDebInfo */ = {
                      isa = XCBuildConfiguration;
                      buildSettings = {
                             ARCHS = armv7;
                             COMBINE_HIDPI_IMAGES = YES;
-                            EXECUTABLE_PREFIX = "";
-                            EXECUTABLE_SUFFIX = "";
+                            EXECUTABLE_PREFIX = lib;
+                            EXECUTABLE_SUFFIX = ".a";
                             GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
                             GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
                             GCC_OPTIMIZATION_LEVEL = 2;
                             GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'", );
                             GCC_SYMBOLS_PRIVATE_EXTERN = NO;
                             INSTALL_PATH = "";
-                            LIBRARY_SEARCH_PATHS = "";
+                            LIBRARY_STYLE = STATIC;
                             ONLY_ACTIVE_ARCH = NO;
                             OTHER_CFLAGS = "       -DNDEBUG  ";
-                            OTHER_LDFLAGS = "  -Wl,-headerpad_max_install_names  ";
+                            OTHER_LDFLAGS = " ";
                             OTHER_REZFLAGS = "";
                             PRODUCT_NAME = crosswords;
+                            SECTORDER_FLAGS = "";
+                            SYMROOT = "/Users/he/work/codes-repo/github/codes/c/crossword/xcode/ios";
+                            USE_HEADERMAP = NO;
+                            WARNING_CFLAGS = ("-Wmost", "-Wno-four-char-constants", "-Wno-unknown-pragmas", );
+                     };
+                     name = RelWithDebInfo;
+              };
+              D0036B0010394B9E811D2027 /* Debug */ = {
+                     isa = XCBuildConfiguration;
+                     buildSettings = {
+                            ARCHS = armv7;
+                            COMBINE_HIDPI_IMAGES = YES;
+                            GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+                            GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+                            GCC_OPTIMIZATION_LEVEL = 0;
+                            GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'", );
+                            GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+                            INSTALL_PATH = "";
+                            ONLY_ACTIVE_ARCH = NO;
+                            OTHER_CFLAGS = "  ";
+                            OTHER_LDFLAGS = " ";
+                            OTHER_REZFLAGS = "";
+                            PRODUCT_NAME = install;
+                            SECTORDER_FLAGS = "";
+                            SYMROOT = "/Users/he/work/codes-repo/github/codes/c/crossword/xcode/ios";
+                            USE_HEADERMAP = NO;
+                            WARNING_CFLAGS = ("-Wmost", "-Wno-four-char-constants", "-Wno-unknown-pragmas", );
+                     };
+                     name = Debug;
+              };
+              6022009FABDE4970B4922BB9 /* Release */ = {
+                     isa = XCBuildConfiguration;
+                     buildSettings = {
+                            ARCHS = armv7;
+                            COMBINE_HIDPI_IMAGES = YES;
+                            GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+                            GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+                            GCC_OPTIMIZATION_LEVEL = 0;
+                            GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'", );
+                            GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+                            INSTALL_PATH = "";
+                            ONLY_ACTIVE_ARCH = NO;
+                            OTHER_CFLAGS = "  ";
+                            OTHER_LDFLAGS = " ";
+                            OTHER_REZFLAGS = "";
+                            PRODUCT_NAME = install;
+                            SECTORDER_FLAGS = "";
+                            SYMROOT = "/Users/he/work/codes-repo/github/codes/c/crossword/xcode/ios";
+                            USE_HEADERMAP = NO;
+                            WARNING_CFLAGS = ("-Wmost", "-Wno-four-char-constants", "-Wno-unknown-pragmas", );
+                     };
+                     name = Release;
+              };
+              FC55E21A443E4077836C63C0 /* MinSizeRel */ = {
+                     isa = XCBuildConfiguration;
+                     buildSettings = {
+                            ARCHS = armv7;
+                            COMBINE_HIDPI_IMAGES = YES;
+                            GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+                            GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+                            GCC_OPTIMIZATION_LEVEL = 0;
+                            GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'", );
+                            GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+                            INSTALL_PATH = "";
+                            ONLY_ACTIVE_ARCH = NO;
+                            OTHER_CFLAGS = "  ";
+                            OTHER_LDFLAGS = " ";
+                            OTHER_REZFLAGS = "";
+                            PRODUCT_NAME = install;
+                            SECTORDER_FLAGS = "";
+                            SYMROOT = "/Users/he/work/codes-repo/github/codes/c/crossword/xcode/ios";
+                            USE_HEADERMAP = NO;
+                            WARNING_CFLAGS = ("-Wmost", "-Wno-four-char-constants", "-Wno-unknown-pragmas", );
+                     };
+                     name = MinSizeRel;
+              };
+              8AB9DD8C7A04489DB11741FE /* RelWithDebInfo */ = {
+                     isa = XCBuildConfiguration;
+                     buildSettings = {
+                            ARCHS = armv7;
+                            COMBINE_HIDPI_IMAGES = YES;
+                            GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+                            GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+                            GCC_OPTIMIZATION_LEVEL = 0;
+                            GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'", );
+                            GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+                            INSTALL_PATH = "";
+                            ONLY_ACTIVE_ARCH = NO;
+                            OTHER_CFLAGS = "  ";
+                            OTHER_LDFLAGS = " ";
+                            OTHER_REZFLAGS = "";
+                            PRODUCT_NAME = install;
                             SECTORDER_FLAGS = "";
                             SYMROOT = "/Users/he/work/codes-repo/github/codes/c/crossword/xcode/ios";
                             USE_HEADERMAP = NO;
@@ -647,51 +790,62 @@ exit 0";
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-              8BE72C0A695D4741AEF8D979 /* Build configuration list for PBXProject  "crosswords" */ = {
+              3F63B247CC88452CAC7DC9D6 /* Build configuration list for PBXProject  "crosswords" */ = {
                      isa = XCConfigurationList;
                      buildConfigurations = (
-                            703B42F910274E58985E2A88 /* Debug */,
-                            902D819A851B4A63A4800CC4 /* Release */,
-                            22554BC06F35464E9C5EB535 /* MinSizeRel */,
-                            E070DC5A772A4CAEBB7F918B /* RelWithDebInfo */,
+                            6B1C9D40FDB44D839D58BC82 /* Debug */,
+                            B08CDFAD53274D0296F5F9EE /* Release */,
+                            ADE297B3FDE24E0DA29C149A /* MinSizeRel */,
+                            4B2CAA226BEC4BA1AA821B44 /* RelWithDebInfo */,
                      );
                      defaultConfigurationIsVisible = 0;
                      defaultConfigurationName = Debug;
               };
-              36240649C44641C689B46D20 /* Build configuration list for PBXAggregateTarget "ALL_BUILD" */ = {
+              A6300753467F44308FA71614 /* Build configuration list for PBXAggregateTarget "ALL_BUILD" */ = {
                      isa = XCConfigurationList;
                      buildConfigurations = (
-                            A8BBA3527C784472803DFF66 /* Debug */,
-                            1F98F916F3EB4FC88BEEC32E /* Release */,
-                            79E2B57D600E4067A099766E /* MinSizeRel */,
-                            559324B2BB0447C3AEA1DF10 /* RelWithDebInfo */,
+                            774196D0CDA84D8682FE6F0A /* Debug */,
+                            99A34D2B6A3345FFB2A73FB0 /* Release */,
+                            976AB2AB6E7A457FB73E0CA4 /* MinSizeRel */,
+                            CC33958DC5FD4ABAB8AC37F7 /* RelWithDebInfo */,
                      );
                      defaultConfigurationIsVisible = 0;
                      defaultConfigurationName = Debug;
               };
-              FDCA4D080E1645A4AF2E3BBB /* Build configuration list for PBXAggregateTarget "ZERO_CHECK" */ = {
+              E5E1239825994DC48F4901D2 /* Build configuration list for PBXAggregateTarget "ZERO_CHECK" */ = {
                      isa = XCConfigurationList;
                      buildConfigurations = (
-                            A74535B7CC804E1AA35C53BF /* Debug */,
-                            834638CEAC494528B3752A01 /* Release */,
-                            9911C914F4344FD98FE0FD7E /* MinSizeRel */,
-                            0716376CA222436689124DCB /* RelWithDebInfo */,
+                            3B8495886C0345DE92F63AED /* Debug */,
+                            0BDBA9F77FEC4432BC3E87A7 /* Release */,
+                            9BEA55D0A8064690B935A1C6 /* MinSizeRel */,
+                            D9D6A9C2DC84438D874BE633 /* RelWithDebInfo */,
                      );
                      defaultConfigurationIsVisible = 0;
                      defaultConfigurationName = Debug;
               };
-              D6E908B1EBAF49D2AD9522CE /* Build configuration list for PBXNativeTarget "crosswords" */ = {
+              FBB7C13379F24C78BC576792 /* Build configuration list for PBXNativeTarget "crosswords" */ = {
                      isa = XCConfigurationList;
                      buildConfigurations = (
-                            98946771D1A643FEAEBA415F /* Debug */,
-                            33D7EB7B926A40D4975B5363 /* Release */,
-                            87BB01090E5A4F158A814F20 /* MinSizeRel */,
-                            4383AC94E91A4A55BA473044 /* RelWithDebInfo */,
+                            934A5DB086F94AE2A39AE369 /* Debug */,
+                            349A4F5983A646ADA1001CC2 /* Release */,
+                            EFAFF339F5CF47CFB93FA7E1 /* MinSizeRel */,
+                            F1E1AC8A3D1F429E9498CC57 /* RelWithDebInfo */,
+                     );
+                     defaultConfigurationIsVisible = 0;
+                     defaultConfigurationName = Debug;
+              };
+              862AC325181F4691AE68ACC8 /* Build configuration list for PBXAggregateTarget "install" */ = {
+                     isa = XCConfigurationList;
+                     buildConfigurations = (
+                            D0036B0010394B9E811D2027 /* Debug */,
+                            6022009FABDE4970B4922BB9 /* Release */,
+                            FC55E21A443E4077836C63C0 /* MinSizeRel */,
+                            8AB9DD8C7A04489DB11741FE /* RelWithDebInfo */,
                      );
                      defaultConfigurationIsVisible = 0;
                      defaultConfigurationName = Debug;
               };
 /* End XCConfigurationList section */
        };
-       rootObject = A120D17C337B44679B5AEA22;
+       rootObject = 0367F2A8D1E3487C9CD6523A;
 }

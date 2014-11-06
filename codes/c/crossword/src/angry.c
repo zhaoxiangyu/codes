@@ -1,8 +1,4 @@
-/* written by Andrew Tridgell (May 1992) */
-
-
 #include <stdio.h>
-#include <malloc.h>
 #include <stdarg.h>
 #include <stdlib.h>
 #include <time.h>
@@ -33,7 +29,7 @@ char *my_fgets();
 #define ctrlbrk(fn)
 #define BLACKSQUARE ' '
 #else
-#define BLACKSQUARE 'Û'
+#define BLACKSQUARE '?'
 #endif
 
 /*******************************************************************
@@ -558,6 +554,7 @@ int cbreak(void)
 return(0);
 }
 
+/*
 int main(int argc,char *argv[])
 {
 char **bestgrid;
@@ -583,6 +580,13 @@ if (!grid || !bestgrid)
   }
 
 wordlist = load_word_list(wordfile,&num_words);
+bestCrossword(wordlist,bestgrid);
+}
+*/
+
+void bestCrossword(char **wordlist,char **bestgrid)
+{
+int best=-1;
 while (True)
   {
   int n;
@@ -593,14 +597,7 @@ while (True)
 	best = n;
 	copy_to(bestgrid);
 	printf("\nplaced %d words\n",best);
-	{
-	FILE *f = fopen("best.doc","w");
 	DisplayCrossword(stdout);
-	DisplayCrossword(f);
-	SavePuzzle("best.pzl");
-	SaveCross("best.cwd");
-	fclose(f);
-	}
 	}
     fflush(stdout);
   }
