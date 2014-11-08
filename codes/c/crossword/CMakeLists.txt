@@ -4,4 +4,5 @@ project(crosswords)
 set(SRCS src/angry.c)
 add_library(crosswords STATIC ${SRCS})
 
+find_package(Threads REQUIRED)
 install(TARGETS crosswords DESTINATION .)

@@ -151,6 +151,10 @@ if (NOT DEFINED CMAKE_IOS_SDK_ROOT)
 endif (NOT DEFINED CMAKE_IOS_SDK_ROOT)
 set (CMAKE_IOS_SDK_ROOT ${CMAKE_IOS_SDK_ROOT} CACHE PATH "Location of the selected iOS SDK")
 
+set(CMAKE_MACOSX_BUNDLE YES)
+set(CMAKE_XCODE_ATTRIBUTE_CODE_SIGN_IDENTITY "iPhone Developer")
+set(MACOSX_BUNDLE_GUI_IDENTIFIER "sharpx")
+
 # Set the sysroot default to the most recent SDK
 set (CMAKE_OSX_SYSROOT ${CMAKE_IOS_SDK_ROOT} CACHE PATH "Sysroot used for iOS support")
 

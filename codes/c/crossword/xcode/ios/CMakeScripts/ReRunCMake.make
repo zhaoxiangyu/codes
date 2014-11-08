@@ -12,6 +12,7 @@
 /opt/local/share/cmake-3.0/Modules/CMakeCXXCompilerABI.cpp\
 /opt/local/share/cmake-3.0/Modules/CMakeCXXInformation.cmake\
 /opt/local/share/cmake-3.0/Modules/CMakeCommonLanguageInclude.cmake\
+/opt/local/share/cmake-3.0/Modules/CMakeConfigurableFile.in\
 /opt/local/share/cmake-3.0/Modules/CMakeDetermineCCompiler.cmake\
 /opt/local/share/cmake-3.0/Modules/CMakeDetermineCXXCompiler.cmake\
 /opt/local/share/cmake-3.0/Modules/CMakeDetermineCompiler.cmake\
@@ -22,12 +23,16 @@
 /opt/local/share/cmake-3.0/Modules/CMakeFindXCode.cmake\
 /opt/local/share/cmake-3.0/Modules/CMakeForceCompiler.cmake\
 /opt/local/share/cmake-3.0/Modules/CMakeGenericSystem.cmake\
+/opt/local/share/cmake-3.0/Modules/CMakeParseArguments.cmake\
 /opt/local/share/cmake-3.0/Modules/CMakeParseImplicitLinkInfo.cmake\
 /opt/local/share/cmake-3.0/Modules/CMakeSystem.cmake.in\
 /opt/local/share/cmake-3.0/Modules/CMakeSystemSpecificInformation.cmake\
 /opt/local/share/cmake-3.0/Modules/CMakeTestCCompiler.cmake\
 /opt/local/share/cmake-3.0/Modules/CMakeTestCXXCompiler.cmake\
 /opt/local/share/cmake-3.0/Modules/CMakeTestCompilerCommon.cmake\
+/opt/local/share/cmake-3.0/Modules/CheckIncludeFiles.cmake\
+/opt/local/share/cmake-3.0/Modules/CheckLibraryExists.cmake\
+/opt/local/share/cmake-3.0/Modules/CheckSymbolExists.cmake\
 /opt/local/share/cmake-3.0/Modules/Compiler/AppleClang-C.cmake\
 /opt/local/share/cmake-3.0/Modules/Compiler/AppleClang-CXX.cmake\
 /opt/local/share/cmake-3.0/Modules/Compiler/Clang-C.cmake\
@@ -35,6 +40,9 @@
 /opt/local/share/cmake-3.0/Modules/Compiler/Clang.cmake\
 /opt/local/share/cmake-3.0/Modules/Compiler/GNU.cmake\
 /opt/local/share/cmake-3.0/Modules/CompilerId/Xcode-3.pbxproj.in\
+/opt/local/share/cmake-3.0/Modules/FindPackageHandleStandardArgs.cmake\
+/opt/local/share/cmake-3.0/Modules/FindPackageMessage.cmake\
+/opt/local/share/cmake-3.0/Modules/FindThreads.cmake\
 /opt/local/share/cmake-3.0/Modules/Platform/Darwin-AppleClang-C.cmake\
 /opt/local/share/cmake-3.0/Modules/Platform/Darwin-AppleClang-CXX.cmake\
 /opt/local/share/cmake-3.0/Modules/Platform/Darwin-CXX.cmake\

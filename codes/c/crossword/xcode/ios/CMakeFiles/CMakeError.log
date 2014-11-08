@@ -1,36 +1,100 @@
 Detecting C compiler ABI info failed to compile with the following output:
 Change Dir: /Users/he/work/codes-repo/github/codes/c/crossword/xcode/ios/CMakeFiles/CMakeTmp
 
-Run Build Command:"/opt/local/bin/cmakexbuild" "-project" "CMAKE_TRY_COMPILE.xcodeproj" "build" "-target" "cmTryCompileExec1368013751" "-configuration" "Debug"
-=== BUILD TARGET cmTryCompileExec1368013751 OF PROJECT CMAKE_TRY_COMPILE WITH CONFIGURATION Debug ===
+Run Build Command:"/opt/local/bin/cmakexbuild" "-project" "CMAKE_TRY_COMPILE.xcodeproj" "build" "-target" "cmTryCompileExec3106776068" "-configuration" "Debug"
+=== BUILD TARGET cmTryCompileExec3106776068 OF PROJECT CMAKE_TRY_COMPILE WITH CONFIGURATION Debug ===
 
 Check dependencies
-target specifies product type 'com.apple.product-type.tool', but there's no such product type for the 'iphoneos' platform
 
-** BUILD FAILED **
+Create product structure
+/bin/mkdir -p /Users/he/work/codes-repo/github/codes/c/crossword/xcode/ios/CMakeFiles/CMakeTmp/Debug/cmTryCompileExec3106776068.app
+
+ProcessInfoPlistFile Debug/cmTryCompileExec3106776068.app/Info.plist CMakeFiles/cmTryCompileExec3106776068.dir/Info.plist
+    cd /Users/he/work/codes-repo/github/codes/c/crossword/xcode/ios/CMakeFiles/CMakeTmp
+    builtin-infoPlistUtility /Users/he/work/codes-repo/github/codes/c/crossword/xcode/ios/CMakeFiles/CMakeTmp/CMakeFiles/cmTryCompileExec3106776068.dir/Info.plist -genpkginfo /Users/he/work/codes-repo/github/codes/c/crossword/xcode/ios/CMakeFiles/CMakeTmp/Debug/cmTryCompileExec3106776068.app/PkgInfo -expandbuildsettings -format binary -platform iphonesimulator -o /Users/he/work/codes-repo/github/codes/c/crossword/xcode/ios/CMakeFiles/CMakeTmp/Debug/cmTryCompileExec3106776068.app/Info.plist
+
+CompileC CMAKE_TRY_COMPILE.build/Debug-iphonesimulator/cmTryCompileExec3106776068.build/Objects-normal/i386/CMakeCCompilerABI.o /opt/local/share/cmake-3.0/Modules/CMakeCCompilerABI.c normal i386 c com.apple.compilers.llvm.clang.1_0.compiler
+    cd /Users/he/work/codes-repo/github/codes/c/crossword/xcode/ios/CMakeFiles/CMakeTmp
+    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x c -arch i386 -fmessage-length=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-return-type -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wno-unused-variable -Wunused-value -Wno-empty-body -Wno-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-constant-conversion -Wno-int-conversion -Wno-bool-conversion -Wno-enum-conversion -Wno-shorten-64-to-32 -Wpointer-sign -Wno-newline-eof -DCMAKE_INTDIR=\"Debug-iphonesimulator\" -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk -fexceptions -fasm-blocks -fstrict-aliasing -Wdeprecated-declarations -g -Wno-sign-conversion -mios-simulator-version-min=7.0 -I/Users/he/work/codes-repo/github/codes/c/crossword/xcode/ios/CMakeFiles/CMakeTmp/Debug/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Users/he/work/codes-repo/github/codes/c/crossword/xcode/ios/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug-iphonesimulator/cmTryCompileExec3106776068.build/DerivedSources/i386 -I/Users/he/work/codes-repo/github/codes/c/crossword/xcode/ios/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug-iphonesimulator/cmTryCompileExec3106776068.build/DerivedSources -Wmost -Wno-four-char-constants -Wno-unknown-pragmas -F/Users/he/work/codes-repo/github/codes/c/crossword/xcode/ios/CMakeFiles/CMakeTmp/Debug -MMD -MT dependencies -MF /Users/he/work/codes-repo/github/codes/c/crossword/xcode/ios/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug-iphonesimulator/cmTryCompileExec3106776068.build/Objects-normal/i386/CMakeCCompilerABI.d --serialize-diagnostics /Users/he/work/codes-repo/github/codes/c/crossword/xcode/ios/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug-iphonesimulator/cmTryCompileExec3106776068.build/Objects-normal/i386/CMakeCCompilerABI.dia -c /opt/local/share/cmake-3.0/Modules/CMakeCCompilerABI.c -o /Users/he/work/codes-repo/github/codes/c/crossword/xcode/ios/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug-iphonesimulator/cmTryCompileExec3106776068.build/Objects-normal/i386/CMakeCCompilerABI.o
+
+Ld Debug/cmTryCompileExec3106776068.app/cmTryCompileExec3106776068 normal i386
+    cd /Users/he/work/codes-repo/github/codes/c/crossword/xcode/ios/CMakeFiles/CMakeTmp
+    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -arch i386 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk -L/Users/he/work/codes-repo/github/codes/c/crossword/xcode/ios/CMakeFiles/CMakeTmp/Debug -F/Users/he/work/codes-repo/github/codes/c/crossword/xcode/ios/CMakeFiles/CMakeTmp/Debug -filelist /Users/he/work/codes-repo/github/codes/c/crossword/xcode/ios/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug-iphonesimulator/cmTryCompileExec3106776068.build/Objects-normal/i386/cmTryCompileExec3106776068.LinkFileList -Xlinker -objc_abi_version -Xlinker 2 -v -Wl,-v -Wl,-headerpad_max_install_names -Xlinker -no_implicit_dylibs -mios-simulator-version-min=7.0 -Xlinker -dependency_info -Xlinker /Users/he/work/codes-repo/github/codes/c/crossword/xcode/ios/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug-iphonesimulator/cmTryCompileExec3106776068.build/Objects-normal/i386/cmTryCompileExec3106776068_dependency_info.dat -o /Users/he/work/codes-repo/github/codes/c/crossword/xcode/ios/CMakeFiles/CMakeTmp/Debug/cmTryCompileExec3106776068.app/cmTryCompileExec3106776068
+Apple LLVM version 5.0 (clang-500.2.79) (based on LLVM 3.3svn)
+Target: i386-apple-darwin12.5.0
+Thread model: posix
+ "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ld" -demangle -dynamic -arch i386 -ios_simulator_version_min 7.0.0 -syslibroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk -o /Users/he/work/codes-repo/github/codes/c/crossword/xcode/ios/CMakeFiles/CMakeTmp/Debug/cmTryCompileExec3106776068.app/cmTryCompileExec3106776068 -lcrt1.o -L/Users/he/work/codes-repo/github/codes/c/crossword/xcode/ios/CMakeFiles/CMakeTmp/Debug -filelist /Users/he/work/codes-repo/github/codes/c/crossword/xcode/ios/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug-iphonesimulator/cmTryCompileExec3106776068.build/Objects-normal/i386/cmTryCompileExec3106776068.LinkFileList -objc_abi_version 2 -v -headerpad_max_install_names -no_implicit_dylibs -dependency_info /Users/he/work/codes-repo/github/codes/c/crossword/xcode/ios/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug-iphonesimulator/cmTryCompileExec3106776068.build/Objects-normal/i386/cmTryCompileExec3106776068_dependency_info.dat -lSystem /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/5.0/lib/darwin/libclang_rt.ios.a -F/Users/he/work/codes-repo/github/codes/c/crossword/xcode/ios/CMakeFiles/CMakeTmp/Debug
+@(#)PROGRAM:ld  PROJECT:ld64-224.1
+configured to support archs: armv6 armv7 armv7s arm64 i386 x86_64 armv6m armv7m armv7em
+Library search paths:
+	/Users/he/work/codes-repo/github/codes/c/crossword/xcode/ios/CMakeFiles/CMakeTmp/Debug
+	/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/usr/lib
+Framework search paths:
+	/Users/he/work/codes-repo/github/codes/c/crossword/xcode/ios/CMakeFiles/CMakeTmp/Debug
+	/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/
+
+GenerateDSYMFile Debug/cmTryCompileExec3106776068.app.dSYM Debug/cmTryCompileExec3106776068.app/cmTryCompileExec3106776068
+    cd /Users/he/work/codes-repo/github/codes/c/crossword/xcode/ios/CMakeFiles/CMakeTmp
+    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/dsymutil /Users/he/work/codes-repo/github/codes/c/crossword/xcode/ios/CMakeFiles/CMakeTmp/Debug/cmTryCompileExec3106776068.app/cmTryCompileExec3106776068 -o /Users/he/work/codes-repo/github/codes/c/crossword/xcode/ios/CMakeFiles/CMakeTmp/Debug/cmTryCompileExec3106776068.app.dSYM
+
+** BUILD SUCCEEDED **
 
 
-The following build commands failed:
-	Check dependencies
-(1 failure)
-
+Cannot copy output executable
+  ''
+to destination specified by COPY_FILE:
+  '/Users/he/work/codes-repo/github/codes/c/crossword/xcode/ios/CMakeFiles/3.0.1/CMakeDetermineCompilerABI_C.bin'
+Unable to find the executable at any of:
+  /Users/he/work/codes-repo/github/codes/c/crossword/xcode/ios/CMakeFiles/CMakeTmp/cmTryCompileExec3106776068
+  /Users/he/work/codes-repo/github/codes/c/crossword/xcode/ios/CMakeFiles/CMakeTmp/Debug/cmTryCompileExec3106776068
+  /Users/he/work/codes-repo/github/codes/c/crossword/xcode/ios/CMakeFiles/CMakeTmp/Development/cmTryCompileExec3106776068
 
 
 Detecting CXX compiler ABI info failed to compile with the following output:
 Change Dir: /Users/he/work/codes-repo/github/codes/c/crossword/xcode/ios/CMakeFiles/CMakeTmp
 
-Run Build Command:"/opt/local/bin/cmakexbuild" "-project" "CMAKE_TRY_COMPILE.xcodeproj" "build" "-target" "cmTryCompileExec644142427" "-configuration" "Debug"
-=== BUILD TARGET cmTryCompileExec644142427 OF PROJECT CMAKE_TRY_COMPILE WITH CONFIGURATION Debug ===
+Run Build Command:"/opt/local/bin/cmakexbuild" "-project" "CMAKE_TRY_COMPILE.xcodeproj" "build" "-target" "cmTryCompileExec1153422730" "-configuration" "Debug"
+=== BUILD TARGET cmTryCompileExec1153422730 OF PROJECT CMAKE_TRY_COMPILE WITH CONFIGURATION Debug ===
 
 Check dependencies
-target specifies product type 'com.apple.product-type.tool', but there's no such product type for the 'iphoneos' platform
 
-** BUILD FAILED **
+Create product structure
+/bin/mkdir -p /Users/he/work/codes-repo/github/codes/c/crossword/xcode/ios/CMakeFiles/CMakeTmp/Debug/cmTryCompileExec1153422730.app
+
+ProcessInfoPlistFile Debug/cmTryCompileExec1153422730.app/Info.plist CMakeFiles/cmTryCompileExec1153422730.dir/Info.plist
+    cd /Users/he/work/codes-repo/github/codes/c/crossword/xcode/ios/CMakeFiles/CMakeTmp
+    builtin-infoPlistUtility /Users/he/work/codes-repo/github/codes/c/crossword/xcode/ios/CMakeFiles/CMakeTmp/CMakeFiles/cmTryCompileExec1153422730.dir/Info.plist -genpkginfo /Users/he/work/codes-repo/github/codes/c/crossword/xcode/ios/CMakeFiles/CMakeTmp/Debug/cmTryCompileExec1153422730.app/PkgInfo -expandbuildsettings -format binary -platform iphonesimulator -o /Users/he/work/codes-repo/github/codes/c/crossword/xcode/ios/CMakeFiles/CMakeTmp/Debug/cmTryCompileExec1153422730.app/Info.plist
+
+CompileC CMAKE_TRY_COMPILE.build/Debug-iphonesimulator/cmTryCompileExec1153422730.build/Objects-normal/i386/CMakeCXXCompilerABI.o /opt/local/share/cmake-3.0/Modules/CMakeCXXCompilerABI.cpp normal i386 c++ com.apple.compilers.llvm.clang.1_0.compiler
+    cd /Users/he/work/codes-repo/github/codes/c/crossword/xcode/ios/CMakeFiles/CMakeTmp
+    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x c++ -arch i386 -fmessage-length=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-return-type -Wno-non-virtual-dtor -Wno-overloaded-virtual -Wno-exit-time-destructors -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wno-unused-variable -Wunused-value -Wno-empty-body -Wno-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-constant-conversion -Wno-int-conversion -Wno-bool-conversion -Wno-enum-conversion -Wno-shorten-64-to-32 -Wno-newline-eof -Wno-c++11-extensions -DCMAKE_INTDIR=\"Debug-iphonesimulator\" -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk -fexceptions -fasm-blocks -fstrict-aliasing -Wdeprecated-declarations -Winvalid-offsetof -Wno-sign-conversion -mios-simulator-version-min=7.0 -I/Users/he/work/codes-repo/github/codes/c/crossword/xcode/ios/CMakeFiles/CMakeTmp/Debug/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Users/he/work/codes-repo/github/codes/c/crossword/xcode/ios/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug-iphonesimulator/cmTryCompileExec1153422730.build/DerivedSources/i386 -I/Users/he/work/codes-repo/github/codes/c/crossword/xcode/ios/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug-iphonesimulator/cmTryCompileExec1153422730.build/DerivedSources -Wmost -Wno-four-char-constants -Wno-unknown-pragmas -F/Users/he/work/codes-repo/github/codes/c/crossword/xcode/ios/CMakeFiles/CMakeTmp/Debug -g -MMD -MT dependencies -MF /Users/he/work/codes-repo/github/codes/c/crossword/xcode/ios/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug-iphonesimulator/cmTryCompileExec1153422730.build/Objects-normal/i386/CMakeCXXCompilerABI.d --serialize-diagnostics /Users/he/work/codes-repo/github/codes/c/crossword/xcode/ios/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug-iphonesimulator/cmTryCompileExec1153422730.build/Objects-normal/i386/CMakeCXXCompilerABI.dia -c /opt/local/share/cmake-3.0/Modules/CMakeCXXCompilerABI.cpp -o /Users/he/work/codes-repo/github/codes/c/crossword/xcode/ios/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug-iphonesimulator/cmTryCompileExec1153422730.build/Objects-normal/i386/CMakeCXXCompilerABI.o
+
+Ld Debug/cmTryCompileExec1153422730.app/cmTryCompileExec1153422730 normal i386
+    cd /Users/he/work/codes-repo/github/codes/c/crossword/xcode/ios/CMakeFiles/CMakeTmp
+    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++ -arch i386 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk -L/Users/he/work/codes-repo/github/codes/c/crossword/xcode/ios/CMakeFiles/CMakeTmp/Debug -F/Users/he/work/codes-repo/github/codes/c/crossword/xcode/ios/CMakeFiles/CMakeTmp/Debug -filelist /Users/he/work/codes-repo/github/codes/c/crossword/xcode/ios/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug-iphonesimulator/cmTryCompileExec1153422730.build/Objects-normal/i386/cmTryCompileExec1153422730.LinkFileList -Xlinker -objc_abi_version -Xlinker 2 -v -Wl,-v -Wl,-headerpad_max_install_names -Xlinker -no_implicit_dylibs -mios-simulator-version-min=7.0 -Xlinker -dependency_info -Xlinker /Users/he/work/codes-repo/github/codes/c/crossword/xcode/ios/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug-iphonesimulator/cmTryCompileExec1153422730.build/Objects-normal/i386/cmTryCompileExec1153422730_dependency_info.dat -o /Users/he/work/codes-repo/github/codes/c/crossword/xcode/ios/CMakeFiles/CMakeTmp/Debug/cmTryCompileExec1153422730.app/cmTryCompileExec1153422730
+Apple LLVM version 5.0 (clang-500.2.79) (based on LLVM 3.3svn)
+Target: i386-apple-darwin12.5.0
+Thread model: posix
+ "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ld" -demangle -dynamic -arch i386 -ios_simulator_version_min 7.0.0 -syslibroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk -o /Users/he/work/codes-repo/github/codes/c/crossword/xcode/ios/CMakeFiles/CMakeTmp/Debug/cmTryCompileExec1153422730.app/cmTryCompileExec1153422730 -lcrt1.o -L/Users/he/work/codes-repo/github/codes/c/crossword/xcode/ios/CMakeFiles/CMakeTmp/Debug -filelist /Users/he/work/codes-repo/github/codes/c/crossword/xcode/ios/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug-iphonesimulator/cmTryCompileExec1153422730.build/Objects-normal/i386/cmTryCompileExec1153422730.LinkFileList -objc_abi_version 2 -v -headerpad_max_install_names -no_implicit_dylibs -dependency_info /Users/he/work/codes-repo/github/codes/c/crossword/xcode/ios/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug-iphonesimulator/cmTryCompileExec1153422730.build/Objects-normal/i386/cmTryCompileExec1153422730_dependency_info.dat -lc++ -lSystem /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/5.0/lib/darwin/libclang_rt.ios.a -F/Users/he/work/codes-repo/github/codes/c/crossword/xcode/ios/CMakeFiles/CMakeTmp/Debug
+@(#)PROGRAM:ld  PROJECT:ld64-224.1
+configured to support archs: armv6 armv7 armv7s arm64 i386 x86_64 armv6m armv7m armv7em
+Library search paths:
+	/Users/he/work/codes-repo/github/codes/c/crossword/xcode/ios/CMakeFiles/CMakeTmp/Debug
+	/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/usr/lib
+Framework search paths:
+	/Users/he/work/codes-repo/github/codes/c/crossword/xcode/ios/CMakeFiles/CMakeTmp/Debug
+	/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/
+
+** BUILD SUCCEEDED **
 
 
-The following build commands failed:
-	Check dependencies
-(1 failure)
-
+Cannot copy output executable
+  ''
+to destination specified by COPY_FILE:
+  '/Users/he/work/codes-repo/github/codes/c/crossword/xcode/ios/CMakeFiles/3.0.1/CMakeDetermineCompilerABI_CXX.bin'
+Unable to find the executable at any of:
+  /Users/he/work/codes-repo/github/codes/c/crossword/xcode/ios/CMakeFiles/CMakeTmp/cmTryCompileExec1153422730
+  /Users/he/work/codes-repo/github/codes/c/crossword/xcode/ios/CMakeFiles/CMakeTmp/Debug/cmTryCompileExec1153422730
+  /Users/he/work/codes-repo/github/codes/c/crossword/xcode/ios/CMakeFiles/CMakeTmp/Development/cmTryCompileExec1153422730
 
 

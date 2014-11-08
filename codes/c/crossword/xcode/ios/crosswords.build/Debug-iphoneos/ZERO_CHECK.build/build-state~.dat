@@ -1,29 +1,0 @@
-TZERO_CHECK
-v6
-r1
-cCheck dependencies
-cPhaseScriptExecution CMake\ Rules /Users/he/work/codes-repo/github/codes/c/crossword/xcode/ios/crosswords.build/Debug-iphoneos/ZERO_CHECK.build/Script-14284421528D4970ABC1D889.sh
-
-N/Users/he/work/codes-repo/github/codes/c/crossword/xcode/ios/crosswords.build/Debug-iphoneos/ZERO_CHECK.build/Script-14284421528D4970ABC1D889.sh
-c00000000545BA46500000000000000D3
-t1415292005
-s211
-
-CCheck dependencies
-r0
-lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection18"Check dependencies18"Check dependenciesb72992e5db0bba41^b0cb9ce5db0bba41^---0#1#1#--18"Check dependencies36"9917C30F-6F0A-4E0B-A0E9-AC9BA7C481C1-
-
-CPhaseScriptExecution CMake\ Rules /Users/he/work/codes-repo/github/codes/c/crossword/xcode/ios/crosswords.build/Debug-iphoneos/ZERO_CHECK.build/Script-14284421528D4970ABC1D889.sh
-s436984805.626087
-e436984805.783153
-r1
-xPhaseScriptExecution
-xCMake Rules
-x/Users/he/work/codes-repo/github/codes/c/crossword/xcode/ios/crosswords.build/Debug-iphoneos/ZERO_CHECK.build/Script-14284421528D4970ABC1D889.sh
-oecho ""
-o
-omake -f /Users/he/work/codes-repo/github/codes/c/crossword/xcode/ios/CMakeScripts/ReRunCMake.make
-omake[1]: `/Users/he/work/codes-repo/github/codes/c/crossword/xcode/ios/CMakeFiles/cmake.check_cache' is up to date.
-lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection37"Run custom shell script 'CMake Rules'135"[1mPhaseScriptExecution[0m CMake\ Rules xcode/ios/crosswords.build/Debug-iphoneos/ZERO_CHECK.build/Script-14284421528D4970ABC1D889.sh53b2a0e5db0bba41^5796c8e5db0bba41^-223"echo ""make -f /Users/he/work/codes-repo/github/codes/c/crossword/xcode/ios/CMakeScripts/ReRunCMake.makemake[1]: `/Users/he/work/codes-repo/github/codes/c/crossword/xcode/ios/CMakeFiles/cmake.check_cache' is up to date.3(21%IDEActivityLogMessage2@8"echo ""-436984805#0#8#-0#-----2@98"make -f /Users/he/work/codes-repo/github/codes/c/crossword/xcode/ios/CMakeScripts/ReRunCMake.make-436984805#9#98#-0#-----2@116"make[1]: `/Users/he/work/codes-repo/github/codes/c/crossword/xcode/ios/CMakeFiles/cmake.check_cache' is up to date.-436984805#107#116#-0#-----0#0#1#--354"[1mPhaseScriptExecution[0m CMake\ Rules xcode/ios/crosswords.build/Debug-iphoneos/ZERO_CHECK.build/Script-14284421528D4970ABC1D889.sh    cd /Users/he/work/codes-repo/github/codes/c/crossword    /bin/sh -c /Users/he/work/codes-repo/github/codes/c/crossword/xcode/ios/crosswords.build/Debug-iphoneos/ZERO_CHECK.build/Script-14284421528D4970ABC1D889.sh36"D99FF2B8-5B2F-43E3-8F3D-7AD750792222-
-b42DEDD00-1A3F-4FD8-8C49-56544AA30F2D
-

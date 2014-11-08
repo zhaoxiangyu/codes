@@ -1,29 +1,0 @@
-TALL_BUILD
-v6
-r1
-cCheck dependencies
-cPhaseScriptExecution CMake\ Rules /Users/he/work/codes-repo/github/codes/c/crossword/xcode/ios/crosswords.build/Debug-iphoneos/ALL_BUILD.build/Script-9EB6434F9924402BA4BD51FD.sh
-
-N/Users/he/work/codes-repo/github/codes/c/crossword/xcode/ios/crosswords.build/Debug-iphoneos/ALL_BUILD.build/Script-9EB6434F9924402BA4BD51FD.sh
-c00000000545BA7B400000000000000D2
-t1415292852
-s210
-
-CCheck dependencies
-r0
-lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection18"Check dependencies18"Check dependenciesb4042134df0bba41^3bfc2134df0bba41^---0#1#1#--18"Check dependencies36"1F608DE9-78DF-4CB4-867E-9BC0236A4A60-
-
-CPhaseScriptExecution CMake\ Rules /Users/he/work/codes-repo/github/codes/c/crossword/xcode/ios/crosswords.build/Debug-iphoneos/ALL_BUILD.build/Script-9EB6434F9924402BA4BD51FD.sh
-s436985652.133979
-e436985652.241346
-r1
-xPhaseScriptExecution
-xCMake Rules
-x/Users/he/work/codes-repo/github/codes/c/crossword/xcode/ios/crosswords.build/Debug-iphoneos/ALL_BUILD.build/Script-9EB6434F9924402BA4BD51FD.sh
-oecho ""
-o
-oecho Build\ all\ projects
-oBuild all projects
-lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection37"Run custom shell script 'CMake Rules'134"[1mPhaseScriptExecution[0m CMake\ Rules xcode/ios/crosswords.build/Debug-iphoneos/ALL_BUILD.build/Script-9EB6434F9924402BA4BD51FD.sh05a32234df0bba41^82e43d34df0bba41^-54"echo ""echo Build\ all\ projectsBuild all projects3(21%IDEActivityLogMessage2@8"echo ""-436985652#0#8#-0#-----2@26"echo Build\ all\ projects-436985652#9#26#-0#-----2@19"Build all projects-436985652#35#19#-0#-----0#0#1#--352"[1mPhaseScriptExecution[0m CMake\ Rules xcode/ios/crosswords.build/Debug-iphoneos/ALL_BUILD.build/Script-9EB6434F9924402BA4BD51FD.sh    cd /Users/he/work/codes-repo/github/codes/c/crossword    /bin/sh -c /Users/he/work/codes-repo/github/codes/c/crossword/xcode/ios/crosswords.build/Debug-iphoneos/ALL_BUILD.build/Script-9EB6434F9924402BA4BD51FD.sh36"07E532E3-4B9B-443B-ABF7-FF34E9E91293-
-b8679A259-37D6-48C8-9E07-F2C59291BD35
-
