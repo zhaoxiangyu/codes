@@ -8,30 +8,53 @@
 # hlsearch on (H) or off (h):
 ~h
 # Last Search Pattern:
-~MSle0~/__WINDOWS_DS
+~MSle0/__WINDOWS_DS
 
 # Last Substitute Search Pattern:
-~MSle0&\\
+~MSle0~&win32\-cbp\-mingw
 
 # Last Substitute String:
-$\/
+$build\\win32\-cbp\-mingw
 
 # Command Line History (newest to oldest):
 :wq
 :w
-:q
+:%s/win32\-cbp\-mingw/build\\win32\-cbp\-mingw/g
+:%s/cbp/win32\-cbp\-mingw/g
+:s/cbp/genprj/g
+:%s/mingw\-//g
+:%s/\-mingw//g
+:s/-mingw//g
+:N
+:n
+:% normal $x
+:ls
+:arge win32-build.bat
+:g
+:w win32-build.bat
+:arge ..\build-asio.bat
+:,+3 normal I#
+:r!ls *.cpp
+:!ls *.c
+:!ls *.cpp
+:%s/tuxtuner/race-circuit/g
 :q!
+:q
 :s/\\/\//g
 :s/\\/\/g
 ::q
-:N
-:n
 :p
 :s/SDL_image/SDLIMAGE/g
 :W
 :%s/"//g
 
 # Search String History (newest to oldest):
+? win32\-cbp\-mingw
+? cbp
+? mingw\-
+? \-mingw
+? -mingw
+? tuxtuner
 ?/__WINDOWS_DS
 ?/sleep
 ?/#if
@@ -64,44 +87,69 @@ $\/
 # Input Line History (newest to oldest):
 
 # 寄存器:
-"0	LINE	0
-	include_directories(${RTAUDIO_DIR}/include/)
+"0	CHAR	0
+	  CodeBlocks - MinGW Makefile
 "1	LINE	0
-	include_directories(${RTAUDIO_DIR}/include/)
+		#list(APPEND LINKLIBS winmm ole32 dsound)
 "2	LINE	0
-	set(RTAUDIO_DIR E:/opensource/rtaudio-4.1.1)
+		#set(LINKLIBS)
 "3	LINE	0
-	E:\opensource\rtaudio-4.1.1\include\dsound.h
+	  CodeBlocks - MinGW Makefiles
 "4	LINE	0
-		pkg_search_module(SDL2 REQUIRED sdl2)
-		include_directories(${SDL2_INCLUDE_DIRS})
-		target_link_libraries(racecar ${SDL2_LIBRARIES})
+	set ASIO_HOME=e:\opensource\asio-1.10.4
 "5	LINE	0
-	add_definitions(-D__WINDOWS_DS__)
+	Camera.cpp Car.cpp Cube.cpp Lamp.cpp Light.cpp NFS.cpp Object3D.cpp Obstacle.cpp Plane.cpp RectanglePrism.cpp
 "6	LINE	0
-	//
+	
 "7	LINE	0
-	va_dcl
+	file(GLOB SRCS . 
 "8	LINE	0
-	find_package(SDL_IMAGE REQUIRED)
+	include_directories(${RTAUDIO_DIR})
+	include_directories(${RTAUDIO_DIR}/include/)
 "9	LINE	0
-	find_package(SDL REQUIRED)
+	include_directories(${RTAUDIO_DIR}/include/)
 ""-	CHAR	0
-	path
+	\
 
 # 文件标记:
-'0  4  53  E:\opensource\TuxTuner-master\CMakeLists.txt
-'1  17  21  E:\opensource\TuxTuner-master\CMakeLists.txt
-'2  16  19  E:\opensource\TuxTuner-master\main.cpp
-'3  200  1  E:\opensource\TuxTuner-master\main.cpp
-'4  8  34  E:\opensource\TuxTuner-master\CMakeLists.txt
-'5  1  19  E:\opensource\TuxTuner-master\main.cpp
-'6  1  0  E:\opensource\TuxTuner-master\win32\CMake
-'7  38  0  E:\opensource\rtaudio-4.1.1\RtAudio.cpp
-'8  5  61  E:\opensource\TuxTuner-master\CMakeLists.txt
-'9  14  29  E:\opensource\TuxTuner-master\main.cpp
+'0  15  44  E:\opensource\egc-race-circuit-master\win32-cbp-mingw-build.bat
+'1  29  1  E:\opensource\egc-race-circuit-master\win32-cbp-mingw-build.bat
+'2  30  8  E:\opensource\egc-race-circuit-master\win32-build.bat
+'3  15  37  E:\opensource\egc-race-circuit-master\win32-build.bat
+'4  18  0  E:\opensource\egc-race-circuit-master\win32-build.bat
+'5  4  53  E:\opensource\TuxTuner-master\CMakeLists.txt
+'6  17  21  E:\opensource\TuxTuner-master\CMakeLists.txt
+'7  16  19  E:\opensource\TuxTuner-master\main.cpp
+'8  200  1  E:\opensource\TuxTuner-master\main.cpp
+'9  8  34  E:\opensource\TuxTuner-master\CMakeLists.txt
 
 # 跳转列表 (从新到旧):
+-'  15  44  E:\opensource\egc-race-circuit-master\win32-cbp-mingw-build.bat
+-'  1  0  E:\opensource\egc-race-circuit-master\win32-cbp-mingw-build.bat
+-'  13  1  E:\opensource\egc-race-circuit-master\win32-cbp-mingw-build.bat
+-'  29  1  E:\opensource\egc-race-circuit-master\win32-cbp-mingw-build.bat
+-'  4  0  E:\opensource\egc-race-circuit-master\win32-cbp-mingw-build.bat
+-'  11  3  E:\opensource\egc-race-circuit-master\win32-cbp-mingw-build.bat
+-'  5  0  E:\opensource\egc-race-circuit-master\win32-cbp-mingw-build.bat
+-'  2  0  E:\opensource\egc-race-circuit-master\win32-cbp-mingw-build.bat
+-'  30  8  E:\opensource\egc-race-circuit-master\win32-build.bat
+-'  5  48  E:\opensource\egc-race-circuit-master\win32-build.bat
+-'  15  37  E:\opensource\egc-race-circuit-master\win32-build.bat
+-'  19  8  E:\opensource\egc-race-circuit-master\CMakeLists.txt
+-'  18  0  E:\opensource\egc-race-circuit-master\CMakeLists.txt
+-'  17  0  E:\opensource\egc-race-circuit-master\CMakeLists.txt
+-'  21  0  E:\opensource\egc-race-circuit-master\CMakeLists.txt
+-'  15  0  E:\opensource\egc-race-circuit-master\CMakeLists.txt
+-'  19  12  E:\opensource\egc-race-circuit-master\win32-build.bat
+-'  21  0  E:\opensource\egc-race-circuit-master\win32-build.bat
+-'  18  0  E:\opensource\egc-race-circuit-master\win32-build.bat
+-'  20  4  E:\opensource\egc-race-circuit-master\win32-build.bat
+-'  1  0  E:\opensource\egc-race-circuit-master\win32-build.bat
+-'  1  0  E:\opensource\build-asio.bat
+-'  5  118  E:\opensource\egc-race-circuit-master\CMakeLists.txt
+-'  7  0  E:\opensource\egc-race-circuit-master\CMakeLists.txt
+-'  4  19  E:\opensource\egc-race-circuit-master\CMakeLists.txt
+-'  1  0  E:\opensource\egc-race-circuit-master\CMakeLists.txt
 -'  4  53  E:\opensource\TuxTuner-master\CMakeLists.txt
 -'  17  21  E:\opensource\TuxTuner-master\CMakeLists.txt
 -'  8  34  E:\opensource\TuxTuner-master\CMakeLists.txt
@@ -173,34 +221,93 @@ $\/
 -'  2009  22  E:\opensource\rtaudio-4.1.1\RtAudio.cpp
 -'  2001  26  E:\opensource\rtaudio-4.1.1\RtAudio.cpp
 -'  1992  26  E:\opensource\rtaudio-4.1.1\RtAudio.cpp
--'  1989  46  E:\opensource\rtaudio-4.1.1\RtAudio.cpp
--'  1987  52  E:\opensource\rtaudio-4.1.1\RtAudio.cpp
--'  1979  23  E:\opensource\rtaudio-4.1.1\RtAudio.cpp
--'  1959  26  E:\opensource\rtaudio-4.1.1\RtAudio.cpp
--'  1950  7  E:\opensource\rtaudio-4.1.1\RtAudio.cpp
--'  1949  31  E:\opensource\rtaudio-4.1.1\RtAudio.cpp
--'  1938  21  E:\opensource\rtaudio-4.1.1\RtAudio.cpp
--'  1920  26  E:\opensource\rtaudio-4.1.1\RtAudio.cpp
--'  1915  7  E:\opensource\rtaudio-4.1.1\RtAudio.cpp
--'  1914  31  E:\opensource\rtaudio-4.1.1\RtAudio.cpp
--'  1911  33  E:\opensource\rtaudio-4.1.1\RtAudio.cpp
--'  1890  5  E:\opensource\rtaudio-4.1.1\RtAudio.cpp
--'  1881  17  E:\opensource\rtaudio-4.1.1\RtAudio.cpp
--'  1850  57  E:\opensource\rtaudio-4.1.1\RtAudio.cpp
--'  793  24  E:\opensource\rtaudio-4.1.1\RtAudio.cpp
--'  444  10  E:\opensource\rtaudio-4.1.1\RtAudio.cpp
--'  37  0  E:\opensource\rtaudio-4.1.1\RtAudio.cpp
--'  1  0  E:\opensource\rtaudio-4.1.1\RtAudio.cpp
--'  139  0  E:\opensource\rtaudio-4.1.1\win32\Makefile
--'  1  0  E:\opensource\asio-1.10.4\src\Makefile.mgw
--'  5  0  E:\opensource\asio-1.10.4\src\Makefile.mgw
--'  1  0  E:\opensource\build-asio.bat
--'  14  39  E:\opensource\build-asio.bat
--'  15  4  e:\code-repo2\github\codes\c\opensource\asio\build.bat
--'  14  4  e:\code-repo2\github\codes\c\opensource\asio\build.bat
--'  6  20  E:\opensource\build.bat
 
 # 文件内的标记历史记录 (从新到旧):
+
+> E:\opensource\egc-race-circuit-master\win32-cbp-mingw-build.bat
+	"	15	44
+	^	15	45
+	.	15	44
+	+	5	0
+	+	11	0
+	+	12	15
+	+	15	44
+
+> E:\opensource\egc-race-circuit-master\win32-build.bat
+	"	30	8
+	^	30	9
+	.	30	8
+	+	3	0
+	+	5	42
+	+	19	11
+	+	19	9
+	+	19	9
+	+	19	11
+	+	19	0
+	+	19	1
+	+	19	0
+	+	19	0
+	+	20	1
+	+	20	0
+	+	19	11
+	+	17	9
+	+	31	29
+	+	16	0
+	+	15	37
+	+	31	0
+	+	26	8
+	+	15	37
+	+	5	48
+	+	30	8
+
+> E:\opensource\egc-race-circuit-master\CMakeLists.txt
+	"	19	8
+	^	22	16
+	.	22	15
+	+	3	19
+	+	7	0
+	+	4	0
+	+	8	0
+	+	5	0
+	+	7	10
+	+	7	0
+	+	7	0
+	+	5	9
+	+	7	0
+	+	7	0
+	+	7	0
+	+	5	0
+	+	7	0
+	+	5	9
+	+	7	0
+	+	6	0
+	+	12	21
+	+	15	16
+	+	8	0
+	+	13	18
+	+	12	30
+	+	15	16
+	+	15	15
+	+	21	0
+	+	15	0
+	+	15	0
+	+	21	0
+	+	17	2
+	+	17	0
+	+	20	7
+	+	18	6
+	+	18	0
+	+	19	10
+	+	16	41
+	+	17	39
+	+	19	37
+	+	22	15
+
+> E:\opensource\build-asio.bat
+	"	1	0
+	^	14	40
+	.	14	39
+	+	14	39
 
 > E:\opensource\TuxTuner-master\CMakeLists.txt
 	"	4	53
@@ -278,12 +385,6 @@ $\/
 
 > E:\opensource\asio-1.10.4\src\Makefile.mgw
 	"	1	0
-
-> E:\opensource\build-asio.bat
-	"	1	0
-	^	14	40
-	.	14	39
-	+	14	39
 
 > e:\code-repo2\github\codes\c\opensource\asio\build.bat
 	"	15	4
