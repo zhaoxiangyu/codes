@@ -26,7 +26,11 @@ set JAVA_HOME=C:\Program Files\Java\jdk1.7.0_65
 
 set PATH=E:\tools\gnuwin32\bin;%PATH%
 set PATH=E:\tools\emacs-24.3-bin-i386\emacs-24.3\bin;%PATH%
-set PATH=C:\MinGW\bin;%PATH%
+REM set PATH=C:\MinGW\bin;%PATH%
+set PATH=C:\Program Files\CMake 2.8\bin;%PATH%
+set PATH=C:\Program Files\CodeBlocks\MinGW\bin;%PATH%
+
 
 set PATH=%PATH:"=%
 cmd.exe /s /k clink.bat inject
+C:\Program Files\CMake 2.8\bin\
