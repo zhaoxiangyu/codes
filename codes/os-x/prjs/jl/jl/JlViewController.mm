@@ -26,6 +26,7 @@ struct Impl {
     UISwipeGestureRecognizer *swipeLeft = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(wordSwiped:)];
     [swipeLeft setDirection:UISwipeGestureRecognizerDirectionLeft];
     [wordDisplayView addGestureRecognizer:swipeLeft];
+    
     UISwipeGestureRecognizer *swipeRight = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(wordSwiped:)];
     [swipeRight setDirection:UISwipeGestureRecognizerDirectionRight];
     [wordDisplayView addGestureRecognizer:swipeRight];
@@ -33,6 +34,7 @@ struct Impl {
     UISwipeGestureRecognizer *swipeUp = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(wordSwiped:)];
     [swipeUp setDirection:UISwipeGestureRecognizerDirectionUp];
     [wordDisplayView addGestureRecognizer:swipeUp];
+    
     UISwipeGestureRecognizer *swipeDown = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(wordSwiped:)];
     [swipeDown setDirection:UISwipeGestureRecognizerDirectionDown];
     [wordDisplayView addGestureRecognizer:swipeDown];
@@ -46,18 +48,22 @@ struct Impl {
 {
     if (gesture.direction == UISwipeGestureRecognizerDirectionLeft)
     {
+        NSLog(@"swiped to left");
         [self impl]->r->back();
     }
     else if (gesture.direction == UISwipeGestureRecognizerDirectionRight)
     {
+        NSLog(@"swiped to right");
         [self impl]->r->forward();
     }
     else if (gesture.direction == UISwipeGestureRecognizerDirectionUp)
     {
+        NSLog(@"swiped to up");
         [self impl]->r->upLevel();
     }
     else if (gesture.direction == UISwipeGestureRecognizerDirectionDown)
     {
+        NSLog(@"swiped to down");
         [self impl]->r->downLevel();
     }
 }
@@ -83,9 +89,11 @@ struct Impl {
 }
 
 - (IBAction)toEnd:(id)sender {
+    [self impl]->r->toEnding();
 }
 
 - (IBAction)chooseCourse:(id)sender {
+    [self impl]->r->chooseCourse(2);
 }
 
 - (IBAction)doBtnAbout:(id)sender {

@@ -14,12 +14,12 @@
     __weak IBOutlet UIView *wordDisplayView;
 }
 
-    @property (nonatomic) struct Impl* impl;
-    - (void)refreshView;
-    - (IBAction)toFirst:(id)sender;
+@property (nonatomic) struct Impl* impl;
+- (void)refreshView;
+- (IBAction)toFirst:(id)sender;
 - (IBAction)toEnd:(id)sender;
 - (IBAction)chooseCourse:(id)sender;
-    - (IBAction)doBtnAbout:(id)sender;
+- (IBAction)doBtnAbout:(id)sender;
 
 - (IBAction)showAllLevel:(id)sender;
 - (IBAction)showLevelOne:(id)sender;
