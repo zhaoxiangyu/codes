@@ -11,6 +11,7 @@
 
 @interface JlViewController : UIViewController {
     IBOutlet UILabel *wordDisplay;
+    __weak IBOutlet UIView *wordDisplayView;
 }
 
     @property (nonatomic) struct Impl* impl;
