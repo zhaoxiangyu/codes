@@ -78,14 +78,43 @@ struct Impl {
     [wordDisplay setText: nsText];
 }
 
-- (IBAction)toFirst:(id)sender
-{
-    
+- (IBAction)toFirst:(id)sender{
+    [self impl]->r->toBeginning();
+}
+
+- (IBAction)toEnd:(id)sender {
+}
+
+- (IBAction)chooseCourse:(id)sender {
 }
 
 - (IBAction)doBtnAbout:(id)sender {
     //[sender setTitle: @"HA"];
     //[[self wordDisplay] setHidden:YES];
     [self refreshView];
+}
+
+- (IBAction)showAllLevel:(id)sender {
+    [self impl]->r->switchLC(-1);
+}
+
+- (IBAction)showLevelOne:(id)sender {
+    [self impl]->r->switchLC(0);
+}
+
+- (IBAction)showLevelTwo:(id)sender {
+    [self impl]->r->switchLC(1);
+}
+
+- (IBAction)showLevelThree:(id)sender {
+    [self impl]->r->switchLC(2);
+}
+
+- (IBAction)showLevelFour:(id)sender {
+    [self impl]->r->switchLC(3);
+}
+
+- (IBAction)showLevelFive:(id)sender {
+    [self impl]->r->switchLC(4);
 }
 @end
