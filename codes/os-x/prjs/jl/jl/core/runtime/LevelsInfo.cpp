@@ -35,7 +35,7 @@ void LevelsInfo::add(AudioInfo& ai){
 	auL.push_back(ai);
 
     vector<AudioInfo> & aL = levelList(-1);
-	if(find(aL.begin(),aL.end(),ai)!=aL.end())
+	if(find(aL.begin(),aL.end(),ai)==aL.end())
     {
         levelList(-1).push_back(ai);
     }
