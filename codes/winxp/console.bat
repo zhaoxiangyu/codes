@@ -20,8 +20,8 @@ call e:\he\py\tools-py.bat setpath
 
 REM set PATH=%PATH%;C:\Program Files\Java\jdk1.6.0_45\bin
 
-set HOME=E:\code-repo2\github\codes\winxp\user-home
-set PATH=%HOME%\bat-wrapper;%PATH%
+REM set HOME=E:\code-repo2\github\codes\winxp\user-home
+set PATH=E:\code-repo2\github\codes\winxp\user-home\bat-wrapper;%PATH%
 set JAVA_HOME=C:\Program Files\Java\jdk1.7.0_65
 
 set PATH=E:\tools\gnuwin32\bin;%PATH%
