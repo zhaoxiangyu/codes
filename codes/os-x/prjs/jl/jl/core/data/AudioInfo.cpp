@@ -11,7 +11,7 @@ AudioInfo::~AudioInfo()
 }
 
 bool operator ==(AudioInfo ai1, AudioInfo ai2){
-	return &ai1 == &ai2;
+	return ai1.getName().compare(ai2.getName()) == 0;
 }
 
 string AudioInfo::toString(){
@@ -24,7 +24,7 @@ void AudioInfo::fromString(string str){
 
 
 bool AudioInfo::operator ==(AudioInfo& ai){
-	return this == &ai;
+	return getName().compare(ai.getName()) == 0;
 }
 
 string AudioInfo::getName(){

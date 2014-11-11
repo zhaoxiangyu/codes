@@ -1,4 +1,5 @@
 #include "LevelsInfo.h"
+#include "../port/IOUtils.h"
 
 LevelsInfo::LevelsInfo()
 {
@@ -33,15 +34,33 @@ void LevelsInfo::add(AudioInfo& ai){
 	vector<AudioInfo>& auL = levelListMap[ai.getLevel()];
 	auL.push_back(ai);
 
-	//levelList(-1).push_back(ai);
+    vector<AudioInfo> & aL = levelList(-1);
+	if(find(aL.begin(),aL.end(),ai)!=aL.end())
+    {
+        levelList(-1).push_back(ai);
+    }
 }
 
 void LevelsInfo::remove(AudioInfo& ai){
 	vector<AudioInfo> auL = levelListMap[ai.getLevel()];
-	auL.erase(find(auL.begin(), auL.end(), ai));
+    vector<AudioInfo>::iterator m = find(auL.begin(), auL.end(), ai);
+    if(m==auL.end())
+    {
+        IOUtils::log("AudioInfo matched not found!");
+    }else
+    {
+        auL.erase(m);
+    }
 
 	vector<AudioInfo> aL = levelList(-1);
-	aL.erase(find(aL.begin(), aL.end(), ai));
+    m = find(aL.begin(), aL.end(), ai);
+    if(m==aL.end())
+    {
+        IOUtils::log("AudioInfo matched not found in ALL level list!");
+    }else
+    {
+        //aL.erase(m);
+    }
 }
 
 void LevelsInfo::clear(int start,int end){
