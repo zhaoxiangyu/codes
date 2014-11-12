@@ -46,6 +46,7 @@ struct Impl {
 
 - (void)wordSwiped:(UISwipeGestureRecognizer *)gesture
 {
+    NSLog(@"word swiped!");
     if (gesture.direction == UISwipeGestureRecognizerDirectionLeft)
     {
         NSLog(@"swiped to left");

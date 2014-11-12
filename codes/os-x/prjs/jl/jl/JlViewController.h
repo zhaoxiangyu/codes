@@ -18,6 +18,7 @@
 - (void)refreshView;
 - (IBAction)toFirst:(id)sender;
 - (IBAction)toEnd:(id)sender;
+
 - (IBAction)chooseCourse:(id)sender;
 - (IBAction)doBtnAbout:(id)sender;
 
