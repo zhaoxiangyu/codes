@@ -20,7 +20,7 @@ call e:\he\py\tools-py.bat setpath
 
 REM set PATH=%PATH%;C:\Program Files\Java\jdk1.6.0_45\bin
 
-REM set HOME=E:\code-repo2\github\codes\winxp\user-home
+set HOME=E:\user-home
 set PATH=E:\code-repo2\github\codes\winxp\user-home\bat-wrapper;%PATH%
 set JAVA_HOME=C:\Program Files\Java\jdk1.7.0_65
 
@@ -29,8 +29,7 @@ set PATH=E:\tools\emacs-24.3-bin-i386\emacs-24.3\bin;%PATH%
 REM set PATH=C:\MinGW\bin;%PATH%
 set PATH=C:\Program Files\CMake 2.8\bin;%PATH%
 set PATH=C:\Program Files\CodeBlocks\MinGW\bin;%PATH%
-
+set PATH=E:\tools\cscope-15.8a;%PATH%
 
 set PATH=%PATH:"=%
 cmd.exe /s /k clink.bat inject
-C:\Program Files\CMake 2.8\bin\
