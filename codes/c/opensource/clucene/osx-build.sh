@@ -2,14 +2,14 @@
 
 genprj(){
 	echo "using cmake"
-	test -d osx || (echo creating folder osx ; mkdir osx)
-    pushd osx
-    cmake -GXcode ..
+	test -d build/osx || (echo creating folder build/osx ; mkdir -p build/osx)
+    pushd build/osx
+    cmake -GXcode ../..
     popd
 }
 
 build(){
-	pushd osx
+	pushd build/osx
 	echo "building use xcode"
 	xcodebuild -target install -configuration Debug
 	popd
