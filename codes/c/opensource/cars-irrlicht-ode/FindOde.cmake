@@ -7,7 +7,7 @@
 
 set( ODE_FOUND "NO" )
 
-find_path( ODE_INCLUDE_DIR ode.h
+find_path( ODE_INCLUDE_DIR ode/ode.h
   HINTS
   $ENV{ODEDIR}
   PATH_SUFFIXES include

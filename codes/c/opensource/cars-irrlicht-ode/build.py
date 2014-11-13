@@ -1,5 +1,5 @@
 #!/usr/bin/pytho
-import sys,os,string
+import sys,os,string,shutil
 from getopt import getopt
 
 def build():
@@ -16,16 +16,26 @@ def build():
 	else:
 			print "unix"
 
+def clean():
+	print "cleaning on system:",sys.platform
+	if "win32" == sys.platform :
+			build_dir = "build/win32"
+			shutil.rmtree(build_dir)
+	else:
+			print "clean on unix"
 
 if __name__ == "__main__":
-	options,remainder = getopt(sys.argv[1:],'b',['build'])
+	options,remainder = getopt(sys.argv[1:],'bc',['build','clean'])
 
 	if len(sys.argv) == 1:
 		print """command options:
 	-b --build
+	-c --clean
 	"""
 
 	for opt,arg in options:
 		if opt in ('-b','--build'):
 			build()
+		elif opt in ('-c','--clean'):
+			clean()
 
