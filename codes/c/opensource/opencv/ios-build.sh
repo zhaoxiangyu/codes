@@ -2,10 +2,11 @@
 
 genprj(){
         test -d /Developer || sudo ln -s /Applications/Xcode.app/Contents/Developer/ /Developer
-        python platforms/ios/build_framework.py ios
+        test -d build/ios || mkdir -p build/ios
+        python platforms/ios/build_framework.py build/ios
 }
 
-if test 0 -eq $1; then
+if test 0 -eq $#; then
         echo usage: genprj
 else
         eval $1
