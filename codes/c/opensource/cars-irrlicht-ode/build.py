@@ -5,7 +5,14 @@ from getopt import getopt
 def build():
 	print "building on system:",sys.platform
 	if "win32" == sys.platform :
-			print "win32"
+			build_dir = "build/win32"
+			if not os.path.isdir(build_dir):
+					os.makedirs(build_dir)
+
+			currdir = os.getcwd()
+			os.chdir(build_dir)
+			os.system('cmake -G"CodeBlocks - MinGW Makefiles" ../..')
+			os.chdir(currdir)
 	else:
 			print "unix"
 
