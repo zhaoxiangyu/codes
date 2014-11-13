@@ -25,7 +25,7 @@ find_library( ODE_LIBRARY
   NAMES ode_single
   HINTS
   $ENV{ODEDIR}
-  PATH_SUFFIXES lib64 lib bin ReleaseSingleDLL
+  PATH_SUFFIXES lib64 lib bin ReleaseSingleDLL lib/ReleaseSingleDLL
   PATHS
   /usr/local
   /usr

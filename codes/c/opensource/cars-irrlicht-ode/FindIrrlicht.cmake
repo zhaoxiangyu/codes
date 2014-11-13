@@ -25,7 +25,7 @@ find_library( IRRLICHT_LIBRARY
   NAMES Irrlicht
   HINTS
   $ENV{IRRLICHTDIR}
-  PATH_SUFFIXES lib64 lib bin Win32-visualstudio
+  PATH_SUFFIXES lib64 lib bin Win32-visualstudio lib/win32-visualstudio
   PATHS
   /usr/local
   /usr
