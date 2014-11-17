@@ -1,7 +1,10 @@
 set nocompatible
 set nobackup
 set nu
-set ts=4
+set tabstop=8
+set softtabstop=4
+set shiftwidth=4
+
 set backupdir=$vim/backup
 source $VIMRUNTIME/vimrc_example.vim
 source $VIMRUNTIME/mswin.vim
@@ -32,6 +35,13 @@ function MyDiff()
   silent execute '!' . cmd . ' ' . opt . arg1 . ' ' . arg2 . ' > ' . arg3 . eq
 endfunction
 
+set fileencodings=utf-8,chinese,latin-1
+if has("win32")
+	set fileencoding=chinese
+else
+	set fileencoding=utf-8
+endif
+
 ;Vundle
 set rtp+=~/vimfiles/bundle/Vundle.vim/
 let path='~/vimfiles/bundle'
@@ -46,6 +56,7 @@ Plugin 'gmarik/Vundle.vim'
 
 " plugin from http://vim-scripts.org/vim/scripts.html
 " Plugin 'L9'
+Plugin 'FencView.vim'
 
 " Git plugin not hosted on GitHub
 " Plugin 'git://git.wincent.com/command-t.git'

@@ -1,0 +1,36 @@
+#Makefile for Freeglut 2.8.1 and Cygwin
+#To place in the directory 'src'
+
+sources=$(wildcard *.c)
+objs=$(sources:.c=.o)
+libdir=../lib
+libname=freeglut
+
+#CFLAGS=-O2 -DTARGET_HOST_MS_WINDOWS -DX_DISPLAY_MISSING -DFREEGLUT_STATIC -I./
+CFLAGS=-O2 -DTARGET_HOST_MS_WINDOWS -DX_DISPLAY_MISSING -DFREEGLUT_STATIC -I. -I../include
+LDFLAGS=-lopengl32 -lgdi32 -lwinmm
+
+#nocyg=-mno-cygwin -mwindows
+nocyg=-mwindows
+
+all: $(objs)
+#construction DLL related to cygwin1.dll
+#@echo sources:$(sources)
+#@echo objs:$(objs)
+	gcc $(nocyg) $(objs) -shared $(LDFLAGS) -o $(libdir)/$(libname).dll
+	nm $(libname).dll  | awk 'BEGIN { print "EXPORTS" } /T _glut/ {sub( /^.*T _/, "\t"); print}' > $(libdir)/$(libname).def
+	dlltool --dllname $(libdir)/$(libname).dll --input-def $(libdir)/$(libname).def --output-lib $(libdir)/lib$(libname)dll.a
+	
+	#construction static library independent of cygwin
+	ar cr $(libdir)/lib$(libname).a $(objs)
+	#pas inevitably obligatory (creation of an index to accelerate the accesses)
+	ranlib $(libdir)/lib$(libname).a
+
+%.o: %.c
+	gcc $(nocyg) -c $(CFLAGS) $<
+
+clean:
+	rm -f *.o $(libdir)/$(libname).dll $(libdir)/$(libname).def $(libdir)/lib$(libname)dll.a $(libdir)/lib$(libname).a
+
+
+
