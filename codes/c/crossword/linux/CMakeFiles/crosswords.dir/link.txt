@@ -1,0 +1,1 @@
+/usr/bin/gcc      CMakeFiles/crosswords.dir/src/angry.c.o  -o crosswords -rdynamic 

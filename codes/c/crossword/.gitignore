@@ -1,0 +1,5 @@
+#CMake build dirs
+/linux
+/win32
+/macos
+/ios

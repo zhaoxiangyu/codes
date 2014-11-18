@@ -20,7 +20,6 @@
 		87AB2A6E19BB4077000D5549 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 87AB2A6D19BB4077000D5549 /* Default-568h@2x.png */; };
 		87AB2A7119BB4077000D5549 /* JlViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 87AB2A7019BB4077000D5549 /* JlViewController.mm */; };
 		87AB2A7419BB4077000D5549 /* JlViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 87AB2A7219BB4077000D5549 /* JlViewController_iPhone.xib */; };
-		87AB2A7719BB4077000D5549 /* JlViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 87AB2A7519BB4077000D5549 /* JlViewController_iPad.xib */; };
 		87AB2A7F19BB4077000D5549 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 87AB2A7E19BB4077000D5549 /* SenTestingKit.framework */; };
 		87AB2A8019BB4077000D5549 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 87AB2A5719BB4077000D5549 /* UIKit.framework */; };
 		87AB2A8119BB4077000D5549 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 87AB2A5919BB4077000D5549 /* Foundation.framework */; };
@@ -38,6 +37,7 @@
 		87DDE2BD19FBA7CE00880304 /* AudioInfoUtils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 87DDE2B719FBA7CE00880304 /* AudioInfoUtils.cpp */; };
 		87DDE2BE19FBA7CE00880304 /* CourseUtils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 87DDE2B919FBA7CE00880304 /* CourseUtils.cpp */; };
 		87DDE2BF19FBA7CE00880304 /* UnitUtils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 87DDE2BB19FBA7CE00880304 /* UnitUtils.cpp */; };
+		87DDE2C119FBACE100880304 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 87DDE2C019FBACE100880304 /* MainStoryboard.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,7 +70,6 @@
 		87AB2A6F19BB4077000D5549 /* JlViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JlViewController.h; sourceTree = "<group>"; };
 		87AB2A7019BB4077000D5549 /* JlViewController.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = JlViewController.mm; sourceTree = "<group>"; };
 		87AB2A7319BB4077000D5549 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/JlViewController_iPhone.xib; sourceTree = "<group>"; };
-		87AB2A7619BB4077000D5549 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/JlViewController_iPad.xib; sourceTree = "<group>"; };
 		87AB2A7D19BB4077000D5549 /* jlTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = jlTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		87AB2A7E19BB4077000D5549 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		87AB2A8619BB4077000D5549 /* jlTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "jlTests-Info.plist"; sourceTree = "<group>"; };
@@ -103,6 +102,7 @@
 		87DDE2BA19FBA7CE00880304 /* CourseUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CourseUtils.h; sourceTree = "<group>"; };
 		87DDE2BB19FBA7CE00880304 /* UnitUtils.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = UnitUtils.cpp; sourceTree = "<group>"; };
 		87DDE2BC19FBA7CE00880304 /* UnitUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UnitUtils.h; sourceTree = "<group>"; };
+		87DDE2C019FBACE100880304 /* MainStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainStoryboard.storyboard; sourceTree = "<group>"; };
 		87EDE63E19C40A2F0088E276 /* UseBoost.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UseBoost.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -215,7 +215,7 @@
 				87AB2A6F19BB4077000D5549 /* JlViewController.h */,
 				87AB2A7019BB4077000D5549 /* JlViewController.mm */,
 				87AB2A7219BB4077000D5549 /* JlViewController_iPhone.xib */,
-				87AB2A7519BB4077000D5549 /* JlViewController_iPad.xib */,
+				87DDE2C019FBACE100880304 /* MainStoryboard.storyboard */,
 			);
 			name = ui;
 			sourceTree = "<group>";
@@ -387,7 +387,7 @@
 				87AB2A6C19BB4077000D5549 /* Default@2x.png in Resources */,
 				87AB2A6E19BB4077000D5549 /* Default-568h@2x.png in Resources */,
 				87AB2A7419BB4077000D5549 /* JlViewController_iPhone.xib in Resources */,
-				87AB2A7719BB4077000D5549 /* JlViewController_iPad.xib in Resources */,
+				87DDE2C119FBACE100880304 /* MainStoryboard.storyboard in Resources */,
 				872CEA1E19C08DFE00DBD997 /* audios.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -474,14 +474,6 @@
 				87AB2A7319BB4077000D5549 /* en */,
 			);
 			name = JlViewController_iPhone.xib;
-			sourceTree = "<group>";
-		};
-		87AB2A7519BB4077000D5549 /* JlViewController_iPad.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				87AB2A7619BB4077000D5549 /* en */,
-			);
-			name = JlViewController_iPad.xib;
 			sourceTree = "<group>";
 		};
 		87AB2A8719BB4077000D5549 /* InfoPlist.strings */ = {

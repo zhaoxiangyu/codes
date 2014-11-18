@@ -1,0 +1,1 @@
+/home/he/work/code-repo/github/codes/c/crossword/cbp/CMakeFiles/crosswords.dir

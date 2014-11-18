@@ -8,38 +8,117 @@
 # hlsearch on (H) or off (h):
 ~h
 # Last Search Pattern:
-~MSle0~/\\cpp
+~MSle0~/\V\<UpVector\>
 
 # Last Substitute Search Pattern:
-~MSle0&SDL_image
+~MSle0&win32\-cbp\-mingw
 
 # Last Substitute String:
-$SDLIMAGE
+$build\\win32\-cbp\-mingw
 
 # Command Line History (newest to oldest):
 :q
+:q!
+:grep RectanglePrism *.c
+:grep -i RectanglePrism *
+:ctags -R
+:qa!
+:cope
+:vim /numberOfParts/ *.cpp
+:cclose
+:cop
+:ccl
+:copen
+:cc 100
+:cpr
+:cne
+:h :lgrep
+:grep -i car *.cpp
+:vimgrep step *.h
+:vimgrep step *.c
+:grep step *.cpp
+:grep step
+:e#
+:s/
+:jum
 :wq
-::q
 :w
+:% normal $x
+:,+2 normal I#
+:ls
+:%s/win32\-cbp\-mingw/build\\win32\-cbp\-mingw/g
+:%s/cbp/win32\-cbp\-mingw/g
+:s/cbp/genprj/g
+:%s/mingw\-//g
+:%s/\-mingw//g
+:s/-mingw//g
 :N
 :n
+:arge win32-build.bat
+:g
+:w win32-build.bat
+:arge ..\build-asio.bat
+:,+3 normal I#
+:r!ls *.cpp
+:!ls *.c
+:!ls *.cpp
+:%s/tuxtuner/race-circuit/g
+:s/\\/\//g
+:s/\\/\/g
+::q
 :p
-:s/SDL_image/SDLIMAGE/g
-:q!
-:W
-:%s/"//g
 
 # Search String History (newest to oldest):
+?/UpVector
+?/upVector
+??echo
+?/main
+?/for
+? \<Position\>
+? \<UpVector\>
+? \<cam\>
+? \<RectanglePrism\>
+? \<SetScale\>
+? \<SetLightDirection\>
+? \<numberOfParts\>
+?/echo
+? \<cbp\>
+? \<mingw\>
+? mingw
+? \<MinGW\>
+? MinGW
+?/cmake\c
+?/cmake
+?/mingw\c
+?/bin
+?/path\c
+?/path
+?/error\c
+?/glut\c
+?/:
+? win32\-cbp\-mingw
+? cbp
+? mingw\-
+? \-mingw
+? -mingw
+? tuxtuner
+?/__WINDOWS_DS
+?/sleep
+?/#if
+? \<sleep\>
+? \\
+?/dsound
+? \<va_arg\>
+? \<dimension\>
+?/any_matrix
+?/install
+?/audioprobe
+?/ole32
+?/client
+?/SDL_IMAGE_FOUND
 ?/cpp
 ?/\\cpp
 ?/\cpp
-?/open
-? SDL_image
-?/o .*p
-?/o.*p
-?/pre.*b
-? "
-?/HOME
 
 # Expression History (newest to oldest):
 
@@ -48,141 +127,472 @@ $SDLIMAGE
 # Input Line History (newest to oldest):
 
 # 寄存器:
-"0	LINE	0
-	set(CMAKE_INCLUDE_PATH e:/cpp/libs/SDL2-devel-2.0.3-VC/SDL2-2.0.3;e:/cpp/libs/SDL2_image-devel-2.0.0-VC/SDL2_image-2.0.0)
+"0	CHAR	0
+	;%PATH%
 "1	LINE	0
-	find_package(SDL_IMAGE REQUIRED)
+		echo generate win32-cbp-mingw project
 "2	LINE	0
-	find_package(SDL REQUIRED)
+	k
 "3	LINE	0
-	cmake -G "Visual Studio 8 2005" ..  
+	#find_package(PkgConfig)
 "4	LINE	0
-	  )
+		message(STATUS "PROJECT_SOURCE_DIR:" ${PROJECT_SOURCE_DIR})
 "5	LINE	0
-	    rename 0.8.1 storm-0.8.1.zip
+		#add_definitions(-D__WINDOWS_DS__)
 "6	LINE	0
-	    wget https://github.com/apache/incubator-storm/archive/0.8.1.zip
+		set(CMAKE_INCLUDE_PATH glut-3.7.6-bin)
+		set(CMAKE_LIBRARY_PATH glut-3.7.6-bin)
 "7	LINE	0
-	  if not exist storm-0.8.1.zip (
-"8	LINE	0
-	  7z x -ostorm-0.8.1 storm-0.8.1.zip
-"9	LINE	0
 	
+"8	LINE	0
+		#list(APPEND LINKLIBS winmm ole32 dsound)
+"9	LINE	0
+		#set(LINKLIBS)
 ""-	CHAR	0
-	e:/cpp/libs/SDL2-devel-2.0.3-VC/SDL2-2.0.3;e:/cpp/libs/SDL2_image-devel-2.0.0-VC/SDL2_image-2.0.0
+	"
 
 # 文件标记:
-'0  6  37  E:\code-repo2\github\codes\c\usesdl\CMakeLists.txt
-'1  8  21  E:\code-repo2\github\codes\c\usesdl\CMakeLists.txt
-'2  74  0  C:\Program Files\CMake 2.8\share\cmake-2.8\Modules\FindSDL.cmake
-'3  9  0  E:\code-repo2\github\codes\c\usesdl\CMakeLists.txt
-'4  67  0  C:\Program Files\CMake 2.8\share\cmake-2.8\Modules\FindSDL.cmake
-'5  24  7  E:\code-repo2\github\codes\c\usesdl\CMakeLists.txt
-'6  21  7  E:\code-repo2\github\codes\c\usesdl\CMakeLists.txt
-'7  1  33  E:\code-repo2\github\codes\c\usesdl\CMakeLists.txt
-'8  22  44  E:\code-repo2\github\codes\c\usesdl\CMakeLists.txt
-'9  16  13  E:\code-repo2\github\codes\c\usesdl\build.bat
+'0  1  0  ~\_vimrc
+'1  790  1  ~\_viminfo
+'2  1  0  ~\_vim
+'3  5  0  C:\Program Files\Vim\_vimrc
+'4  113  2  E:\opensource\egc-race-circuit-master\Vector3D.h
+'5  10  6  E:\opensource\egc-race-circuit-master\RectanglePrism.h
+'6  10  0  E:\opensource\egc-race-circuit-master\win32-cbp-mingw-build.bat
+'7  29  0  E:\opensource\egc-race-circuit-master\win32-cbp-mingw-build.bat
+'8  21  3  E:\opensource\egc-race-circuit-master\win32-cbp-mingw-build.bat
+'9  324  0  E:\opensource\egc-race-circuit-master\tags
 
 # 跳转列表 (从新到旧):
--'  6  37  E:\code-repo2\github\codes\c\usesdl\CMakeLists.txt
--'  8  21  E:\code-repo2\github\codes\c\usesdl\CMakeLists.txt
--'  74  0  C:\Program Files\CMake 2.8\share\cmake-2.8\Modules\FindSDL.cmake
--'  67  0  C:\Program Files\CMake 2.8\share\cmake-2.8\Modules\FindSDL.cmake
--'  9  0  E:\code-repo2\github\codes\c\usesdl\CMakeLists.txt
--'  24  7  E:\code-repo2\github\codes\c\usesdl\CMakeLists.txt
--'  1  0  C:\Program Files\CMake 2.8\share\cmake-2.8\Modules\FindSDL.cmake
--'  21  7  E:\code-repo2\github\codes\c\usesdl\CMakeLists.txt
--'  1  0  E:\code-repo2\github\codes\c\usesdl\CMakeLists.txt
--'  22  44  E:\code-repo2\github\codes\c\usesdl\CMakeLists.txt
--'  10  0  E:\code-repo2\github\codes\c\usesdl\CMakeLists.txt
--'  16  13  E:\code-repo2\github\codes\c\usesdl\build.bat
--'  15  0  E:\code-repo2\github\codes\c\usesdl\build.bat
--'  147  0  E:\code-repo2\github\codes\c\usesdl\win32\CMakeCache.txt
--'  237  0  E:\code-repo2\github\codes\c\usesdl\win32\CMakeCache.txt
--'  17  0  E:\code-repo2\github\codes\c\usesdl\c.txt
--'  1  0  E:\code-repo2\github\codes\c\usesdl\c.txt
--'  303  0  E:\code-repo2\github\codes\c\usesdl\c.txt
--'  2  29  E:\code-repo2\github\codes\c\usesdl\win32\CMakeCache.txt
--'  241  33  E:\code-repo2\github\codes\c\usesdl\win32\CMakeCache.txt
--'  174  32  E:\code-repo2\github\codes\c\usesdl\win32\CMakeCache.txt
--'  162  29  E:\code-repo2\github\codes\c\usesdl\win32\CMakeCache.txt
--'  159  29  E:\code-repo2\github\codes\c\usesdl\win32\CMakeCache.txt
--'  1  0  E:\code-repo2\github\codes\c\usesdl\win32\CMakeCache.txt
--'  296  0  E:\code-repo2\github\codes\c\usesdl\win32\CMakeCache.txt
--'  48  0  E:\code-repo2\github\codes\c\usesdl\win32\CMakeCache.txt
--'  13  14  E:\code-repo2\github\codes\c\usesdl\build.bat
--'  19  5  E:\code-repo2\github\codes\c\usesdl\build.bat
--'  1  0  E:\code-repo2\github\codes\c\usesdl\build.bat
--'  3  41  E:\opensource\race_car-master\CMakeLists.txt
--'  16  16  E:\opensource\race_car-master\CMakeLists.txt
--'  22  13  E:\opensource\race_car-master\CMakeLists.txt
--'  7  0  E:\opensource\race_car-master\CMakeLists.txt
--'  14  0  E:\opensource\race_car-master\CMakeLists.txt
--'  9  30  E:\opensource\race_car-master\CMakeLists.txt
--'  1  0  E:\opensource\race_car-master\CMakeLists.txt
--'  30  0  E:\down\tubegame-master\make-exe.lisp
--'  1  0  E:\down\tubegame-master\make-exe.lisp
--'  42  0  E:\down\tubegame-master\make-dist.bat
--'  12  0  E:\down\tubegame-master\make-dist.bat
--'  1  0  E:\down\tubegame-master\make-dist.bat
--'  3  50  E:\code-repo2\github\codes\winxp\ws.bat
--'  1  0  E:\code-repo2\github\codes\clojure\parser\x
--'  1  0  f:\web-dict\oxford\htmls\200-501.json
--'  55  16  ~\.m2\settings.xml
--'  61  3  ~\.m2\settings.xml
--'  22  20  E:\code-repo2\github\codes\winxp\ws.bat
--'  1  0  E:\code-repo2\github\codes\winxp\ws.bat
--'  55  11  e:\code-repo2\github\codes\clojure\parser\src\main\clojure\org\sharpx\parser\oxford_parser.clj
--'  44  44  e:\code-repo2\github\codes\clojure\parser\src\main\clojure\org\sharpx\parser\oxford_parser.clj
--'  24  7  e:\code-repo2\github\codes\clojure\parser\src\main\clojure\org\sharpx\parser\oxford_parser.clj
--'  5  14  e:\code-repo2\github\codes\clojure\parser\src\main\clojure\org\sharpx\parser\oxford_parser.clj
--'  2  0  e:\code-repo2\github\codes\clojure\parser\src\main\clojure\org\sharpx\parser\oxford_parser.clj
--'  1  0  e:\code-repo2\github\codes\clojure\parser\src\main\clojure\org\sharpx\parser\oxford_parser.clj
--'  19  0  E:\code-repo2\github\codes\code-man.bat
--'  6  5  E:\code-repo2\github\codes\code-man.bat
--'  38  56  E:\code-repo2\github\codes\code-man.bat
--'  27  4  E:\code-repo2\github\codes\code-man.bat
--'  45  2  E:\code-repo2\github\codes\code-man.bat
--'  43  8  E:\code-repo2\github\codes\code-man.bat
--'  41  7  E:\code-repo2\github\codes\code-man.bat
--'  29  6  E:\code-repo2\github\codes\code-man.bat
--'  1  0  E:\code-repo2\github\codes\code-man.bat
--'  25  74  E:\code-repo2\github\codes\clojure\parser\build.bat
--'  1  0  E:\code-repo2\github\codes\clojure\parser\build.bat
--'  259  0  ~\.m2\settings.xml
--'  1  0  ~\.m2\settings.xml
--'  1  0  ~\bat-wrapper\mvn.bat
--'  44  8  E:\down\Xword-master\wl.txt
--'  11  2  E:\down\Xword-master\wl.txt
--'  1  0  E:\down\Xword-master\wl.txt
--'  11  0  C:\Documents and Settings\he\Local Settings\Temp\中药学(张廷模)讲稿.docx
--'  24  0  C:\Documents and Settings\he\Local Settings\Temp\中药学(张廷模)讲稿.docx
--'  1  0  C:\Documents
--'  1  26331  G:\web-dict\oxford\htmls\25-6420.json
--'  1  174837  G:\web-dict\oxford\htmls\20-7567.json
--'  29  0  E:\code-repo2\github\codes\winxp\console.bat
--'  30  36  E:\code-repo2\github\codes\winxp\console.bat
--'  1  0  E:\code-repo2\github\codes\clojure\parser\console.log
--'  32  1  E:\code-repo2\github\codes\clojure\parser\console.log
--'  3  5  E:\code-repo2\github\codes\clojure\parser\.gitignore
--'  1  0  E:\code-repo2\github\codes\clojure\parser\.gitignore
--'  10  0  E:\code-repo2\github\codes\winxp\console.bat
--'  151  0  E:\tools\gnuwin32\bin\set_gnuwin32.bat
--'  1  0  E:\tools\gnuwin32\bin\set_gnuwin32.bat
--'  6  58  E:\code-repo2\github\codes\winxp\console.bat
--'  17  60  E:\code-repo2\github\codes\winxp\console.bat
--'  34  17  E:\code-repo2\github\codes\winxp\console.bat
--'  14  17  E:\code-repo2\github\codes\winxp\console.bat
--'  27  26  E:\code-repo2\github\codes\winxp\console.bat
--'  7  0  E:\code-repo2\github\codes\winxp\console.bat
--'  8  0  E:\code-repo2\github\codes\winxp\console.bat
--'  28  57  E:\code-repo2\github\codes\winxp\console.bat
--'  37  8  E:\he-xun\sw\apache-maven-3.2.1\bin\mvn.bat
--'  103  23  E:\he-xun\sw\apache-maven-3.2.1\bin\mvn.bat
--'  74  0  C:\Program Files\CMake 2.8\share\cmake-2.8\Modules\FindSDL.cmake
--'  7  21  E:\code-repo2\github\codes\c\usesdl\CMakeLists.txt
+-'  1  0  ~\_vimrc
+-'  790  1  ~\_viminfo
+-'  2  0  ~\_viminfo
+-'  1  0  ~\_viminfo
+-'  1  0  ~\_vim
+-'  5  0  C:\Program Files\Vim\_vimrc
+-'  113  2  E:\opensource\egc-race-circuit-master\Vector3D.h
+-'  128  6  E:\opensource\egc-race-circuit-master\Camera.cpp
+-'  22  18  E:\opensource\egc-race-circuit-master\Camera.cpp
+-'  21  48  E:\opensource\egc-race-circuit-master\Camera.cpp
+-'  26  3  E:\opensource\egc-race-circuit-master\Camera.cpp
+-'  16  5  E:\opensource\egc-race-circuit-master\Camera.cpp
+-'  89  28  E:\opensource\egc-race-circuit-master\Camera.cpp
+-'  107  44  E:\opensource\egc-race-circuit-master\Camera.cpp
+-'  73  13  E:\opensource\egc-race-circuit-master\Camera.cpp
+-'  33  36  E:\opensource\egc-race-circuit-master\Camera.cpp
+-'  142  1  E:\opensource\egc-race-circuit-master\Camera.cpp
+-'  1  0  E:\opensource\egc-race-circuit-master\Camera.cpp
+-'  29  8  E:\opensource\egc-race-circuit-master\Camera.cpp
+-'  42  18  E:\opensource\egc-race-circuit-master\Camera.cpp
+-'  41  48  E:\opensource\egc-race-circuit-master\Camera.cpp
+-'  40  0  E:\opensource\egc-race-circuit-master\Camera.cpp
+-'  14  0  E:\opensource\egc-race-circuit-master\Camera.cpp
+-'  125  0  E:\opensource\egc-race-circuit-master\Camera.cpp
+-'  54  1  E:\opensource\egc-race-circuit-master\Camera.cpp
+-'  20  0  E:\opensource\egc-race-circuit-master\Camera.cpp
+-'  37  0  E:\opensource\egc-race-circuit-master\Camera.cpp
+-'  83  1  E:\opensource\egc-race-circuit-master\Camera.cpp
+-'  10  6  E:\opensource\egc-race-circuit-master\RectanglePrism.h
+-'  8  13  E:\opensource\egc-race-circuit-master\RectanglePrism.h
+-'  1  0  E:\opensource\egc-race-circuit-master\.RectanglePrism.h.swp
+-'  170  16  E:\opensource\egc-race-circuit-master\NFS.cpp
+-'  43  0  E:\opensource\egc-race-circuit-master\RectanglePrism.h
+-'  132  16  E:\opensource\egc-race-circuit-master\NFS.cpp
+-'  115  22  E:\opensource\egc-race-circuit-master\NFS.cpp
+-'  10  0  E:\opensource\egc-race-circuit-master\win32-cbp-mingw-build.bat
+-'  29  0  E:\opensource\egc-race-circuit-master\win32-cbp-mingw-build.bat
+-'  23  1  E:\opensource\egc-race-circuit-master\win32-cbp-mingw-build.bat
+-'  13  1  E:\opensource\egc-race-circuit-master\win32-cbp-mingw-build.bat
+-'  22  1  E:\opensource\egc-race-circuit-master\win32-cbp-mingw-build.bat
+-'  3  8  E:\opensource\egc-race-circuit-master\win32-cbp-mingw-build.bat
+-'  24  0  E:\opensource\egc-race-circuit-master\win32-cbp-mingw-build.bat
+-'  14  1  E:\opensource\egc-race-circuit-master\win32-cbp-mingw-build.bat
+-'  6  1  E:\opensource\egc-race-circuit-master\win32-cbp-mingw-build.bat
+-'  1  1  E:\opensource\egc-race-circuit-master\win32-cbp-mingw-build.bat
+-'  20  0  E:\opensource\egc-race-circuit-master\win32-cbp-mingw-build.bat
+-'  11  0  E:\opensource\egc-race-circuit-master\win32-cbp-mingw-build.bat
+-'  2  0  E:\opensource\egc-race-circuit-master\win32-cbp-mingw-build.bat
+-'  32  0  E:\opensource\egc-race-circuit-master\win32-cbp-mingw-build.bat
+-'  21  3  E:\opensource\egc-race-circuit-master\win32-cbp-mingw-build.bat
+-'  324  0  E:\opensource\egc-race-circuit-master\tags
+-'  12  0  E:\opensource\egc-race-circuit-master\tags
+-'  1  0  E:\opensource\egc-race-circuit-master\tags
+-'  37  1  E:\opensource\egc-race-circuit-master\RectanglePrism.h
+-'  17  0  E:\opensource\egc-race-circuit-master\Vector3D.h
+-'  106  22  E:\opensource\egc-race-circuit-master\NFS.cpp
+-'  38  0  E:\opensource\egc-race-circuit-master\Plane.h
+-'  104  14  E:\opensource\egc-race-circuit-master\NFS.cpp
+-'  528  3  E:\opensource\egc-race-circuit-master\NFS.cpp
+-'  107  1  E:\opensource\egc-race-circuit-master\NFS.cpp
+-'  94  1  E:\opensource\egc-race-circuit-master\NFS.cpp
+-'  10  1  E:\opensource\egc-race-circuit-master\Car.cpp
+-'  79  4  E:\opensource\egc-race-circuit-master\NFS.cpp
+-'  330  8  E:\opensource\egc-race-circuit-master\Car.cpp
+-'  308  8  E:\opensource\egc-race-circuit-master\Car.cpp
+-'  213  22  E:\opensource\egc-race-circuit-master\Car.cpp
+-'  414  11  E:\opensource\egc-race-circuit-master\Car.cpp
+-'  216  16  E:\opensource\egc-race-circuit-master\Car.cpp
+-'  424  10  E:\opensource\egc-race-circuit-master\Car.cpp
+-'  417  10  E:\opensource\egc-race-circuit-master\Car.cpp
+-'  410  10  E:\opensource\egc-race-circuit-master\Car.cpp
+-'  331  8  E:\opensource\egc-race-circuit-master\Car.cpp
+-'  309  8  E:\opensource\egc-race-circuit-master\Car.cpp
+-'  407  6  E:\opensource\egc-race-circuit-master\Car.cpp
+-'  81  12  E:\opensource\egc-race-circuit-master\Car.cpp
+-'  88  13  E:\opensource\egc-race-circuit-master\Car.cpp
+-'  94  13  E:\opensource\egc-race-circuit-master\Car.cpp
+-'  24  12  E:\opensource\egc-race-circuit-master\Car.cpp
+-'  30  12  E:\opensource\egc-race-circuit-master\Car.cpp
+-'  36  12  E:\opensource\egc-race-circuit-master\Car.cpp
+-'  42  12  E:\opensource\egc-race-circuit-master\Car.cpp
+-'  48  12  E:\opensource\egc-race-circuit-master\Car.cpp
+-'  55  12  E:\opensource\egc-race-circuit-master\Car.cpp
+-'  62  12  E:\opensource\egc-race-circuit-master\Car.cpp
+-'  68  12  E:\opensource\egc-race-circuit-master\Car.cpp
+-'  74  12  E:\opensource\egc-race-circuit-master\Car.cpp
+-'  10  0  E:\opensource\egc-race-circuit-master\win32-cbp-mingw-build.bat
+-'  29  0  E:\opensource\egc-race-circuit-master\win32-cbp-mingw-build.bat
+-'  23  1  E:\opensource\egc-race-circuit-master\win32-cbp-mingw-build.bat
+-'  13  1  E:\opensource\egc-race-circuit-master\win32-cbp-mingw-build.bat
+-'  22  1  E:\opensource\egc-race-circuit-master\win32-cbp-mingw-build.bat
+-'  3  8  E:\opensource\egc-race-circuit-master\win32-cbp-mingw-build.bat
+-'  113  2  E:\opensource\egc-race-circuit-master\Vector3D.h
+-'  128  6  E:\opensource\egc-race-circuit-master\Camera.cpp
+-'  22  18  E:\opensource\egc-race-circuit-master\Camera.cpp
+-'  21  48  E:\opensource\egc-race-circuit-master\Camera.cpp
+-'  26  3  E:\opensource\egc-race-circuit-master\Camera.cpp
+-'  16  5  E:\opensource\egc-race-circuit-master\Camera.cpp
 
 # 文件内的标记历史记录 (从新到旧):
+
+> ~\_vimrc
+	"	1	0
+
+> ~\_viminfo
+	"	790	1
+
+> ~\_vim
+	"	1	0
+
+> C:\Program Files\Vim\_vimrc
+	"	5	0
+	.	5	0
+	+	1	0
+	+	5	0
+
+> E:\opensource\egc-race-circuit-master\Camera.cpp
+	"	128	6
+
+> E:\opensource\egc-race-circuit-master\Vector3D.h
+	"	113	2
+
+> E:\opensource\egc-race-circuit-master\NFS.cpp
+	"	170	16
+
+> E:\opensource\egc-race-circuit-master\RectanglePrism.h
+	"	10	6
+
+> E:\opensource\egc-race-circuit-master\.RectanglePrism.h.swp
+	"	1	0
+
+> E:\opensource\egc-race-circuit-master\win32-cbp-mingw-build.bat
+	"	10	0
+	^	14	10
+	.	13	0
+	+	6	0
+	+	12	0
+	+	14	15
+	+	17	44
+	+	3	17
+	+	3	43
+	+	3	0
+	+	17	45
+	+	14	102
+	+	14	104
+	+	14	0
+	+	14	0
+	+	14	0
+	+	22	0
+	+	13	0
+
+> E:\opensource\egc-race-circuit-master\tags
+	"	324	0
+
+> E:\opensource\egc-race-circuit-master\Plane.h
+	"	38	0
+
+> E:\opensource\egc-race-circuit-master\Car.cpp
+	"	10	1
+
+> E:\opensource\egc-race-circuit-master\Car.h
+	"	24	5
+
+> E:\opensource\egc-race-circuit-master\Cube.cpp
+	"	7	0
+
+> E:\opensource\egc-race-circuit-master\Light.cpp
+	"	31	1
+
+> C:\Program Files\Vim\vim74\doc\quickfix.txt
+	"	644	0
+
+> E:\opensource\egc-race-circuit-master\UpgradeLog.XML
+	"	5	0
+	^	3	83
+	.	3	0
+	+	4	0
+	+	3	0
+	+	3	0
+	+	3	0
+
+> E:\opensource\egc-race-circuit-master\UpgradeLogLog.XML
+	"	1	0
+
+> e:\code-repo2\github\codes\winxp\console.bat
+	"	30	45
+	^	31	0
+	.	30	39
+	+	38	0
+	+	35	46
+	+	36	0
+	+	38	0
+	+	28	16
+	+	7	0
+	+	23	0
+	+	11	0
+	+	24	0
+	+	25	0
+	+	18	0
+	+	5	0
+	+	27	26
+	+	37	17
+	+	38	0
+	+	17	60
+	+	23	3
+	+	9	0
+	+	9	0
+	+	10	0
+	+	38	0
+	+	33	36
+	+	38	0
+	+	34	0
+	+	29	0
+	+	32	0
+	+	27	0
+	+	30	9
+	+	29	4
+	+	36	30
+	+	30	39
+
+> E:\opensource\egc-race-circuit-master\CMakeLists.txt
+	"	16	13
+	^	16	14
+	.	16	13
+	+	3	19
+	+	7	0
+	+	4	0
+	+	8	0
+	+	5	0
+	+	7	10
+	+	7	0
+	+	7	0
+	+	5	9
+	+	7	0
+	+	7	0
+	+	7	0
+	+	5	0
+	+	7	0
+	+	5	9
+	+	7	0
+	+	6	0
+	+	18	21
+	+	20	16
+	+	8	0
+	+	19	18
+	+	18	30
+	+	20	16
+	+	20	15
+	+	26	0
+	+	20	0
+	+	20	0
+	+	26	0
+	+	22	2
+	+	22	0
+	+	25	7
+	+	23	6
+	+	23	0
+	+	24	10
+	+	21	41
+	+	22	39
+	+	24	37
+	+	27	15
+	+	19	0
+	+	19	0
+	+	19	0
+	+	19	18
+	+	12	0
+	+	19	0
+	+	17	0
+	+	20	0
+	+	14	0
+	+	12	45
+	+	13	45
+	+	27	0
+	+	10	0
+	+	11	0
+	+	10	0
+	+	14	1
+	+	15	1
+	+	16	1
+	+	15	12
+	+	28	0
+	+	16	13
+
+> E:\opensource\egc-race-circuit-master\build\system-info.txt
+	"	1	0
+
+> E:\opensource\egc-race-circuit-master\build\win32-cbp-mingw\CMakeFiles\CMakeOutput.log
+	"	282	0
+
+> E:\code-repo2\github\codes\win32-cbp-mingw-build.bat
+	"	1	0
+
+> E:\opensource\egc-race-circuit-master\win32-build.bat
+	"	30	8
+	^	30	9
+	.	30	8
+	+	3	0
+	+	5	42
+	+	19	11
+	+	19	9
+	+	19	9
+	+	19	11
+	+	19	0
+	+	19	1
+	+	19	0
+	+	19	0
+	+	20	1
+	+	20	0
+	+	19	11
+	+	17	9
+	+	31	29
+	+	16	0
+	+	15	37
+	+	31	0
+	+	26	8
+	+	15	37
+	+	5	48
+	+	30	8
+
+> E:\opensource\build-asio.bat
+	"	1	0
+	^	14	40
+	.	14	39
+	+	14	39
+
+> E:\opensource\TuxTuner-master\CMakeLists.txt
+	"	4	53
+	^	4	54
+	.	4	53
+	+	11	0
+	+	15	0
+	+	19	0
+	+	12	0
+	+	17	31
+	+	18	43
+	+	14	33
+	+	23	0
+	+	11	0
+	+	11	0
+	+	11	55
+	+	11	0
+	+	11	0
+	+	11	16
+	+	11	0
+	+	6	0
+	+	4	0
+	+	5	61
+	+	11	0
+	+	8	0
+	+	9	0
+	+	8	34
+	+	17	21
+	+	4	53
+
+> E:\opensource\TuxTuner-master\main.cpp
+	"	16	19
+	^	16	20
+	.	16	19
+	+	12	8
+	+	15	5
+	+	13	25
+	+	14	0
+	+	16	19
+
+> E:\opensource\TuxTuner-master\win32\CMake
+	"	1	0
+
+> E:\opensource\rtaudio-4.1.1\RtAudio.cpp
+	"	38	0
+
+> E:\opensource\TuxTuner-master\include\RtAudio.cpp
+	"	96	12
+
+> E:\opensource\TuxTuner-master\include\RtAudio.h
+	"	6	0
+
+> E:\code-repo2\github\codes\c\crossword\src\angry.c
+	"	33	14
+	^	54	15
+	.	54	14
+	+	43	0
+	+	42	27
+	+	55	1
+	+	55	0
+	+	56	15
+	+	54	14
+
+> E:\code-repo2\github\codes\c\opensource\tuxtuner\CMakeLists.txt
+	"	1	0
+
+> E:\code-repo2\github\codes\c\opensource\tuxtuner\Makefile
+	"	1	0
+
+> E:\opensource\rtaudio-4.1.1\CMakeLists.txt
+	"	1	0
+
+> E:\opensource\rtaudio-4.1.1\win32\Makefile
+	"	106	12
+
+> E:\opensource\asio-1.10.4\src\Makefile.mgw
+	"	1	0
+
+> e:\code-repo2\github\codes\c\opensource\asio\build.bat
+	"	15	4
+	^	14	5
+	.	14	4
+	+	4	24
+	+	16	6
+	+	17	6
+	+	14	4
+
+> E:\opensource\build.bat
+	"	6	20
+	^	6	21
+	.	6	20
+	+	6	20
+
+> E:\code-repo2\github\codes\code-man.bat
+	"	35	0
+
+> C:\Program Files\CMake 2.8\share\cmake-2.8\Modules\FindSDL_image.cmake
+	"	86	21
+
+> E:\code-repo2\github\codes\python\readme.txt
+	"	1	0
+
+> E:\code-repo2\github\codes\python\down-jw.py
+	"	3	0
 
 > E:\code-repo2\github\codes\c\usesdl\CMakeLists.txt
 	"	6	37
@@ -321,9 +731,6 @@ $SDLIMAGE
 > e:\code-repo2\github\codes\clojure\parser\src\main\clojure\org\sharpx\parser\oxford_parser.clj
 	"	55	11
 
-> E:\code-repo2\github\codes\code-man.bat
-	"	19	0
-
 > E:\code-repo2\github\codes\clojure\parser\build.bat
 	"	25	74
 	^	25	75
@@ -364,36 +771,6 @@ $SDLIMAGE
 > G:\web-dict\oxford\htmls\20-7567.json
 	"	1	174837
 
-> E:\code-repo2\github\codes\winxp\console.bat
-	"	29	0
-	^	29	0
-	.	29	0
-	+	35	0
-	+	32	46
-	+	33	0
-	+	35	0
-	+	28	16
-	+	7	0
-	+	23	0
-	+	11	0
-	+	24	0
-	+	25	0
-	+	18	0
-	+	5	0
-	+	27	26
-	+	34	17
-	+	35	0
-	+	17	60
-	+	23	3
-	+	9	0
-	+	9	0
-	+	10	0
-	+	35	0
-	+	30	36
-	+	35	0
-	+	31	0
-	+	29	0
-
 > E:\code-repo2\github\codes\clojure\parser\console.log
 	"	1	0
 
@@ -411,12 +788,6 @@ $SDLIMAGE
 	^	161	171
 	.	161	171
 	+	161	171
-
-> c:\Program Files\Vim\_vimrc
-	"	5	0
-	.	5	0
-	+	1	0
-	+	5	0
 
 > c:\Program Files\Vim\vim74\_vimrc
 	"	76	0

@@ -1,0 +1,882 @@
+// !$*UTF8*$!
+{
+       archiveVersion = 1;
+       classes = {
+       };
+       objectVersion = 46;
+       objects = {
+
+/* Begin PBXAggregateTarget section */
+              04E97EC517934E51BA10E312 /* ALL_BUILD */ = {
+                     isa = PBXAggregateTarget;
+                     buildConfigurationList = 4C7A7F7827604EC888E49C67 /* Build configuration list for PBXAggregateTarget "ALL_BUILD" */;
+                     buildPhases = (
+                            F57E1AE6BD424DF7B59B48ED /* CMake Rules */,
+                     );
+                     dependencies = (
+                            D4207760174F4A9CA14F57F6 /* PBXTargetDependency */,
+                            BBB0EB34331044E493357CD9 /* PBXTargetDependency */,
+                     );
+                     name = ALL_BUILD;
+                     productName = ALL_BUILD;
+              };
+              248ED7B67CE64B338A3D7DDD /* ZERO_CHECK */ = {
+                     isa = PBXAggregateTarget;
+                     buildConfigurationList = 99140F689B1A424B8D4E7571 /* Build configuration list for PBXAggregateTarget "ZERO_CHECK" */;
+                     buildPhases = (
+                            7D3CE6411E9E4C41A92260DE /* CMake Rules */,
+                     );
+                     dependencies = (
+                     );
+                     name = ZERO_CHECK;
+                     productName = ZERO_CHECK;
+              };
+              03B4D60C33074CD2BE2735C0 /* install */ = {
+                     isa = PBXAggregateTarget;
+                     buildConfigurationList = 0E4A5898B59E41EBA953104F /* Build configuration list for PBXAggregateTarget "install" */;
+                     buildPhases = (
+                            183A777608C742AE8EB8C239 /* CMake PostBuild Rules */,
+                     );
+                     dependencies = (
+                            97289ADCD2DB4F59A6AA7572 /* PBXTargetDependency */,
+                     );
+                     name = install;
+                     productName = install;
+              };
+/* End PBXAggregateTarget section */
+
+/* Begin PBXBuildFile section */
+EB6E44DC9F5D4FA69F47291C /* /Users/he/work/codes-repo/github/codes/c/crossword/CMakeLists.txt */ = {isa = PBXBuildFile; fileRef = 3D7BFE8BD95141D0A36C02FE /* /Users/he/work/codes-repo/github/codes/c/crossword/CMakeLists.txt */; settings = { COMPILER_FLAGS = ""; }; };
+6F44C1C021424324A8FFA75C /* /Users/he/work/codes-repo/github/codes/c/crossword/src/angry.c */ = {isa = PBXBuildFile; fileRef = 4C8D731117B74A998B1C1A11 /* /Users/he/work/codes-repo/github/codes/c/crossword/src/angry.c */; settings = { COMPILER_FLAGS = ""; }; };
+5F31A233FCD545A098E10542 /* /Users/he/work/codes-repo/github/codes/c/crossword/xcode/ios/CMakeFiles/crosswords.dir/Info.plist */ = {isa = PBXBuildFile; fileRef = 3D7C4B33B458446E83CEEFC3 /* /Users/he/work/codes-repo/github/codes/c/crossword/xcode/ios/CMakeFiles/crosswords.dir/Info.plist */; settings = { COMPILER_FLAGS = ""; }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXBuildStyle section */
+              35FCC3BE3872413281D75915 /*  */ = {
+                     isa = PBXBuildStyle;
+              };
+              1F82E65385E240A4A71642B4 /* Debug */ = {
+                     isa = PBXBuildStyle;
+                     buildSettings = {
+                            COPY_PHASE_STRIP = NO;
+                     };
+                     name = Debug;
+              };
+              F8C2995A8F154C52BA571FC0 /* Release */ = {
+                     isa = PBXBuildStyle;
+                     buildSettings = {
+                            COPY_PHASE_STRIP = NO;
+                     };
+                     name = Release;
+              };
+              565E594186FF4397BDB891CF /* MinSizeRel */ = {
+                     isa = PBXBuildStyle;
+                     buildSettings = {
+                            COPY_PHASE_STRIP = NO;
+                     };
+                     name = MinSizeRel;
+              };
+              9DD70D45CD7345CB9ECB2134 /* RelWithDebInfo */ = {
+                     isa = PBXBuildStyle;
+                     buildSettings = {
+                            COPY_PHASE_STRIP = NO;
+                     };
+                     name = RelWithDebInfo;
+              };
+/* End PBXBuildStyle section */
+
+/* Begin PBXContainerItemProxy section */
+              6CD980D41A8A468089EFF634 /* PBXContainerItemProxy */ = {
+                     isa = PBXContainerItemProxy;
+                     containerPortal = 748CAED1AE464DBE84267839 /* Project object */;
+                     proxyType = 1;
+                     remoteGlobalIDString = FF59857CA7484B94B79CE3F2;
+                     remoteInfo = crosswords;
+              };
+              A1BBCA0A0D2B4A7AABD2064E /* PBXContainerItemProxy */ = {
+                     isa = PBXContainerItemProxy;
+                     containerPortal = 748CAED1AE464DBE84267839 /* Project object */;
+                     proxyType = 1;
+                     remoteGlobalIDString = 248ED7B67CE64B338A3D7DDD;
+                     remoteInfo = ZERO_CHECK;
+              };
+              DD5D82674DD340608818A70A /* PBXContainerItemProxy */ = {
+                     isa = PBXContainerItemProxy;
+                     containerPortal = 748CAED1AE464DBE84267839 /* Project object */;
+                     proxyType = 1;
+                     remoteGlobalIDString = 248ED7B67CE64B338A3D7DDD;
+                     remoteInfo = ZERO_CHECK;
+              };
+              A2329F6D71E6483B9E24C8BE /* PBXContainerItemProxy */ = {
+                     isa = PBXContainerItemProxy;
+                     containerPortal = 748CAED1AE464DBE84267839 /* Project object */;
+                     proxyType = 1;
+                     remoteGlobalIDString = 04E97EC517934E51BA10E312;
+                     remoteInfo = ALL_BUILD;
+              };
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+3D7BFE8BD95141D0A36C02FE /* /Users/he/work/codes-repo/github/codes/c/crossword/CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = "sourcecode.text"; fileEncoding = 4; name = "CMakeLists.txt"; path = "CMakeLists.txt"; sourceTree = SOURCE_ROOT; };
+4C8D731117B74A998B1C1A11 /* /Users/he/work/codes-repo/github/codes/c/crossword/src/angry.c */ = {isa = PBXFileReference; explicitFileType = "sourcecode.c.c"; fileEncoding = 4; name = "angry.c"; path = "src/angry.c"; sourceTree = SOURCE_ROOT; };
+3D7C4B33B458446E83CEEFC3 /* /Users/he/work/codes-repo/github/codes/c/crossword/xcode/ios/CMakeFiles/crosswords.dir/Info.plist */ = {isa = PBXFileReference; explicitFileType = "sourcecode.text.plist"; fileEncoding = 4; name = "Info.plist"; path = "xcode/ios/CMakeFiles/crosswords.dir/Info.plist"; sourceTree = SOURCE_ROOT; };
+62D455D9E9C844D194D85EE8 /* crosswords */ = {isa = PBXFileReference; explicitFileType = "archive.ar"; path = "libcrosswords.a"; refType = 0; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+              DAA5E6369C0540A8A825AB9B  = {
+                     isa = PBXGroup;
+                     children = (
+                            467B317F4C23435C927DD1A2 /* Sources */,
+                            1CE8E619F76947B6B66F9101 /* Resources */,
+                            32A1EC4291D742559DA10796 /* Products */,
+                     );
+                     sourceTree = "<group>";
+              };
+              467B317F4C23435C927DD1A2 /* Sources */ = {
+                     isa = PBXGroup;
+                     children = (
+                            CCE1235266F6428989F8B2FC /* ALL_BUILD */,
+                            4DDAA04E946849168AB7847B /* ZERO_CHECK */,
+                            08095CF8713D483194BA5957 /* crosswords */,
+                     );
+                     name = Sources;
+                     sourceTree = "<group>";
+              };
+              1CE8E619F76947B6B66F9101 /* Resources */ = {
+                     isa = PBXGroup;
+                     children = (
+                     );
+                     name = Resources;
+                     sourceTree = "<group>";
+              };
+              CCE1235266F6428989F8B2FC /* ALL_BUILD */ = {
+                     isa = PBXGroup;
+                     children = (
+                            C05A01FB756A49ABA3B9F67D /* CMake Rules */,
+                            842B3EA75E464EF99F7B038F /* Resources */,
+                            3D7BFE8BD95141D0A36C02FE /* /Users/he/work/codes-repo/github/codes/c/crossword/CMakeLists.txt */,
+                     );
+                     name = ALL_BUILD;
+                     sourceTree = "<group>";
+              };
+              C05A01FB756A49ABA3B9F67D /* CMake Rules */ = {
+                     isa = PBXGroup;
+                     children = (
+                     );
+                     name = "CMake Rules";
+                     sourceTree = "<group>";
+              };
+              842B3EA75E464EF99F7B038F /* Resources */ = {
+                     isa = PBXGroup;
+                     children = (
+                     );
+                     name = Resources;
+                     sourceTree = "<group>";
+              };
+              4DDAA04E946849168AB7847B /* ZERO_CHECK */ = {
+                     isa = PBXGroup;
+                     children = (
+                            7ECD6166F3A047A4A51A5246 /* CMake Rules */,
+                            B9F9AE2D020E4B98B286776A /* Resources */,
+                            3D7BFE8BD95141D0A36C02FE /* /Users/he/work/codes-repo/github/codes/c/crossword/CMakeLists.txt */,
+                     );
+                     name = ZERO_CHECK;
+                     sourceTree = "<group>";
+              };
+              7ECD6166F3A047A4A51A5246 /* CMake Rules */ = {
+                     isa = PBXGroup;
+                     children = (
+                     );
+                     name = "CMake Rules";
+                     sourceTree = "<group>";
+              };
+              B9F9AE2D020E4B98B286776A /* Resources */ = {
+                     isa = PBXGroup;
+                     children = (
+                     );
+                     name = Resources;
+                     sourceTree = "<group>";
+              };
+              08095CF8713D483194BA5957 /* crosswords */ = {
+                     isa = PBXGroup;
+                     children = (
+                            B274F7FB4EA045DD87DC1EDF /* Source Files */,
+                            3CCB0A2D425A4F5DBA07DF37 /* Resources */,
+                            3D7BFE8BD95141D0A36C02FE /* /Users/he/work/codes-repo/github/codes/c/crossword/CMakeLists.txt */,
+                     );
+                     name = crosswords;
+                     sourceTree = "<group>";
+              };
+              B274F7FB4EA045DD87DC1EDF /* Source Files */ = {
+                     isa = PBXGroup;
+                     children = (
+                            4C8D731117B74A998B1C1A11 /* /Users/he/work/codes-repo/github/codes/c/crossword/src/angry.c */,
+                     );
+                     name = "Source Files";
+                     sourceTree = "<group>";
+              };
+              3CCB0A2D425A4F5DBA07DF37 /* Resources */ = {
+                     isa = PBXGroup;
+                     children = (
+                            3D7C4B33B458446E83CEEFC3 /* /Users/he/work/codes-repo/github/codes/c/crossword/xcode/ios/CMakeFiles/crosswords.dir/Info.plist */,
+                     );
+                     name = Resources;
+                     sourceTree = "<group>";
+              };
+              32A1EC4291D742559DA10796 /* Products */ = {
+                     isa = PBXGroup;
+                     children = (
+                            62D455D9E9C844D194D85EE8 /* crosswords */,
+                     );
+                     name = Products;
+                     sourceTree = "<group>";
+              };
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+              FF59857CA7484B94B79CE3F2 /* crosswords */ = {
+                     isa = PBXNativeTarget;
+                     buildConfigurationList = 1589A8F48341485B9A1E2DC2 /* Build configuration list for PBXNativeTarget "crosswords" */;
+                     buildPhases = (
+                            C9392CBF92EE455481E18FB2 /* Sources */,
+                     );
+                     buildRules = (
+                     );
+                     dependencies = (
+                            D8BD1321DEA04195B3C938BD /* PBXTargetDependency */,
+                     );
+                     name = crosswords;
+                     productName = crosswords;
+                     productReference = 62D455D9E9C844D194D85EE8 /* crosswords */;
+                     productType = "com.apple.product-type.library.static";
+              };
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+              748CAED1AE464DBE84267839 /* Project object */ = {
+                     isa = PBXProject;
+                     attributes = {
+                            BuildIndependentTargetsInParallel = YES;
+                     };
+                     buildConfigurationList = 9D68CD75FD7540E986B3DDAD /* Build configuration list for PBXProject  "crosswords" */;
+                     buildSettings = {
+                     };
+                     buildStyles = (
+                            1F82E65385E240A4A71642B4 /* Debug */,
+                            F8C2995A8F154C52BA571FC0 /* Release */,
+                            565E594186FF4397BDB891CF /* MinSizeRel */,
+                            9DD70D45CD7345CB9ECB2134 /* RelWithDebInfo */,
+                     );
+                     compatibilityVersion = "Xcode 3.2";
+                     hasScannedForEncodings = 0;
+                     mainGroup = DAA5E6369C0540A8A825AB9B;
+                     projectDirPath = "../..";
+                     projectRoot = "";
+                     targets = (
+                            04E97EC517934E51BA10E312 /* ALL_BUILD */,
+                            248ED7B67CE64B338A3D7DDD /* ZERO_CHECK */,
+                            FF59857CA7484B94B79CE3F2 /* crosswords */,
+                            03B4D60C33074CD2BE2735C0 /* install */,
+                     );
+              };
+/* End PBXProject section */
+
+/* Begin PBXShellScriptBuildPhase section */
+              1E4A4A6E6EC84210950653E6 /*  */ = {
+                     isa = PBXShellScriptBuildPhase;
+                     buildActionMask = 2147483647;
+                     files = (
+                     );
+                     inputPaths = (
+                     );
+                     outputPaths = (
+                     );
+                     runOnlyForDeploymentPostprocessing = 0;
+                     shellPath = /bin/sh;
+                     shellScript = "# shell script goes here
+exit 0";
+                     showEnvVarsInLog = 0;
+              };
+              F57E1AE6BD424DF7B59B48ED /* CMake Rules */ = {
+                     isa = PBXShellScriptBuildPhase;
+                     buildActionMask = 2147483647;
+                     files = (
+                     );
+                     name = "CMake Rules";
+                     runOnlyForDeploymentPostprocessing = 0;
+                     shellPath = /bin/sh;
+                     shellScript = "make -C /Users/he/work/codes-repo/github/codes/c/crossword/xcode/ios -f /Users/he/work/codes-repo/github/codes/c/crossword/xcode/ios/CMakeScripts/ALL_BUILD_cmakeRulesBuildPhase.make$CONFIGURATION all";
+                     showEnvVarsInLog = 0;
+              };
+              AE6F6EC4B4F34AEAB28010A1 /*  */ = {
+                     isa = PBXShellScriptBuildPhase;
+                     buildActionMask = 2147483647;
+                     files = (
+                     );
+                     inputPaths = (
+                     );
+                     outputPaths = (
+                     );
+                     runOnlyForDeploymentPostprocessing = 0;
+                     shellPath = /bin/sh;
+                     shellScript = "# shell script goes here
+exit 0";
+                     showEnvVarsInLog = 0;
+              };
+              7D3CE6411E9E4C41A92260DE /* CMake Rules */ = {
+                     isa = PBXShellScriptBuildPhase;
+                     buildActionMask = 2147483647;
+                     files = (
+                     );
+                     name = "CMake Rules";
+                     runOnlyForDeploymentPostprocessing = 0;
+                     shellPath = /bin/sh;
+                     shellScript = "make -C /Users/he/work/codes-repo/github/codes/c/crossword/xcode/ios -f /Users/he/work/codes-repo/github/codes/c/crossword/xcode/ios/CMakeScripts/ZERO_CHECK_cmakeRulesBuildPhase.make$CONFIGURATION all";
+                     showEnvVarsInLog = 0;
+              };
+              8731EFAF3A3447C88A3222C2 /*  */ = {
+                     isa = PBXShellScriptBuildPhase;
+                     buildActionMask = 2147483647;
+                     files = (
+                     );
+                     inputPaths = (
+                     );
+                     outputPaths = (
+                     );
+                     runOnlyForDeploymentPostprocessing = 0;
+                     shellPath = /bin/sh;
+                     shellScript = "# shell script goes here
+exit 0";
+                     showEnvVarsInLog = 0;
+              };
+              183A777608C742AE8EB8C239 /* CMake PostBuild Rules */ = {
+                     isa = PBXShellScriptBuildPhase;
+                     buildActionMask = 2147483647;
+                     files = (
+                     );
+                     name = "CMake PostBuild Rules";
+                     runOnlyForDeploymentPostprocessing = 0;
+                     shellPath = /bin/sh;
+                     shellScript = "make -C /Users/he/work/codes-repo/github/codes/c/crossword/xcode/ios -f /Users/he/work/codes-repo/github/codes/c/crossword/xcode/ios/CMakeScripts/install_postBuildPhase.make$CONFIGURATION all";
+                     showEnvVarsInLog = 0;
+              };
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+              C9392CBF92EE455481E18FB2 /* Sources */ = {
+                     isa = PBXSourcesBuildPhase;
+                     buildActionMask = 2147483647;
+                     files = (
+                            6F44C1C021424324A8FFA75C /* /Users/he/work/codes-repo/github/codes/c/crossword/src/angry.c */,
+                     );
+                     runOnlyForDeploymentPostprocessing = 0;
+              };
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+              D4207760174F4A9CA14F57F6 /* PBXTargetDependency */ = {
+                     isa = PBXTargetDependency;
+                     target = FF59857CA7484B94B79CE3F2 /* crosswords */;
+                     targetProxy = 6CD980D41A8A468089EFF634 /* PBXContainerItemProxy */;
+              };
+              BBB0EB34331044E493357CD9 /* PBXTargetDependency */ = {
+                     isa = PBXTargetDependency;
+                     target = 248ED7B67CE64B338A3D7DDD /* ZERO_CHECK */;
+                     targetProxy = A1BBCA0A0D2B4A7AABD2064E /* PBXContainerItemProxy */;
+              };
+              D8BD1321DEA04195B3C938BD /* PBXTargetDependency */ = {
+                     isa = PBXTargetDependency;
+                     target = 248ED7B67CE64B338A3D7DDD /* ZERO_CHECK */;
+                     targetProxy = DD5D82674DD340608818A70A /* PBXContainerItemProxy */;
+              };
+              97289ADCD2DB4F59A6AA7572 /* PBXTargetDependency */ = {
+                     isa = PBXTargetDependency;
+                     target = 04E97EC517934E51BA10E312 /* ALL_BUILD */;
+                     targetProxy = A2329F6D71E6483B9E24C8BE /* PBXContainerItemProxy */;
+              };
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+              C009322CFFC1418ABF61CD0C /* Debug */ = {
+                     isa = XCBuildConfiguration;
+                     buildSettings = {
+                            ARCHS = i386;
+                            CODE_SIGN_IDENTITY = "iPhone Developer";
+                            SDKROOT = "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk";
+                            SYMROOT = "/Users/he/work/codes-repo/github/codes/c/crossword/xcode/ios/build";
+                     };
+                     name = Debug;
+              };
+              CB28DE427D044E9B9111F86B /* Release */ = {
+                     isa = XCBuildConfiguration;
+                     buildSettings = {
+                            ARCHS = i386;
+                            CODE_SIGN_IDENTITY = "iPhone Developer";
+                            SDKROOT = "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk";
+                            SYMROOT = "/Users/he/work/codes-repo/github/codes/c/crossword/xcode/ios/build";
+                     };
+                     name = Release;
+              };
+              0BAEB45DF8CD40F689258C69 /* MinSizeRel */ = {
+                     isa = XCBuildConfiguration;
+                     buildSettings = {
+                            ARCHS = i386;
+                            CODE_SIGN_IDENTITY = "iPhone Developer";
+                            SDKROOT = "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk";
+                            SYMROOT = "/Users/he/work/codes-repo/github/codes/c/crossword/xcode/ios/build";
+                     };
+                     name = MinSizeRel;
+              };
+              9EDC2C7117634B9B91C51062 /* RelWithDebInfo */ = {
+                     isa = XCBuildConfiguration;
+                     buildSettings = {
+                            ARCHS = i386;
+                            CODE_SIGN_IDENTITY = "iPhone Developer";
+                            SDKROOT = "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk";
+                            SYMROOT = "/Users/he/work/codes-repo/github/codes/c/crossword/xcode/ios/build";
+                     };
+                     name = RelWithDebInfo;
+              };
+              19006E0BB72047D6A00BC56A /* Debug */ = {
+                     isa = XCBuildConfiguration;
+                     buildSettings = {
+                            ARCHS = i386;
+                            COMBINE_HIDPI_IMAGES = YES;
+                            GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+                            GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+                            GCC_OPTIMIZATION_LEVEL = 0;
+                            GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'", );
+                            GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+                            INSTALL_PATH = "";
+                            ONLY_ACTIVE_ARCH = NO;
+                            OTHER_CFLAGS = "  ";
+                            OTHER_LDFLAGS = " ";
+                            OTHER_REZFLAGS = "";
+                            PRODUCT_NAME = ALL_BUILD;
+                            SECTORDER_FLAGS = "";
+                            SYMROOT = "/Users/he/work/codes-repo/github/codes/c/crossword/xcode/ios";
+                            USE_HEADERMAP = NO;
+                            WARNING_CFLAGS = ("-Wmost", "-Wno-four-char-constants", "-Wno-unknown-pragmas", );
+                     };
+                     name = Debug;
+              };
+              A85F08CF11DC441BBE3FAB7F /* Release */ = {
+                     isa = XCBuildConfiguration;
+                     buildSettings = {
+                            ARCHS = i386;
+                            COMBINE_HIDPI_IMAGES = YES;
+                            GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+                            GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+                            GCC_OPTIMIZATION_LEVEL = 0;
+                            GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'", );
+                            GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+                            INSTALL_PATH = "";
+                            ONLY_ACTIVE_ARCH = NO;
+                            OTHER_CFLAGS = "  ";
+                            OTHER_LDFLAGS = " ";
+                            OTHER_REZFLAGS = "";
+                            PRODUCT_NAME = ALL_BUILD;
+                            SECTORDER_FLAGS = "";
+                            SYMROOT = "/Users/he/work/codes-repo/github/codes/c/crossword/xcode/ios";
+                            USE_HEADERMAP = NO;
+                            WARNING_CFLAGS = ("-Wmost", "-Wno-four-char-constants", "-Wno-unknown-pragmas", );
+                     };
+                     name = Release;
+              };
+              698A3821208B4DEFA7A0842A /* MinSizeRel */ = {
+                     isa = XCBuildConfiguration;
+                     buildSettings = {
+                            ARCHS = i386;
+                            COMBINE_HIDPI_IMAGES = YES;
+                            GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+                            GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+                            GCC_OPTIMIZATION_LEVEL = 0;
+                            GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'", );
+                            GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+                            INSTALL_PATH = "";
+                            ONLY_ACTIVE_ARCH = NO;
+                            OTHER_CFLAGS = "  ";
+                            OTHER_LDFLAGS = " ";
+                            OTHER_REZFLAGS = "";
+                            PRODUCT_NAME = ALL_BUILD;
+                            SECTORDER_FLAGS = "";
+                            SYMROOT = "/Users/he/work/codes-repo/github/codes/c/crossword/xcode/ios";
+                            USE_HEADERMAP = NO;
+                            WARNING_CFLAGS = ("-Wmost", "-Wno-four-char-constants", "-Wno-unknown-pragmas", );
+                     };
+                     name = MinSizeRel;
+              };
+              21A6A3FD84684433BA3B4A64 /* RelWithDebInfo */ = {
+                     isa = XCBuildConfiguration;
+                     buildSettings = {
+                            ARCHS = i386;
+                            COMBINE_HIDPI_IMAGES = YES;
+                            GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+                            GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+                            GCC_OPTIMIZATION_LEVEL = 0;
+                            GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'", );
+                            GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+                            INSTALL_PATH = "";
+                            ONLY_ACTIVE_ARCH = NO;
+                            OTHER_CFLAGS = "  ";
+                            OTHER_LDFLAGS = " ";
+                            OTHER_REZFLAGS = "";
+                            PRODUCT_NAME = ALL_BUILD;
+                            SECTORDER_FLAGS = "";
+                            SYMROOT = "/Users/he/work/codes-repo/github/codes/c/crossword/xcode/ios";
+                            USE_HEADERMAP = NO;
+                            WARNING_CFLAGS = ("-Wmost", "-Wno-four-char-constants", "-Wno-unknown-pragmas", );
+                     };
+                     name = RelWithDebInfo;
+              };
+              7ED0D0A84EB44206B8811C8B /* Debug */ = {
+                     isa = XCBuildConfiguration;
+                     buildSettings = {
+                            ARCHS = i386;
+                            COMBINE_HIDPI_IMAGES = YES;
+                            GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+                            GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+                            GCC_OPTIMIZATION_LEVEL = 0;
+                            GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'", );
+                            GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+                            INSTALL_PATH = "";
+                            ONLY_ACTIVE_ARCH = NO;
+                            OTHER_CFLAGS = "  ";
+                            OTHER_LDFLAGS = " ";
+                            OTHER_REZFLAGS = "";
+                            PRODUCT_NAME = ZERO_CHECK;
+                            SECTORDER_FLAGS = "";
+                            SYMROOT = "/Users/he/work/codes-repo/github/codes/c/crossword/xcode/ios";
+                            USE_HEADERMAP = NO;
+                            WARNING_CFLAGS = ("-Wmost", "-Wno-four-char-constants", "-Wno-unknown-pragmas", );
+                     };
+                     name = Debug;
+              };
+              BAF4AB7B2C244122BE4446DD /* Release */ = {
+                     isa = XCBuildConfiguration;
+                     buildSettings = {
+                            ARCHS = i386;
+                            COMBINE_HIDPI_IMAGES = YES;
+                            GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+                            GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+                            GCC_OPTIMIZATION_LEVEL = 0;
+                            GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'", );
+                            GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+                            INSTALL_PATH = "";
+                            ONLY_ACTIVE_ARCH = NO;
+                            OTHER_CFLAGS = "  ";
+                            OTHER_LDFLAGS = " ";
+                            OTHER_REZFLAGS = "";
+                            PRODUCT_NAME = ZERO_CHECK;
+                            SECTORDER_FLAGS = "";
+                            SYMROOT = "/Users/he/work/codes-repo/github/codes/c/crossword/xcode/ios";
+                            USE_HEADERMAP = NO;
+                            WARNING_CFLAGS = ("-Wmost", "-Wno-four-char-constants", "-Wno-unknown-pragmas", );
+                     };
+                     name = Release;
+              };
+              6EDE9A4AB9074A6C9A9C0E95 /* MinSizeRel */ = {
+                     isa = XCBuildConfiguration;
+                     buildSettings = {
+                            ARCHS = i386;
+                            COMBINE_HIDPI_IMAGES = YES;
+                            GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+                            GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+                            GCC_OPTIMIZATION_LEVEL = 0;
+                            GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'", );
+                            GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+                            INSTALL_PATH = "";
+                            ONLY_ACTIVE_ARCH = NO;
+                            OTHER_CFLAGS = "  ";
+                            OTHER_LDFLAGS = " ";
+                            OTHER_REZFLAGS = "";
+                            PRODUCT_NAME = ZERO_CHECK;
+                            SECTORDER_FLAGS = "";
+                            SYMROOT = "/Users/he/work/codes-repo/github/codes/c/crossword/xcode/ios";
+                            USE_HEADERMAP = NO;
+                            WARNING_CFLAGS = ("-Wmost", "-Wno-four-char-constants", "-Wno-unknown-pragmas", );
+                     };
+                     name = MinSizeRel;
+              };
+              B6A201223CFB48F5952F0373 /* RelWithDebInfo */ = {
+                     isa = XCBuildConfiguration;
+                     buildSettings = {
+                            ARCHS = i386;
+                            COMBINE_HIDPI_IMAGES = YES;
+                            GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+                            GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+                            GCC_OPTIMIZATION_LEVEL = 0;
+                            GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'", );
+                            GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+                            INSTALL_PATH = "";
+                            ONLY_ACTIVE_ARCH = NO;
+                            OTHER_CFLAGS = "  ";
+                            OTHER_LDFLAGS = " ";
+                            OTHER_REZFLAGS = "";
+                            PRODUCT_NAME = ZERO_CHECK;
+                            SECTORDER_FLAGS = "";
+                            SYMROOT = "/Users/he/work/codes-repo/github/codes/c/crossword/xcode/ios";
+                            USE_HEADERMAP = NO;
+                            WARNING_CFLAGS = ("-Wmost", "-Wno-four-char-constants", "-Wno-unknown-pragmas", );
+                     };
+                     name = RelWithDebInfo;
+              };
+              10A016209E6E4BFFB14D71AF /* Debug */ = {
+                     isa = XCBuildConfiguration;
+                     buildSettings = {
+                            ARCHS = i386;
+                            COMBINE_HIDPI_IMAGES = YES;
+                            EXECUTABLE_PREFIX = lib;
+                            EXECUTABLE_SUFFIX = ".a";
+                            GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+                            GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+                            GCC_OPTIMIZATION_LEVEL = 0;
+                            GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'", );
+                            GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+                            INSTALL_PATH = "";
+                            LIBRARY_STYLE = STATIC;
+                            ONLY_ACTIVE_ARCH = NO;
+                            OTHER_CFLAGS = "    ";
+                            OTHER_LDFLAGS = " ";
+                            OTHER_REZFLAGS = "";
+                            PRODUCT_NAME = crosswords;
+                            SECTORDER_FLAGS = "";
+                            SYMROOT = "/Users/he/work/codes-repo/github/codes/c/crossword/xcode/ios";
+                            USE_HEADERMAP = NO;
+                            WARNING_CFLAGS = ("-Wmost", "-Wno-four-char-constants", "-Wno-unknown-pragmas", );
+                     };
+                     name = Debug;
+              };
+              66BE383C62DF443892AB87D5 /* Release */ = {
+                     isa = XCBuildConfiguration;
+                     buildSettings = {
+                            ARCHS = i386;
+                            COMBINE_HIDPI_IMAGES = YES;
+                            EXECUTABLE_PREFIX = lib;
+                            EXECUTABLE_SUFFIX = ".a";
+                            GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+                            GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+                            GCC_OPTIMIZATION_LEVEL = 3;
+                            GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'", );
+                            GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+                            INSTALL_PATH = "";
+                            LIBRARY_STYLE = STATIC;
+                            ONLY_ACTIVE_ARCH = NO;
+                            OTHER_CFLAGS = "    -DNDEBUG  ";
+                            OTHER_LDFLAGS = " ";
+                            OTHER_REZFLAGS = "";
+                            PRODUCT_NAME = crosswords;
+                            SECTORDER_FLAGS = "";
+                            SYMROOT = "/Users/he/work/codes-repo/github/codes/c/crossword/xcode/ios";
+                            USE_HEADERMAP = NO;
+                            WARNING_CFLAGS = ("-Wmost", "-Wno-four-char-constants", "-Wno-unknown-pragmas", );
+                     };
+                     name = Release;
+              };
+              5ED8998E5DC6484AA34CDEEE /* MinSizeRel */ = {
+                     isa = XCBuildConfiguration;
+                     buildSettings = {
+                            ARCHS = i386;
+                            COMBINE_HIDPI_IMAGES = YES;
+                            EXECUTABLE_PREFIX = lib;
+                            EXECUTABLE_SUFFIX = ".a";
+                            GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+                            GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+                            GCC_OPTIMIZATION_LEVEL = s;
+                            GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'", );
+                            GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+                            INSTALL_PATH = "";
+                            LIBRARY_STYLE = STATIC;
+                            ONLY_ACTIVE_ARCH = NO;
+                            OTHER_CFLAGS = "    -DNDEBUG  ";
+                            OTHER_LDFLAGS = " ";
+                            OTHER_REZFLAGS = "";
+                            PRODUCT_NAME = crosswords;
+                            SECTORDER_FLAGS = "";
+                            SYMROOT = "/Users/he/work/codes-repo/github/codes/c/crossword/xcode/ios";
+                            USE_HEADERMAP = NO;
+                            WARNING_CFLAGS = ("-Wmost", "-Wno-four-char-constants", "-Wno-unknown-pragmas", );
+                     };
+                     name = MinSizeRel;
+              };
+              A1CD05D070B6493AB1C2DF7D /* RelWithDebInfo */ = {
+                     isa = XCBuildConfiguration;
+                     buildSettings = {
+                            ARCHS = i386;
+                            COMBINE_HIDPI_IMAGES = YES;
+                            EXECUTABLE_PREFIX = lib;
+                            EXECUTABLE_SUFFIX = ".a";
+                            GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+                            GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+                            GCC_OPTIMIZATION_LEVEL = 2;
+                            GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'", );
+                            GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+                            INSTALL_PATH = "";
+                            LIBRARY_STYLE = STATIC;
+                            ONLY_ACTIVE_ARCH = NO;
+                            OTHER_CFLAGS = "       -DNDEBUG  ";
+                            OTHER_LDFLAGS = " ";
+                            OTHER_REZFLAGS = "";
+                            PRODUCT_NAME = crosswords;
+                            SECTORDER_FLAGS = "";
+                            SYMROOT = "/Users/he/work/codes-repo/github/codes/c/crossword/xcode/ios";
+                            USE_HEADERMAP = NO;
+                            WARNING_CFLAGS = ("-Wmost", "-Wno-four-char-constants", "-Wno-unknown-pragmas", );
+                     };
+                     name = RelWithDebInfo;
+              };
+              86AABFE58715483BA43656B8 /* Debug */ = {
+                     isa = XCBuildConfiguration;
+                     buildSettings = {
+                            ARCHS = i386;
+                            COMBINE_HIDPI_IMAGES = YES;
+                            GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+                            GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+                            GCC_OPTIMIZATION_LEVEL = 0;
+                            GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'", );
+                            GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+                            INSTALL_PATH = "";
+                            ONLY_ACTIVE_ARCH = NO;
+                            OTHER_CFLAGS = "  ";
+                            OTHER_LDFLAGS = " ";
+                            OTHER_REZFLAGS = "";
+                            PRODUCT_NAME = install;
+                            SECTORDER_FLAGS = "";
+                            SYMROOT = "/Users/he/work/codes-repo/github/codes/c/crossword/xcode/ios";
+                            USE_HEADERMAP = NO;
+                            WARNING_CFLAGS = ("-Wmost", "-Wno-four-char-constants", "-Wno-unknown-pragmas", );
+                     };
+                     name = Debug;
+              };
+              90A6E05E700145EDACF11DE1 /* Release */ = {
+                     isa = XCBuildConfiguration;
+                     buildSettings = {
+                            ARCHS = i386;
+                            COMBINE_HIDPI_IMAGES = YES;
+                            GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+                            GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+                            GCC_OPTIMIZATION_LEVEL = 0;
+                            GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'", );
+                            GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+                            INSTALL_PATH = "";
+                            ONLY_ACTIVE_ARCH = NO;
+                            OTHER_CFLAGS = "  ";
+                            OTHER_LDFLAGS = " ";
+                            OTHER_REZFLAGS = "";
+                            PRODUCT_NAME = install;
+                            SECTORDER_FLAGS = "";
+                            SYMROOT = "/Users/he/work/codes-repo/github/codes/c/crossword/xcode/ios";
+                            USE_HEADERMAP = NO;
+                            WARNING_CFLAGS = ("-Wmost", "-Wno-four-char-constants", "-Wno-unknown-pragmas", );
+                     };
+                     name = Release;
+              };
+              3085F6D10534406BB1F7B832 /* MinSizeRel */ = {
+                     isa = XCBuildConfiguration;
+                     buildSettings = {
+                            ARCHS = i386;
+                            COMBINE_HIDPI_IMAGES = YES;
+                            GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+                            GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+                            GCC_OPTIMIZATION_LEVEL = 0;
+                            GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'", );
+                            GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+                            INSTALL_PATH = "";
+                            ONLY_ACTIVE_ARCH = NO;
+                            OTHER_CFLAGS = "  ";
+                            OTHER_LDFLAGS = " ";
+                            OTHER_REZFLAGS = "";
+                            PRODUCT_NAME = install;
+                            SECTORDER_FLAGS = "";
+                            SYMROOT = "/Users/he/work/codes-repo/github/codes/c/crossword/xcode/ios";
+                            USE_HEADERMAP = NO;
+                            WARNING_CFLAGS = ("-Wmost", "-Wno-four-char-constants", "-Wno-unknown-pragmas", );
+                     };
+                     name = MinSizeRel;
+              };
+              07D33FD0CA8441F3A299271E /* RelWithDebInfo */ = {
+                     isa = XCBuildConfiguration;
+                     buildSettings = {
+                            ARCHS = i386;
+                            COMBINE_HIDPI_IMAGES = YES;
+                            GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+                            GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+                            GCC_OPTIMIZATION_LEVEL = 0;
+                            GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'", );
+                            GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+                            INSTALL_PATH = "";
+                            ONLY_ACTIVE_ARCH = NO;
+                            OTHER_CFLAGS = "  ";
+                            OTHER_LDFLAGS = " ";
+                            OTHER_REZFLAGS = "";
+                            PRODUCT_NAME = install;
+                            SECTORDER_FLAGS = "";
+                            SYMROOT = "/Users/he/work/codes-repo/github/codes/c/crossword/xcode/ios";
+                            USE_HEADERMAP = NO;
+                            WARNING_CFLAGS = ("-Wmost", "-Wno-four-char-constants", "-Wno-unknown-pragmas", );
+                     };
+                     name = RelWithDebInfo;
+              };
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+              9D68CD75FD7540E986B3DDAD /* Build configuration list for PBXProject  "crosswords" */ = {
+                     isa = XCConfigurationList;
+                     buildConfigurations = (
+                            C009322CFFC1418ABF61CD0C /* Debug */,
+                            CB28DE427D044E9B9111F86B /* Release */,
+                            0BAEB45DF8CD40F689258C69 /* MinSizeRel */,
+                            9EDC2C7117634B9B91C51062 /* RelWithDebInfo */,
+                     );
+                     defaultConfigurationIsVisible = 0;
+                     defaultConfigurationName = Debug;
+              };
+              4C7A7F7827604EC888E49C67 /* Build configuration list for PBXAggregateTarget "ALL_BUILD" */ = {
+                     isa = XCConfigurationList;
+                     buildConfigurations = (
+                            19006E0BB72047D6A00BC56A /* Debug */,
+                            A85F08CF11DC441BBE3FAB7F /* Release */,
+                            698A3821208B4DEFA7A0842A /* MinSizeRel */,
+                            21A6A3FD84684433BA3B4A64 /* RelWithDebInfo */,
+                     );
+                     defaultConfigurationIsVisible = 0;
+                     defaultConfigurationName = Debug;
+              };
+              99140F689B1A424B8D4E7571 /* Build configuration list for PBXAggregateTarget "ZERO_CHECK" */ = {
+                     isa = XCConfigurationList;
+                     buildConfigurations = (
+                            7ED0D0A84EB44206B8811C8B /* Debug */,
+                            BAF4AB7B2C244122BE4446DD /* Release */,
+                            6EDE9A4AB9074A6C9A9C0E95 /* MinSizeRel */,
+                            B6A201223CFB48F5952F0373 /* RelWithDebInfo */,
+                     );
+                     defaultConfigurationIsVisible = 0;
+                     defaultConfigurationName = Debug;
+              };
+              1589A8F48341485B9A1E2DC2 /* Build configuration list for PBXNativeTarget "crosswords" */ = {
+                     isa = XCConfigurationList;
+                     buildConfigurations = (
+                            10A016209E6E4BFFB14D71AF /* Debug */,
+                            66BE383C62DF443892AB87D5 /* Release */,
+                            5ED8998E5DC6484AA34CDEEE /* MinSizeRel */,
+                            A1CD05D070B6493AB1C2DF7D /* RelWithDebInfo */,
+                     );
+                     defaultConfigurationIsVisible = 0;
+                     defaultConfigurationName = Debug;
+              };
+              0E4A5898B59E41EBA953104F /* Build configuration list for PBXAggregateTarget "install" */ = {
+                     isa = XCConfigurationList;
+                     buildConfigurations = (
+                            86AABFE58715483BA43656B8 /* Debug */,
+                            90A6E05E700145EDACF11DE1 /* Release */,
+                            3085F6D10534406BB1F7B832 /* MinSizeRel */,
+                            07D33FD0CA8441F3A299271E /* RelWithDebInfo */,
+                     );
+                     defaultConfigurationIsVisible = 0;
+                     defaultConfigurationName = Debug;
+              };
+/* End XCConfigurationList section */
+       };
+       rootObject = 748CAED1AE464DBE84267839;
+}

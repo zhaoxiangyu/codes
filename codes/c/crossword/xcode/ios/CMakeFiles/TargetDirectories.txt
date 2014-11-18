@@ -1,0 +1,3 @@
+/Users/he/work/codes-repo/github/codes/c/crossword/xcode/ios/CMakeFiles/ALL_BUILD.dir
+/Users/he/work/codes-repo/github/codes/c/crossword/xcode/ios/CMakeFiles/ZERO_CHECK.dir
+/Users/he/work/codes-repo/github/codes/c/crossword/xcode/ios/CMakeFiles/crosswords.dir

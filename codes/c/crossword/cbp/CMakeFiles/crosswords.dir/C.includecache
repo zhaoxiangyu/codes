@@ -1,0 +1,20 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/he/work/code-repo/github/codes/c/crossword/src/angry.c
+stdio.h
+-
+malloc.h
+-
+varargs.h
+-
+stdlib.h
+-
+time.h
+-
+

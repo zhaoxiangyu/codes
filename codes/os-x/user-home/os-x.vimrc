@@ -1,5 +1,9 @@
 syntax on
 set fileencodings=utf-8,ucs-bom,gbk,cp936
+set tabstop=8
+set softtabstop=4
+set shiftwidth=4
+"set expandtab
 set ruler
 set showcmd
 set modeline
@@ -25,5 +29,6 @@ Plugin 'gmarik/Vundle.vim'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/syntastic'
 Plugin 'nvie/vim-flake8'
+Plugin 'cscope_macros.vim'
 call vundle#end()
 filetype plugin indent on

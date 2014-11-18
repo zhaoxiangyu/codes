@@ -28,9 +28,17 @@
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                     <items>
                         <barButtonItem title="First" id="76"/>
-                        <barButtonItem title="Last" id="77"/>
+                        <barButtonItem title="Last" id="77">
+                            <connections>
+                                <action selector="toEnd:" destination="-1" id="N9S-Li-uZK"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="74"/>
-                        <barButtonItem title="Choose Course" id="63"/>
+                        <barButtonItem title="Choose Course" id="63">
+                            <connections>
+                                <action selector="chooseCourse:" destination="-1" id="pO6-wR-WTI"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem title="About" id="75">
                             <connections>
                                 <action selector="doBtnAbout:" destination="-1" id="hIo-ic-EkN"/>
@@ -42,23 +50,54 @@
                     <rect key="frame" x="0.0" y="480" width="320" height="44"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                     <items>
-                        <barButtonItem title="LA" id="64"/>
+                        <barButtonItem title="LA" id="64">
+                            <connections>
+                                <action selector="showAllLevel:" destination="-1" id="4vO-XL-n5Y"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="78"/>
-                        <barButtonItem title="L1" id="65"/>
-                        <barButtonItem title="L2" id="66"/>
-                        <barButtonItem title="L3" id="67"/>
-                        <barButtonItem title="L4" id="68"/>
-                        <barButtonItem title="L5" id="79"/>
+                        <barButtonItem title="L1" id="65">
+                            <connections>
+                                <action selector="showLevelOne:" destination="-1" id="TRk-gw-u1m"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem title="L2" id="66">
+                            <connections>
+                                <action selector="showLevelTwo:" destination="-1" id="dlq-oy-8eb"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem title="L3" id="67">
+                            <connections>
+                                <action selector="showLevelThree:" destination="-1" id="ef1-x2-e6u"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem title="L4" id="68">
+                            <connections>
+                                <action selector="showLevelFour:" destination="-1" id="6OU-yA-jW4"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem title="L5" id="79">
+                            <connections>
+                                <action selector="showLevelFive:" destination="-1" id="7IN-GE-t8l"/>
+                            </connections>
+                        </barButtonItem>
                     </items>
                 </toolbar>
-                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ABCD" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W86-SQ-fUH">
-                    <rect key="frame" x="0.0" y="273" width="320" height="21"/>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uRc-3Q-z6t">
+                    <rect key="frame" x="0.0" y="44" width="320" height="436"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <accessibility key="accessibilityConfiguration" label=""/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
+                    <subviews>
+                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ABCD" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W86-SQ-fUH">
+                            <rect key="frame" x="0.0" y="207" width="320" height="21"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <accessibility key="accessibilityConfiguration" label=""/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                </view>
             </subviews>
             <color key="backgroundColor" white="0.75" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
@@ -71,6 +110,10 @@
                 <constraint firstItem="69" firstAttribute="leading" secondItem="6" secondAttribute="leading" id="71"/>
                 <constraint firstItem="69" firstAttribute="trailing" secondItem="6" secondAttribute="trailing" id="72"/>
                 <constraint firstItem="69" firstAttribute="bottom" secondItem="53" secondAttribute="top" id="73"/>
+                <constraint firstItem="69" firstAttribute="top" secondItem="uRc-3Q-z6t" secondAttribute="bottom" id="04E-Hi-gDf"/>
+                <constraint firstAttribute="trailing" secondItem="uRc-3Q-z6t" secondAttribute="trailing" id="VUk-aq-tBb"/>
+                <constraint firstItem="uRc-3Q-z6t" firstAttribute="top" secondItem="48" secondAttribute="bottom" id="g0d-TP-RT4"/>
+                <constraint firstItem="uRc-3Q-z6t" firstAttribute="leading" secondItem="6" secondAttribute="leading" id="ncQ-DY-cIY"/>
             </constraints>
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>

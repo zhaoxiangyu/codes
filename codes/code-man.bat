@@ -32,7 +32,7 @@ exit /b 0
 
 :install
 	echo running install ...
-	git config --global user.name "blueocci_ubuntu"
+	git config --global user.name "blueocci_xp"
 	git config --global user.email "blueocci@hotmail.com"
 
 	set /p CODESDIR=enter full path of dir where you want to setup git repository:
