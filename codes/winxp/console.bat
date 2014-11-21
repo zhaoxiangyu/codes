@@ -29,7 +29,7 @@ set PATH=E:\tools\gnuwin32\bin;%PATH%
 set PATH=E:\tools\emacs-24.3-bin-i386\emacs-24.3\bin;%PATH%
 
 REM set PATH=C:\MinGW\bin;%PATH%
-set PATH=C:\MinGW\msys\1.0\bin;%PATH%
+REM set PATH=%PATH%;C:\MinGW\msys\1.0\bin
 set PATH=C:\Program Files\CodeBlocks\MinGW\bin;%PATH%
 set PATH=C:\Program Files\CMake 2.8\bin;%PATH%
 set PATH=E:\tools\cscope-15.8a;%PATH%
