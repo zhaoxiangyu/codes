@@ -13,12 +13,24 @@ if(WIN32)
 	set(ENV{FREEGLUTDIR} e:/opensource/freeglut-2.8.1) 
 
 	message("finding glew libraries")
+<<<<<<< HEAD
 	find_package(Glew REQUIRED)
+=======
+	#set(ENV{GLEWDIR} e:/opensource/glew-1.11.0-win32/glew-1.11.0) 
+	set(ENV{GLEWDIR} e:/opensource/glew-1.11.0) 
+	find_package(Glew)
+>>>>>>> 0eba647a876846ef04c69aa729693524136edc3d
 	include_directories(${GLEW_INCLUDE_DIR})
 	target_link_libraries(opengl-rubix-cube ${GLEW_LIBRARY})
 
 	message("finding freeglut libraries")
+<<<<<<< HEAD
 	find_package(FreeGlut REQUIRED)
+=======
+	#set(ENV{FREEGLUTDIR} e:/opensource/freeglut-2.8.1) 
+	set(ENV{FREEGLUTDIR} e:/opensource/freeglut-MinGW-2.8.1-1.mp/freeglut) 
+	find_package(FreeGlut)
+>>>>>>> 0eba647a876846ef04c69aa729693524136edc3d
 	include_directories(${FREEGLUT_INCLUDE_DIR})
 	target_link_libraries(opengl-rubix-cube ${FREEGLUT_LIBRARY})
 elseif(UNIX)

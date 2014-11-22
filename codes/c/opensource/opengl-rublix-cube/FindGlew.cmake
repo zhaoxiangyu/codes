@@ -25,7 +25,7 @@ find_library( GLEW_LIBRARY
   NAMES glew32
   HINTS
   $ENV{GLEWDIR}
-  PATH_SUFFIXES lib/Release/Win32
+  PATH_SUFFIXES lib lib/Release/Win32
   PATHS
   /usr/local
   /usr
