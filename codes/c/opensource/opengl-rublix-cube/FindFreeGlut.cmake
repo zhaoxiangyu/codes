@@ -21,19 +21,33 @@ find_path( FREEGLUT_INCLUDE_DIR GL/freeglut.h GL/freeglut_ext.h
 
 #message( "FREEGLUT_INCLUDE_DIR is ${FREEGLUT_INCLUDE_DIR}" )
 
-find_library( FREEGLUT_LIBRARY
-  NAMES freeglut
-  HINTS
-  $ENV{FREEGLUTDIR}
-  PATH_SUFFIXES lib64 lib bin
-  PATHS
-  /usr/local
-  /usr
-  /opt/local
-  /opt/csw
-  /opt
-)
-
+if(WIN32)
+	find_library( FREEGLUT_LIBRARY
+	  NAMES freeglut
+	  HINTS
+	  $ENV{FREEGLUTDIR}
+	  PATH_SUFFIXES lib64 lib bin
+	  PATHS
+	  /usr/local
+	  /usr
+	  /opt/local
+	  /opt/csw
+	  /opt
+	)
+elseif(UNIX)
+	find_library( FREEGLUT_LIBRARY
+	  NAMES glut
+	  HINTS
+	  $ENV{FREEGLUTDIR}
+	  PATH_SUFFIXES lib64 lib bin lib/x86_64-linux-gnu
+	  PATHS
+	  /usr/local
+	  /usr
+	  /opt/local
+	  /opt/csw
+	  /opt
+	)
+endif()
 #message( "FREEGLUT_LIBRARY is ${FREEGLUT_LIBRARY}" )
 
 set( FREEGLUT_FOUND "YES" )

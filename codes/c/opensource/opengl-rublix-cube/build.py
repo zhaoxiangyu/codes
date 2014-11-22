@@ -15,6 +15,11 @@ def parse_target(target):
 		elif "vs" == target:
 			build_dir="build/win32/vs"
 			generator="Visual Studio 8 2005"
+	elif "linux2" == sys.platform :
+		if "cbp" == target:
+			build_dir="build/linux/cbp"
+			generator="CodeBlocks - Unix Makefiles"
+
 	return (build_dir,generator)
 
 
