@@ -8,13 +8,10 @@ def genprj(target):
 	cmake(build_dir,generator)
 
 def parse_target(target):
-	if "win32" == sys.platform :
-		if "cbp" == target:
-			build_dir="build/win32/cbp"
-			generator="CodeBlocks - MinGW Makefiles"
-		elif "vs" == target:
-			build_dir="build/win32/vs"
-			generator="Visual Studio 8 2005"
+	if "darwin" == sys.platform :
+		if "xcode" == target:
+			build_dir="build/darwin/xcode"
+			generator="Xcode"
 	elif "linux2" == sys.platform :
 		if "cbp" == target:
 			build_dir="build/linux/cbp"
@@ -55,8 +52,8 @@ if __name__ == "__main__":
 	-b --build=target
 	-g --generate=target
 	-c --clean=target
-	target can be one of vs or cbp
-	"""
+	target can be one of xcode or cbp"""
+	        print "sys.platform:",sys.platform
 
 	for opt,arg in options:
 		if opt in ('-b','--build'):
