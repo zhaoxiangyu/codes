@@ -46,7 +46,7 @@ void JpwordReader::pause(){
 
 void JpwordReader::quit(){
     IOUtils::log("JpwordReader about to quit!");
-    //TODO
+    saveCache(levels,mCourseState.currentCourseNo());
 }
 
 void JpwordReader::chooseCourse(int courseNo){
@@ -143,15 +143,20 @@ string JpwordReader::errorMessage(){
 
 void JpwordReader::saveCache(LevelsInfo& lvs,int courseNo){
 	string infos = "";
-
-    /*
+    
     ptree pt;
-    pt.put("course.cn", to_string(courseNo));
-    for (unsigned i = 0; i < infoList.size(); i++) {
-        AudioInfo ai = infoList[i];
-        pt.put("ais.ai.name", ai.getName());
+    //pt.put("course.cn", to_string(courseNo));
+    for(unsigned ln = 0; ln <= MAX_LEVEL;ln++){
+        vector<AudioInfo>& vai = lvs.levelList(ln);
+        for (unsigned i = 0; i < vai.size(); i++) {
+            AudioInfo ai = vai[i];
+            pt.put("ais.ai.name", ai.getName());
+            pt.put("ais.ai.unitno", ai.getUnitNo());
+            pt.put("ais.ai.courseno", ai.getCourseNo());
+            pt.put("ais.ai.mp3path", ai.getMp3Path());
+            pt.put("ais.ai.level", ai.getLevel());
+        }
     }
-     */
     
 	IOUtils::saveToFile(CourseUtils::courseCacheFilePath(courseNo),
                         infos);

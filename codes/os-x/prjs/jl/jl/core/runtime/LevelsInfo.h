@@ -17,7 +17,7 @@ class LevelsInfo
 		void clear(int start,int end);
 	protected:
 	private:
-		map< int,vector<AudioInfo> > levelListMap;
+		map<int,vector<AudioInfo> > levelListMap;
 };
 
 #endif // LEVELSINFO_H

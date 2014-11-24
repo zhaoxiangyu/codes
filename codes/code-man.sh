@@ -23,7 +23,8 @@ pub(){
 	#echo $1
 	echo publish to github ...
 	git add -A .
-	git commit -m "publish on"
+	system_name=$(uname)
+	git commit -m "publish on $system_name"
 	git push
 }
 
