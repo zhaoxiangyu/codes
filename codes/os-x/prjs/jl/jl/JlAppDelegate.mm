@@ -41,6 +41,7 @@ void uncaughtExceptionHandler(NSException *exception) {
         self.viewController = [[JlViewController alloc] initWithNibName:@"JlViewController_iPad" bundle:nil];
     }
 
+    //NSLog(@"viewContorller:%@", self.viewController);
     setupCore(reader, self.viewController);
     
     self.window.rootViewController = self.viewController;

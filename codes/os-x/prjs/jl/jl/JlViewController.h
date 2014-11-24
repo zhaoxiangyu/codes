@@ -15,6 +15,7 @@
 }
 
 @property (nonatomic) struct Impl* impl;
+
 - (void)refreshView;
 - (IBAction)toFirst:(id)sender;
 - (IBAction)toEnd:(id)sender;

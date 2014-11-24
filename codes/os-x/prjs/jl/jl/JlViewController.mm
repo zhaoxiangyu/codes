@@ -17,12 +17,13 @@ struct Impl {
 //    JpwordReader* reader;
 }
 
-//@synthesize wordDisplay;
+//@synthesize impl;
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    NSLog(@"wordDisplayView:%@",wordDisplayView);
     UISwipeGestureRecognizer *swipeLeft = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(wordSwiped:)];
     [swipeLeft setDirection:UISwipeGestureRecognizerDirectionLeft];
     [wordDisplayView addGestureRecognizer:swipeLeft];
