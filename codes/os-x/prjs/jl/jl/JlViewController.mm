@@ -13,9 +13,7 @@ struct Impl {
     JpwordReader* r;
 };
 
-@implementation JlViewController{
-//    JpwordReader* reader;
-}
+@implementation JlViewController
 
 //@synthesize impl;
 

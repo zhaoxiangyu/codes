@@ -9,13 +9,14 @@
 #import <UIKit/UIKit.h>
 #import "JlAppDelegate.h"
 
+struct Impl;
+
 @interface JlViewController : UIViewController {
     IBOutlet UILabel *wordDisplay;
     __weak IBOutlet UIView *wordDisplayView;
 }
 
-@property (nonatomic) struct Impl* impl;
-
+@property Impl* impl;
 - (void)refreshView;
 - (IBAction)toFirst:(id)sender;
 - (IBAction)toEnd:(id)sender;
