@@ -142,7 +142,7 @@ string JpwordReader::errorMessage(){
  */
 
 void JpwordReader::saveCache(LevelsInfo& lvs,int courseNo){
-	string infos = "";
+	//string infos = string("");
     
     ptree pt;
     //pt.put("course.cn", to_string(courseNo));
@@ -150,25 +150,32 @@ void JpwordReader::saveCache(LevelsInfo& lvs,int courseNo){
         vector<AudioInfo>& vai = lvs.levelList(ln);
         for (unsigned i = 0; i < vai.size(); i++) {
             AudioInfo ai = vai[i];
-            pt.put("ais.ai.name", ai.getName());
-            pt.put("ais.ai.unitno", ai.getUnitNo());
-            pt.put("ais.ai.courseno", ai.getCourseNo());
-            pt.put("ais.ai.mp3path", ai.getMp3Path());
-            pt.put("ais.ai.level", ai.getLevel());
+            pt.add("ais.ai.name", ai.getName());
+            pt.add("ais.ai.unitno", ai.getUnitNo());
+            pt.add("ais.ai.courseno", ai.getCourseNo());
+            pt.add("ais.ai.mp3path", ai.getMp3Path());
+            pt.add("ais.ai.level", ai.getLevel());
         }
     }
+    string filePath = CourseUtils::courseCacheFilePath(courseNo);
+    string abspath=IOUtils::toRealPath(filePath);
+    write_json(abspath,pt);
+    IOUtils::log("saved to file:"+abspath);
     
-	IOUtils::saveToFile(CourseUtils::courseCacheFilePath(courseNo),
-                        infos);
+    string fc=IOUtils::loadFromFile(filePath);
+    IOUtils::log("file content:"+fc);
+	//IOUtils::saveToFile(CourseUtils::courseCacheFilePath(courseNo),
+    //                    infos);
 }
 
 void JpwordReader::loadCache(LevelsInfo& lvs, int courseNo){
 	string filePath = CourseUtils::courseCacheFilePath(courseNo);
 	vector<AudioInfo> o;
 	if(IOUtils::fileExists(filePath)){
-        string fc=IOUtils::loadFromFile(filePath);
+        //string fc=IOUtils::loadFromFile(filePath);
+        string absPath = IOUtils::toRealPath(filePath);
         ptree pt;
-        read_json(fc,pt);
+        read_json(absPath,pt);
         BOOST_FOREACH(ptree::value_type &v,
                       pt.get_child("ais"))
         {

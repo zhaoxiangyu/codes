@@ -17,9 +17,9 @@ class IOUtils
 		static vector<string> findFiles(string path, vector<string>& extNames);
 		//static string relativePath(string path, string base);
 		static string fileBaseName(string path);
+        static string toRealPath(string vpath);
 	protected:
 	private:
-		static string toRealPath(string vpath);
 		static string cwd();
 		static string mPathSep;
 };

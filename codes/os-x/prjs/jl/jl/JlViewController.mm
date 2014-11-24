@@ -100,6 +100,7 @@ struct Impl {
 - (IBAction)doBtnAbout:(id)sender {
     //[sender setTitle: @"HA"];
     //[[self wordDisplay] setHidden:YES];
+    [self impl]->r->quit();
     [self refreshView];
 }
 
