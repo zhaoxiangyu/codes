@@ -40,35 +40,10 @@ def clean(target):
 	build_dir,generator,options=parse_target(target)
 	shutil.rmtree(build_dir)
 
-if __name__ == "__main__":
-        options,remainder = getopt(sys.argv[1:],'t:bcg',['target=','build','clean','generate','install'])
-
-	if len(sys.argv) == 1:
-		print """command options:
-	-t --target=target
-	-b --build
-	-g --generate
-	-c --clean
-	-i --install
-	target can be one of xcode,cbp or make """
-	        print "sys.platform:",sys.platform
-
-        target=""
-	for opt,arg in options:
-		if opt in ('-t','--target'):
-			target=arg
-		elif opt in ('-b','--build'):
-			build(target)
-		elif opt in ('-c','--clean'):
-			clean(target)
-		elif opt in ('-g','--generate'):
-			genprj(target)
-		elif opt in ('-i','--install'):
-			install(target)
-
-
 def parse_target(target):
-        options="";
+        build_dir=""
+        generator=""
+        options=""
 	if "darwin" == sys.platform :
 		if "xcode" == target:
 			build_dir="build/darwin/xcode"
@@ -92,4 +67,30 @@ def cmake(target_dir,generator,options):
 	os.chdir(target_dir)
 	os.system('cmake -G"'+generator+'" '+currdir+' '+options)
 	os.chdir(currdir)
+
+if __name__ == "__main__":
+        options,remainder = getopt(sys.argv[1:],'t:bcg',['target=','build','clean','generate','install'])
+
+	if len(sys.argv) == 1:
+		print """command options:
+	-t --target=target
+	-b --build
+	-g --generate
+	-c --clean
+	-i --install
+	target can be one of xcode,cbp or makefile """
+	        print "sys.platform:",sys.platform
+
+        target=""
+	for opt,arg in options:
+		if opt in ('-t','--target'):
+			target=arg
+		elif opt in ('-b','--build'):
+			build(target)
+		elif opt in ('-c','--clean'):
+			clean(target)
+		elif opt in ('-g','--generate'):
+			genprj(target)
+		elif opt in ('-i','--install'):
+			install(target)
 
