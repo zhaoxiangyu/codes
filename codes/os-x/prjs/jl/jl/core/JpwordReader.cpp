@@ -150,11 +150,13 @@ void JpwordReader::saveCache(LevelsInfo& lvs,int courseNo){
         vector<AudioInfo>& vai = lvs.levelList(ln);
         for (unsigned i = 0; i < vai.size(); i++) {
             AudioInfo ai = vai[i];
-            pt.add("ais.ai.name", ai.getName());
-            pt.add("ais.ai.unitno", ai.getUnitNo());
-            pt.add("ais.ai.courseno", ai.getCourseNo());
-            pt.add("ais.ai.mp3path", ai.getMp3Path());
-            pt.add("ais.ai.level", ai.getLevel());
+            ptree ptn;
+            ptn.add("name", ai.getName());
+            ptn.add("unitno", ai.getUnitNo());
+            ptn.add("courseno", ai.getCourseNo());
+            ptn.add("mp3path", ai.getMp3Path());
+            ptn.add("level", ai.getLevel());
+            pt.add_child("ais.ai",ptn);
         }
     }
     string filePath = CourseUtils::courseCacheFilePath(courseNo);
