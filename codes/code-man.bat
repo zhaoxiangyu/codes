@@ -26,7 +26,7 @@ exit /b 0
 :pub
 	echo publish to github ...
 	git add .
-	git commit -m "publish"
+	git commit -m "publish on WinXP"
 	git push
 exit /b 0
 
