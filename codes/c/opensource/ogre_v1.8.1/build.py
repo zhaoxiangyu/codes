@@ -16,8 +16,6 @@ def build(target):
     os.chdir(build_dir)
 
     if "darwin" == sys.platform :
-        os.system('make -j4')
-    else:
         os.system('cmake -b .')
 
     os.chdir(currdir)
@@ -45,7 +43,7 @@ def parse_target(target):
     generator=""
     options=""
     if "darwin" == sys.platform :
-        options="-DINSTALL_LIBS=ON -DBUILD_SHARED_LIBS=ON -DFRAMEWORK=ON -DCMAKE_OSX_ARCHITECTURES='i386;x86_64' -DCMAKE_BUILD_TYPE=RelWithDebInfo -DCMAKE_INSTALL_PREFIX=/Library/Frameworks -DCMAKE_INSTALL_NAME_DIR=/Library/Frameworks -DBUILD_DEMOS:BOOL=OFF"
+        options="-DOGRE_BUILD_PLATFORM_APPLE_IOS=1"
         if "xcode" == target:
             build_dir="build/darwin/xcode"
             generator="Xcode"
