@@ -5,7 +5,7 @@
 ################################################################################
 
 # Absolute path to the source code directory.
-SRC=`pwd`/src
+SRC=`pwd`
 
 # Absolute path to the build directory.
 BUILD=`pwd`/build/darwin/xcode
