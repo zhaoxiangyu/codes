@@ -1,0 +1,10 @@
+# servers for development
+[vm]
+#localhost   ansible_ssh_user=yp-tc-m-2683   ansible_ssh_pass=yy123qwe
+192.168.100.89    ansible_ssh_user=vagrant    ansible_ssh_pass=vagrant
+
+[logstash-server]
+192.168.100.89    ansible_ssh_user=vagrant    ansible_ssh_pass=vagrant
+
+[logstash-agent]
+192.168.100.88     ansible_ssh_user=vagrant    ansible_ssh_pass=vagrant
