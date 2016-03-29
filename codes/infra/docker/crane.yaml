@@ -1,0 +1,6 @@
+containers: 
+  mysql: 
+    image: mysql
+    run: 
+      detach: true
+      env: ["MYSQL_ROOT_PASSWORD=123qwe!@#"]
