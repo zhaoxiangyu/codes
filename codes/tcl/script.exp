@@ -1,0 +1,29 @@
+#!/usr/bin/expect
+
+proc ssh-host {ukey host} {
+	puts “\n正在登陆堡垒机”
+	spawn ssh 192.168.123.13 -l guohai.tang
+	expect "password:"
+	send "$ukey\r"
+
+	puts “\n正在登陆”
+	expect "HENGDAO"
+
+	set LANDING "$host"
+	send "$LANDING\r"
+
+	set OTHER "1"
+	send "$OTHER\r"
+
+	expect "login"
+
+	set USERNAME1 "app"
+	send "$USERNAME1\r"
+
+	expect "password:"
+	set PASSWORD1 "(OI3k1@ekED"
+	send "$PASSWORD1\r"
+
+	puts "\n登陆完成，可以开始操作了"
+	interact 300 {send " \177"}
+}

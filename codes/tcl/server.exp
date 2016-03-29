@@ -1,0 +1,21 @@
+#!/usr/bin/expect
+
+source script.exp
+
+if {[llength $argv] == 0} {
+	puts "usage: ssh ukey host"
+	puts "\t ls ukey"
+	exit 1
+}
+
+set command [lindex $argv 0]
+if {$command == "ssh"} {
+	set ukey [lindex $argv 1];
+	puts "\nukey密码是 $ukey"
+	set host [lindex $argv 2] 
+	puts "\nhost: $host"
+	ssh-host $ukey $host
+} elseif {$command == "ls"} {
+	puts "processing ls command"
+}
+
