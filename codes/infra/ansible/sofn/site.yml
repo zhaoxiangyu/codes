@@ -1,39 +1,25 @@
 ---
 
-- hosts: vm
-  sudo: yes
+- hosts: java7
+  sudo: no
   roles:
-    - { role: he.tomcat-req, tags: 'vm' }
-    - { role: stevenvandervalk.tomcat, tags: 'tomcat', sudo: yes }
-    - { role: Rackspace_Automation.mysql, tags: 'mysql', sudo: yes, mysql_root_password: '123qwe!@#' }
-    - { role: geerlingguy.nginx, tags: 'nginx', sudo: yes }
+    - { role: medzin.oracle-jdk, tags: 'install', sudo: no }
 
-- hosts: logstash-server
-  sudo: yes
+- hosts: appserver
+  sudo: no
   roles:
-    # - { role: geerlingguy.redis, tags: 'logstash', sudo: yes }
-    - { role: geerlingguy.logstash, tags: 'logstash', sudo: yes }
-    - { role: geerlingguy.elasticsearch, tags: 'logstash', sudo: yes }
-
-    - { role: geerlingguy.nginx, tags: 'kibana', sudo: yes }
-    - { role: geerlingguy.repo-epel, tags: 'kibana', sudo: yes }
-    - { role: geerlingguy.kibana, tags: 'kibana', sudo: yes, kibana_server_name: "{{ logweb_host }}",
-      kibana_username: "long.he", kibana_password: "123qwe!@#" }
+    - { role: abessifi.weblogic, tags: 'install', sudo: no }
   tasks:
-    # setup elasticsearch
     - name: add cors.enabled in /etc/elasticsearch/elasticsearch.yml
       tags: logstash
       lineinfile: 
         dest: /etc/elasticsearch/elasticsearch.yml
         line: "http.cors.enabled: true"
-    - name: add cors.allow-origion in /etc/elasticsearch/elasticsearch.yml
-      tags: logstash
-      lineinfile: 
-        dest: /etc/elasticsearch/elasticsearch.yml
-        line: "http.cors.allow-origion: http://{{ logweb_host }}:80"
 
-- hosts: logstash-agent
-  sudo: yes
+- hosts: zookeeper
+  sudo: no
+  roles:
+    - { role: AerisCloud.zookeeper, tags: 'install', sudo: no }
   vars:
     logstash_forwarder_logstash_server: logstash.tcredit.com
   tasks:
@@ -48,5 +34,12 @@
       lineinfile:
         dest: /etc/hosts
         line: "{{ logstash_server_ip }} logstash.tcredit.com"
+
+- hosts: service
+  tasks:
+
+- hosts: db
   roles:
-    - { role: geerlingguy.logstash-forwarder, tags: 'logstash' }
+    - { role: ellotheth.oracle, tags: 'install', sudo: no }
+  tasks:
+

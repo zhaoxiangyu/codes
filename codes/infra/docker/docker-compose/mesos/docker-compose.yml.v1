@@ -1,0 +1,4 @@
+mesos-master:
+  image: mesoscloud/mesos-master
+mesos-slave:
+  image: mesoscloud/mesos-slave
