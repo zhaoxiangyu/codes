@@ -1,0 +1,15 @@
+[jump]
+172.16.0.100
+
+[nginx]
+
+[app]
+
+[cache]
+
+[service]
+
+[zookeeper]
+
+[db]
+

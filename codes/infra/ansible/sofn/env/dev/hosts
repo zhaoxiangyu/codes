@@ -1,0 +1,22 @@
+# servers for development
+[dev]
+dev_nginx   ansible_ssh_user=guohai.tang    ansible_ssh_pass=tangguohai
+dev_web1    ansible_ssh_user=guohai.tang    ansible_ssh_pass=tangguohai
+dev_cl1     ansible_ssh_user=guohai.tang    ansible_ssh_pass=tangguohai
+dev_cl2     ansible_ssh_user=guohai.tang    ansible_ssh_pass=tangguohai
+dev_cl3     ansible_ssh_user=guohai.tang    ansible_ssh_pass=tangguohai
+dev_dubbo1  ansible_ssh_user=guohai.tang    ansible_ssh_pass=tangguohai
+dev_dubbo2  ansible_ssh_user=guohai.tang    ansible_ssh_pass=tangguohai
+
+[vm]
+
+[logstash-server]
+dev_dubbo2
+
+[logstash-agent]
+dev_web1
+dev_dubbo1
+
+[logstash-agent-installed]
+dev_web1
+dev_dubbo1

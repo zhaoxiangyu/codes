@@ -1,0 +1,5 @@
+---
+# tasks file for he.tomcat-req
+- name: Install wget
+  sudo: yes
+  yum: name=wget state=installed
