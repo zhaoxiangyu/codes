@@ -1,0 +1,30 @@
+---
+- hosts: all
+  sudo: yes
+  tasks:
+    - name: check hosts hardware info
+      tags: diagnose
+      debug: msg="System {{ inventory_hostname }} CPU count {{ ansible_processor_count }}" 
+
+- hosts: java7
+  sudo: no
+  roles:
+    - { role: medzin.oracle-jdk, tags: 'install', sudo: no }
+
+- hosts: appserver
+  sudo: no
+  roles:
+    - { role: abessifi.weblogic, tags: 'install', sudo: no }
+
+- hosts: zookeeper
+  sudo: no
+  roles:
+    - { role: AerisCloud.zookeeper, tags: 'install', sudo: no }
+
+- hosts: service
+  tasks:
+
+- hosts: db
+  roles:
+  tasks:
+

@@ -1,45 +1,8 @@
 ---
-
-- hosts: java7
+- hosts: all
   sudo: no
-  roles:
-    - { role: medzin.oracle-jdk, tags: 'install', sudo: no }
-
-- hosts: appserver
-  sudo: no
-  roles:
-    - { role: abessifi.weblogic, tags: 'install', sudo: no }
   tasks:
-    - name: add cors.enabled in /etc/elasticsearch/elasticsearch.yml
-      tags: logstash
-      lineinfile: 
-        dest: /etc/elasticsearch/elasticsearch.yml
-        line: "http.cors.enabled: true"
-
-- hosts: zookeeper
-  sudo: no
-  roles:
-    - { role: AerisCloud.zookeeper, tags: 'install', sudo: no }
-  vars:
-    logstash_forwarder_logstash_server: logstash.tcredit.com
-  tasks:
-    - name: remove logstash.example.com in /etc/hosts
-      tags: logstash
-      lineinfile:
-        dest: /etc/hosts
-        regexp: '.*logstash\.tcredit\.com.*'
-        state: absent
-    - name: add logstash.tcredit.com in /etc/hosts
-      tags: logstash
-      lineinfile:
-        dest: /etc/hosts
-        line: "{{ logstash_server_ip }} logstash.tcredit.com"
-
-- hosts: service
-  tasks:
-
-- hosts: db
-  roles:
-    - { role: ellotheth.oracle, tags: 'install', sudo: no }
-  tasks:
-
+    - name: check hosts hardware info
+      tags: diagnose
+      #debug: msg="lsb {{ ansible_lsb }}"
+      debug: msg="System {{ inventory_hostname }}, groups {{ group_names }} ,CPU count {{ ansible_processor_count }}, disk size {{ ansible_devices.sda.size }}, mem mb {{ ansible_memtotal_mb }}, datetime {{ ansible_date_time.iso8601_micro }}, ni {{ ansible_interfaces }} " 

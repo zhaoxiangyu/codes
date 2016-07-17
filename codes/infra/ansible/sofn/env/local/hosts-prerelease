@@ -1,0 +1,9 @@
+# 172.16.0.100 as jump server
+
+[centos6.4]
+192.168.100.64 ansible_ssh_user=vagrant ansible_ssh_pass=vagrant
+192.168.100.164 ansible_ssh_user=vagrant ansible_ssh_pass=vagrant
+
+[centos6.8]
+
+
