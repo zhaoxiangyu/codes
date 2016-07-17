@@ -1,3 +1,5 @@
 #!/usr/bin/env ruby
 
-puts `ruby -r ./vgrnt.rb -e 'up'`
+def vagrant_up
+	puts `ruby -r ./vgrnt.rb -e 'up'`
+end

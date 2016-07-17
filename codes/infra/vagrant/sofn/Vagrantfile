@@ -16,6 +16,10 @@ Vagrant.configure(2) do |config|
       svr.vm.network "private_network", ip: "192.168.100.164"
       svr.vm.provider "virtualbox" do |vb|
         vb.name = "VG-CentOS64-6.4x"
+	#vb.cpus = 2
+	vb.gui = false
+	vb.memory = 2048
+	#vb.customize 'pre-boot',["modifyhd", :id, "--resize", (500*1024).to_s]
       end
     end
 

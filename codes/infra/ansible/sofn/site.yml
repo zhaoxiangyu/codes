@@ -5,4 +5,63 @@
     - name: check hosts hardware info
       tags: diagnose
       #debug: msg="lsb {{ ansible_lsb }}"
-      debug: msg="System {{ inventory_hostname }}, groups {{ group_names }} ,CPU count {{ ansible_processor_count }}, disk size {{ ansible_devices.sda.size }}, mem mb {{ ansible_memtotal_mb }}, datetime {{ ansible_date_time.iso8601_micro }}, ni {{ ansible_interfaces }} " 
+      debug: msg="System {{ inventory_hostname }}, groups {{ group_names }} ,CPU count {{ ansible_processor_count }}, disk size {{ ansible_devices.sda.size }}, mem mb {{ ansible_memtotal_mb }}, datetime {{ ansible_date_time.iso8601_micro }}, ni {{ ansible_interfaces }}" 
+
+- hosts: java8
+  sudo: yes
+  #tags: install
+  vars:
+    oracle_jdk_version: 8
+    oracle_jdk_update: 91
+    oracle_jdk_build_number: b14
+  roles:
+    - role: medzin.oracle-jdk
+
+- hosts: appserver
+  #tags: install
+  sudo: no
+  roles:
+    - { role: abessifi.weblogic, sudo: no }
+
+- hosts: zookeeper
+  #tags: install
+  sudo: no
+  roles:
+    - { role: AerisCloud.zookeeper, sudo: no }
+
+- hosts: db
+  #tags: install
+  sudo: yes
+  vars:
+    oracle_path: /opt/app  # ORACLE_BASE will be /opt/app/oracle
+    oracle_install_file1: /file1.zip
+    oracle_install_file2: /file2.zip
+    oracle_tmp: /tmp/oracle
+    oracle_db_name: orcl_dev  # ORACLE_SID will be orcl_dev
+    oracle_db_home: oracle  # ORACLE_HOME will be /opt/app/oracle/product/11.2.0/oracle
+    oracle_db_user: devuser
+    oracle_db_pass: AnAwesomeAndAmazingP4ssw0rd
+    oracle_db_syspass: AMor3AwesomeAndAmazingP4ssw0rd
+  tasks:
+    - name: upload installation files 
+      copy:
+        src: "{{oracle_install_file1}}"
+        dest: "{{oracle_tmp}}"
+    - name: upload installation files 
+      copy:
+        src: "{{oracle_install_file2}}"
+        dest: "{{oracle_tmp}}"
+  roles:
+    - role: ellotheth.oracle
+
+- hosts: nginx
+  #tags: install
+  sudo: yes
+  roles:
+    - role: geerlingguy.nginx
+
+- hosts: cache
+  tags: install
+  sudo: yes
+  roles:
+    - role: cchurch.memcached
