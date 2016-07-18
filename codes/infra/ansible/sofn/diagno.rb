@@ -1,13 +1,31 @@
-#!/usr/bin/env ruby -w
+#!/usr/bin/env ruby
 
-def setup
-	`ansible -u root -k -i hosts all -m setup >setup.txt`
-end
+class Diagno
 
-def ping
-	puts `ansible -u root -k -i hosts all -m ping`
-end
+	def setup
+		`ansible -i #{@inventory} all -m setup >setup.txt`
+	end
 
-def check_inet
-	puts `ansible -u root -k -i hosts all -m command -a 'ping -c 5 www.baidu.com'`
+	def ping
+		puts `ansible -i #{@inventory} all -m ping`
+	end
+
+	def check_inet
+		puts `ansible -i #{@inventory} all -m command -a 'ping -c 5 www.baidu.com'`
+	end
+
+	def check_hw
+		puts `ansible-playbook -i #{@inventory} -t diagnose site.yml`
+	end
+
+    def initialize(env)
+        @inventory = env
+    end
+
+	def interactive
+		print "inventory:"
+		env=gets()
+		puts "inventory:#{env}"
+		setup(env)
+	end
 end

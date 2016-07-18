@@ -1,12 +1,7 @@
 #!/usr/bin/env ruby -w
 
-def install
-	puts """`sudo ansible-galaxy install medzin.oracle-jdk
-	sudo ansible-galaxy install abessifi.weblogic
-	sudo ansible-galaxy install AerisCloud.zookeeper
-	sudo ansible-galaxy install ellotheth.oracle`"""
+def ag_install
+	puts """`ansible-galaxy install medzin.oracle-jdk -p ./roles; ansible-galaxy install abessifi.weblogic -p ./roles; ansible-galaxy install AerisCloud.zookeeper -p ./roles; ansible-galaxy install ellotheth.oracle -p ./roles;`"""
+	puts """`ansible-galaxy install cchurch.memcached -p ./roles; ansible-galaxy install geerlingguy.nginx -p ./roles `"""
 end
 
-def init
-	puts """ init roles """
-end

@@ -1,45 +1,84 @@
 ---
-
-- hosts: java7
+- hosts: all
   sudo: no
-  roles:
-    - { role: medzin.oracle-jdk, tags: 'install', sudo: no }
-
-- hosts: appserver
-  sudo: no
-  roles:
-    - { role: abessifi.weblogic, tags: 'install', sudo: no }
   tasks:
-    - name: add cors.enabled in /etc/elasticsearch/elasticsearch.yml
-      tags: logstash
-      lineinfile: 
-        dest: /etc/elasticsearch/elasticsearch.yml
-        line: "http.cors.enabled: true"
+    - name: check hosts hardware info
+      tags: diagnose
+      #debug: msg="lsb {{ ansible_lsb }}"
+      debug: msg="{{ inventory_hostname }} ,CPU count {{ ansible_processor_count }}, disk size {{ ansible_devices.sda.size }}, mem mb {{ ansible_memtotal_mb }}, datetime {{ ansible_date_time.iso8601_micro }}, ni {{ ansible_interfaces }}, groups {{ group_names }}" 
+
+- hosts: all
+  sudo: no
+  tags: setup
+  tasks:
+    - name: create initial groups for the dev user
+      group: name=dev state=present
+
+    - name: create dev user
+      user:
+        name: dev
+        group: dev
+        home: /home/dev
+        shell: /bin/bash
+        password: "123456"
+        append: yes
+
+
+- hosts: java8
+  sudo: yes
+  #tags: install
+  vars:
+    oracle_jdk_version: 8
+    oracle_jdk_update: 91
+    oracle_jdk_build_number: b14
+  roles:
+    - role: medzin.oracle-jdk
+
+- hosts: app
+  #tags: install
+  sudo: no
+  roles:
+    - { role: abessifi.weblogic, sudo: no }
 
 - hosts: zookeeper
+  #tags: install
   sudo: no
   roles:
-    - { role: AerisCloud.zookeeper, tags: 'install', sudo: no }
-  vars:
-    logstash_forwarder_logstash_server: logstash.tcredit.com
-  tasks:
-    - name: remove logstash.example.com in /etc/hosts
-      tags: logstash
-      lineinfile:
-        dest: /etc/hosts
-        regexp: '.*logstash\.tcredit\.com.*'
-        state: absent
-    - name: add logstash.tcredit.com in /etc/hosts
-      tags: logstash
-      lineinfile:
-        dest: /etc/hosts
-        line: "{{ logstash_server_ip }} logstash.tcredit.com"
-
-- hosts: service
-  tasks:
+    - { role: AerisCloud.zookeeper, sudo: no }
 
 - hosts: db
-  roles:
-    - { role: ellotheth.oracle, tags: 'install', sudo: no }
+  #tags: install
+  sudo: yes
+  vars:
+    oracle_path: /opt/app  # ORACLE_BASE will be /opt/app/oracle
+    oracle_install_file1: /file1.zip
+    oracle_install_file2: /file2.zip
+    oracle_tmp: /tmp/oracle
+    oracle_db_name: orcl_dev  # ORACLE_SID will be orcl_dev
+    oracle_db_home: oracle  # ORACLE_HOME will be /opt/app/oracle/product/11.2.0/oracle
+    oracle_db_user: devuser
+    oracle_db_pass: AnAwesomeAndAmazingP4ssw0rd
+    oracle_db_syspass: AMor3AwesomeAndAmazingP4ssw0rd
   tasks:
+    - name: upload installation files 
+      copy:
+        src: "{{oracle_install_file1}}"
+        dest: "{{oracle_tmp}}"
+    - name: upload installation files 
+      copy:
+        src: "{{oracle_install_file2}}"
+        dest: "{{oracle_tmp}}"
+  roles:
+    - role: ellotheth.oracle
 
+- hosts: nginx
+  #tags: install
+  sudo: yes
+  roles:
+    - role: geerlingguy.nginx
+
+- hosts: cache
+  tags: install
+  sudo: yes
+  roles:
+    - role: cchurch.memcached
