@@ -25,6 +25,26 @@
         password: "gjzspt@!@#"
         append: yes
 
+- hosts: '{{ target }}'
+#- hosts: all
+  sudo: no
+  tags: setup
+  tasks:
+    - name: set sticky bit for yum
+      file: 
+        mode: 1755
+        path: "/usr/bin/yum"
+  vars:
+    dev_sudoers:
+      - user: "dev"
+        user_commands:
+          - runas_users:
+              - "root"
+            commands:
+              - "/usr/bin/yum"
+            nopasswd: false
+  roles:
+    - { role: mchlumsky.sudoersd, sudoers_filename: dev, sudoers: "{{ dev_sudoers }}" }
 
 - hosts: java8
   sudo: yes
