@@ -1,16 +1,25 @@
-db,192.168.21.243 ,CPU count 1, disk size 1.46 TB, mem mb 9059
-
+1.服务器列表
+db,192.168.21.243 ,CPU count 1, disk size 470.00 GB, mem mb 8059
 db,192.168.21.244 ,CPU count 1, disk size 600.00 GB, mem mb 7858
-
-no_use,192.168.21.245 ,CPU count 1, disk size 700.00 GB, mem mb 2872
-
+nouse,192.168.21.245 ,CPU count 1, disk size 700.00 GB, mem mb 2872
 [app,dubbo] 172.16.0.100 ,CPU count 1, disk size 200.00 GB, mem mb 7857
-
 [zk, cache] 192.168.21.246 ,CPU count 1, disk size 200.00 GB, mem mb 7857
-
 [zk, cache] 192.168.21.247 ,CPU count 1, disk size 200.00 GB, mem mb 7857
-
 [zk, dubbo] 192.168.21.248 ,CPU count 1, disk size 200.00 GB, mem mb 5693
-
 [nginx,app] 192.168.21.249 ,CPU count 1, disk size 200.00 GB, mem mb 5693
 
+2.拟安装服务说明：
+db      数据库
+zk      zookeeper服务器
+cache   memecached服务
+app     weblogic服务
+dubbo   dubbo服务
+nginx   nginx代理
+
+3.用户帐号      密码        说明
+root            sofn@123
+dev             gjzspt@!@#  开发人员共用帐号
+
+4.部门专用物理真机
+IP: 192.168.21.251
+管理员帐号密码: qazwsx@321567

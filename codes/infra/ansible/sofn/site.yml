@@ -22,7 +22,11 @@
         group: dev
         home: /home/dev
         shell: /bin/bash
-        password: "gjzspt@!@#"
+        # gjzspt@!@#
+        # mkpasswd --method=SHA-512
+        # hashed password for the dev user
+        # python -c 'import crypt; print crypt.crypt("gjzspt@!@#", "$1$salt$")'
+        password: "$1$salt$Q.mNVqoQheFEuefCuFMJI0"
         append: yes
 
 - hosts: '{{ target }}'
@@ -32,7 +36,7 @@
   tasks:
     - name: set sticky bit for yum
       file: 
-        mode: 1755
+        mode: 6755
         path: "/usr/bin/yum"
   vars:
     dev_sudoers:
