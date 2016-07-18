@@ -27,6 +27,9 @@
 [code]
 192.168.21.245 ansible_ssh_user=root ansible_ssh_pass=sofn@123
 
+[test]
+192.168.21.246 ansible_ssh_user=root ansible_ssh_pass=sofn@123
+
 [java7]
 
 [java8]

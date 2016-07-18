@@ -1,13 +1,15 @@
 ---
-- hosts: all
+- hosts: '{{ target }}'
+#- hosts: all
   sudo: no
   tasks:
     - name: check hosts hardware info
       tags: diagnose
       #debug: msg="lsb {{ ansible_lsb }}"
-      debug: msg="{{ inventory_hostname }} ,CPU count {{ ansible_processor_count }}, disk size {{ ansible_devices.sda.size }}, mem mb {{ ansible_memtotal_mb }}, datetime {{ ansible_date_time.iso8601_micro }}, ni {{ ansible_interfaces }}, groups {{ group_names }}" 
+      debug: msg="{{ inventory_hostname }} ,CPU cores {{ ansible_processor_cores }},CPU count {{ ansible_processor_count }}, disk size {{ ansible_devices.sda.size }}, mem mb {{ ansible_memtotal_mb }}, datetime {{ ansible_date_time.iso8601_micro }}, ni {{ ansible_interfaces }}, groups {{ group_names }}" 
 
-- hosts: all
+- hosts: '{{ target }}'
+#- hosts: all
   sudo: no
   tags: setup
   tasks:
@@ -20,7 +22,7 @@
         group: dev
         home: /home/dev
         shell: /bin/bash
-        password: "123456"
+        password: "gjzspt@!@#"
         append: yes
 
 
@@ -51,8 +53,8 @@
   sudo: yes
   vars:
     oracle_path: /opt/app  # ORACLE_BASE will be /opt/app/oracle
-    oracle_install_file1: /file1.zip
-    oracle_install_file2: /file2.zip
+    oracle_install_file1: /home/helong/he/infra/linux.x64_11gR2_database_1of2.zip
+    oracle_install_file2: /linux.x64_11gR2_database_2of2.zip
     oracle_tmp: /tmp/oracle
     oracle_db_name: orcl_dev  # ORACLE_SID will be orcl_dev
     oracle_db_home: oracle  # ORACLE_HOME will be /opt/app/oracle/product/11.2.0/oracle
