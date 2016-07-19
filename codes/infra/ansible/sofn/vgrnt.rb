@@ -9,10 +9,10 @@ class Vagrant
 	end
 
 	def up
-		puts `cd #{$vm_dir};vagrant up`
+		puts `cd #{@vm_dir};vagrant up`
 	end
 
 	def halt
-		puts `cd #{$vm_dir};vagrant halt`
+		puts `cd #{@vm_dir};vagrant halt`
 	end
 end
