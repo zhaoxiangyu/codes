@@ -2,8 +2,6 @@
 
 class Vagrant
 
-	@vm_dir="/home/he/data/github/codes/codes/infra/vagrant/sofn"
-
 	def global_status
 		puts `vagrant global-status`
 	end
@@ -15,4 +13,8 @@ class Vagrant
 	def halt
 		puts `cd #{$vm_dir};vagrant halt`
 	end
+
+    def initialize
+        @vm_dir="/home/he/data/github/codes/codes/infra/vagrant/sofn"
+    end
 end

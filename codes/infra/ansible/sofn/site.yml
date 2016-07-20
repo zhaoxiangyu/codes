@@ -1,7 +1,10 @@
 ---
 #################### diagnose #######################
 - hosts: all
+  name: check hosts hareware
   sudo: no
+  tags:
+    - diagnose
   tasks:
     - name: check hosts hardware info
       tags: diagnose
@@ -9,6 +12,7 @@
       debug: msg="{{ inventory_hostname }} ,CPU cores {{ ansible_processor_cores }},CPU count {{ ansible_processor_count }}, disk size {{ ansible_devices.sda.size }}, mem mb {{ ansible_memtotal_mb }}, datetime {{ ansible_date_time.iso8601_micro }}, ni {{ ansible_interfaces }}, groups {{ group_names }}" 
 
 - hosts: all
+  name: create os users
   sudo: no
   tags: setup
   tasks:
@@ -29,13 +33,14 @@
         append: yes
 
 - hosts: all
+  name: setup sudoers
   sudo: no
   tags: setup
-  tasks:
-    - name: set setuid for yum
-      file: 
-        mode: 6755
-        path: "/usr/bin/yum"
+  # tasks:
+  #   - name: set setuid for yum
+  #     file: 
+  #       mode: 6755
+  #       path: "/usr/bin/yum"
   vars:
     dev_sudoers:
       - user: "dev"
@@ -49,6 +54,7 @@
     - { role: mchlumsky.sudoersd, sudoers_filename: dev, sudoers: "{{ dev_sudoers }}" }
 
 - hosts: all
+  name: upload installation files
   sudo: no
   tags: copy_files
   tasks:
@@ -58,6 +64,7 @@
         dest: /root/dl/
 
 - hosts: all
+  name: upload jdk rpm file
   sudo: no
   tags: copy_files
   tasks:
@@ -66,8 +73,10 @@
         src: /home/helong/he/infra/java/jdk-8u91-linux-x64.rpm
         dest: /tmp/jdk-8u91-linux-x64.rpm
 
+
 #################### install #######################
 - hosts: java8
+  name: install java8
   sudo: yes
   tags: install_java8
   vars:
@@ -78,18 +87,21 @@
     - role: medzin.oracle-jdk
 
 - hosts: app
+  name: install weblogic server
   #tags: install
   sudo: no
   roles:
     - { role: abessifi.weblogic, sudo: no }
 
 - hosts: zookeeper
+  name: install zookeeper
   #tags: install
   sudo: no
   roles:
     - { role: AerisCloud.zookeeper, sudo: no }
 
 - hosts: db
+  name: install oracle database server
   #tags: install
   sudo: yes
   vars:
@@ -115,12 +127,14 @@
     - role: ellotheth.oracle
 
 - hosts: nginx
+  name: install nginx
   #tags: install
   sudo: yes
   roles:
     - role: geerlingguy.nginx
 
 - hosts: cache
+  name: install memecached
   tags: install
   sudo: yes
   roles:
