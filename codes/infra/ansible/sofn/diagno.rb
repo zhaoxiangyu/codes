@@ -22,9 +22,9 @@ class Diagno
 		puts `ansible-playbook -i #{@inventory} -t diagnose site.yml`
 	end
 
-    def initialize(env)
-        @inventory = env
-    end
+	def initialize(env)
+		@inventory = env
+	end
 
 	def interactive
 		print "inventory:"
