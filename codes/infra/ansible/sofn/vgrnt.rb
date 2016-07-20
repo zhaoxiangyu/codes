@@ -23,4 +23,8 @@ class Vagrant
 	def to_s
 		puts "vm_dir:#{@vm_dir}"
 	end
+
+    def initialize
+        @vm_dir="/home/he/data/github/codes/codes/infra/vagrant/sofn"
+    end
 end
