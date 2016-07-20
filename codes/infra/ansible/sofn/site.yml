@@ -1,6 +1,6 @@
 ---
-- hosts: '{{ target }}'
-#- hosts: all
+#################### diagnose #######################
+- hosts: all
   sudo: no
   tasks:
     - name: check hosts hardware info
@@ -8,8 +8,7 @@
       #debug: msg="lsb {{ ansible_lsb }}"
       debug: msg="{{ inventory_hostname }} ,CPU cores {{ ansible_processor_cores }},CPU count {{ ansible_processor_count }}, disk size {{ ansible_devices.sda.size }}, mem mb {{ ansible_memtotal_mb }}, datetime {{ ansible_date_time.iso8601_micro }}, ni {{ ansible_interfaces }}, groups {{ group_names }}" 
 
-- hosts: '{{ target }}'
-#- hosts: all
+- hosts: all
   sudo: no
   tags: setup
   tasks:
@@ -29,12 +28,11 @@
         password: "$1$salt$Q.mNVqoQheFEuefCuFMJI0"
         append: yes
 
-- hosts: '{{ target }}'
-#- hosts: all
+- hosts: all
   sudo: no
   tags: setup
   tasks:
-    - name: set sticky bit for yum
+    - name: set setuid for yum
       file: 
         mode: 6755
         path: "/usr/bin/yum"
@@ -50,9 +48,28 @@
   roles:
     - { role: mchlumsky.sudoersd, sudoers_filename: dev, sudoers: "{{ dev_sudoers }}" }
 
+- hosts: all
+  sudo: no
+  tags: copy_files
+  tasks:
+    - name: copy files
+      copy:
+        src: /home/helong/he/infra/
+        dest: /root/dl/
+
+- hosts: all
+  sudo: no
+  tags: copy_files
+  tasks:
+    - name: copy rpm file
+      copy:
+        src: /home/helong/he/infra/java/jdk-8u91-linux-x64.rpm
+        dest: /tmp/jdk-8u91-linux-x64.rpm
+
+#################### install #######################
 - hosts: java8
   sudo: yes
-  #tags: install
+  tags: install_java8
   vars:
     oracle_jdk_version: 8
     oracle_jdk_update: 91
