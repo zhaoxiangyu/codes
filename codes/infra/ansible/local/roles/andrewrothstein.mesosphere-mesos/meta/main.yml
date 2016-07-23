@@ -1,0 +1,25 @@
+---
+galaxy_info:
+  author: Andrew Rothstein
+  description: mesosphere-mesos role
+  company: BlackRock
+  license:
+    - MIT
+  min_ansible_version: 1.2
+  platforms:
+    - name: EL
+      versions:
+        - 7
+    - name: Fedora
+      versions:
+        - 23
+    - name: Ubuntu
+      versions:
+        - trusty
+        - xenial
+
+  galaxy_tags:
+    - development
+
+dependencies: []
+  

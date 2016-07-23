@@ -1,0 +1,5 @@
+---
+- name: install mesosmaster
+  package: state=present name=mesos
+
+- include: write-configs.yml
