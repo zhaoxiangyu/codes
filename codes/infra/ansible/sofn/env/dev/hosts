@@ -1,44 +1,47 @@
 # 172.16.0.100 as jump server
 
 [nginx]
-192.168.21.249 ansible_ssh_user=root ansible_ssh_pass=sofn@123
+192.168.21.249
 
 [app]
-172.16.0.100 ansible_ssh_user=root ansible_ssh_pass=sofn@123
-192.168.21.249 ansible_ssh_user=root ansible_ssh_pass=sofn@123
+172.16.0.100
+192.168.21.249
 
 [cache]
-192.168.21.246 ansible_ssh_user=root ansible_ssh_pass=sofn@123
-192.168.21.247 ansible_ssh_user=root ansible_ssh_pass=sofn@123
+192.168.21.246
+192.168.21.247
 
 [dubbo]
-192.168.21.248 ansible_ssh_user=root ansible_ssh_pass=sofn@123
-172.16.0.100 ansible_ssh_user=root ansible_ssh_pass=sofn@123
+192.168.21.248
+172.16.0.100
 
 [zookeeper]
-192.168.21.246 ansible_ssh_user=root ansible_ssh_pass=sofn@123
-192.168.21.247 ansible_ssh_user=root ansible_ssh_pass=sofn@123
-192.168.21.248 ansible_ssh_user=root ansible_ssh_pass=sofn@123
+192.168.21.246
+192.168.21.247
+192.168.21.248
 
 [db]
-192.168.21.243 ansible_ssh_user=root ansible_ssh_pass=sofn@123
-192.168.21.244 ansible_ssh_user=root ansible_ssh_pass=sofn@123
+192.168.21.243
+192.168.21.244
 
 [code]
-192.168.21.245 ansible_ssh_user=root ansible_ssh_pass=sofn@123
+192.168.21.245
 
 [test]
-192.168.21.246 ansible_ssh_user=root ansible_ssh_pass=sofn@123
+192.168.21.246
 
 [java7]
 
 [java8]
-192.168.21.243 ansible_ssh_user=root ansible_ssh_pass=sofn@123
-192.168.21.244 ansible_ssh_user=root ansible_ssh_pass=sofn@123
-192.168.21.245 ansible_ssh_user=root ansible_ssh_pass=sofn@123
-192.168.21.246 ansible_ssh_user=root ansible_ssh_pass=sofn@123
-192.168.21.247 ansible_ssh_user=root ansible_ssh_pass=sofn@123
-192.168.21.248 ansible_ssh_user=root ansible_ssh_pass=sofn@123
-192.168.21.249 ansible_ssh_user=root ansible_ssh_pass=sofn@123
-172.16.0.100 ansible_ssh_user=root ansible_ssh_pass=sofn@123
+192.168.21.243
+192.168.21.244
+192.168.21.245
+192.168.21.246
+192.168.21.247
+192.168.21.248
+192.168.21.249
+172.16.0.100
 
+[all:vars]
+ansible_ssh_user=dev
+ansible_ssh_pass=gjzspt@!@#

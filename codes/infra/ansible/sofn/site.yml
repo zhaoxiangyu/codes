@@ -53,6 +53,18 @@
   roles:
     - { role: mchlumsky.sudoersd, sudoers_filename: dev, sudoers: "{{ dev_sudoers }}" }
 
+- hosts: local
+  name: download oracle 10g
+  sudo: no
+  tags: down_files
+  tasks:
+    - name: download files
+      get_url:
+        url: "http://download.oracle.com/otn/linux/oracle10g/10201/10201_database_linux_x86_64.cpio.gz"
+        dest: /home/helong/he/infra/oracle10g/
+        headers: 'Cookie:oraclelicense=accept-securebackup-cookie'
+        validate_certs: "no"
+
 - hosts: all
   name: upload installation files
   sudo: no
@@ -102,12 +114,12 @@
 
 - hosts: db
   name: install oracle database server
-  #tags: install
+  tags: install_oracledb
   sudo: yes
   vars:
     oracle_path: /opt/app  # ORACLE_BASE will be /opt/app/oracle
     oracle_install_file1: /home/helong/he/infra/linux.x64_11gR2_database_1of2.zip
-    oracle_install_file2: /linux.x64_11gR2_database_2of2.zip
+    oracle_install_file2: /home/helong/he/infra/linux.x64_11gR2_database_2of2.zip
     oracle_tmp: /tmp/oracle
     oracle_db_name: orcl_dev  # ORACLE_SID will be orcl_dev
     oracle_db_home: oracle  # ORACLE_HOME will be /opt/app/oracle/product/11.2.0/oracle
