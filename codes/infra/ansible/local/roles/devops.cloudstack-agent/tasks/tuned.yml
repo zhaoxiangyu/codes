@@ -1,0 +1,16 @@
+---
+# tasks file for tuned.yml
+- name: Delete defaults virsh net.
+  shell: virsh net-destroy default  && virsh net-undefine default
+  ignore_errors: True
+
+- name: Ensure tuned package are installed.
+  yum: name=tuned state=present
+
+- name: Ensure tuned is running and enabled at system start.
+  service: name=tuned state=started enabled=yes
+
+- name: Configure tuned profile.
+  shell: tuned-adm profile {{ cloudstack_agent_tuned_profile }}
+  notify:
+    - restart tuned

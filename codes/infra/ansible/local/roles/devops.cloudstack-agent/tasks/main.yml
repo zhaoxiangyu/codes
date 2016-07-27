@@ -1,0 +1,65 @@
+---
+# tasks file for ansible-role-cloudstack-agent
+
+- name: Install Requires Package for cloudstack agent.
+  yum: name={{ item }} state=present
+  with_items:
+    - openssh-clients
+    - libvirt
+    - java-1.7.0-openjdk
+    - bridge-utils
+    - ebtables
+    - iptables
+    - ethtool
+    - vconfig
+    - ipset
+    - jsvc
+    - jakarta-commons-daemon
+    - jakarta-commons-daemon-jsvc
+    - perl
+    - libvirt-python
+    - qemu-img
+    - qemu-kvm
+    - avahi
+
+- name: Install Cloudstack agent package.
+  yum: name=cloudstack-agent state=present
+
+- name: configure libvirtd.conf.
+  lineinfile: >
+    dest="/etc/libvirt/libvirtd.conf"
+    regexp="{{ item.regexp }}"
+    line="{{ item.line }}"
+    state=present
+  with_items:
+    - { regexp: "^#?listen_tls", line: 'listen_tls = 0' }
+    - { regexp: "^#?listen_tcp", line: 'listen_tcp = 1' }
+    - { regexp: "^#?tcp_port", line: 'tcp_port = \"16509\"' }
+    - { regexp: "^#?auth_tcp", line: 'auth_tcp = \"none\"' }
+    - { regexp: "^#?mdns_adv", line: 'mdns_adv = 0' }
+
+- name: configure UUID for livirtd.conf.
+  shell: sed -i "/#host_uuid/ahost_uuid = \"`uuidgen`\"" /etc/libvirt/libvirtd.conf
+
+- name: configure sysconfig libvirtd.
+  lineinfile: >
+    dest="/etc/sysconfig/libvirtd"
+    regexp="{{ item.regexp }}"
+    line="{{ item.line }}"
+    state=present
+  with_items:
+    - { regexp: "^#?LIBVIRTD_ARGS", line: 'LIBVIRTD_ARGS=\"--listen\"' }
+
+- name: Ensure cloudstack-agent service is enabled at system start.
+  service: name=cloudstack-agent enabled=yes
+
+- name: Ensure services is restarted and enabled at system start.
+  service: name={{ item }} state=restarted enabled=yes
+  with_items:
+    - messagebus
+    - avahi-daemon
+    - libvirtd
+
+- name: Tuning The KVM Host.
+  include: tuned.yml
+  when: cloudstack_agent_tuned

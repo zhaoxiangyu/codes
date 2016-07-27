@@ -1,0 +1,5 @@
+---
+# defaults file for ansible-role-cloudstack-agent
+
+cloudstack_agent_tuned: false
+cloudstack_agent_tuned_profile: "virtual-host"

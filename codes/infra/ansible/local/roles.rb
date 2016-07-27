@@ -8,5 +8,10 @@ class Roles
 
 		puts `ansible-galaxy install azavea.mesos -p ./roles`
 	end
+	def self.install_cloudstack
+		puts `ansible-galaxy install devops.cloudstack-common -p ./roles`
+		puts `ansible-galaxy install devops.cloudstack-agent -p ./roles`
+		puts `ansible-galaxy install devops.cloudstack-management -p ./roles`
+	end
 end
 

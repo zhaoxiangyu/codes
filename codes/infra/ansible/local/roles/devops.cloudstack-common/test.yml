@@ -1,0 +1,8 @@
+---
+- name: Install Apache Cloudstack Common
+  hosts: servers
+  vars:
+    cloudstack_repo: "http://cloudstack.apt-get.eu/centos"
+    cloudstack_ver: "4.4"
+  roles:
+    - cloudstack-common
