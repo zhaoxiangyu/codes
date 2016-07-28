@@ -16,6 +16,7 @@
   sudo: yes
   tags: 
     - setup
+    - setup_user
   tasks:
     - name: create initial groups for the dev user
       group: name=dev state=present
@@ -38,11 +39,7 @@
   sudo: yes
   tags: 
     - setup
-  # tasks:
-  #   - name: set setuid for yum
-  #     file: 
-  #       mode: 6755
-  #       path: "/usr/bin/yum"
+    - setup_user
   vars:
     dev_sudoers:
       - user: "dev"
@@ -64,6 +61,8 @@
     - autostart_sshd
   tasks:
     - service: name=sshd enabled=yes
+
+#################### files #######################
 
 - hosts: local
   name: download oracle 10g
@@ -143,9 +142,9 @@
     oracle_db_name: gjzsptdev  # ORACLE_SID will be orcl_dev
     oracle_db_home: oracle  # ORACLE_HOME will be /opt/app/oracle/product/11.2.0/oracle
     oracle_db_user: dev
-    # alphanum,_,$,#
+    # alphanum or _ or $ or #
     oracle_db_pass: "123456"
-    oracle_db_syspass: "oe123qwe###"
+    oracle_db_syspass: "Oe123qwe###"
     install_files:
       - linux.x64_11gR2_database_1of2.zip
       - linux.x64_11gR2_database_2of2.zip
