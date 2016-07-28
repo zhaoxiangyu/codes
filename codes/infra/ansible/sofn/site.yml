@@ -2,7 +2,7 @@
 #################### diagnose #######################
 - hosts: all
   name: check hosts hareware
-  sudo: no
+  sudo: yes
   tags:
     - diagnose
   tasks:
@@ -13,7 +13,7 @@
 
 - hosts: all
   name: create os users
-  sudo: no
+  sudo: yes
   tags: setup
   tasks:
     - name: create initial groups for the dev user
@@ -34,7 +34,7 @@
 
 - hosts: all
   name: setup sudoers
-  sudo: no
+  sudo: yes
   tags: setup
   # tasks:
   #   - name: set setuid for yum
@@ -55,7 +55,7 @@
 
 - hosts: local
   name: download oracle 10g
-  sudo: no
+  sudo: yes
   tags: down_files
   tasks:
     - name: download files
@@ -67,8 +67,10 @@
 
 - hosts: all
   name: upload installation files
-  sudo: no
-  tags: copy_files
+  sudo: yes
+  tags: 
+    - copy_files
+    - install_oracledb
   tasks:
     - name: copy files
       copy:
@@ -77,8 +79,11 @@
 
 - hosts: all
   name: upload jdk rpm file
-  sudo: no
-  tags: copy_files
+  sudo: yes
+  tags: 
+    - copy_files
+    - install_java8
+    - install_oracledb
   tasks:
     - name: copy rpm file
       copy:
@@ -90,7 +95,9 @@
 - hosts: java8
   name: install java8
   sudo: yes
-  tags: install_java8
+  tags: 
+    - install_java8
+    - install_oracledb
   vars:
     oracle_jdk_version: 8
     oracle_jdk_update: 91
@@ -114,27 +121,26 @@
 
 - hosts: db
   name: install oracle database server
-  tags: install_oracledb
+  tags: 
+    - install_oracledb
   sudo: yes
   vars:
     oracle_path: /opt/app  # ORACLE_BASE will be /opt/app/oracle
-    oracle_install_file1: /home/helong/he/infra/linux.x64_11gR2_database_1of2.zip
-    oracle_install_file2: /home/helong/he/infra/linux.x64_11gR2_database_2of2.zip
     oracle_tmp: /tmp/oracle
     oracle_db_name: orcl_dev  # ORACLE_SID will be orcl_dev
     oracle_db_home: oracle  # ORACLE_HOME will be /opt/app/oracle/product/11.2.0/oracle
     oracle_db_user: devuser
     oracle_db_pass: AnAwesomeAndAmazingP4ssw0rd
     oracle_db_syspass: AMor3AwesomeAndAmazingP4ssw0rd
-  tasks:
-    - name: upload installation files 
-      copy:
-        src: "{{oracle_install_file1}}"
-        dest: "{{oracle_tmp}}"
-    - name: upload installation files 
-      copy:
-        src: "{{oracle_install_file2}}"
-        dest: "{{oracle_tmp}}"
+    install_files:
+      - linux.x64_11gR2_database_1of2.zip
+      - linux.x64_11gR2_database_2of2.zip
+  pre_tasks:
+    - name: create dir oracle tmp
+      command: /bin/mkdir -p {{ oracle_tmp }}
+    - name: copy installation files to oracle_tmp 
+      command: /bin/cp /root/dl/oralce-rac/{{ item }} {{ oracle_tmp }}/{{ item }}
+      with_items: "{{ install_files }}"
   roles:
     - role: ellotheth.oracle
 

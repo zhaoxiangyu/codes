@@ -29,12 +29,17 @@ class Install
 		puts `#{cmd}`
 	end
 	
-	def down_oracle10g
-		cmd = %Q/ansible-playbook -i #{@inventory} -t down_files site.yml/
+	def install_oracle11g
+		cmd = %Q/ansible-playbook -i #{@inventory} -t install_oracledb site.yml/
 		puts cmd
 		puts `#{cmd}`
 	end
 
+	def t_install_oracle11g
+		cmd = %Q/ansible-playbook -i #{@inventory} -t install_oracledb -l 192.168.122.109 site.yml/
+		puts cmd
+		puts `#{cmd}`
+	end
 =begin
 	def t_setup
 		puts `ansible-playbook -i #{@inventory} -t setup --extra-vars "target=test" site.yml`
