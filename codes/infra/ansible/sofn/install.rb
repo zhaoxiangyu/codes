@@ -40,6 +40,19 @@ class Install
 		puts cmd
 		puts `#{cmd}`
 	end
+
+	def t_upload_files
+		cmd = %Q/ansible-playbook -i #{@inventory} -t copy_files -l 192.168.122.109 site.yml/
+		puts cmd
+		puts `#{cmd}`
+	end
+
+	def t_autostart_sshd
+		cmd = %Q/ansible-playbook -i #{@inventory} -t autostart_sshd -l 192.168.122.109 site.yml/
+		puts cmd
+		puts `#{cmd}`
+	end
+	
 =begin
 	def t_setup
 		puts `ansible-playbook -i #{@inventory} -t setup --extra-vars "target=test" site.yml`

@@ -14,7 +14,8 @@
 - hosts: all
   name: create os users
   sudo: yes
-  tags: setup
+  tags: 
+    - setup
   tasks:
     - name: create initial groups for the dev user
       group: name=dev state=present
@@ -35,7 +36,8 @@
 - hosts: all
   name: setup sudoers
   sudo: yes
-  tags: setup
+  tags: 
+    - setup
   # tasks:
   #   - name: set setuid for yum
   #     file: 
@@ -53,10 +55,21 @@
   roles:
     - { role: mchlumsky.sudoersd, sudoers_filename: dev, sudoers: "{{ dev_sudoers }}" }
 
+
+- hosts: all
+  name: auto start sshd
+  sudo: yes
+  tags:
+    - setup
+    - autostart_sshd
+  tasks:
+    - service: name=sshd enabled=yes
+
 - hosts: local
   name: download oracle 10g
   sudo: yes
-  tags: down_files
+  tags: 
+    - down_files
   tasks:
     - name: download files
       get_url:
@@ -127,17 +140,20 @@
   vars:
     oracle_path: /opt/app  # ORACLE_BASE will be /opt/app/oracle
     oracle_tmp: /tmp/oracle
-    oracle_db_name: orcl_dev  # ORACLE_SID will be orcl_dev
+    oracle_db_name: gjzsptdev  # ORACLE_SID will be orcl_dev
     oracle_db_home: oracle  # ORACLE_HOME will be /opt/app/oracle/product/11.2.0/oracle
-    oracle_db_user: devuser
-    oracle_db_pass: AnAwesomeAndAmazingP4ssw0rd
-    oracle_db_syspass: AMor3AwesomeAndAmazingP4ssw0rd
+    oracle_db_user: dev
+    # alphanum,_,$,#
+    oracle_db_pass: "123456"
+    oracle_db_syspass: "oe123qwe###"
     install_files:
       - linux.x64_11gR2_database_1of2.zip
       - linux.x64_11gR2_database_2of2.zip
   pre_tasks:
     - name: create dir oracle tmp
-      command: /bin/mkdir -p {{ oracle_tmp }}
+      file:
+        path: "{{ oracle_tmp }}"
+        state: directory
     - name: copy installation files to oracle_tmp 
       command: /bin/cp /root/dl/oralce-rac/{{ item }} {{ oracle_tmp }}/{{ item }}
       with_items: "{{ install_files }}"
