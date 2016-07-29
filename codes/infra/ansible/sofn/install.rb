@@ -48,11 +48,11 @@ class Install
 	end
 
 	def t_autostart_sshd
-		cmd = %Q/ansible-playbook -i #{@inventory} -t autostart_sshd -l 192.168.122.109 site.yml/
+		cmd = %Q/ansible-playbook -i #{@inventory} -t setup_autostart_sshd -l 192.168.122.109 site.yml/
 		puts cmd
 		puts `#{cmd}`
 	end
-	
+
 =begin
 	def t_setup
 		puts `ansible-playbook -i #{@inventory} -t setup --extra-vars "target=test" site.yml`

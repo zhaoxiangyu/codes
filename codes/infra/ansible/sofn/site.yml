@@ -11,6 +11,7 @@
       #debug: msg="lsb {{ ansible_lsb }}"
       debug: msg="{{ inventory_hostname }} ,CPU cores {{ ansible_processor_cores }},CPU count {{ ansible_processor_count }}, disk size {{ ansible_devices.sda.size }}, mem mb {{ ansible_memtotal_mb }}, datetime {{ ansible_date_time.iso8601_micro }}, ni {{ ansible_interfaces }}, groups {{ group_names }}" 
 
+#################### setup #######################
 - hosts: all
   name: create os users
   sudo: yes
@@ -58,9 +59,27 @@
   sudo: yes
   tags:
     - setup
-    - autostart_sshd
+    - setup_autostart_sshd
   tasks:
     - service: name=sshd enabled=yes
+
+- hosts: all
+  name: set hostname
+  sudo: yes
+  tags:
+    - setup
+    - setup_set_hostname
+  tasks:
+    - hostname: name={{ hostname }}
+
+- hosts: all
+  name: turn off firewall
+  sudo: yes
+  tags:
+    - setup
+    - setup_off_iptables
+  tasks:
+    - service: name=iptables state=stopped enabled=yes
 
 #################### files #######################
 
@@ -158,6 +177,9 @@
       with_items: "{{ install_files }}"
   roles:
     - role: ellotheth.oracle
+
+#sqlplus sys/Oe123qwe###@gjzsptdev as sysdba
+#sqlplus64 sys/Oe123qwe###@//192.168.122.109:1521/gjzsptdev as sysdba
 
 - hosts: nginx
   name: install nginx
