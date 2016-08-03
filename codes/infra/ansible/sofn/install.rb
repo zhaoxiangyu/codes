@@ -53,4 +53,22 @@ class Install
 		puts `#{cmd}`
 	end
 
+	def preview(limit)
+		cmd = %Q/ansible-playbook --list-hosts --list-tags --list-tasks -i #{@inventory} -t post_oracle_install -l #{limit} site.yml/
+		puts cmd
+		puts `#{cmd}`
+	end
+
+	def syntax(limit)
+		cmd = %Q/ansible-playbook --syntax-check -i #{@inventory} -t post_oracle_install -l #{limit} site.yml/
+		puts cmd
+		puts `#{cmd}`
+	end
+
+	def dryrun(limit)
+		cmd = %Q/ansible-playbook -C -i #{@inventory} -t post_oracle_install -l #{limit} site.yml/
+		puts cmd
+		puts `#{cmd}`
+	end
+
 end
