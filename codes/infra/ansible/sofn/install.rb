@@ -47,4 +47,10 @@ class Install
 		puts `#{cmd}`
 	end
 
+	def post_install_oracle11g(limit)
+		cmd = %Q/ansible-playbook -i #{@inventory} -t post_oracle_install -l #{limit} site.yml/
+		puts cmd
+		puts `#{cmd}`
+	end
+
 end
