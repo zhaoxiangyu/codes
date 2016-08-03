@@ -1,0 +1,13 @@
+---
+#################### diagnose #######################
+- hosts: all
+  name: check hosts hareware
+  sudo: yes
+  gather_facts: no
+  tags:
+    - diagnose
+  tasks:
+    - name: check hosts hardware info
+      #debug: msg="lsb {{ ansible_lsb }}"
+      debug: msg="{{ inventory_hostname }} ,CPU cores {{ ansible_processor_cores }},CPU count {{ ansible_processor_count }}, disk size {{ ansible_devices.sda.size }}, mem mb {{ ansible_memtotal_mb }}, datetime {{ ansible_date_time.iso8601_micro }}, ni {{ ansible_interfaces }}, groups {{ group_names }}" 
+

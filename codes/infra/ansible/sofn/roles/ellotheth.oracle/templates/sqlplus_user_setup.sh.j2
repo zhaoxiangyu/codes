@@ -5,8 +5,6 @@ source /home/{{ oracle_user }}/.bashrc
 
 # create the user if it doesn't exist, update the password if it does
 sqlplus / as sysdba <<EOT
-CREATE USER {{ oracle_db_user }} IDENTIFIED BY {{ oracle_db_pass }};
-ALTER USER {{ oracle_db_user }} IDENTIFIED BY {{ oracle_db_pass }};
-GRANT connect, resource TO {{ oracle_db_user }};
+ALTER DATABASE FORCE LOGGING;
 exit;
 EOT

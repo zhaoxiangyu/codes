@@ -135,12 +135,12 @@ oracle.install.db.config.starterdb.type=GENERAL_PURPOSE
 #-------------------------------------------------------------------------------
 # Global Database Name 
 #-------------------------------------------------------------------------------
-oracle.install.db.config.starterdb.globalDBName=gjzspt
+oracle.install.db.config.starterdb.globalDBName=gjzsptm
 
 #-------------------------------------------------------------------------------
 # The Starter Database SID 
 #-------------------------------------------------------------------------------
-oracle.install.db.config.starterdb.SID=gjzspt
+oracle.install.db.config.starterdb.SID=gjzsptm
 
 #-------------------------------------------------------------------------------
 # Database character set
