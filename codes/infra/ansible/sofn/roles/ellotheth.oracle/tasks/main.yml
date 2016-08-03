@@ -191,7 +191,9 @@
   sudo_user: "{{ oracle_user }}"
   environment: "{{ ora_user_env }}"
   # /tmp/oracle/database/runInstaller -silent -force -ignoreSysPrereqs -responseFile /tmp/oracle/db_install.rsp
-  command: "{{ oracle_tmp }}/database/runInstaller -silent -force -ignoreSysPrereqs -responseFile {{ oracle_tmp }}/db_install.rsp"
+  # /tmp/oracle/database/runInstaller -silent -force -responseFile /tmp/oracle/db_install.rsp
+  #command: "{{ oracle_tmp }}/database/runInstaller -silent -force -ignoreSysPrereqs -responseFile {{ oracle_tmp }}/db_install.rsp"
+  command: "{{ oracle_tmp }}/database/runInstaller -silent -force -responseFile {{ oracle_tmp }}/db_install.rsp"
   when: not oracle_installed.stat.exists
 
 - name: general oracle post-installation

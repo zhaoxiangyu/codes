@@ -3,18 +3,21 @@
 - hosts: all
   name: check hosts hareware
   sudo: yes
+  gather_facts: no
   tags:
     - diagnose
   tasks:
     - name: check hosts hardware info
-      tags: diagnose
       #debug: msg="lsb {{ ansible_lsb }}"
       debug: msg="{{ inventory_hostname }} ,CPU cores {{ ansible_processor_cores }},CPU count {{ ansible_processor_count }}, disk size {{ ansible_devices.sda.size }}, mem mb {{ ansible_memtotal_mb }}, datetime {{ ansible_date_time.iso8601_micro }}, ni {{ ansible_interfaces }}, groups {{ group_names }}" 
 
 #################### setup #######################
 - hosts: all
   name: create os users
-  sudo: yes
+  gather_facts: no
+  vars:
+    ansible_ssh_user: root
+    ansible_ssh_pass: "{{ root_pass }}"
   tags: 
     - setup
     - setup_user
@@ -37,18 +40,22 @@
 
 - hosts: all
   name: setup sudoers
-  sudo: yes
+  gather_facts: no
   tags: 
     - setup
     - setup_user
   vars:
+    ansible_ssh_user: root
+    ansible_ssh_pass: "{{ root_pass }}"
     dev_sudoers:
       - user: "dev"
         user_commands:
-          - runas_users:
-              - "root"
-            commands:
+          - commands:
+              - "/bin/sh"
               - "/usr/bin/yum"
+              - "/tmp/oracle/database/runInstaller"
+              - "/opt/app/oracle/product/11.2.0/oracle/bin/emctl"
+              - "/tmp/oracle/sqlplus_user_setup.sh"
             nopasswd: false
   roles:
     - { role: mchlumsky.sudoersd, sudoers_filename: dev, sudoers: "{{ dev_sudoers }}" }
@@ -56,7 +63,10 @@
 
 - hosts: all
   name: auto start sshd
-  sudo: yes
+  gather_facts: no
+  vars:
+    ansible_ssh_user: root
+    ansible_ssh_pass: "{{ root_pass }}"
   tags:
     - setup
     - setup_autostart_sshd
@@ -65,26 +75,33 @@
 
 - hosts: all
   name: set hostname
-  sudo: yes
+  gather_facts: no
   tags:
     - setup
     - setup_set_hostname
+  vars:
+    ansible_ssh_user: root
+    ansible_ssh_pass: "{{ root_pass }}"
   tasks:
     - hostname: name={{ hostname }}
 
 - hosts: all
   name: turn off firewall
-  sudo: yes
+  gather_facts: no
   tags:
     - setup
     - setup_off_iptables
+  vars:
+    ansible_ssh_user: root
+    ansible_ssh_pass: "{{ root_pass }}"
   tasks:
-    - service: name=iptables state=stopped enabled=yes
+    - service: name=iptables state=stopped enabled=no
 
 #################### files #######################
 
 - hosts: local
   name: download oracle 10g
+  gather_facts: no
   sudo: yes
   tags: 
     - down_files
@@ -98,6 +115,11 @@
 
 - hosts: all
   name: upload installation files
+  gather_facts: no
+  vars:
+    ansible_ssh_user: dev
+    ansible_ssh_pass: "gjzspt@!@#"
+    ansible_sudo_pass: "gjzspt@!@#"
   sudo: yes
   tags: 
     - copy_files
@@ -110,11 +132,16 @@
 
 - hosts: all
   name: upload jdk rpm file
-  sudo: yes
+  gather_facts: no
   tags: 
     - copy_files
     - install_java8
     - install_oracledb
+  sudo: yes
+  vars:
+    ansible_ssh_user: dev
+    ansible_ssh_pass: "gjzspt@!@#"
+    ansible_sudo_pass: "gjzspt@!@#"
   tasks:
     - name: copy rpm file
       copy:
@@ -125,11 +152,15 @@
 #################### install #######################
 - hosts: java8
   name: install java8
-  sudo: yes
+  gather_facts: no
   tags: 
     - install_java8
     - install_oracledb
+  sudo: yes
   vars:
+    ansible_ssh_user: dev
+    ansible_ssh_pass: "gjzspt@!@#"
+    ansible_sudo_pass: "gjzspt@!@#"
     oracle_jdk_version: 8
     oracle_jdk_update: 91
     oracle_jdk_build_number: b14
@@ -138,6 +169,7 @@
 
 - hosts: app
   name: install weblogic server
+  gather_facts: no
   #tags: install
   sudo: no
   roles:
@@ -145,6 +177,7 @@
 
 - hosts: zookeeper
   name: install zookeeper
+  gather_facts: no
   #tags: install
   sudo: no
   roles:
@@ -152,10 +185,15 @@
 
 - hosts: db
   name: install oracle database server
+  gather_facts: yes
   tags: 
     - install_oracledb
   sudo: yes
   vars:
+    ansible_ssh_user: dev
+    ansible_ssh_pass: "gjzspt@!@#"
+    ansible_sudo_pass: "gjzspt@!@#"
+    # oracle variables
     oracle_path: /opt/app  # ORACLE_BASE will be /opt/app/oracle
     oracle_tmp: /tmp/oracle
     oracle_db_name: gjzsptdev  # ORACLE_SID will be orcl_dev
@@ -183,6 +221,7 @@
 
 - hosts: nginx
   name: install nginx
+  gather_facts: no
   #tags: install
   sudo: yes
   roles:
@@ -190,6 +229,7 @@
 
 - hosts: cache
   name: install memecached
+  gather_facts: no
   tags: install
   sudo: yes
   roles:
