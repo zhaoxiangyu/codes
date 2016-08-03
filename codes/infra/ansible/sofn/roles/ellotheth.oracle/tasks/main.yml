@@ -13,8 +13,8 @@
 # install dependencies
 #
 
-- name: install dev tools
-  yum: name="@Development tools" state=present
+#- name: install dev tools
+#  yum: name="@Development tools" state=present
 
 - name: install x86 oracle dependencies
   yum: name={{ item }} state=present
@@ -22,28 +22,16 @@
     - man
     - wget
     - unzip
+    - binutils
+    - compat-libstdc++-33
+    - compat-libcap1
+    - gcc
+    - gcc-c++
+    - elfutils-libelf
     - unixODBC
     - unixODBC-devel
-    - unixODBC-devel*x86_64
-    - unixODBC-*x86_64
-    - compat-libstdc++-33
-    - compat-libstdc++-296
-    - compat-libstdc*x86_64
-    - compat-libcap*
-    - compat-glibc-2*
-    - elfutils-devel*x86_64
-    - glibc-*
-    - gcc-c++*x86_64
-    - libaio
+    - elfutils-libelf-devel
     - libaio-devel
-    - libaio-devel*x86_64
-    - libtool-ltdl*x86_64
-    - readline
-    - libcap*x86_64
-    - libattr*x86_64
-    - sysstat
-  # - pdksh # skip this because it's bad and we're getting ksh already
-    - ksh
 
 #
 # unpack the oracle installers
@@ -115,10 +103,12 @@
     state: present
     line: "{{ item }}"
   with_items:
+    - "oracle soft nofile 4096"
+    - "oracle hard nofile 65536"
     - "oracle soft nproc 2047"
     - "oracle hard nproc 16384"
-    - "oracle soft nofile 1024"
-    - "oracle hard nofile 65536"
+    - "oracle soft stack 10240"
+    - "oracle hard stack 32768"
 
 - name: disable setenforce # because oracle says so, that's why
   command: /usr/sbin/setenforce 0
@@ -170,6 +160,8 @@
     - "export ORACLE_HOME={{ ora_user_env.ORACLE_HOME }}"
     - "export PATH=$PATH:$ORACLE_HOME/bin"
     - "export NLS_LANG={{ ora_user_env.NLS_LANG }}"
+    - "export LANG=en_US.UTF-8"
+    - "export LC_CTYPE=en_US.iso88591"
     - "stty erase ^H"
 
 #
@@ -191,9 +183,7 @@
   sudo_user: "{{ oracle_user }}"
   environment: "{{ ora_user_env }}"
   # /tmp/oracle/database/runInstaller -silent -force -ignoreSysPrereqs -responseFile /tmp/oracle/db_install.rsp
-  # /tmp/oracle/database/runInstaller -silent -force -responseFile /tmp/oracle/db_install.rsp
-  #command: "{{ oracle_tmp }}/database/runInstaller -silent -force -ignoreSysPrereqs -responseFile {{ oracle_tmp }}/db_install.rsp"
-  command: "{{ oracle_tmp }}/database/runInstaller -silent -force -responseFile {{ oracle_tmp }}/db_install.rsp"
+  command: "{{ oracle_tmp }}/database/runInstaller -silent -force -ignoreSysPrereqs -responseFile {{ oracle_tmp }}/db_install.rsp"
   when: not oracle_installed.stat.exists
 
 - name: general oracle post-installation
@@ -204,11 +194,11 @@
   command: "{{ ora_user_env.ORACLE_HOME }}/root.sh"
   when: not oracle_installed.stat.exists
 
-- name: turn off the enterprise manager web console
-  sudo_user: "{{ oracle_user }}"
-  environment: "{{ ora_user_env }}"
-  command: "{{ ora_user_env.ORACLE_HOME }}/bin/emctl stop dbconsole"
-  ignore_errors: yes
+#- name: turn off the enterprise manager web console
+#  sudo_user: "{{ oracle_user }}"
+#  environment: "{{ ora_user_env }}"
+#  command: "{{ ora_user_env.ORACLE_HOME }}/bin/emctl stop dbconsole"
+#  ignore_errors: yes
 
 - name: set oracle to autostart
   lineinfile:

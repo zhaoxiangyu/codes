@@ -99,20 +99,6 @@
 
 #################### files #######################
 
-- hosts: local
-  name: download oracle 10g
-  gather_facts: no
-  sudo: yes
-  tags: 
-    - down_files
-  tasks:
-    - name: download files
-      get_url:
-        url: "http://download.oracle.com/otn/linux/oracle10g/10201/10201_database_linux_x86_64.cpio.gz"
-        dest: /home/helong/he/infra/oracle10g/
-        headers: 'Cookie:oraclelicense=accept-securebackup-cookie'
-        validate_certs: "no"
-
 - hosts: all
   name: upload installation files
   gather_facts: no
@@ -123,7 +109,6 @@
   sudo: yes
   tags: 
     - copy_files
-    - install_oracledb
   tasks:
     - name: copy files
       copy:
@@ -135,8 +120,6 @@
   gather_facts: no
   tags: 
     - copy_files
-    - install_java8
-    - install_oracledb
   sudo: yes
   vars:
     ansible_ssh_user: dev
@@ -152,7 +135,7 @@
 #################### install #######################
 - hosts: java8
   name: install java8
-  gather_facts: no
+  gather_facts: yes
   tags: 
     - install_java8
     - install_oracledb
@@ -169,7 +152,7 @@
 
 - hosts: app
   name: install weblogic server
-  gather_facts: no
+  gather_facts: yes
   #tags: install
   sudo: no
   roles:
@@ -177,7 +160,7 @@
 
 - hosts: zookeeper
   name: install zookeeper
-  gather_facts: no
+  gather_facts: yes
   #tags: install
   sudo: no
   roles:
@@ -196,7 +179,7 @@
     # oracle variables
     oracle_path: /opt/app  # ORACLE_BASE will be /opt/app/oracle
     oracle_tmp: /tmp/oracle
-    oracle_db_name: gjzsptdev  # ORACLE_SID will be orcl_dev
+    oracle_db_name: gjzsptdev  # ORACLE_SID gjzsptdev
     oracle_db_home: oracle  # ORACLE_HOME will be /opt/app/oracle/product/11.2.0/oracle
     oracle_db_user: dev
     # alphanum or _ or $ or #
@@ -217,11 +200,11 @@
     - role: ellotheth.oracle
 
 #sqlplus sys/Oe123qwe###@gjzsptdev as sysdba
-#sqlplus64 sys/Oe123qwe###@//192.168.122.109:1521/gjzsptdev as sysdba
+#sqlplus64 sys/Oe123qwe###@//192.168.21.243:1521/gjzsptdev as sysdba
 
 - hosts: nginx
   name: install nginx
-  gather_facts: no
+  gather_facts: yes
   #tags: install
   sudo: yes
   roles:
@@ -229,7 +212,7 @@
 
 - hosts: cache
   name: install memecached
-  gather_facts: no
+  gather_facts: yes
   tags: install
   sudo: yes
   roles:
