@@ -45,5 +45,5 @@
 
 [all:vars]
 ansible_ssh_user=dev
-ansible_ssh_pass=gjzspt@!@#
+ansible_ssh_pass="gjzspt@!@#"
 root_pass="sofn@123"

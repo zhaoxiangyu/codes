@@ -1,3 +1,0 @@
----
-ansible_ssh_user: guohai.tang
-ansible_ssh_pass: tangguohai
