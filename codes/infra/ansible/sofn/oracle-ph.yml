@@ -1,13 +1,50 @@
 ---
 #################### diagnose #######################
 - hosts: all
-  name: check hosts hareware
+  name: prepare master db
   sudo: yes
   gather_facts: no
   tags:
     - diagnose
   tasks:
-    - name: check hosts hardware info
-      #debug: msg="lsb {{ ansible_lsb }}"
-      debug: msg="{{ inventory_hostname }} ,CPU cores {{ ansible_processor_cores }},CPU count {{ ansible_processor_count }}, disk size {{ ansible_devices.sda.size }}, mem mb {{ ansible_memtotal_mb }}, datetime {{ ansible_date_time.iso8601_micro }}, ni {{ ansible_interfaces }}, groups {{ group_names }}" 
+    - name: compose the oracle user creation script
+      template:
+        src: sqlplus_ph.sh.j2
+        dest: "{{ oracle_tmp }}/sqlplus_ph.sh"
+        mode: 0755
+        owner: "{{ oracle_user }}"
+        group: "{{ oracle_group }}"
+    - name: create the oracle db user
+      sudo_user: "{{ oracle_user }}"
+      environment: "{{ ora_user_env }}"
+      command: "sqlplus_ph.sh"
+
+- hosts: all
+  name: configure redo transport authentication
+  sudo: yes
+  gather_facts: no
+  tags:
+    - diagnose
+
+
+- hosts: all
+  name: configure the primary database to receive redo data
+  sudo: yes
+  gather_facts: no
+  tags:
+    - diagnose
+
+- hosts: all
+  name: set primary database initialization parameters
+  sudo: yes
+  gather_facts: no
+  tags:
+    - diagnose
+
+- hosts: all
+  name: enable archiving
+  sudo: yes
+  gather_facts: no
+  tags:
+    - diagnose
 

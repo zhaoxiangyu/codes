@@ -201,13 +201,13 @@
 
 #sqlplus sys/Oe123qwe###@gjzsptm as sysdba
 #sqlplus64 sys/Oe123qwe###@//192.168.21.243:1521/gjzsptm as sysdba
-#sqlplus64 dev/123456//192.168.21.243:1521/gjzsptm
+#sqlplus64 dev/123456@//192.168.21.243:1521/gjzsptm
 #http://192.168.21.243:1158/em
 
 - hosts: nginx
   name: install nginx
   gather_facts: yes
-  #tags: install
+  tags: install
   sudo: yes
   roles:
     - role: geerlingguy.nginx
@@ -219,3 +219,24 @@
   sudo: yes
   roles:
     - role: cchurch.memcached
+
+- hosts: code
+  name: install nexus
+  tags:
+    - install_nexus
+  gather_facts: no
+  vars:
+    ansible_ssh_user: root
+    ansible_ssh_pass: "{{ root_pass }}"
+  tasks:
+    - name: copy installation files
+      command: /bin/cp /root/dl/nexus/nexus-3.0.1-01-unix.tar.gz /tmp/nexus-3.0.1-01-unix.tar.gz
+
+- hosts: code
+  name: install nexus
+  gather_facts: no
+  vars:
+    ansible_ssh_user: root
+    ansible_ssh_pass: "{{ root_pass }}"
+  roles:
+    - role: hullufred.nexus

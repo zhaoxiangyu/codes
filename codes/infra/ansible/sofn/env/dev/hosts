@@ -21,8 +21,9 @@
 192.168.21.248 hostname=svr_dz
 
 [db]
-192.168.21.243 hostname=db_master
-# 192.168.21.244 hostname=db_slave1
+#192.168.21.243 hostname=dbm
+192.168.21.244 hostname=dbs1
+#192.168.21.245 hostname=dbs2
 
 [code]
 192.168.21.245 hostname=svr_code

@@ -29,8 +29,20 @@ class Install
 		puts `#{cmd}`
 	end
 
+	def install_nexus
+		cmd = %Q/ansible-playbook -i #{@inventory} -t install_nexus -l code site.yml/
+		puts cmd
+		puts `#{cmd}`
+	end
+
+	def install_nexus_service
+		cmd = %Q/ansible-playbook -i #{@inventory} -t install_nexus_service -l code site.yml/
+		puts cmd
+		puts `#{cmd}`
+	end
+
 	def setup(limit)
-		cmd = %Q/ansible-playbook -i #{@inventory} --tags="setup" -l #{limit}" site.yml/
+		cmd = %Q/ansible-playbook -i #{@inventory} --tags="setup" -l #{limit} site.yml/
 		puts cmd
 		puts `#{cmd}`
 	end
