@@ -7,7 +7,7 @@ class Diagno
 	end
 
 	def ping
-		puts `ansible -i #{@inventory} all -m ping -vvvv`
+		puts `ansible -i #{@inventory} all -m ping` # -vvvv
 	end
 
 	def check_inet
