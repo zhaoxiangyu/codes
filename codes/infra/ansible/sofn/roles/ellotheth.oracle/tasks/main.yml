@@ -21,6 +21,7 @@
     - pre_oracle_install
   yum: name={{ item }} state=present
   with_items:
+    - ksh
     - man
     - wget
     - unzip
