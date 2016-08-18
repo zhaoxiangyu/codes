@@ -1,0 +1,9 @@
+#!/bin/sh
+# {{ ansible_managed }}
+
+# rman target sys/Oe123qwe###@orclm auxiliary sys/Oe123qwe###@slave
+
+rman target sys/Oe123qwe###@{{ pri_instance }} auxiliary sys/Oe123qwe###@{{ slv_instance }} <<EOT
+@{{ oracle_tmp }}/duplicate.rman
+exit;
+EOT

@@ -3,13 +3,8 @@
   name: Preparing the Primary Database for Standby Database Creation
   sudo: no
   gather_facts: no
-  vars:
-    oracle_user: oracle
-    oracle_group: oinstall
-    oracle_tmp: '/tmp/oracle'
-    oracle_base: '/opt/app/oracle'
-    pri_instance: orclm
-    slv_instance: slave
+  vars_files:
+    - "/oradb/vars.yml"
   tasks:
     - name: create primary database prepare script
       template:
@@ -22,7 +17,7 @@
       environment: 
         ORACLE_BASE: "{{ oracle_base }}"
         ORACLE_SID: "{{ pri_instance }}"
-        ORACLE_HOME: "{{ oracle_base }}/product/11.2.0/oracle"
+        ORACLE_HOME: "{{ oracle_home }}"
         NLS_LANG: "American_America.UTF8"
       command: "{{ oracle_tmp }}/prepare_primary.sh"
 
@@ -46,18 +41,53 @@
 #     - name: Start the Physical Standby Database
 #     - name: Verify the Physical Standby Database Is Performing Properly
 
+    # - name: Creating an Initialization Parameter File and Starting the Auxiliary Instance
+    # - include: oradg/duplicate_primary.yml 
+    #   vars:
+    #     oracle_user: oracle
+    #     oracle_group: oinstall
+    #     oracle_tmp: '/tmp/oracle'
+    #     oracle_base: '/opt/app/oracle'
+
 - hosts: dg_physic_slaves
   name: Creating a Standby Database with Active Database Duplication
   sudo: yes
   gather_facts: no
+  vars_files:
+    - "/oradb/vars.yml"
   tasks:
-    # - name: Creating an Initialization Parameter File and Starting the Auxiliary Instance
-    - include: oradg/duplicate_primary.yml 
-      vars:
-        oracle_user: oracle
-        oracle_group: oinstall
-        oracle_tmp: '/tmp/oracle'
-        oracle_base: '/opt/app/oracle'
+    - block:
+      - name: create slave pfile
+        template:
+          src: oradg/init_slave.ora.j2
+          dest: "{{ oracle_home }}/dbs/init{{ slv_instance }}.ora"
+          mode: 0755
+          owner: "{{ oracle_user }}"
+          group: "{{ oracle_group }}"
+      # - name: startup slave instance
+      # - name: scp password file
+      # - name: setup listener.ora
+      # - name: setup tnsnames.ora
+      - name: create rman command file
+        template:
+          src: oradg/rman_dulicate.j2
+          dest: "{{ oracle_tmp }}/duplicate.rman"
+          mode: 0755
+          owner: "{{ oracle_user }}"
+          group: "{{ oracle_group }}"
+      - name: create rman shell file
+        template:
+          src: oradg/rman_dulicate.sh.j2
+          dest: "{{ oracle_tmp }}/rman_duplicate.sh"
+          mode: 0755
+          owner: "{{ oracle_user }}"
+          group: "{{ oracle_group }}"
+      - name: run rman duplicate script
+        environment: 
+          ORACLE_BASE: "{{ oracle_base }}"
+          ORACLE_HOME: "{{ oracle_home }}"
+          NLS_LANG: "American_America.UTF8"
+        command: "{{ oracle_tmp }}/rman_duplicate.sh"
 
     # export ORACLE_HOME=/opt/app/oracle/product/11.2.0/oracle
     # export ORACLE_SID=slave
@@ -96,20 +126,6 @@
 
     # rman target sys/Oe123qwe###@orclm auxiliary sys/Oe123qwe###@slave
 
-    # run {
-    # DUPLICATE TARGET DATABASE
-    #   FOR STANDBY
-    #   FROM ACTIVE DATABASE
-    #   DORECOVER
-    #   SPFILE
-    #   SET db_file_name_convert '/opt/app/oracle/oradata/orclm/','/opt/app/oracle/oradata/slave/'
-    #   SET log_file_name_convert '/opt/app/oracle/oradata/orclm/','/opt/app/oracle/oradata/slave/'
-    #   SET "db_unique_name" "slave"
-    #   SET LOG_ARCHIVE_DEST_1 "LOCATION = USE_DB_RECOVERY_FILE_DEST valid_for=(all_logfiles,all_roles) db_unique_name=slave"
-    #   SET LOG_ARCHIVE_DEST_2 "service=orclm ASYNC REGISTER VALID_FOR=(online_logfile,primary_role)"
-    #   SET FAL_SERVER "orclm"
-    #   NOFILENAMECHECK;
-    # }
     
 # - hosts: dg_logic_slaves
 #   name: Stop Redo Apply on the Physical Standby Database
