@@ -61,7 +61,7 @@
         template:
           src: oradg/init_slave.ora.j2
           dest: "{{ oracle_home }}/dbs/init{{ slv_instance }}.ora"
-          mode: 0755
+          mode: 0644
           owner: "{{ oracle_user }}"
           group: "{{ oracle_group }}"
       # - name: startup slave instance
@@ -72,7 +72,7 @@
         template:
           src: oradg/rman_dulicate.j2
           dest: "{{ oracle_tmp }}/duplicate.rman"
-          mode: 0755
+          mode: 0644
           owner: "{{ oracle_user }}"
           group: "{{ oracle_group }}"
       - name: create rman shell file
