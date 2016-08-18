@@ -4,50 +4,110 @@
   sudo: yes
   gather_facts: no
   tasks:
-    - name: compose the oracle user creation script
-    - name: configure redo transport authentication
-    - name: configure the primary database to receive redo data
-    - name: set primary database initialization parameters
-    - name: enable archiving
+    - name: Enable Forced Logging
+    - name: Configure Redo Transport Authentication
+    - name: Configure the Primary Database to Receive Redo Data
+    - name: Set Primary Database Initialization Parameters
+    - name: Enable Archiving
 
-- hosts: dg_masters
-  name: Creating a Physical Standby Database
-  sudo: yes
-  gather_facts: no
-  tasks:
-    - name: Create a Backup Copy of the Primary Database Datafiles
-    - name: Create a Control File for the Standby Database
-    - name: Create a Parameter File for the Standby Database
-    - name: Copy Files from the Primary System to the Standby System
+# - hosts: dg_masters
+#   name: Creating a Physical Standby Database
+#   sudo: yes
+#   gather_facts: no
+#   tasks:
+#     - name: Create a Backup Copy of the Primary Database Datafiles
+#     - name: Create a Control File for the Standby Database
+#     - name: Create a Parameter File for the Standby Database
+#     - name: Copy Files from the Primary System to the Standby System
 
+
+# - hosts: dg_physic_slaves
+#   name: Creating a Physical Standby Database
+#   sudo: yes
+#   gather_facts: no
+#   tasks:
+#     - name: Set Up the Environment to Support the Standby Database
+#     - name: Start the Physical Standby Database
+#     - name: Verify the Physical Standby Database Is Performing Properly
 
 - hosts: dg_physic_slaves
-  name: Creating a Physical Standby Database
+  name: Creating a Standby Database with Active Database Duplication
   sudo: yes
   gather_facts: no
   tasks:
-    - name: Set Up the Environment to Support the Standby Database
-    - name: Start the Physical Standby Database
-    - name: Verify the Physical Standby Database Is Performing Properly
+    - name: Prepare the auxiliary database instance
+    # export ORACLE_HOME=/opt/app/oracle/product/11.2.0/oracle
+    # export ORACLE_SID=slave
+    # echo 'db_name=slave' > $ORACLE_HOME/dbs/initslave.ora
+    # sqlplus / as sysdba
+    # SQL>startup nomount
+    # SQL>exit
+    
+    # cp $ORACLE_HOME/dbs/orapworclm $ORACLE_HOME/dbs/orapwslave
+
+    # vim $ORACLE_HOME/network/admin/listener.ora
+    # SID_LIST_listener=
+    # (SID_LIST=
+    #  (SID_DESC=
+    #   (GLOBAL_DBNAME=slave)
+    #   (SID_NAME=slave)
+    #   (ORACLE_HOME=/opt/app/oracle/product/11.2.0/oracle)))
+    # lsnrctl stop
+    # lsnrctl start
+    # lsnrctl status    
+
+    # vim $ORACLE_HOME/network/admin/tnsnames.ora
+    # SLAVE =
+    #   (DESCRIPTION =
+    #     (ADDRESS = (PROTOCOL = TCP)(HOST = dbserver)(PORT = 1521))
+    #     (CONNECT_DATA =
+    #       (SERVER = DEDICATED)
+    #       (SERVICE_NAME = slave)
+    #     )
+    #   )
+    # tnsping orclm
+    # tnsping slave
+
+    # sqlplus sys/Oe123qwe###@dbserver/orclm as sysdba
+    # sqlplus sys/Oe123qwe###@dbserver/slave as sysdba    
+
+    # rman target sys/Oe123qwe###@orclm auxiliary sys/Oe123qwe###@slave
+
+    # allocate channel c1 type disk;
+    # allocate channel c2 type disk;
+    # allocate auxiliary channel stby type disk;   
+
+    # run {
+    # DUPLICATE TARGET DATABASE
+    #   FOR STANDBY
+    #   FROM ACTIVE DATABASE
+    #   DORECOVER
+    #   SPFILE
+    #   SET db_file_name_convert '/opt/app/oracle/oradata/orclm/','/opt/app/oracle/oradata/slave/'
+    #   SET log_file_name_convert '/opt/app/oracle/oradata/orclm/','/opt/app/oracle/oradata/slave/'
+    #   SET "db_unique_name" "slave"
+    #   SET LOG_ARCHIVE_DEST_2 "service=orclm ASYNC REGISTER VALID_FOR=(online_logfile,primary_role)"
+    #   SET FAL_SERVER "orclm"
+    #   NOFILENAMECHECK;
+    # }
+    
+    # release channel c1;
+    # release channel c2;
+    # release channel stby;
 
 - hosts: dg_logic_slaves
   name: Stop Redo Apply on the Physical Standby Database
   sudo: yes
   gather_facts: no
   tasks:
-    - name: Set Up the Environment to Support the Standby Database
-    - name: Start the Physical Standby Database
-    - name: Verify the Physical Standby Database Is Performing Properly
+    - name: Stop Redo Apply on the Physical Standby Database
 
 - hosts: dg_masters
   name: Prepare the Primary Database to Support a Logical Standby Database
   sudo: yes
   gather_facts: no
   tasks:
-    - name: Create a Backup Copy of the Primary Database Datafiles
-    - name: Create a Control File for the Standby Database
-    - name: Create a Parameter File for the Standby Database
-    - name: Copy Files from the Primary System to the Standby System
+    - name: Prepare the Primary Database to Support a Logical Standby Database
 
 - hosts: dg_logic_slaves
   name: Stop Redo Apply on the Physical Standby Database
