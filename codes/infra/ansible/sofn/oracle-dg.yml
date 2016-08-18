@@ -5,6 +5,9 @@
   gather_facts: no
   tasks:
     - name: Enable Forced Logging
+    # alter database archivelog;
+    # alter database archivelog;
+    # alter database archivelog;
     - name: Configure Redo Transport Authentication
     - name: Configure the Primary Database to Receive Redo Data
     - name: Set Primary Database Initialization Parameters
