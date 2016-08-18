@@ -1,17 +1,30 @@
 ---
 - hosts: dg_masters
   name: Preparing the Primary Database for Standby Database Creation
-  sudo: yes
+  sudo: no
   gather_facts: no
+  vars:
+    oracle_user: he #oracle
+    oracle_group: he #oinstall
+    oracle_tmp: '/tmp/oracle'
+    oracle_base: '/opt/app/oracle'
+    pri_instance: orclm
+    slv_instance: slave
   tasks:
-    - name: Enable Forced Logging
-    # alter database archivelog;
-    # alter database archivelog;
-    # alter database archivelog;
-    - name: Configure Redo Transport Authentication
-    - name: Configure the Primary Database to Receive Redo Data
-    - name: Set Primary Database Initialization Parameters
-    - name: Enable Archiving
+    - name: create primary database prepare script
+      template:
+        src: oradg/prepare_primary.sh.j2
+        dest: "{{ oracle_tmp }}/prepare_primary.sh"
+        mode: 0755
+        owner: "{{ oracle_user }}"
+        group: "{{ oracle_group }}"
+    - name: run primary database prepare script
+      environment: 
+        ORACLE_BASE: "{{ oracle_base }}"
+        ORACLE_SID: "{{ pri_instance }}"
+        ORACLE_HOME: "{{ oracle_base }}/product/11.2.0/oracle"
+        NLS_LANG: "American_America.UTF8"
+      command: "{{ oracle_tmp }}/prepare_primary.sh"
 
 # - hosts: dg_masters
 #   name: Creating a Physical Standby Database
@@ -33,12 +46,12 @@
 #     - name: Start the Physical Standby Database
 #     - name: Verify the Physical Standby Database Is Performing Properly
 
-- hosts: dg_physic_slaves
-  name: Creating a Standby Database with Active Database Duplication
-  sudo: yes
-  gather_facts: no
-  tasks:
-    - name: Prepare the auxiliary database instance
+# - hosts: dg_physic_slaves
+#   name: Creating a Standby Database with Active Database Duplication
+#   sudo: yes
+#   gather_facts: no
+#   tasks:
+#     - name: Prepare the auxiliary database instance
     # export ORACLE_HOME=/opt/app/oracle/product/11.2.0/oracle
     # export ORACLE_SID=slave
     # echo 'db_name=slave' > $ORACLE_HOME/dbs/initslave.ora
@@ -98,25 +111,25 @@
     # release channel c2;
     # release channel stby;
 
-- hosts: dg_logic_slaves
-  name: Stop Redo Apply on the Physical Standby Database
-  sudo: yes
-  gather_facts: no
-  tasks:
-    - name: Stop Redo Apply on the Physical Standby Database
+# - hosts: dg_logic_slaves
+#   name: Stop Redo Apply on the Physical Standby Database
+#   sudo: yes
+#   gather_facts: no
+#   tasks:
+#     - name: Stop Redo Apply on the Physical Standby Database
 
-- hosts: dg_masters
-  name: Prepare the Primary Database to Support a Logical Standby Database
-  sudo: yes
-  gather_facts: no
-  tasks:
-    - name: Prepare the Primary Database to Support a Logical Standby Database
+# - hosts: dg_masters
+#   name: Prepare the Primary Database to Support a Logical Standby Database
+#   sudo: yes
+#   gather_facts: no
+#   tasks:
+#     - name: Prepare the Primary Database to Support a Logical Standby Database
 
-- hosts: dg_logic_slaves
-  name: Stop Redo Apply on the Physical Standby Database
-  sudo: yes
-  gather_facts: no
-  tasks:
-    - name: Transition to a Logical Standby Database
-    - name: Open the Logical Standby Database
-    - name: Verify the Logical Standby Database Is Performing Properly
+# - hosts: dg_logic_slaves
+#   name: Stop Redo Apply on the Physical Standby Database
+#   sudo: yes
+#   gather_facts: no
+#   tasks:
+#     - name: Transition to a Logical Standby Database
+#     - name: Open the Logical Standby Database
+#     - name: Verify the Logical Standby Database Is Performing Properly
