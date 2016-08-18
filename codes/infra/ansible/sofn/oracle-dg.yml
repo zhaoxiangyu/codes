@@ -46,12 +46,19 @@
 #     - name: Start the Physical Standby Database
 #     - name: Verify the Physical Standby Database Is Performing Properly
 
-# - hosts: dg_physic_slaves
-#   name: Creating a Standby Database with Active Database Duplication
-#   sudo: yes
-#   gather_facts: no
-#   tasks:
-#     - name: Prepare the auxiliary database instance
+- hosts: dg_physic_slaves
+  name: Creating a Standby Database with Active Database Duplication
+  sudo: yes
+  gather_facts: no
+  tasks:
+    # - name: Creating an Initialization Parameter File and Starting the Auxiliary Instance
+    - include: oradg/duplicate_primary.yml 
+      vars:
+        oracle_user: oracle
+        oracle_group: oinstall
+        oracle_tmp: '/tmp/oracle'
+        oracle_base: '/opt/app/oracle'
+
     # export ORACLE_HOME=/opt/app/oracle/product/11.2.0/oracle
     # export ORACLE_SID=slave
     # echo 'db_name=slave' > $ORACLE_HOME/dbs/initslave.ora
@@ -89,10 +96,6 @@
 
     # rman target sys/Oe123qwe###@orclm auxiliary sys/Oe123qwe###@slave
 
-    # allocate channel c1 type disk;
-    # allocate channel c2 type disk;
-    # allocate auxiliary channel stby type disk;   
-
     # run {
     # DUPLICATE TARGET DATABASE
     #   FOR STANDBY
@@ -102,15 +105,12 @@
     #   SET db_file_name_convert '/opt/app/oracle/oradata/orclm/','/opt/app/oracle/oradata/slave/'
     #   SET log_file_name_convert '/opt/app/oracle/oradata/orclm/','/opt/app/oracle/oradata/slave/'
     #   SET "db_unique_name" "slave"
+    #   SET LOG_ARCHIVE_DEST_1 "LOCATION = USE_DB_RECOVERY_FILE_DEST valid_for=(all_logfiles,all_roles) db_unique_name=slave"
     #   SET LOG_ARCHIVE_DEST_2 "service=orclm ASYNC REGISTER VALID_FOR=(online_logfile,primary_role)"
     #   SET FAL_SERVER "orclm"
     #   NOFILENAMECHECK;
     # }
     
-    # release channel c1;
-    # release channel c2;
-    # release channel stby;
-
 # - hosts: dg_logic_slaves
 #   name: Stop Redo Apply on the Physical Standby Database
 #   sudo: yes
