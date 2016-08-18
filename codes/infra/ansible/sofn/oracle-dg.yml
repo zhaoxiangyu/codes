@@ -4,8 +4,8 @@
   sudo: no
   gather_facts: no
   vars:
-    oracle_user: he #oracle
-    oracle_group: he #oinstall
+    oracle_user: oracle
+    oracle_group: oinstall
     oracle_tmp: '/tmp/oracle'
     oracle_base: '/opt/app/oracle'
     pri_instance: orclm
