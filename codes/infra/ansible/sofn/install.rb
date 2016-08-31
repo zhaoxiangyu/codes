@@ -50,8 +50,8 @@ class Install
 		run cmd
 	end
 
-	def post_install_oracle11g(limit)
-		cmd = %Q/ansible-playbook -i #{@inventory} -t post_oracle_install -l #{limit} site.yml/
+	def post_install_oracle11g_service(limit)
+		cmd = %Q/ansible-playbook -i #{@inventory} -t post_oracle_install_service -l #{limit} site.yml/
 		run cmd
 	end
 
@@ -71,7 +71,7 @@ class Install
 	end
 
 	def run(command)
-		puts cmd
+		puts command
 		system command
 	end
 

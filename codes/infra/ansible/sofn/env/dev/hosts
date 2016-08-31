@@ -22,7 +22,7 @@
 
 [db]
 #192.168.21.243 hostname=dbm
-192.168.21.244 hostname=dbs1
+192.168.21.241 hostname=dbs1 ansible_ssh_user=oracle ansible_ssh_pass=oracle
 #192.168.21.245 hostname=dbs2
 
 [code]
@@ -35,7 +35,7 @@
 
 [java8]
 192.168.21.243
-192.168.21.244
+192.168.21.241
 192.168.21.245
 192.168.21.246
 192.168.21.247

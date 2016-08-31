@@ -246,7 +246,7 @@
 
 - name: set oracle to autostart
   tags:
-    - post_oracle_install
+    - post_oracle_install_service
   lineinfile:
     dest: /etc/oratab
     state: present
@@ -255,17 +255,17 @@
 
 - name: compose the oracle init.d script
   tags:
-    - post_oracle_install
+    - post_oracle_install_service
   template: src=oracle_init.j2 dest=/etc/init.d/oracle mode=0755
 
 - name: register and start up the oracle service
   tags:
-    - post_oracle_install
+    - post_oracle_install_service
   service: name=oracle state=restarted enabled=yes
 
 - name: compose the oracle user creation script
   tags:
-    - post_oracle_install
+    - post_oracle_install_user
   template:
     src: sqlplus_user_setup.sh.j2
     dest: "{{ oracle_tmp }}/sqlplus_user_setup.sh"
@@ -275,7 +275,7 @@
 
 - name: create the oracle db user
   tags:
-    - post_oracle_install
+    - post_oracle_install_user
   sudo_user: "{{ oracle_user }}"
   environment: "{{ ora_user_env }}"
   command: "{{ oracle_tmp }}/sqlplus_user_setup.sh"
