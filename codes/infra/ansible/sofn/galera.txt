@@ -36,7 +36,7 @@ quit
 
 #mysql -p'123qwe!@#'
 CREATE USER 'root'@'%' IDENTIFIED BY 'mb123qwe';
-GRANT ALL on *.* to 'root'@'%';
+GRANT ALL on *.* to 'root'@'%' with grant option;
 FLUSH PRIVILEGES;
 SHOW GRANTS FOR 'root'@'%';
 quit

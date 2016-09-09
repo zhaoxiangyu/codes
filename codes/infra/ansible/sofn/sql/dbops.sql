@@ -1,5 +1,7 @@
 ALTER SESSION SET CURRENT_SCHEMA = gjzspt;
 
+select 'drop table ' || table_name || ';' from user_tables where table_name like '%';
+
 create table T_SUPERVISE_BASEINSPECTION 
 (
    ID                   CHAR(32)             not null,

@@ -40,6 +40,11 @@ class Install
 		run cmd
 	end
 
+	def setup_user(limit)
+		cmd = %Q/ansible-playbook -i #{@inventory} --tags="setup_user" -l #{limit} site.yml/
+		run cmd
+	end
+
 	def upload_files(limit)
 		cmd = %Q/ansible-playbook -i #{@inventory} -t copy_files -l #{limit} site.yml/
 		run cmd

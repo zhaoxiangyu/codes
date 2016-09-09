@@ -21,6 +21,7 @@
   tags: 
     - setup
     - setup_user
+    - install_oracledb
   tasks:
     - name: create initial groups for the dev user
       group: name=dev state=present
@@ -44,6 +45,7 @@
   tags: 
     - setup
     - setup_user
+    - install_oracledb
   vars:
     ansible_ssh_user: root
     ansible_ssh_pass: "{{ root_pass }}"
@@ -109,6 +111,7 @@
   sudo: yes
   tags: 
     - copy_files
+    - install_oracledb
   tasks:
     - name: copy files
       copy:
@@ -120,6 +123,7 @@
   gather_facts: no
   tags: 
     - copy_files
+    - install_oracledb
   sudo: yes
   vars:
     ansible_ssh_user: dev
@@ -150,22 +154,6 @@
   roles:
     - role: medzin.oracle-jdk
 
-- hosts: app
-  name: install weblogic server
-  gather_facts: yes
-  #tags: install
-  sudo: no
-  roles:
-    - { role: abessifi.weblogic, sudo: no }
-
-- hosts: zookeeper
-  name: install zookeeper
-  gather_facts: yes
-  #tags: install
-  sudo: no
-  roles:
-    - { role: AerisCloud.zookeeper, sudo: no }
-
 - hosts: db
   name: install oracle database server
   gather_facts: yes
@@ -179,7 +167,7 @@
     # oracle variables
     oracle_path: /opt/app  # ORACLE_BASE will be /opt/app/oracle
     oracle_tmp: /tmp/oracle
-    oracle_db_name: gjzsptm  # ORACLE_SID gjzsptm
+    oracle_db_name: gjzs  # ORACLE_SID gjzsptm
     oracle_db_home: oracle  # ORACLE_HOME will be /opt/app/oracle/product/11.2.0/oracle
     oracle_db_user: dev
     # alphanum or _ or $ or #
@@ -203,6 +191,23 @@
 #sqlplus64 sys/Oe123qwe###@//192.168.21.243:1521/gjzsptm as sysdba
 #sqlplus64 dev/123456@//192.168.21.243:1521/gjzsptm
 #http://192.168.21.243:1158/em
+
+- hosts: app
+  name: install weblogic server
+  gather_facts: yes
+  #tags: install
+  sudo: no
+  roles:
+    - { role: abessifi.weblogic, sudo: no }
+
+- hosts: zookeeper
+  name: install zookeeper
+  gather_facts: yes
+  #tags: install
+  sudo: no
+  roles:
+    - { role: AerisCloud.zookeeper, sudo: no }
+
 
 - hosts: nginx
   name: install nginx
