@@ -1,0 +1,37 @@
+svn:
+  username: hel
+  passwd: hel721
+  codes:
+    baseurl: https://192.168.21.251/svn/CodeRepository/GuoJiaZhuiSuPingTai
+    paths:
+      - /BusinessSystem/sofn-server/sofn-common
+      - /BusinessSystem/sofn-server/sofn-generator
+      - /BusinessSystem/sofn-server/sofn-sso-api
+      - /BusinessSystem/sofn-server/sofn-dgap-service
+      - /BusinessSystem/sofn-server/sofn-dgap-api
+      - /BusinessSystem/sofn-server/sofn-dgap-pre
+      - /BusinessSystem/sofn-server/sofn-dgap-web
+  urls:
+    前端开发工具: https://192.168.21.251/svn/03-工具库/开发软件统一安装目录/Q 前端开发工具/webstorm.rar
+    前端框架: https://192.168.21.251:443/svn/CodeRepository/GuoJiaZhuiSuPingTai/BusinessSystem/soft-webfont
+
+code_base_dir: /home/helong/he/lky/share/sjgxpt/udev/codes
+
+modules:
+  - svn_url: /home/helong/he/lky/share/sjgxpt/udev/codes/BusinessSystem/sofn-server/sofn-common
+  - svn_url: /home/helong/he/lky/share/sjgxpt/udev/codes/BusinessSystem/sofn-server/sofn-generator
+  - svn_url: /home/helong/he/lky/share/sjgxpt/udev/codes/BusinessSystem/sofn-server/sofn-sso-api
+  - svn_url: /home/helong/he/lky/share/sjgxpt/udev/codes/BusinessSystem/sofn-server/sofn-dgap-service
+  - svn_url: /home/helong/he/lky/share/sjgxpt/udev/codes/BusinessSystem/sofn-server/sofn-dgap-api
+  - svn_url: /home/helong/he/lky/share/sjgxpt/udev/codes/BusinessSystem/sofn-server/sofn-dgap-pre
+  - svn_url: /home/helong/he/lky/share/sjgxpt/udev/codes/BusinessSystem/sofn-server/sofn-dgap-web
+
+web:
+
+  pages:
+    - resource_list:
+        url: http://localhost:8080/sofn-dgap-web/resource/list
+        #bash: curl -v -H "Content-Type:application/json" -X POST http://localhost:8080/sofn-dgap-web/resource/list -d '{"start":1,"length":10}'
+        #bash: curl -v -X POST http://localhost:8080/sofn-dgap-web/resource/list -F 'start="1";length="10"'
+        #bash: curl -v -X POST http://localhost:8080/sofn-dgap-web/resource/list -d '"start":"1","length":"10"'
+        bash: curl -v -X POST "http://localhost:8080/sofn-dgap-web/resource/list?start=1&length=10"
