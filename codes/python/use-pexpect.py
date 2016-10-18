@@ -2,7 +2,7 @@
 import sys,pexpect
 
 user = "guohai.tang"
-host = "192.168.123.13" 
+host = "192.168.123.13"
 #password = sys.argv[1]
 #print "password:",password
 password = raw_input("password:")

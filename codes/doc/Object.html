@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>class Object - RDoc Documentation</title>
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+</script>
+
+<script src="./js/jquery.js"></script>
+<script src="./js/darkfish.js"></script>
+
+<link href="./css/fonts.css" rel="stylesheet">
+<link href="./css/rdoc.css" rel="stylesheet">
+
+
+
+<body id="top" role="document" class="class">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="./index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="./table_of_contents.html#pages">Pages</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  
+
+  <div id="class-metadata">
+    
+    <div id="parent-class-section" class="nav-section">
+  <h3>Parent</h3>
+
+  
+  <p class="link">BasicObject
+  
+</div>
+
+    <div id="includes-section" class="nav-section">
+  <h3>Included Modules</h3>
+
+  <ul class="link-list">
+  
+  
+    <li><span class="include">RSpec::Expectations</span>
+  
+  
+  </ul>
+</div>
+
+    
+    <!-- Method Quickref -->
+<div id="method-list-section" class="nav-section">
+  <h3>Methods</h3>
+
+  <ul class="link-list" role="directory">
+    
+    <li ><a href="#method-i-addData">#addData</a>
+    
+    <li ><a href="#method-i-getSessionAttribute">#getSessionAttribute</a>
+    
+    <li ><a href="#method-i-noticeQuery">#noticeQuery</a>
+    
+    <li ><a href="#method-i-rmData">#rmData</a>
+    
+    <li ><a href="#method-i-showKeys">#showKeys</a>
+    
+    <li ><a href="#method-i-verify">#verify</a>
+    
+  </ul>
+</div>
+
+  </div>
+</nav>
+
+<main role="main" aria-labelledby="class-Object">
+  <h1 id="class-Object" class="class">
+    class Object
+  </h1>
+
+  <section class="description">
+    
+  </section>
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+    <section class="constants-list">
+      <header>
+        <h3>Constants</h3>
+      </header>
+      <dl>
+      
+        <dt id="ORACLE_BASE_DIR">ORACLE_BASE_DIR
+        
+        <dd><p>vi: set ft=ruby :</p>
+        
+      
+        <dt id="ORACLE_MIDDLEWARE_DIR">ORACLE_MIDDLEWARE_DIR
+        
+        <dd>
+        
+      
+        <dt id="SYS_KERNEL_PARAMS">SYS_KERNEL_PARAMS
+        
+        <dd>
+        
+      
+        <dt id="WEBLOGIC_ADMIN_SERVER_HOME">WEBLOGIC_ADMIN_SERVER_HOME
+        
+        <dd>
+        
+      
+        <dt id="WEBLOGIC_DOMAIN_HOME">WEBLOGIC_DOMAIN_HOME
+        
+        <dd>
+        
+      
+        <dt id="WEBLOGIC_MANAGED_SERVER_HOME">WEBLOGIC_MANAGED_SERVER_HOME
+        
+        <dd>
+        
+      
+        <dt id="WEBLOGIC_NODEMANAGER_HOME">WEBLOGIC_NODEMANAGER_HOME
+        
+        <dd>
+        
+      
+      </dl>
+    </section>
+    
+
+    
+
+    
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Public Instance Methods</h3>
+       </header>
+
+    
+      <div id="method-i-addData" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">addData</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>include db.rb</p>
+          
+          
+
+          
+          <div class="method-source-code" id="addData-source">
+            <pre><span class="ruby-comment"># File ruby/notice.rb, line 6</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">addData</span>
+    (<span class="ruby-value">1001</span><span class="ruby-operator">..</span><span class="ruby-value">1030</span>).<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">noticeId</span><span class="ruby-operator">|</span>
+        <span class="ruby-identifier">currentTime</span>=<span class="ruby-constant">Time</span>.<span class="ruby-identifier">now</span>.<span class="ruby-identifier">strftime</span>(<span class="ruby-string">&#39;%Y-%m-%d %H:%M:%S&#39;</span>)
+        <span class="ruby-constant">Db</span>.<span class="ruby-identifier">db_update</span>(<span class="ruby-node">&quot;INSERT INTO `notice`
+        (`id`, `type`, `title`, `content`, `time`, `is_del`, `update_time`)
+        VALUES 
+        (#{noticeId}, 1, &#39;系统公告&#39;, &#39;系统#{noticeId}将于2015.12.1晚23：00-12.2早5：00  进行维护，请周知&#39;, &#39;#{currentTime}&#39;, 0, &#39;#{currentTime}&#39;);&quot;</span>)
+
+        <span class="ruby-constant">Db</span>.<span class="ruby-identifier">db_update</span>(<span class="ruby-node">&quot;INSERT INTO `notice_target`
+        (`notice_id`, `user_id`, `is_read`, `is_del`, `create_time`, `update_time`)
+        VALUES
+        (#{noticeId}, 155, 0, 0, &#39;#{currentTime}&#39;, &#39;#{currentTime}&#39;);&quot;</span>)
+        <span class="ruby-identifier">sleep</span>(<span class="ruby-value">30</span>)
+    <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-getSessionAttribute" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">getSessionAttribute</span><span
+            class="method-args">(sessionId,key,host=$host)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="getSessionAttribute-source">
+            <pre><span class="ruby-comment"># File ruby/rrds.rb, line 30</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">getSessionAttribute</span>(<span class="ruby-identifier">sessionId</span>,<span class="ruby-identifier">key</span>,<span class="ruby-identifier">host</span>=<span class="ruby-identifier">$host</span>)
+    <span class="ruby-identifier">redis</span> = <span class="ruby-constant">Redis</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">:host=</span><span class="ruby-operator">&gt;</span><span class="ruby-identifier">host</span>,<span class="ruby-value">:port=</span><span class="ruby-operator">&gt;</span><span class="ruby-value">6379</span>,<span class="ruby-value">:db=</span><span class="ruby-operator">&gt;</span><span class="ruby-value">1</span>)
+    <span class="ruby-identifier">flkey</span>=<span class="ruby-node">&quot;agri-credit:#{sessionId}:att:#{key}&quot;</span>
+    <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;flkey:#{flkey}&quot;</span>
+    <span class="ruby-identifier">value</span> = <span class="ruby-identifier">redis</span>.<span class="ruby-identifier">get</span>(<span class="ruby-identifier">flkey</span>)
+    <span class="ruby-identifier">$stderr</span>.<span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;value:#{value}&quot;</span>
+    <span class="ruby-identifier">redis</span>.<span class="ruby-identifier">quit</span>
+    <span class="ruby-identifier">value</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-noticeQuery" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">noticeQuery</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="noticeQuery-source">
+            <pre><span class="ruby-comment"># File ruby/notice.rb, line 29</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">noticeQuery</span>
+    <span class="ruby-constant">Db</span>.<span class="ruby-identifier">db_select</span>(<span class="ruby-string">&quot;SELECT n.id,n.type,t.user_id
+FROM notice n left join notice_target t 
+ON ((n.type=1 AND n.is_del=0 AND FALSE) OR (n.type=2 AND n.id=t.notice_id ))
+WHERE n.type =1 OR (n.type =2 AND t.user_id=155 AND t.is_del=0)
+ORDER BY n.time desc &quot;</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">row</span><span class="ruby-operator">|</span>
+        <span class="ruby-identifier">puts</span> <span class="ruby-identifier">row</span>
+    <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-rmData" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">rmData</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="rmData-source">
+            <pre><span class="ruby-comment"># File ruby/notice.rb, line 22</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">rmData</span>
+    (<span class="ruby-value">1001</span><span class="ruby-operator">..</span><span class="ruby-value">1030</span>).<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">noticeId</span><span class="ruby-operator">|</span>
+        <span class="ruby-constant">Db</span>.<span class="ruby-identifier">db_update</span>(<span class="ruby-node">&quot;DELETE FROM `notice` WHERE id=#{noticeId};&quot;</span>)
+        <span class="ruby-constant">Db</span>.<span class="ruby-identifier">db_update</span>(<span class="ruby-node">&quot;DELETE FROM `notice_target` WHERE notice_id=#{noticeId};&quot;</span>)
+    <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-showKeys" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">showKeys</span><span
+            class="method-args">(host=$host)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="showKeys-source">
+            <pre><span class="ruby-comment"># File ruby/rrds.rb, line 7</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">showKeys</span>(<span class="ruby-identifier">host</span>=<span class="ruby-identifier">$host</span>)
+    <span class="ruby-identifier">$stderr</span>.<span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;connecting to host:#{host}&quot;</span>
+    <span class="ruby-identifier">redis</span> = <span class="ruby-constant">Redis</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">:host=</span><span class="ruby-operator">&gt;</span><span class="ruby-identifier">host</span>,<span class="ruby-value">:port=</span><span class="ruby-operator">&gt;</span><span class="ruby-value">6379</span>,<span class="ruby-value">:db=</span><span class="ruby-operator">&gt;</span><span class="ruby-value">1</span>)
+
+    <span class="ruby-identifier">keys</span> = <span class="ruby-identifier">redis</span>.<span class="ruby-identifier">keys</span>(<span class="ruby-string">&#39;agri-credit:*:map:*&#39;</span>)
+    <span class="ruby-identifier">keys</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">key</span><span class="ruby-operator">|</span>
+        <span class="ruby-identifier">ttl</span> = <span class="ruby-identifier">redis</span>.<span class="ruby-identifier">ttl</span>(<span class="ruby-identifier">key</span>)
+        <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;#{key}&#39;s expire time:#{ttl}&quot;</span>
+        <span class="ruby-identifier">value</span> = <span class="ruby-identifier">redis</span>.<span class="ruby-identifier">hgetall</span>(<span class="ruby-identifier">key</span>)
+        <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;#{key}&#39;s value:#{value}&quot;</span>
+    <span class="ruby-keyword">end</span>
+
+    <span class="ruby-identifier">keys</span> = <span class="ruby-identifier">redis</span>.<span class="ruby-identifier">keys</span>(<span class="ruby-string">&#39;agri-credit:*:att:*&#39;</span>)
+    <span class="ruby-identifier">keys</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">key</span><span class="ruby-operator">|</span>
+        <span class="ruby-identifier">ttl</span> = <span class="ruby-identifier">redis</span>.<span class="ruby-identifier">ttl</span>(<span class="ruby-identifier">key</span>)
+        <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;#{key}&#39;s expire time:#{ttl}&quot;</span>
+        <span class="ruby-identifier">value</span> = <span class="ruby-identifier">redis</span>.<span class="ruby-identifier">get</span>(<span class="ruby-identifier">key</span>)
+        <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;#{key}&#39;s value:#{value}&quot;</span>
+    <span class="ruby-keyword">end</span>
+
+    <span class="ruby-identifier">redis</span>.<span class="ruby-identifier">quit</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-verify" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">verify</span><span
+            class="method-args">() { || ... }</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="verify-source">
+            <pre><span class="ruby-comment"># File ruby/agri_spec.rb, line 82</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">verify</span>(<span class="ruby-operator">&amp;</span><span class="ruby-identifier">blk</span>)
+  <span class="ruby-keyword">yield</span>
+<span class="ruby-keyword">rescue</span> <span class="ruby-constant">ExpectationNotMetError</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">ex</span>
+  <span class="ruby-ivar">@verification_errors</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">ex</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+    </section>
+  
+  </section>
+</main>
+
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="http://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="http://docs.seattlerb.org/rdoc/">RDoc</a> 4.2.1.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</footer>
+

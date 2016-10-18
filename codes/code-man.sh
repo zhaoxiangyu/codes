@@ -1,6 +1,9 @@
 #!/bin/bash
+#set -x
 
 # github user account: blueocci
+fullpath=$(readlink -f $0)
+basedir=$(dirname $fullpath)
 
 help(){
 	echo running help ...
@@ -19,13 +22,23 @@ install(){
 	#git fetch upstream
 }
 
+pull(){
+	#echo $1
+	echo pulling code from github ...
+  pushd $basedir
+	git pull
+  popd
+}
+
 pub(){
 	#echo $1
 	echo publish to github ...
+  pushd $basedir
 	git add -A .
 	system_name=$(uname)
 	git commit -m "publish on $system_name"
 	git push
+  popd
 }
 
 case "$1" in
@@ -40,6 +53,9 @@ install)
 	;;
 gui)
 	echo running gui ...
+	;;
+pull)
+	pull $2
 	;;
 pub)
 	pub $2
