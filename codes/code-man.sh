@@ -41,12 +41,20 @@ pub(){
   popd
 }
 
+status(){
+	#echo $1
+	echo publish to github ...
+  pushd $basedir
+	git status
+  popd
+}
+
 case "$1" in
 help)
 	git config -l
 	;;
 status)
-	help
+	status
 	;;
 install)
 	install
