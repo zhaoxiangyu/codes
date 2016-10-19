@@ -30,7 +30,7 @@ pull(){
   popd
 }
 
-pub(){
+push(){
 	#echo $1
 	echo publish to github ...
   pushd $basedir
@@ -65,11 +65,11 @@ gui)
 pull)
 	pull $2
 	;;
-pub)
-	pub $2
+push)
+	push $2
 	;;
 *)
-	echo "Usage: $0 {help|status|install|gui|pub}"
+	echo "Usage: $0 {help|status|install|gui|push|pull}"
 	exit 1
 esac
 

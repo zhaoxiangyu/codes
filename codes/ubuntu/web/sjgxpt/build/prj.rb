@@ -1,10 +1,15 @@
 #!/usr/bin/ruby -w
+require './infra.rb'
 
-class Prj
+class Prj < Shell
   attr :basedir
   attr :vcurl
 
   def checkout
+  end
+
+  def update
+    run "svn checkout #{@vcurl}"
   end
 
   def commit
