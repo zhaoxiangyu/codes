@@ -19,12 +19,16 @@ class Nginx < Shell
 		run("sudo nginx -c /home/helong/he/lky/share/sjgxpt/dev/nginx.conf")
 	end
 
+	def reload
+		run "sudo nginx -s reload"
+	end
+
 end
 
 class Tomcat < Shell
 
 	def initialize(home)
-			@server_home = home
+		@server_home = home
 	end
 
 end
