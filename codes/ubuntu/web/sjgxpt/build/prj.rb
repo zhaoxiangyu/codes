@@ -28,10 +28,23 @@ class Prj < Shell
 
 end
 
+class Module < Shell
+  def checkout
+  end
+
+  def initialize(codebase,svnbase)
+	@codebase = codebase
+	@svnbase = svnbase
+  end
+
+end
+
 svnbase = "https://192.168.21.251/svn/CodeRepository/GuoJiaZhuiSuPingTai/BusinessSystem/sofn-server"
 codebase = "/home/helong/he/lky/share/sjgxpt/udev/codes/dgap"
+$pdgap = Prj.new codebase svnbase
 
-$prj_web = Prj.new codebase+"/sofn-dgap-web" svnbase+"/sofn-dgap-web"
-$prj_pre = Prj.new codebase+"/sofn-dgap-pre" svnbase+"/sofn-dgap-pre"
-$prj_api = Prj.new codebase+"/sofn-dgap-api" svnbase+"/sofn-dgap-api"
-$prj_service = Prj.new codebase+"/sofn-dgap-service" svnbase+"/sofn-dgap-service"
+$mweb = Module.new codebase+"/sofn-dgap-web",svnbase+"/sofn-dgap-web"
+$mpre = Module.new codebase+"/sofn-dgap-pre",svnbase+"/sofn-dgap-pre"
+$mapi = Module.new codebase+"/sofn-dgap-api",svnbase+"/sofn-dgap-api"
+$mservice = Module.new codebase+"/sofn-dgap-service",svnbase+"/sofn-dgap-service"
+
