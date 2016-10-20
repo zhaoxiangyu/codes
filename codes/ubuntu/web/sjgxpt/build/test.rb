@@ -20,4 +20,4 @@ class WebTest
 	end
 end
 
-$ltest = WebTest.new("http://localhost:8080")
+$ltest = WebTest.new("http://localhost:10080")
