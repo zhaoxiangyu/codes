@@ -9,7 +9,6 @@ set showcmd
 set modeline
 
 set number
-nnoremap <F2> :set nonumber!<CR>:set foldcolumn=0<CR>
 
 "python setting
 "filetype plugin indent on
@@ -30,5 +29,13 @@ Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/syntastic'
 Plugin 'nvie/vim-flake8'
 Plugin 'cscope_macros.vim'
+Plugin 'vim-ruby/vim-ruby'
 call vundle#end()
 filetype plugin indent on
+
+"vim ruby
+set nocompatible      " We're running Vim, not Vi!
+syntax on             " Enable syntax highlighting
+filetype on           " Enable filetype detection
+filetype indent on    " Enable filetype-specific indenting
+filetype plugin on    " Enable filetype-specific plugins
