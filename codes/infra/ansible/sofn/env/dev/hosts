@@ -21,8 +21,8 @@
 192.168.21.248 hostname=svr_dz
 
 [db]
-192.168.21.243 hostname=db ansible_ssh_user=root ansible_ssh_pass="sofn@123"
-#192.168.21.241 hostname=dbs1 ansible_ssh_user=oracle ansible_ssh_pass=oracle
+#192.168.21.243 hostname=db ansible_ssh_user=root ansible_ssh_pass="sofn@123"
+192.168.21.241 hostname=dbs1 ansible_ssh_user=oracle ansible_ssh_pass=oracle
 #10.10.10.200 hostname=dbs2 ansible_ssh_user=root ansible_ssh_pass="sofn@123"
 #192.168.21.249 hostname=svr249 ansible_ssh_user=root ansible_ssh_pass="sofn@123"
 

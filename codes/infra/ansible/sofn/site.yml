@@ -9,7 +9,7 @@
   tasks:
     - name: check hosts hardware info
       #debug: msg="lsb {{ ansible_lsb }}"
-      debug: msg="{{ inventory_hostname }} ,CPU cores {{ ansible_processor_cores }},CPU count {{ ansible_processor_count }}, disk size {{ ansible_devices.sda.size }}, mem mb {{ ansible_memtotal_mb }}, datetime {{ ansible_date_time.iso8601_micro }}, ni {{ ansible_interfaces }}, groups {{ group_names }}" 
+      debug: msg="{{ inventory_hostname }} ,CPU cores {{ ansible_processor_cores }},CPU count {{ ansible_processor_count }}, disk size {{ ansible_devices.sda.size }}, mem mb {{ ansible_memtotal_mb }}, datetime {{ ansible_date_time.iso8601_micro }}, ni {{ ansible_interfaces }}, groups {{ group_names }}"
 
 #################### setup #######################
 - hosts: all
@@ -18,7 +18,7 @@
   vars:
     ansible_ssh_user: root
     ansible_ssh_pass: "{{ root_pass }}"
-  tags: 
+  tags:
     - setup
     - setup_user
     - install_oracledb
@@ -42,7 +42,7 @@
 - hosts: all
   name: setup sudoers
   gather_facts: no
-  tags: 
+  tags:
     - setup
     - setup_user
     - install_oracledb
@@ -72,6 +72,7 @@
   tags:
     - setup
     - setup_autostart_sshd
+    - install_oracledb
   tasks:
     - service: name=sshd enabled=yes
 
@@ -81,6 +82,7 @@
   tags:
     - setup
     - setup_set_hostname
+    - install_oracledb
   vars:
     ansible_ssh_user: root
     ansible_ssh_pass: "{{ root_pass }}"
@@ -93,6 +95,7 @@
   tags:
     - setup
     - setup_off_iptables
+    - install_oracledb
   vars:
     ansible_ssh_user: root
     ansible_ssh_pass: "{{ root_pass }}"
@@ -109,7 +112,7 @@
     ansible_ssh_pass: "gjzspt@!@#"
     ansible_sudo_pass: "gjzspt@!@#"
   sudo: yes
-  tags: 
+  tags:
     - copy_files
     - install_oracledb
   tasks:
@@ -121,7 +124,7 @@
 - hosts: all
   name: upload jdk rpm file
   gather_facts: no
-  tags: 
+  tags:
     - copy_files
     - install_oracledb
   sudo: yes
@@ -140,7 +143,7 @@
 - hosts: java8
   name: install java8
   gather_facts: yes
-  tags: 
+  tags:
     - install_java8
     - install_oracledb
   sudo: yes
@@ -157,7 +160,7 @@
 - hosts: db
   name: install oracle database server
   gather_facts: yes
-  tags: 
+  tags:
     - install_oracledb
   sudo: yes
   vars:
@@ -181,8 +184,8 @@
       file:
         path: "{{ oracle_tmp }}"
         state: directory
-    - name: copy installation files to oracle_tmp 
-      command: /bin/cp /root/dl/oralce-rac/{{ item }} {{ oracle_tmp }}/{{ item }}
+    - name: copy installation files to oracle_tmp
+      command: /usr/bin/rsync /root/dl/oralce-rac/{{ item }} {{ oracle_tmp }}/{{ item }}
       with_items: "{{ install_files }}"
   roles:
     - role: ellotheth.oracle

@@ -1,7 +1,10 @@
 #!/bin/bash
 
 set -e
+#sync="sudo cp -alf"
+sync="rsync -av --delete"
 
-sudo cp -alf build vc/github/ubuntu/web/sjgxpt/
-sudo cp -alf udev/conf vc/github/ubuntu/web/sjgxpt/
-sudo cp -alf infra/sql vc/github/ubuntu/web/sjgxpt/
+$sync build vc/github/ubuntu/web/sjgxpt/
+$sync udev/conf vc/github/ubuntu/web/sjgxpt/
+$sync infra/sql vc/github/ubuntu/web/sjgxpt/
+$sync ~/.zshrc vc/github/ubuntu/user-home/w.zshrc

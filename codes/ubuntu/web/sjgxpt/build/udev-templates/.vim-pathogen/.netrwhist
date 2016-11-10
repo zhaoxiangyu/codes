@@ -1,5 +1,2 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =3
-let g:netrw_dirhist_1='/home/helong/he/codes/github/codes/codes/infra/ansible/env'
-let g:netrw_dirhist_2='/home/helong/he/lky/share/sjgxpt/udev/codes/dgap'
-let g:netrw_dirhist_3='/home/helong/he/lky/share/sjgxpt/udev/codes/soft-webfont'
+let g:netrw_dirhist_cnt =0

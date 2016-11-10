@@ -11,6 +11,8 @@ svn:
       - /BusinessSystem/sofn-server/sofn-dgap-api
       - /BusinessSystem/sofn-server/sofn-dgap-pre
       - /BusinessSystem/sofn-server/sofn-dgap-web
+  test:
+    baseurl: https://218.89.222.117/svn/01-项目工作库/国家农产品质量安全追溯管理信息平台建设项目【含标准规范】/060 测试/020 测试用例/冒烟测试用例
   urls:
     前端开发工具: https://192.168.21.251/svn/03-工具库/开发软件统一安装目录/Q 前端开发工具/webstorm.rar
     前端框架: https://192.168.21.251:443/svn/CodeRepository/GuoJiaZhuiSuPingTai/BusinessSystem/soft-webfont
@@ -27,7 +29,6 @@ modules:
   - svn_url: /home/helong/he/lky/share/sjgxpt/udev/codes/BusinessSystem/sofn-server/sofn-dgap-web
 
 web:
-
   pages:
     - resource_list:
         url: http://localhost:8080/sofn-dgap-web/resource/list
