@@ -47,7 +47,8 @@ ur(){
 }
 
 vl(){
-	sshpass -p sofn@123 ssh root@192.168.21.247 "tail -f /usr/local/tomcat_test/tomcat_dgap_web/logs/catalina.out"
+	#sshpass -p sofn@123 ssh root@192.168.21.247 "tail -f /usr/local/tomcat_test/tomcat_dgap_web/logs/catalina.out"
+	sshpass -p sofn@123 ssh root@192.168.21.246 "tail -f /usr/local/tomcat_test/tomcat_dgap_pre/logs/catalina.out"
 }
 
 publish(){
