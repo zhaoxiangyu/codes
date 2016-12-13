@@ -8,6 +8,8 @@ ALTER system SET processes=300 scope=spfile;
 
 --- 账户解锁 ---
 ALTER USER gjzspt ACCOUNT UNLOCK;
+ALTER USER dgap_pre ACCOUNT UNLOCK;
+
 
 --- 表解锁 ---
 ALTER SESSION SET CURRENT_SCHEMA = gjzspt;
