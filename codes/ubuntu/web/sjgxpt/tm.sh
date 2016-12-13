@@ -1,4 +1,5 @@
-#!/bin/sh 
+#!/bin/bash 
+
 tmux new-session -d 'sjgxpt'
 tmux split-window -v 'ipython'
 tmux split-window -h
