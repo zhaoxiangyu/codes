@@ -27,15 +27,19 @@ deploy(){
 	ip=$2
 	tomcat_dir=$3
 	webapp_dir=$tomcat_dir/webapps/$appname
+
 	kill_command='"ps -ef|grep '$(basename $tomcat_dir)'|grep -v grep|awk '"'"'{print \$2}'"'"'|xargs kill -9"'
-	#echo $kill_command
-	rm_app_command="\"rm -rf $webapp_dir\""
+	kill_command='bash -ic '$kill_command
 
 	#echo sshpass -p sofn@123 ssh root@$ip $kill_command
 	$debug sshpass -p sofn@123 ssh root@$ip $kill_command
+	rm_app_command="\"rm -rf $webapp_dir\""
+	rm_app_command='bash -ic '$rm_app_command
 	$debug sshpass -p sofn@123 ssh root@$ip $rm_app_command
+
 	#upload files
 	$debug sshpass -p sofn@123 scp -r $appname/target/$appname root@$ip:$webapp_dir
+
 	#start tomcat
 	$debug sshpass -p sofn@123 ssh root@$ip $tomcat_dir/bin/startup.sh
 	$debug popd
@@ -47,8 +51,8 @@ ur(){
 }
 
 vl(){
-	#sshpass -p sofn@123 ssh root@192.168.21.247 "tail -f /usr/local/tomcat_test/tomcat_dgap_web/logs/catalina.out"
-	sshpass -p sofn@123 ssh root@192.168.21.246 "tail -f /usr/local/tomcat_test/tomcat_dgap_pre/logs/catalina.out"
+	sshpass -p sofn@123 ssh root@192.168.21.247 "tail -f /usr/local/tomcat_test/tomcat_dgap_web/logs/catalina.out"
+	#sshpass -p sofn@123 ssh root@192.168.21.246 "tail -f /usr/local/tomcat_test/tomcat_dgap_pre/logs/catalina.out"
 }
 
 publish(){
