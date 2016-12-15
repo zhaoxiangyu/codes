@@ -3,6 +3,7 @@
 #set -ex
 set -e
 debug=$2
+#debug="tmux new-window "
 
 update_code(){
 	$debug pushd /home/helong/he/lky/share/sjgxpt/udev/codes/dgap
@@ -60,6 +61,7 @@ ldeploy(){
 	tomcat_home=$1
 	app_dir=$2
 
+	set +e
 	$debug "ps -ef | grep $tomcat_home | grep -v grep | awk '{print \$2}' | xargs kill -9"
 	$debug cp -a $app_dir $tomcat_home/webapps
 	$debug $tomcat_home/bin/startup.sh
