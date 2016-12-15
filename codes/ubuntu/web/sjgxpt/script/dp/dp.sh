@@ -20,6 +20,12 @@ rebuild(){
 	$debug popd
 }
 
+lrebuild(){
+	$debug pushd /home/helong/he/lky/share/sjgxpt/udev/codes/dgap
+	$debug mvn -U -P local,nexus-repo,!dev clean install 
+	$debug popd
+}
+
 deploy(){
 	$debug pushd /home/helong/he/lky/share/sjgxpt/udev/codes/dgap
 	#kill tomcat
@@ -28,7 +34,7 @@ deploy(){
 	tomcat_dir=$3
 	webapp_dir=$tomcat_dir/webapps/$appname
 
-	kill_command='"ps -ef|grep '$(basename $tomcat_dir)'|grep -v grep|awk '"'"'{print \$2}'"'"'|xargs kill -9"'
+	kill_command='"ps -ef|grep '$(basename $tomcat_dir)'|grep -v grep|awk '"'"'{print $2}'"'"'|xargs kill -9"'
 	kill_command='bash -ic '$kill_command
 
 	#echo sshpass -p sofn@123 ssh root@$ip $kill_command
@@ -51,14 +57,15 @@ ur(){
 }
 
 vl(){
-	sshpass -p sofn@123 ssh root@192.168.21.247 "tail -f /usr/local/tomcat_test/tomcat_dgap_web/logs/catalina.out"
+	#sshpass -p sofn@123 ssh root@192.168.21.247 "tail -f /usr/local/tomcat_test/tomcat_dgap_web/logs/catalina.out"
 	#sshpass -p sofn@123 ssh root@192.168.21.246 "tail -f /usr/local/tomcat_test/tomcat_dgap_pre/logs/catalina.out"
+	sshpass -p sofn@123 ssh root@192.168.21.248 "tail -f /usr/local/tomcat_test/tomcat_dgap_service/logs/catalina.out"
 }
 
 publish(){
 	deploy sofn-dgap-service 192.168.21.248 /usr/local/tomcat_test/tomcat_dgap_service
-	#deploy sofn-dgap-pre 192.168.21.246 /usr/local/tomcat_test/tomcat_dgap_pre
-	#deploy sofn-dgap-web 192.168.21.247 /usr/local/tomcat_test/tomcat_dgap_web
+	deploy sofn-dgap-pre 192.168.21.246 /usr/local/tomcat_test/tomcat_dgap_pre
+	deploy sofn-dgap-web 192.168.21.247 /usr/local/tomcat_test/tomcat_dgap_web
 }
 
 publish_wf(){

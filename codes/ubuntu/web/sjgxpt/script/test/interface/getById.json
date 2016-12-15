@@ -1,0 +1,42 @@
+{
+  "resourceId": "813b545d348b437ab08bf5d62376729edf4de846f3a64d08b41c3bc4186866fd"
+}
+{
+  "data": {
+    "id": "a6023a8feb5644b6b9c3f37b2567341aed6528d62c654f5a9295a0a48d970ceb",
+    "remark": null,
+    "createBy": "admin",
+    "createTime": null,
+    "updateBy": "admin",
+    "updateTime": 1481676570000,
+    "delFlag": "N",
+    "chineseName": "中文aaa",
+    "englishName": "aaa",
+    "resourceId": "813b545d348b437ab08bf5d62376729edf4de846f3a64d08b41c3bc4186866fd",
+    "status": "NE",
+    "createDate": 1481765288000,
+    "reservedField1": null,
+    "reservedField2": null,
+    "reservedField3": null,
+    "reservedField4": null,
+    "reservedField5": null,
+    "reservedField6": null,
+    "reservedField7": null,
+    "reservedField8": null,
+    "reservedField9": null,
+    "reservedField10": null,
+    "reservedField11": null,
+    "reservedField12": null,
+    "reservedField13": null,
+    "reservedField14": null,
+    "reservedField15": null,
+    "reservedField16": null,
+    "reservedField17": null,
+    "reservedField18": null,
+    "reservedField19": null,
+    "reservedField20": null
+  },
+  "httpCode": 200,
+  "msg": "OK",
+  "timestamp": 1481779178403
+}

@@ -1,7 +1,8 @@
 #!/bin/bash 
 
-tmux new-session -d 'sjgxpt'
-tmux split-window -v 'ipython'
-tmux split-window -h
-tmux new-window 'mutt'
-tmux -2 attach-session -d
+tmux new-session -s 'sjgxpt' -n 'deploy' -d
+#tmux split-window -v 'ipython'
+#tmux split-window -h
+tmux new-window 'test'
+tmux attach-session -t sjgxpt
+#tmux -2 attach-session -d
