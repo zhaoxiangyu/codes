@@ -56,6 +56,22 @@ ur(){
 	rebuild
 }
 
+ldeploy(){
+	tomcat_home=$1
+	app_dir=$2
+
+	$debug "ps -ef | grep $tomcat_home | grep -v grep | awk '{print \$2}' | xargs kill -9"
+	$debug cp -a $app_dir $tomcat_home/webapps
+	$debug $tomcat_home/bin/startup.sh
+}
+
+lpublish(){
+	ldeploy /home/helong/he/lky/share/sjgxpt/udev/sw/tomcat-8.5.5/service-9080/apache-tomcat-8.5.5 /home/helong/he/lky/share/sjgxpt/udev/codes/dgap/sofn-dgap-service/target/sofn-dgap-service
+	ldeploy /home/helong/he/lky/share/sjgxpt/udev/sw/tomcat-8.5.5/sso-21080/apache-tomcat-8.5.5 /home/helong/he/lky/share/sjgxpt/udev/codes/dgap/sofn-sso-service/target/sofn-sso-service
+	ldeploy /home/helong/he/lky/share/sjgxpt/udev/sw/tomcat-8.5.5/web-10080/apache-tomcat-8.5.5 /home/helong/he/lky/share/sjgxpt/udev/codes/dgap/sofn-dgap-web/target/sofn-dgap-web
+	ldeploy /home/helong/he/lky/share/sjgxpt/udev/sw/tomcat-8.5.5/pre-11080//apache-tomcat-8.5.5 /home/helong/he/lky/share/sjgxpt/udev/codes/dgap/sofn-dgap-pre/target/sofn-dgap-pre
+}
+
 vl(){
 	#sshpass -p sofn@123 ssh root@192.168.21.247 "tail -f /usr/local/tomcat_test/tomcat_dgap_web/logs/catalina.out"
 	#sshpass -p sofn@123 ssh root@192.168.21.246 "tail -f /usr/local/tomcat_test/tomcat_dgap_pre/logs/catalina.out"
