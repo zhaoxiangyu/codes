@@ -1,0 +1,18 @@
+#
+# Initiate a screen session with my
+# preferred dev environment
+#
+
+#source ~/.screenrc
+
+screen -t dev 1
+split
+resize 40
+focus
+screen -t mc 2 /usr/bin/mc
+split -v
+focus
+screen -t bash 3 /bin/bash
+focus top
+#screen -t zsh 4 /usr/bin/zsh
+select 1
