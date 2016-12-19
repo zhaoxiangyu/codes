@@ -33,12 +33,12 @@ pull(){
 push(){
 	#echo $1
 	echo publish to github ...
-  pushd $basedir
+	pushd $basedir
 	git add -A .
 	system_name=$(uname)
 	git commit -m "publish on $system_name"
 	git push
-  popd
+	popd
 }
 
 status(){
