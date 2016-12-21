@@ -1,0 +1,21 @@
+
+;; ----- smex-history -----
+(
+ inf-ruby
+ describe-package
+ inf-ruby-console-auto
+ package-install
+ ensime
+ cd
+ 5x5
+)
+
+;; ----- smex-data -----
+(
+ (ensime . 1)
+ (package-install . 1)
+ (robe-start . 6)
+ (inf-ruby-console-auto . 1)
+ (describe-package . 1)
+ (inf-ruby . 2)
+)
