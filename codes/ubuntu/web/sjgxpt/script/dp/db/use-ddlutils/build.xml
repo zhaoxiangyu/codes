@@ -26,7 +26,48 @@
 	</target>
 
 	<target name="database-setup"
-		description="Creates the database structure and inserts data into the database">
+		description="Creates the database structure">
+	  <taskdef name="ddlToDatabase"
+		   classname="org.apache.ddlutils.task.DdlToDatabaseTask">
+	    <classpath refid="runtime-classpath"/>
+	  </taskdef>
+
+	  <ddlToDatabase>
+	    <database url="jdbc:oracle:thin:@192.168.21.243:1521:orcl"
+		      driverClassName="oracle.jdbc.driver.OracleDriver"
+		      username="dgap_pre"
+		      password="12345678"/>
+	    <fileset dir=".">
+	      <include name="mdata-schema.xml"/>
+	    </fileset>
+	<!--
+	    <writeSchemaToDatabase alterdatabase="true"/> 
+	-->
+	    <writeSchemaToDatabase alterdatabase="false" dodrops="false"/> 
+	  </ddlToDatabase>
+	</target>
+
+	<target name="database-sql"
+		description="Creates the database structure">
+	  <taskdef name="ddlToDatabase"
+		   classname="org.apache.ddlutils.task.DdlToDatabaseTask">
+	    <classpath refid="runtime-classpath"/>
+	  </taskdef>
+
+	  <ddlToDatabase>
+	    <database url="jdbc:oracle:thin:@192.168.21.243:1521:orcl"
+		      driverClassName="oracle.jdbc.driver.OracleDriver"
+		      username="dgap_pre"
+		      password="12345678"/>
+	    <fileset dir=".">
+	      <include name="mdata-schema.xml"/>
+	    </fileset>
+	    <writeSchemaSqlToFile alterdatabase="false" dodrops="false" outputfile="schema.sql"/> 
+	  </ddlToDatabase>
+	</target>
+
+	<target name="database-dataimport"
+		description="Inserts data into the database">
 	  <taskdef name="ddlToDatabase"
 		   classname="org.apache.ddlutils.task.DdlToDatabaseTask">
 	    <classpath refid="runtime-classpath"/>
@@ -43,13 +84,7 @@
 	<!--
 	    <createDatabase failonerror="false"/>
 	-->
-	<!--
-	    <writeSchemaToDatabase alterdatabase="true"/> 
-	-->
-	    <writeSchemaToDatabase alterdatabase="false" dodrops="false"/> 
-	<!--
 	    <writeDataToDatabase datafile="data.xml"/> 
-	-->
 	  </ddlToDatabase>
 	</target>
 
