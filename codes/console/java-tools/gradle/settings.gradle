@@ -1,0 +1,8 @@
+//projectDir='/Users/yp-tc-m-2683/he/tcxy/gqt/src'
+def projectsRootDir = new File("/home/he/data/github/codes/codes/console/java-tools/")
+
+include ':gqt'
+project(':gqt').projectDir = new File(projectsRootDir, 'gqt/src')
+
+//include ':agri-common'
+//project(':agri-common').projectDir = new File(projectsRootDir, 'agri/src/agricultural-credit-common')

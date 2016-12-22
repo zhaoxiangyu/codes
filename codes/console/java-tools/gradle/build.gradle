@@ -1,0 +1,23 @@
+//projectDir='/Users/yp-tc-m-2683/he/tcxy/gqt/src'
+
+subprojects {
+    apply plugin: 'java'
+    repositories {
+        mavenCentral()
+    }
+}
+
+project(':agri-common') {
+    dependencies {
+        compile 'log4j:log4j:1.2.14','org.slf4j:slf4j-api:1.6.1','org.slf4j:slf4j-log4j12:1.6.1','com.fasterxml.jackson.core:jackson-databind:2.5.0','junit:junit:4.11','org.codehaus.jackson:jackson-core-asl:1.9.11','org.codehaus.jackson:jackson-mapper-asl:1.9.11','com.google.guava:guava:18.0','commons-io:commons-io:2.4','commons-lang:commons-lang:2.6','joda-time:joda-time:2.8.2'
+    }
+}
+
+//task helloGradle << {
+//    println 'Hello Gradle- This is your first script'
+//}
+//
+//task showProject << {
+//    println "project name:$project.name"
+//    println "project dir:$projectDir"
+//}
