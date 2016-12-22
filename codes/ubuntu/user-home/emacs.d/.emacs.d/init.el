@@ -48,3 +48,6 @@
 (global-set-key (kbd "C-c C-c M-x") 'execute-extended-command)
 (add-hook 'ruby-mode-hook 'robe-mode)
 ;; (add-hook 'robe-mode-hook 'ac-robe-setup)
+;; (require 'evil)
+;; (evil-mode t)
+(global-set-key (kbd "C-x g") 'magit-status)
