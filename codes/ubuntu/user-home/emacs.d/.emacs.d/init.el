@@ -27,14 +27,18 @@
  package-archives '(("gnu" . "http://elpa.gnu.org/packages/")
                     ("org" . "http://orgmode.org/elpa/")
                     ("melpa" . "http://melpa.org/packages/")
+                    ("marmalade" . "http://marmalade-repo.org/")
                     ("melpa-stable" . "http://stable.melpa.org/packages/"))
  package-archive-priorities '(("melpa-stable" . 1)))
 
 (package-initialize)
+
 (when (not package-archive-contents)
   (package-refresh-contents)
   (package-install 'use-package))
+
 (require 'use-package)
+
 (use-package ensime
   :ensure t
   :pin melpa-stable)
@@ -50,4 +54,4 @@
 ;; (add-hook 'robe-mode-hook 'ac-robe-setup)
 ;; (require 'evil)
 ;; (evil-mode t)
-(global-set-key (kbd "C-x g") 'magit-status)
+;; (global-set-key (kbd "C-x g") 'magit-status)
