@@ -1,1 +1,1 @@
-ruby -r ./lsvr.rb -e '$lsvr.view_logs'
+ruby -r ./rb/lsvr.rb -e '$lsvr.view_logs'

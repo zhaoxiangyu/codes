@@ -1,1 +1,1 @@
-ruby -r ./lsvr.rb -e '$lsvr.start'
+ruby -r ./rb/lsvr.rb -e '$lsvr.start'

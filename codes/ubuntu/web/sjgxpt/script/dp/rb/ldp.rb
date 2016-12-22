@@ -14,9 +14,11 @@ class Ldp
 	end
 
 	def deploy(tomcat_home:'',app_dir:'')
-		run "ps -ef | grep #{tomcat_home} | grep -v grep | awk '{print $2}' | xargs kill -9"
+		#run "ps -ef | grep #{tomcat_home} | grep -v grep | awk '{print $2}' | xargs kill -9"
+		run "pkill -f #{tomcat_home}"
+		run "rm -rf #{tomcat_home}/webapps/*"
 		run "cp -a #{app_dir} #{tomcat_home}/webapps"
-		run "#{tomcat_home}/bin/startup.sh"
+		#run "#{tomcat_home}/bin/startup.sh"
 	end
 
 	def publish
