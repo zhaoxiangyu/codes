@@ -1,1 +1,1 @@
-./dp.sh update_code
+./shell/dp.sh update_code

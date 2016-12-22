@@ -1,1 +1,1 @@
-./dp.sh publish_wf
+./shell/dp.sh publish_wf

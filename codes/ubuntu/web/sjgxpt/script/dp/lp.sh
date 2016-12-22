@@ -1,2 +1,1 @@
-#./dp.sh lpublish echo
-./dp.sh lpublish
+./shell/dp.sh lpublish

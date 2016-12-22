@@ -17,6 +17,7 @@
       <column name="del_flag" primaryKey="false" required="false" type="CHAR" size="1" default="0" autoIncrement="false" description="删除标志"/>
       <column name="remarks" primaryKey="false" required="false" type="VARCHAR" size="255" autoIncrement="false" description="备注"/>
     </table>
+
     <table name="t_mdm_basic_codes">
       <column name="id" primaryKey="true" required="true" type="VARCHAR" size="64" autoIncrement="false" description="行序号"/>
       <column name="name" primaryKey="false" required="false" type="VARCHAR" size="64" autoIncrement="false" description="代码集名称"/>

@@ -1,1 +1,1 @@
-./dp.sh publish echo >x.sh
+./shell/dp.sh publish echo >x.sh

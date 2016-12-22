@@ -1,1 +1,1 @@
-./dp.sh rebuild
+./shell/dp.sh rebuild
