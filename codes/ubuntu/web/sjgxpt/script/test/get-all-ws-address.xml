@@ -1,0 +1,14 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ws="http://ws.sofn.com/">
+   <soapenv:Header>
+      <auth:authentication xmlns:auth="http://gd.chinamobile.com//authentication">  
+      <!--
+        <auth:password>121</auth:password>  
+	-->
+        <auth_password>121</auth_password>  
+    </auth:authentication>    
+   </soapenv:Header>
+   <soapenv:Body>
+	<ws:getAllWebServiceAddresses>
+	</ws:getAllWebServiceAddresses>
+    </soapenv:Body>
+</soapenv:Envelope>
