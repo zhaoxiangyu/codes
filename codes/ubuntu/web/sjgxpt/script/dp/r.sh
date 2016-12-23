@@ -1,5 +1,5 @@
 #!/bin/bash
-set -e
+#set -e
 tmux kill-session -t server_logs
 ./lsvr_kill.sh
 ./lb.sh
