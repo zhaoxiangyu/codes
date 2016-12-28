@@ -1,4 +1,4 @@
-#!/bin/bash 
+#!/bin/bash
 
 tmux new-session -s sjgxpt -d
 #tmux set-window-option -g automatic-rename off

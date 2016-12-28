@@ -1,24 +1,30 @@
 
 ;; ----- smex-history -----
 (
- inf-ruby
- locate
- find-dired
- shell
+ package-list-packages
+ helm-configuration
+ helm-find-files
+ helm-mode
+ helm-M-x
  package-install
- describe-package
- ensime
+ inf-ruby
 )
 
 ;; ----- smex-data -----
 (
  (ensime . 1)
- (package-install . 2)
- (robe-start . 7)
+ (package-install . 3)
+ (robe-start . 9)
  (inf-ruby-console-auto . 1)
  (describe-package . 1)
- (inf-ruby . 5)
+ (inf-ruby . 6)
  (find-dired . 3)
- (shell . 1)
+ (shell . 3)
  (locate . 1)
+ (package-list-packages . 8)
+ (jinja2-mode . 1)
+ (helm-M-x . 2)
+ (helm-mode . 1)
+ (helm-find-files . 1)
+ (helm-configuration . 1)
 )
