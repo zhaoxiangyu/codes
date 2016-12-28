@@ -2,8 +2,8 @@
 
 class Lsvr
 
-	def initialize(dry_run)
-		@dry_run=dry_run
+	def initialize(options)
+		@dry_run=options[:dryrun]
 		@tomcat_homes="/home/helong/he/lky/share/sjgxpt/udev/sw/tomcat-8.5.5"
 		@app_dirs="/home/helong/he/lky/share/sjgxpt/udev/codes/dgap"
 		@tomcat_dirname="apache-tomcat-8.5.5"
@@ -13,7 +13,20 @@ class Lsvr
 		@dgap_web={tomcat_home:@tomcat_homes+"/web-10080/"+@tomcat_dirname,app_dir:@app_dirs+"/sofn-dgap-web/target/sofn-dgap-web"}
 		@dgap_pre={tomcat_home:@tomcat_homes+"/pre-11080/"+@tomcat_dirname,app_dir:@app_dirs+"/sofn-dgap-pre/target/sofn-dgap-pre"}
 		#@servers = [@dgap_service,@sso_service,@dgap_web,@dgap_pre]
-		@servers = [@dgap_service,@dgap_pre]
+		#@servers = [@dgap_service,@dgap_pre]
+		@servers = []
+		if options[:pre]
+			@servers << @dgap_pre
+		end
+		if options[:login]
+			@servers << @sso_service
+		end
+		if options[:web]
+			@servers << @dgap_web
+		end
+		if options[:service]
+			@servers << @dgap_service
+		end
 	end
 
 	def start_tomcat(tomcat_home)
@@ -67,5 +80,5 @@ class Lsvr
 		end
 	end
 end
-$d_lsvr=Lsvr.new(true)
-$lsvr=Lsvr.new(false)
+#$d_lsvr=Lsvr.new(true)
+#$lsvr=Lsvr.new(false)

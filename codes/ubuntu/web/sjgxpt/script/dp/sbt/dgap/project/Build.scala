@@ -10,7 +10,7 @@ object DgapBuild extends Build {
     )
 
   lazy val root = Project(
-    id = "hello",
+    id = "dgap-web",
     base = file("."),
     settings = Seq(
       sampleKeyB := "B: in the root project settings in Build.scala"
