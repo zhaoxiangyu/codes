@@ -2,12 +2,12 @@
 ;; ----- smex-history -----
 (
  package-list-packages
+ projectile-mode
+ ace-jump-mode
  helm-configuration
  helm-find-files
  helm-mode
  helm-M-x
- package-install
- inf-ruby
 )
 
 ;; ----- smex-data -----
@@ -21,10 +21,12 @@
  (find-dired . 3)
  (shell . 3)
  (locate . 1)
- (package-list-packages . 8)
+ (package-list-packages . 11)
  (jinja2-mode . 1)
  (helm-M-x . 2)
  (helm-mode . 1)
  (helm-find-files . 1)
  (helm-configuration . 1)
+ (ace-jump-mode . 7)
+ (projectile-mode . 1)
 )

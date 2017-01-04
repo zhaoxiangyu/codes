@@ -52,7 +52,7 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git z svn mvn web-search pip gem sbt bower common-aliases debian docker npm rails tmux)
+plugins=(git z wd svn mvn web-search pip gem sbt bower common-aliases debian docker npm rails tmux)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -87,3 +87,5 @@ source $ZSH/oh-my-zsh.sh
 export EDITOR=vim
 alias emacs='emacs -nw'
 setopt EXTENDEDGLOB
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
