@@ -23,7 +23,8 @@ rebuild(){
 
 lrebuild(){
 	$debug pushd /home/helong/he/lky/share/sjgxpt/udev/codes/dgap
-	$debug mvn -U -P local,nexus-repo,!dev clean install 
+	#$debug mvn -U -P local,nexus-repo,!dev clean install 
+	$debug mvn -U -P local_remote_db,!dev clean install 
 	$debug popd
 }
 

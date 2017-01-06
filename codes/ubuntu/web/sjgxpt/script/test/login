@@ -1,0 +1,7 @@
+#!/usr/bin/env ruby
+require './rb/login'
+
+#puts login("localhost","10080","superadmin","00000000","8888")
+#puts login("localhost","10080","dgapdev","123456","8888")
+#puts login("localhost","10080","dgapdev02","123456","8888")
+puts login("localhost","10080","buji","9999","8888")

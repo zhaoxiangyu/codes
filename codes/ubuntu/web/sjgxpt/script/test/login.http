@@ -1,7 +1,0 @@
---form
---verbose
-cd http://localhost:10080/sofn-dgap-web/sso
-account=superadmin
-code=8888
-password=00000000
-get getUUID

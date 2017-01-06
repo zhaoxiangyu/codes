@@ -10,6 +10,7 @@ class Lsvr
 
 		@dgap_service={tomcat_home:@tomcat_homes+"/service-9080/"+@tomcat_dirname,app_dir:@app_dirs+"/sofn-dgap-service/target/sofn-dgap-service"}
 		@sso_service={tomcat_home:@tomcat_homes+"/sso-21080/"+@tomcat_dirname,app_dir:@app_dirs+"/sofn-sso-service/target/sofn-sso-service"}
+		@sys_service={tomcat_home:@tomcat_homes+"/sys-22080/"+@tomcat_dirname,app_dir:@app_dirs+"/sofn-sys-service/target/sofn-sys-service"}
 		@dgap_web={tomcat_home:@tomcat_homes+"/web-10080/"+@tomcat_dirname,app_dir:@app_dirs+"/sofn-dgap-web/target/sofn-dgap-web"}
 		@dgap_pre={tomcat_home:@tomcat_homes+"/pre-11080/"+@tomcat_dirname,app_dir:@app_dirs+"/sofn-dgap-pre/target/sofn-dgap-pre"}
 		#@servers = [@dgap_service,@sso_service,@dgap_web,@dgap_pre]
@@ -26,6 +27,9 @@ class Lsvr
 		end
 		if options[:service]
 			@servers << @dgap_service
+		end
+		if options[:sys]
+			@servers << @sys_service
 		end
 	end
 
@@ -62,12 +66,12 @@ class Lsvr
 	def view_logs()
 		if not run "tmux has-session -t server_logs"
 			run "tmux new-session -s server_logs -d"
-			#run "tmux new-window -t server_logs -n sso tail -f #{@sso_service[:tomcat_home]}/logs/catalina.out"
-			#run "tmux new-window -t server_logs -n service tail -f #{@dgap_service[:tomcat_home]}/logs/catalina.out"
-			#run "tmux new-window -t server_logs -n web tail -f #{@dgap_web[:tomcat_home]}/logs/catalina.out"
-			#run "tmux new-window -t server_logs -n pre tail -f #{@dgap_pre[:tomcat_home]}/logs/catalina.out"
+			#run "tmux new-window -t server_logs -n sso tail -f #{@sso_service[:tomcat_home]}/logs/{catalina.out,localhost_access_log.$(date +%F).txt,localhost.$(date +%F).log}"
+			#run "tmux new-window -t server_logs -n service tail -f #{@dgap_service[:tomcat_home]}/logs/{catalina.out,localhost_access_log.$(date +%F).txt,localhost.$(date +%F).log}"
+			#run "tmux new-window -t server_logs -n web tail -f #{@dgap_web[:tomcat_home]}/logs/{catalina.out,localhost_access_log.$(date +%F).txt,localhost.$(date +%F).log}"
+			#run "tmux new-window -t server_logs -n pre tail -f #{@dgap_pre[:tomcat_home]}/logs/{catalina.out,localhost_access_log.$(date +%F).txt,localhost.$(date +%F).log}"
 			@servers.each do |server|
-				run "tmux new-window -t server_logs tail -f #{server[:tomcat_home]}/[l]ogs/catalina.out"
+				run "tmux new-window -t server_logs tail -f #{server[:tomcat_home]}/[l]ogs/catalina.out #{server[:tomcat_home]}/[l]ogs/localhost_access_log.$(date +%F).txt #{server[:tomcat_home]}/[l]ogs/localhost.$(date +%F).log"
 			end
 		end
 		run "tmux attach-session -t server_logs"

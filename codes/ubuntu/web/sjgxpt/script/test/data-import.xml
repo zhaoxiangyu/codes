@@ -9,7 +9,8 @@
    </soapenv:Header>
    <soapenv:Body>
 	<ws:addData>
-		<resourceApplicationId>?</resourceApplicationId>
+		<resourceId>resourceId123456</resourceId>
+		<accessToken>token123456</accessToken>
 		<data>
 			<fieldsData>
 				<columnName>?</columnName>
