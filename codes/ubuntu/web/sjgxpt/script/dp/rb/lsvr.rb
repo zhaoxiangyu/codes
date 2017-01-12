@@ -43,10 +43,6 @@ class Lsvr
 
 	def start()
 		run "/home/helong/he/lky/share/sjgxpt/udev/sw/zookeeper-3.4.6/bin/zkServer.sh start"
-		#start_tomcat @sso_service[:tomcat_home]
-		#start_tomcat @dgap_service[:tomcat_home]
-		#start_tomcat @dgap_web[:tomcat_home]
-		#start_tomcat @dgap_pre[:tomcat_home]
 		@servers.each do |server|
 			start_tomcat server[:tomcat_home]
 		end
@@ -54,10 +50,6 @@ class Lsvr
 
 	def kill()
 		run "pkill -f zookeeper-3.4.6"
-		#kill_tomcat @sso_service[:tomcat_home]
-		#kill_tomcat @dgap_service[:tomcat_home]
-		#kill_tomcat @dgap_web[:tomcat_home]
-		#kill_tomcat @dgap_pre[:tomcat_home]
 		@servers.each do |server|
 			kill_tomcat server[:tomcat_home]
 		end
@@ -66,12 +58,9 @@ class Lsvr
 	def view_logs()
 		if not run "tmux has-session -t server_logs"
 			run "tmux new-session -s server_logs -d"
-			#run "tmux new-window -t server_logs -n sso tail -f #{@sso_service[:tomcat_home]}/logs/{catalina.out,localhost_access_log.$(date +%F).txt,localhost.$(date +%F).log}"
-			#run "tmux new-window -t server_logs -n service tail -f #{@dgap_service[:tomcat_home]}/logs/{catalina.out,localhost_access_log.$(date +%F).txt,localhost.$(date +%F).log}"
-			#run "tmux new-window -t server_logs -n web tail -f #{@dgap_web[:tomcat_home]}/logs/{catalina.out,localhost_access_log.$(date +%F).txt,localhost.$(date +%F).log}"
-			#run "tmux new-window -t server_logs -n pre tail -f #{@dgap_pre[:tomcat_home]}/logs/{catalina.out,localhost_access_log.$(date +%F).txt,localhost.$(date +%F).log}"
 			@servers.each do |server|
-				run "tmux new-window -t server_logs tail -f #{server[:tomcat_home]}/[l]ogs/catalina.out #{server[:tomcat_home]}/[l]ogs/localhost_access_log.$(date +%F).txt #{server[:tomcat_home]}/[l]ogs/localhost.$(date +%F).log"
+				#run "tmux new-window -t server_logs tail -f #{server[:tomcat_home]}/[l]ogs/catalina.out #{server[:tomcat_home]}/[l]ogs/localhost_access_log.$(date +%F).txt #{server[:tomcat_home]}/[l]ogs/localhost.$(date +%F).log"
+				run "tmux new-window -t server_logs multitail --mergeall #{server[:tomcat_home]}/[l]ogs/catalina.out #{server[:tomcat_home]}/[l]ogs/localhost_access_log.$(date +%F).txt #{server[:tomcat_home]}/[l]ogs/localhost.$(date +%F).log"
 			end
 		end
 		run "tmux attach-session -t server_logs"

@@ -1,0 +1,36 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ws="http://ws.sofn.com/">
+   <soapenv:Header>
+      <auth:authentication xmlns:auth="http://gd.chinamobile.com//authentication">  
+    </auth:authentication>    
+   </soapenv:Header>
+   <soapenv:Body>
+	<ws:addData>
+		<!-- 资源名称 啊啊啊 资源目录 dsf-->
+		<resourceId>f205748642e84e0cb2e6b68626b34d0da145f656f8e84cffa01492507adb4658</resourceId>
+		<accessToken>YoT90Sih8i</accessToken>
+		<data>
+			<fieldsData>
+				<columnName>name</columnName>
+				<value>myname</value>
+				<columnName>date</columnName>
+				<value>2017/1/11</value>
+				<columnName>times</columnName>
+				<value>9</value>
+				<!--
+				<columnName>status</columnName>
+				<value></value>
+				<columnName>opreate</columnName>
+				<value></value>
+				<columnName>times</columnName>
+				<value></value>
+				<columnName>name</columnName>
+				<value></value>
+				<columnName>date</columnName>
+				<value></value>
+				-->
+			</fieldsData>
+			<id>1</id>
+		</data>
+	</ws:addData>
+    </soapenv:Body>
+</soapenv:Envelope>

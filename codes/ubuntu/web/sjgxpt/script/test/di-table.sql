@@ -1,0 +1,1 @@
+select id,english_name,status,del_flag from T_DGAP_DATA_IMPORT_TABLE where RESOURCE_ID = 'f205748642e84e0cb2e6b68626b34d0da145f656f8e84cffa01492507adb4658';

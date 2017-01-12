@@ -89,3 +89,4 @@ alias emacs='emacs -nw'
 alias v='vim -p'
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+export PATH=$PATH:~/eclipse/java-neon/eclipse

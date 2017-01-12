@@ -1,0 +1,1 @@
+select id,resource_id,user_id,status,reason,EFFECTIVE_DATE,pass_or_not,approval,audit_time from T_DGAP_RESOURCE_APPLICATION where RESOURCE_ID = 'f205748642e84e0cb2e6b68626b34d0da145f656f8e84cffa01492507adb4658' and PASS_OR_NOT = 'Y';
