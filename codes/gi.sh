@@ -7,6 +7,7 @@ PREFIX="https://raw.githubusercontent.com/blueocci/codes/master/codes"
 ginstall(){
 	local file=${1:?"you must set file path."}
 	local install_dir=${2:-"/usr/local/bin"}
+
 	local url="$PREFIX"/"$file"
 	local filename=$(basename $url)
 	local local_file=/tmp/$(basename $url)
