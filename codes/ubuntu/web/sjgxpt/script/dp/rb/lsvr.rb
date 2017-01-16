@@ -18,26 +18,26 @@ class Lsvr
 		#@servers = [@dgap_service,@sso_service,@dgap_web,@dgap_pre]
 		#@servers = [@dgap_service,@dgap_pre]
 		@servers = []
-		if options[:pre]
-			@servers << @dgap_pre
-		end
 		if options[:login]
 			@servers << @sso_service
 		end
 		if options[:loginw]
 			@servers << @sso_web
 		end
-		if options[:web]
-			@servers << @dgap_web
-		end
-		if options[:service]
-			@servers << @dgap_service
-		end
 		if options[:sys]
 			@servers << @sys_service
 		end
 		if options[:sysw]
 			@servers << @sys_web
+		end
+		if options[:service]
+			@servers << @dgap_service
+		end
+		if options[:web]
+			@servers << @dgap_web
+		end
+		if options[:pre]
+			@servers << @dgap_pre
 		end
 	end
 
