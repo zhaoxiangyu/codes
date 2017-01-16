@@ -1,0 +1,29 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ws="http://ws.sofn.com/">
+   <soapenv:Header>
+      <auth:authentication xmlns:auth="http://gd.chinamobile.com//authentication">  
+    </auth:authentication>    
+   </soapenv:Header>
+   <soapenv:Body>
+	<ws:addData>
+		<!--
+		<resourceId>f205748642e84e0cb2e6b68626b34d0da145f656f8e84cffa01492507adb4658</resourceId>
+		-->
+		<accessToken>YoT90Sih8i</accessToken>
+		<data>
+			<fieldsData>
+				<columnName>NAM</columnName>
+				<value>myname</value>
+			</fieldsData>
+			<fieldsData>
+				<columnName>DATE</columnName>
+				<value>11.234</value>
+			</fieldsData>
+			<fieldsData>
+				<columnName>TIMES</columnName>
+				<value>9</value>
+			</fieldsData>
+			<id>1</id>
+		</data>
+	</ws:addData>
+    </soapenv:Body>
+</soapenv:Envelope>
