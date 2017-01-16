@@ -1,13 +1,13 @@
 
 ;; ----- smex-history -----
 (
+ sql-oracle
+ sql-mode
  package-list-packages
  projectile-mode
  ace-jump-mode
  helm-configuration
- helm-find-files
- helm-mode
- helm-M-x
+ inf-ruby
 )
 
 ;; ----- smex-data -----
@@ -29,4 +29,7 @@
  (helm-configuration . 1)
  (ace-jump-mode . 7)
  (projectile-mode . 1)
+ (sql-mode . 1)
+ (sql-help . 1)
+ (sql-oracle . 1)
 )

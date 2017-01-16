@@ -1,0 +1,16 @@
+{
+"configs" : [
+  {
+"server" : "207.226.141.146",
+"server_port" : 8888,
+"password" : "Jir5k141k",
+"method" : "aes-256-cfb",
+"remarks" : ""}
+
+],
+"index" : 0,
+"global" : false,
+"enabled" : true,
+"shareOverLan" : false,
+"isDefault" : false,
+"localPort" : 1080}

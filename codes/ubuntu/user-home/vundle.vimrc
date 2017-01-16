@@ -24,12 +24,16 @@ filetype off		" required
 "set the runtime path to include Vundle and initiallize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
-Plugin 'gmarik/Vundle.vim'
-Plugin 'scrooloose/nerdcommenter'
-Plugin 'scrooloose/syntastic'
-Plugin 'nvie/vim-flake8'
-Plugin 'cscope_macros.vim'
-Plugin 'vim-ruby/vim-ruby'
+"Plugin 'gmarik/Vundle.vim'
+Plugin 'juneedahamed/vc.vim'
+Plugin 'project.tar.gz'
+Plugin 'csv.vim'
+Plugin 'ctrlp.vim'
+"Plugin 'scrooloose/nerdcommenter'
+"Plugin 'scrooloose/syntastic'
+"Plugin 'nvie/vim-flake8'
+"Plugin 'cscope_macros.vim'
+"Plugin 'vim-ruby/vim-ruby'
 call vundle#end()
 filetype plugin indent on
 

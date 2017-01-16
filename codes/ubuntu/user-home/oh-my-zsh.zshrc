@@ -52,7 +52,7 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git z wd svn mvn web-search pip gem sbt bower common-aliases debian docker npm rails tmux)
+plugins=(git z wd svn mvn web-search pip gem sbt bower common-aliases docker npm debian rails tmux)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -89,3 +89,8 @@ alias emacs='emacs -nw'
 setopt EXTENDEDGLOB
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# Hook for desk activation
+[ -n "$DESK_ENV" ] && source "$DESK_ENV" || true
+export GOPATH=~/gocodes
+export PATH=$PATH:$GOPATH/bin
