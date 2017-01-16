@@ -1,0 +1,17 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ws="http://ws.sofn.com/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ws:getData>
+         <!--Optional:-->
+         <accessToken>AAAA</accessToken>
+         <start>1</start>
+         <end>10</end>
+         <!--Zero or more repetitions:-->
+         <fields>NAME</fields>
+         <fields>STATUS</fields>
+         <fields>DATE</fields>
+         <!--Optional:-->
+         <condition>1=1</condition>
+      </ws:getData>
+   </soapenv:Body>
+</soapenv:Envelope>

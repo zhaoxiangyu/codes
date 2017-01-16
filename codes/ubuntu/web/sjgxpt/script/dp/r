@@ -5,16 +5,21 @@ require './rb/lsvr'
 options = {}
 OptionParser.new do |opt|
 	opt.on('-d','--dryrun') { |o| options[:dryrun] = o }
-	opt.on('-p','--pre') { |o| options[:pre] = o }
-	opt.on('-w','--web') { |o| options[:web] = o }
-	opt.on('-l','--sso') { |o| options[:login] = o }
 	opt.on('-s','--service') { |o| options[:service] = o }
+	opt.on('-w','--web') { |o| options[:web] = o }
+	opt.on('-p','--pre') { |o| options[:pre] = o }
+	opt.on('-l','--sso') { |o| options[:login] = o }
+	opt.on('-m','--ssow') { |o| options[:loginw] = o }
 	opt.on('-y','--sys') { |o| options[:sys] = o }
+	opt.on('-x','--sysw') { |o| options[:sysw] = o }
 	opt.on('-a','--all') { |o| 
 		options[:login] = o 
+		options[:loginw] = o 
 		options[:service] = o 
 		options[:web] = o 
 		options[:pre] = o 
+		options[:sys] = o 
+		options[:sysw] = o 
 	}
 
 	opt.on('-1','--kill-session') { |o| options[:kill_session] = o }
@@ -23,10 +28,11 @@ OptionParser.new do |opt|
 	opt.on('-4','--deploy') { |o| options[:deploy] = o }
 	opt.on('-5','--start-tomcat') { |o| options[:start_tomcat] = o }
 	opt.on('-6','--view-logs') { |o| options[:view_logs] = o }
-	opt.on('-A','--ALL') { |o| 
+	opt.on('-K','--kill') { |o| 
 		options[:kill_session] = o 
 		options[:kill_tomcat] = o 
-		options[:build] = o 
+	}
+	opt.on('-S','--start') { |o| 
 		options[:deploy] = o 
 		options[:start_tomcat] = o 
 		options[:view_logs] = o 
@@ -42,6 +48,6 @@ $lsvr = Lsvr.new options
 system 'tmux kill-session -t server_logs' if options[:kill_session]
 $lsvr.kill if options[:kill_tomcat]
 system './lb.sh' if options[:build] and not options[:dryrun]
-system './ldp.sh' if options[:deploy] and not options[:dryrun]
+$lsvr.publish if options[:deploy] and not options[:dryrun]
 $lsvr.start if options[:start_tomcat]
 $lsvr.view_logs if options[:view_logs]

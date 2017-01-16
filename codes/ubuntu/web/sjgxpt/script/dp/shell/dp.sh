@@ -7,7 +7,7 @@ debug=$2
 
 update_code(){
 	$debug pushd /home/helong/he/lky/share/sjgxpt/udev/codes/dgap
-	$debug svn update sofn-common sofn-generator sofn-sso-api sofn-sso-service sofn-sys-api common-files
+	$debug svn update sofn-common sofn-generator sofn-sso-api sofn-sso-service sofn-sso-web sofn-sys-api sofn-sys-service sofn-sys-web common-files
 	$debug svn update sofn-dgap-pre sofn-dgap-web sofn-dgap-api sofn-dgap-service
 	$debug popd
 	$debug pushd /home/helong/he/lky/share/sjgxpt/udev/codes

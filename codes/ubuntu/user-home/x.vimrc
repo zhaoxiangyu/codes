@@ -19,8 +19,12 @@ Plugin 'VundleVim/Vundle.vim'
 " Plugin 'tpope/vim-fugitive'
 Plugin 'jhradilek/vim-docbk'
 Plugin 'vc.vim'
-Plugin 'sqlpus.vim'
+Plugin 'vim-scripts/sqlplus.vim--Rey'
 Plugin 'ctrlp.vim'
+Plugin 'surround.vim'
+Plugin 'ack.vim'
+Plugin 'xml.vim'
+Plugin 'scrooloose/nerdcommenter'
 
 " plugin from http://vim-scripts.org/vim/scripts.html
 Plugin 'csv.vim'
@@ -55,3 +59,4 @@ filetype plugin indent on    " required
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
 set shell=/usr/bin/zsh
+let g:sqlplus_pat="/usr/bin/sqlplus64"

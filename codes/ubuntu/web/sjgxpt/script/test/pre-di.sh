@@ -7,5 +7,10 @@ service_url=http://localhost:11080/sofn-dgap-pre/ws/dataImport
 #fo="xmlstarlet unesc"
 fo="recode xml..utf8"
 
-#curl -X POST -H "Content-Type: text/xml" -H "SOAPAction: \"\"" --data-binary @data-di.xml $service_url | $fo
-http --verbose post $service_url @di.xml | $fo
+curl -X POST -H "Content-Type: text/xml" -H "SOAPAction: \"\"" --data-binary @hb.xml $service_url | $fo
+
+curl -X POST -H "Content-Type: text/xml" -H "SOAPAction: \"\"" --data-binary @di.xml $service_url | $fo
+#curl -X POST -H "Content-Type: text/xml" -H "SOAPAction: \"\"" --data-binary @di-error.xml $service_url | $fo
+
+#http --verbose post $service_url @di.xml | $fo
+#http --verbose post $service_url @di-error.xml | $fo

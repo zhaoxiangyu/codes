@@ -1,0 +1,6 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ws="http://ws.sofn.com/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ws:heartbeatMessage/>
+   </soapenv:Body>
+</soapenv:Envelope>
