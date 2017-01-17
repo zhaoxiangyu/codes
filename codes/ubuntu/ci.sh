@@ -21,4 +21,4 @@ $sync ~/.sbt/0.13/plugins/plugins.sbt $target_dir/sbt/0.13/plugins/plugins.sbt
 $sync ~/.coloritrc $target_dir/coloritrc
 
 mkdir -p $target_dir/desk
-rsync -av --delete --exclude=".vim/plugged" --exclude=".vim/dirs" --delete-excluded ~/.desk $target_dir/desk
+rsync -av --delete --exclude=".vim/plugged" --exclude=".vim/dirs" --delete-excluded ~/.desk/ $target_dir/desk
