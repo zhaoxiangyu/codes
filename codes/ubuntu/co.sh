@@ -4,6 +4,8 @@ set -e
 
 fullpath=$(readlink -f $0)
 basedir=$(dirname $fullpath)
+target_dir="$basedir/user-home"
+
 #sync="sudo cp -alf"
 sync="rsync -av --delete"
 
@@ -18,4 +20,11 @@ test -e ~/.vim/bundle/Vundle.vim || git clone https://github.com/VundleVim/Vundl
 $sync $basedir/user-home/vundle.vimrc ~/.vimrc
 
 test -d ~/.emacs.d && cp -a ~/.emacs.d ~/bak/emacs.d.$(date +%F)
-$sync $basedir/user-home/emacs.d ~/.emacs.d
+
+test -d ~/.sbt && mv -f ~/.sbt ~/bak/sbt.$(date +%F)
+mkdir -p ~/.sbt
+$sync $basedir/user-home/sbt/ ~/.sbt
+
+test -d ~/.desk && mv -f ~/.desk ~/bak/desk.$(date +%F)
+mkdir -p ~/.desk
+rsync -av --delete $target_dir/desk/ ~/.desk
