@@ -1,11 +1,2 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =9
-let g:netrw_dirhist_1='/home/helong/he/lky/share/sjgxpt/udev/codes/dgap/sofn-dgap-pre'
-let g:netrw_dirhist_2='/home/helong/he/lky/down'
-let g:netrw_dirhist_3='/home/helong/.vim'
-let g:netrw_dirhist_4='/home/helong/.vim/bundle'
-let g:netrw_dirhist_5='/home/helong/.vim/bundle/xml.vim'
-let g:netrw_dirhist_6='/home/helong/.vim/bundle/xml.vim/ftplugin'
-let g:netrw_dirhist_7='/home/helong/.vim/bundle/Vundle.vim'
-let g:netrw_dirhist_8='/home/helong/.vim/bundle'
-let g:netrw_dirhist_9='/home/helong/fpp'
+let g:netrw_dirhist_cnt =0
