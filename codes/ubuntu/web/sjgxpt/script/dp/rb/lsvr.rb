@@ -51,6 +51,7 @@ class Lsvr
 
 	def start()
 		run "/home/helong/he/lky/share/sjgxpt/udev/sw/zookeeper-3.4.6/bin/zkServer.sh start"
+		#run "/usr/bin/redis-server"
 		@servers.each do |server|
 			start_tomcat server[:tomcat_home]
 		end
@@ -58,12 +59,14 @@ class Lsvr
 
 	def kill()
 		run "pkill -f zookeeper-3.4.6"
+		#run "echo 123qwe!@# | sudo -S pkill -f redis-server"
 		@servers.each do |server|
 			kill_tomcat server[:tomcat_home]
 		end
 	end
 
 	def deploy(tomcat_home:'',app_dir:'')
+		run "rm -rf #{tomcat_home}/webapps/*"
 		run "cp -a #{app_dir} #{tomcat_home}/webapps"
 	end
 

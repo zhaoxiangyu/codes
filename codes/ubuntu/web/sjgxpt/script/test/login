@@ -1,7 +1,9 @@
 #!/usr/bin/env ruby
 require './rb/login'
 
+#encrypted 8BYHjE7BwQNG1hvlDe1j7q==
 #puts login("localhost","10080","superadmin","00000000","8888")
-#puts login("localhost","10080","dgapdev","999999","8888")
-#puts login("localhost","10080","dgapdev02","123456","8888")
+puts login("localhost","10080","dgapdev","999999","8888")
+#puts login("localhost","10080","dgapdev02","999999","8888")
+#puts login("localhost","10080","deapdev02","12345678","8888")
 puts login("localhost","10080","buji","9999","8888")

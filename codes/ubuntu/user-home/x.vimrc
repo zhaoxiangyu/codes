@@ -1,62 +1,59 @@
-set nocompatible              " be iMproved, required
+syntax on
 
-" set tags=./tags;
-" let g:easytags_dynamic_files = 1
+"set fileencodings=utf-8,ucs-bom,gbk,cp936
+"set tabstop=4
+"set softtabstop=4
+"set shiftwidth=4
+""set expandtab
+"set ruler
+"set showcmd
+"set modeline
+"
+"set number
 
-" set the runtime path to include Vundle and initialize
+"python setting
+"filetype plugin indent on
+"autocmd FileType python setlocal et sta sw=4 sts=4
+"autocmd FileType python setlocal foldmethod=indent
+"set foldlevel=99
+"map <F3> za
+
+"install vundle.vim
+"git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+set nocompatible	" be iMproved, required
+filetype off		" required
+"set the runtime path to include Vundle and initiallize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
-" alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
-
-" let Vundle manage Vundle, required
-Plugin 'VundleVim/Vundle.vim'
-
-" The following are examples of different formats supported.
-" Keep Plugin commands between vundle#begin/end.
-"
-" plugin on GitHub repo
-" Plugin 'tpope/vim-fugitive'
-Plugin 'jhradilek/vim-docbk'
-Plugin 'vc.vim'
-Plugin 'vim-scripts/sqlplus.vim--Rey'
-Plugin 'ctrlp.vim'
-Plugin 'surround.vim'
-Plugin 'ack.vim'
-Plugin 'xml.vim'
-Plugin 'scrooloose/nerdcommenter'
-
-" plugin from http://vim-scripts.org/vim/scripts.html
-Plugin 'csv.vim'
+Plugin 'VundleVim/Vundle'
 Plugin 'project.tar.gz'
-"
-" Git plugin not hosted on GitHub
-" Plugin 'git://git.wincent.com/command-t.git'
-"
-" git repos on your local machine (i.e. when working on your own plugin)
-" Plugin 'file:///home/gmarik/path/to/plugin'
-"
-" The sparkup vim script is in a subdirectory of this repo called vim.
-" Pass the path to set the runtimepath properly.
-" Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
-"
-" Install L9 and avoid a Naming conflict if you've already installed a
-" different version somewhere else.
-" Plugin 'ascenator/L9', {'name': 'newL9'}
+Plugin 'ctrlp.vim'
+Plugin 'davidhalter/jedi-vim'
+"Plugin 'juneedahamed/vc.vim'
+"Plugin 'csv.vim'
+"Plugin 'vim-scripts/sqlplus.vim--Rey'
 
-" All of your Plugins must be added before the following line
-call vundle#end()            " required
-filetype plugin indent on    " required
-" To ignore plugin indent changes, instead use:
-"filetype plugin on
-"
-" Brief help
-" :PluginList       - lists configured plugins
-" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
-" :PluginSearch foo - searches for foo; append `!` to refresh local cache
-" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
-"
-" see :h vundle for more details or wiki for FAQ
-" Put your non-Plugin stuff after this line
-set shell=/usr/bin/zsh
-let g:sqlplus_pat="/usr/bin/sqlplus64"
+"Plugin 'MicahElliott/Rocannon'
+"Plugin 'scrooloose/nerdcommenter'
+"Plugin 'scrooloose/syntastic'
+"Plugin 'nvie/vim-flake8'
+"Plugin 'cscope_macros.vim'
+"Plugin 'vim-ruby/vim-ruby'
+
+"Plugin 'ktvoelker/sbt-vim'
+"Plugin 'derekwyatt/vim-sbt'
+call vundle#end()
+filetype plugin indent on
+
+"vim ruby
+set nocompatible      " We're running Vim, not Vi!
+syntax on             " Enable syntax highlighting
+filetype on           " Enable filetype detection
+filetype indent on    " Enable filetype-specific indenting
+filetype plugin on    " Enable filetype-specific plugins
+"set paste
+
+"let g:sqlplus_path='/usr/bin/sqlplus64 '
+"let g:sqlplus_db='192.168.21.249/gjzs'
+"let g:sqlplus_userid='gjzspt'
+"let g:sqlplus_passwd='12345678'

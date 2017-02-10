@@ -3,7 +3,7 @@ export SVN_EDITOR='vim'
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH=~/.oh-my-zsh
+export ZSH=/home/helong/.oh-my-zsh
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
@@ -52,7 +52,7 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git wd z svn mvn web-search pip gem sbt bower common-aliases debian docker npm rails tmux httpie)
+plugins=(git z wd svn mvn web-search pip gem sbt bower common-aliases docker npm debian rails tmux)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -86,7 +86,20 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 export EDITOR=vim
 alias emacs='emacs -nw'
-alias v='vim -p'
+setopt EXTENDEDGLOB
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-export PATH=$PATH:~/eclipse/java-neon/eclipse
+
+# Hook for desk activation
+[ -n "$DESK_ENV" ] && source "$DESK_ENV" || true
+export GOPATH=~/gocodes
+export PATH=$PATH:$GOPATH/bin
+unalias ag
+#alias F='| fpp'
+alias ags="ag -G '.*/src/.*'"
+alias ii='info --index-search'
+
+#fpath+=~/zsh-ansible
+alias anc=ansible-console
+alias vp="vim -u ~/.vimrc-python"
+alias f=fab
